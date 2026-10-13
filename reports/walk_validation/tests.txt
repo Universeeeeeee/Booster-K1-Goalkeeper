@@ -1,0 +1,5 @@
+........................................................................ [ 67%]
+...................................                                      [100%]
+107 passed in 2.42s
+WARNING: Nan, Inf or huge value in QVEL at DOF 0. The simulation is unstable. Time = 0.0000.
+

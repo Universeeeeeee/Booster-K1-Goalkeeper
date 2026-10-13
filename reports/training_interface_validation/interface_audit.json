@@ -1,0 +1,2420 @@
+{
+  "schema_version": 1,
+  "stage": "I1",
+  "scope": "Read-only audit of pre-I1 interfaces; no inference, mj_step, training, control experiment, collision completion or reward tuning",
+  "status": "static_audit_complete",
+  "dynamic_training_readiness_verified": false,
+  "baseline_tests": {
+    "count": 322,
+    "origin": "Parent task supplied A-H baseline; this auditor did not rerun tests"
+  },
+  "official_manifest": {
+    "repository": "https://github.com/BoosterRobotics/booster_deploy.git",
+    "revision": "7bb1462e2ac742eba5c01659b815e2e99fbe617f",
+    "file_count": 22,
+    "all_hashes_match": true,
+    "verification": {
+      "LICENSE": true,
+      "README.md": true,
+      "booster_deploy/__init__.py": true,
+      "booster_deploy/controllers/__init__.py": true,
+      "booster_deploy/controllers/base_controller.py": true,
+      "booster_deploy/controllers/controller_cfg.py": true,
+      "booster_deploy/controllers/mujoco_controller.py": true,
+      "booster_deploy/robots/k1.py": true,
+      "booster_deploy/utils/__init__.py": true,
+      "booster_deploy/utils/isaaclab/array.py": true,
+      "booster_deploy/utils/isaaclab/configclass.py": true,
+      "booster_deploy/utils/isaaclab/dict.py": true,
+      "booster_deploy/utils/isaaclab/math.py": true,
+      "booster_deploy/utils/isaaclab/string.py": true,
+      "booster_deploy/utils/policy_runner.py": true,
+      "booster_deploy/utils/registry.py": true,
+      "tasks/__init__.py": true,
+      "tasks/locomotion/__init__.py": true,
+      "tasks/locomotion/locomotion.py": true,
+      "tasks/locomotion/robots/__init__.py": true,
+      "tasks/locomotion/robots/k1/__init__.py": true,
+      "tasks/locomotion/robots/k1/models/k1_walk.pt": true
+    }
+  },
+  "source_sha256": {
+    "k1_goalkeeper/scene.py": "042473e1021197051e7d9ef73da82c728de0ee10ae3157464f9af1c6469d4be6",
+    "k1_goalkeeper/scene_simulation.py": "20caab5441a7b75319bca59999be018d71780ee0f960f5aa3eab1cda7b18f388",
+    "k1_goalkeeper/walk_controller.py": "57f108fc91dcf90416b8acb08d9c1bc7920bb733b7272968e87967f1fabe5144",
+    "k1_goalkeeper/simulation.py": "6f36bf328b3b507fe0311063c7cbbe25a8173c6b9fc68e415810508b4fa07fb8",
+    "k1_goalkeeper/detection.py": "b3556b8e6d654007da9e610e61988010f73911adf0b1c121166ea08b5f054830",
+    "k1_goalkeeper/impact_validation.py": "0eec831522d484f0642216fb990bba15859c3254c7fe5db26d63c4fffd4d74c7",
+    "k1_goalkeeper/positioning_validation.py": "4677c7a63e75873c3cd3e8e5e58b50fe95c3b63740f7a5ed108c14f39c1df767",
+    "k1_goalkeeper/predictive_goalkeeper.py": "da8e8f0179cb9211039586814c8d6deb428698ba1371ef12a3b7b7d848ebc017",
+    "k1_goalkeeper/ball_prediction.py": "6dc8b00cdfa0ab95dab871cf675248d2e6249c53deee6667e62b191760521476",
+    "k1_goalkeeper/velocity_validation.py": "f6096ed8d4cfad21a8455e0a19add57eb85d97c84ec6e48e8259b8290fe6955b",
+    "k1_goalkeeper/defense_controller.py": "bab0e339fd4c3415a2a7f2a9191c795715a61ebf9d3f7e04ea1a1d993fdf8d85",
+    "k1_goalkeeper/defense_goalkeeper.py": "7c3dcc3e6f3df4504bc4f9749784fcc3d010426e11534aded07ca8a447ae1f79",
+    "config/simulation.json": "d8b7f8ee51a0e2032ee23073048313fb68f70c30d240b65636d073c6c76da92f",
+    "assets/booster_deploy/booster_deploy/controllers/base_controller.py": "6abf68b38bb0cf6631655b9e82896288466faa1a78e67098e0273b1dba52aa7e",
+    "assets/booster_deploy/booster_deploy/robots/k1.py": "2e95ee5b761c327eb80db3f2aa73855b782c1fb415dab5ddffa445c054c17875",
+    "assets/booster_deploy/tasks/locomotion/robots/k1/__init__.py": "f8cab573789fcd4f014bfae946aa176b287ed4642f285456af58a6fe59be869d",
+    "assets/booster_deploy/tasks/locomotion/locomotion.py": "8ef1ebeb1a4f1a52a72b7afeeb7411d080028058dffd5f9147d6deb859a82103"
+  },
+  "source_anchors": {
+    "k1_goalkeeper/scene.py": [
+      {
+        "symbol": "load_config",
+        "line": 19,
+        "end_line": 20
+      },
+      {
+        "symbol": "numbers",
+        "line": 23,
+        "end_line": 24
+      },
+      {
+        "symbol": "convert_goal",
+        "line": 27,
+        "end_line": 37
+      },
+      {
+        "symbol": "line",
+        "line": 40,
+        "end_line": 43
+      },
+      {
+        "symbol": "arc",
+        "line": 46,
+        "end_line": 67
+      },
+      {
+        "symbol": "add_field",
+        "line": 70,
+        "end_line": 98
+      },
+      {
+        "symbol": "add_camera",
+        "line": 101,
+        "end_line": 109
+      },
+      {
+        "symbol": "build_scene",
+        "line": 112,
+        "end_line": 181
+      }
+    ],
+    "k1_goalkeeper/scene_simulation.py": [
+      {
+        "symbol": "SceneSimulation",
+        "line": 6,
+        "end_line": 73
+      },
+      {
+        "symbol": "__init__",
+        "line": 7,
+        "end_line": 25
+      },
+      {
+        "symbol": "reset",
+        "line": 27,
+        "end_line": 35
+      },
+      {
+        "symbol": "set_velocity",
+        "line": 37,
+        "end_line": 47
+      },
+      {
+        "symbol": "step",
+        "line": 49,
+        "end_line": 67
+      },
+      {
+        "symbol": "advance_policy_step",
+        "line": 69,
+        "end_line": 73
+      }
+    ],
+    "k1_goalkeeper/walk_controller.py": [
+      {
+        "symbol": "K1WalkController",
+        "line": 18,
+        "end_line": 172
+      },
+      {
+        "symbol": "__init__",
+        "line": 21,
+        "end_line": 80
+      },
+      {
+        "symbol": "_read_warning_counts",
+        "line": 82,
+        "end_line": 83
+      },
+      {
+        "symbol": "_check_simulation",
+        "line": 85,
+        "end_line": 93
+      },
+      {
+        "symbol": "initialize",
+        "line": 95,
+        "end_line": 111
+      },
+      {
+        "symbol": "update_state",
+        "line": 113,
+        "end_line": 129
+      },
+      {
+        "symbol": "compute_targets",
+        "line": 131,
+        "end_line": 140
+      },
+      {
+        "symbol": "apply_control",
+        "line": 142,
+        "end_line": 156
+      },
+      {
+        "symbol": "finish_physics_step",
+        "line": 158,
+        "end_line": 159
+      },
+      {
+        "symbol": "ctrl_step",
+        "line": 161,
+        "end_line": 165
+      },
+      {
+        "symbol": "step",
+        "line": 167,
+        "end_line": 172
+      }
+    ],
+    "k1_goalkeeper/simulation.py": [
+      {
+        "symbol": "Shot",
+        "line": 14,
+        "end_line": 27
+      },
+      {
+        "symbol": "preset_shots",
+        "line": 30,
+        "end_line": 43
+      },
+      {
+        "symbol": "random_shots",
+        "line": 46,
+        "end_line": 51
+      },
+      {
+        "symbol": "run_shot",
+        "line": 54,
+        "end_line": 142
+      },
+      {
+        "symbol": "__post_init__",
+        "line": 22,
+        "end_line": 27
+      },
+      {
+        "symbol": "check_state",
+        "line": 69,
+        "end_line": 75
+      },
+      {
+        "symbol": "sample",
+        "line": 81,
+        "end_line": 84
+      },
+      {
+        "symbol": "state",
+        "line": 86,
+        "end_line": 88
+      },
+      {
+        "symbol": "classify",
+        "line": 93,
+        "end_line": 101
+      }
+    ],
+    "k1_goalkeeper/detection.py": [
+      {
+        "symbol": "ExitEvent",
+        "line": 7,
+        "end_line": 15
+      },
+      {
+        "symbol": "GoalDetector",
+        "line": 18,
+        "end_line": 71
+      },
+      {
+        "symbol": "to_dict",
+        "line": 14,
+        "end_line": 15
+      },
+      {
+        "symbol": "__init__",
+        "line": 26,
+        "end_line": 33
+      },
+      {
+        "symbol": "update",
+        "line": 35,
+        "end_line": 71
+      }
+    ],
+    "k1_goalkeeper/impact_validation.py": [
+      {
+        "symbol": "ImpactCase",
+        "line": 16,
+        "end_line": 39
+      },
+      {
+        "symbol": "ball_contact_force_world",
+        "line": 42,
+        "end_line": 47
+      },
+      {
+        "symbol": "_robot_body",
+        "line": 50,
+        "end_line": 55
+      },
+      {
+        "symbol": "_launch",
+        "line": 58,
+        "end_line": 93
+      },
+      {
+        "symbol": "run_impact",
+        "line": 96,
+        "end_line": 311
+      },
+      {
+        "symbol": "__post_init__",
+        "line": 29,
+        "end_line": 39
+      },
+      {
+        "symbol": "sample",
+        "line": 139,
+        "end_line": 166
+      }
+    ],
+    "k1_goalkeeper/positioning_validation.py": [
+      {
+        "symbol": "TruthGoalkeeper",
+        "line": 13,
+        "end_line": 103
+      },
+      {
+        "symbol": "prediction_errors",
+        "line": 106,
+        "end_line": 124
+      },
+      {
+        "symbol": "run_trial",
+        "line": 127,
+        "end_line": 170
+      },
+      {
+        "symbol": "save_trial",
+        "line": 173,
+        "end_line": 177
+      },
+      {
+        "symbol": "__init__",
+        "line": 14,
+        "end_line": 26
+      },
+      {
+        "symbol": "command",
+        "line": 28,
+        "end_line": 71
+      },
+      {
+        "symbol": "observe",
+        "line": 73,
+        "end_line": 103
+      }
+    ],
+    "k1_goalkeeper/predictive_goalkeeper.py": [
+      {
+        "symbol": "SettlingPositionController",
+        "line": 14,
+        "end_line": 26
+      },
+      {
+        "symbol": "CollisionCoverage",
+        "line": 29,
+        "end_line": 68
+      },
+      {
+        "symbol": "PredictiveGoalkeeper",
+        "line": 71,
+        "end_line": 157
+      },
+      {
+        "symbol": "run_g_trial",
+        "line": 160,
+        "end_line": 171
+      },
+      {
+        "symbol": "command",
+        "line": 16,
+        "end_line": 26
+      },
+      {
+        "symbol": "__init__",
+        "line": 35,
+        "end_line": 42
+      },
+      {
+        "symbol": "evaluate",
+        "line": 44,
+        "end_line": 68
+      },
+      {
+        "symbol": "__init__",
+        "line": 72,
+        "end_line": 82
+      },
+      {
+        "symbol": "command",
+        "line": 84,
+        "end_line": 157
+      }
+    ],
+    "k1_goalkeeper/ball_prediction.py": [
+      {
+        "symbol": "build_ball_floor_model",
+        "line": 10,
+        "end_line": 29
+      },
+      {
+        "symbol": "BallPredictor",
+        "line": 32,
+        "end_line": 135
+      },
+      {
+        "symbol": "__init__",
+        "line": 34,
+        "end_line": 40
+      },
+      {
+        "symbol": "_invalid",
+        "line": 43,
+        "end_line": 48
+      },
+      {
+        "symbol": "forecast",
+        "line": 50,
+        "end_line": 135
+      }
+    ],
+    "k1_goalkeeper/velocity_validation.py": [
+      {
+        "symbol": "Segment",
+        "line": 18,
+        "end_line": 29
+      },
+      {
+        "symbol": "body_state",
+        "line": 32,
+        "end_line": 45
+      },
+      {
+        "symbol": "trajectory_hash",
+        "line": 48,
+        "end_line": 55
+      },
+      {
+        "symbol": "recovery_metrics",
+        "line": 58,
+        "end_line": 85
+      },
+      {
+        "symbol": "summarize_case",
+        "line": 88,
+        "end_line": 175
+      },
+      {
+        "symbol": "run_case",
+        "line": 178,
+        "end_line": 342
+      },
+      {
+        "symbol": "__post_init__",
+        "line": 23,
+        "end_line": 29
+      },
+      {
+        "symbol": "record",
+        "line": 246,
+        "end_line": 277
+      },
+      {
+        "symbol": "observe_control",
+        "line": 283,
+        "end_line": 286
+      },
+      {
+        "symbol": "observe_step",
+        "line": 288,
+        "end_line": 305
+      },
+      {
+        "symbol": "category",
+        "line": 226,
+        "end_line": 236
+      }
+    ],
+    "k1_goalkeeper/defense_controller.py": [
+      {
+        "symbol": "DefensePulse",
+        "line": 17,
+        "end_line": 52
+      },
+      {
+        "symbol": "PostFilteredArmController",
+        "line": 55,
+        "end_line": 82
+      },
+      {
+        "symbol": "__post_init__",
+        "line": 24,
+        "end_line": 32
+      },
+      {
+        "symbol": "_quintic",
+        "line": 35,
+        "end_line": 36
+      },
+      {
+        "symbol": "factor",
+        "line": 38,
+        "end_line": 48
+      },
+      {
+        "symbol": "offset",
+        "line": 50,
+        "end_line": 52
+      },
+      {
+        "symbol": "__init__",
+        "line": 57,
+        "end_line": 62
+      },
+      {
+        "symbol": "reset",
+        "line": 64,
+        "end_line": 66
+      },
+      {
+        "symbol": "compute_targets",
+        "line": 68,
+        "end_line": 82
+      }
+    ],
+    "k1_goalkeeper/defense_goalkeeper.py": [
+      {
+        "symbol": "DefenseGoalkeeper",
+        "line": 14,
+        "end_line": 151
+      },
+      {
+        "symbol": "run_h_trial",
+        "line": 154,
+        "end_line": 189
+      },
+      {
+        "symbol": "__init__",
+        "line": 20,
+        "end_line": 30
+      },
+      {
+        "symbol": "guard",
+        "line": 32,
+        "end_line": 41
+      },
+      {
+        "symbol": "install",
+        "line": 43,
+        "end_line": 58
+      },
+      {
+        "symbol": "command",
+        "line": 60,
+        "end_line": 108
+      },
+      {
+        "symbol": "observe",
+        "line": 110,
+        "end_line": 151
+      },
+      {
+        "symbol": "targets",
+        "line": 48,
+        "end_line": 56
+      }
+    ],
+    "assets/booster_deploy/booster_deploy/controllers/base_controller.py": [
+      {
+        "symbol": "RobotData",
+        "line": 12,
+        "end_line": 49
+      },
+      {
+        "symbol": "BoosterRobot",
+        "line": 52,
+        "end_line": 76
+      },
+      {
+        "symbol": "Commands",
+        "line": 79,
+        "end_line": 80
+      },
+      {
+        "symbol": "VelocityCommand",
+        "line": 83,
+        "end_line": 113
+      },
+      {
+        "symbol": "Policy",
+        "line": 116,
+        "end_line": 134
+      },
+      {
+        "symbol": "BaseController",
+        "line": 137,
+        "end_line": 244
+      },
+      {
+        "symbol": "__init__",
+        "line": 26,
+        "end_line": 39
+      },
+      {
+        "symbol": "to",
+        "line": 41,
+        "end_line": 49
+      },
+      {
+        "symbol": "__init__",
+        "line": 59,
+        "end_line": 68
+      },
+      {
+        "symbol": "num_joints",
+        "line": 71,
+        "end_line": 72
+      },
+      {
+        "symbol": "num_bodies",
+        "line": 75,
+        "end_line": 76
+      },
+      {
+        "symbol": "__init__",
+        "line": 88,
+        "end_line": 101
+      },
+      {
+        "symbol": "clamp_vx",
+        "line": 103,
+        "end_line": 107
+      },
+      {
+        "symbol": "scale_vx",
+        "line": 109,
+        "end_line": 113
+      },
+      {
+        "symbol": "__init__",
+        "line": 117,
+        "end_line": 122
+      },
+      {
+        "symbol": "reset",
+        "line": 125,
+        "end_line": 126
+      },
+      {
+        "symbol": "inference",
+        "line": 129,
+        "end_line": 134
+      },
+      {
+        "symbol": "__init__",
+        "line": 193,
+        "end_line": 202
+      },
+      {
+        "symbol": "start",
+        "line": 204,
+        "end_line": 210
+      },
+      {
+        "symbol": "policy_step",
+        "line": 212,
+        "end_line": 224
+      },
+      {
+        "symbol": "stop",
+        "line": 226,
+        "end_line": 228
+      },
+      {
+        "symbol": "ctrl_step",
+        "line": 231,
+        "end_line": 236
+      },
+      {
+        "symbol": "update_state",
+        "line": 239,
+        "end_line": 240
+      },
+      {
+        "symbol": "run",
+        "line": 243,
+        "end_line": 244
+      }
+    ],
+    "assets/booster_deploy/booster_deploy/robots/k1.py": [],
+    "assets/booster_deploy/tasks/locomotion/robots/k1/__init__.py": [
+      {
+        "symbol": "K1WalkControllerCfg",
+        "line": 13,
+        "end_line": 73
+      },
+      {
+        "symbol": "K1WalkTaskCfg",
+        "line": 77,
+        "end_line": 80
+      },
+      {
+        "symbol": "__post_init__",
+        "line": 78,
+        "end_line": 80
+      }
+    ],
+    "assets/booster_deploy/tasks/locomotion/locomotion.py": [
+      {
+        "symbol": "LocomotionPolicy",
+        "line": 15,
+        "end_line": 182
+      },
+      {
+        "symbol": "T1LocomotionPolicyCfg",
+        "line": 186,
+        "end_line": 199
+      },
+      {
+        "symbol": "K1LocomotionPolicyCfg",
+        "line": 203,
+        "end_line": 210
+      },
+      {
+        "symbol": "T2LocomotionPolicy",
+        "line": 213,
+        "end_line": 253
+      },
+      {
+        "symbol": "T2LocomotionPolicyCfg",
+        "line": 257,
+        "end_line": 270
+      },
+      {
+        "symbol": "__init__",
+        "line": 18,
+        "end_line": 63
+      },
+      {
+        "symbol": "reset",
+        "line": 65,
+        "end_line": 68
+      },
+      {
+        "symbol": "_initialize_obs_history",
+        "line": 70,
+        "end_line": 78
+      },
+      {
+        "symbol": "_forward_model",
+        "line": 80,
+        "end_line": 85
+      },
+      {
+        "symbol": "_action_to_targets",
+        "line": 87,
+        "end_line": 111
+      },
+      {
+        "symbol": "compute_observation",
+        "line": 113,
+        "end_line": 154
+      },
+      {
+        "symbol": "inference",
+        "line": 156,
+        "end_line": 182
+      },
+      {
+        "symbol": "reset",
+        "line": 216,
+        "end_line": 228
+      },
+      {
+        "symbol": "compute_observation",
+        "line": 230,
+        "end_line": 253
+      }
+    ]
+  },
+  "protected_test_sha256": {
+    "tests/test_assets.py": "ff6f54a6abba73dd53aafe57c4ccc12801efe4a12625c54e978bfb6c98d0d4b6",
+    "tests/test_ball_physics.py": "8b63f4fb2c84159545f2350cefe38b27793b0389b811757dac09eaefced6e1a3",
+    "tests/test_defense_controller.py": "b602517ef7b987689ddd1ce2a9267ac7602992a98911cf340699c55b92205449",
+    "tests/test_defense_goalkeeper.py": "63176db64aa98aae968f83ece25434166243635e86650fd94ff5f4122d076b0d",
+    "tests/test_field_geometry.py": "10190add099aaa00d6462a782dda13842f109ebd6428607b0700670057850095",
+    "tests/test_goal_collision.py": "f01c0f39b1bd6cebf7f80056a0cab1189d0311b39bb05e42c8fa5316eec452c3",
+    "tests/test_goal_detection.py": "e49981acf1348d57417a6a409c810b19e8b8c73606bf51d570f9ced3e73a1191",
+    "tests/test_impact_validation.py": "3a1fbb6de8b170b185cf7a8e067cf888aae6c6195f948dc21e2764b3f6ed5d9e",
+    "tests/test_positioning.py": "e32c19b67183278a87299842f83a9dca20bf83fc65b5bce5fa6a8bf974ab15fa",
+    "tests/test_prediction_goalkeeper.py": "a0efcd01c53dc329a7eda6bb6f09b81ad3ff8aab7bac761f96b50971a93769a7",
+    "tests/test_prediction_validation.py": "cbb7a02c1fc2d71325c809e8054102477edecc1ddafa2df9215ad3b255de30f2",
+    "tests/test_scene_config.py": "f0669f3c70d8a2906e847dec7c114e6800da2a32a8e163a6068e58d7e271a899",
+    "tests/test_scene_control.py": "6da1b220edb0c40631e1d1b3a3ad9b6d8c4d8ae94cc738e5f43b290f277dfa58",
+    "tests/test_velocity_validation.py": "d4a9cd3e077abc8a17c4299756896dd1f836dd9b30a30fba887163eef97be314",
+    "tests/test_walk_controller.py": "368b55711fd47b207c7c8aae2703697a2062b9d162778d0710b0e2e880474db3"
+  },
+  "static_model_compilation": {
+    "official": {
+      "source": "assets/booster_assets/robots/K1/K1_22dof.xml",
+      "sha256": "1f1a1cdd451f777600c66fc30ad8d7537198ee7bc51f8ed20d67a51b5001a651",
+      "nq": 29,
+      "nv": 28,
+      "nu": 22,
+      "timestep_s": 0.001,
+      "joints": [
+        {
+          "name": "world_joint",
+          "joint_id": 0,
+          "qpos_address": 0,
+          "dof_address": 0,
+          "joint_type": 0,
+          "joint_limited": false,
+          "range_rad": [
+            0.0,
+            0.0
+          ],
+          "actuator_id": -1
+        },
+        {
+          "name": "aahead_yaw_joint",
+          "joint_id": 1,
+          "qpos_address": 7,
+          "dof_address": 6,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -1.012,
+            1.012
+          ],
+          "actuator_id": 0,
+          "transmission_joint_id": 1,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -6.0,
+            6.0
+          ]
+        },
+        {
+          "name": "aahead_pitch_joint",
+          "joint_id": 2,
+          "qpos_address": 8,
+          "dof_address": 7,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -0.314,
+            0.794
+          ],
+          "actuator_id": 1,
+          "transmission_joint_id": 2,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -6.0,
+            6.0
+          ]
+        },
+        {
+          "name": "aaleft_shoulder_pitch_joint",
+          "joint_id": 3,
+          "qpos_address": 9,
+          "dof_address": 8,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -2.932,
+            1.196
+          ],
+          "actuator_id": 2,
+          "transmission_joint_id": 3,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -14.0,
+            14.0
+          ]
+        },
+        {
+          "name": "left_shoulder_roll_joint",
+          "joint_id": 4,
+          "qpos_address": 10,
+          "dof_address": 9,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -1.642,
+            1.629
+          ],
+          "actuator_id": 3,
+          "transmission_joint_id": 4,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -14.0,
+            14.0
+          ]
+        },
+        {
+          "name": "left_elbow_pitch_joint",
+          "joint_id": 5,
+          "qpos_address": 11,
+          "dof_address": 10,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -1.885,
+            1.885
+          ],
+          "actuator_id": 4,
+          "transmission_joint_id": 5,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -14.0,
+            14.0
+          ]
+        },
+        {
+          "name": "left_elbow_yaw_joint",
+          "joint_id": 6,
+          "qpos_address": 12,
+          "dof_address": 11,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -2.242,
+            0.816
+          ],
+          "actuator_id": 5,
+          "transmission_joint_id": 6,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -14.0,
+            14.0
+          ]
+        },
+        {
+          "name": "aaright_shoulder_pitch_joint",
+          "joint_id": 7,
+          "qpos_address": 13,
+          "dof_address": 12,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -2.932,
+            1.196
+          ],
+          "actuator_id": 6,
+          "transmission_joint_id": 7,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -14.0,
+            14.0
+          ]
+        },
+        {
+          "name": "right_shoulder_roll_joint",
+          "joint_id": 8,
+          "qpos_address": 14,
+          "dof_address": 13,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -1.642,
+            1.629
+          ],
+          "actuator_id": 7,
+          "transmission_joint_id": 8,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -14.0,
+            14.0
+          ]
+        },
+        {
+          "name": "right_elbow_pitch_joint",
+          "joint_id": 9,
+          "qpos_address": 15,
+          "dof_address": 14,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -1.885,
+            1.885
+          ],
+          "actuator_id": 8,
+          "transmission_joint_id": 9,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -14.0,
+            14.0
+          ]
+        },
+        {
+          "name": "right_elbow_yaw_joint",
+          "joint_id": 10,
+          "qpos_address": 16,
+          "dof_address": 15,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -0.816,
+            2.242
+          ],
+          "actuator_id": 9,
+          "transmission_joint_id": 10,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -14.0,
+            14.0
+          ]
+        },
+        {
+          "name": "left_hip_pitch_joint",
+          "joint_id": 11,
+          "qpos_address": 17,
+          "dof_address": 16,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -2.958,
+            2.226
+          ],
+          "actuator_id": 10,
+          "transmission_joint_id": 11,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -68.0,
+            68.0
+          ]
+        },
+        {
+          "name": "left_hip_roll_joint",
+          "joint_id": 12,
+          "qpos_address": 18,
+          "dof_address": 17,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -0.375,
+            1.536
+          ],
+          "actuator_id": 11,
+          "transmission_joint_id": 12,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -43.0,
+            43.0
+          ]
+        },
+        {
+          "name": "left_hip_yaw_joint",
+          "joint_id": 13,
+          "qpos_address": 19,
+          "dof_address": 18,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -1.012,
+            1.012
+          ],
+          "actuator_id": 12,
+          "transmission_joint_id": 13,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -38.3,
+            38.3
+          ]
+        },
+        {
+          "name": "left_knee_pitch_joint",
+          "joint_id": 14,
+          "qpos_address": 20,
+          "dof_address": 19,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            0.0,
+            2.321
+          ],
+          "actuator_id": 13,
+          "transmission_joint_id": 14,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -112.0,
+            112.0
+          ]
+        },
+        {
+          "name": "left_ankle_pitch_joint",
+          "joint_id": 15,
+          "qpos_address": 21,
+          "dof_address": 20,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -0.87,
+            0.345
+          ],
+          "actuator_id": 14,
+          "transmission_joint_id": 15,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -38.3,
+            38.3
+          ]
+        },
+        {
+          "name": "left_ankle_roll_joint",
+          "joint_id": 16,
+          "qpos_address": 22,
+          "dof_address": 21,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -0.345,
+            0.345
+          ],
+          "actuator_id": 15,
+          "transmission_joint_id": 16,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -38.3,
+            38.3
+          ]
+        },
+        {
+          "name": "right_hip_pitch_joint",
+          "joint_id": 17,
+          "qpos_address": 23,
+          "dof_address": 22,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -2.958,
+            2.226
+          ],
+          "actuator_id": 16,
+          "transmission_joint_id": 17,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -68.0,
+            68.0
+          ]
+        },
+        {
+          "name": "right_hip_roll_joint",
+          "joint_id": 18,
+          "qpos_address": 24,
+          "dof_address": 23,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -1.536,
+            0.375
+          ],
+          "actuator_id": 17,
+          "transmission_joint_id": 18,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -43.0,
+            43.0
+          ]
+        },
+        {
+          "name": "right_hip_yaw_joint",
+          "joint_id": 19,
+          "qpos_address": 25,
+          "dof_address": 24,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -1.012,
+            1.012
+          ],
+          "actuator_id": 18,
+          "transmission_joint_id": 19,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -38.3,
+            38.3
+          ]
+        },
+        {
+          "name": "right_knee_pitch_joint",
+          "joint_id": 20,
+          "qpos_address": 26,
+          "dof_address": 25,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            0.0,
+            2.321
+          ],
+          "actuator_id": 19,
+          "transmission_joint_id": 20,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -112.0,
+            112.0
+          ]
+        },
+        {
+          "name": "right_ankle_pitch_joint",
+          "joint_id": 21,
+          "qpos_address": 27,
+          "dof_address": 26,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -0.87,
+            0.345
+          ],
+          "actuator_id": 20,
+          "transmission_joint_id": 21,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -38.3,
+            38.3
+          ]
+        },
+        {
+          "name": "right_ankle_roll_joint",
+          "joint_id": 22,
+          "qpos_address": 28,
+          "dof_address": 27,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -0.345,
+            0.345
+          ],
+          "actuator_id": 21,
+          "transmission_joint_id": 22,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -38.3,
+            38.3
+          ]
+        }
+      ]
+    },
+    "free": {
+      "source": "scenes/goalkeeper.xml",
+      "sha256": "2eb91334a83585f070fbe23ef72acedb059d164cab8915fbffe38df44dea76db",
+      "nq": 36,
+      "nv": 34,
+      "nu": 22,
+      "timestep_s": 0.001,
+      "joints": [
+        {
+          "name": "world_joint",
+          "joint_id": 0,
+          "qpos_address": 0,
+          "dof_address": 0,
+          "joint_type": 0,
+          "joint_limited": false,
+          "range_rad": [
+            0.0,
+            0.0
+          ],
+          "actuator_id": -1
+        },
+        {
+          "name": "aahead_yaw_joint",
+          "joint_id": 1,
+          "qpos_address": 7,
+          "dof_address": 6,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -1.012,
+            1.012
+          ],
+          "actuator_id": 0,
+          "transmission_joint_id": 1,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -6.0,
+            6.0
+          ]
+        },
+        {
+          "name": "aahead_pitch_joint",
+          "joint_id": 2,
+          "qpos_address": 8,
+          "dof_address": 7,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -0.314,
+            0.794
+          ],
+          "actuator_id": 1,
+          "transmission_joint_id": 2,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -6.0,
+            6.0
+          ]
+        },
+        {
+          "name": "aaleft_shoulder_pitch_joint",
+          "joint_id": 3,
+          "qpos_address": 9,
+          "dof_address": 8,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -2.932,
+            1.196
+          ],
+          "actuator_id": 2,
+          "transmission_joint_id": 3,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -14.0,
+            14.0
+          ]
+        },
+        {
+          "name": "left_shoulder_roll_joint",
+          "joint_id": 4,
+          "qpos_address": 10,
+          "dof_address": 9,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -1.642,
+            1.629
+          ],
+          "actuator_id": 3,
+          "transmission_joint_id": 4,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -14.0,
+            14.0
+          ]
+        },
+        {
+          "name": "left_elbow_pitch_joint",
+          "joint_id": 5,
+          "qpos_address": 11,
+          "dof_address": 10,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -1.885,
+            1.885
+          ],
+          "actuator_id": 4,
+          "transmission_joint_id": 5,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -14.0,
+            14.0
+          ]
+        },
+        {
+          "name": "left_elbow_yaw_joint",
+          "joint_id": 6,
+          "qpos_address": 12,
+          "dof_address": 11,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -2.242,
+            0.816
+          ],
+          "actuator_id": 5,
+          "transmission_joint_id": 6,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -14.0,
+            14.0
+          ]
+        },
+        {
+          "name": "aaright_shoulder_pitch_joint",
+          "joint_id": 7,
+          "qpos_address": 13,
+          "dof_address": 12,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -2.932,
+            1.196
+          ],
+          "actuator_id": 6,
+          "transmission_joint_id": 7,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -14.0,
+            14.0
+          ]
+        },
+        {
+          "name": "right_shoulder_roll_joint",
+          "joint_id": 8,
+          "qpos_address": 14,
+          "dof_address": 13,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -1.642,
+            1.629
+          ],
+          "actuator_id": 7,
+          "transmission_joint_id": 8,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -14.0,
+            14.0
+          ]
+        },
+        {
+          "name": "right_elbow_pitch_joint",
+          "joint_id": 9,
+          "qpos_address": 15,
+          "dof_address": 14,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -1.885,
+            1.885
+          ],
+          "actuator_id": 8,
+          "transmission_joint_id": 9,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -14.0,
+            14.0
+          ]
+        },
+        {
+          "name": "right_elbow_yaw_joint",
+          "joint_id": 10,
+          "qpos_address": 16,
+          "dof_address": 15,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -0.816,
+            2.242
+          ],
+          "actuator_id": 9,
+          "transmission_joint_id": 10,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -14.0,
+            14.0
+          ]
+        },
+        {
+          "name": "left_hip_pitch_joint",
+          "joint_id": 11,
+          "qpos_address": 17,
+          "dof_address": 16,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -2.958,
+            2.226
+          ],
+          "actuator_id": 10,
+          "transmission_joint_id": 11,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -68.0,
+            68.0
+          ]
+        },
+        {
+          "name": "left_hip_roll_joint",
+          "joint_id": 12,
+          "qpos_address": 18,
+          "dof_address": 17,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -0.375,
+            1.536
+          ],
+          "actuator_id": 11,
+          "transmission_joint_id": 12,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -43.0,
+            43.0
+          ]
+        },
+        {
+          "name": "left_hip_yaw_joint",
+          "joint_id": 13,
+          "qpos_address": 19,
+          "dof_address": 18,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -1.012,
+            1.012
+          ],
+          "actuator_id": 12,
+          "transmission_joint_id": 13,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -38.3,
+            38.3
+          ]
+        },
+        {
+          "name": "left_knee_pitch_joint",
+          "joint_id": 14,
+          "qpos_address": 20,
+          "dof_address": 19,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            0.0,
+            2.321
+          ],
+          "actuator_id": 13,
+          "transmission_joint_id": 14,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -112.0,
+            112.0
+          ]
+        },
+        {
+          "name": "left_ankle_pitch_joint",
+          "joint_id": 15,
+          "qpos_address": 21,
+          "dof_address": 20,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -0.87,
+            0.345
+          ],
+          "actuator_id": 14,
+          "transmission_joint_id": 15,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -38.3,
+            38.3
+          ]
+        },
+        {
+          "name": "left_ankle_roll_joint",
+          "joint_id": 16,
+          "qpos_address": 22,
+          "dof_address": 21,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -0.345,
+            0.345
+          ],
+          "actuator_id": 15,
+          "transmission_joint_id": 16,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -38.3,
+            38.3
+          ]
+        },
+        {
+          "name": "right_hip_pitch_joint",
+          "joint_id": 17,
+          "qpos_address": 23,
+          "dof_address": 22,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -2.958,
+            2.226
+          ],
+          "actuator_id": 16,
+          "transmission_joint_id": 17,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -68.0,
+            68.0
+          ]
+        },
+        {
+          "name": "right_hip_roll_joint",
+          "joint_id": 18,
+          "qpos_address": 24,
+          "dof_address": 23,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -1.536,
+            0.375
+          ],
+          "actuator_id": 17,
+          "transmission_joint_id": 18,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -43.0,
+            43.0
+          ]
+        },
+        {
+          "name": "right_hip_yaw_joint",
+          "joint_id": 19,
+          "qpos_address": 25,
+          "dof_address": 24,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -1.012,
+            1.012
+          ],
+          "actuator_id": 18,
+          "transmission_joint_id": 19,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -38.3,
+            38.3
+          ]
+        },
+        {
+          "name": "right_knee_pitch_joint",
+          "joint_id": 20,
+          "qpos_address": 26,
+          "dof_address": 25,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            0.0,
+            2.321
+          ],
+          "actuator_id": 19,
+          "transmission_joint_id": 20,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -112.0,
+            112.0
+          ]
+        },
+        {
+          "name": "right_ankle_pitch_joint",
+          "joint_id": 21,
+          "qpos_address": 27,
+          "dof_address": 26,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -0.87,
+            0.345
+          ],
+          "actuator_id": 20,
+          "transmission_joint_id": 21,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -38.3,
+            38.3
+          ]
+        },
+        {
+          "name": "right_ankle_roll_joint",
+          "joint_id": 22,
+          "qpos_address": 28,
+          "dof_address": 27,
+          "joint_type": 3,
+          "joint_limited": true,
+          "range_rad": [
+            -0.345,
+            0.345
+          ],
+          "actuator_id": 21,
+          "transmission_joint_id": 22,
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ctrl_limited": false,
+          "force_limited": true,
+          "force_range_nm": [
+            -38.3,
+            38.3
+          ]
+        },
+        {
+          "name": "ball_free",
+          "joint_id": 23,
+          "qpos_address": 29,
+          "dof_address": 28,
+          "joint_type": 0,
+          "joint_limited": false,
+          "range_rad": [
+            0.0,
+            0.0
+          ],
+          "actuator_id": -1
+        }
+      ]
+    },
+    "fixed": {
+      "source": "scenes/goalkeeper_fixed.xml",
+      "sha256": "1c0c159f8ff48cdf1131c698211ed59085ce6885b23f81d7df8a505633ad9cc5",
+      "nq": 7,
+      "nv": 6,
+      "nu": 0,
+      "timestep_s": 0.001,
+      "joints": [
+        {
+          "name": "ball_free",
+          "joint_id": 0,
+          "qpos_address": 0,
+          "dof_address": 0,
+          "joint_type": 0,
+          "joint_limited": false,
+          "range_rad": [
+            0.0,
+            0.0
+          ],
+          "actuator_id": -1
+        }
+      ]
+    },
+    "absent": {
+      "source": "scenes/goalkeeper_absent.xml",
+      "sha256": "501c42e48849a7d06bff2a28733904c67a90d77d711366a06e125e3e2987f167",
+      "nq": 7,
+      "nv": 6,
+      "nu": 0,
+      "timestep_s": 0.001,
+      "joints": [
+        {
+          "name": "ball_free",
+          "joint_id": 0,
+          "qpos_address": 0,
+          "dof_address": 0,
+          "joint_type": 0,
+          "joint_limited": false,
+          "range_rad": [
+            0.0,
+            0.0
+          ],
+          "actuator_id": -1
+        }
+      ]
+    }
+  },
+  "official_task_pd": {
+    "joint_names": [
+      "aahead_yaw_joint",
+      "aahead_pitch_joint",
+      "aaleft_shoulder_pitch_joint",
+      "left_shoulder_roll_joint",
+      "left_elbow_pitch_joint",
+      "left_elbow_yaw_joint",
+      "aaright_shoulder_pitch_joint",
+      "right_shoulder_roll_joint",
+      "right_elbow_pitch_joint",
+      "right_elbow_yaw_joint",
+      "left_hip_pitch_joint",
+      "left_hip_roll_joint",
+      "left_hip_yaw_joint",
+      "left_knee_pitch_joint",
+      "left_ankle_pitch_joint",
+      "left_ankle_roll_joint",
+      "right_hip_pitch_joint",
+      "right_hip_roll_joint",
+      "right_hip_yaw_joint",
+      "right_knee_pitch_joint",
+      "right_ankle_pitch_joint",
+      "right_ankle_roll_joint"
+    ],
+    "default_joint_pos": [
+      0,
+      0,
+      0.2,
+      -1.25,
+      0,
+      -0.5,
+      0.2,
+      1.25,
+      0,
+      0.5,
+      -0.15,
+      0,
+      0,
+      0.3,
+      -0.15,
+      0,
+      -0.15,
+      0,
+      0,
+      0.3,
+      -0.15,
+      0
+    ],
+    "joint_stiffness": [
+      4.0,
+      4.0,
+      20.0,
+      20.0,
+      20.0,
+      20.0,
+      20.0,
+      20.0,
+      20.0,
+      20.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      65.0,
+      65.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      65.0,
+      65.0
+    ],
+    "joint_damping": [
+      1.0,
+      1.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      1.0,
+      1.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      1.0,
+      1.0
+    ],
+    "effort_limit": [
+      6.0,
+      6.0,
+      14.0,
+      14.0,
+      14.0,
+      14.0,
+      14.0,
+      14.0,
+      14.0,
+      14.0,
+      30.0,
+      20.0,
+      15.0,
+      35.0,
+      24.0,
+      15.0,
+      30.0,
+      20.0,
+      15.0,
+      35.0,
+      24.0,
+      15.0
+    ],
+    "policy_joint_names": [
+      "aaleft_shoulder_pitch_joint",
+      "aaright_shoulder_pitch_joint",
+      "left_hip_pitch_joint",
+      "right_hip_pitch_joint",
+      "left_shoulder_roll_joint",
+      "right_shoulder_roll_joint",
+      "left_hip_roll_joint",
+      "right_hip_roll_joint",
+      "left_elbow_pitch_joint",
+      "right_elbow_pitch_joint",
+      "left_hip_yaw_joint",
+      "right_hip_yaw_joint",
+      "left_elbow_yaw_joint",
+      "right_elbow_yaw_joint",
+      "left_knee_pitch_joint",
+      "right_knee_pitch_joint",
+      "left_ankle_pitch_joint",
+      "right_ankle_pitch_joint",
+      "left_ankle_roll_joint",
+      "right_ankle_roll_joint"
+    ],
+    "policy_to_robot_indices": [
+      2,
+      6,
+      10,
+      16,
+      3,
+      7,
+      11,
+      17,
+      4,
+      8,
+      12,
+      18,
+      5,
+      9,
+      13,
+      19,
+      14,
+      20,
+      15,
+      21
+    ],
+    "formula": "clip(KP*(target-q)-KD*dq, -effort_limit, effort_limit)",
+    "policy_period_s": 0.02,
+    "scene_physics_period_s": 0.001,
+    "substeps": 20,
+    "velocity_bounds": {
+      "vx_body_m_s": [
+        -0.3,
+        1.6
+      ],
+      "vy_body_m_s": [
+        -0.3,
+        0.3
+      ],
+      "yaw_rate_rad_s": [
+        -1.8,
+        1.8
+      ]
+    },
+    "joint_target_range_clipping_in_original_policy": false
+  },
+  "backend_contracts": {
+    "body_velocity": {
+      "action_shape": [
+        3
+      ],
+      "units": [
+        "m/s",
+        "m/s",
+        "rad/s"
+      ],
+      "frame": "current robot body",
+      "requires": "unchanged k1_walk.pt plus torch plus free base",
+      "standing_guarantee": "Not established by interface audit"
+    },
+    "joint_target_pd": {
+      "action_shape": [
+        22
+      ],
+      "semantics": "absolute joint target radians in official robot order; explicit contract recommended",
+      "requires": "MuJoCo named unit-gear motors and task PD arrays; no pt inference",
+      "standing_guarantee": false,
+      "note": "Software effort limits are task values, not wider XML motor bounds; range rejection/clip policy must be explicit"
+    }
+  },
+  "information_boundary": {
+    "actor_allowed": "Current or past observation under explicit simulation_state or sensor_estimate mode, own proprioception, previous delivered action, validity/age; optional causal forecast clearly tagged estimate",
+    "actor_prohibited": [
+      "future actual event/outcome",
+      "no-robot reference crossing labels",
+      "initial launch secret or future launch time/target",
+      "actual future scene rollout",
+      "post-hoc save/recovery label",
+      "future sample used for smoothing"
+    ],
+    "critic_privileged_allowed": "Current exact simulator state, ball orientation/spin and declared physics parameters only in separate channel",
+    "offline_labels": "Future actual and counterfactual crossings/outcomes/recovery, after episode, never concatenated into actor observation"
+  },
+  "reset_requirements": [
+    "mj_resetData; restore task initial robot pose and ball launch input",
+    "named qpos/dof/actuator maps; free base world_joint and ball_free separately",
+    "zero commands and previous action; clear last_action/history/filter/targets/counts/warning baseline",
+    "new GoalDetector and contact episodes; clear prediction/coverage/controller state and traces",
+    "owned local seeded RNG; frozen seed and full initial state/config metadata; failure does not silently retry"
+  ],
+  "episode_requirements": {
+    "defended_goal": "right by existing scenario, explicit configuration required",
+    "goal_test": "GoalDetector whole-ball event; contact alone is neither goal nor save",
+    "end_semantics": "Goal/miss can latch but recovery observation may need continued physics; choose explicit recovery tail",
+    "terminated_vs_truncated": "physical/task terminal reasons distinct from max-duration truncation; numerical errors require evidence and explicit policy",
+    "reward": "I1 placeholder or minimal documented semantics only; no tuning or training readiness claim"
+  },
+  "recorder_requirements": [
+    "pre-state/action/target/raw PD and delivered control match each physics interval",
+    "post-state/applied torque/contact force/warnings/exit event must be sampled after delivered physics step",
+    "full robot and ball state; per-step counts and causal actor timestamp",
+    "separate current actor/critic data from finalized offline labels",
+    "immutable source/config/model/seed identifiers; reset trace cannot retain prior episode"
+  ],
+  "i2_gaps": [
+    {
+      "gap": "Unified free-base standing, movement, intercept and recovery dynamic task",
+      "evidence": "Current SceneSimulation exposes zero_torque and k1_walk only; H prototype couples frozen walking policy and tested arm pulse",
+      "status": "not established by static audit"
+    },
+    {
+      "gap": "Deployable observation path",
+      "evidence": "F/G reads exact current sim ball position and velocities including spin; no camera/detector/noise/latency sensor pipeline",
+      "status": "simulation_state baseline only"
+    },
+    {
+      "gap": "Physics and collision coverage validity",
+      "evidence": "Official shoulder_pitch, hip_pitch and ankle_pitch are visual-only; ball inertia comment says to be calibrated; G excludes goal/robot contacts",
+      "status": "record limitations; do not complete collision in I1"
+    },
+    {
+      "gap": "Training algorithm, reward, curriculum and vector throughput",
+      "evidence": "Existing core is serial validation and inference; no established optimizer or RL rollout contract",
+      "status": "I2 design and validation needed; no train launch"
+    },
+    {
+      "gap": "Training termination and recovery objectives",
+      "evidence": "run_shot stops at first exit while E continues recovery; contacts are not save outcome",
+      "status": "explicit episode policy and meaningful trajectory checks required"
+    }
+  ],
+  "i1_action_backend_implementation": {
+    "source": "k1_goalkeeper/training_actions.py",
+    "sha256": "1e647a1630cf86767f7ba245ae608206fc22552242ff870b83e8afe2f5e310b5",
+    "modes": [
+      "joint_targets",
+      "body_velocity"
+    ],
+    "static_checks": {
+      "ast_parse": true,
+      "official_config_manifest_match": true,
+      "compiled_free_model_named_mapping": true,
+      "unique_22_joint_motor_pairs": true,
+      "ball_address_isolation": true,
+      "joint_module_no_torch_or_walk_import_guard": true
+    },
+    "runtime_validation_owner": "Parent task",
+    "dynamic_checks_in_static_audit": false,
+    "inference_calls_in_static_audit": 0,
+    "physics_steps_in_static_audit": 0,
+    "later_validation": "scripts/validate_training_env.py has separate protocol/results; dynamic runs are outside this static audit scope"
+  }
+}

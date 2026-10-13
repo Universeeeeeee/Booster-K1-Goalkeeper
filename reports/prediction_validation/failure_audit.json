@@ -1,0 +1,1833 @@
+{
+  "stage": "G",
+  "audit": "Frozen F failure attribution",
+  "source_directory": "reports/positioning_validation",
+  "method": "Saved qpos native kinematics and signed geom distances; no stepping or policy execution",
+  "native_collision_inventory": [
+    {
+      "name": "k1_geom_1",
+      "body": "trunk",
+      "type": "mjGEOM_BOX",
+      "disabled_visual": false,
+      "ball_collision_eligible": true
+    },
+    {
+      "name": "k1_geom_2",
+      "body": "trunk",
+      "type": "mjGEOM_CYLINDER",
+      "disabled_visual": false,
+      "ball_collision_eligible": true
+    },
+    {
+      "name": "k1_geom_5",
+      "body": "aahead_yaw_link",
+      "type": "mjGEOM_MESH",
+      "disabled_visual": false,
+      "ball_collision_eligible": true
+    },
+    {
+      "name": "k1_geom_7",
+      "body": "aahead_pitch_link",
+      "type": "mjGEOM_MESH",
+      "disabled_visual": false,
+      "ball_collision_eligible": true
+    },
+    {
+      "name": "k1_geom_10",
+      "body": "left_shoulder_roll_link",
+      "type": "mjGEOM_CYLINDER",
+      "disabled_visual": false,
+      "ball_collision_eligible": true
+    },
+    {
+      "name": "k1_geom_12",
+      "body": "left_elbow_pitch_link",
+      "type": "mjGEOM_MESH",
+      "disabled_visual": false,
+      "ball_collision_eligible": true
+    },
+    {
+      "name": "k1_geom_14",
+      "body": "left_elbow_yaw_link",
+      "type": "mjGEOM_MESH",
+      "disabled_visual": false,
+      "ball_collision_eligible": true
+    },
+    {
+      "name": "k1_geom_17",
+      "body": "right_shoulder_roll_link",
+      "type": "mjGEOM_CYLINDER",
+      "disabled_visual": false,
+      "ball_collision_eligible": true
+    },
+    {
+      "name": "k1_geom_19",
+      "body": "right_elbow_pitch_link",
+      "type": "mjGEOM_MESH",
+      "disabled_visual": false,
+      "ball_collision_eligible": true
+    },
+    {
+      "name": "k1_geom_21",
+      "body": "right_elbow_yaw_link",
+      "type": "mjGEOM_MESH",
+      "disabled_visual": false,
+      "ball_collision_eligible": true
+    },
+    {
+      "name": "k1_geom_24",
+      "body": "left_hip_roll_link",
+      "type": "mjGEOM_CYLINDER",
+      "disabled_visual": false,
+      "ball_collision_eligible": true
+    },
+    {
+      "name": "k1_geom_26",
+      "body": "left_hip_yaw_link",
+      "type": "mjGEOM_CYLINDER",
+      "disabled_visual": false,
+      "ball_collision_eligible": true
+    },
+    {
+      "name": "k1_geom_28",
+      "body": "left_knee_pitch_link",
+      "type": "mjGEOM_CYLINDER",
+      "disabled_visual": false,
+      "ball_collision_eligible": true
+    },
+    {
+      "name": "k1_geom_29",
+      "body": "left_knee_pitch_link",
+      "type": "mjGEOM_BOX",
+      "disabled_visual": false,
+      "ball_collision_eligible": true
+    },
+    {
+      "name": "k1_geom_32",
+      "body": "left_ankle_roll_link",
+      "type": "mjGEOM_BOX",
+      "disabled_visual": false,
+      "ball_collision_eligible": true
+    },
+    {
+      "name": "k1_geom_35",
+      "body": "right_hip_roll_link",
+      "type": "mjGEOM_CYLINDER",
+      "disabled_visual": false,
+      "ball_collision_eligible": true
+    },
+    {
+      "name": "k1_geom_37",
+      "body": "right_hip_yaw_link",
+      "type": "mjGEOM_CYLINDER",
+      "disabled_visual": false,
+      "ball_collision_eligible": true
+    },
+    {
+      "name": "k1_geom_39",
+      "body": "right_knee_pitch_link",
+      "type": "mjGEOM_CYLINDER",
+      "disabled_visual": false,
+      "ball_collision_eligible": true
+    },
+    {
+      "name": "k1_geom_40",
+      "body": "right_knee_pitch_link",
+      "type": "mjGEOM_BOX",
+      "disabled_visual": false,
+      "ball_collision_eligible": true
+    },
+    {
+      "name": "k1_geom_43",
+      "body": "right_ankle_roll_link",
+      "type": "mjGEOM_BOX",
+      "disabled_visual": false,
+      "ball_collision_eligible": true
+    }
+  ],
+  "positioning": {
+    "position_-0.40": {
+      "case": "position_-0.40",
+      "positioning": {
+        "requested_goal_lateral_m": -0.4,
+        "commanded_goal_lateral_m": -0.4,
+        "final_error_m": 0.051547246588311224,
+        "maximum_overshoot_m": 0.0,
+        "arrival_and_hold_time_s": 8.623999999999551,
+        "tolerance_m": 0.1,
+        "final_goal_position": [
+          -0.3484527534116888,
+          0.6278028754925664,
+          0.5509044198550808
+        ],
+        "stop_command_time": 11.999999999998789,
+        "passed": true
+      },
+      "raw_arrival_and_permanent_hold_s": 8.623999999999551,
+      "tolerance_transitions": [
+        {
+          "time_s": 4.725999999999913,
+          "within_tolerance": true,
+          "lateral_m": -0.3000646257260551
+        },
+        {
+          "time_s": 4.911999999999975,
+          "within_tolerance": false,
+          "lateral_m": -0.29998785052125915
+        },
+        {
+          "time_s": 4.973999999999996,
+          "within_tolerance": true,
+          "lateral_m": -0.3000119038505606
+        },
+        {
+          "time_s": 10.59099999999957,
+          "within_tolerance": false,
+          "lateral_m": -0.2999983816820773
+        },
+        {
+          "time_s": 10.623999999999551,
+          "within_tolerance": true,
+          "lateral_m": -0.3000039608356449
+        }
+      ],
+      "delivered_command_segments": [
+        {
+          "start_s": 0.0,
+          "end_s": 2.0009999999998906,
+          "duration_s": 2.0009999999998906,
+          "command": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "start_lateral_m": 0.0,
+          "end_lateral_m": 0.000854562699072667
+        },
+        {
+          "start_s": 2.0009999999998906,
+          "end_s": 4.440999999999818,
+          "duration_s": 2.439999999999927,
+          "command": [
+            0.0,
+            0.2,
+            0.0
+          ],
+          "start_lateral_m": 0.000854562699072667,
+          "end_lateral_m": -0.283727921728648
+        },
+        {
+          "start_s": 4.440999999999818,
+          "end_s": 10.600999999999564,
+          "duration_s": 6.159999999999746,
+          "command": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "start_lateral_m": -0.283727921728648,
+          "end_lateral_m": -0.29997989550488696
+        },
+        {
+          "start_s": 10.600999999999564,
+          "end_s": 12.000999999998788,
+          "duration_s": 1.399999999999224,
+          "command": [
+            0.0,
+            0.2,
+            0.0
+          ],
+          "start_lateral_m": -0.29997989550488696,
+          "end_lateral_m": -0.34746408368344933
+        },
+        {
+          "start_s": 12.000999999998788,
+          "end_s": 20.00000000000146,
+          "duration_s": 7.999000000002672,
+          "command": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "start_lateral_m": -0.34746408368344933,
+          "end_lateral_m": -0.3484527534116888
+        }
+      ],
+      "high_level_command_switches": [
+        {
+          "time": 0.0,
+          "command": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "world_position": [
+            10.399999618530273,
+            0.0,
+            0.5536900162696838
+          ],
+          "yaw": 3.141592653589793,
+          "world_velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tracking": null
+        },
+        {
+          "time": 1.9999999999998905,
+          "command": [
+            0.0,
+            0.2,
+            0.0
+          ],
+          "world_position": [
+            10.412537340235566,
+            0.000854321662049591,
+            0.5509205299104695
+          ],
+          "yaw": -3.1367467138414113,
+          "world_velocity": [
+            -0.001350717654535408,
+            0.0005094370447320979,
+            1.715283019090515e-05
+          ],
+          "tracking": {
+            "requested_target_m": -0.4,
+            "target_m": -0.4,
+            "error_m": -0.4008543216620496,
+            "predicted_stop_m": 0.0008699886145635905,
+            "filtered_world_vy": 3.9167381284998555e-05,
+            "safe": true,
+            "yaw_error_rad": -0.004845939748382011,
+            "direction": -1,
+            "body_projection_uncommanded_vx": 0.0009691841564193987
+          }
+        },
+        {
+          "time": 4.439999999999817,
+          "command": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "world_position": [
+            10.421323243148375,
+            -0.28353687711449116,
+            0.5004726037342596
+          ],
+          "yaw": -3.1213912549084757,
+          "world_velocity": [
+            0.02485808752968174,
+            -0.19384443938814908,
+            0.005398061317733959
+          ],
+          "tracking": {
+            "requested_target_m": -0.4,
+            "target_m": -0.4,
+            "error_m": -0.11646312288550886,
+            "predicted_stop_m": -0.36874709466764916,
+            "filtered_world_vy": -0.213025543882895,
+            "safe": true,
+            "yaw_error_rad": -0.020201398681317675,
+            "direction": 0,
+            "body_projection_uncommanded_vx": -0.0
+          }
+        },
+        {
+          "time": 10.599999999999564,
+          "command": [
+            0.0,
+            0.2,
+            0.0
+          ],
+          "world_position": [
+            10.370877376978399,
+            -0.2999815355667453,
+            0.5505189449033828
+          ],
+          "yaw": -3.067876479633655,
+          "world_velocity": [
+            0.00010224458884563774,
+            0.0018657579212011744,
+            3.69991733854399e-05
+          ],
+          "tracking": {
+            "requested_target_m": -0.4,
+            "target_m": -0.4,
+            "error_m": -0.10001846443325474,
+            "predicted_stop_m": -0.29920288972215214,
+            "filtered_world_vy": 0.0019466146114828849,
+            "safe": true,
+            "yaw_error_rad": -0.07371617395613786,
+            "direction": -1,
+            "body_projection_uncommanded_vx": 0.01472988577983351
+          }
+        },
+        {
+          "time": 11.999999999998789,
+          "command": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "world_position": [
+            10.382940857118493,
+            -0.3472214036643386,
+            0.5212221210130392
+          ],
+          "yaw": -3.0908929638433933,
+          "world_velocity": [
+            0.015340481207849999,
+            -0.24225904656380726,
+            -0.08503394483564479
+          ],
+          "tracking": {
+            "requested_target_m": -0.4,
+            "target_m": -0.4,
+            "error_m": -0.0527785963356614,
+            "predicted_stop_m": -0.3681819167356061,
+            "filtered_world_vy": -0.05240128267816856,
+            "safe": true,
+            "yaw_error_rad": -0.05069968974640051,
+            "direction": 0,
+            "body_projection_uncommanded_vx": -0.0
+          }
+        }
+      ],
+      "yaw_command_nonzero_samples": 0,
+      "maximum_tracking_yaw_error_rad": 0.07371617395613786,
+      "first_stop_to_restart_lateral_range_m": [
+        -0.3074173703070366,
+        -0.283727921728648
+      ],
+      "lateral_command_duration_s": 3.839999999999151,
+      "first_stop_prediction_check": {
+        "decision_time_s": 4.439999999999817,
+        "predicted_stop_lateral_m": -0.36874709466764916,
+        "actual_lateral_after_0_4_s_m": -0.30369500081564565,
+        "actual_minus_predicted_m": 0.0650520938520035
+      },
+      "safe_tracking_at_all_updates": true,
+      "falls": 0,
+      "numerical_error": null,
+      "trajectory_hash_matches": true,
+      "high_level_records_match_raw_utf8": true
+    },
+    "position_+0.40": {
+      "case": "position_+0.40",
+      "positioning": {
+        "requested_goal_lateral_m": 0.4,
+        "commanded_goal_lateral_m": 0.4,
+        "final_error_m": -0.09482425801600086,
+        "maximum_overshoot_m": 0.0,
+        "arrival_and_hold_time_s": 2.7329999999999153,
+        "tolerance_m": 0.1,
+        "final_goal_position": [
+          0.30517574198399916,
+          0.6337721277574904,
+          0.5503380696137194
+        ],
+        "stop_command_time": 4.439999999999817,
+        "passed": true
+      },
+      "raw_arrival_and_permanent_hold_s": 2.7329999999999153,
+      "tolerance_transitions": [
+        {
+          "time_s": 4.732999999999915,
+          "within_tolerance": true,
+          "lateral_m": 0.30003997805368854
+        }
+      ],
+      "delivered_command_segments": [
+        {
+          "start_s": 0.0,
+          "end_s": 2.0009999999998906,
+          "duration_s": 2.0009999999998906,
+          "command": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "start_lateral_m": 0.0,
+          "end_lateral_m": 0.0008551018267583101
+        },
+        {
+          "start_s": 2.0009999999998906,
+          "end_s": 4.440999999999818,
+          "duration_s": 2.439999999999927,
+          "command": [
+            0.0,
+            -0.2,
+            0.0
+          ],
+          "start_lateral_m": 0.0008551018267583101,
+          "end_lateral_m": 0.2795213122308263
+        },
+        {
+          "start_s": 4.440999999999818,
+          "end_s": 20.00000000000146,
+          "duration_s": 15.559000000001642,
+          "command": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "start_lateral_m": 0.2795213122308263,
+          "end_lateral_m": 0.30517574198399916
+        }
+      ],
+      "high_level_command_switches": [
+        {
+          "time": 0.0,
+          "command": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "world_position": [
+            10.399999618530273,
+            0.0,
+            0.5536900162696838
+          ],
+          "yaw": 3.141592653589793,
+          "world_velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tracking": null
+        },
+        {
+          "time": 1.9999999999998905,
+          "command": [
+            0.0,
+            -0.2,
+            0.0
+          ],
+          "world_position": [
+            10.412537340235566,
+            0.000854321662049591,
+            0.5509205299104695
+          ],
+          "yaw": -3.1367467138414113,
+          "world_velocity": [
+            -0.001350717654535408,
+            0.0005094370447320979,
+            1.715283019090515e-05
+          ],
+          "tracking": {
+            "requested_target_m": 0.4,
+            "target_m": 0.4,
+            "error_m": 0.39914567833795045,
+            "predicted_stop_m": 0.0008699886145635905,
+            "filtered_world_vy": 3.9167381284998555e-05,
+            "safe": true,
+            "yaw_error_rad": -0.004845939748382011,
+            "direction": 1,
+            "body_projection_uncommanded_vx": -0.0009691841564193987
+          }
+        },
+        {
+          "time": 4.439999999999817,
+          "command": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "world_position": [
+            10.41718069762452,
+            0.27928814729952073,
+            0.49776769484966543
+          ],
+          "yaw": -3.139675808997509,
+          "world_velocity": [
+            0.01555544515691236,
+            0.23626951522750378,
+            0.018248582148260212
+          ],
+          "tracking": {
+            "requested_target_m": 0.4,
+            "target_m": 0.4,
+            "error_m": 0.1207118527004793,
+            "predicted_stop_m": 0.3653381747144161,
+            "filtered_world_vy": 0.21512506853723842,
+            "safe": true,
+            "yaw_error_rad": -0.0019168445922839402,
+            "direction": 0,
+            "body_projection_uncommanded_vx": -0.0
+          }
+        }
+      ],
+      "yaw_command_nonzero_samples": 0,
+      "maximum_tracking_yaw_error_rad": 0.03721415089177382,
+      "first_stop_to_restart_lateral_range_m": [
+        0.2795213122308263,
+        0.31091811228659405
+      ],
+      "lateral_command_duration_s": 2.439999999999927,
+      "first_stop_prediction_check": {
+        "decision_time_s": 4.439999999999817,
+        "predicted_stop_lateral_m": 0.3653381747144161,
+        "actual_lateral_after_0_4_s_m": 0.3052935331867959,
+        "actual_minus_predicted_m": -0.06004464152762018
+      },
+      "safe_tracking_at_all_updates": true,
+      "falls": 0,
+      "numerical_error": null,
+      "trajectory_hash_matches": true,
+      "high_level_records_match_raw_utf8": true
+    }
+  },
+  "shots": {
+    "wide_left": {
+      "case": "wide_left",
+      "root_cause_assessment": {
+        "prediction_error": "Small forecast errors; no evidence that prediction error caused this miss.",
+        "insufficient_time": "Current conservative center travel interval never reaches the shot target.",
+        "control_bias": "Clipped targets stay within the 0.10 m startup deadband; zero movement. No left/right directional difference is demonstrated.",
+        "modeled_collision_coverage": "Native geometry shows positive ball/body separation; no evidence specifically attributes the miss to missing local collision patches.",
+        "missing_actions": "F offers lateral walking only. Fast lateral movement, reach, jump and dive are not available or evaluated."
+      },
+      "matched_outcomes": {
+        "absent": {
+          "right_goal": true,
+          "effective_contact": false,
+          "completed": true,
+          "balance_maintained": null
+        },
+        "passive": {
+          "right_goal": true,
+          "effective_contact": false,
+          "completed": true,
+          "balance_maintained": true
+        },
+        "active": {
+          "right_goal": true,
+          "effective_contact": false,
+          "completed": true,
+          "balance_maintained": true
+        }
+      },
+      "identical_launch": true,
+      "active_ball_trajectory_maximum_difference_from_absent_m": 3.00851537717941e-14,
+      "prediction_errors": {
+        "11.0": {
+          "reference": {
+            "time": 5.687057990324648,
+            "position": [
+              11.0,
+              -0.9,
+              0.1099936498283127
+            ]
+          },
+          "first": {
+            "time": 2.0199999999998886,
+            "model": "constant_speed_ground",
+            "unmodeled_bounce": false,
+            "time_error_s": -0.020391323658093263,
+            "lateral_error_m": 0.0,
+            "height_error_m": 6.35017168730545e-06
+          },
+          "maximum_absolute_errors": {
+            "time_error_s": 0.020391323658121685,
+            "lateral_error_m": 0.0,
+            "height_error_m": 6.35017168730545e-06
+          },
+          "usable_model_maximum_absolute_errors": {
+            "time_error_s": 0.020391323658121685,
+            "lateral_error_m": 0.0,
+            "height_error_m": 6.35017168730545e-06
+          },
+          "unmodeled_bounce_samples": 0
+        },
+        "11.11": {
+          "reference": {
+            "time": 5.724174683818232,
+            "position": [
+              11.11,
+              -0.9,
+              0.10999874824009373
+            ]
+          },
+          "first": {
+            "time": 2.0199999999998886,
+            "model": "constant_speed_ground",
+            "unmodeled_bounce": false,
+            "time_error_s": -0.02084135048501068,
+            "lateral_error_m": 0.0,
+            "height_error_m": 1.2517599062705775e-06
+          },
+          "maximum_absolute_errors": {
+            "time_error_s": 0.0208413504850391,
+            "lateral_error_m": 0.0,
+            "height_error_m": 1.2517599062705775e-06
+          },
+          "usable_model_maximum_absolute_errors": {
+            "time_error_s": 0.0208413504850391,
+            "lateral_error_m": 0.0,
+            "height_error_m": 1.2517599062705775e-06
+          },
+          "unmodeled_bounce_samples": 0
+        }
+      },
+      "first_observed_shot": {
+        "time": 2.0199999999998886,
+        "prediction": {
+          "valid": true,
+          "plane_x": 11.0,
+          "time_to_plane_s": 3.6466666666666665,
+          "lateral_m": -0.9,
+          "height_m": 0.11,
+          "model": "constant_speed_ground",
+          "future_floor_contact_unmodeled": false,
+          "inside_aperture": true,
+          "spin_norm_rad_s": 27.266728398681987,
+          "limitations": "rolling deceleration, spin forces and bounce restitution are not predicted"
+        },
+        "interception_prediction": {
+          "valid": true,
+          "plane_x": 9.602509922476127,
+          "time_to_plane_s": 3.1808366408253756,
+          "lateral_m": -0.9,
+          "height_m": 0.11,
+          "model": "constant_speed_ground",
+          "future_floor_contact_unmodeled": false,
+          "inside_aperture": true,
+          "spin_norm_rad_s": 27.266728398681987,
+          "limitations": "rolling deceleration, spin forces and bounce restitution are not predicted"
+        },
+        "reachability": {
+          "reachable": false,
+          "target_lateral_m": -0.9,
+          "decision_lateral_m": -0.027219149342200682,
+          "interval_m": [
+            -0.027219149342200682,
+            0.028948178822874454
+          ],
+          "travel_budget_m": 0.02808366408253757,
+          "braking_reserve_m": 0.09,
+          "position_tolerance_m": 0.1,
+          "braking_time_available": true,
+          "reason": "insufficient time, braking time or post clearance"
+        },
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "first_usable_control": {
+        "time": 2.0199999999998886,
+        "interception_prediction": {
+          "valid": true,
+          "plane_x": 9.602509922476127,
+          "time_to_plane_s": 3.1808366408253756,
+          "lateral_m": -0.9,
+          "height_m": 0.11,
+          "model": "constant_speed_ground",
+          "future_floor_contact_unmodeled": false,
+          "inside_aperture": true,
+          "spin_norm_rad_s": 27.266728398681987,
+          "limitations": "rolling deceleration, spin forces and bounce restitution are not predicted"
+        },
+        "reachability": {
+          "reachable": false,
+          "target_lateral_m": -0.9,
+          "decision_lateral_m": -0.027219149342200682,
+          "interval_m": [
+            -0.027219149342200682,
+            0.028948178822874454
+          ],
+          "travel_budget_m": 0.02808366408253757,
+          "braking_reserve_m": 0.09,
+          "position_tolerance_m": 0.1,
+          "braking_time_available": true,
+          "reason": "insufficient time, braking time or post clearance"
+        },
+        "tracking": {
+          "requested_target_m": -0.027219149342200682,
+          "target_m": -0.027219149342200682,
+          "error_m": -0.02808366408253757,
+          "predicted_stop_m": 0.000879994499146919,
+          "filtered_world_vy": 3.8699397025081685e-05,
+          "safe": true,
+          "yaw_error_rad": -0.004875452477653997,
+          "direction": 0,
+          "body_projection_uncommanded_vx": -0.0
+        },
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "observation_to_first_usable_delay_s": 0.0,
+      "reachability_summary": {
+        "first": {
+          "reachable": false,
+          "target_lateral_m": -0.9,
+          "decision_lateral_m": -0.027219149342200682,
+          "interval_m": [
+            -0.027219149342200682,
+            0.028948178822874454
+          ],
+          "travel_budget_m": 0.02808366408253757,
+          "braking_reserve_m": 0.09,
+          "position_tolerance_m": 0.1,
+          "braking_time_available": true,
+          "reason": "insufficient time, braking time or post clearance"
+        },
+        "reachable_updates": 0,
+        "unreachable_updates": 160,
+        "interpretation": "center positioning feasibility, not a promised interception or complete collision silhouette"
+      },
+      "maximum_center_travel_budget_m": 0.02808366408253757,
+      "maximum_decision_error_m": 0.02808366408253757,
+      "nonzero_delivered_command_samples": 0,
+      "native_geometry": {
+        "native_collision_geom_count": 20,
+        "physics_samples_checked": 3761,
+        "minimum_native_ball_robot_surface_distance_m": 0.6029053981220333,
+        "nearest_state": {
+          "time_s": 5.460000000000158,
+          "geom": "k1_geom_14",
+          "body": "left_elbow_yaw_link",
+          "ball_center_world_m": [
+            10.326763939230313,
+            -0.9,
+            0.10999797094165224
+          ],
+          "robot_center_world_m": [
+            10.411439840067004,
+            0.001824282633905299,
+            0.5509340187177147
+          ]
+        },
+        "robot_passage_root_offset_bound_m": 0.81,
+        "passage_sample_count": 546,
+        "passage_time_range_s": [
+          5.216000000000077,
+          5.761000000000259
+        ],
+        "maximum_native_robot_top_m": 0.9536123836401528,
+        "minimum_ball_bottom_in_passage_m": -9.015472674858693e-06,
+        "minimum_ball_bottom_minus_native_robot_top_m": -0.9536213716456489,
+        "ball_above_every_native_collision_geom_through_passage": false
+      },
+      "coverage_limitations_from_F": [
+        "shoulder_pitch, hip_pitch and ankle_pitch have visual-only geometry",
+        "no complete body silhouette; a no-contact miss alone does not identify a controller failure"
+      ],
+      "trajectory_hash_matches": true,
+      "high_level_records_match_raw_utf8": true
+    },
+    "wide_right": {
+      "case": "wide_right",
+      "root_cause_assessment": {
+        "prediction_error": "Small forecast errors; no evidence that prediction error caused this miss.",
+        "insufficient_time": "Current conservative center travel interval never reaches the shot target.",
+        "control_bias": "Clipped targets stay within the 0.10 m startup deadband; zero movement. No left/right directional difference is demonstrated.",
+        "modeled_collision_coverage": "Native geometry shows positive ball/body separation; no evidence specifically attributes the miss to missing local collision patches.",
+        "missing_actions": "F offers lateral walking only. Fast lateral movement, reach, jump and dive are not available or evaluated."
+      },
+      "matched_outcomes": {
+        "absent": {
+          "right_goal": true,
+          "effective_contact": false,
+          "completed": true,
+          "balance_maintained": null
+        },
+        "passive": {
+          "right_goal": true,
+          "effective_contact": false,
+          "completed": true,
+          "balance_maintained": true
+        },
+        "active": {
+          "right_goal": true,
+          "effective_contact": false,
+          "completed": true,
+          "balance_maintained": true
+        }
+      },
+      "identical_launch": true,
+      "active_ball_trajectory_maximum_difference_from_absent_m": 3.00851537717941e-14,
+      "prediction_errors": {
+        "11.0": {
+          "reference": {
+            "time": 5.687057990324648,
+            "position": [
+              11.0,
+              0.9,
+              0.1099936498283127
+            ]
+          },
+          "first": {
+            "time": 2.0199999999998886,
+            "model": "constant_speed_ground",
+            "unmodeled_bounce": false,
+            "time_error_s": -0.020391323658093263,
+            "lateral_error_m": 0.0,
+            "height_error_m": 6.35017168730545e-06
+          },
+          "maximum_absolute_errors": {
+            "time_error_s": 0.020391323658121685,
+            "lateral_error_m": 0.0,
+            "height_error_m": 6.35017168730545e-06
+          },
+          "usable_model_maximum_absolute_errors": {
+            "time_error_s": 0.020391323658121685,
+            "lateral_error_m": 0.0,
+            "height_error_m": 6.35017168730545e-06
+          },
+          "unmodeled_bounce_samples": 0
+        },
+        "11.11": {
+          "reference": {
+            "time": 5.724174683818232,
+            "position": [
+              11.11,
+              0.9,
+              0.10999874824009373
+            ]
+          },
+          "first": {
+            "time": 2.0199999999998886,
+            "model": "constant_speed_ground",
+            "unmodeled_bounce": false,
+            "time_error_s": -0.02084135048501068,
+            "lateral_error_m": 0.0,
+            "height_error_m": 1.2517599062705775e-06
+          },
+          "maximum_absolute_errors": {
+            "time_error_s": 0.0208413504850391,
+            "lateral_error_m": 0.0,
+            "height_error_m": 1.2517599062705775e-06
+          },
+          "usable_model_maximum_absolute_errors": {
+            "time_error_s": 0.0208413504850391,
+            "lateral_error_m": 0.0,
+            "height_error_m": 1.2517599062705775e-06
+          },
+          "unmodeled_bounce_samples": 0
+        }
+      },
+      "first_observed_shot": {
+        "time": 2.0199999999998886,
+        "prediction": {
+          "valid": true,
+          "plane_x": 11.0,
+          "time_to_plane_s": 3.6466666666666665,
+          "lateral_m": 0.9,
+          "height_m": 0.11,
+          "model": "constant_speed_ground",
+          "future_floor_contact_unmodeled": false,
+          "inside_aperture": true,
+          "spin_norm_rad_s": 27.266728398681987,
+          "limitations": "rolling deceleration, spin forces and bounce restitution are not predicted"
+        },
+        "interception_prediction": {
+          "valid": true,
+          "plane_x": 9.602509922476127,
+          "time_to_plane_s": 3.1808366408253756,
+          "lateral_m": 0.9,
+          "height_m": 0.11,
+          "model": "constant_speed_ground",
+          "future_floor_contact_unmodeled": false,
+          "inside_aperture": true,
+          "spin_norm_rad_s": 27.266728398681987,
+          "limitations": "rolling deceleration, spin forces and bounce restitution are not predicted"
+        },
+        "reachability": {
+          "reachable": false,
+          "target_lateral_m": 0.9,
+          "decision_lateral_m": 0.028948178822874454,
+          "interval_m": [
+            -0.027219149342200682,
+            0.028948178822874454
+          ],
+          "travel_budget_m": 0.02808366408253757,
+          "braking_reserve_m": 0.09,
+          "position_tolerance_m": 0.1,
+          "braking_time_available": true,
+          "reason": "insufficient time, braking time or post clearance"
+        },
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "first_usable_control": {
+        "time": 2.0199999999998886,
+        "interception_prediction": {
+          "valid": true,
+          "plane_x": 9.602509922476127,
+          "time_to_plane_s": 3.1808366408253756,
+          "lateral_m": 0.9,
+          "height_m": 0.11,
+          "model": "constant_speed_ground",
+          "future_floor_contact_unmodeled": false,
+          "inside_aperture": true,
+          "spin_norm_rad_s": 27.266728398681987,
+          "limitations": "rolling deceleration, spin forces and bounce restitution are not predicted"
+        },
+        "reachability": {
+          "reachable": false,
+          "target_lateral_m": 0.9,
+          "decision_lateral_m": 0.028948178822874454,
+          "interval_m": [
+            -0.027219149342200682,
+            0.028948178822874454
+          ],
+          "travel_budget_m": 0.02808366408253757,
+          "braking_reserve_m": 0.09,
+          "position_tolerance_m": 0.1,
+          "braking_time_available": true,
+          "reason": "insufficient time, braking time or post clearance"
+        },
+        "tracking": {
+          "requested_target_m": 0.028948178822874454,
+          "target_m": 0.028948178822874454,
+          "error_m": 0.02808366408253757,
+          "predicted_stop_m": 0.000879994499146919,
+          "filtered_world_vy": 3.8699397025081685e-05,
+          "safe": true,
+          "yaw_error_rad": -0.004875452477653997,
+          "direction": 0,
+          "body_projection_uncommanded_vx": -0.0
+        },
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "observation_to_first_usable_delay_s": 0.0,
+      "reachability_summary": {
+        "first": {
+          "reachable": false,
+          "target_lateral_m": 0.9,
+          "decision_lateral_m": 0.028948178822874454,
+          "interval_m": [
+            -0.027219149342200682,
+            0.028948178822874454
+          ],
+          "travel_budget_m": 0.02808366408253757,
+          "braking_reserve_m": 0.09,
+          "position_tolerance_m": 0.1,
+          "braking_time_available": true,
+          "reason": "insufficient time, braking time or post clearance"
+        },
+        "reachable_updates": 0,
+        "unreachable_updates": 160,
+        "interpretation": "center positioning feasibility, not a promised interception or complete collision silhouette"
+      },
+      "maximum_center_travel_budget_m": 0.02808366408253757,
+      "maximum_decision_error_m": 0.02808366408253757,
+      "nonzero_delivered_command_samples": 0,
+      "native_geometry": {
+        "native_collision_geom_count": 20,
+        "physics_samples_checked": 3761,
+        "minimum_native_ball_robot_surface_distance_m": 0.5983093861200961,
+        "nearest_state": {
+          "time_s": 5.458000000000157,
+          "geom": "k1_geom_21",
+          "body": "right_elbow_yaw_link",
+          "ball_center_world_m": [
+            10.320831438599908,
+            0.9,
+            0.10999133369045655
+          ],
+          "robot_center_world_m": [
+            10.411439874349481,
+            0.0018239477767252833,
+            0.5509340197453275
+          ]
+        },
+        "robot_passage_root_offset_bound_m": 0.81,
+        "passage_sample_count": 546,
+        "passage_time_range_s": [
+          5.216000000000077,
+          5.761000000000259
+        ],
+        "maximum_native_robot_top_m": 0.9536123836401528,
+        "minimum_ball_bottom_in_passage_m": -9.015472674858693e-06,
+        "minimum_ball_bottom_minus_native_robot_top_m": -0.9536213716456489,
+        "ball_above_every_native_collision_geom_through_passage": false
+      },
+      "coverage_limitations_from_F": [
+        "shoulder_pitch, hip_pitch and ankle_pitch have visual-only geometry",
+        "no complete body silhouette; a no-contact miss alone does not identify a controller failure"
+      ],
+      "trajectory_hash_matches": true,
+      "high_level_records_match_raw_utf8": true
+    },
+    "air_wide": {
+      "case": "air_wide",
+      "root_cause_assessment": {
+        "prediction_error": "Small forecast errors; no evidence that prediction error caused this miss.",
+        "insufficient_time": "Current conservative center travel interval never reaches the shot target.",
+        "control_bias": "Clipped targets stay within the 0.10 m startup deadband; zero movement. No left/right directional difference is demonstrated.",
+        "modeled_collision_coverage": "Native geometry shows positive ball/body separation; no evidence specifically attributes the miss to missing local collision patches.",
+        "missing_actions": "F offers lateral walking only. Fast lateral movement, reach, jump and dive are not available or evaluated."
+      },
+      "matched_outcomes": {
+        "absent": {
+          "right_goal": true,
+          "effective_contact": false,
+          "completed": true,
+          "balance_maintained": null
+        },
+        "passive": {
+          "right_goal": true,
+          "effective_contact": false,
+          "completed": true,
+          "balance_maintained": true
+        },
+        "active": {
+          "right_goal": true,
+          "effective_contact": false,
+          "completed": true,
+          "balance_maintained": true
+        }
+      },
+      "identical_launch": true,
+      "active_ball_trajectory_maximum_difference_from_absent_m": 3.00851537717941e-14,
+      "prediction_errors": {
+        "11.0": {
+          "reference": {
+            "time": 2.8749999999998352,
+            "position": [
+              11.0,
+              0.6,
+              0.2566299999998461
+            ]
+          },
+          "first": {
+            "time": 2.0199999999998886,
+            "model": "gravity_ballistic",
+            "unmodeled_bounce": false,
+            "time_error_s": 5.3290705182007514e-14,
+            "lateral_error_m": 0.0,
+            "height_error_m": 0.004193775000155664
+          },
+          "maximum_absolute_errors": {
+            "time_error_s": 5.3290705182007514e-14,
+            "lateral_error_m": 0.0,
+            "height_error_m": 0.004193775000155664
+          },
+          "usable_model_maximum_absolute_errors": {
+            "time_error_s": 5.3290705182007514e-14,
+            "lateral_error_m": 0.0,
+            "height_error_m": 0.004193775000155664
+          },
+          "unmodeled_bounce_samples": 0
+        },
+        "11.11": {
+          "reference": {
+            "time": 2.888749999999835,
+            "position": [
+              11.11,
+              0.6,
+              0.19757834749983522
+            ]
+          },
+          "first": {
+            "time": 2.0199999999998886,
+            "model": "gravity_ballistic",
+            "unmodeled_bounce": false,
+            "time_error_s": 5.3290705182007514e-14,
+            "lateral_error_m": 0.0,
+            "height_error_m": 0.004262138437667262
+          },
+          "maximum_absolute_errors": {
+            "time_error_s": 5.3290705182007514e-14,
+            "lateral_error_m": 0.0,
+            "height_error_m": 0.004262138437667262
+          },
+          "usable_model_maximum_absolute_errors": {
+            "time_error_s": 5.3290705182007514e-14,
+            "lateral_error_m": 0.0,
+            "height_error_m": 0.004262138437667262
+          },
+          "unmodeled_bounce_samples": 0
+        }
+      },
+      "first_observed_shot": {
+        "time": 2.0199999999998886,
+        "prediction": {
+          "valid": true,
+          "plane_x": 11.0,
+          "time_to_plane_s": 0.855,
+          "lateral_m": 0.6,
+          "height_m": 0.26082377500000176,
+          "model": "gravity_ballistic",
+          "future_floor_contact_unmodeled": false,
+          "inside_aperture": true,
+          "spin_norm_rad_s": 1.8486487246490658e-16,
+          "limitations": "rolling deceleration, spin forces and bounce restitution are not predicted"
+        },
+        "interception_prediction": {
+          "valid": true,
+          "plane_x": 9.602509922476127,
+          "time_to_plane_s": 0.6803137403095159,
+          "lateral_m": 0.6,
+          "height_m": 0.8487153408407337,
+          "model": "gravity_ballistic",
+          "future_floor_contact_unmodeled": false,
+          "inside_aperture": true,
+          "spin_norm_rad_s": 1.8486487246490658e-16,
+          "limitations": "rolling deceleration, spin forces and bounce restitution are not predicted"
+        },
+        "reachability": {
+          "reachable": false,
+          "target_lateral_m": 0.6,
+          "decision_lateral_m": 0.0008645147403368863,
+          "interval_m": [
+            0.0008645147403368863,
+            0.0008645147403368863
+          ],
+          "travel_budget_m": 0.0,
+          "braking_reserve_m": 0.09,
+          "position_tolerance_m": 0.1,
+          "braking_time_available": true,
+          "reason": "insufficient time, braking time or post clearance"
+        },
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "first_usable_control": {
+        "time": 2.0199999999998886,
+        "interception_prediction": {
+          "valid": true,
+          "plane_x": 9.602509922476127,
+          "time_to_plane_s": 0.6803137403095159,
+          "lateral_m": 0.6,
+          "height_m": 0.8487153408407337,
+          "model": "gravity_ballistic",
+          "future_floor_contact_unmodeled": false,
+          "inside_aperture": true,
+          "spin_norm_rad_s": 1.8486487246490658e-16,
+          "limitations": "rolling deceleration, spin forces and bounce restitution are not predicted"
+        },
+        "reachability": {
+          "reachable": false,
+          "target_lateral_m": 0.6,
+          "decision_lateral_m": 0.0008645147403368863,
+          "interval_m": [
+            0.0008645147403368863,
+            0.0008645147403368863
+          ],
+          "travel_budget_m": 0.0,
+          "braking_reserve_m": 0.09,
+          "position_tolerance_m": 0.1,
+          "braking_time_available": true,
+          "reason": "insufficient time, braking time or post clearance"
+        },
+        "tracking": {
+          "requested_target_m": 0.0008645147403368863,
+          "target_m": 0.0008645147403368863,
+          "error_m": 0.0,
+          "predicted_stop_m": 0.000879994499146919,
+          "filtered_world_vy": 3.8699397025081685e-05,
+          "safe": true,
+          "yaw_error_rad": -0.004875452477653997,
+          "direction": 0,
+          "body_projection_uncommanded_vx": -0.0
+        },
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "observation_to_first_usable_delay_s": 0.0,
+      "reachability_summary": {
+        "first": {
+          "reachable": false,
+          "target_lateral_m": 0.6,
+          "decision_lateral_m": 0.0008645147403368863,
+          "interval_m": [
+            0.0008645147403368863,
+            0.0008645147403368863
+          ],
+          "travel_budget_m": 0.0,
+          "braking_reserve_m": 0.09,
+          "position_tolerance_m": 0.1,
+          "braking_time_available": true,
+          "reason": "insufficient time, braking time or post clearance"
+        },
+        "reachable_updates": 0,
+        "unreachable_updates": 35,
+        "interpretation": "center positioning feasibility, not a promised interception or complete collision silhouette"
+      },
+      "maximum_center_travel_budget_m": 0.0,
+      "maximum_decision_error_m": 0.0,
+      "nonzero_delivered_command_samples": 0,
+      "native_geometry": {
+        "native_collision_geom_count": 20,
+        "physics_samples_checked": 902,
+        "minimum_native_ball_robot_surface_distance_m": 0.23517973196427072,
+        "nearest_state": {
+          "time_s": 2.8019999999998024,
+          "geom": "k1_geom_21",
+          "body": "right_elbow_yaw_link",
+          "ball_center_world_m": [
+            10.415999999999737,
+            0.6,
+            0.5390735700000161
+          ],
+          "robot_center_world_m": [
+            10.411693997845118,
+            0.0011889023261650845,
+            0.5509324167948315
+          ]
+        },
+        "robot_passage_root_offset_bound_m": 0.81,
+        "passage_sample_count": 202,
+        "passage_time_range_s": [
+          2.7009999999998136,
+          2.9019999999997914
+        ],
+        "maximum_native_robot_top_m": 0.9536122612117347,
+        "minimum_ball_bottom_in_passage_m": 0.02892107000002013,
+        "minimum_ball_bottom_minus_native_robot_top_m": -0.9246911912117146,
+        "ball_above_every_native_collision_geom_through_passage": false
+      },
+      "coverage_limitations_from_F": [
+        "shoulder_pitch, hip_pitch and ankle_pitch have visual-only geometry",
+        "no complete body silhouette; a no-contact miss alone does not identify a controller failure"
+      ],
+      "trajectory_hash_matches": true,
+      "high_level_records_match_raw_utf8": true
+    },
+    "air_high": {
+      "case": "air_high",
+      "root_cause_assessment": {
+        "prediction_error": "Small forecast errors; no evidence that prediction error caused this miss.",
+        "insufficient_time": "Already laterally aligned; insufficient lateral time does not explain the vertical miss.",
+        "control_bias": "Zero command is appropriate for lateral center alignment; lateral tracking is not a vertical interception action.",
+        "modeled_collision_coverage": "Ball passes above every native collision geom during the entire robot passage.",
+        "missing_actions": "F offers lateral walking only. Fast lateral movement, reach, jump and dive are not available or evaluated."
+      },
+      "matched_outcomes": {
+        "absent": {
+          "right_goal": true,
+          "effective_contact": false,
+          "completed": true,
+          "balance_maintained": null
+        },
+        "passive": {
+          "right_goal": true,
+          "effective_contact": false,
+          "completed": true,
+          "balance_maintained": true
+        },
+        "active": {
+          "right_goal": true,
+          "effective_contact": false,
+          "completed": true,
+          "balance_maintained": true
+        }
+      },
+      "identical_launch": true,
+      "active_ball_trajectory_maximum_difference_from_absent_m": 7.105427493127823e-14,
+      "prediction_errors": {
+        "11.0": {
+          "reference": {
+            "time": 2.8749999999998352,
+            "position": [
+              11.0,
+              -2.2764989732208413e-48,
+              1.1863174999998964
+            ]
+          },
+          "first": {
+            "time": 2.0199999999998886,
+            "model": "gravity_ballistic",
+            "unmodeled_bounce": false,
+            "time_error_s": 5.3290705182007514e-14,
+            "lateral_error_m": 2.2764989732208413e-48,
+            "height_error_m": 0.004193775000105315
+          },
+          "maximum_absolute_errors": {
+            "time_error_s": 5.3290705182007514e-14,
+            "lateral_error_m": 3.151317587549785e-48,
+            "height_error_m": 0.004193775000105315
+          },
+          "usable_model_maximum_absolute_errors": {
+            "time_error_s": 5.3290705182007514e-14,
+            "lateral_error_m": 3.151317587549785e-48,
+            "height_error_m": 0.004193775000105315
+          },
+          "unmodeled_bounce_samples": 0
+        },
+        "11.11": {
+          "reference": {
+            "time": 2.888749999999835,
+            "position": [
+              11.11,
+              -2.3117223821124233e-48,
+              1.1418752224998872
+            ]
+          },
+          "first": {
+            "time": 2.0199999999998886,
+            "model": "gravity_ballistic",
+            "unmodeled_bounce": false,
+            "time_error_s": 5.3290705182007514e-14,
+            "lateral_error_m": 2.3117223821124233e-48,
+            "height_error_m": 0.004262138437615359
+          },
+          "maximum_absolute_errors": {
+            "time_error_s": 5.3290705182007514e-14,
+            "lateral_error_m": 3.2026442173477155e-48,
+            "height_error_m": 0.004262138437615359
+          },
+          "usable_model_maximum_absolute_errors": {
+            "time_error_s": 5.3290705182007514e-14,
+            "lateral_error_m": 3.2026442173477155e-48,
+            "height_error_m": 0.004262138437615359
+          },
+          "unmodeled_bounce_samples": 0
+        }
+      },
+      "first_observed_shot": {
+        "time": 2.0199999999998886,
+        "prediction": {
+          "valid": true,
+          "plane_x": 11.0,
+          "time_to_plane_s": 0.855,
+          "lateral_m": 0.0,
+          "height_m": 1.1905112750000018,
+          "model": "gravity_ballistic",
+          "future_floor_contact_unmodeled": false,
+          "inside_aperture": true,
+          "spin_norm_rad_s": 4.0891526182783057e-16,
+          "limitations": "rolling deceleration, spin forces and bounce restitution are not predicted"
+        },
+        "interception_prediction": {
+          "valid": true,
+          "plane_x": 9.602509922476127,
+          "time_to_plane_s": 0.6803137403095159,
+          "lateral_m": 0.0,
+          "height_m": 1.5927986899195945,
+          "model": "gravity_ballistic",
+          "future_floor_contact_unmodeled": false,
+          "inside_aperture": true,
+          "spin_norm_rad_s": 4.0891526182783057e-16,
+          "limitations": "rolling deceleration, spin forces and bounce restitution are not predicted"
+        },
+        "reachability": {
+          "reachable": true,
+          "target_lateral_m": 0.0,
+          "decision_lateral_m": 0.0008645147403368863,
+          "interval_m": [
+            0.0008645147403368863,
+            0.0008645147403368863
+          ],
+          "travel_budget_m": 0.0,
+          "braking_reserve_m": 0.09,
+          "position_tolerance_m": 0.1,
+          "braking_time_available": true,
+          "reason": "empirical center-position estimate within 0.10m tolerance"
+        },
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "first_usable_control": {
+        "time": 2.0199999999998886,
+        "interception_prediction": {
+          "valid": true,
+          "plane_x": 9.602509922476127,
+          "time_to_plane_s": 0.6803137403095159,
+          "lateral_m": 0.0,
+          "height_m": 1.5927986899195945,
+          "model": "gravity_ballistic",
+          "future_floor_contact_unmodeled": false,
+          "inside_aperture": true,
+          "spin_norm_rad_s": 4.0891526182783057e-16,
+          "limitations": "rolling deceleration, spin forces and bounce restitution are not predicted"
+        },
+        "reachability": {
+          "reachable": true,
+          "target_lateral_m": 0.0,
+          "decision_lateral_m": 0.0008645147403368863,
+          "interval_m": [
+            0.0008645147403368863,
+            0.0008645147403368863
+          ],
+          "travel_budget_m": 0.0,
+          "braking_reserve_m": 0.09,
+          "position_tolerance_m": 0.1,
+          "braking_time_available": true,
+          "reason": "empirical center-position estimate within 0.10m tolerance"
+        },
+        "tracking": {
+          "requested_target_m": 0.0008645147403368863,
+          "target_m": 0.0008645147403368863,
+          "error_m": 0.0,
+          "predicted_stop_m": 0.000879994499146919,
+          "filtered_world_vy": 3.8699397025081685e-05,
+          "safe": true,
+          "yaw_error_rad": -0.004875452477653997,
+          "direction": 0,
+          "body_projection_uncommanded_vx": -0.0
+        },
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "observation_to_first_usable_delay_s": 0.0,
+      "reachability_summary": {
+        "first": {
+          "reachable": true,
+          "target_lateral_m": 0.0,
+          "decision_lateral_m": 0.0008645147403368863,
+          "interval_m": [
+            0.0008645147403368863,
+            0.0008645147403368863
+          ],
+          "travel_budget_m": 0.0,
+          "braking_reserve_m": 0.09,
+          "position_tolerance_m": 0.1,
+          "braking_time_available": true,
+          "reason": "empirical center-position estimate within 0.10m tolerance"
+        },
+        "reachable_updates": 35,
+        "unreachable_updates": 0,
+        "interpretation": "center positioning feasibility, not a promised interception or complete collision silhouette"
+      },
+      "maximum_center_travel_budget_m": 0.0,
+      "maximum_decision_error_m": 0.0,
+      "nonzero_delivered_command_samples": 0,
+      "native_geometry": {
+        "native_collision_geom_count": 20,
+        "physics_samples_checked": 902,
+        "minimum_native_ball_robot_surface_distance_m": 0.30587264541854686,
+        "nearest_state": {
+          "time_s": 2.8209999999998003,
+          "geom": "k1_geom_7",
+          "body": "aahead_pitch_link",
+          "ball_center_world_m": [
+            10.56799999999972,
+            -2.1141683226296063e-48,
+            1.3429058900000252
+          ],
+          "robot_center_world_m": [
+            10.411683611624301,
+            0.0011954272137434953,
+            0.5509325587377654
+          ]
+        },
+        "robot_passage_root_offset_bound_m": 0.81,
+        "passage_sample_count": 202,
+        "passage_time_range_s": [
+          2.7009999999998136,
+          2.9019999999997914
+        ],
+        "maximum_native_robot_top_m": 0.9536122612117347,
+        "minimum_ball_bottom_in_passage_m": 0.9872960700000274,
+        "minimum_ball_bottom_minus_native_robot_top_m": 0.03368380878829269,
+        "ball_above_every_native_collision_geom_through_passage": true
+      },
+      "coverage_limitations_from_F": [
+        "shoulder_pitch, hip_pitch and ankle_pitch have visual-only geometry",
+        "no complete body silhouette; a no-contact miss alone does not identify a controller failure"
+      ],
+      "trajectory_hash_matches": true,
+      "high_level_records_match_raw_utf8": true
+    },
+    "bouncing": {
+      "case": "bouncing",
+      "root_cause_assessment": {
+        "prediction_error": "Large raw bounce errors are flagged and rejected; usable rolling estimates are evaluated separately.",
+        "insufficient_time": "Current conservative center travel interval never reaches the shot target.",
+        "control_bias": "Clipped targets stay within the 0.10 m startup deadband; zero movement. No left/right directional difference is demonstrated.",
+        "modeled_collision_coverage": "Native geometry shows positive ball/body separation; no evidence specifically attributes the miss to missing local collision patches.",
+        "missing_actions": "F offers lateral walking only. Fast lateral movement, reach, jump and dive are not available or evaluated."
+      },
+      "matched_outcomes": {
+        "absent": {
+          "right_goal": true,
+          "effective_contact": false,
+          "completed": true,
+          "balance_maintained": null
+        },
+        "passive": {
+          "right_goal": true,
+          "effective_contact": false,
+          "completed": true,
+          "balance_maintained": true
+        },
+        "active": {
+          "right_goal": true,
+          "effective_contact": false,
+          "completed": true,
+          "balance_maintained": true
+        }
+      },
+      "identical_launch": true,
+      "active_ball_trajectory_maximum_difference_from_absent_m": 3.00851537717941e-14,
+      "prediction_errors": {
+        "11.0": {
+          "reference": {
+            "time": 6.801811430424382,
+            "position": [
+              11.0,
+              -0.35,
+              0.10999758534448022
+            ]
+          },
+          "first": {
+            "time": 2.0199999999998886,
+            "model": "gravity_ballistic",
+            "unmodeled_bounce": true,
+            "time_error_s": -1.801811430424494,
+            "lateral_error_m": 0.0,
+            "height_error_m": -43.45509568534445
+          },
+          "maximum_absolute_errors": {
+            "time_error_s": 1.8018114304245447,
+            "lateral_error_m": 5.551115123125783e-17,
+            "height_error_m": 77.89864999586598
+          },
+          "usable_model_maximum_absolute_errors": {
+            "time_error_s": 0.09099109800001148,
+            "lateral_error_m": 5.551115123125783e-17,
+            "height_error_m": 2.414655519783482e-06
+          },
+          "unmodeled_bounce_samples": 36
+        },
+        "11.11": {
+          "reference": {
+            "time": 6.864887114417027,
+            "position": [
+              11.11,
+              -0.35,
+              0.10999783336269724
+            ]
+          },
+          "first": {
+            "time": 2.0199999999998886,
+            "model": "gravity_ballistic",
+            "unmodeled_bounce": true,
+            "time_error_s": -1.828220447750473,
+            "lateral_error_m": 0.0,
+            "height_error_m": -44.540790433362666
+          },
+          "maximum_absolute_errors": {
+            "time_error_s": 1.8282204477505237,
+            "lateral_error_m": 5.551115123125783e-17,
+            "height_error_m": 80.29737224934757
+          },
+          "usable_model_maximum_absolute_errors": {
+            "time_error_s": 0.09318066361973099,
+            "lateral_error_m": 5.551115123125783e-17,
+            "height_error_m": 2.1666373027640073e-06
+          },
+          "unmodeled_bounce_samples": 36
+        }
+      },
+      "first_observed_shot": {
+        "time": 2.0199999999998886,
+        "prediction": {
+          "valid": true,
+          "plane_x": 11.0,
+          "time_to_plane_s": 2.979999999999999,
+          "lateral_m": -0.35,
+          "height_m": -43.34509809999997,
+          "model": "gravity_ballistic",
+          "future_floor_contact_unmodeled": true,
+          "inside_aperture": null,
+          "spin_norm_rad_s": 1.1693965995414164e-17,
+          "limitations": "rolling deceleration, spin forces and bounce restitution are not predicted"
+        },
+        "interception_prediction": {
+          "valid": true,
+          "plane_x": 9.602509922476127,
+          "time_to_plane_s": 2.5141699741587082,
+          "lateral_m": -0.35,
+          "height_m": -30.700093731134622,
+          "model": "gravity_ballistic",
+          "future_floor_contact_unmodeled": true,
+          "inside_aperture": null,
+          "spin_norm_rad_s": 1.1693965995414164e-17,
+          "limitations": "rolling deceleration, spin forces and bounce restitution are not predicted"
+        },
+        "reachability": null,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "first_usable_control": {
+        "time": 2.6999999999998137,
+        "interception_prediction": {
+          "valid": true,
+          "plane_x": 9.601756800614314,
+          "time_to_plane_s": 3.2368785055887836,
+          "lateral_m": -0.3499999999999999,
+          "height_m": 0.11,
+          "model": "constant_speed_ground",
+          "future_floor_contact_unmodeled": false,
+          "inside_aperture": true,
+          "spin_norm_rad_s": 15.952359031174698,
+          "limitations": "rolling deceleration, spin forces and bounce restitution are not predicted"
+        },
+        "reachability": {
+          "reachable": false,
+          "target_lateral_m": -0.3499999999999999,
+          "decision_lateral_m": -0.0325348306430187,
+          "interval_m": [
+            -0.0325348306430187,
+            0.03484087047473806
+          ],
+          "travel_budget_m": 0.03368785055887838,
+          "braking_reserve_m": 0.09,
+          "position_tolerance_m": 0.1,
+          "braking_time_available": true,
+          "reason": "insufficient time, braking time or post clearance"
+        },
+        "tracking": {
+          "requested_target_m": -0.0325348306430187,
+          "target_m": -0.0325348306430187,
+          "error_m": -0.03368785055887838,
+          "predicted_stop_m": 0.0011639898951145392,
+          "filtered_world_vy": 2.7424948137154238e-05,
+          "safe": true,
+          "yaw_error_rad": -0.005829422274676223,
+          "direction": 0,
+          "body_projection_uncommanded_vx": -0.0
+        },
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "observation_to_first_usable_delay_s": 0.6799999999999251,
+      "reachability_summary": {
+        "first": {
+          "reachable": false,
+          "target_lateral_m": -0.3499999999999999,
+          "decision_lateral_m": -0.0325348306430187,
+          "interval_m": [
+            -0.0325348306430187,
+            0.03484087047473806
+          ],
+          "travel_budget_m": 0.03368785055887838,
+          "braking_reserve_m": 0.09,
+          "position_tolerance_m": 0.1,
+          "braking_time_available": true,
+          "reason": "insufficient time, braking time or post clearance"
+        },
+        "reachable_updates": 0,
+        "unreachable_updates": 164,
+        "interpretation": "center positioning feasibility, not a promised interception or complete collision silhouette"
+      },
+      "maximum_center_travel_budget_m": 0.03368785055887838,
+      "maximum_decision_error_m": 0.03368785055887838,
+      "nonzero_delivered_command_samples": 0,
+      "native_geometry": {
+        "native_collision_geom_count": 20,
+        "physics_samples_checked": 4928,
+        "minimum_native_ball_robot_surface_distance_m": 0.11082194418708989,
+        "nearest_state": {
+          "time_s": 6.445000000000487,
+          "geom": "k1_geom_29",
+          "body": "left_knee_pitch_link",
+          "ball_center_world_m": [
+            10.376942251460793,
+            -0.35,
+            0.10999822390649448
+          ],
+          "robot_center_world_m": [
+            10.411422568013768,
+            0.0019719829504050326,
+            0.5509335723257753
+          ]
+        },
+        "robot_passage_root_offset_bound_m": 0.81,
+        "passage_sample_count": 927,
+        "passage_time_range_s": [
+          6.002000000000339,
+          6.928000000000648
+        ],
+        "maximum_native_robot_top_m": 0.9536119296564554,
+        "minimum_ball_bottom_in_passage_m": -9.021282334750746e-06,
+        "minimum_ball_bottom_minus_native_robot_top_m": -0.9536209109421222,
+        "ball_above_every_native_collision_geom_through_passage": false
+      },
+      "coverage_limitations_from_F": [
+        "shoulder_pitch, hip_pitch and ankle_pitch have visual-only geometry",
+        "no complete body silhouette; a no-contact miss alone does not identify a controller failure"
+      ],
+      "trajectory_hash_matches": true,
+      "high_level_records_match_raw_utf8": true
+    }
+  },
+  "input_manifest": {
+    "k1_goalkeeper/positioning.py": "369bb4f8dc55a729cc4d5f4cb20da78e048d59b2c80933fe475c3b86e1cbcaba",
+    "k1_goalkeeper/positioning_validation.py": "4677c7a63e75873c3cd3e8e5e58b50fe95c3b63740f7a5ed108c14f39c1df767",
+    "reports/collision_audit.json": "5f0365111d7b02ab07ed083476ad1dc851c78dc9752097dc5addc30f6c1037f7",
+    "reports/positioning_validation/air_high_absent/summary.json": "d6f014e9bd3898af227e777d891a0f2bfa5461271d52b7610c0c8292ce35ed3d",
+    "reports/positioning_validation/air_high_absent/trajectory.npz": "98f5faf6a34cf56d086adff25d60a08efe3757b98da11491b98736dd66899471",
+    "reports/positioning_validation/air_high_active/summary.json": "95eab724ead254ff24936fe8439d4f88c79c5d921ca2ebce6237d07e0e774000",
+    "reports/positioning_validation/air_high_active/trajectory.npz": "8f70913cfe8e1daf5d62dad0e0e251b0195173c409eaf6e097520039e2c6e570",
+    "reports/positioning_validation/air_high_passive/summary.json": "a7a248e5010feb4ca35e29cb275be6b18f05ba5c14c3fec667aaf4a7c5d86c46",
+    "reports/positioning_validation/air_high_passive/trajectory.npz": "5308122c79ec91314001fd109d894e448fc0bb7c4fc36835bc20b4e0750169f1",
+    "reports/positioning_validation/air_wide_absent/summary.json": "fe47fa757e176ff68bdd11ec3e70deacbb46b42f49084af66631a2a5ccdf829c",
+    "reports/positioning_validation/air_wide_absent/trajectory.npz": "51b3ae370eb6c1a209253052fb3735f7183e4ea4db021dab8661b7099b2f2d33",
+    "reports/positioning_validation/air_wide_active/summary.json": "0e12502ba9d4cf7ceb04c15f14c4a3d67f439073a216eb58bd4dd6867438a7c0",
+    "reports/positioning_validation/air_wide_active/trajectory.npz": "0b04096ae8cdbd03d7d0e8a78acb8ae4475a1e1ba4be3237905b0aebc5546dca",
+    "reports/positioning_validation/air_wide_passive/summary.json": "c204611613e0e1ae6efa4c2ad1a23fdd08c65a4a99c9e5e62f62ca1534605437",
+    "reports/positioning_validation/air_wide_passive/trajectory.npz": "e687a9580f4d0b7397f4f063b95003e96d64c437fe5f6520ee762581059a0cd8",
+    "reports/positioning_validation/bouncing_absent/summary.json": "5e6cf0dc2e4fab5d4b30c637763209b5a68d2488463709c8bba7e49a1fd20f7a",
+    "reports/positioning_validation/bouncing_absent/trajectory.npz": "28a20c8f9bcc75f332743e497106cd19a77d1b67bb30850ad1ff54740414c034",
+    "reports/positioning_validation/bouncing_active/summary.json": "8b4c38a487100be3f040f5b55f67aea55ba60cb2040d0cf473b19f60c6fd29dc",
+    "reports/positioning_validation/bouncing_active/trajectory.npz": "de329977850c1a0f0f5ea09e1f06223b0cb36e0f8f44180b4f350e2734c9ef48",
+    "reports/positioning_validation/bouncing_passive/summary.json": "1d34ffa7bf830bca5c988c5b7c36a969d0073b2e8efd81dbf2cf62421b886652",
+    "reports/positioning_validation/bouncing_passive/trajectory.npz": "759b790c8e83ac1d19d7d2e25473d8312410e1b6d01a59e8de6b0cb2c5532488",
+    "reports/positioning_validation/position_+0.40/summary.json": "dcd681e517d388d612e4b98f850ddda3104cf99af2ce52e94dcd132f2563a8a7",
+    "reports/positioning_validation/position_+0.40/trajectory.npz": "05a00c396db6e97bbdf94509cadc9b4fceec255015a4586cfb8478702e3b2cbf",
+    "reports/positioning_validation/position_-0.40/summary.json": "07d7906a6412d0ad779503c8fec8b837c025d7fc4816cfb02bd95ec0e9c447fd",
+    "reports/positioning_validation/position_-0.40/trajectory.npz": "451fa24ae1abff4cb6901528a8cc4365cf53be1ba5864e8b4b21cbe50681a19d",
+    "reports/positioning_validation/results.json": "b164d0ce301aaf8cb816709a7c5e754c1d3d5a45eb88a58186fee5951a13d701",
+    "reports/positioning_validation/scene_free.xml": "9ffa16f227c9e54ea36fd58c84c826224f21d832076bc8b3b517edd4ee481875",
+    "reports/positioning_validation/wide_left_absent/summary.json": "a3e2af56fbc16980078e7288c0a38dd877bf7d91c2875e5910f7d0d81a6f1301",
+    "reports/positioning_validation/wide_left_absent/trajectory.npz": "c3cecd3e6d04d6d6f1853891f81b9d5bc4ef5179169265b30ebf519d1cb9ed63",
+    "reports/positioning_validation/wide_left_active/summary.json": "6b290b7f1af78e5efbbd9e0092696c3fe0efced02d26770eea888fba3455e166",
+    "reports/positioning_validation/wide_left_active/trajectory.npz": "0556a4c685827529e81474047fdb48125c5da9ccee04e3f92d13ad6ffc6e7825",
+    "reports/positioning_validation/wide_left_passive/summary.json": "8ba0e1a7737b1a70199a5899ba8ad4cbf267cef9010a1f56d299ba2be9f8f841",
+    "reports/positioning_validation/wide_left_passive/trajectory.npz": "9266f460e36c4c4fcf21e874339a37fa718dba2bef9b0da8b1be4c052f88d584",
+    "reports/positioning_validation/wide_right_absent/summary.json": "6d3bbceef874d96c2d38aa65c1909294084d0da64d0ede9aff042dcec5eaaf59",
+    "reports/positioning_validation/wide_right_absent/trajectory.npz": "4b191e99af579d086116641af925f9e090bb05293f75bd9ec7ef67b8c9a2db38",
+    "reports/positioning_validation/wide_right_active/summary.json": "6f4b89190f7746a8102b6faa4ffdfff2547310efd00de477aaad1247d9a46fb7",
+    "reports/positioning_validation/wide_right_active/trajectory.npz": "fdf09454f130044c08a8856c962eebae69c1c389c9f9e4092fa7d90c9096aa40",
+    "reports/positioning_validation/wide_right_passive/summary.json": "0884aa7f323ca5593c2abb95faa514eb250c3701c5da5d218d5f13357c1c0d8b",
+    "reports/positioning_validation/wide_right_passive/trajectory.npz": "6e6d094be7fc80d7519859890e8654130f7568a66333ba1fd3b73650b5931835",
+    "scripts/audit_collisions.py": "6553bb4d344e041640b140e42872da15e48b117ab18e13bc12cb8ff21698176c",
+    "scripts/audit_goalkeeper_failures.py": "f528f3cbfdf2a18d232b5e44574dbbe181be83f283d8a723e5f14c83630e4cc5"
+  },
+  "environment": {
+    "mujoco": "3.3.7",
+    "numpy": "2.3.3"
+  },
+  "verification": {
+    "historical_reports_unchanged": true,
+    "historical_report_files_checked": 568,
+    "all_saved_evidence_checks_pass": true
+  }
+}

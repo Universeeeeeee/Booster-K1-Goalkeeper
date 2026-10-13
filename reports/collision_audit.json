@@ -1,0 +1,7010 @@
+{
+  "stage": "E0",
+  "mujoco_version": "3.3.7",
+  "model": "official K1 full field scene",
+  "generation": ".venv/bin/python scripts/audit_collisions.py --reproduce-tests",
+  "compiled_via_filepath": true,
+  "temporary_scene_deleted": true,
+  "protected_sha256_before": {
+    "assets/booster_assets/robots/K1/K1_22dof.xml": "1f1a1cdd451f777600c66fc30ad8d7537198ee7bc51f8ed20d67a51b5001a651",
+    "models/futsal_goal_3x2_reference.urdf": "10f67364f44a02182989416b7cce6b9d4f768fea411d44db6ccec08d9ffbfa2b",
+    "assets/booster_deploy/tasks/locomotion/robots/k1/models/k1_walk.pt": "2d860167ed827e8d44cd65abd4c27f474904352bcb98c0cfa97c078f63e2fea5"
+  },
+  "protected_sha256_after": {
+    "assets/booster_assets/robots/K1/K1_22dof.xml": "1f1a1cdd451f777600c66fc30ad8d7537198ee7bc51f8ed20d67a51b5001a651",
+    "models/futsal_goal_3x2_reference.urdf": "10f67364f44a02182989416b7cce6b9d4f768fea411d44db6ccec08d9ffbfa2b",
+    "assets/booster_deploy/tasks/locomotion/robots/k1/models/k1_walk.pt": "2d860167ed827e8d44cd65abd4c27f474904352bcb98c0cfa97c078f63e2fea5"
+  },
+  "protected_unchanged": true,
+  "official_compiled_k1_geometry_identical": true,
+  "ball_mask_rule": "(geom.contype & ball.conaffinity) != 0 OR (ball.contype & geom.conaffinity) != 0",
+  "ball_body_independent": true,
+  "excluded_body_pairs": [],
+  "explicit_geom_pairs": [],
+  "ngeom": 103,
+  "k1_ngeom": 44,
+  "k1_ball_collision_eligible_count": 20,
+  "k1_disabled_visual_count": 24,
+  "geometry_units": "m; box size=half-extents; cylinder size=[radius, half-length, unused]; mesh size is compiled bound, not a primitive",
+  "mesh_contact_note": "MuJoCo convex mesh collision does not reproduce every visual surface or concavity.",
+  "coverage": {
+    "trunk": {
+      "eligible_geoms": [
+        "k1_geom_1",
+        "k1_geom_2"
+      ],
+      "disabled_visual_geoms": [
+        "k1_geom_0",
+        "k1_geom_3"
+      ],
+      "visual_only_bodies": []
+    },
+    "head": {
+      "eligible_geoms": [
+        "k1_geom_5",
+        "k1_geom_7"
+      ],
+      "disabled_visual_geoms": [
+        "k1_geom_4",
+        "k1_geom_6"
+      ],
+      "visual_only_bodies": []
+    },
+    "left_arm": {
+      "eligible_geoms": [
+        "k1_geom_10",
+        "k1_geom_12",
+        "k1_geom_14"
+      ],
+      "disabled_visual_geoms": [
+        "k1_geom_8",
+        "k1_geom_9",
+        "k1_geom_11",
+        "k1_geom_13"
+      ],
+      "visual_only_bodies": [
+        "aaleft_shoulder_pitch_link"
+      ]
+    },
+    "right_arm": {
+      "eligible_geoms": [
+        "k1_geom_17",
+        "k1_geom_19",
+        "k1_geom_21"
+      ],
+      "disabled_visual_geoms": [
+        "k1_geom_15",
+        "k1_geom_16",
+        "k1_geom_18",
+        "k1_geom_20"
+      ],
+      "visual_only_bodies": [
+        "aaright_shoulder_pitch_link"
+      ]
+    },
+    "left_leg": {
+      "eligible_geoms": [
+        "k1_geom_24",
+        "k1_geom_26",
+        "k1_geom_28",
+        "k1_geom_29"
+      ],
+      "disabled_visual_geoms": [
+        "k1_geom_22",
+        "k1_geom_23",
+        "k1_geom_25",
+        "k1_geom_27",
+        "k1_geom_30"
+      ],
+      "visual_only_bodies": [
+        "left_ankle_pitch_link",
+        "left_hip_pitch_link"
+      ]
+    },
+    "left_foot": {
+      "eligible_geoms": [
+        "k1_geom_32"
+      ],
+      "disabled_visual_geoms": [
+        "k1_geom_31"
+      ],
+      "visual_only_bodies": []
+    },
+    "right_leg": {
+      "eligible_geoms": [
+        "k1_geom_35",
+        "k1_geom_37",
+        "k1_geom_39",
+        "k1_geom_40"
+      ],
+      "disabled_visual_geoms": [
+        "k1_geom_33",
+        "k1_geom_34",
+        "k1_geom_36",
+        "k1_geom_38",
+        "k1_geom_41"
+      ],
+      "visual_only_bodies": [
+        "right_ankle_pitch_link",
+        "right_hip_pitch_link"
+      ]
+    },
+    "right_foot": {
+      "eligible_geoms": [
+        "k1_geom_43"
+      ],
+      "disabled_visual_geoms": [
+        "k1_geom_42"
+      ],
+      "visual_only_bodies": []
+    }
+  },
+  "geometries": [
+    {
+      "geom_id": 0,
+      "name": "ground",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_PLANE",
+      "local_position_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        13.0,
+        9.0,
+        1.0
+      ],
+      "world_position_initialized_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "world_rotation_initialized": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": true
+    },
+    {
+      "geom_id": 1,
+      "name": "turf",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        0.0,
+        0.0,
+        -0.011
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        13.0,
+        9.0,
+        0.01
+      ],
+      "world_position_initialized_m": [
+        0.0,
+        0.0,
+        -0.011
+      ],
+      "world_rotation_initialized": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.11999999731779099,
+        0.36000001430511475,
+        0.18000000715255737,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 2,
+      "name": "line_boundary_left",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        -11.0,
+        0.0,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.04,
+        7.0,
+        0.0001
+      ],
+      "world_position_initialized_m": [
+        -11.0,
+        0.0,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 3,
+      "name": "line_penalty_left_front",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        -6.0,
+        0.0,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.04,
+        4.0,
+        0.0001
+      ],
+      "world_position_initialized_m": [
+        -6.0,
+        0.0,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 4,
+      "name": "line_penalty_left_top",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        -8.5,
+        4.0,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        2.5,
+        0.04,
+        0.0001
+      ],
+      "world_position_initialized_m": [
+        -8.5,
+        4.0,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 5,
+      "name": "line_penalty_left_bottom",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        -8.5,
+        -4.0,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        2.5,
+        0.04,
+        0.0001
+      ],
+      "world_position_initialized_m": [
+        -8.5,
+        -4.0,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 6,
+      "name": "line_goalarea_left_front",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        -9.0,
+        0.0,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.04,
+        2.5,
+        0.0001
+      ],
+      "world_position_initialized_m": [
+        -9.0,
+        0.0,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 7,
+      "name": "line_goalarea_left_top",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        -10.0,
+        2.5,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        1.0,
+        0.04,
+        0.0001
+      ],
+      "world_position_initialized_m": [
+        -10.0,
+        2.5,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 8,
+      "name": "line_goalarea_left_bottom",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        -10.0,
+        -2.5,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        1.0,
+        0.04,
+        0.0001
+      ],
+      "world_position_initialized_m": [
+        -10.0,
+        -2.5,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 9,
+      "name": "line_penalty_mark_left_x",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        -7.5,
+        0.0,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.1,
+        0.04,
+        0.0001
+      ],
+      "world_position_initialized_m": [
+        -7.5,
+        0.0,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 10,
+      "name": "line_penalty_mark_left_y",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        -7.5,
+        0.0,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.04,
+        0.1,
+        0.0001
+      ],
+      "world_position_initialized_m": [
+        -7.5,
+        0.0,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 11,
+      "name": "line_corner_left_top",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        -10.569855965113794,
+        6.569855965113793,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        0.6532814824381892,
+        0.27059805007309895,
+        -0.6532814824381892,
+        0.27059805007309895
+      ],
+      "size_m": [
+        9.999999747379378e-05,
+        0.1416250337822249,
+        0.5232590248215426
+      ],
+      "world_position_initialized_m": [
+        -10.569855965113794,
+        6.569855965113793,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          -1.3877787807814457e-17,
+          -0.7071067811865497,
+          -0.7071067811865495
+        ],
+        [
+          0.0,
+          0.7071067811865495,
+          -0.7071067811865497
+        ],
+        [
+          1.0000000000000029,
+          0.0,
+          1.3877787807814457e-17
+        ]
+      ],
+      "mesh": "mesh_corner_left_top",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 12,
+      "name": "line_corner_left_bottom",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        -10.569855965113792,
+        -6.569855965113793,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        0.2705980500730989,
+        0.6532814824381896,
+        -0.2705980500730989,
+        0.6532814824381896
+      ],
+      "size_m": [
+        9.999999747378791e-05,
+        0.1416250337822256,
+        0.5232590248215433
+      ],
+      "world_position_initialized_m": [
+        -10.569855965113792,
+        -6.569855965113793,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          -0.70710678118655,
+          0.7071067811865506
+        ],
+        [
+          0.0,
+          -0.7071067811865506,
+          -0.70710678118655
+        ],
+        [
+          1.000000000000004,
+          0.0,
+          0.0
+        ]
+      ],
+      "mesh": "mesh_corner_left_bottom",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 13,
+      "name": "line_boundary_right",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        11.0,
+        0.0,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.04,
+        7.0,
+        0.0001
+      ],
+      "world_position_initialized_m": [
+        11.0,
+        0.0,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 14,
+      "name": "line_penalty_right_front",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        6.0,
+        0.0,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.04,
+        4.0,
+        0.0001
+      ],
+      "world_position_initialized_m": [
+        6.0,
+        0.0,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 15,
+      "name": "line_penalty_right_top",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        8.5,
+        4.0,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        2.5,
+        0.04,
+        0.0001
+      ],
+      "world_position_initialized_m": [
+        8.5,
+        4.0,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 16,
+      "name": "line_penalty_right_bottom",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        8.5,
+        -4.0,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        2.5,
+        0.04,
+        0.0001
+      ],
+      "world_position_initialized_m": [
+        8.5,
+        -4.0,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 17,
+      "name": "line_goalarea_right_front",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        9.0,
+        0.0,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.04,
+        2.5,
+        0.0001
+      ],
+      "world_position_initialized_m": [
+        9.0,
+        0.0,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 18,
+      "name": "line_goalarea_right_top",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        10.0,
+        2.5,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        1.0,
+        0.04,
+        0.0001
+      ],
+      "world_position_initialized_m": [
+        10.0,
+        2.5,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 19,
+      "name": "line_goalarea_right_bottom",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        10.0,
+        -2.5,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        1.0,
+        0.04,
+        0.0001
+      ],
+      "world_position_initialized_m": [
+        10.0,
+        -2.5,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 20,
+      "name": "line_penalty_mark_right_x",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        7.5,
+        0.0,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.1,
+        0.04,
+        0.0001
+      ],
+      "world_position_initialized_m": [
+        7.5,
+        0.0,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 21,
+      "name": "line_penalty_mark_right_y",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        7.5,
+        0.0,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.04,
+        0.1,
+        0.0001
+      ],
+      "world_position_initialized_m": [
+        7.5,
+        0.0,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 22,
+      "name": "line_corner_right_top",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        10.569855965113792,
+        6.569855965113793,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        0.27059805007309906,
+        0.6532814824381896,
+        -0.27059805007309906,
+        0.6532814824381896
+      ],
+      "size_m": [
+        9.999999747381182e-05,
+        0.14162503378222555,
+        0.5232590248215432
+      ],
+      "world_position_initialized_m": [
+        10.569855965113792,
+        6.569855965113793,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          5.551115123125783e-17,
+          -0.7071067811865505,
+          0.7071067811865505
+        ],
+        [
+          0.0,
+          -0.7071067811865505,
+          -0.7071067811865505
+        ],
+        [
+          1.0000000000000042,
+          0.0,
+          0.0
+        ]
+      ],
+      "mesh": "mesh_corner_right_top",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 23,
+      "name": "line_corner_right_bottom",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        10.569855965113794,
+        -6.569855965113793,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        0.6532814824381892,
+        0.2705980500730989,
+        -0.6532814824381892,
+        0.2705980500730989
+      ],
+      "size_m": [
+        9.999999747379378e-05,
+        0.14162503378222543,
+        0.5232590248215425
+      ],
+      "world_position_initialized_m": [
+        10.569855965113794,
+        -6.569855965113793,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          1.3877787807814457e-17,
+          -0.7071067811865496,
+          -0.7071067811865495
+        ],
+        [
+          0.0,
+          0.7071067811865495,
+          -0.7071067811865496
+        ],
+        [
+          1.0000000000000029,
+          0.0,
+          -1.3877787807814457e-17
+        ]
+      ],
+      "mesh": "mesh_corner_right_bottom",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 24,
+      "name": "line_boundary_top",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        0.0,
+        7.0,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        11.0,
+        0.04,
+        0.0001
+      ],
+      "world_position_initialized_m": [
+        0.0,
+        7.0,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 25,
+      "name": "line_boundary_bottom",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        0.0,
+        -7.0,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        11.0,
+        0.04,
+        0.0001
+      ],
+      "world_position_initialized_m": [
+        0.0,
+        -7.0,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 26,
+      "name": "line_halfway",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        0.0,
+        0.0,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.04,
+        7.0,
+        0.0001
+      ],
+      "world_position_initialized_m": [
+        0.0,
+        0.0,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 27,
+      "name": "line_center_mark_x",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        0.0,
+        0.0,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.1,
+        0.04,
+        0.0001
+      ],
+      "world_position_initialized_m": [
+        0.0,
+        0.0,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 28,
+      "name": "line_center_mark_y",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        0.0,
+        0.0,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.04,
+        0.1,
+        0.0001
+      ],
+      "world_position_initialized_m": [
+        0.0,
+        0.0,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 29,
+      "name": "line_center_circle",
+      "body_id": 0,
+      "body": "world",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        -3.7358868059268065e-06,
+        -4.1737488110464126e-16,
+        0.001
+      ],
+      "local_quaternion_wxyz": [
+        0.5000000000000007,
+        0.5000000000000007,
+        -0.5000000000000007,
+        0.5000000000000007
+      ],
+      "size_m": [
+        9.999999747378779e-05,
+        2.040003697739839,
+        2.039999961853033
+      ],
+      "world_position_initialized_m": [
+        -3.7358868059268065e-06,
+        -4.1737488110464126e-16,
+        0.001
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          -1.0000000000000027,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0000000000000027
+        ],
+        [
+          1.0000000000000027,
+          0.0,
+          0.0
+        ]
+      ],
+      "mesh": "mesh_center_circle",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "group": 2,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 30,
+      "name": "k1_geom_0",
+      "body_id": 1,
+      "body": "trunk",
+      "is_k1": true,
+      "region": "trunk",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        0.0011758985488022004,
+        1.3031462248589787e-06,
+        0.08277350317192483
+      ],
+      "local_quaternion_wxyz": [
+        0.9999999927237596,
+        1.0140774168949778e-05,
+        -9.261248423149659e-05,
+        -7.663271516036751e-05
+      ],
+      "size_m": [
+        0.07819222409490885,
+        0.10253443829166495,
+        0.19227395874820888
+      ],
+      "world_position_initialized_m": [
+        10.398823719981472,
+        -1.3031462248588347e-06,
+        0.6364635194416086
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.9999999711007093,
+          -0.00015326355088108573,
+          0.00018522652134536857
+        ],
+        [
+          0.000153267307530237,
+          -0.9999999880491831,
+          2.02673538980773e-05
+        ],
+        [
+          0.000185223412885135,
+          2.029574248257495e-05,
+          0.9999999826401847
+        ]
+      ],
+      "mesh": "Trunk",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "contype": "0",
+        "conaffinity": "0",
+        "group": "1",
+        "density": "0",
+        "rgba": "0.75294 0.75294 0.75294 1",
+        "mesh": "Trunk"
+      }
+    },
+    {
+      "geom_id": 31,
+      "name": "k1_geom_1",
+      "body_id": 1,
+      "body": "trunk",
+      "is_k1": true,
+      "region": "trunk",
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        0.0,
+        0.0,
+        0.1
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.06,
+        0.08,
+        0.1
+      ],
+      "world_position_initialized_m": [
+        10.399999618530273,
+        0.0,
+        0.6536900162696838
+      ],
+      "world_rotation_initialized": [
+        [
+          -1.0,
+          -1.2246468525851679e-16,
+          0.0
+        ],
+        [
+          1.2246468525851679e-16,
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        0.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": true,
+      "source_xml_geom_attributes": {
+        "size": "0.06 0.08 0.1",
+        "pos": "0 0 0.1",
+        "type": "box",
+        "rgba": "0.75294 0.75294 0.75294 0.0"
+      }
+    },
+    {
+      "geom_id": 32,
+      "name": "k1_geom_2",
+      "body_id": 1,
+      "body": "trunk",
+      "is_k1": true,
+      "region": "trunk",
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        0.0,
+        0.0,
+        -0.06
+      ],
+      "local_quaternion_wxyz": [
+        0.7071052811843601,
+        0.707108281185553,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.05,
+        0.05,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        10.399999618530273,
+        0.0,
+        0.49369001626968384
+      ],
+      "world_rotation_initialized": [
+        [
+          -1.0,
+          5.195738630139235e-22,
+          1.224646852574146e-16
+        ],
+        [
+          1.2246468525851679e-16,
+          4.242642374197025e-06,
+          0.9999999999910001
+        ],
+        [
+          0.0,
+          0.9999999999910001,
+          -4.242642374197025e-06
+        ]
+      ],
+      "mesh": null,
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": true,
+      "source_xml_geom_attributes": {
+        "size": "0.05 0.05",
+        "pos": "0 0 -0.06",
+        "quat": "0.707105 0.707108 0 0",
+        "type": "cylinder",
+        "rgba": "0.75294 0.75294 0.75294 1"
+      }
+    },
+    {
+      "geom_id": 33,
+      "name": "k1_geom_3",
+      "body_id": 1,
+      "body": "trunk",
+      "is_k1": true,
+      "region": "trunk",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        0.07326038719096933,
+        -0.000687901213104754,
+        0.17728058122029192
+      ],
+      "local_quaternion_wxyz": [
+        0.6955467377869358,
+        0.7001557514272451,
+        -0.11438608834493602,
+        0.1136331029693696
+      ],
+      "size_m": [
+        0.0007935434020843302,
+        0.006511240691621683,
+        0.040921639023639385
+      ],
+      "world_position_initialized_m": [
+        10.326739231339305,
+        0.000687901213104763,
+        0.7309705974899757
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.9480066814053957,
+          0.3182504234258478,
+          1.1102230246251565e-16
+        ],
+        [
+          0.0021018871260399807,
+          0.006261116694193658,
+          0.9999781900062891
+        ],
+        [
+          0.31824348238611394,
+          0.9479860053856349,
+          -0.006604506927010034
+        ]
+      ],
+      "mesh": "K1logo",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.7921568751335144,
+        0.8196078538894653,
+        0.9333333373069763,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "contype": "0",
+        "conaffinity": "0",
+        "group": "1",
+        "density": "0",
+        "rgba": "0.792156862745098 0.819607843137255 0.933333333333333 1",
+        "mesh": "K1logo"
+      }
+    },
+    {
+      "geom_id": 34,
+      "name": "k1_geom_4",
+      "body_id": 2,
+      "body": "aahead_yaw_link",
+      "is_k1": true,
+      "region": "head",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        -0.0011654283491133938,
+        0.0016306378734805677,
+        0.03248242565432608
+      ],
+      "local_quaternion_wxyz": [
+        0.6814393411536911,
+        0.4381756234256473,
+        0.35644902326460165,
+        0.4653886990218857
+      ],
+      "size_m": [
+        0.03244615959017996,
+        0.03626895021803002,
+        0.03770009222241733
+      ],
+      "world_position_initialized_m": [
+        10.395565046879387,
+        -0.0016306378734805673,
+        0.80107244192401
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.3127149052728595,
+          0.32189379090683456,
+          -0.893640741794945
+        ],
+        [
+          -0.9466428828605541,
+          -0.18283096371652724,
+          0.2654055218640923
+        ],
+        [
+          -0.0779528084782824,
+          0.9289549106830315,
+          0.36189243369851665
+        ]
+      ],
+      "mesh": "Head_1",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "contype": "0",
+        "conaffinity": "0",
+        "group": "1",
+        "density": "0",
+        "rgba": "0.75294 0.75294 0.75294 1",
+        "mesh": "Head_1"
+      }
+    },
+    {
+      "geom_id": 35,
+      "name": "k1_geom_5",
+      "body_id": 2,
+      "body": "aahead_yaw_link",
+      "is_k1": true,
+      "region": "head",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        -0.0011654283491133938,
+        0.0016306378734805677,
+        0.03248242565432608
+      ],
+      "local_quaternion_wxyz": [
+        0.6814393411536911,
+        0.4381756234256473,
+        0.35644902326460165,
+        0.4653886990218857
+      ],
+      "size_m": [
+        0.03244615959017996,
+        0.03626895021803002,
+        0.03770009222241733
+      ],
+      "world_position_initialized_m": [
+        10.395565046879387,
+        -0.0016306378734805673,
+        0.80107244192401
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.3127149052728595,
+          0.32189379090683456,
+          -0.893640741794945
+        ],
+        [
+          -0.9466428828605541,
+          -0.18283096371652724,
+          0.2654055218640923
+        ],
+        [
+          -0.0779528084782824,
+          0.9289549106830315,
+          0.36189243369851665
+        ]
+      ],
+      "mesh": "Head_1",
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": true,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "rgba": "0.75294 0.75294 0.75294 1",
+        "mesh": "Head_1"
+      }
+    },
+    {
+      "geom_id": 36,
+      "name": "k1_geom_6",
+      "body_id": 3,
+      "body": "aahead_pitch_link",
+      "is_k1": true,
+      "region": "head",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        0.0030091915344255976,
+        -0.000500453772167688,
+        0.07625606306988517
+      ],
+      "local_quaternion_wxyz": [
+        0.9964849439518566,
+        -0.08191305293519062,
+        0.01742478097411723,
+        -0.0020940974442100863
+      ],
+      "size_m": [
+        0.06736824965550754,
+        0.08197851629261434,
+        0.10760913936901957
+      ],
+      "world_position_initialized_m": [
+        10.391390426995848,
+        0.0005004537721676889,
+        0.877846079339569
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.9993839835277963,
+          -0.001318839136013016,
+          -0.03507013161433124
+        ],
+        [
+          0.007028107161280885,
+          -0.9865717330294616,
+          -0.16317726954749012
+        ],
+        [
+          -0.03438399595513511,
+          -0.16332322630470542,
+          0.9859732575336814
+        ]
+      ],
+      "mesh": "Head_2",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "contype": "0",
+        "conaffinity": "0",
+        "group": "1",
+        "density": "0",
+        "rgba": "0.75294 0.75294 0.75294 1",
+        "mesh": "Head_2"
+      }
+    },
+    {
+      "geom_id": 37,
+      "name": "k1_geom_7",
+      "body_id": 3,
+      "body": "aahead_pitch_link",
+      "is_k1": true,
+      "region": "head",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        0.0030091915344255976,
+        -0.000500453772167688,
+        0.07625606306988517
+      ],
+      "local_quaternion_wxyz": [
+        0.9964849439518566,
+        -0.08191305293519062,
+        0.01742478097411723,
+        -0.0020940974442100863
+      ],
+      "size_m": [
+        0.06736824965550754,
+        0.08197851629261434,
+        0.10760913936901957
+      ],
+      "world_position_initialized_m": [
+        10.391390426995848,
+        0.0005004537721676889,
+        0.877846079339569
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.9993839835277963,
+          -0.001318839136013016,
+          -0.03507013161433124
+        ],
+        [
+          0.007028107161280885,
+          -0.9865717330294616,
+          -0.16317726954749012
+        ],
+        [
+          -0.03438399595513511,
+          -0.16332322630470542,
+          0.9859732575336814
+        ]
+      ],
+      "mesh": "Head_2",
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": true,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "rgba": "0.75294 0.75294 0.75294 1",
+        "mesh": "Head_2"
+      }
+    },
+    {
+      "geom_id": 38,
+      "name": "k1_geom_8",
+      "body_id": 6,
+      "body": "aaleft_shoulder_pitch_link",
+      "is_k1": true,
+      "region": "left_arm",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        -0.0031139435104444377,
+        0.061833563568366216,
+        -0.011565971995852523
+      ],
+      "local_quaternion_wxyz": [
+        0.5354293354974059,
+        0.403062289522214,
+        -0.4124319711814395,
+        0.617054362760132
+      ],
+      "size_m": [
+        0.03854917615927493,
+        0.03832367632235884,
+        0.058884251516279455
+      ],
+      "world_position_initialized_m": [
+        10.405349294438494,
+        -0.1388335635683662,
+        0.7274732387655979
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.08688124943080477,
+          0.9888203853295419,
+          -0.12118537062733503
+        ],
+        [
+          -0.3283064656837639,
+          0.08643059167240019,
+          0.9406086420044207
+        ],
+        [
+          0.9405671231164653,
+          0.1215071947659937,
+          0.3171269281100567
+        ]
+      ],
+      "mesh": "Left_Arm_1",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "contype": "0",
+        "conaffinity": "0",
+        "group": "1",
+        "density": "0",
+        "rgba": "0.75294 0.75294 0.75294 1",
+        "mesh": "Left_Arm_1"
+      }
+    },
+    {
+      "geom_id": 39,
+      "name": "k1_geom_9",
+      "body_id": 7,
+      "body": "left_shoulder_roll_link",
+      "is_k1": true,
+      "region": "left_arm",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        0.013593035559646803,
+        0.018858052986565683,
+        -3.197109833916215e-05
+      ],
+      "local_quaternion_wxyz": [
+        0.6751248576292096,
+        0.67534551077644,
+        0.21022450628432382,
+        0.20957224206168673
+      ],
+      "size_m": [
+        0.027416591296657047,
+        0.035014655267942354,
+        0.05252773475485526
+      ],
+      "world_position_initialized_m": [
+        10.390466797922935,
+        -0.15091602573731128,
+        0.7042127709181903
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.700415943243737,
+          -0.06360349820273511,
+          -0.7108952816458717
+        ],
+        [
+          -0.17801554494812313,
+          -0.9489765489685829,
+          0.2602959378563251
+        ],
+        [
+          -0.6911786832699712,
+          0.3088658357993901,
+          0.6533558932688488
+        ]
+      ],
+      "mesh": "Left_Arm_2",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "contype": "0",
+        "conaffinity": "0",
+        "group": "1",
+        "density": "0",
+        "rgba": "0.75294 0.75294 0.75294 1",
+        "mesh": "Left_Arm_2"
+      }
+    },
+    {
+      "geom_id": 40,
+      "name": "k1_geom_10",
+      "body_id": 7,
+      "body": "left_shoulder_roll_link",
+      "is_k1": true,
+      "region": "left_arm",
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        -0.007,
+        0.0,
+        0.0
+      ],
+      "local_quaternion_wxyz": [
+        0.7071052811843601,
+        0.0,
+        0.707108281185553,
+        0.0
+      ],
+      "size_m": [
+        0.035,
+        0.034,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        10.407091954133058,
+        -0.14500000000000002,
+        0.7258531294785416
+      ],
+      "world_rotation_initialized": [
+        [
+          0.06264904171421404,
+          0.1885341420339992,
+          -0.9800663114605025
+        ],
+        [
+          0.9489846193470455,
+          -0.31532236239526873,
+          4.026202358564657e-06
+        ],
+        [
+          -0.3090360655571355,
+          -0.9300681077539272,
+          -0.19867064484718217
+        ]
+      ],
+      "mesh": null,
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": true,
+      "source_xml_geom_attributes": {
+        "size": "0.035 0.034",
+        "pos": "-0.007 0 0",
+        "quat": "0.707105 0 0.707108 0",
+        "type": "cylinder",
+        "rgba": "0.75294 0.75294 0.75294 1"
+      }
+    },
+    {
+      "geom_id": 41,
+      "name": "k1_geom_11",
+      "body_id": 8,
+      "body": "left_elbow_pitch_link",
+      "is_k1": true,
+      "region": "left_arm",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        -0.0016218845806753716,
+        0.0725105413459935,
+        -0.0011597745039824338
+      ],
+      "local_quaternion_wxyz": [
+        0.6262870852660366,
+        0.6055244312856244,
+        -0.3426077899964841,
+        0.35174501016918625
+      ],
+      "size_m": [
+        0.04100503958082516,
+        0.041248718854482315,
+        0.08002364837734838
+      ],
+      "world_position_initialized_m": [
+        10.423940604464219,
+        -0.1807727289460754,
+        0.6156654418711632
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.5561983441394431,
+          0.8096589949519426,
+          -0.18733850076788008
+        ],
+        [
+          -0.8195926220773206,
+          -0.49710957865049893,
+          0.2848683918063759
+        ],
+        [
+          0.13751849262178908,
+          0.31198458088075254,
+          0.940082063162412
+        ]
+      ],
+      "mesh": "Left_Arm_3",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "contype": "0",
+        "conaffinity": "0",
+        "group": "1",
+        "density": "0",
+        "rgba": "0.75294 0.75294 0.75294 1",
+        "mesh": "Left_Arm_3"
+      }
+    },
+    {
+      "geom_id": 42,
+      "name": "k1_geom_12",
+      "body_id": 8,
+      "body": "left_elbow_pitch_link",
+      "is_k1": true,
+      "region": "left_arm",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        -0.0016218845806753716,
+        0.0725105413459935,
+        -0.0011597745039824338
+      ],
+      "local_quaternion_wxyz": [
+        0.6262870852660366,
+        0.6055244312856244,
+        -0.3426077899964841,
+        0.35174501016918625
+      ],
+      "size_m": [
+        0.04100503958082516,
+        0.041248718854482315,
+        0.08002364837734838
+      ],
+      "world_position_initialized_m": [
+        10.423940604464219,
+        -0.1807727289460754,
+        0.6156654418711632
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.5561983441394431,
+          0.8096589949519426,
+          -0.18733850076788008
+        ],
+        [
+          -0.8195926220773206,
+          -0.49710957865049893,
+          0.2848683918063759
+        ],
+        [
+          0.13751849262178908,
+          0.31198458088075254,
+          0.940082063162412
+        ]
+      ],
+      "mesh": "Left_Arm_3",
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": true,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "rgba": "0.75294 0.75294 0.75294 1",
+        "mesh": "Left_Arm_3"
+      }
+    },
+    {
+      "geom_id": 43,
+      "name": "k1_geom_13",
+      "body_id": 9,
+      "body": "left_elbow_yaw_link",
+      "is_k1": true,
+      "region": "left_arm",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        -0.0011156113133144198,
+        0.10083378503992076,
+        0.004576300339183422
+      ],
+      "local_quaternion_wxyz": [
+        0.7284501328879883,
+        0.6731865290467962,
+        0.0815438325589444,
+        -0.09762635083316104
+      ],
+      "size_m": [
+        0.03099429062137426,
+        0.04204843315391511,
+        0.13239998809105838
+      ],
+      "world_position_initialized_m": [
+        10.401592979244155,
+        -0.2297351653843341,
+        0.47934357385612814
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.8941667143996047,
+          -0.32268475325077345,
+          0.3103875591567837
+        ],
+        [
+          0.39273581077176684,
+          -0.898160610947232,
+          0.19765146060765815
+        ],
+        [
+          0.21499876696683953,
+          0.29863366682674136,
+          0.9298351806854568
+        ]
+      ],
+      "mesh": "Left_Arm_4",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "contype": "0",
+        "conaffinity": "0",
+        "group": "1",
+        "density": "0",
+        "rgba": "0.75294 0.75294 0.75294 1",
+        "mesh": "Left_Arm_4"
+      }
+    },
+    {
+      "geom_id": 44,
+      "name": "k1_geom_14",
+      "body_id": 9,
+      "body": "left_elbow_yaw_link",
+      "is_k1": true,
+      "region": "left_arm",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        -0.0011156113133144198,
+        0.10083378503992076,
+        0.004576300339183422
+      ],
+      "local_quaternion_wxyz": [
+        0.7284501328879883,
+        0.6731865290467962,
+        0.0815438325589444,
+        -0.09762635083316104
+      ],
+      "size_m": [
+        0.03099429062137426,
+        0.04204843315391511,
+        0.13239998809105838
+      ],
+      "world_position_initialized_m": [
+        10.401592979244155,
+        -0.2297351653843341,
+        0.47934357385612814
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.8941667143996047,
+          -0.32268475325077345,
+          0.3103875591567837
+        ],
+        [
+          0.39273581077176684,
+          -0.898160610947232,
+          0.19765146060765815
+        ],
+        [
+          0.21499876696683953,
+          0.29863366682674136,
+          0.9298351806854568
+        ]
+      ],
+      "mesh": "Left_Arm_4",
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": true,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "rgba": "0.75294 0.75294 0.75294 1",
+        "mesh": "Left_Arm_4"
+      }
+    },
+    {
+      "geom_id": 45,
+      "name": "k1_geom_15",
+      "body_id": 10,
+      "body": "aaright_shoulder_pitch_link",
+      "is_k1": true,
+      "region": "right_arm",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        -0.0031141845134924134,
+        -0.061833876086096945,
+        -0.011566942710599576
+      ],
+      "local_quaternion_wxyz": [
+        0.40299982244486415,
+        0.5352757223255732,
+        -0.6171649580828887,
+        0.41252691877354203
+      ],
+      "size_m": [
+        0.03856293816389125,
+        0.03833544177315104,
+        0.058884467320014226
+      ],
+      "world_position_initialized_m": [
+        10.40534972348878,
+        0.13883387608609693,
+        0.7274723352804332
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.08645757471368345,
+          0.9888544238551911,
+          0.12121062740804012
+        ],
+        [
+          0.32821028742477204,
+          -0.08660288475208935,
+          0.9406263591783774
+        ],
+        [
+          0.9406397264644851,
+          0.12110684858685411,
+          -0.31706471929589464
+        ]
+      ],
+      "mesh": "Right_Arm_1",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "contype": "0",
+        "conaffinity": "0",
+        "group": "1",
+        "density": "0",
+        "rgba": "0.75294 0.75294 0.75294 1",
+        "mesh": "Right_Arm_1"
+      }
+    },
+    {
+      "geom_id": 46,
+      "name": "k1_geom_16",
+      "body_id": 11,
+      "body": "right_shoulder_roll_link",
+      "is_k1": true,
+      "region": "right_arm",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        0.01358270376867113,
+        -0.018916386526791645,
+        3.25205880473024e-05
+      ],
+      "local_quaternion_wxyz": [
+        0.6750432062397199,
+        0.6752747480221497,
+        -0.21047915041291737,
+        -0.20980755857375383
+      ],
+      "size_m": [
+        0.02739835673467301,
+        0.0350157452483918,
+        0.05256819781277479
+      ],
+      "world_position_initialized_m": [
+        10.390483881555722,
+        0.15099562122547927,
+        0.7041804996742242
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.6999999340988737,
+          -0.061654961962612165,
+          0.7114764633682299
+        ],
+        [
+          0.17972026257818877,
+          0.9489937243301774,
+          0.2590589477334627
+        ],
+        [
+          -0.6911589683136595,
+          0.3092079831558864,
+          -0.6532148985381991
+        ]
+      ],
+      "mesh": "Right_Arm_2",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "contype": "0",
+        "conaffinity": "0",
+        "group": "1",
+        "density": "0",
+        "rgba": "0.75294 0.75294 0.75294 1",
+        "mesh": "Right_Arm_2"
+      }
+    },
+    {
+      "geom_id": 47,
+      "name": "k1_geom_17",
+      "body_id": 11,
+      "body": "right_shoulder_roll_link",
+      "is_k1": true,
+      "region": "right_arm",
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        -0.007,
+        0.0,
+        0.0
+      ],
+      "local_quaternion_wxyz": [
+        0.7071052811843601,
+        0.0,
+        0.707108281185553,
+        0.0
+      ],
+      "size_m": [
+        0.035,
+        0.034,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        10.407091954133058,
+        0.14500000000000002,
+        0.7258531294785416
+      ],
+      "world_rotation_initialized": [
+        [
+          0.06264904171421393,
+          -0.18853414203399932,
+          -0.9800663114605026
+        ],
+        [
+          -0.9489846193470456,
+          -0.3153223623952686,
+          -4.026202358453634e-06
+        ],
+        [
+          -0.30903606555713536,
+          0.9300681077539275,
+          -0.19867064484718228
+        ]
+      ],
+      "mesh": null,
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": true,
+      "source_xml_geom_attributes": {
+        "size": "0.035 0.034",
+        "pos": "-0.007 0 0",
+        "quat": "0.707105 0 0.707108 0",
+        "type": "cylinder",
+        "rgba": "0.75294 0.75294 0.75294 1"
+      }
+    },
+    {
+      "geom_id": 48,
+      "name": "k1_geom_18",
+      "body_id": 12,
+      "body": "right_elbow_pitch_link",
+      "is_k1": true,
+      "region": "right_arm",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        -0.0017413833332522045,
+        -0.06579946751295972,
+        -0.0008459859417484968
+      ],
+      "local_quaternion_wxyz": [
+        0.5815292186747666,
+        0.5950428121623376,
+        -0.4028153789925712,
+        0.3814283549613564
+      ],
+      "size_m": [
+        0.03909335978454678,
+        0.04076882979938141,
+        0.08675084650621474
+      ],
+      "world_position_initialized_m": [
+        10.422772797402434,
+        0.1789543578101238,
+        0.6220279105967816
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.4278831764448877,
+          0.8803405236007014,
+          0.20473531649884325
+        ],
+        [
+          0.8866484436035711,
+          0.36487424153329306,
+          0.28411498608991875
+        ],
+        [
+          0.1754152922946104,
+          0.3030962724481326,
+          -0.9366761045618968
+        ]
+      ],
+      "mesh": "Right_Arm_3",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "contype": "0",
+        "conaffinity": "0",
+        "group": "1",
+        "density": "0",
+        "rgba": "0.75294 0.75294 0.75294 1",
+        "mesh": "Right_Arm_3"
+      }
+    },
+    {
+      "geom_id": 49,
+      "name": "k1_geom_19",
+      "body_id": 12,
+      "body": "right_elbow_pitch_link",
+      "is_k1": true,
+      "region": "right_arm",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        -0.0017413833332522045,
+        -0.06579946751295972,
+        -0.0008459859417484968
+      ],
+      "local_quaternion_wxyz": [
+        0.5815292186747666,
+        0.5950428121623376,
+        -0.4028153789925712,
+        0.3814283549613564
+      ],
+      "size_m": [
+        0.03909335978454678,
+        0.04076882979938141,
+        0.08675084650621474
+      ],
+      "world_position_initialized_m": [
+        10.422772797402434,
+        0.1789543578101238,
+        0.6220279105967816
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.4278831764448877,
+          0.8803405236007014,
+          0.20473531649884325
+        ],
+        [
+          0.8866484436035711,
+          0.36487424153329306,
+          0.28411498608991875
+        ],
+        [
+          0.1754152922946104,
+          0.3030962724481326,
+          -0.9366761045618968
+        ]
+      ],
+      "mesh": "Right_Arm_3",
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": true,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "rgba": "0.75294 0.75294 0.75294 1",
+        "mesh": "Right_Arm_3"
+      }
+    },
+    {
+      "geom_id": 50,
+      "name": "k1_geom_20",
+      "body_id": 13,
+      "body": "right_elbow_yaw_link",
+      "is_k1": true,
+      "region": "right_arm",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        -0.0009909802280883109,
+        -0.10082845720585065,
+        0.004579150957982185
+      ],
+      "local_quaternion_wxyz": [
+        0.6732473061807279,
+        0.7284114068154298,
+        0.09793970703609232,
+        -0.08101049887048757
+      ],
+      "size_m": [
+        0.030991127699156112,
+        0.04205182725944632,
+        0.13239314106830774
+      ],
+      "world_position_initialized_m": [
+        10.401475963505957,
+        0.22971755532298557,
+        0.4793831544321904
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.8938846616108574,
+          -0.3223568086779073,
+          -0.3115386005551171
+        ],
+        [
+          -0.39273204631544334,
+          0.8982057879374458,
+          0.19745354469484577
+        ],
+        [
+          0.21617527965456682,
+          0.2988518870856768,
+          -0.9294922259231663
+        ]
+      ],
+      "mesh": "Right_Arm_4",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "contype": "0",
+        "conaffinity": "0",
+        "group": "1",
+        "density": "0",
+        "rgba": "0.75294 0.75294 0.75294 1",
+        "mesh": "Right_Arm_4"
+      }
+    },
+    {
+      "geom_id": 51,
+      "name": "k1_geom_21",
+      "body_id": 13,
+      "body": "right_elbow_yaw_link",
+      "is_k1": true,
+      "region": "right_arm",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        -0.0009909802280883109,
+        -0.10082845720585065,
+        0.004579150957982185
+      ],
+      "local_quaternion_wxyz": [
+        0.6732473061807279,
+        0.7284114068154298,
+        0.09793970703609232,
+        -0.08101049887048757
+      ],
+      "size_m": [
+        0.030991127699156112,
+        0.04205182725944632,
+        0.13239314106830774
+      ],
+      "world_position_initialized_m": [
+        10.401475963505957,
+        0.22971755532298557,
+        0.4793831544321904
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.8938846616108574,
+          -0.3223568086779073,
+          -0.3115386005551171
+        ],
+        [
+          -0.39273204631544334,
+          0.8982057879374458,
+          0.19745354469484577
+        ],
+        [
+          0.21617527965456682,
+          0.2988518870856768,
+          -0.9294922259231663
+        ]
+      ],
+      "mesh": "Right_Arm_4",
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": true,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "rgba": "0.75294 0.75294 0.75294 1",
+        "mesh": "Right_Arm_4"
+      }
+    },
+    {
+      "geom_id": 52,
+      "name": "k1_geom_22",
+      "body_id": 14,
+      "body": "left_hip_pitch_link",
+      "is_k1": true,
+      "region": "left_leg",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        -0.008712484821074206,
+        0.0002755099468743145,
+        -0.024589876982470005
+      ],
+      "local_quaternion_wxyz": [
+        0.47195737446400166,
+        0.400601402602252,
+        0.2384416253389506,
+        0.7482782532105796
+      ],
+      "size_m": [
+        0.04476592420144818,
+        0.05067795091973792,
+        0.05318235588924284
+      ],
+      "world_position_initialized_m": [
+        10.404939606091611,
+        -0.09627550994687431,
+        0.45107427960910174
+      ],
+      "world_rotation_initialized": [
+        [
+          0.28688471535715465,
+          0.6193181310196099,
+          -0.7308503353524756
+        ],
+        [
+          -0.8973509786066376,
+          0.4408036559895333,
+          0.021292206554867854
+        ],
+        [
+          0.33534814937339136,
+          0.6497208550267128,
+          0.6822055623162296
+        ]
+      ],
+      "mesh": "Left_Hip_Pitch",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "contype": "0",
+        "conaffinity": "0",
+        "group": "1",
+        "density": "0",
+        "rgba": "0.75294 0.75294 0.75294 1",
+        "mesh": "Left_Hip_Pitch"
+      }
+    },
+    {
+      "geom_id": 53,
+      "name": "k1_geom_23",
+      "body_id": 15,
+      "body": "left_hip_roll_link",
+      "is_k1": true,
+      "region": "left_leg",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        0.023554991129873817,
+        -2.0627146872664022e-06,
+        -0.023937474576428114
+      ],
+      "local_quaternion_wxyz": [
+        0.9406539873568874,
+        -0.00016273248342120046,
+        0.3393671181009119,
+        -9.34858772942397e-05
+      ],
+      "size_m": [
+        0.03578208694140829,
+        0.03847136022245122,
+        0.051494764201749844
+      ],
+      "world_position_initialized_m": [
+        10.369246561345538,
+        -0.09599793728531274,
+        0.4308332997715284
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.8564268315520213,
+          -0.00011992161433820004,
+          -0.5162684067581246
+        ],
+        [
+          0.0002863278343169859,
+          -0.9999999295570592,
+          -0.00024269785328425515
+        ],
+        [
+          -0.5162683412859413,
+          -0.0003556749683460465,
+          0.8564268055596927
+        ]
+      ],
+      "mesh": "Left_Hip_Roll",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "contype": "0",
+        "conaffinity": "0",
+        "group": "1",
+        "density": "0",
+        "rgba": "0.75294 0.75294 0.75294 1",
+        "mesh": "Left_Hip_Roll"
+      }
+    },
+    {
+      "geom_id": 54,
+      "name": "k1_geom_24",
+      "body_id": 15,
+      "body": "left_hip_roll_link",
+      "is_k1": true,
+      "region": "left_leg",
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_quaternion_wxyz": [
+        0.7071052811843601,
+        0.0,
+        0.707108281185553,
+        0.0
+      ],
+      "size_m": [
+        0.036,
+        0.047,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        10.396114226932728,
+        -0.096,
+        0.4509819682665055
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.1494339433637194,
+          -1.2246468525851679e-16,
+          -0.9887717110490009
+        ],
+        [
+          1.8300380840976917e-17,
+          -1.0,
+          1.2108961638614098e-16
+        ],
+        [
+          -0.9887717110490009,
+          0.0,
+          0.1494339433637194
+        ]
+      ],
+      "mesh": null,
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": true,
+      "source_xml_geom_attributes": {
+        "size": "0.036 0.047",
+        "quat": "0.707105 0 0.707108 0",
+        "type": "cylinder",
+        "rgba": "0.75294 0.75294 0.75294 1"
+      }
+    },
+    {
+      "geom_id": 55,
+      "name": "k1_geom_25",
+      "body_id": 16,
+      "body": "left_hip_yaw_link",
+      "is_k1": true,
+      "region": "left_leg",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        -0.004909502269723274,
+        -0.002502868278393789,
+        -0.08116712382576359
+      ],
+      "local_quaternion_wxyz": [
+        0.6317280268186037,
+        0.04583827970616488,
+        0.08365504764872321,
+        0.769298632033324
+      ],
+      "size_m": [
+        0.04252872053558729,
+        0.05266181475981013,
+        0.08802624282773705
+      ],
+      "world_position_initialized_m": [
+        10.369726134263232,
+        -0.09349713172160622,
+        0.32383045736484506
+      ],
+      "world_rotation_initialized": [
+        [
+          0.19016243842941072,
+          0.9813667450220509,
+          -0.02752378563001916
+        ],
+        [
+          -0.9796442206432352,
+          0.1878430662695274,
+          -0.07079677545462103
+        ],
+        [
+          -0.06430744879787047,
+          0.04042640497606174,
+          0.9971109556161855
+        ]
+      ],
+      "mesh": "Left_Hip_Yaw",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "contype": "0",
+        "conaffinity": "0",
+        "group": "1",
+        "density": "0",
+        "rgba": "0.75294 0.75294 0.75294 1",
+        "mesh": "Left_Hip_Yaw"
+      }
+    },
+    {
+      "geom_id": 56,
+      "name": "k1_geom_26",
+      "body_id": 16,
+      "body": "left_hip_yaw_link",
+      "is_k1": true,
+      "region": "left_leg",
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        0.0,
+        0.0,
+        -0.03
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.04,
+        0.033,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        10.372518080146364,
+        -0.096,
+        0.37515669637885335
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.9887710770453214,
+          -1.2246468525851676e-16,
+          0.1494381383671341
+        ],
+        [
+          1.2108953874307994e-16,
+          -0.9999999999999999,
+          -1.8300894580749757e-17
+        ],
+        [
+          0.1494381383671341,
+          0.0,
+          0.9887710770453214
+        ]
+      ],
+      "mesh": null,
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": true,
+      "source_xml_geom_attributes": {
+        "size": "0.04 0.033",
+        "pos": "0 0 -0.03",
+        "type": "cylinder",
+        "rgba": "0.75294 0.75294 0.75294 1"
+      }
+    },
+    {
+      "geom_id": 57,
+      "name": "k1_geom_27",
+      "body_id": 17,
+      "body": "left_knee_pitch_link",
+      "is_k1": true,
+      "region": "left_leg",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        0.0035590018749193527,
+        0.001723326583844118,
+        -0.1135875876257566
+      ],
+      "local_quaternion_wxyz": [
+        0.7188722411290797,
+        0.0024751967980270336,
+        0.04986574056109561,
+        0.6933469421964445
+      ],
+      "size_m": [
+        0.043483062828496254,
+        0.049521228892855686,
+        0.14371004806571747
+      ],
+      "world_position_initialized_m": [
+        10.386815036706393,
+        -0.09772332658384413,
+        0.17419750676843826
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.022989007496644287,
+          0.9745528096946543,
+          -0.2229760674390318
+        ],
+        [
+          -0.9971025954762411,
+          -0.03852778229530335,
+          -0.0655898169379273
+        ],
+        [
+          -0.07251151376756892,
+          0.22082217077925426,
+          0.9726148514512181
+        ]
+      ],
+      "mesh": "Left_Shank",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "contype": "0",
+        "conaffinity": "0",
+        "group": "1",
+        "density": "0",
+        "rgba": "0.75294 0.75294 0.75294 1",
+        "mesh": "Left_Shank"
+      }
+    },
+    {
+      "geom_id": 58,
+      "name": "k1_geom_28",
+      "body_id": 17,
+      "body": "left_knee_pitch_link",
+      "is_k1": true,
+      "region": "left_leg",
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_quaternion_wxyz": [
+        0.7071052811843601,
+        0.707108281185553,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.045,
+        0.035,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        10.373359757187057,
+        -0.096,
+        0.2870414787387705
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.9887710770453216,
+          -0.14943813836578912,
+          6.340125782711148e-07
+        ],
+        [
+          1.249000902703301e-16,
+          4.2426423742525365e-06,
+          0.9999999999910001
+        ],
+        [
+          -0.14943813836713407,
+          0.9887710770364226,
+          -4.195002069884435e-06
+        ]
+      ],
+      "mesh": null,
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": true,
+      "source_xml_geom_attributes": {
+        "size": "0.045 0.035",
+        "quat": "0.707105 0.707108 0 0",
+        "type": "cylinder",
+        "rgba": "0.75294 0.75294 0.75294 1"
+      }
+    },
+    {
+      "geom_id": 59,
+      "name": "k1_geom_29",
+      "body_id": 17,
+      "body": "left_knee_pitch_link",
+      "is_k1": true,
+      "region": "left_leg",
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        0.0,
+        0.0,
+        -0.13
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.03,
+        0.03,
+        0.05
+      ],
+      "world_position_initialized_m": [
+        10.392786715174784,
+        -0.096,
+        0.15850123872287872
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.9887710770453214,
+          -1.2246468525851676e-16,
+          -0.14943813836713407
+        ],
+        [
+          1.2108953874307994e-16,
+          -0.9999999999999999,
+          1.8300894580749754e-17
+        ],
+        [
+          -0.14943813836713407,
+          0.0,
+          0.9887710770453214
+        ]
+      ],
+      "mesh": null,
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": true,
+      "source_xml_geom_attributes": {
+        "size": "0.03 0.03 0.05",
+        "pos": "0 0 -0.13",
+        "type": "box",
+        "rgba": "0.75294 0.75294 0.75294 1"
+      }
+    },
+    {
+      "geom_id": 60,
+      "name": "k1_geom_30",
+      "body_id": 18,
+      "body": "left_ankle_pitch_link",
+      "is_k1": true,
+      "region": "left_leg",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        1.41175266293545e-08,
+        7.895260883923003e-07,
+        1.841556130145256e-07
+      ],
+      "local_quaternion_wxyz": [
+        -2.693852775507023e-17,
+        0.7071067811865489,
+        2.693852775507023e-17,
+        0.7071067811865489
+      ],
+      "size_m": [
+        0.007500183987974982,
+        0.009000789138658238,
+        0.017000015041398694
+      ],
+      "world_position_initialized_m": [
+        10.409805632987325,
+        -0.0962007895260884,
+        0.04457543423409455
+      ],
+      "world_rotation_initialized": [
+        [
+          -2.6762594219646915e-34,
+          4.627102265534836e-17,
+          -1.0000000000000036
+        ],
+        [
+          0.0,
+          1.0000000000000036,
+          4.627102265534836e-17
+        ],
+        [
+          1.0000000000000036,
+          0.0,
+          2.6762594219646915e-34
+        ]
+      ],
+      "mesh": "Left_Ankle_Cross",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "contype": "0",
+        "conaffinity": "0",
+        "group": "1",
+        "density": "0",
+        "rgba": "0.75294 0.75294 0.75294 1",
+        "mesh": "Left_Ankle_Cross"
+      }
+    },
+    {
+      "geom_id": 61,
+      "name": "k1_geom_31",
+      "body_id": 19,
+      "body": "left_ankle_roll_link",
+      "is_k1": true,
+      "region": "left_foot",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        0.018117080590960056,
+        0.00019550664949011246,
+        -0.014220269407706243
+      ],
+      "local_quaternion_wxyz": [
+        0.001718913119890694,
+        0.728672448305286,
+        0.002534836378772293,
+        0.6848555198164088
+      ],
+      "size_m": [
+        0.03681775896036955,
+        0.04092960620105644,
+        0.10191527414618283
+      ],
+      "world_position_initialized_m": [
+        10.391688566513892,
+        -0.09639550664949012,
+        0.0303549806707753
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.061932983163062755,
+          -0.0013397165838625281,
+          -0.99807941104704
+        ],
+        [
+          -0.0060485451368305874,
+          0.999981239884442,
+          -0.0009669441086775019
+        ],
+        [
+          0.9980619823930069,
+          0.005977042634656942,
+          -0.061939924629369564
+        ]
+      ],
+      "mesh": "Left_Foot",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "contype": "0",
+        "conaffinity": "0",
+        "group": "1",
+        "density": "0",
+        "rgba": "0.75294 0.75294 0.75294 1.0",
+        "mesh": "Left_Foot"
+      }
+    },
+    {
+      "geom_id": 62,
+      "name": "k1_geom_32",
+      "body_id": 19,
+      "body": "left_ankle_roll_link",
+      "is_k1": true,
+      "region": "left_foot",
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        0.026,
+        0.0,
+        -0.02
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.09,
+        0.035,
+        0.018
+      ],
+      "world_position_initialized_m": [
+        10.383805647104852,
+        -0.09620000000000001,
+        0.02457525007848154
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.9999999999999998,
+          -1.2246468525851674e-16,
+          2.1818312323749918e-17
+        ],
+        [
+          1.2246468525851674e-16,
+          -0.9999999999999998,
+          -2.620590904724588e-33
+        ],
+        [
+          2.1818312323749918e-17,
+          5.138184687546374e-35,
+          0.9999999999999998
+        ]
+      ],
+      "mesh": null,
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        0.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": true,
+      "source_xml_geom_attributes": {
+        "type": "box",
+        "pos": "0.026 0 -0.02",
+        "size": "0.09 0.035 0.018",
+        "rgba": "0.75294 0.75294 0.75294 0.0"
+      }
+    },
+    {
+      "geom_id": 63,
+      "name": "k1_geom_33",
+      "body_id": 20,
+      "body": "right_hip_pitch_link",
+      "is_k1": true,
+      "region": "right_leg",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        -0.008713080164041105,
+        -0.0002749133540412217,
+        -0.02458916538759969
+      ],
+      "local_quaternion_wxyz": [
+        0.748440034359032,
+        0.23786572130854472,
+        0.40029027710938886,
+        0.47225534157562254
+      ],
+      "size_m": [
+        0.04476432430232969,
+        0.05069599446513118,
+        0.05319035937057461
+      ],
+      "world_position_initialized_m": [
+        10.40494030108893,
+        0.09627491335404122,
+        0.4510748942465834
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.28683093086066,
+          0.6203871877808701,
+          -0.7299642144235259
+        ],
+        [
+          -0.8973402791450346,
+          -0.44078958195931817,
+          -0.022021985833383717
+        ],
+        [
+          -0.33542277878153026,
+          0.6487097052407014,
+          0.6831304983683598
+        ]
+      ],
+      "mesh": "Right_Hip_Pitch",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "contype": "0",
+        "conaffinity": "0",
+        "group": "1",
+        "density": "0",
+        "rgba": "0.75294 0.75294 0.75294 1",
+        "mesh": "Right_Hip_Pitch"
+      }
+    },
+    {
+      "geom_id": 64,
+      "name": "k1_geom_34",
+      "body_id": 21,
+      "body": "right_hip_roll_link",
+      "is_k1": true,
+      "region": "right_leg",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        0.023554991129873828,
+        -2.0627146872661917e-06,
+        -0.02393747457642812
+      ],
+      "local_quaternion_wxyz": [
+        0.9406539873568874,
+        -0.00016273248342120046,
+        0.3393671181009119,
+        -9.34858772942397e-05
+      ],
+      "size_m": [
+        0.035782086941408275,
+        0.03847136022245122,
+        0.05149476420174984
+      ],
+      "world_position_initialized_m": [
+        10.369246561345538,
+        0.09600206271468727,
+        0.43083329977152834
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.8564268315520213,
+          -0.00011992161433820004,
+          -0.5162684067581246
+        ],
+        [
+          0.0002863278343169859,
+          -0.9999999295570592,
+          -0.00024269785328425515
+        ],
+        [
+          -0.5162683412859413,
+          -0.0003556749683460465,
+          0.8564268055596927
+        ]
+      ],
+      "mesh": "Right_Hip_Roll",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "contype": "0",
+        "conaffinity": "0",
+        "group": "1",
+        "density": "0",
+        "rgba": "0.75294 0.75294 0.75294 1",
+        "mesh": "Right_Hip_Roll"
+      }
+    },
+    {
+      "geom_id": 65,
+      "name": "k1_geom_35",
+      "body_id": 21,
+      "body": "right_hip_roll_link",
+      "is_k1": true,
+      "region": "right_leg",
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_quaternion_wxyz": [
+        0.7071052811843601,
+        0.0,
+        0.707108281185553,
+        0.0
+      ],
+      "size_m": [
+        0.036,
+        0.047,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        10.396114226932728,
+        0.096,
+        0.4509819682665055
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.1494339433637194,
+          -1.2246468525851679e-16,
+          -0.9887717110490009
+        ],
+        [
+          1.8300380840976917e-17,
+          -1.0,
+          1.2108961638614098e-16
+        ],
+        [
+          -0.9887717110490009,
+          0.0,
+          0.1494339433637194
+        ]
+      ],
+      "mesh": null,
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": true,
+      "source_xml_geom_attributes": {
+        "size": "0.036 0.047",
+        "quat": "0.707105 0 0.707108 0",
+        "type": "cylinder",
+        "rgba": "0.75294 0.75294 0.75294 1"
+      }
+    },
+    {
+      "geom_id": 66,
+      "name": "k1_geom_36",
+      "body_id": 22,
+      "body": "right_hip_yaw_link",
+      "is_k1": true,
+      "region": "right_leg",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        -0.004909179428011381,
+        0.0025046853269175113,
+        -0.08116672690564415
+      ],
+      "local_quaternion_wxyz": [
+        0.7693556053556003,
+        0.08364000271437678,
+        0.04585376607222432,
+        0.6316595084306513
+      ],
+      "size_m": [
+        0.04253326410034853,
+        0.05266503821510647,
+        0.08802552757524196
+      ],
+      "world_position_initialized_m": [
+        10.369725874361688,
+        0.09349531467308249,
+        0.3238308980728435
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.1903397117872564,
+          0.9813324261320849,
+          -0.02752205549124589
+        ],
+        [
+          -0.9796119852120598,
+          -0.1880212307101755,
+          0.07076987516677623
+        ],
+        [
+          0.0642740425493394,
+          0.04043125305936011,
+          0.9971129129794772
+        ]
+      ],
+      "mesh": "Right_Hip_Yaw",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "contype": "0",
+        "conaffinity": "0",
+        "group": "1",
+        "density": "0",
+        "rgba": "0.75294 0.75294 0.75294 1",
+        "mesh": "Right_Hip_Yaw"
+      }
+    },
+    {
+      "geom_id": 67,
+      "name": "k1_geom_37",
+      "body_id": 22,
+      "body": "right_hip_yaw_link",
+      "is_k1": true,
+      "region": "right_leg",
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        0.0,
+        0.0,
+        -0.03
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.04,
+        0.033,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        10.372518080146364,
+        0.096,
+        0.37515669637885335
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.9887710770453214,
+          -1.2246468525851676e-16,
+          0.1494381383671341
+        ],
+        [
+          1.2108953874307994e-16,
+          -0.9999999999999999,
+          -1.8300894580749757e-17
+        ],
+        [
+          0.1494381383671341,
+          0.0,
+          0.9887710770453214
+        ]
+      ],
+      "mesh": null,
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": true,
+      "source_xml_geom_attributes": {
+        "size": "0.04 0.033",
+        "pos": "0 0 -0.03",
+        "type": "cylinder",
+        "rgba": "0.75294 0.75294 0.75294 1"
+      }
+    },
+    {
+      "geom_id": 68,
+      "name": "k1_geom_38",
+      "body_id": 23,
+      "body": "right_knee_pitch_link",
+      "is_k1": true,
+      "region": "right_leg",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        0.0035588810374113243,
+        -0.0016069995314760862,
+        -0.11358309315525641
+      ],
+      "local_quaternion_wxyz": [
+        0.6920642500402071,
+        0.0516212101608748,
+        0.0004677649899342732,
+        0.7199875732772946
+      ],
+      "size_m": [
+        0.043762344398347315,
+        0.049556614137487215,
+        0.14383562411508832
+      ],
+      "world_position_initialized_m": [
+        10.386814484541722,
+        0.09760699953147609,
+        0.17420196882860772
+      ],
+      "world_rotation_initialized": [
+        [
+          0.02534035085422992,
+          0.9745392560227308,
+          -0.2227803965551019
+        ],
+        [
+          -0.9966036130665414,
+          0.042093710024400655,
+          0.07077681823237376
+        ],
+        [
+          0.07835244119554496,
+          0.2202302387208569,
+          0.9722960130082067
+        ]
+      ],
+      "mesh": "Right_Shank",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "contype": "0",
+        "conaffinity": "0",
+        "group": "1",
+        "density": "0",
+        "rgba": "0.75294 0.75294 0.75294 1",
+        "mesh": "Right_Shank"
+      }
+    },
+    {
+      "geom_id": 69,
+      "name": "k1_geom_39",
+      "body_id": 23,
+      "body": "right_knee_pitch_link",
+      "is_k1": true,
+      "region": "right_leg",
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_quaternion_wxyz": [
+        0.7071052811843601,
+        0.707108281185553,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.045,
+        0.035,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        10.373359757187057,
+        0.096,
+        0.2870414787387705
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.9887710770453216,
+          -0.14943813836578912,
+          6.340125782711148e-07
+        ],
+        [
+          1.249000902703301e-16,
+          4.2426423742525365e-06,
+          0.9999999999910001
+        ],
+        [
+          -0.14943813836713407,
+          0.9887710770364226,
+          -4.195002069884435e-06
+        ]
+      ],
+      "mesh": null,
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": true,
+      "source_xml_geom_attributes": {
+        "size": "0.045 0.035",
+        "quat": "0.707105 0.707108 0 0",
+        "type": "cylinder",
+        "rgba": "0.75294 0.75294 0.75294 1"
+      }
+    },
+    {
+      "geom_id": 70,
+      "name": "k1_geom_40",
+      "body_id": 23,
+      "body": "right_knee_pitch_link",
+      "is_k1": true,
+      "region": "right_leg",
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        0.0,
+        0.0,
+        -0.13
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.03,
+        0.03,
+        0.05
+      ],
+      "world_position_initialized_m": [
+        10.392786715174784,
+        0.096,
+        0.15850123872287872
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.9887710770453214,
+          -1.2246468525851676e-16,
+          -0.14943813836713407
+        ],
+        [
+          1.2108953874307994e-16,
+          -0.9999999999999999,
+          1.8300894580749754e-17
+        ],
+        [
+          -0.14943813836713407,
+          0.0,
+          0.9887710770453214
+        ]
+      ],
+      "mesh": null,
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": true,
+      "source_xml_geom_attributes": {
+        "size": "0.03 0.03 0.05",
+        "pos": "0 0 -0.13",
+        "type": "box",
+        "rgba": "0.75294 0.75294 0.75294 1"
+      }
+    },
+    {
+      "geom_id": 71,
+      "name": "k1_geom_41",
+      "body_id": 24,
+      "body": "right_ankle_pitch_link",
+      "is_k1": true,
+      "region": "right_leg",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        1.464231336364494e-08,
+        7.89528640490916e-07,
+        1.8411178787693673e-07
+      ],
+      "local_quaternion_wxyz": [
+        -2.693852775507023e-17,
+        0.7071067811865489,
+        2.693852775507023e-17,
+        0.7071067811865489
+      ],
+      "size_m": [
+        0.007500183944149844,
+        0.009000789141210335,
+        0.01700001556618543
+      ],
+      "world_position_initialized_m": [
+        10.409805632462538,
+        0.0961992104713595,
+        0.044575434190269415
+      ],
+      "world_rotation_initialized": [
+        [
+          -2.6762594219646915e-34,
+          4.627102265534836e-17,
+          -1.0000000000000036
+        ],
+        [
+          0.0,
+          1.0000000000000036,
+          4.627102265534836e-17
+        ],
+        [
+          1.0000000000000036,
+          0.0,
+          2.6762594219646915e-34
+        ]
+      ],
+      "mesh": "Right_Ankle_Cross",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "contype": "0",
+        "conaffinity": "0",
+        "group": "1",
+        "density": "0",
+        "rgba": "0.75294 0.75294 0.75294 1",
+        "mesh": "Right_Ankle_Cross"
+      }
+    },
+    {
+      "geom_id": 72,
+      "name": "k1_geom_42",
+      "body_id": 25,
+      "body": "right_ankle_roll_link",
+      "is_k1": true,
+      "region": "right_foot",
+      "type": "mjGEOM_MESH",
+      "local_position_m": [
+        0.018117799165160382,
+        -0.00019341844962701026,
+        -0.014220418665284425
+      ],
+      "local_quaternion_wxyz": [
+        -0.001774973079231903,
+        0.7286715096690981,
+        -0.0026072430140303272,
+        0.6848561036823685
+      ],
+      "size_m": [
+        0.03682073819651022,
+        0.04093444288654787,
+        0.10191446020417118
+      ],
+      "world_position_initialized_m": [
+        10.391687847939691,
+        0.09639341844962701,
+        0.030354831413197114
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.0619306390657453,
+          0.0013684451118477839,
+          -0.9980795175249771
+        ],
+        [
+          0.006230849700583096,
+          0.9999801035088711,
+          0.0009844279573520544
+        ],
+        [
+          0.9980610063803336,
+          -0.006157917210415604,
+          -0.061937933439149724
+        ]
+      ],
+      "mesh": "Right_Foot",
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false,
+      "source_xml_geom_attributes": {
+        "type": "mesh",
+        "contype": "0",
+        "conaffinity": "0",
+        "group": "1",
+        "density": "0",
+        "rgba": "0.75294 0.75294 0.75294 1.0",
+        "mesh": "Right_Foot"
+      }
+    },
+    {
+      "geom_id": 73,
+      "name": "k1_geom_43",
+      "body_id": 25,
+      "body": "right_ankle_roll_link",
+      "is_k1": true,
+      "region": "right_foot",
+      "type": "mjGEOM_BOX",
+      "local_position_m": [
+        0.026,
+        0.0,
+        -0.02
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.09,
+        0.035,
+        0.018
+      ],
+      "world_position_initialized_m": [
+        10.383805647104852,
+        0.0962,
+        0.02457525007848154
+      ],
+      "world_rotation_initialized": [
+        [
+          -0.9999999999999998,
+          -1.2246468525851674e-16,
+          2.1818312323749918e-17
+        ],
+        [
+          1.2246468525851674e-16,
+          -0.9999999999999998,
+          -2.620590904724588e-33
+        ],
+        [
+          2.1818312323749918e-17,
+          5.138184687546374e-35,
+          0.9999999999999998
+        ]
+      ],
+      "mesh": null,
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.7529399991035461,
+        0.7529399991035461,
+        0.7529399991035461,
+        0.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": true,
+      "source_xml_geom_attributes": {
+        "type": "box",
+        "pos": "0.026 0 -0.02",
+        "size": "0.09 0.035 0.018",
+        "rgba": "0.75294 0.75294 0.75294 0.0"
+      }
+    },
+    {
+      "geom_id": 74,
+      "name": "goal_left_left_post",
+      "body_id": 26,
+      "body": "goal_left",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        -1.54,
+        0.0,
+        1.04
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.04,
+        1.04,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        -11.0,
+        1.5399999999999996,
+        1.0399999999999998
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          0.9999999999999998,
+          0.0
+        ],
+        [
+          -0.9999999999999998,
+          0.0,
+          -0.0
+        ],
+        [
+          -0.0,
+          0.0,
+          0.9999999999999998
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.9700000286102295,
+        0.9700000286102295,
+        0.9700000286102295,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 75,
+      "name": "goal_left_left_post_collision",
+      "body_id": 26,
+      "body": "goal_left",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        -1.54,
+        0.0,
+        1.04
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.04,
+        1.04,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        -11.0,
+        1.5399999999999996,
+        1.0399999999999998
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          0.9999999999999998,
+          0.0
+        ],
+        [
+          -0.9999999999999998,
+          0.0,
+          -0.0
+        ],
+        [
+          -0.0,
+          0.0,
+          0.9999999999999998
+        ]
+      ],
+      "mesh": null,
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": true
+    },
+    {
+      "geom_id": 76,
+      "name": "goal_left_right_post",
+      "body_id": 26,
+      "body": "goal_left",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        1.54,
+        0.0,
+        1.04
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.04,
+        1.04,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        -11.0,
+        -1.5399999999999996,
+        1.0399999999999998
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          0.9999999999999998,
+          0.0
+        ],
+        [
+          -0.9999999999999998,
+          0.0,
+          -0.0
+        ],
+        [
+          -0.0,
+          0.0,
+          0.9999999999999998
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.9700000286102295,
+        0.9700000286102295,
+        0.9700000286102295,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 77,
+      "name": "goal_left_right_post_collision",
+      "body_id": 26,
+      "body": "goal_left",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        1.54,
+        0.0,
+        1.04
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.04,
+        1.04,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        -11.0,
+        -1.5399999999999996,
+        1.0399999999999998
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          0.9999999999999998,
+          0.0
+        ],
+        [
+          -0.9999999999999998,
+          0.0,
+          -0.0
+        ],
+        [
+          -0.0,
+          0.0,
+          0.9999999999999998
+        ]
+      ],
+      "mesh": null,
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": true
+    },
+    {
+      "geom_id": 78,
+      "name": "goal_left_crossbar",
+      "body_id": 26,
+      "body": "goal_left",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        0.0,
+        0.0,
+        2.04
+      ],
+      "local_quaternion_wxyz": [
+        0.7071067811865475,
+        0.0,
+        0.7071067811865475,
+        0.0
+      ],
+      "size_m": [
+        0.04,
+        1.54,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        -11.0,
+        0.0,
+        2.0399999999999996
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          0.9999999999999996,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -0.9999999999999996
+        ],
+        [
+          -0.9999999999999996,
+          0.0,
+          0.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.9700000286102295,
+        0.9700000286102295,
+        0.9700000286102295,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 79,
+      "name": "goal_left_crossbar_collision",
+      "body_id": 26,
+      "body": "goal_left",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        0.0,
+        0.0,
+        2.04
+      ],
+      "local_quaternion_wxyz": [
+        0.7071067811865475,
+        0.0,
+        0.7071067811865475,
+        0.0
+      ],
+      "size_m": [
+        0.04,
+        1.54,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        -11.0,
+        0.0,
+        2.0399999999999996
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          0.9999999999999996,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -0.9999999999999996
+        ],
+        [
+          -0.9999999999999996,
+          0.0,
+          0.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": true
+    },
+    {
+      "geom_id": 80,
+      "name": "goal_left_left_upper_depth",
+      "body_id": 26,
+      "body": "goal_left",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        -1.54,
+        -0.4,
+        2.04
+      ],
+      "local_quaternion_wxyz": [
+        0.7071067811865475,
+        0.7071067811865475,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.02,
+        0.4,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        -11.4,
+        1.5399999999999996,
+        2.0399999999999996
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          0.0,
+          -0.9999999999999996
+        ],
+        [
+          -0.9999999999999996,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.9999999999999996,
+          0.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.6499999761581421,
+        0.6800000071525574,
+        0.699999988079071,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 81,
+      "name": "goal_left_right_upper_depth",
+      "body_id": 26,
+      "body": "goal_left",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        1.54,
+        -0.4,
+        2.04
+      ],
+      "local_quaternion_wxyz": [
+        0.7071067811865475,
+        0.7071067811865475,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.02,
+        0.4,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        -11.4,
+        -1.5399999999999996,
+        2.0399999999999996
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          0.0,
+          -0.9999999999999996
+        ],
+        [
+          -0.9999999999999996,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.9999999999999996,
+          0.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.6499999761581421,
+        0.6800000071525574,
+        0.699999988079071,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 82,
+      "name": "goal_left_left_ground_depth",
+      "body_id": 26,
+      "body": "goal_left",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        -1.54,
+        -0.5,
+        0.02
+      ],
+      "local_quaternion_wxyz": [
+        0.7071067811865475,
+        0.7071067811865475,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.02,
+        0.5,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        -11.5,
+        1.5399999999999996,
+        0.019999999999999997
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          0.0,
+          -0.9999999999999996
+        ],
+        [
+          -0.9999999999999996,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.9999999999999996,
+          0.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.6499999761581421,
+        0.6800000071525574,
+        0.699999988079071,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 83,
+      "name": "goal_left_right_ground_depth",
+      "body_id": 26,
+      "body": "goal_left",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        1.54,
+        -0.5,
+        0.02
+      ],
+      "local_quaternion_wxyz": [
+        0.7071067811865475,
+        0.7071067811865475,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.02,
+        0.5,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        -11.5,
+        -1.5399999999999996,
+        0.019999999999999997
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          0.0,
+          -0.9999999999999996
+        ],
+        [
+          -0.9999999999999996,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.9999999999999996,
+          0.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.6499999761581421,
+        0.6800000071525574,
+        0.699999988079071,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 84,
+      "name": "goal_left_left_rear_support",
+      "body_id": 26,
+      "body": "goal_left",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        -1.54,
+        -0.9,
+        1.03
+      ],
+      "local_quaternion_wxyz": [
+        0.9987825897680087,
+        -0.04932887973904955,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.02,
+        1.01494,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        -11.9,
+        1.5399999999999996,
+        1.0299999999999998
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          0.9951333232473806,
+          0.09853765251224511
+        ],
+        [
+          -0.9999999999999999,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -0.09853765251224511,
+          0.9951333232473806
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.6499999761581421,
+        0.6800000071525574,
+        0.699999988079071,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 85,
+      "name": "goal_left_right_rear_support",
+      "body_id": 26,
+      "body": "goal_left",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        1.54,
+        -0.9,
+        1.03
+      ],
+      "local_quaternion_wxyz": [
+        0.9987825897680087,
+        -0.04932887973904955,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.02,
+        1.01494,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        -11.9,
+        -1.5399999999999996,
+        1.0299999999999998
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          0.9951333232473806,
+          0.09853765251224511
+        ],
+        [
+          -0.9999999999999999,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -0.09853765251224511,
+          0.9951333232473806
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.6499999761581421,
+        0.6800000071525574,
+        0.699999988079071,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 86,
+      "name": "goal_left_rear_top_bar",
+      "body_id": 26,
+      "body": "goal_left",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        0.0,
+        -0.8,
+        2.04
+      ],
+      "local_quaternion_wxyz": [
+        0.7071067811865475,
+        0.0,
+        0.7071067811865475,
+        0.0
+      ],
+      "size_m": [
+        0.02,
+        1.54,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        -11.8,
+        0.0,
+        2.0399999999999996
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          0.9999999999999996,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -0.9999999999999996
+        ],
+        [
+          -0.9999999999999996,
+          0.0,
+          0.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.6499999761581421,
+        0.6800000071525574,
+        0.699999988079071,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 87,
+      "name": "goal_left_rear_bottom_bar",
+      "body_id": 26,
+      "body": "goal_left",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        0.0,
+        -1.0,
+        0.02
+      ],
+      "local_quaternion_wxyz": [
+        0.7071067811865475,
+        0.0,
+        0.7071067811865475,
+        0.0
+      ],
+      "size_m": [
+        0.02,
+        1.54,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        -12.0,
+        0.0,
+        0.019999999999999997
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          0.9999999999999996,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -0.9999999999999996
+        ],
+        [
+          -0.9999999999999996,
+          0.0,
+          0.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.6499999761581421,
+        0.6800000071525574,
+        0.699999988079071,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 88,
+      "name": "goal_right_left_post",
+      "body_id": 27,
+      "body": "goal_right",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        -1.54,
+        0.0,
+        1.04
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.04,
+        1.04,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        11.0,
+        -1.5399999999999996,
+        1.0399999999999998
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          -0.9999999999999998,
+          0.0
+        ],
+        [
+          0.9999999999999998,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.9999999999999998
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.9700000286102295,
+        0.9700000286102295,
+        0.9700000286102295,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 89,
+      "name": "goal_right_left_post_collision",
+      "body_id": 27,
+      "body": "goal_right",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        -1.54,
+        0.0,
+        1.04
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.04,
+        1.04,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        11.0,
+        -1.5399999999999996,
+        1.0399999999999998
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          -0.9999999999999998,
+          0.0
+        ],
+        [
+          0.9999999999999998,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.9999999999999998
+        ]
+      ],
+      "mesh": null,
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": true
+    },
+    {
+      "geom_id": 90,
+      "name": "goal_right_right_post",
+      "body_id": 27,
+      "body": "goal_right",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        1.54,
+        0.0,
+        1.04
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.04,
+        1.04,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        11.0,
+        1.5399999999999996,
+        1.0399999999999998
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          -0.9999999999999998,
+          0.0
+        ],
+        [
+          0.9999999999999998,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.9999999999999998
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.9700000286102295,
+        0.9700000286102295,
+        0.9700000286102295,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 91,
+      "name": "goal_right_right_post_collision",
+      "body_id": 27,
+      "body": "goal_right",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        1.54,
+        0.0,
+        1.04
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.04,
+        1.04,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        11.0,
+        1.5399999999999996,
+        1.0399999999999998
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          -0.9999999999999998,
+          0.0
+        ],
+        [
+          0.9999999999999998,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.9999999999999998
+        ]
+      ],
+      "mesh": null,
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": true
+    },
+    {
+      "geom_id": 92,
+      "name": "goal_right_crossbar",
+      "body_id": 27,
+      "body": "goal_right",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        0.0,
+        0.0,
+        2.04
+      ],
+      "local_quaternion_wxyz": [
+        0.7071067811865475,
+        0.0,
+        0.7071067811865475,
+        0.0
+      ],
+      "size_m": [
+        0.04,
+        1.54,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        11.0,
+        0.0,
+        2.0399999999999996
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          -0.9999999999999996,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.9999999999999996
+        ],
+        [
+          -0.9999999999999996,
+          0.0,
+          0.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.9700000286102295,
+        0.9700000286102295,
+        0.9700000286102295,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 93,
+      "name": "goal_right_crossbar_collision",
+      "body_id": 27,
+      "body": "goal_right",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        0.0,
+        0.0,
+        2.04
+      ],
+      "local_quaternion_wxyz": [
+        0.7071067811865475,
+        0.0,
+        0.7071067811865475,
+        0.0
+      ],
+      "size_m": [
+        0.04,
+        1.54,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        11.0,
+        0.0,
+        2.0399999999999996
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          -0.9999999999999996,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.9999999999999996
+        ],
+        [
+          -0.9999999999999996,
+          0.0,
+          0.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": true
+    },
+    {
+      "geom_id": 94,
+      "name": "goal_right_left_upper_depth",
+      "body_id": 27,
+      "body": "goal_right",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        -1.54,
+        -0.4,
+        2.04
+      ],
+      "local_quaternion_wxyz": [
+        0.7071067811865475,
+        0.7071067811865475,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.02,
+        0.4,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        11.4,
+        -1.5399999999999996,
+        2.0399999999999996
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          0.0,
+          0.9999999999999996
+        ],
+        [
+          0.9999999999999996,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.9999999999999996,
+          0.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.6499999761581421,
+        0.6800000071525574,
+        0.699999988079071,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 95,
+      "name": "goal_right_right_upper_depth",
+      "body_id": 27,
+      "body": "goal_right",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        1.54,
+        -0.4,
+        2.04
+      ],
+      "local_quaternion_wxyz": [
+        0.7071067811865475,
+        0.7071067811865475,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.02,
+        0.4,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        11.4,
+        1.5399999999999996,
+        2.0399999999999996
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          0.0,
+          0.9999999999999996
+        ],
+        [
+          0.9999999999999996,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.9999999999999996,
+          0.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.6499999761581421,
+        0.6800000071525574,
+        0.699999988079071,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 96,
+      "name": "goal_right_left_ground_depth",
+      "body_id": 27,
+      "body": "goal_right",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        -1.54,
+        -0.5,
+        0.02
+      ],
+      "local_quaternion_wxyz": [
+        0.7071067811865475,
+        0.7071067811865475,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.02,
+        0.5,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        11.5,
+        -1.5399999999999996,
+        0.019999999999999997
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          0.0,
+          0.9999999999999996
+        ],
+        [
+          0.9999999999999996,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.9999999999999996,
+          0.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.6499999761581421,
+        0.6800000071525574,
+        0.699999988079071,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 97,
+      "name": "goal_right_right_ground_depth",
+      "body_id": 27,
+      "body": "goal_right",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        1.54,
+        -0.5,
+        0.02
+      ],
+      "local_quaternion_wxyz": [
+        0.7071067811865475,
+        0.7071067811865475,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.02,
+        0.5,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        11.5,
+        1.5399999999999996,
+        0.019999999999999997
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          0.0,
+          0.9999999999999996
+        ],
+        [
+          0.9999999999999996,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.9999999999999996,
+          0.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.6499999761581421,
+        0.6800000071525574,
+        0.699999988079071,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 98,
+      "name": "goal_right_left_rear_support",
+      "body_id": 27,
+      "body": "goal_right",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        -1.54,
+        -0.9,
+        1.03
+      ],
+      "local_quaternion_wxyz": [
+        0.9987825897680087,
+        -0.04932887973904955,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.02,
+        1.01494,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        11.9,
+        -1.5399999999999996,
+        1.0299999999999998
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          -0.9951333232473806,
+          -0.09853765251224511
+        ],
+        [
+          0.9999999999999999,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -0.09853765251224511,
+          0.9951333232473806
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.6499999761581421,
+        0.6800000071525574,
+        0.699999988079071,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 99,
+      "name": "goal_right_right_rear_support",
+      "body_id": 27,
+      "body": "goal_right",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        1.54,
+        -0.9,
+        1.03
+      ],
+      "local_quaternion_wxyz": [
+        0.9987825897680087,
+        -0.04932887973904955,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.02,
+        1.01494,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        11.9,
+        1.5399999999999996,
+        1.0299999999999998
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          -0.9951333232473806,
+          -0.09853765251224511
+        ],
+        [
+          0.9999999999999999,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -0.09853765251224511,
+          0.9951333232473806
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.6499999761581421,
+        0.6800000071525574,
+        0.699999988079071,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 100,
+      "name": "goal_right_rear_top_bar",
+      "body_id": 27,
+      "body": "goal_right",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        0.0,
+        -0.8,
+        2.04
+      ],
+      "local_quaternion_wxyz": [
+        0.7071067811865475,
+        0.0,
+        0.7071067811865475,
+        0.0
+      ],
+      "size_m": [
+        0.02,
+        1.54,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        11.8,
+        0.0,
+        2.0399999999999996
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          -0.9999999999999996,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.9999999999999996
+        ],
+        [
+          -0.9999999999999996,
+          0.0,
+          0.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.6499999761581421,
+        0.6800000071525574,
+        0.699999988079071,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 101,
+      "name": "goal_right_rear_bottom_bar",
+      "body_id": 27,
+      "body": "goal_right",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_CYLINDER",
+      "local_position_m": [
+        0.0,
+        -1.0,
+        0.02
+      ],
+      "local_quaternion_wxyz": [
+        0.7071067811865475,
+        0.0,
+        0.7071067811865475,
+        0.0
+      ],
+      "size_m": [
+        0.02,
+        1.54,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        12.0,
+        0.0,
+        0.019999999999999997
+      ],
+      "world_rotation_initialized": [
+        [
+          0.0,
+          -0.9999999999999996,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.9999999999999996
+        ],
+        [
+          -0.9999999999999996,
+          0.0,
+          0.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 0,
+      "conaffinity": 0,
+      "rgba": [
+        0.6499999761581421,
+        0.6800000071525574,
+        0.699999988079071,
+        1.0
+      ],
+      "group": 1,
+      "disabled_visual": true,
+      "ball_mask_match": false,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    },
+    {
+      "geom_id": 102,
+      "name": "ball_collision",
+      "body_id": 28,
+      "body": "ball",
+      "is_k1": false,
+      "region": null,
+      "type": "mjGEOM_SPHERE",
+      "local_position_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.11,
+        0.0,
+        0.0
+      ],
+      "world_position_initialized_m": [
+        7.0,
+        0.0,
+        0.111
+      ],
+      "world_rotation_initialized": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null,
+      "contype": 1,
+      "conaffinity": 1,
+      "rgba": [
+        0.5,
+        0.5,
+        0.5,
+        1.0
+      ],
+      "group": 0,
+      "disabled_visual": false,
+      "ball_mask_match": true,
+      "ball_body_excluded": false,
+      "ball_explicit_pair": false,
+      "ball_collision_eligible": false
+    }
+  ],
+  "quiet_baseline": {
+    "command": [
+      0,
+      0,
+      0
+    ],
+    "duration_s": 2,
+    "physics_steps": 2000,
+    "policy_steps": 100,
+    "final_time_s": 1.9999999999998905,
+    "initial_warning_counts": {
+      "mjWARN_INERTIA": 0,
+      "mjWARN_CONTACTFULL": 0,
+      "mjWARN_CNSTRFULL": 0,
+      "mjWARN_VGEOMFULL": 0,
+      "mjWARN_BADQPOS": 0,
+      "mjWARN_BADQVEL": 0,
+      "mjWARN_BADQACC": 0,
+      "mjWARN_BADCTRL": 0
+    },
+    "final_warning_counts": {
+      "mjWARN_INERTIA": 0,
+      "mjWARN_CONTACTFULL": 0,
+      "mjWARN_CNSTRFULL": 0,
+      "mjWARN_VGEOMFULL": 0,
+      "mjWARN_BADQPOS": 0,
+      "mjWARN_BADQVEL": 0,
+      "mjWARN_BADQACC": 0,
+      "mjWARN_BADCTRL": 0
+    },
+    "finite_qpos": true,
+    "finite_qvel": true,
+    "robot_ball_contact_samples": 0,
+    "final_ball_contact_count": 1,
+    "note": "No ball launch or robot impact; stationary ball may contact ground."
+  },
+  "warning_provenance": {
+    "historical_log": "reports/goalkeeper_validation/tests.txt",
+    "intentional_test": "tests/test_goal_detection.py::test_mujoco_silent_unstable_reset_is_error",
+    "native_probe": {
+      "deliberate_input": true,
+      "robot_mode": "absent",
+      "ball_dof_address": 0,
+      "before": {
+        "time": 0.0,
+        "warning_counts": {
+          "mjWARN_INERTIA": 0,
+          "mjWARN_CONTACTFULL": 0,
+          "mjWARN_CNSTRFULL": 0,
+          "mjWARN_VGEOMFULL": 0,
+          "mjWARN_BADQPOS": 0,
+          "mjWARN_BADQVEL": 0,
+          "mjWARN_BADQACC": 0,
+          "mjWARN_BADCTRL": 0
+        },
+        "ball_velocity": [
+          1e+100,
+          0.0,
+          0.0
+        ]
+      },
+      "after_forward": {
+        "time": 0.0,
+        "warning_counts": {
+          "mjWARN_INERTIA": 0,
+          "mjWARN_CONTACTFULL": 0,
+          "mjWARN_CNSTRFULL": 0,
+          "mjWARN_VGEOMFULL": 0,
+          "mjWARN_BADQPOS": 0,
+          "mjWARN_BADQVEL": 0,
+          "mjWARN_BADQACC": 0,
+          "mjWARN_BADCTRL": 0
+        }
+      },
+      "after_step": {
+        "time": 0.001,
+        "warning_counts": {
+          "mjWARN_INERTIA": 0,
+          "mjWARN_CONTACTFULL": 0,
+          "mjWARN_CNSTRFULL": 0,
+          "mjWARN_VGEOMFULL": 0,
+          "mjWARN_BADQPOS": 0,
+          "mjWARN_BADQVEL": 1,
+          "mjWARN_BADQACC": 0,
+          "mjWARN_BADCTRL": 0
+        },
+        "ball_velocity": [
+          0.0,
+          0.0,
+          -0.009810000000000001
+        ],
+        "finite_qpos": true,
+        "finite_qvel": true
+      },
+      "run_shot_exception": "MuJoCo unstable state: mjWARN_BADQVEL",
+      "verified": true
+    },
+    "tests": {
+      "isolated_warning_test": {
+        "command": [
+          "/path/to/booster/.venv/bin/python",
+          "-m",
+          "pytest",
+          "-q",
+          "tests/test_goal_detection.py::test_mujoco_silent_unstable_reset_is_error"
+        ],
+        "returncode_on_this_audit_run": null,
+        "log": "reports/collision_audit/isolated_warning_test.txt",
+        "passed": 1,
+        "deselected": 0,
+        "native_warning_line_count": 1,
+        "output": ".                                                                        [100%]\n1 passed in 0.32s\nWARNING: Nan, Inf or huge value in QVEL at DOF 0. The simulation is unstable. Time = 0.0000.\n\n"
+      },
+      "baseline_without_intentional_warning": {
+        "command": [
+          "/path/to/booster/.venv/bin/python",
+          "-m",
+          "pytest",
+          "-q",
+          "-k",
+          "not test_mujoco_silent_unstable_reset_is_error"
+        ],
+        "returncode_on_this_audit_run": null,
+        "log": "reports/collision_audit/baseline_without_intentional_warning.txt",
+        "passed": 160,
+        "deselected": 1,
+        "native_warning_line_count": 0,
+        "output": "........................................................................ [ 45%]\n........................................................................ [ 90%]\n................                                                         [100%]\n160 passed, 1 deselected in 4.01s\n"
+      }
+    }
+  },
+  "coverage_gaps": [
+    "Shoulder-pitch roots, hip-pitch roots and ankle-pitch crosses have visual-only meshes.",
+    "Trunk and legs use partial box/cylinder proxies, not continuous full visual coverage.",
+    "Head and distal arms use convex mesh collision; visual concavities are not guaranteed."
+  ],
+  "official_testable_targets": {
+    "trunk": "k1_geom_1",
+    "left_shank": "k1_geom_29",
+    "right_shank": "k1_geom_40",
+    "left_foot": "k1_geom_32",
+    "right_foot": "k1_geom_43",
+    "left_arm": "k1_geom_12",
+    "right_arm": "k1_geom_19",
+    "head": "k1_geom_7"
+  },
+  "supplemental_model_required_for_these_targets": false
+}

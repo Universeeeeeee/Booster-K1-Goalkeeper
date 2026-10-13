@@ -1,0 +1,36 @@
+front_2: contact=True maintained=True recovered=True fall=False goal=False blocked=True repeat=True
+front_4: contact=True maintained=True recovered=True fall=False goal=False blocked=True repeat=True
+front_6: contact=True maintained=True recovered=True fall=False goal=False blocked=True repeat=True
+front_8: contact=True maintained=True recovered=True fall=False goal=False blocked=True repeat=True
+front_12: contact=True maintained=True recovered=True fall=False goal=False blocked=True repeat=True
+front_16: contact=True maintained=True recovered=True fall=False goal=False blocked=True repeat=True
+front_20: contact=True maintained=False recovered=False fall=True goal=None blocked=None repeat=True
+eccentric_-1_2: contact=True maintained=True recovered=True fall=False goal=False blocked=True repeat=True
+eccentric_-1_4: contact=True maintained=True recovered=True fall=False goal=False blocked=True repeat=True
+eccentric_-1_8: contact=True maintained=True recovered=True fall=False goal=False blocked=True repeat=True
+eccentric_+1_2: contact=True maintained=True recovered=True fall=False goal=False blocked=True repeat=True
+eccentric_+1_4: contact=True maintained=True recovered=True fall=False goal=False blocked=True repeat=True
+eccentric_+1_8: contact=True maintained=True recovered=True fall=False goal=False blocked=True repeat=True
+left_foot_2: contact=True maintained=True recovered=True fall=False goal=False blocked=True repeat=True
+left_foot_4: contact=True maintained=True recovered=True fall=False goal=True blocked=False repeat=True
+left_foot_8: contact=True maintained=True recovered=True fall=False goal=True blocked=False repeat=True
+left_shank_2: contact=True maintained=True recovered=True fall=False goal=False blocked=True repeat=True
+left_shank_4: contact=True maintained=True recovered=True fall=False goal=False blocked=True repeat=True
+left_shank_8: contact=True maintained=True recovered=True fall=False goal=False blocked=True repeat=True
+right_foot_2: contact=True maintained=True recovered=True fall=False goal=False blocked=True repeat=True
+right_foot_4: contact=True maintained=True recovered=True fall=False goal=True blocked=False repeat=True
+right_foot_8: contact=True maintained=True recovered=True fall=False goal=True blocked=False repeat=True
+right_shank_2: contact=True maintained=True recovered=True fall=False goal=False blocked=True repeat=True
+right_shank_4: contact=True maintained=True recovered=True fall=False goal=False blocked=True repeat=True
+right_shank_8: contact=True maintained=True recovered=True fall=False goal=False blocked=True repeat=True
+moving_2: contact=True maintained=True recovered=True fall=False goal=False blocked=True repeat=True
+moving_4: contact=True maintained=True recovered=True fall=False goal=False blocked=True repeat=True
+moving_8: contact=True maintained=True recovered=True fall=False goal=False blocked=True repeat=True
+head_2: contact=True maintained=True recovered=True fall=False goal=False blocked=True repeat=True
+left_forearm_2: contact=True maintained=True recovered=True fall=False goal=False blocked=True repeat=True
+right_forearm_2: contact=True maintained=True recovered=True fall=False goal=False blocked=True repeat=True
+miss_4: contact=False maintained=True recovered=False fall=False goal=True blocked=False repeat=True
+moving_miss_4: contact=False maintained=True recovered=False fall=False goal=True blocked=False repeat=True
+fixed_front_2: contact=True goal=False
+fixed_front_8: contact=True goal=False
+fixed_front_20: contact=True goal=True

@@ -1,0 +1,1333 @@
+{
+  "stage": "F",
+  "audit": "independent empirical lateral response from existing C/D and collision geometry",
+  "units": {
+    "distance": "m",
+    "time": "s",
+    "velocity": "m/s"
+  },
+  "coordinate_convention": {
+    "robot_faces_world": "-X",
+    "body_positive_Y": "world -Y = goal lateral -X",
+    "goal_positive_lateral_X": "world +Y = body -Y",
+    "normalization": "C displacement projected onto initial body +Y axis [-sin(initial_yaw),cos(initial_yaw),0]; sign-adjusted for each command. This is mapped to official goal lateral sign by negating command sign."
+  },
+  "recommended_parameters": {
+    "body_lateral_command_mps": 0.2,
+    "conservative_sustained_speed_mps": 0.1,
+    "startup_delay_s": 1.0,
+    "startup_and_reversal_excursion_allowance_m": 0.02,
+    "stop_planning_time_s": 1.0,
+    "stop_confirmation_time_s": 2.0,
+    "stop_distance_reserve_m": 0.07,
+    "total_stop_and_reversal_reserve_m": 0.09,
+    "geometry_clearance_m": 0.05,
+    "safe_lateral_center_clamp_m": 0.65
+  },
+  "reachable_lower_envelope": {
+    "formula": "signed_displacement_m >= 0.10 * max(elapsed_s - 1.0, 0) - 0.02",
+    "all_samples_verified": true,
+    "minimum_sample_slack_m": 0.009077737645820632,
+    "max_required_delay_without_excursion_allowance_s": 0.7380485081938571,
+    "interpretation": "Empirical lower envelope under the measured sustained command protocols; use 0 reachable movement credit for elapsed<=1 s, and keep the separate 0.02 m adverse excursion reserve."
+  },
+  "aggregate": {
+    "motion_segments": 20,
+    "pure_lateral_zero_recoveries": 15,
+    "steady_sliding_0_5s_min_mps": 0.10681483205486447,
+    "zero_start_steady_sliding_0_5s_min_mps": 0.1386262100659316,
+    "steady_sliding_1s_min_mps": 0.12799464980329445,
+    "max_stop_overshoot_m": 0.05992972550256903,
+    "max_low_speed_onset_s": 0.8000000000000007,
+    "max_low_speed_confirmation_s": 1.8000000000000007,
+    "max_start_adverse_excursion_m": 0.010922262354179368,
+    "D_world_velocity_vs_position_difference_max_error_mps": 8.880986224202303e-13
+  },
+  "directional_asymmetry": {
+    "1": {
+      "official_goal_lateral_direction": 1,
+      "body_lateral_command_mps": -0.2,
+      "steady_0_5s_min_mps": 0.10681483205486447,
+      "zero_start_steady_0_5s_min_mps": 0.1386262100659316,
+      "steady_1s_min_mps": 0.12799464980329445,
+      "max_stop_overshoot_m": 0.05518872623199478,
+      "max_low_speed_onset_s": 0.6000000000000005,
+      "max_adverse_start_excursion_m": 0.010922262354179368
+    },
+    "-1": {
+      "official_goal_lateral_direction": -1,
+      "body_lateral_command_mps": 0.2,
+      "steady_0_5s_min_mps": 0.14154385292764693,
+      "zero_start_steady_0_5s_min_mps": 0.14154385292764693,
+      "steady_1s_min_mps": 0.16324424472693055,
+      "max_stop_overshoot_m": 0.05992972550256903,
+      "max_low_speed_onset_s": 0.8000000000000007,
+      "max_adverse_start_excursion_m": 2.4103702307590267e-07
+    }
+  },
+  "geometry": {
+    "post_inner_face_abs_goal_lateral_m": 1.4999999999999996,
+    "collision_geometry_all_articulation_root_radius_bound_m": 0.6930840624906045,
+    "formula": "Each geom: sum(norm(body_pos)) from free trunk to geom body + norm(geom_pos) + geom_rbound. Triangle inequality holds under arbitrary joint and trunk rotations; use maximum over 20 audited eligible K1 collision geoms.",
+    "exact_safe_precommand_center_bound_abs_m": 0.6669159375093949,
+    "rounded_chosen_center_bound_abs_m": 0.65,
+    "instantaneous_geometric_center_bound_with_clearance_abs_m": 0.756915937509395,
+    "collision_geom_bounds": [
+      {
+        "name": "k1_geom_1",
+        "root_body": "trunk",
+        "ancestor_link_offset_length_sum_m": 0.0,
+        "geom_center_offset_length_m": 0.1,
+        "bounding_sphere_radius_m": 0.1414213562373095,
+        "all_articulation_root_radius_bound_m": 0.2414213562373095
+      },
+      {
+        "name": "k1_geom_2",
+        "root_body": "trunk",
+        "ancestor_link_offset_length_sum_m": 0.0,
+        "geom_center_offset_length_m": 0.06,
+        "bounding_sphere_radius_m": 0.07071067811865477,
+        "all_articulation_root_radius_bound_m": 0.13071067811865478
+      },
+      {
+        "name": "k1_geom_5",
+        "root_body": "trunk",
+        "ancestor_link_offset_length_sum_m": 0.21497295178696318,
+        "geom_center_offset_length_m": 0.03254420347005235,
+        "bounding_sphere_radius_m": 0.06155880908243871,
+        "all_articulation_root_radius_bound_m": 0.3090759643394542
+      },
+      {
+        "name": "k1_geom_7",
+        "root_body": "trunk",
+        "ancestor_link_offset_length_sum_m": 0.24797295178696319,
+        "geom_center_offset_length_m": 0.07631705472951142,
+        "bounding_sphere_radius_m": 0.1511247334850464,
+        "all_articulation_root_radius_bound_m": 0.475414740001521
+      },
+      {
+        "name": "k1_geom_10",
+        "root_body": "trunk",
+        "ancestor_link_offset_length_sum_m": 0.26929529484746234,
+        "geom_center_offset_length_m": 0.007,
+        "bounding_sphere_radius_m": 0.04879549159502341,
+        "all_articulation_root_radius_bound_m": 0.32509078644248574
+      },
+      {
+        "name": "k1_geom_12",
+        "root_body": "trunk",
+        "ancestor_link_offset_length_sum_m": 0.3137232948474623,
+        "geom_center_offset_length_m": 0.0725379500177814,
+        "bounding_sphere_radius_m": 0.09892752083107438,
+        "all_articulation_root_radius_bound_m": 0.4851887656963181
+      },
+      {
+        "name": "k1_geom_14",
+        "root_body": "trunk",
+        "ancestor_link_offset_length_sum_m": 0.4352232948474623,
+        "geom_center_offset_length_m": 0.10094374333693869,
+        "bounding_sphere_radius_m": 0.1423322648886537,
+        "all_articulation_root_radius_bound_m": 0.6784993030730547
+      },
+      {
+        "name": "k1_geom_17",
+        "root_body": "trunk",
+        "ancestor_link_offset_length_sum_m": 0.26929529484746234,
+        "geom_center_offset_length_m": 0.007,
+        "bounding_sphere_radius_m": 0.04879549159502341,
+        "all_articulation_root_radius_bound_m": 0.32509078644248574
+      },
+      {
+        "name": "k1_geom_19",
+        "root_body": "trunk",
+        "ancestor_link_offset_length_sum_m": 0.3137232948474623,
+        "geom_center_offset_length_m": 0.06582794264684266,
+        "bounding_sphere_radius_m": 0.10351858592542587,
+        "all_articulation_root_radius_bound_m": 0.4830698234197308
+      },
+      {
+        "name": "k1_geom_21",
+        "root_body": "trunk",
+        "ancestor_link_offset_length_sum_m": 0.4352232948474623,
+        "geom_center_offset_length_m": 0.10093725005081378,
+        "bounding_sphere_radius_m": 0.1423262097220907,
+        "all_articulation_root_radius_bound_m": 0.6784867546203668
+      },
+      {
+        "name": "k1_geom_24",
+        "root_body": "trunk",
+        "ancestor_link_offset_length_sum_m": 0.14906502346320827,
+        "geom_center_offset_length_m": 0.0,
+        "bounding_sphere_radius_m": 0.05920304046246273,
+        "all_articulation_root_radius_bound_m": 0.208268063925671
+      },
+      {
+        "name": "k1_geom_26",
+        "root_body": "trunk",
+        "ancestor_link_offset_length_sum_m": 0.19902750939015149,
+        "geom_center_offset_length_m": 0.03,
+        "bounding_sphere_radius_m": 0.05185556864985669,
+        "all_articulation_root_radius_bound_m": 0.28088307804000817
+      },
+      {
+        "name": "k1_geom_28",
+        "root_body": "trunk",
+        "ancestor_link_offset_length_sum_m": 0.31686213927457896,
+        "geom_center_offset_length_m": 0.0,
+        "bounding_sphere_radius_m": 0.057008771254956896,
+        "all_articulation_root_radius_bound_m": 0.37387091052953586
+      },
+      {
+        "name": "k1_geom_29",
+        "root_body": "trunk",
+        "ancestor_link_offset_length_sum_m": 0.31686213927457896,
+        "geom_center_offset_length_m": 0.13,
+        "bounding_sphere_radius_m": 0.06557438524302,
+        "all_articulation_root_radius_bound_m": 0.512436524517599
+      },
+      {
+        "name": "k1_geom_32",
+        "root_body": "trunk",
+        "ancestor_link_offset_length_sum_m": 0.5620523000328027,
+        "geom_center_offset_length_m": 0.03280243893371345,
+        "bounding_sphere_radius_m": 0.09822932352408827,
+        "all_articulation_root_radius_bound_m": 0.6930840624906045
+      },
+      {
+        "name": "k1_geom_35",
+        "root_body": "trunk",
+        "ancestor_link_offset_length_sum_m": 0.14906502346320827,
+        "geom_center_offset_length_m": 0.0,
+        "bounding_sphere_radius_m": 0.05920304046246273,
+        "all_articulation_root_radius_bound_m": 0.208268063925671
+      },
+      {
+        "name": "k1_geom_37",
+        "root_body": "trunk",
+        "ancestor_link_offset_length_sum_m": 0.19902750939015149,
+        "geom_center_offset_length_m": 0.03,
+        "bounding_sphere_radius_m": 0.05185556864985669,
+        "all_articulation_root_radius_bound_m": 0.28088307804000817
+      },
+      {
+        "name": "k1_geom_39",
+        "root_body": "trunk",
+        "ancestor_link_offset_length_sum_m": 0.31686213927457896,
+        "geom_center_offset_length_m": 0.0,
+        "bounding_sphere_radius_m": 0.057008771254956896,
+        "all_articulation_root_radius_bound_m": 0.37387091052953586
+      },
+      {
+        "name": "k1_geom_40",
+        "root_body": "trunk",
+        "ancestor_link_offset_length_sum_m": 0.31686213927457896,
+        "geom_center_offset_length_m": 0.13,
+        "bounding_sphere_radius_m": 0.06557438524302,
+        "all_articulation_root_radius_bound_m": 0.512436524517599
+      },
+      {
+        "name": "k1_geom_43",
+        "root_body": "trunk",
+        "ancestor_link_offset_length_sum_m": 0.5620523000328027,
+        "geom_center_offset_length_m": 0.03280243893371345,
+        "bounding_sphere_radius_m": 0.09822932352408827,
+        "all_articulation_root_radius_bound_m": 0.6930840624906045
+      }
+    ],
+    "claim": "The whole official collision model stays inside the post inner-face lateral corridor at any articulation if root center plus empirical motion reserves stays within the stated bound. This is more restrictive than checking post distance only at the 0.6 m forward offset.",
+    "provisional_0_95_bound_status": "Not certified: would require independently verified moving body lateral support <=0.41 m after clearance/stop/reversal allowances."
+  },
+  "methodology": [
+    "Read original NPZ positions and JSON phase timing; no rerun, policy edits, scene edits or modifications to stages C/D/E.",
+    "Use nearest physics-step indices at protocol boundaries and finite differences of base positions for independent displacement/speed measurement.",
+    "Minimum sustained speed is the minimum of all 0.5 s forward sliding displacement windows wholly inside source steady window (discard min(2 s, half phase duration)); also retain 1 s minimum and instantaneous body lateral minimum.",
+    "Averages of reported body velocity are supplementary; planned speed comes from actual displacement, not the 0.2 command.",
+    "Stop distance is maximum forward excursion across the entire 5 s zero-command phase, not net displacement. Original sustained stop test requires five consecutive 0.2 s mean velocity bins under [0.05,0.05,0.1]; its timestamp is onset, not completion of the confirming 1 s.",
+    "Compile unmodified D scene; cross-check geometry eligibility/post dimensions against independent E collision audit. Use model geom_rbound instead of treating compiled mesh size as an exact oriented box.",
+    "Recommended parameters round conservatively: minimum 0.5 s speed 0.106815 down to 0.10; adverse reversal <=0.010923 up to 0.02; stop <=0.059930 up to 0.07; low-speed onset<=0.8 up to1.0; confirmation<=1.8 up to2.0."
+  ],
+  "scope_limits": [
+    "Deterministic simulation replay, not a statistical or hardware guarantee.",
+    "Movement tests hold lateral command for 3-6 s after 2 s settling, or 4 s switches. Lower envelope is checked only on measured trajectories, not arbitrary short recurrent pulses.",
+    "Pure stopping evidence covers 5 s zero command; slow residual drift exists. Reversal to yaw command is excluded from pure stopping statistics.",
+    "C covers 1/2 ms; D full field uses 1 ms/20 ms policy. Runtime must use official body-frame commands and scene frame transforms.",
+    "C/D NPZ omit full joint positions. Initialized pose width cannot certify a gait-specific moving width; all-articulation collision bounds avoid that unsupported assumption.",
+    "No collision blocker width, impact success or catching guarantee is inferred from base velocity or goal-center reachability."
+  ],
+  "motion_measurements": [
+    {
+      "trajectory": "reports/goalkeeper_validation/lateral_+0.2/trajectory.npz",
+      "segment": "move",
+      "body_lateral_command_mps": 0.2,
+      "official_goal_lateral_direction": -1,
+      "physics_dt_s": 0.001,
+      "initial_yaw_radians": 3.141592653589793,
+      "starts_from_zero_command": true,
+      "duration_s": 3.0000000000001137,
+      "mean_signed_lateral_mps": 0.12446867921514754,
+      "steady_mean_body_lateral_mps": 0.17758860833384352,
+      "steady_instantaneous_body_lateral_min_mps": 0.04871912518851555,
+      "steady_sliding_0_5s_min_mps": 0.15709808922970026,
+      "steady_sliding_1s_min_mps": 0.1824810567388394,
+      "first_0_02m_displacement_delay_s": 0.3479999999999619,
+      "sustained_0_5s_window_start_delay_s": 0.916,
+      "sustained_0_5s_window_confirm_delay_s": 1.416,
+      "observed_adverse_excursion_m": 2.4103702307590267e-07,
+      "minimal_delay_for_v_0_1_lower_envelope_without_excursion_allowance_s": 0.7039227076357414,
+      "conservative_lower_envelope_min_slack_m": 0.019999758962976923,
+      "conservative_lower_envelope_verified": true
+    },
+    {
+      "trajectory": "reports/goalkeeper_validation/lateral_-0.2/trajectory.npz",
+      "segment": "move",
+      "body_lateral_command_mps": -0.2,
+      "official_goal_lateral_direction": 1,
+      "physics_dt_s": 0.001,
+      "initial_yaw_radians": 3.141592653589793,
+      "starts_from_zero_command": true,
+      "duration_s": 3.0000000000001137,
+      "mean_signed_lateral_mps": 0.12295774897013516,
+      "steady_mean_body_lateral_mps": 0.17757224094498256,
+      "steady_instantaneous_body_lateral_min_mps": 0.054652991534711745,
+      "steady_sliding_0_5s_min_mps": 0.15821085369367693,
+      "steady_sliding_1s_min_mps": 0.18368555196560676,
+      "first_0_02m_displacement_delay_s": 0.34399999999996234,
+      "sustained_0_5s_window_start_delay_s": 0.9400000000000001,
+      "sustained_0_5s_window_confirm_delay_s": 1.44,
+      "observed_adverse_excursion_m": 0.0,
+      "minimal_delay_for_v_0_1_lower_envelope_without_excursion_allowance_s": 0.7342435514877128,
+      "conservative_lower_envelope_min_slack_m": 0.02,
+      "conservative_lower_envelope_verified": true
+    },
+    {
+      "trajectory": "reports/goalkeeper_validation/switch_lateral_stop_reverse_turn/trajectory.npz",
+      "segment": "left",
+      "body_lateral_command_mps": 0.2,
+      "official_goal_lateral_direction": -1,
+      "physics_dt_s": 0.001,
+      "initial_yaw_radians": 3.141592653589793,
+      "starts_from_zero_command": true,
+      "duration_s": 4.000000000000448,
+      "mean_signed_lateral_mps": 0.13759799575600648,
+      "steady_mean_body_lateral_mps": 0.17943858097833748,
+      "steady_instantaneous_body_lateral_min_mps": 0.044836485806580055,
+      "steady_sliding_0_5s_min_mps": 0.14743884161032272,
+      "steady_sliding_1s_min_mps": 0.1700918946030205,
+      "first_0_02m_displacement_delay_s": 0.3479999999999619,
+      "sustained_0_5s_window_start_delay_s": 0.916,
+      "sustained_0_5s_window_confirm_delay_s": 1.416,
+      "observed_adverse_excursion_m": 2.4103702307590267e-07,
+      "minimal_delay_for_v_0_1_lower_envelope_without_excursion_allowance_s": 0.7039227076357414,
+      "conservative_lower_envelope_min_slack_m": 0.019999758962976923,
+      "conservative_lower_envelope_verified": true
+    },
+    {
+      "trajectory": "reports/goalkeeper_validation/switch_lateral_stop_reverse_turn/trajectory.npz",
+      "segment": "right",
+      "body_lateral_command_mps": -0.2,
+      "official_goal_lateral_direction": 1,
+      "physics_dt_s": 0.001,
+      "initial_yaw_radians": 3.141592653589793,
+      "starts_from_zero_command": true,
+      "duration_s": 3.999999999997783,
+      "mean_signed_lateral_mps": 0.13458299833312734,
+      "steady_mean_body_lateral_mps": 0.17874084334570017,
+      "steady_instantaneous_body_lateral_min_mps": 0.041018566401993646,
+      "steady_sliding_0_5s_min_mps": 0.1386262100659316,
+      "steady_sliding_1s_min_mps": 0.16172596943668655,
+      "first_0_02m_displacement_delay_s": 0.34399999999980935,
+      "sustained_0_5s_window_start_delay_s": 0.923,
+      "sustained_0_5s_window_confirm_delay_s": 1.423,
+      "observed_adverse_excursion_m": 0.0,
+      "minimal_delay_for_v_0_1_lower_envelope_without_excursion_allowance_s": 0.6759133138380093,
+      "conservative_lower_envelope_min_slack_m": 0.02,
+      "conservative_lower_envelope_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_1ms/left_0.2/trajectory.npz",
+      "segment": "move",
+      "body_lateral_command_mps": 0.2,
+      "official_goal_lateral_direction": -1,
+      "physics_dt_s": 0.001,
+      "initial_yaw_radians": 0.0,
+      "starts_from_zero_command": true,
+      "duration_s": 6.000000000001115,
+      "mean_signed_lateral_mps": 0.14831634297631982,
+      "steady_mean_body_lateral_mps": 0.17786802873716828,
+      "steady_instantaneous_body_lateral_min_mps": 0.03874334986400238,
+      "steady_sliding_0_5s_min_mps": 0.1415442586824187,
+      "steady_sliding_1s_min_mps": 0.1632443598110353,
+      "first_0_02m_displacement_delay_s": 0.346999999999962,
+      "sustained_0_5s_window_start_delay_s": 0.924,
+      "sustained_0_5s_window_confirm_delay_s": 1.424,
+      "observed_adverse_excursion_m": 9.280369579159776e-08,
+      "minimal_delay_for_v_0_1_lower_envelope_without_excursion_allowance_s": 0.7224074690285308,
+      "conservative_lower_envelope_min_slack_m": 0.01999990719630421,
+      "conservative_lower_envelope_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_1ms/right_0.2/trajectory.npz",
+      "segment": "move",
+      "body_lateral_command_mps": -0.2,
+      "official_goal_lateral_direction": 1,
+      "physics_dt_s": 0.001,
+      "initial_yaw_radians": 0.0,
+      "starts_from_zero_command": true,
+      "duration_s": 6.000000000001115,
+      "mean_signed_lateral_mps": 0.1468759788823123,
+      "steady_mean_body_lateral_mps": 0.17635512460208827,
+      "steady_instantaneous_body_lateral_min_mps": 0.03886294335717872,
+      "steady_sliding_0_5s_min_mps": 0.1405951287937337,
+      "steady_sliding_1s_min_mps": 0.1613063550413184,
+      "first_0_02m_displacement_delay_s": 0.34399999999996234,
+      "sustained_0_5s_window_start_delay_s": 0.921,
+      "sustained_0_5s_window_confirm_delay_s": 1.421,
+      "observed_adverse_excursion_m": 0.0,
+      "minimal_delay_for_v_0_1_lower_envelope_without_excursion_allowance_s": 0.7365283889453758,
+      "conservative_lower_envelope_min_slack_m": 0.02,
+      "conservative_lower_envelope_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_1ms/frame_90_left/trajectory.npz",
+      "segment": "move",
+      "body_lateral_command_mps": 0.2,
+      "official_goal_lateral_direction": -1,
+      "physics_dt_s": 0.001,
+      "initial_yaw_radians": 1.5707963267948966,
+      "starts_from_zero_command": true,
+      "duration_s": 6.000000000001115,
+      "mean_signed_lateral_mps": 0.14831753592286404,
+      "steady_mean_body_lateral_mps": 0.17786949233295088,
+      "steady_instantaneous_body_lateral_min_mps": 0.03874408707256875,
+      "steady_sliding_0_5s_min_mps": 0.1415438709265422,
+      "steady_sliding_1s_min_mps": 0.16324424472693055,
+      "first_0_02m_displacement_delay_s": 0.346999999999962,
+      "sustained_0_5s_window_start_delay_s": 0.924,
+      "sustained_0_5s_window_confirm_delay_s": 1.424,
+      "observed_adverse_excursion_m": 9.278983295548e-08,
+      "minimal_delay_for_v_0_1_lower_envelope_without_excursion_allowance_s": 0.7224064738494358,
+      "conservative_lower_envelope_min_slack_m": 0.019999907210167044,
+      "conservative_lower_envelope_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_1ms/frame_90_right/trajectory.npz",
+      "segment": "move",
+      "body_lateral_command_mps": -0.2,
+      "official_goal_lateral_direction": 1,
+      "physics_dt_s": 0.001,
+      "initial_yaw_radians": 1.5707963267948966,
+      "starts_from_zero_command": true,
+      "duration_s": 6.000000000001115,
+      "mean_signed_lateral_mps": 0.14805481665683384,
+      "steady_mean_body_lateral_mps": 0.17810686245647667,
+      "steady_instantaneous_body_lateral_min_mps": 0.039350665380334666,
+      "steady_sliding_0_5s_min_mps": 0.14164834605826448,
+      "steady_sliding_1s_min_mps": 0.16121619177323387,
+      "first_0_02m_displacement_delay_s": 0.34399999999996234,
+      "sustained_0_5s_window_start_delay_s": 0.921,
+      "sustained_0_5s_window_confirm_delay_s": 1.421,
+      "observed_adverse_excursion_m": 0.0,
+      "minimal_delay_for_v_0_1_lower_envelope_without_excursion_allowance_s": 0.7365288137634131,
+      "conservative_lower_envelope_min_slack_m": 0.02,
+      "conservative_lower_envelope_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_1ms/frame_180_left/trajectory.npz",
+      "segment": "move",
+      "body_lateral_command_mps": 0.2,
+      "official_goal_lateral_direction": -1,
+      "physics_dt_s": 0.001,
+      "initial_yaw_radians": 3.141592653589793,
+      "starts_from_zero_command": true,
+      "duration_s": 6.000000000001115,
+      "mean_signed_lateral_mps": 0.14831756591859532,
+      "steady_mean_body_lateral_mps": 0.17786953107107734,
+      "steady_instantaneous_body_lateral_min_mps": 0.038744162327682734,
+      "steady_sliding_0_5s_min_mps": 0.14154385292764693,
+      "steady_sliding_1s_min_mps": 0.16324427412738535,
+      "first_0_02m_displacement_delay_s": 0.346999999999962,
+      "sustained_0_5s_window_start_delay_s": 0.924,
+      "sustained_0_5s_window_confirm_delay_s": 1.424,
+      "observed_adverse_excursion_m": 9.278620649220103e-08,
+      "minimal_delay_for_v_0_1_lower_envelope_without_excursion_allowance_s": 0.7224062148218504,
+      "conservative_lower_envelope_min_slack_m": 0.019999907213793508,
+      "conservative_lower_envelope_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_1ms/frame_180_right/trajectory.npz",
+      "segment": "move",
+      "body_lateral_command_mps": -0.2,
+      "official_goal_lateral_direction": 1,
+      "physics_dt_s": 0.001,
+      "initial_yaw_radians": 3.141592653589793,
+      "starts_from_zero_command": true,
+      "duration_s": 6.000000000001115,
+      "mean_signed_lateral_mps": 0.14728260197468754,
+      "steady_mean_body_lateral_mps": 0.17696046888058747,
+      "steady_instantaneous_body_lateral_min_mps": 0.036355727915693914,
+      "steady_sliding_0_5s_min_mps": 0.14037189724926957,
+      "steady_sliding_1s_min_mps": 0.16289892250050886,
+      "first_0_02m_displacement_delay_s": 0.34399999999996234,
+      "sustained_0_5s_window_start_delay_s": 0.921,
+      "sustained_0_5s_window_confirm_delay_s": 1.421,
+      "observed_adverse_excursion_m": 0.0,
+      "minimal_delay_for_v_0_1_lower_envelope_without_excursion_allowance_s": 0.7365306206660409,
+      "conservative_lower_envelope_min_slack_m": 0.02,
+      "conservative_lower_envelope_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_1ms/switch_lateral_turn_stop/trajectory.npz",
+      "segment": "left",
+      "body_lateral_command_mps": 0.2,
+      "official_goal_lateral_direction": -1,
+      "physics_dt_s": 0.001,
+      "initial_yaw_radians": 0.0,
+      "starts_from_zero_command": true,
+      "duration_s": 4.000000000000448,
+      "mean_signed_lateral_mps": 0.13356401800792997,
+      "steady_mean_body_lateral_mps": 0.17839583596683156,
+      "steady_instantaneous_body_lateral_min_mps": 0.03874334986400238,
+      "steady_sliding_0_5s_min_mps": 0.14630876854922403,
+      "steady_sliding_1s_min_mps": 0.16561818451599064,
+      "first_0_02m_displacement_delay_s": 0.346999999999962,
+      "sustained_0_5s_window_start_delay_s": 0.924,
+      "sustained_0_5s_window_confirm_delay_s": 1.424,
+      "observed_adverse_excursion_m": 9.280369579159776e-08,
+      "minimal_delay_for_v_0_1_lower_envelope_without_excursion_allowance_s": 0.7224074690285308,
+      "conservative_lower_envelope_min_slack_m": 0.01999990719630421,
+      "conservative_lower_envelope_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_1ms/switch_lateral_turn_stop/trajectory.npz",
+      "segment": "right",
+      "body_lateral_command_mps": -0.2,
+      "official_goal_lateral_direction": 1,
+      "physics_dt_s": 0.001,
+      "initial_yaw_radians": 0.0,
+      "starts_from_zero_command": false,
+      "duration_s": 3.9999999999995586,
+      "mean_signed_lateral_mps": 0.1641588839309044,
+      "steady_mean_body_lateral_mps": 0.17069914165991373,
+      "steady_instantaneous_body_lateral_min_mps": 0.04275262514599837,
+      "steady_sliding_0_5s_min_mps": 0.1430399902107166,
+      "steady_sliding_1s_min_mps": 0.16393918917886216,
+      "first_0_02m_displacement_delay_s": 0.4740000000001583,
+      "sustained_0_5s_window_start_delay_s": 0.083,
+      "sustained_0_5s_window_confirm_delay_s": 0.583,
+      "observed_adverse_excursion_m": 0.009574325562982655,
+      "minimal_delay_for_v_0_1_lower_envelope_without_excursion_allowance_s": 0.2732747593344649,
+      "conservative_lower_envelope_min_slack_m": 0.010425674437017345,
+      "conservative_lower_envelope_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_2ms/left_0.2/trajectory.npz",
+      "segment": "move",
+      "body_lateral_command_mps": 0.2,
+      "official_goal_lateral_direction": -1,
+      "physics_dt_s": 0.002,
+      "initial_yaw_radians": 0.0,
+      "starts_from_zero_command": true,
+      "duration_s": 5.999999999999339,
+      "mean_signed_lateral_mps": 0.167137016896952,
+      "steady_mean_body_lateral_mps": 0.21624994469156542,
+      "steady_instantaneous_body_lateral_min_mps": 0.03486700415790797,
+      "steady_sliding_0_5s_min_mps": 0.16296619637300203,
+      "steady_sliding_1s_min_mps": 0.184534469888605,
+      "first_0_02m_displacement_delay_s": 0.3459999999999619,
+      "sustained_0_5s_window_start_delay_s": 0.93,
+      "sustained_0_5s_window_confirm_delay_s": 1.4300000000000002,
+      "observed_adverse_excursion_m": 0.0,
+      "minimal_delay_for_v_0_1_lower_envelope_without_excursion_allowance_s": 0.7380482334848981,
+      "conservative_lower_envelope_min_slack_m": 0.02,
+      "conservative_lower_envelope_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_2ms/right_0.2/trajectory.npz",
+      "segment": "move",
+      "body_lateral_command_mps": -0.2,
+      "official_goal_lateral_direction": 1,
+      "physics_dt_s": 0.002,
+      "initial_yaw_radians": 0.0,
+      "starts_from_zero_command": true,
+      "duration_s": 5.999999999999339,
+      "mean_signed_lateral_mps": 0.16959126840529332,
+      "steady_mean_body_lateral_mps": 0.21492829178659975,
+      "steady_instantaneous_body_lateral_min_mps": 0.03242389917585178,
+      "steady_sliding_0_5s_min_mps": 0.16735081501368465,
+      "steady_sliding_1s_min_mps": 0.19279240705620604,
+      "first_0_02m_displacement_delay_s": 0.34199999999996233,
+      "sustained_0_5s_window_start_delay_s": 0.912,
+      "sustained_0_5s_window_confirm_delay_s": 1.412,
+      "observed_adverse_excursion_m": 0.0,
+      "minimal_delay_for_v_0_1_lower_envelope_without_excursion_allowance_s": 0.73018795743857,
+      "conservative_lower_envelope_min_slack_m": 0.02,
+      "conservative_lower_envelope_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_2ms/frame_90_left/trajectory.npz",
+      "segment": "move",
+      "body_lateral_command_mps": 0.2,
+      "official_goal_lateral_direction": -1,
+      "physics_dt_s": 0.002,
+      "initial_yaw_radians": 1.5707963267948966,
+      "starts_from_zero_command": true,
+      "duration_s": 5.999999999999339,
+      "mean_signed_lateral_mps": 0.16799746531566795,
+      "steady_mean_body_lateral_mps": 0.21663597859116332,
+      "steady_instantaneous_body_lateral_min_mps": 0.04074723381901198,
+      "steady_sliding_0_5s_min_mps": 0.1638404937306006,
+      "steady_sliding_1s_min_mps": 0.18907445333951212,
+      "first_0_02m_displacement_delay_s": 0.3459999999999619,
+      "sustained_0_5s_window_start_delay_s": 0.93,
+      "sustained_0_5s_window_confirm_delay_s": 1.4300000000000002,
+      "observed_adverse_excursion_m": 0.0,
+      "minimal_delay_for_v_0_1_lower_envelope_without_excursion_allowance_s": 0.7380485081938571,
+      "conservative_lower_envelope_min_slack_m": 0.02,
+      "conservative_lower_envelope_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_2ms/frame_90_right/trajectory.npz",
+      "segment": "move",
+      "body_lateral_command_mps": -0.2,
+      "official_goal_lateral_direction": 1,
+      "physics_dt_s": 0.002,
+      "initial_yaw_radians": 1.5707963267948966,
+      "starts_from_zero_command": true,
+      "duration_s": 5.999999999999339,
+      "mean_signed_lateral_mps": 0.17081591903180157,
+      "steady_mean_body_lateral_mps": 0.21685062074415,
+      "steady_instantaneous_body_lateral_min_mps": 0.03175153471651481,
+      "steady_sliding_0_5s_min_mps": 0.16465406898938384,
+      "steady_sliding_1s_min_mps": 0.18865969403735117,
+      "first_0_02m_displacement_delay_s": 0.34199999999996233,
+      "sustained_0_5s_window_start_delay_s": 0.912,
+      "sustained_0_5s_window_confirm_delay_s": 1.412,
+      "observed_adverse_excursion_m": 0.0,
+      "minimal_delay_for_v_0_1_lower_envelope_without_excursion_allowance_s": 0.7301875211065271,
+      "conservative_lower_envelope_min_slack_m": 0.02,
+      "conservative_lower_envelope_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_2ms/frame_180_left/trajectory.npz",
+      "segment": "move",
+      "body_lateral_command_mps": 0.2,
+      "official_goal_lateral_direction": -1,
+      "physics_dt_s": 0.002,
+      "initial_yaw_radians": 3.141592653589793,
+      "starts_from_zero_command": true,
+      "duration_s": 5.999999999999339,
+      "mean_signed_lateral_mps": 0.16734535099554118,
+      "steady_mean_body_lateral_mps": 0.21617701786077007,
+      "steady_instantaneous_body_lateral_min_mps": 0.03389094686023022,
+      "steady_sliding_0_5s_min_mps": 0.16090098139324227,
+      "steady_sliding_1s_min_mps": 0.18694657331714148,
+      "first_0_02m_displacement_delay_s": 0.3459999999999619,
+      "sustained_0_5s_window_start_delay_s": 0.93,
+      "sustained_0_5s_window_confirm_delay_s": 1.4300000000000002,
+      "observed_adverse_excursion_m": 0.0,
+      "minimal_delay_for_v_0_1_lower_envelope_without_excursion_allowance_s": 0.7380481436827796,
+      "conservative_lower_envelope_min_slack_m": 0.02,
+      "conservative_lower_envelope_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_2ms/frame_180_right/trajectory.npz",
+      "segment": "move",
+      "body_lateral_command_mps": -0.2,
+      "official_goal_lateral_direction": 1,
+      "physics_dt_s": 0.002,
+      "initial_yaw_radians": 3.141592653589793,
+      "starts_from_zero_command": true,
+      "duration_s": 5.999999999999339,
+      "mean_signed_lateral_mps": 0.17037977060212764,
+      "steady_mean_body_lateral_mps": 0.21626263508678775,
+      "steady_instantaneous_body_lateral_min_mps": 0.02589309159905754,
+      "steady_sliding_0_5s_min_mps": 0.16636712034578083,
+      "steady_sliding_1s_min_mps": 0.19226860100548826,
+      "first_0_02m_displacement_delay_s": 0.34199999999996233,
+      "sustained_0_5s_window_start_delay_s": 0.912,
+      "sustained_0_5s_window_confirm_delay_s": 1.412,
+      "observed_adverse_excursion_m": 0.0,
+      "minimal_delay_for_v_0_1_lower_envelope_without_excursion_allowance_s": 0.7301886739276808,
+      "conservative_lower_envelope_min_slack_m": 0.02,
+      "conservative_lower_envelope_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_2ms/switch_lateral_turn_stop/trajectory.npz",
+      "segment": "left",
+      "body_lateral_command_mps": 0.2,
+      "official_goal_lateral_direction": -1,
+      "physics_dt_s": 0.002,
+      "initial_yaw_radians": 0.0,
+      "starts_from_zero_command": true,
+      "duration_s": 3.99999999999956,
+      "mean_signed_lateral_mps": 0.15135957592666063,
+      "steady_mean_body_lateral_mps": 0.21692534820454948,
+      "steady_instantaneous_body_lateral_min_mps": 0.03486700415790797,
+      "steady_sliding_0_5s_min_mps": 0.17016020394204107,
+      "steady_sliding_1s_min_mps": 0.19940473775413695,
+      "first_0_02m_displacement_delay_s": 0.3459999999999619,
+      "sustained_0_5s_window_start_delay_s": 0.93,
+      "sustained_0_5s_window_confirm_delay_s": 1.4300000000000002,
+      "observed_adverse_excursion_m": 0.0,
+      "minimal_delay_for_v_0_1_lower_envelope_without_excursion_allowance_s": 0.7380482334848981,
+      "conservative_lower_envelope_min_slack_m": 0.02,
+      "conservative_lower_envelope_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_2ms/switch_lateral_turn_stop/trajectory.npz",
+      "segment": "right",
+      "body_lateral_command_mps": -0.2,
+      "official_goal_lateral_direction": 1,
+      "physics_dt_s": 0.002,
+      "initial_yaw_radians": 0.0,
+      "starts_from_zero_command": false,
+      "duration_s": 4.000000000000448,
+      "mean_signed_lateral_mps": 0.12525048374229936,
+      "steady_mean_body_lateral_mps": 0.13649908585825843,
+      "steady_instantaneous_body_lateral_min_mps": 0.014831700686515611,
+      "steady_sliding_0_5s_min_mps": 0.10681483205486447,
+      "steady_sliding_1s_min_mps": 0.12799464980329445,
+      "first_0_02m_displacement_delay_s": 0.6019999999999337,
+      "sustained_0_5s_window_start_delay_s": 0.18,
+      "sustained_0_5s_window_confirm_delay_s": 0.6799999999999999,
+      "observed_adverse_excursion_m": 0.010922262354179368,
+      "minimal_delay_for_v_0_1_lower_envelope_without_excursion_allowance_s": 0.4289556635394598,
+      "conservative_lower_envelope_min_slack_m": 0.009077737645820632,
+      "conservative_lower_envelope_verified": true
+    }
+  ],
+  "stop_measurements": [
+    {
+      "trajectory": "reports/goalkeeper_validation/lateral_+0.2/trajectory.npz",
+      "preceding_segment": "move",
+      "body_lateral_command_mps": 0.2,
+      "official_goal_lateral_direction": -1,
+      "zero_duration_s": 4.9999999999998925,
+      "peak_forward_overshoot_m": 0.042192850246356106,
+      "time_to_peak_forward_overshoot_s": 0.47600000000015896,
+      "net_zero_segment_displacement_m": 0.03105687890411185,
+      "max_absolute_lateral_displacement_m": 0.042192850246356106,
+      "verified_low_speed_onset_s": 0.8000000000000007,
+      "verified_low_speed_confirmation_s": 1.8000000000000007,
+      "source_recovery_verified": true
+    },
+    {
+      "trajectory": "reports/goalkeeper_validation/lateral_-0.2/trajectory.npz",
+      "preceding_segment": "move",
+      "body_lateral_command_mps": -0.2,
+      "official_goal_lateral_direction": 1,
+      "zero_duration_s": 4.9999999999998925,
+      "peak_forward_overshoot_m": 0.0357543085698791,
+      "time_to_peak_forward_overshoot_s": 0.47800000000015963,
+      "net_zero_segment_displacement_m": 0.02652929592311526,
+      "max_absolute_lateral_displacement_m": 0.0357543085698791,
+      "verified_low_speed_onset_s": 0.6000000000000005,
+      "verified_low_speed_confirmation_s": 1.6000000000000005,
+      "source_recovery_verified": true
+    },
+    {
+      "trajectory": "reports/goalkeeper_validation/switch_lateral_stop_reverse_turn/trajectory.npz",
+      "preceding_segment": "left",
+      "body_lateral_command_mps": 0.2,
+      "official_goal_lateral_direction": -1,
+      "zero_duration_s": 4.999999999999004,
+      "peak_forward_overshoot_m": 0.028063045886647653,
+      "time_to_peak_forward_overshoot_s": 0.48500000000016197,
+      "net_zero_segment_displacement_m": 0.014489309110287674,
+      "max_absolute_lateral_displacement_m": 0.028063045886647653,
+      "verified_low_speed_onset_s": 0.6000000000000005,
+      "verified_low_speed_confirmation_s": 1.6000000000000005,
+      "source_recovery_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_1ms/left_0.2/trajectory.npz",
+      "preceding_segment": "move",
+      "body_lateral_command_mps": 0.2,
+      "official_goal_lateral_direction": -1,
+      "zero_duration_s": 4.999999999997229,
+      "peak_forward_overshoot_m": 0.023264039017866556,
+      "time_to_peak_forward_overshoot_s": 2.269999999998742,
+      "net_zero_segment_displacement_m": 0.017073320619647947,
+      "max_absolute_lateral_displacement_m": 0.023264039017866556,
+      "verified_low_speed_onset_s": 0.7999999999999972,
+      "verified_low_speed_confirmation_s": 1.7999999999999972,
+      "source_recovery_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_1ms/right_0.2/trajectory.npz",
+      "preceding_segment": "move",
+      "body_lateral_command_mps": -0.2,
+      "official_goal_lateral_direction": 1,
+      "zero_duration_s": 4.999999999997229,
+      "peak_forward_overshoot_m": 0.02396801177921426,
+      "time_to_peak_forward_overshoot_s": 2.4189999999986593,
+      "net_zero_segment_displacement_m": 0.020028897207538088,
+      "max_absolute_lateral_displacement_m": 0.02396801177921426,
+      "verified_low_speed_onset_s": 0.5999999999999979,
+      "verified_low_speed_confirmation_s": 1.5999999999999979,
+      "source_recovery_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_1ms/frame_90_left/trajectory.npz",
+      "preceding_segment": "move",
+      "body_lateral_command_mps": 0.2,
+      "official_goal_lateral_direction": -1,
+      "zero_duration_s": 4.999999999997229,
+      "peak_forward_overshoot_m": 0.023193143874949418,
+      "time_to_peak_forward_overshoot_s": 2.258999999998748,
+      "net_zero_segment_displacement_m": 0.017019351920281922,
+      "max_absolute_lateral_displacement_m": 0.023193143874949418,
+      "verified_low_speed_onset_s": 0.7999999999999972,
+      "verified_low_speed_confirmation_s": 1.7999999999999972,
+      "source_recovery_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_1ms/frame_90_right/trajectory.npz",
+      "preceding_segment": "move",
+      "body_lateral_command_mps": -0.2,
+      "official_goal_lateral_direction": 1,
+      "zero_duration_s": 4.999999999997229,
+      "peak_forward_overshoot_m": 0.019978981030439047,
+      "time_to_peak_forward_overshoot_s": 2.276999999998738,
+      "net_zero_segment_displacement_m": 0.01569619602740213,
+      "max_absolute_lateral_displacement_m": 0.019978981030439047,
+      "verified_low_speed_onset_s": 0.5999999999999979,
+      "verified_low_speed_confirmation_s": 1.5999999999999979,
+      "source_recovery_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_1ms/frame_180_left/trajectory.npz",
+      "preceding_segment": "move",
+      "body_lateral_command_mps": 0.2,
+      "official_goal_lateral_direction": -1,
+      "zero_duration_s": 4.999999999997229,
+      "peak_forward_overshoot_m": 0.023193115020719413,
+      "time_to_peak_forward_overshoot_s": 2.258999999998748,
+      "net_zero_segment_displacement_m": 0.01702474082899852,
+      "max_absolute_lateral_displacement_m": 0.023193115020719413,
+      "verified_low_speed_onset_s": 0.7999999999999972,
+      "verified_low_speed_confirmation_s": 1.7999999999999972,
+      "source_recovery_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_1ms/frame_180_right/trajectory.npz",
+      "preceding_segment": "move",
+      "body_lateral_command_mps": -0.2,
+      "official_goal_lateral_direction": 1,
+      "zero_duration_s": 4.999999999997229,
+      "peak_forward_overshoot_m": 0.019247055676053892,
+      "time_to_peak_forward_overshoot_s": 2.3389999999987037,
+      "net_zero_segment_displacement_m": 0.014840480822202684,
+      "max_absolute_lateral_displacement_m": 0.019247055676053892,
+      "verified_low_speed_onset_s": 0.5999999999999979,
+      "verified_low_speed_confirmation_s": 1.5999999999999979,
+      "source_recovery_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_2ms/left_0.2/trajectory.npz",
+      "preceding_segment": "move",
+      "body_lateral_command_mps": 0.2,
+      "official_goal_lateral_direction": -1,
+      "zero_duration_s": 5.00000000000167,
+      "peak_forward_overshoot_m": 0.05992972550256903,
+      "time_to_peak_forward_overshoot_s": 1.500000000000501,
+      "net_zero_segment_displacement_m": 0.05732970271428184,
+      "max_absolute_lateral_displacement_m": 0.05992972550256903,
+      "verified_low_speed_onset_s": 0.3999999999999986,
+      "verified_low_speed_confirmation_s": 1.3999999999999986,
+      "source_recovery_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_2ms/right_0.2/trajectory.npz",
+      "preceding_segment": "move",
+      "body_lateral_command_mps": -0.2,
+      "official_goal_lateral_direction": 1,
+      "zero_duration_s": 5.00000000000167,
+      "peak_forward_overshoot_m": 0.05518872623199478,
+      "time_to_peak_forward_overshoot_s": 1.1160000000003727,
+      "net_zero_segment_displacement_m": 0.054694349716093216,
+      "max_absolute_lateral_displacement_m": 0.05518872623199478,
+      "verified_low_speed_onset_s": 0.3999999999999986,
+      "verified_low_speed_confirmation_s": 1.3999999999999986,
+      "source_recovery_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_2ms/frame_90_left/trajectory.npz",
+      "preceding_segment": "move",
+      "body_lateral_command_mps": 0.2,
+      "official_goal_lateral_direction": -1,
+      "zero_duration_s": 5.00000000000167,
+      "peak_forward_overshoot_m": 0.05075464803908081,
+      "time_to_peak_forward_overshoot_s": 1.4680000000004902,
+      "net_zero_segment_displacement_m": 0.048227377607646504,
+      "max_absolute_lateral_displacement_m": 0.05075464803908081,
+      "verified_low_speed_onset_s": 0.3999999999999986,
+      "verified_low_speed_confirmation_s": 1.3999999999999986,
+      "source_recovery_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_2ms/frame_90_right/trajectory.npz",
+      "preceding_segment": "move",
+      "body_lateral_command_mps": -0.2,
+      "official_goal_lateral_direction": 1,
+      "zero_duration_s": 5.00000000000167,
+      "peak_forward_overshoot_m": 0.051518636716153976,
+      "time_to_peak_forward_overshoot_s": 1.16800000000039,
+      "net_zero_segment_displacement_m": 0.05143710070714658,
+      "max_absolute_lateral_displacement_m": 0.051518636716153976,
+      "verified_low_speed_onset_s": 0.3999999999999986,
+      "verified_low_speed_confirmation_s": 1.3999999999999986,
+      "source_recovery_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_2ms/frame_180_left/trajectory.npz",
+      "preceding_segment": "move",
+      "body_lateral_command_mps": 0.2,
+      "official_goal_lateral_direction": -1,
+      "zero_duration_s": 5.00000000000167,
+      "peak_forward_overshoot_m": 0.05524663753854342,
+      "time_to_peak_forward_overshoot_s": 1.4500000000004842,
+      "net_zero_segment_displacement_m": 0.05261033754784461,
+      "max_absolute_lateral_displacement_m": 0.05524663753854342,
+      "verified_low_speed_onset_s": 0.3999999999999986,
+      "verified_low_speed_confirmation_s": 1.3999999999999986,
+      "source_recovery_verified": true
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_2ms/frame_180_right/trajectory.npz",
+      "preceding_segment": "move",
+      "body_lateral_command_mps": -0.2,
+      "official_goal_lateral_direction": 1,
+      "zero_duration_s": 5.00000000000167,
+      "peak_forward_overshoot_m": 0.04166477111730704,
+      "time_to_peak_forward_overshoot_s": 5.00000000000167,
+      "net_zero_segment_displacement_m": 0.04166477111730704,
+      "max_absolute_lateral_displacement_m": 0.04166477111730704,
+      "verified_low_speed_onset_s": 0.3999999999999986,
+      "verified_low_speed_confirmation_s": 1.3999999999999986,
+      "source_recovery_verified": true
+    }
+  ],
+  "input_manifest": [
+    {
+      "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+      "sha256": "1f1a1cdd451f777600c66fc30ad8d7537198ee7bc51f8ed20d67a51b5001a651",
+      "size_bytes": 18722
+    },
+    {
+      "path": "assets/booster_deploy/tasks/locomotion/robots/k1/models/k1_walk.pt",
+      "sha256": "2d860167ed827e8d44cd65abd4c27f474904352bcb98c0cfa97c078f63e2fea5",
+      "size_bytes": 2104639
+    },
+    {
+      "path": "k1_goalkeeper/velocity_validation.py",
+      "sha256": "f6096ed8d4cfad21a8455e0a19add57eb85d97c84ec6e48e8259b8290fe6955b",
+      "size_bytes": 19342
+    },
+    {
+      "path": "models/futsal_goal_3x2_reference.urdf",
+      "sha256": "10f67364f44a02182989416b7cce6b9d4f768fea411d44db6ccec08d9ffbfa2b",
+      "size_bytes": 3717
+    },
+    {
+      "path": "reports/collision_audit.json",
+      "sha256": "5f0365111d7b02ab07ed083476ad1dc851c78dc9752097dc5addc30f6c1037f7",
+      "size_bytes": 151313
+    },
+    {
+      "path": "reports/goalkeeper_validation/lateral_+0.2/summary.json",
+      "sha256": "7a3b1d73d140e5a21b64a433c648d54a3d9b4ea443ed4eebd714f02e8cc28845",
+      "size_bytes": 15413
+    },
+    {
+      "path": "reports/goalkeeper_validation/lateral_+0.2/trajectory.npz",
+      "sha256": "2dad189de34d4c354e3c86be4af6e6b8dee8d12c700376d14e36914b569332e1",
+      "size_bytes": 6165567
+    },
+    {
+      "path": "reports/goalkeeper_validation/lateral_-0.2/summary.json",
+      "sha256": "e6f92eb09fff4af73840b4c17f632e816c381c3574b929f5eef52969cbaf9d4d",
+      "size_bytes": 15447
+    },
+    {
+      "path": "reports/goalkeeper_validation/lateral_-0.2/trajectory.npz",
+      "sha256": "6091be0b1b91ef6611b84d1f8535c7e5b02d9bae519775dff23ccc95c5f84d16",
+      "size_bytes": 6139802
+    },
+    {
+      "path": "reports/goalkeeper_validation/results.json",
+      "sha256": "f2a6e45763a1f88b75fa3942fa92a74efe4439cac2542ea9ef326525df32869f",
+      "size_bytes": 276784
+    },
+    {
+      "path": "reports/goalkeeper_validation/scene.xml",
+      "sha256": "9ffa16f227c9e54ea36fd58c84c826224f21d832076bc8b3b517edd4ee481875",
+      "size_bytes": 154704
+    },
+    {
+      "path": "reports/goalkeeper_validation/switch_lateral_stop_reverse_turn/summary.json",
+      "sha256": "f25c5fe4d3bf830d97bb5385dda45cf91a3f88276bbae7db29b5ee21eb279b1e",
+      "size_bytes": 32099
+    },
+    {
+      "path": "reports/goalkeeper_validation/switch_lateral_stop_reverse_turn/trajectory.npz",
+      "sha256": "4518a7b3bee0eb4d055e89f4edd0c7aec465f081df96340da71bcaa20eca09f0",
+      "size_bytes": 17421299
+    },
+    {
+      "path": "reports/velocity_validation/dt_1ms/frame_180_left/summary.json",
+      "sha256": "93676a5541fe1228b165789af9a6fe79655fa0222b6e6e88248e855dd4abf545",
+      "size_bytes": 14451
+    },
+    {
+      "path": "reports/velocity_validation/dt_1ms/frame_180_left/trajectory.npz",
+      "sha256": "e6b6abb969548583d062025022c05c1b4c9f8110a1cef1bb53c17a82e4088aa2",
+      "size_bytes": 4749245
+    },
+    {
+      "path": "reports/velocity_validation/dt_1ms/frame_180_right/summary.json",
+      "sha256": "9da3f197ecdd4c5f512acf9f31867a3ab63aac0f2c0546477613fedd0142605c",
+      "size_bytes": 14472
+    },
+    {
+      "path": "reports/velocity_validation/dt_1ms/frame_180_right/trajectory.npz",
+      "sha256": "cc1364583b84587143a2e3ab1de106daf8ba56cd1837872421e9c5cbb17a902b",
+      "size_bytes": 4735509
+    },
+    {
+      "path": "reports/velocity_validation/dt_1ms/frame_90_left/summary.json",
+      "sha256": "478742164a9b6a3deff1b5fdc1182dfba308bd64c8cc8913cdb19c32b7b353ca",
+      "size_bytes": 14453
+    },
+    {
+      "path": "reports/velocity_validation/dt_1ms/frame_90_left/trajectory.npz",
+      "sha256": "103382dabdb65d6a3d0b578efc2f20bd3380c3bf88c26bee85ee535ae4ee8c72",
+      "size_bytes": 4740051
+    },
+    {
+      "path": "reports/velocity_validation/dt_1ms/frame_90_right/summary.json",
+      "sha256": "6a9e8c0e60a8bf970b489f4711486a73d529249f4993bc824b5c49279bae466d",
+      "size_bytes": 14449
+    },
+    {
+      "path": "reports/velocity_validation/dt_1ms/frame_90_right/trajectory.npz",
+      "sha256": "c86da5d2cc4c704eb1dfe37528fb3ab582b94fb6438cd7b4d09a947944910cd8",
+      "size_bytes": 4721310
+    },
+    {
+      "path": "reports/velocity_validation/dt_1ms/left_0.2/summary.json",
+      "sha256": "06ae5a8ada4c27d397e98766536d746d815aacaf231bb28452fc5bd3d6ed1ee4",
+      "size_bytes": 14398
+    },
+    {
+      "path": "reports/velocity_validation/dt_1ms/left_0.2/trajectory.npz",
+      "sha256": "8db40e90da43cfd7e858517f709f7c2ab355f648ad3f506da03bf6bb138659e0",
+      "size_bytes": 4761777
+    },
+    {
+      "path": "reports/velocity_validation/dt_1ms/right_0.2/summary.json",
+      "sha256": "15c2ddaa6c4dade1f8504fe02b4c338894a943c702479eacd1ca1231214dec42",
+      "size_bytes": 14412
+    },
+    {
+      "path": "reports/velocity_validation/dt_1ms/right_0.2/trajectory.npz",
+      "sha256": "af7beadf29b23aea646813de77596fd18685b1b273241b86abe73d0b38a67ebf",
+      "size_bytes": 4753607
+    },
+    {
+      "path": "reports/velocity_validation/dt_1ms/switch_lateral_turn_stop/summary.json",
+      "sha256": "d11b0581e3f538b8ebfe54ed13d6bf87f59cfbb3d9a5a384fd37df44c81069bc",
+      "size_bytes": 26050
+    },
+    {
+      "path": "reports/velocity_validation/dt_1ms/switch_lateral_turn_stop/trajectory.npz",
+      "sha256": "1c4b678d6208490329c5501bf9a6be81c6e6809acdc2af8e9c2c22a45b02da55",
+      "size_bytes": 8468030
+    },
+    {
+      "path": "reports/velocity_validation/dt_2ms/frame_180_left/summary.json",
+      "sha256": "8fc071118b89314d89ddf2e06808f426bfdd36519d60ead1e998bff9e56e4d4f",
+      "size_bytes": 14435
+    },
+    {
+      "path": "reports/velocity_validation/dt_2ms/frame_180_left/trajectory.npz",
+      "sha256": "f7d5a84c0080f9c81002b7009f053687f768b0e591a529aec68bebeb777525cc",
+      "size_bytes": 2344934
+    },
+    {
+      "path": "reports/velocity_validation/dt_2ms/frame_180_right/summary.json",
+      "sha256": "d26d0d2e24ba7c44f1201a689532ddd1b068be61a806628ad40e7830e5e46e17",
+      "size_bytes": 14407
+    },
+    {
+      "path": "reports/velocity_validation/dt_2ms/frame_180_right/trajectory.npz",
+      "sha256": "f6faf1d75a636cbc79803279088edd02611a51979ebd8dbe18c83086ab20126f",
+      "size_bytes": 2350090
+    },
+    {
+      "path": "reports/velocity_validation/dt_2ms/frame_90_left/summary.json",
+      "sha256": "73f6ea311205ff37e11fd43af5c89535b14d0c1528c5aeca3a5232694d39fdb7",
+      "size_bytes": 14461
+    },
+    {
+      "path": "reports/velocity_validation/dt_2ms/frame_90_left/trajectory.npz",
+      "sha256": "490ea752b06c933ffad6c4a03b2d38cb5196c988d86291a778675fde64d3fbe9",
+      "size_bytes": 2340513
+    },
+    {
+      "path": "reports/velocity_validation/dt_2ms/frame_90_right/summary.json",
+      "sha256": "4efdc3aca369d7a3a7c1355c86c55dcc6c4f458612472bfc37456985b5e08dc7",
+      "size_bytes": 14407
+    },
+    {
+      "path": "reports/velocity_validation/dt_2ms/frame_90_right/trajectory.npz",
+      "sha256": "5681bfad7d3237133cb64afa04c8bf5e7c17a96555bae43818f3c1730b68c170",
+      "size_bytes": 2347004
+    },
+    {
+      "path": "reports/velocity_validation/dt_2ms/left_0.2/summary.json",
+      "sha256": "ea152319bdf36ddce50256debbbd1a6e1a05a4cc564a479201c94699df0141b7",
+      "size_bytes": 14363
+    },
+    {
+      "path": "reports/velocity_validation/dt_2ms/left_0.2/trajectory.npz",
+      "sha256": "83a60b05093740e525f11987d216104e7d68af3ff6d2efc6c43d4a41d36f5a01",
+      "size_bytes": 2351150
+    },
+    {
+      "path": "reports/velocity_validation/dt_2ms/right_0.2/summary.json",
+      "sha256": "0fbfafb5c3e9afd921c3b73cdc81560da96abedd05324e4c81ed252f4a54ba11",
+      "size_bytes": 14348
+    },
+    {
+      "path": "reports/velocity_validation/dt_2ms/right_0.2/trajectory.npz",
+      "sha256": "d7b491e80794f2291fc55539cfc1de4f94dd72d5542c0f79019bf9d72c8e9bb0",
+      "size_bytes": 2357734
+    },
+    {
+      "path": "reports/velocity_validation/dt_2ms/switch_lateral_turn_stop/summary.json",
+      "sha256": "8db2f035d7b58cc978101ffc1e4d3bd2dd85a73cdb398de2641eab7af80edd5e",
+      "size_bytes": 25884
+    },
+    {
+      "path": "reports/velocity_validation/dt_2ms/switch_lateral_turn_stop/trajectory.npz",
+      "sha256": "40f66ec168de544132f57d5830d5ae3aa793b801d5a35b76ac53c4e7e298a90a",
+      "size_bytes": 4202040
+    },
+    {
+      "path": "reports/velocity_validation/results.json",
+      "sha256": "615728948877c2319163a34ce5afbeac5be2c22db8e860224df484e9d59160cf",
+      "size_bytes": 1756311
+    }
+  ],
+  "environment": {
+    "mujoco": "3.3.7",
+    "numpy": "2.3.3"
+  },
+  "source_trajectory_array_hash_verification": [
+    {
+      "trajectory": "reports/goalkeeper_validation/lateral_+0.2/trajectory.npz",
+      "expected_from_summary": "6aada0aec61439ab813cacd36e62513fee9d2050eba06bd2cd3e0738e6211fe9",
+      "independently_recomputed": "6aada0aec61439ab813cacd36e62513fee9d2050eba06bd2cd3e0738e6211fe9",
+      "matches": true,
+      "completed": true,
+      "fall_count": 0,
+      "repeat_hashes": [
+        "6aada0aec61439ab813cacd36e62513fee9d2050eba06bd2cd3e0738e6211fe9",
+        "6aada0aec61439ab813cacd36e62513fee9d2050eba06bd2cd3e0738e6211fe9"
+      ]
+    },
+    {
+      "trajectory": "reports/goalkeeper_validation/lateral_-0.2/trajectory.npz",
+      "expected_from_summary": "b0a5d54b29116532d8c08534a5d1fe1eccc1831bad89adf312c62ded1ccf79f6",
+      "independently_recomputed": "b0a5d54b29116532d8c08534a5d1fe1eccc1831bad89adf312c62ded1ccf79f6",
+      "matches": true,
+      "completed": true,
+      "fall_count": 0,
+      "repeat_hashes": [
+        "b0a5d54b29116532d8c08534a5d1fe1eccc1831bad89adf312c62ded1ccf79f6",
+        "b0a5d54b29116532d8c08534a5d1fe1eccc1831bad89adf312c62ded1ccf79f6"
+      ]
+    },
+    {
+      "trajectory": "reports/goalkeeper_validation/switch_lateral_stop_reverse_turn/trajectory.npz",
+      "expected_from_summary": "e95fa89ecd19c1be30670c7a98cf3f273818774dcbb73e0124e6f2a6f40267f5",
+      "independently_recomputed": "e95fa89ecd19c1be30670c7a98cf3f273818774dcbb73e0124e6f2a6f40267f5",
+      "matches": true,
+      "completed": true,
+      "fall_count": 0,
+      "repeat_hashes": [
+        "e95fa89ecd19c1be30670c7a98cf3f273818774dcbb73e0124e6f2a6f40267f5",
+        "e95fa89ecd19c1be30670c7a98cf3f273818774dcbb73e0124e6f2a6f40267f5"
+      ]
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_1ms/frame_180_left/trajectory.npz",
+      "expected_from_summary": "529e507b179d909cedd8c3cd5eebbd855e6f131d0407f6f7d4deebcd534f8da1",
+      "independently_recomputed": "529e507b179d909cedd8c3cd5eebbd855e6f131d0407f6f7d4deebcd534f8da1",
+      "matches": true,
+      "completed": true,
+      "fall_count": 0,
+      "repeat_hashes": [
+        "529e507b179d909cedd8c3cd5eebbd855e6f131d0407f6f7d4deebcd534f8da1",
+        "529e507b179d909cedd8c3cd5eebbd855e6f131d0407f6f7d4deebcd534f8da1"
+      ]
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_1ms/frame_180_right/trajectory.npz",
+      "expected_from_summary": "9c40eb24dfc61105d62e17ea619147ac51db73bfc45880b437a71605214bfe58",
+      "independently_recomputed": "9c40eb24dfc61105d62e17ea619147ac51db73bfc45880b437a71605214bfe58",
+      "matches": true,
+      "completed": true,
+      "fall_count": 0,
+      "repeat_hashes": [
+        "9c40eb24dfc61105d62e17ea619147ac51db73bfc45880b437a71605214bfe58",
+        "9c40eb24dfc61105d62e17ea619147ac51db73bfc45880b437a71605214bfe58"
+      ]
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_1ms/frame_90_left/trajectory.npz",
+      "expected_from_summary": "687b74234aa6d7c8e0ee9deab345005b0366d9f733cc8bf05126ab2e415aa048",
+      "independently_recomputed": "687b74234aa6d7c8e0ee9deab345005b0366d9f733cc8bf05126ab2e415aa048",
+      "matches": true,
+      "completed": true,
+      "fall_count": 0,
+      "repeat_hashes": [
+        "687b74234aa6d7c8e0ee9deab345005b0366d9f733cc8bf05126ab2e415aa048",
+        "687b74234aa6d7c8e0ee9deab345005b0366d9f733cc8bf05126ab2e415aa048"
+      ]
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_1ms/frame_90_right/trajectory.npz",
+      "expected_from_summary": "99d72667409b33b03d150955493cd91c4061f9343a7f27215dda5382b108d850",
+      "independently_recomputed": "99d72667409b33b03d150955493cd91c4061f9343a7f27215dda5382b108d850",
+      "matches": true,
+      "completed": true,
+      "fall_count": 0,
+      "repeat_hashes": [
+        "99d72667409b33b03d150955493cd91c4061f9343a7f27215dda5382b108d850",
+        "99d72667409b33b03d150955493cd91c4061f9343a7f27215dda5382b108d850"
+      ]
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_1ms/left_0.2/trajectory.npz",
+      "expected_from_summary": "031c1261b1142ede53f57d28add097018f8dd9a454492eac3fc0715609d37838",
+      "independently_recomputed": "031c1261b1142ede53f57d28add097018f8dd9a454492eac3fc0715609d37838",
+      "matches": true,
+      "completed": true,
+      "fall_count": 0,
+      "repeat_hashes": [
+        "031c1261b1142ede53f57d28add097018f8dd9a454492eac3fc0715609d37838",
+        "031c1261b1142ede53f57d28add097018f8dd9a454492eac3fc0715609d37838"
+      ]
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_1ms/right_0.2/trajectory.npz",
+      "expected_from_summary": "269a31726b3ea028c599258c12d63459835e18cc620f030da20bc3b90abf1485",
+      "independently_recomputed": "269a31726b3ea028c599258c12d63459835e18cc620f030da20bc3b90abf1485",
+      "matches": true,
+      "completed": true,
+      "fall_count": 0,
+      "repeat_hashes": [
+        "269a31726b3ea028c599258c12d63459835e18cc620f030da20bc3b90abf1485",
+        "269a31726b3ea028c599258c12d63459835e18cc620f030da20bc3b90abf1485"
+      ]
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_1ms/switch_lateral_turn_stop/trajectory.npz",
+      "expected_from_summary": "8a9be1afdc27c6a3d03bb9a1f5c8f9ef3e255da288bdbd4d9082f17288733ee6",
+      "independently_recomputed": "8a9be1afdc27c6a3d03bb9a1f5c8f9ef3e255da288bdbd4d9082f17288733ee6",
+      "matches": true,
+      "completed": true,
+      "fall_count": 0,
+      "repeat_hashes": [
+        "8a9be1afdc27c6a3d03bb9a1f5c8f9ef3e255da288bdbd4d9082f17288733ee6",
+        "8a9be1afdc27c6a3d03bb9a1f5c8f9ef3e255da288bdbd4d9082f17288733ee6"
+      ]
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_2ms/frame_180_left/trajectory.npz",
+      "expected_from_summary": "776b4d17cd9b43f36dbe55d26e543fe0e10582a4c4f0faef4ec2c3e32d9f1712",
+      "independently_recomputed": "776b4d17cd9b43f36dbe55d26e543fe0e10582a4c4f0faef4ec2c3e32d9f1712",
+      "matches": true,
+      "completed": true,
+      "fall_count": 0,
+      "repeat_hashes": [
+        "776b4d17cd9b43f36dbe55d26e543fe0e10582a4c4f0faef4ec2c3e32d9f1712",
+        "776b4d17cd9b43f36dbe55d26e543fe0e10582a4c4f0faef4ec2c3e32d9f1712"
+      ]
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_2ms/frame_180_right/trajectory.npz",
+      "expected_from_summary": "7637fc99d1dd14146f88c4fc09b2ab68bcec81e949ff3ee56d3b02856887fb35",
+      "independently_recomputed": "7637fc99d1dd14146f88c4fc09b2ab68bcec81e949ff3ee56d3b02856887fb35",
+      "matches": true,
+      "completed": true,
+      "fall_count": 0,
+      "repeat_hashes": [
+        "7637fc99d1dd14146f88c4fc09b2ab68bcec81e949ff3ee56d3b02856887fb35",
+        "7637fc99d1dd14146f88c4fc09b2ab68bcec81e949ff3ee56d3b02856887fb35"
+      ]
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_2ms/frame_90_left/trajectory.npz",
+      "expected_from_summary": "c93b40453542ab37e294576a2692341c1f99ebb2970ce53cf53e83b073bb4507",
+      "independently_recomputed": "c93b40453542ab37e294576a2692341c1f99ebb2970ce53cf53e83b073bb4507",
+      "matches": true,
+      "completed": true,
+      "fall_count": 0,
+      "repeat_hashes": [
+        "c93b40453542ab37e294576a2692341c1f99ebb2970ce53cf53e83b073bb4507",
+        "c93b40453542ab37e294576a2692341c1f99ebb2970ce53cf53e83b073bb4507"
+      ]
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_2ms/frame_90_right/trajectory.npz",
+      "expected_from_summary": "37ae070bff8c1ec5dc8a96faf404b2329106c1e65607ac64da8740b17ef40418",
+      "independently_recomputed": "37ae070bff8c1ec5dc8a96faf404b2329106c1e65607ac64da8740b17ef40418",
+      "matches": true,
+      "completed": true,
+      "fall_count": 0,
+      "repeat_hashes": [
+        "37ae070bff8c1ec5dc8a96faf404b2329106c1e65607ac64da8740b17ef40418",
+        "37ae070bff8c1ec5dc8a96faf404b2329106c1e65607ac64da8740b17ef40418"
+      ]
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_2ms/left_0.2/trajectory.npz",
+      "expected_from_summary": "891d3c3fa207a422bed807af55b0d1bb278dcb3cc132a9c96a0a76a69264175d",
+      "independently_recomputed": "891d3c3fa207a422bed807af55b0d1bb278dcb3cc132a9c96a0a76a69264175d",
+      "matches": true,
+      "completed": true,
+      "fall_count": 0,
+      "repeat_hashes": [
+        "891d3c3fa207a422bed807af55b0d1bb278dcb3cc132a9c96a0a76a69264175d",
+        "891d3c3fa207a422bed807af55b0d1bb278dcb3cc132a9c96a0a76a69264175d"
+      ]
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_2ms/right_0.2/trajectory.npz",
+      "expected_from_summary": "66090ab007ff7c9d4366e8e10aac6de8dbfbc67822a39498fcac391d4dc211cd",
+      "independently_recomputed": "66090ab007ff7c9d4366e8e10aac6de8dbfbc67822a39498fcac391d4dc211cd",
+      "matches": true,
+      "completed": true,
+      "fall_count": 0,
+      "repeat_hashes": [
+        "66090ab007ff7c9d4366e8e10aac6de8dbfbc67822a39498fcac391d4dc211cd",
+        "66090ab007ff7c9d4366e8e10aac6de8dbfbc67822a39498fcac391d4dc211cd"
+      ]
+    },
+    {
+      "trajectory": "reports/velocity_validation/dt_2ms/switch_lateral_turn_stop/trajectory.npz",
+      "expected_from_summary": "e644e366d0b791e0f12a15bb0d4021062d7f0e225a7801f33b3a89bda0d387fd",
+      "independently_recomputed": "e644e366d0b791e0f12a15bb0d4021062d7f0e225a7801f33b3a89bda0d387fd",
+      "matches": true,
+      "completed": true,
+      "fall_count": 0,
+      "repeat_hashes": [
+        "e644e366d0b791e0f12a15bb0d4021062d7f0e225a7801f33b3a89bda0d387fd",
+        "e644e366d0b791e0f12a15bb0d4021062d7f0e225a7801f33b3a89bda0d387fd"
+      ]
+    }
+  ]
+}

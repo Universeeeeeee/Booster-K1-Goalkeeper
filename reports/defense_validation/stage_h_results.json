@@ -1,0 +1,114 @@
+{
+  "stage": "H",
+  "status": "completed_with_no_new_high_ball_saves",
+  "native_collision_only": true,
+  "model_extensions": false,
+  "counts": {
+    "distinct_formal_cases": 42,
+    "formal_executions": 84,
+    "additional_H1_cross_version_replays": 28,
+    "original_tests": 297,
+    "new_tests": 25,
+    "all_tests_passed": 322,
+    "total_formal_and_replay_executions": 112
+  },
+  "H0": {
+    "completed_before_H1": true,
+    "independent_arm_ownership_supported_by_official_policy": false,
+    "G_refresh_median_ms": {
+      "rolling": 143.916,
+      "bouncing": 84.452,
+      "airborne": 21.302
+    },
+    "realtime_claim": false
+  },
+  "H1": {
+    "cases": 14,
+    "executions": 28,
+    "gate_passed": true,
+    "version_replay_exact": true,
+    "amplitudes_rad": [
+      0.05,
+      0.15,
+      0.3
+    ],
+    "minimum_postsettle_height_m": 0.5413889736213523,
+    "maximum_postsettle_tilt_degrees": 6.523937314538168
+  },
+  "H2": {
+    "actual_pose_samples": 1200,
+    "native_model_unchanged": true,
+    "bbox_is_not_continuous_coverage": true
+  },
+  "H3": {
+    "cases": 8,
+    "executions": 16,
+    "gate_passed": true,
+    "pre_action_stops_verified": true,
+    "horizontal_initial_velocity_m_s": [
+      1,
+      2
+    ],
+    "initial_speed_norm_m_s": [
+      1.7791324430744329,
+      2.1310391977859067
+    ]
+  },
+  "H4": {
+    "cases": 20,
+    "executions": 40,
+    "shots": 5,
+    "fresh_modes": [
+      "absent",
+      "passive",
+      "g_active",
+      "h_stop_then_arm"
+    ],
+    "outcomes": {
+      "absent": 0,
+      "passive": 1,
+      "g_active": 1,
+      "h_stop_then_arm": 1,
+      "added": 0,
+      "lost": 0
+    },
+    "all_repeats_identical": true,
+    "offline_only": true,
+    "full_requested_pose_late_count": 5,
+    "simultaneous_arm_and_lateral_gait": false
+  },
+  "conclusions": {
+    "small_slow_actions_compatible_in_tested_conditions": true,
+    "high_ball_gain_demonstrated": false,
+    "dedicated_whole_body_policy_required_for_these_small_actions": false,
+    "large_fast_or_jumping_actions_validated": false,
+    "need_new_action_capability_for_current_high_ball_limit": true
+  },
+  "protected_file_count": 840,
+  "protected_files_unchanged": true,
+  "original_QVEL_warning": "intentional absent-scene 1e100 m/s negative test, previously independently established in E0; no formal H numerical event",
+  "artifacts": {
+    "reports/defense_validation/h0_gate.json": "dc29a0fef767fee1248ed6642d834c9b71a18ad4d8ee77aa7b926c30f19b9175",
+    "reports/defense_validation/interface_audit.json": "a18814e243b600dba257ef4d0fd119f4cba8d9555bead0a95d0e1b7d4e991b39",
+    "reports/defense_validation/geometry_audit.json": "37e8ae56d8c270b454112437abdf733a0b0660b06b02282da28dd039330f5160",
+    "reports/defense_validation/predictor_latency.json": "67eadff5427e312851f98b8b7f8959c99cb284d0f7c26613cba15ab7960668b6",
+    "reports/defense_validation/shot_feasibility_audit.json": "c8e196b8438243084897103e0d96bc998bf23099fe1d5ef1ff53b37b854e156e",
+    "reports/defense_validation/dynamic_coverage.json": "7c9dda8e9d5890ec9f2355ac64a35f415c98ae13a8afb6f1db84f7b1ed892af3",
+    "reports/defense_validation/model_audit.json": "a6447985d468ad4640da4b73501c5a7b89eab7c0e8e1d922b87eac0fc309ba8a",
+    "reports/defense_validation/protocol.json": "29e036b4b1e37f2f8d428eb1d8423e83e12095897232b87a96060097585b5392",
+    "reports/defense_validation/results.json": "4db121a4c8ccde342a43085b4dcbd98634eca8e06ae42cd9f71e0ead384311ee",
+    "reports/defense_validation/h1_v2/protocol.json": "68cb1b2cdbf1288af6392fc0e8ea13db2bae64eab35e4ad661ddaba07767f157",
+    "reports/defense_validation/h1_v2/results.json": "42cc62a7fa9cce701987b541035c0c868284e4072cb300d61e559a0ac60c58fd",
+    "reports/defense_validation/v1_v2_parity.json": "4a9ac4851bae0d68c0754422f47da9a3f63d5be7369d09d7065a0b3976958998",
+    "reports/defense_validation/runtime_classification_fix.json": "ab9903ab9c86e7caee9cde4a3d03408b509f37700e7e3942b0f93e868dcfadc9",
+    "reports/defense_validation/followup/protocol.json": "0979dabcad1b3996237559b4aed49254cef03b0d321f40fca1fbbfd7d2102dbd",
+    "reports/defense_validation/followup/results.json": "3809a7e4c1a0f9a53b7ba07eb49412aff452b7d8f94e894d12f7e7733769ae1f",
+    "reports/defense_validation/followup/pre_arm_stop_addendum.json": "c922f944dc2f8b8b6c2959c578143a9324e47f9fa214611e9fdc7c9eb8aecd1c",
+    "reports/defense_validation/followup/delivered_verification.json": "caad1d23443daec0f0d4339f7e84ce729bf62e31908ad078d3823cbe944367c3",
+    "reports/defense_validation/goalkeeper/protocol.json": "5113dccbd91a4540e266199b1a36f10beb9f927fcb6b4cfc573d7f7a8b036fe9",
+    "reports/defense_validation/goalkeeper/results.json": "03a32c07ac52b2656a9242ab9580efe28c4e2781f9a2702249a9497e0b533f4f",
+    "reports/defense_validation/goalkeeper/delivered_verification.json": "1eb748fec3e932d2ff6027397d4b1cfeb3ecb94618d72b091c198db8c8294442",
+    "reports/defense_validation/tests_before.txt": "cfe886d9eb958ae8e3b3c32feb8720a57fc90813c119651893eba5145eb2b21c",
+    "reports/defense_validation/tests_after.txt": "dcaf452980a39f7fcfcbb6cea3ac4dda0d1047ab88a477cb7c203055fc3c5eca"
+  }
+}

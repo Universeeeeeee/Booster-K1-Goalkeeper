@@ -1,0 +1,1566 @@
+{
+  "stage": "H posthoc shot feasibility audit",
+  "scope": "Read-only diagnosis and experiment design from verified formal G/F archives. Future trajectories are not available to online controllers. No H4 or new arm action is executed; H1 gate and root determine any later H4 experiment.",
+  "source_sha256": {
+    "reports/defense_validation/geometry_audit.json": "37e8ae56d8c270b454112437abdf733a0b0660b06b02282da28dd039330f5160",
+    "reports/defense_validation/predictor_latency.json": "67eadff5427e312851f98b8b7f8959c99cb284d0f7c26613cba15ab7960668b6",
+    "reports/defense_validation/h0_gate.json": "dc29a0fef767fee1248ed6642d834c9b71a18ad4d8ee77aa7b926c30f19b9175",
+    "reports/prediction_validation/scene_free.xml": "9ffa16f227c9e54ea36fd58c84c826224f21d832076bc8b3b517edd4ee481875",
+    "k1_goalkeeper/predictive_goalkeeper.py": "da8e8f0179cb9211039586814c8d6deb428698ba1371ef12a3b7b7d848ebc017",
+    "k1_goalkeeper/impact_validation.py": "0eec831522d484f0642216fb990bba15859c3254c7fe5db26d63c4fffd4d74c7",
+    "reports/prediction_validation/air_wide_g_active/summary.json": "1a2aa4af08dd2773e07eefe23c5ec9ac3c68ebe650f946b1745de0ddde6ec9e5",
+    "reports/prediction_validation/air_wide_g_active/trajectory.npz": "339ea6879aa59383b744ef9ebdaecd88ef6e4629f80c2146c31272d01d95c0c0",
+    "reports/positioning_validation/air_wide_absent/summary.json": "fe47fa757e176ff68bdd11ec3e70deacbb46b42f49084af66631a2a5ccdf829c",
+    "reports/positioning_validation/air_wide_absent/trajectory.npz": "51b3ae370eb6c1a209253052fb3735f7183e4ea4db021dab8661b7099b2f2d33",
+    "reports/prediction_validation/air_high_g_active/summary.json": "73654a17de80ab4b47460b76a4416f7dea05f4875e205f9cd574c6c5ac27d18d",
+    "reports/prediction_validation/air_high_g_active/trajectory.npz": "b46dc4c1878a185dc87dd8d2345b34d86555dbf670566848be69401572a9827b",
+    "reports/positioning_validation/air_high_absent/summary.json": "d6f014e9bd3898af227e777d891a0f2bfa5461271d52b7610c0c8292ce35ed3d",
+    "reports/positioning_validation/air_high_absent/trajectory.npz": "98f5faf6a34cf56d086adff25d60a08efe3757b98da11491b98736dd66899471",
+    "reports/prediction_validation/air_low_right_g_active/summary.json": "794f0fdf69f256b65c3623f36ea1187a96b481dd8391cc8afb0ce6c73843db88",
+    "reports/prediction_validation/air_low_right_g_active/trajectory.npz": "20a8fc2a4ce3ea14cefe69ad49e97e70fa356a8536d83ba31d204bfe2385f159",
+    "reports/prediction_validation/air_low_right_absent/summary.json": "3eb0844af0c515fcdd853cd1553bddf060416da4a94ac6da27b0d47409e419ec",
+    "reports/prediction_validation/air_low_right_absent/trajectory.npz": "4f05f015df6a73a3fb06338d42d9aa24eca1d2981aa9411c3a7ecbb16920e15f",
+    "reports/prediction_validation/air_high_left_g_active/summary.json": "83526cbbe7ae8a4439dc42d4d8de6e2950129563f4a7f261764833a317c44074",
+    "reports/prediction_validation/air_high_left_g_active/trajectory.npz": "fafd042d7eaecb47adeb273962cff1b3538d3fd75d8e3fe46439a851cc064e14",
+    "reports/prediction_validation/air_high_left_absent/summary.json": "3f5a676b248db3a57ed20ae2ec57f5207e37f6d173d77250a561990d6dcf114c",
+    "reports/prediction_validation/air_high_left_absent/trajectory.npz": "20649989c571c0c32863896ef5d7d848b94422ed20c9b7baa7fc6b50055c6cce"
+  },
+  "method": {
+    "crossing": "First forward sign change of ball_x minus moving reference plane after launch; linear interpolation between adjacent original 1 ms samples. Robot native projection uses mj_kinematics on unchanged archived qpos only; no mj_step.",
+    "reference_planes": {
+      "g_deadline": "base_x - 0.81 m; G conservative earliest collision deadline, not an actual surface",
+      "native_front_projection": "min original robot native collider world x minus ball radius; an infinite projected supporting plane, not a y/z collision certificate",
+      "robot_center": "actual archived base_x(t)"
+    },
+    "time_budget": "Hypothetical launch-responsive timing: recorded first postlaunch G refresh delay + H0 airborne wall-clock proxy + frozen 2 s quintic rise. Offline sim time does not absorb wall runtime automatically. Partial-ramp contact is not ruled out by incomplete full pose."
+  },
+  "geometry_reference": {
+    "path": "reports/defense_validation/geometry_audit.json",
+    "small_static_candidate_arm_top_z_range_m": [
+      0.7615873195068142,
+      0.7669101847515015
+    ],
+    "reference_base_z_m": 0.55369,
+    "angle_independent_native_arm_radius_from_trunk_m": 0.6632242980177666,
+    "small_candidate_scope": "13 static poses at fixed reference root; these heights are not dynamic reachability upper bounds for arbitrary poses/root motion"
+  },
+  "frozen_action": {
+    "zero_offset_exact_parity_required": true,
+    "amplitude_rad": 0.05,
+    "rise_s": 2,
+    "hold_s": 2,
+    "return_s": 2,
+    "curve": "quintic 10u^3-15u^4+6u^5",
+    "minimum_signed_actual_response_fraction": 0.5,
+    "response_window": "final one second of hold vs same-time original baseline"
+  },
+  "runtime_proxy": {
+    "path": "reports/defense_validation/predictor_latency.json",
+    "case": "airborne / air_center_g_active at 2.02 s",
+    "median_ms": 21.3020415,
+    "p95_ms": 21.69071045,
+    "max_ms": 21.844334,
+    "scope": "Reference latency only; not separately measured latency for each audited shot or certified upper bound"
+  },
+  "shots": [
+    {
+      "name": "air_wide",
+      "g_source": "reports/prediction_validation/air_wide_g_active",
+      "absent_source": "reports/positioning_validation/air_wide_absent",
+      "g_trajectory_sha256": "7a06f11b6e3c5ebc14cd8a8bd439361a1fb68df592a5c7eb0bf116d6a66e4600",
+      "absent_trajectory_sha256": "5adccac0f263b616ac3a44feeccceb9c30a10abae2ba33fe5afe42fddebf0119",
+      "launch_identical": true,
+      "launch": {
+        "position": [
+          4.0,
+          0.6,
+          0.2
+        ],
+        "velocity": [
+          8.0,
+          0.0,
+          4.3615
+        ],
+        "angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "time": 1.9999999999998905,
+        "initial_overlap": false
+      },
+      "first_postlaunch_50Hz_observation_s": 2.0199999999998886,
+      "first_postlaunch_G_refresh_s": 2.0999999999998797,
+      "first_postlaunch_G_refresh_wait_s": 0.09999999999998921,
+      "first_refresh_current_body_coverage": {
+        "covered": false,
+        "signed_distance_m": null,
+        "witness": null,
+        "required_overlap_m": 0.015,
+        "assumption": "frozen current pose; false can also mean sparse trajectory sampling"
+      },
+      "first_refresh_target_body_coverage": {
+        "covered": true,
+        "signed_distance_m": -0.03726284202857495,
+        "witness": {
+          "relative_time_s": 0.6850000000000005,
+          "ball_position": [
+            10.279999999999752,
+            0.6,
+            0.5973434500000153
+          ],
+          "geom": "k1_geom_1",
+          "body": "trunk"
+        },
+        "required_overlap_m": 0.015,
+        "assumption": "frozen current pose and candidate lateral translation"
+      },
+      "actual_crossings": {
+        "g_conservative_deadline": {
+          "time_s": 2.7002195815782484,
+          "time_after_launch_s": 0.7002195815783578,
+          "sample_bracket_indices": [
+            2700,
+            2701
+          ],
+          "sample_bracket_time_s": [
+            2.6999999999998137,
+            2.7009999999998136
+          ],
+          "interpolation_fraction": 0.21958157843462606,
+          "ball_position_world_m": [
+            9.601756652627303,
+            0.6,
+            0.8456141842599618
+          ],
+          "robot_base_position_world_m": [
+            10.411756652627304,
+            0.0011530984697673192,
+            0.5509315498085464
+          ],
+          "plane_x_world_m": 9.601756652627303,
+          "ball_bottom_z_m": 0.7356141842599618,
+          "any_arm_conservative_upper_z_m": 1.214155847826313,
+          "ball_bottom_minus_any_arm_upper_m": -0.4785416635663512,
+          "any_arm_vertical_overlap_excluded_at_this_instant": false,
+          "base_z_needed_for_bound_not_to_exclude_m": 0.07238988624219522,
+          "hypothetical_launch_responsive_timing": {
+            "median_runtime_proxy": {
+              "action_start_time_s": 2.1213020414998796,
+              "full_rise_ready_time_s": 4.121302041499879,
+              "time_available_after_start_s": 0.5789175400783688,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.2894587700391844,
+              "quintic_commanded_residual_fraction": 0.14941693949169563,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.0074708469745847815
+            },
+            "p95_runtime_proxy": {
+              "action_start_time_s": 2.12169071044988,
+              "full_rise_ready_time_s": 4.1216907104498794,
+              "time_available_after_start_s": 0.5785288711283685,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.28926443556418424,
+              "quintic_commanded_residual_fraction": 0.14917042058075689,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.007458521029037844
+            },
+            "max_runtime_proxy": {
+              "action_start_time_s": 2.1218443339998796,
+              "full_rise_ready_time_s": 4.12184433399988,
+              "time_available_after_start_s": 0.5783752475783688,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.2891876237891844,
+              "quintic_commanded_residual_fraction": 0.1490730367540615,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.007453651837703076
+            }
+          },
+          "zero_wait_zero_runtime_full_2s_rise_ready": false,
+          "crossing_after_original_robot_contact": false
+        },
+        "native_front_projection": {
+          "time_s": 2.7727872690077753,
+          "time_after_launch_s": 0.7727872690078847,
+          "sample_bracket_indices": [
+            2772,
+            2773
+          ],
+          "sample_bracket_time_s": [
+            2.7719999999998057,
+            2.7729999999998056
+          ],
+          "interpolation_fraction": 0.7872690079697162,
+          "ball_position_world_m": [
+            10.18229815206352,
+            0.6,
+            0.6374535305458695
+          ],
+          "robot_base_position_world_m": [
+            10.411710735596763,
+            0.0011787837951412806,
+            0.5509321876339247
+          ],
+          "plane_x_world_m": 10.18229815206352,
+          "ball_bottom_z_m": 0.5274535305458695,
+          "any_arm_conservative_upper_z_m": 1.2141564856516913,
+          "ball_bottom_minus_any_arm_upper_m": -0.6867029551058218,
+          "any_arm_vertical_overlap_excluded_at_this_instant": false,
+          "base_z_needed_for_bound_not_to_exclude_m": -0.1357707674718971,
+          "hypothetical_launch_responsive_timing": {
+            "median_runtime_proxy": {
+              "action_start_time_s": 2.1213020414998796,
+              "full_rise_ready_time_s": 4.121302041499879,
+              "time_available_after_start_s": 0.6514852275078957,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.32574261375394786,
+              "quintic_commanded_residual_fraction": 0.1987605161454009,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.009938025807270046
+            },
+            "p95_runtime_proxy": {
+              "action_start_time_s": 2.12169071044988,
+              "full_rise_ready_time_s": 4.1216907104498794,
+              "time_available_after_start_s": 0.6510965585578954,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.3255482792789477,
+              "quintic_commanded_residual_fraction": 0.19847936639289968,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.009923968319644984
+            },
+            "max_runtime_proxy": {
+              "action_start_time_s": 2.1218443339998796,
+              "full_rise_ready_time_s": 4.12184433399988,
+              "time_available_after_start_s": 0.6509429350078957,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.32547146750394784,
+              "quintic_commanded_residual_fraction": 0.19836828825768962,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.009918414412884482
+            }
+          },
+          "zero_wait_zero_runtime_full_2s_rise_ready": false,
+          "crossing_after_original_robot_contact": false
+        },
+        "robot_center": {
+          "time_s": 2.801461787169688,
+          "time_after_launch_s": 0.8014617871697973,
+          "sample_bracket_indices": [
+            2801,
+            2802
+          ],
+          "sample_bracket_time_s": [
+            2.8009999999998025,
+            2.8019999999998024
+          ],
+          "interpolation_fraction": 0.46178716988548935,
+          "ball_position_world_m": [
+            10.411694297358823,
+            0.6,
+            0.5409606087679372
+          ],
+          "robot_base_position_world_m": [
+            10.411694297358823,
+            0.0011887171316763813,
+            0.5509324127405739
+          ],
+          "plane_x_world_m": 10.411694297358823,
+          "ball_bottom_z_m": 0.4309606087679372,
+          "any_arm_conservative_upper_z_m": 1.2141567107583406,
+          "ball_bottom_minus_any_arm_upper_m": -0.7831961019904035,
+          "any_arm_vertical_overlap_excluded_at_this_instant": false,
+          "base_z_needed_for_bound_not_to_exclude_m": -0.23226368924982943,
+          "hypothetical_launch_responsive_timing": {
+            "median_runtime_proxy": {
+              "action_start_time_s": 2.1213020414998796,
+              "full_rise_ready_time_s": 4.121302041499879,
+              "time_available_after_start_s": 0.6801597456698083,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.34007987283490415,
+              "quintic_commanded_residual_fraction": 0.21997152890224902,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.010998576445112452
+            },
+            "p95_runtime_proxy": {
+              "action_start_time_s": 2.12169071044988,
+              "full_rise_ready_time_s": 4.1216907104498794,
+              "time_available_after_start_s": 0.679771076719808,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.339885538359904,
+              "quintic_commanded_residual_fraction": 0.21967796991610142,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.010983898495805071
+            },
+            "max_runtime_proxy": {
+              "action_start_time_s": 2.1218443339998796,
+              "full_rise_ready_time_s": 4.12184433399988,
+              "time_available_after_start_s": 0.6796174531698083,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.33980872658490413,
+              "quintic_commanded_residual_fraction": 0.2195619839879558,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.01097809919939779
+            }
+          },
+          "zero_wait_zero_runtime_full_2s_rise_ready": false,
+          "crossing_after_original_robot_contact": false
+        }
+      },
+      "absent_ball_against_G_reference_planes_posthoc": {
+        "g_conservative_deadline": {
+          "time_s": 2.7002195815782484,
+          "time_after_launch_s": 0.7002195815783578,
+          "sample_bracket_indices": [
+            2700,
+            2701
+          ],
+          "sample_bracket_time_s": [
+            2.6999999999998137,
+            2.7009999999998136
+          ],
+          "interpolation_fraction": 0.21958157843462606,
+          "ball_position_world_m": [
+            9.601756652627303,
+            0.6,
+            0.8456141842599618
+          ],
+          "robot_base_position_world_m": [
+            10.411756652627304,
+            0.0011530984697673192,
+            0.5509315498085464
+          ],
+          "plane_x_world_m": 9.601756652627303,
+          "ball_bottom_z_m": 0.7356141842599618,
+          "any_arm_conservative_upper_z_m": 1.214155847826313,
+          "ball_bottom_minus_any_arm_upper_m": -0.4785416635663512,
+          "any_arm_vertical_overlap_excluded_at_this_instant": false,
+          "base_z_needed_for_bound_not_to_exclude_m": 0.07238988624219522
+        },
+        "native_front_projection": {
+          "time_s": 2.7727872690077753,
+          "time_after_launch_s": 0.7727872690078847,
+          "sample_bracket_indices": [
+            2772,
+            2773
+          ],
+          "sample_bracket_time_s": [
+            2.7719999999998057,
+            2.7729999999998056
+          ],
+          "interpolation_fraction": 0.7872690079697162,
+          "ball_position_world_m": [
+            10.18229815206352,
+            0.6,
+            0.6374535305458695
+          ],
+          "robot_base_position_world_m": [
+            10.411710735596763,
+            0.0011787837951412806,
+            0.5509321876339247
+          ],
+          "plane_x_world_m": 10.18229815206352,
+          "ball_bottom_z_m": 0.5274535305458695,
+          "any_arm_conservative_upper_z_m": 1.2141564856516913,
+          "ball_bottom_minus_any_arm_upper_m": -0.6867029551058218,
+          "any_arm_vertical_overlap_excluded_at_this_instant": false,
+          "base_z_needed_for_bound_not_to_exclude_m": -0.1357707674718971
+        },
+        "robot_center": {
+          "time_s": 2.801461787169688,
+          "time_after_launch_s": 0.8014617871697973,
+          "sample_bracket_indices": [
+            2801,
+            2802
+          ],
+          "sample_bracket_time_s": [
+            2.8009999999998025,
+            2.8019999999998024
+          ],
+          "interpolation_fraction": 0.46178716988548935,
+          "ball_position_world_m": [
+            10.411694297358823,
+            0.6,
+            0.5409606087679372
+          ],
+          "robot_base_position_world_m": [
+            10.411694297358823,
+            0.0011887171316763813,
+            0.5509324127405739
+          ],
+          "plane_x_world_m": 10.411694297358823,
+          "ball_bottom_z_m": 0.4309606087679372,
+          "any_arm_conservative_upper_z_m": 1.2141567107583406,
+          "ball_bottom_minus_any_arm_upper_m": -0.7831961019904035,
+          "any_arm_vertical_overlap_excluded_at_this_instant": false,
+          "base_z_needed_for_bound_not_to_exclude_m": -0.23226368924982943
+        }
+      },
+      "first_original_robot_contact": null,
+      "G_outcome": {
+        "effective_contact": false,
+        "right_goal": true,
+        "completed": true
+      },
+      "first_refresh_interception": {
+        "valid": true,
+        "plane_x": 9.602399056235875,
+        "time_to_plane_s": 0.6002998820295063,
+        "lateral_m": 0.6,
+        "height_m": 0.8454122037323777,
+        "inside_aperture": true,
+        "model": "ball_floor_mujoco",
+        "future_floor_contact_unmodeled": false
+      },
+      "conclusion_limits": [
+        "Full 2 s rise cannot finish before these crossings even with zero waiting/runtime; incomplete rise may still make contact.",
+        "Pointwise geometric exclusions apply only at their stated instant and original measured base height; later descending flight/changed root height can alter them.",
+        "Small static candidate maximum height is not an arbitrary dynamic pose bound.",
+        "G used existing native pose/lateral gait; no new arm action was implemented. No action-failure attribution or H4 outcome is inferred."
+      ],
+      "first_refresh_reachability": {
+        "reachable": false,
+        "target_lateral_m": 0.6,
+        "decision_lateral_m": 0.0009041025916190747,
+        "interval_m": [
+          0.0009041025916190747,
+          0.0009041025916190747
+        ],
+        "travel_budget_m": 0.0,
+        "braking_reserve_m": 0.09,
+        "position_tolerance_m": 0.1,
+        "braking_time_available": true,
+        "reason": "insufficient time, braking time or post clearance"
+      },
+      "first_refresh_intercept_feasible": false,
+      "first_refresh_decision_body_coverage": {
+        "covered": false,
+        "signed_distance_m": null,
+        "witness": null,
+        "required_overlap_m": 0.015,
+        "assumption": "frozen current pose; false can also mean sparse trajectory sampling"
+      }
+    },
+    {
+      "name": "air_high",
+      "g_source": "reports/prediction_validation/air_high_g_active",
+      "absent_source": "reports/positioning_validation/air_high_absent",
+      "g_trajectory_sha256": "90141579985465289e0a454c1ff23a6d130c677507ef765b8ee50bb994ca6087",
+      "absent_trajectory_sha256": "967fa97c34ff39193a064f3525ca0a5e7612c2fb1eb7769be1feaf3631f41135",
+      "launch_identical": true,
+      "launch": {
+        "position": [
+          4.0,
+          0.0,
+          0.2
+        ],
+        "velocity": [
+          8.0,
+          0.0,
+          5.424
+        ],
+        "angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "time": 1.9999999999998905,
+        "initial_overlap": false
+      },
+      "first_postlaunch_50Hz_observation_s": 2.0199999999998886,
+      "first_postlaunch_G_refresh_s": 2.0999999999998797,
+      "first_postlaunch_G_refresh_wait_s": 0.09999999999998921,
+      "first_refresh_current_body_coverage": {
+        "covered": false,
+        "signed_distance_m": null,
+        "witness": null,
+        "required_overlap_m": 0.015,
+        "assumption": "frozen current pose; false can also mean sparse trajectory sampling"
+      },
+      "first_refresh_target_body_coverage": {
+        "covered": false,
+        "signed_distance_m": null,
+        "witness": null,
+        "required_overlap_m": 0.015,
+        "assumption": "frozen current pose; false can also mean sparse trajectory sampling"
+      },
+      "actual_crossings": {
+        "g_conservative_deadline": {
+          "time_s": 2.7002195815782484,
+          "time_after_launch_s": 0.7002195815783578,
+          "sample_bracket_indices": [
+            2700,
+            2701
+          ],
+          "sample_bracket_time_s": [
+            2.6999999999998137,
+            2.7009999999998136
+          ],
+          "interpolation_fraction": 0.21958157843462606,
+          "ball_position_world_m": [
+            9.601756652627303,
+            -1.6235551964549104e-48,
+            1.589597489687056
+          ],
+          "robot_base_position_world_m": [
+            10.411756652627304,
+            0.0011530984697673192,
+            0.5509315498085464
+          ],
+          "plane_x_world_m": 9.601756652627303,
+          "ball_bottom_z_m": 1.4795974896870558,
+          "any_arm_conservative_upper_z_m": 1.214155847826313,
+          "ball_bottom_minus_any_arm_upper_m": 0.2654416418607428,
+          "any_arm_vertical_overlap_excluded_at_this_instant": true,
+          "base_z_needed_for_bound_not_to_exclude_m": 0.8163731916692892,
+          "hypothetical_launch_responsive_timing": {
+            "median_runtime_proxy": {
+              "action_start_time_s": 2.1213020414998796,
+              "full_rise_ready_time_s": 4.121302041499879,
+              "time_available_after_start_s": 0.5789175400783688,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.2894587700391844,
+              "quintic_commanded_residual_fraction": 0.14941693949169563,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.0074708469745847815
+            },
+            "p95_runtime_proxy": {
+              "action_start_time_s": 2.12169071044988,
+              "full_rise_ready_time_s": 4.1216907104498794,
+              "time_available_after_start_s": 0.5785288711283685,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.28926443556418424,
+              "quintic_commanded_residual_fraction": 0.14917042058075689,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.007458521029037844
+            },
+            "max_runtime_proxy": {
+              "action_start_time_s": 2.1218443339998796,
+              "full_rise_ready_time_s": 4.12184433399988,
+              "time_available_after_start_s": 0.5783752475783688,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.2891876237891844,
+              "quintic_commanded_residual_fraction": 0.1490730367540615,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.007453651837703076
+            }
+          },
+          "zero_wait_zero_runtime_full_2s_rise_ready": false,
+          "crossing_after_original_robot_contact": false
+        },
+        "native_front_projection": {
+          "time_s": 2.7727872690077753,
+          "time_after_launch_s": 0.7727872690078847,
+          "sample_bracket_indices": [
+            2772,
+            2773
+          ],
+          "sample_bracket_time_s": [
+            2.7719999999998057,
+            2.7729999999998056
+          ],
+          "interpolation_fraction": 0.7872690079697162,
+          "ball_position_world_m": [
+            10.18229815206352,
+            -1.9280498385371647e-48,
+            1.4585400038668448
+          ],
+          "robot_base_position_world_m": [
+            10.411710735596763,
+            0.0011787837951412806,
+            0.5509321876339247
+          ],
+          "plane_x_world_m": 10.18229815206352,
+          "ball_bottom_z_m": 1.3485400038668447,
+          "any_arm_conservative_upper_z_m": 1.2141564856516913,
+          "ball_bottom_minus_any_arm_upper_m": 0.13438351821515337,
+          "any_arm_vertical_overlap_excluded_at_this_instant": true,
+          "base_z_needed_for_bound_not_to_exclude_m": 0.6853157058490781,
+          "hypothetical_launch_responsive_timing": {
+            "median_runtime_proxy": {
+              "action_start_time_s": 2.1213020414998796,
+              "full_rise_ready_time_s": 4.121302041499879,
+              "time_available_after_start_s": 0.6514852275078957,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.32574261375394786,
+              "quintic_commanded_residual_fraction": 0.1987605161454009,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.009938025807270046
+            },
+            "p95_runtime_proxy": {
+              "action_start_time_s": 2.12169071044988,
+              "full_rise_ready_time_s": 4.1216907104498794,
+              "time_available_after_start_s": 0.6510965585578954,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.3255482792789477,
+              "quintic_commanded_residual_fraction": 0.19847936639289968,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.009923968319644984
+            },
+            "max_runtime_proxy": {
+              "action_start_time_s": 2.1218443339998796,
+              "full_rise_ready_time_s": 4.12184433399988,
+              "time_available_after_start_s": 0.6509429350078957,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.32547146750394784,
+              "quintic_commanded_residual_fraction": 0.19836828825768962,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.009918414412884482
+            }
+          },
+          "zero_wait_zero_runtime_full_2s_rise_ready": false,
+          "crossing_after_original_robot_contact": false
+        },
+        "robot_center": {
+          "time_s": 2.801461787169688,
+          "time_after_launch_s": 0.8014617871697973,
+          "sample_bracket_indices": [
+            2801,
+            2802
+          ],
+          "sample_bracket_time_s": [
+            2.8009999999998025,
+            2.8019999999998024
+          ],
+          "interpolation_fraction": 0.46178716988548935,
+          "ball_position_world_m": [
+            10.411694297358823,
+            -2.0420205884491107e-48,
+            1.3925137576359485
+          ],
+          "robot_base_position_world_m": [
+            10.411694297358823,
+            0.0011887171316763813,
+            0.5509324127405739
+          ],
+          "plane_x_world_m": 10.411694297358823,
+          "ball_bottom_z_m": 1.2825137576359484,
+          "any_arm_conservative_upper_z_m": 1.2141567107583406,
+          "ball_bottom_minus_any_arm_upper_m": 0.0683570468776078,
+          "any_arm_vertical_overlap_excluded_at_this_instant": true,
+          "base_z_needed_for_bound_not_to_exclude_m": 0.6192894596181818,
+          "hypothetical_launch_responsive_timing": {
+            "median_runtime_proxy": {
+              "action_start_time_s": 2.1213020414998796,
+              "full_rise_ready_time_s": 4.121302041499879,
+              "time_available_after_start_s": 0.6801597456698083,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.34007987283490415,
+              "quintic_commanded_residual_fraction": 0.21997152890224902,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.010998576445112452
+            },
+            "p95_runtime_proxy": {
+              "action_start_time_s": 2.12169071044988,
+              "full_rise_ready_time_s": 4.1216907104498794,
+              "time_available_after_start_s": 0.679771076719808,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.339885538359904,
+              "quintic_commanded_residual_fraction": 0.21967796991610142,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.010983898495805071
+            },
+            "max_runtime_proxy": {
+              "action_start_time_s": 2.1218443339998796,
+              "full_rise_ready_time_s": 4.12184433399988,
+              "time_available_after_start_s": 0.6796174531698083,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.33980872658490413,
+              "quintic_commanded_residual_fraction": 0.2195619839879558,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.01097809919939779
+            }
+          },
+          "zero_wait_zero_runtime_full_2s_rise_ready": false,
+          "crossing_after_original_robot_contact": false
+        }
+      },
+      "absent_ball_against_G_reference_planes_posthoc": {
+        "g_conservative_deadline": {
+          "time_s": 2.7002195815782484,
+          "time_after_launch_s": 0.7002195815783578,
+          "sample_bracket_indices": [
+            2700,
+            2701
+          ],
+          "sample_bracket_time_s": [
+            2.6999999999998137,
+            2.7009999999998136
+          ],
+          "interpolation_fraction": 0.21958157843462606,
+          "ball_position_world_m": [
+            9.601756652627303,
+            -1.6235551964549104e-48,
+            1.589597489687056
+          ],
+          "robot_base_position_world_m": [
+            10.411756652627304,
+            0.0011530984697673192,
+            0.5509315498085464
+          ],
+          "plane_x_world_m": 9.601756652627303,
+          "ball_bottom_z_m": 1.4795974896870558,
+          "any_arm_conservative_upper_z_m": 1.214155847826313,
+          "ball_bottom_minus_any_arm_upper_m": 0.2654416418607428,
+          "any_arm_vertical_overlap_excluded_at_this_instant": true,
+          "base_z_needed_for_bound_not_to_exclude_m": 0.8163731916692892
+        },
+        "native_front_projection": {
+          "time_s": 2.7727872690077753,
+          "time_after_launch_s": 0.7727872690078847,
+          "sample_bracket_indices": [
+            2772,
+            2773
+          ],
+          "sample_bracket_time_s": [
+            2.7719999999998057,
+            2.7729999999998056
+          ],
+          "interpolation_fraction": 0.7872690079697162,
+          "ball_position_world_m": [
+            10.18229815206352,
+            -1.9280498385371647e-48,
+            1.4585400038668448
+          ],
+          "robot_base_position_world_m": [
+            10.411710735596763,
+            0.0011787837951412806,
+            0.5509321876339247
+          ],
+          "plane_x_world_m": 10.18229815206352,
+          "ball_bottom_z_m": 1.3485400038668447,
+          "any_arm_conservative_upper_z_m": 1.2141564856516913,
+          "ball_bottom_minus_any_arm_upper_m": 0.13438351821515337,
+          "any_arm_vertical_overlap_excluded_at_this_instant": true,
+          "base_z_needed_for_bound_not_to_exclude_m": 0.6853157058490781
+        },
+        "robot_center": {
+          "time_s": 2.801461787169688,
+          "time_after_launch_s": 0.8014617871697973,
+          "sample_bracket_indices": [
+            2801,
+            2802
+          ],
+          "sample_bracket_time_s": [
+            2.8009999999998025,
+            2.8019999999998024
+          ],
+          "interpolation_fraction": 0.46178716988548935,
+          "ball_position_world_m": [
+            10.411694297358823,
+            -2.0420205884491107e-48,
+            1.3925137576359485
+          ],
+          "robot_base_position_world_m": [
+            10.411694297358823,
+            0.0011887171316763813,
+            0.5509324127405739
+          ],
+          "plane_x_world_m": 10.411694297358823,
+          "ball_bottom_z_m": 1.2825137576359484,
+          "any_arm_conservative_upper_z_m": 1.2141567107583406,
+          "ball_bottom_minus_any_arm_upper_m": 0.0683570468776078,
+          "any_arm_vertical_overlap_excluded_at_this_instant": true,
+          "base_z_needed_for_bound_not_to_exclude_m": 0.6192894596181818
+        }
+      },
+      "first_original_robot_contact": null,
+      "G_outcome": {
+        "effective_contact": false,
+        "right_goal": true,
+        "completed": true
+      },
+      "first_refresh_interception": {
+        "valid": true,
+        "plane_x": 9.602399056235875,
+        "time_to_plane_s": 0.6002998820295063,
+        "lateral_m": -1.6239068367635692e-48,
+        "height_m": 1.589480828388735,
+        "inside_aperture": true,
+        "model": "ball_floor_mujoco",
+        "future_floor_contact_unmodeled": false
+      },
+      "conclusion_limits": [
+        "Full 2 s rise cannot finish before these crossings even with zero waiting/runtime; incomplete rise may still make contact.",
+        "Pointwise geometric exclusions apply only at their stated instant and original measured base height; later descending flight/changed root height can alter them.",
+        "Small static candidate maximum height is not an arbitrary dynamic pose bound.",
+        "G used existing native pose/lateral gait; no new arm action was implemented. No action-failure attribution or H4 outcome is inferred."
+      ],
+      "first_refresh_reachability": {
+        "reachable": true,
+        "target_lateral_m": -2.0423615036582416e-48,
+        "decision_lateral_m": 0.0009041025916190747,
+        "interval_m": [
+          0.0009041025916190747,
+          0.0009041025916190747
+        ],
+        "travel_budget_m": 0.0,
+        "braking_reserve_m": 0.09,
+        "position_tolerance_m": 0.1,
+        "braking_time_available": true,
+        "reason": "empirical center-position estimate within 0.10m tolerance"
+      },
+      "first_refresh_intercept_feasible": false,
+      "first_refresh_decision_body_coverage": {
+        "covered": false,
+        "signed_distance_m": null,
+        "witness": null,
+        "required_overlap_m": 0.015,
+        "assumption": "frozen current pose; false can also mean sparse trajectory sampling"
+      }
+    },
+    {
+      "name": "air_low_right",
+      "g_source": "reports/prediction_validation/air_low_right_g_active",
+      "absent_source": "reports/prediction_validation/air_low_right_absent",
+      "g_trajectory_sha256": "76038fe25b63d8dc35ea2abfe93bfc1ef50178a6df40d248539e215e5c85668d",
+      "absent_trajectory_sha256": "319984b093d79470022f60a9cd1f746fc13b7181e9134c3024768e86ed255ef1",
+      "launch_identical": true,
+      "launch": {
+        "position": [
+          3,
+          0.28,
+          0.2
+        ],
+        "velocity": [
+          7,
+          0,
+          5.677177606177607
+        ],
+        "angular_velocity": [
+          0,
+          0,
+          0
+        ],
+        "time": 1.9999999999998905,
+        "initial_overlap": false
+      },
+      "first_postlaunch_50Hz_observation_s": 2.0199999999998886,
+      "first_postlaunch_G_refresh_s": 2.0999999999998797,
+      "first_postlaunch_G_refresh_wait_s": 0.09999999999998921,
+      "first_refresh_current_body_coverage": {
+        "covered": true,
+        "signed_distance_m": -0.02870232466397507,
+        "witness": {
+          "relative_time_s": 0.9600000000000007,
+          "ball_position": [
+            10.419999999999717,
+            0.28,
+            0.7013509625482994
+          ],
+          "geom": "k1_geom_19",
+          "body": "right_elbow_pitch_link"
+        },
+        "required_overlap_m": 0.015,
+        "assumption": "frozen current pose and candidate lateral translation"
+      },
+      "first_refresh_target_body_coverage": {
+        "covered": true,
+        "signed_distance_m": -0.024742019012733374,
+        "witness": {
+          "relative_time_s": 0.9400000000000007,
+          "ball_position": [
+            10.279999999999724,
+            0.28,
+            0.7939155104247464
+          ],
+          "geom": "k1_geom_1",
+          "body": "trunk"
+        },
+        "required_overlap_m": 0.015,
+        "assumption": "frozen current pose and candidate lateral translation"
+      },
+      "actual_crossings": {
+        "g_conservative_deadline": {
+          "time_s": 2.9430893873784365,
+          "time_after_launch_s": 0.943089387378546,
+          "sample_bracket_indices": [
+            2943,
+            2944
+          ],
+          "sample_bracket_time_s": [
+            2.942999999999787,
+            2.943999999999787
+          ],
+          "interpolation_fraction": 0.08938737864956549,
+          "ball_position_world_m": [
+            9.601625711650303,
+            0.28,
+            1.186866406315642
+          ],
+          "robot_base_position_world_m": [
+            10.411625711650304,
+            0.0012362346023837535,
+            0.550933336798852
+          ],
+          "plane_x_world_m": 9.601625711650303,
+          "ball_bottom_z_m": 1.076866406315642,
+          "any_arm_conservative_upper_z_m": 1.2141576348166185,
+          "ball_bottom_minus_any_arm_upper_m": -0.13729122850097664,
+          "any_arm_vertical_overlap_excluded_at_this_instant": false,
+          "base_z_needed_for_bound_not_to_exclude_m": 0.4136421082978753,
+          "hypothetical_launch_responsive_timing": {
+            "median_runtime_proxy": {
+              "action_start_time_s": 2.1213020414998796,
+              "full_rise_ready_time_s": 4.121302041499879,
+              "time_available_after_start_s": 0.821787345878557,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.4108936729392785,
+              "quintic_commanded_residual_fraction": 0.3364294251382377,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.016821471256911885
+            },
+            "p95_runtime_proxy": {
+              "action_start_time_s": 2.12169071044988,
+              "full_rise_ready_time_s": 4.1216907104498794,
+              "time_available_after_start_s": 0.8213986769285566,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.4106993384642783,
+              "quintic_commanded_residual_fraction": 0.33608787441862886,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.016804393720931444
+            },
+            "max_runtime_proxy": {
+              "action_start_time_s": 2.1218443339998796,
+              "full_rise_ready_time_s": 4.12184433399988,
+              "time_available_after_start_s": 0.8212450533785569,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.41062252668927846,
+              "quintic_commanded_residual_fraction": 0.3359529016068279,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.016797645080341397
+            }
+          },
+          "zero_wait_zero_runtime_full_2s_rise_ready": false,
+          "crossing_after_original_robot_contact": false
+        },
+        "native_front_projection": {
+          "time_s": 3.0260424399014236,
+          "time_after_launch_s": 1.026042439901533,
+          "sample_bracket_indices": [
+            3026,
+            3027
+          ],
+          "sample_bracket_time_s": [
+            3.0259999999997778,
+            3.0269999999997776
+          ],
+          "interpolation_fraction": 0.042439901645672906,
+          "ball_position_world_m": [
+            10.182297079311248,
+            0.28,
+            0.8561892763055978
+          ],
+          "robot_base_position_world_m": [
+            10.411594169126705,
+            0.0012629301410911004,
+            0.5509337459217235
+          ],
+          "plane_x_world_m": 10.182297079311248,
+          "ball_bottom_z_m": 0.7461892763055978,
+          "any_arm_conservative_upper_z_m": 1.2141580439394901,
+          "ball_bottom_minus_any_arm_upper_m": -0.4679687676338923,
+          "any_arm_vertical_overlap_excluded_at_this_instant": false,
+          "base_z_needed_for_bound_not_to_exclude_m": 0.08296497828783123,
+          "hypothetical_launch_responsive_timing": {
+            "median_runtime_proxy": {
+              "action_start_time_s": 2.1213020414998796,
+              "full_rise_ready_time_s": 4.121302041499879,
+              "time_available_after_start_s": 0.9047403984015441,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.45237019920077204,
+              "quintic_commanded_residual_fraction": 0.4112329170664957,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.020561645853324786
+            },
+            "p95_runtime_proxy": {
+              "action_start_time_s": 2.12169071044988,
+              "full_rise_ready_time_s": 4.1216907104498794,
+              "time_available_after_start_s": 0.9043517294515437,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.45217586472577187,
+              "quintic_commanded_residual_fraction": 0.41087514969576305,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.020543757484788153
+            },
+            "max_runtime_proxy": {
+              "action_start_time_s": 2.1218443339998796,
+              "full_rise_ready_time_s": 4.12184433399988,
+              "time_available_after_start_s": 0.904198105901544,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.452099052950772,
+              "quintic_commanded_residual_fraction": 0.41073375495778025,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.020536687747889013
+            }
+          },
+          "zero_wait_zero_runtime_full_2s_rise_ready": false,
+          "crossing_after_original_robot_contact": false
+        },
+        "robot_center": {
+          "time_s": 3.0624533159790577,
+          "time_after_launch_s": 1.0624533159791671,
+          "sample_bracket_indices": [
+            3062,
+            3063
+          ],
+          "sample_bracket_time_s": [
+            3.061999999999774,
+            3.0629999999997737
+          ],
+          "interpolation_fraction": 0.45331597928410744,
+          "ball_position_world_m": [
+            10.412210208115862,
+            0.3125186239932483,
+            0.7050985063054824
+          ],
+          "robot_base_position_world_m": [
+            10.412210208115862,
+            0.00037360638423220737,
+            0.5509163914607721
+          ],
+          "plane_x_world_m": 10.412210208115862,
+          "ball_bottom_z_m": 0.5950985063054824,
+          "any_arm_conservative_upper_z_m": 1.2141406894785387,
+          "ball_bottom_minus_any_arm_upper_m": -0.6190421831730563,
+          "any_arm_vertical_overlap_excluded_at_this_instant": false,
+          "base_z_needed_for_bound_not_to_exclude_m": -0.06812579171228417,
+          "hypothetical_launch_responsive_timing": {
+            "median_runtime_proxy": {
+              "action_start_time_s": 2.1213020414998796,
+              "full_rise_ready_time_s": 4.121302041499879,
+              "time_available_after_start_s": 0.9411512744791781,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.47057563723958906,
+              "quintic_commanded_residual_fraction": 0.44495656454037474,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.022247828227018738
+            },
+            "p95_runtime_proxy": {
+              "action_start_time_s": 2.12169071044988,
+              "full_rise_ready_time_s": 4.1216907104498794,
+              "time_available_after_start_s": 0.9407626055291778,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.4703813027645889,
+              "quintic_commanded_residual_fraction": 0.4445947234784972,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.02222973617392486
+            },
+            "max_runtime_proxy": {
+              "action_start_time_s": 2.1218443339998796,
+              "full_rise_ready_time_s": 4.12184433399988,
+              "time_available_after_start_s": 0.9406089819791781,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.47030449098958904,
+              "quintic_commanded_residual_fraction": 0.4444517130080589,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.022222585650402946
+            }
+          },
+          "zero_wait_zero_runtime_full_2s_rise_ready": false,
+          "crossing_after_original_robot_contact": true
+        }
+      },
+      "absent_ball_against_G_reference_planes_posthoc": {
+        "g_conservative_deadline": {
+          "time_s": 2.9430893873784365,
+          "time_after_launch_s": 0.943089387378546,
+          "sample_bracket_indices": [
+            2943,
+            2944
+          ],
+          "sample_bracket_time_s": [
+            2.942999999999787,
+            2.943999999999787
+          ],
+          "interpolation_fraction": 0.08938737864956549,
+          "ball_position_world_m": [
+            9.601625711650303,
+            0.28,
+            1.186866406315642
+          ],
+          "robot_base_position_world_m": [
+            10.411625711650304,
+            0.0012362346023837535,
+            0.550933336798852
+          ],
+          "plane_x_world_m": 9.601625711650303,
+          "ball_bottom_z_m": 1.076866406315642,
+          "any_arm_conservative_upper_z_m": 1.2141576348166185,
+          "ball_bottom_minus_any_arm_upper_m": -0.13729122850097664,
+          "any_arm_vertical_overlap_excluded_at_this_instant": false,
+          "base_z_needed_for_bound_not_to_exclude_m": 0.4136421082978753
+        },
+        "native_front_projection": {
+          "time_s": 3.0260424399014236,
+          "time_after_launch_s": 1.026042439901533,
+          "sample_bracket_indices": [
+            3026,
+            3027
+          ],
+          "sample_bracket_time_s": [
+            3.0259999999997778,
+            3.0269999999997776
+          ],
+          "interpolation_fraction": 0.042439901645672906,
+          "ball_position_world_m": [
+            10.182297079311248,
+            0.28,
+            0.8561892763055978
+          ],
+          "robot_base_position_world_m": [
+            10.411594169126705,
+            0.0012629301410911004,
+            0.5509337459217235
+          ],
+          "plane_x_world_m": 10.182297079311248,
+          "ball_bottom_z_m": 0.7461892763055978,
+          "any_arm_conservative_upper_z_m": 1.2141580439394901,
+          "ball_bottom_minus_any_arm_upper_m": -0.4679687676338923,
+          "any_arm_vertical_overlap_excluded_at_this_instant": false,
+          "base_z_needed_for_bound_not_to_exclude_m": 0.08296497828783123
+        },
+        "robot_center": {
+          "time_s": 3.0588584712766353,
+          "time_after_launch_s": 1.0588584712767448,
+          "sample_bracket_indices": [
+            3058,
+            3059
+          ],
+          "sample_bracket_time_s": [
+            3.0579999999997742,
+            3.058999999999774
+          ],
+          "interpolation_fraction": 0.8584712768611827,
+          "ball_position_world_m": [
+            10.412009298937747,
+            0.28,
+            0.7067392134281445
+          ],
+          "robot_base_position_world_m": [
+            10.412009298937747,
+            0.0006551160288267685,
+            0.5509251022878475
+          ],
+          "plane_x_world_m": 10.412009298937747,
+          "ball_bottom_z_m": 0.5967392134281445,
+          "any_arm_conservative_upper_z_m": 1.2141494003056141,
+          "ball_bottom_minus_any_arm_upper_m": -0.6174101868774696,
+          "any_arm_vertical_overlap_excluded_at_this_instant": false,
+          "base_z_needed_for_bound_not_to_exclude_m": -0.0664850845896221
+        }
+      },
+      "first_original_robot_contact": {
+        "kind": "robot",
+        "geom_id": 47,
+        "geom_name": "k1_geom_17",
+        "body": "right_shoulder_roll_link",
+        "start_time": 3.049999999999775,
+        "end_time": 3.0549999999997746,
+        "duration_s": 0.005,
+        "impulse_on_ball_world_ns": [
+          -0.9393471452091597,
+          1.2349515265260396,
+          0.5754040395150366
+        ],
+        "normal_impulse_ns": 1.5156808599319638,
+        "peak_force_n": 628.6858191353978,
+        "ball_velocity_before": [
+          7.0,
+          5.146054152565142e-48,
+          -4.62332239382233
+        ],
+        "ball_velocity_after": [
+          4.815471755327535,
+          2.8719802942466024,
+          -3.3342234647175935
+        ]
+      },
+      "G_outcome": {
+        "effective_contact": true,
+        "right_goal": true,
+        "completed": true
+      },
+      "first_refresh_interception": {
+        "valid": true,
+        "plane_x": 9.602399056235875,
+        "time_to_plane_s": 0.8431998651765891,
+        "lateral_m": 0.28,
+        "height_m": 1.1864705132813758,
+        "inside_aperture": true,
+        "model": "ball_floor_mujoco",
+        "future_floor_contact_unmodeled": false
+      },
+      "conclusion_limits": [
+        "Full 2 s rise cannot finish before these crossings even with zero waiting/runtime; incomplete rise may still make contact.",
+        "Pointwise geometric exclusions apply only at their stated instant and original measured base height; later descending flight/changed root height can alter them.",
+        "Small static candidate maximum height is not an arbitrary dynamic pose bound.",
+        "G used existing native pose/lateral gait; no new arm action was implemented. No action-failure attribution or H4 outcome is inferred."
+      ],
+      "first_refresh_reachability": {
+        "reachable": false,
+        "target_lateral_m": 0.28,
+        "decision_lateral_m": 0.0009041025916190747,
+        "interval_m": [
+          0.0009041025916190747,
+          0.0009041025916190747
+        ],
+        "travel_budget_m": 0.0,
+        "braking_reserve_m": 0.09,
+        "position_tolerance_m": 0.1,
+        "braking_time_available": true,
+        "reason": "insufficient time, braking time or post clearance"
+      },
+      "first_refresh_intercept_feasible": false,
+      "first_refresh_decision_body_coverage": {
+        "covered": true,
+        "signed_distance_m": -0.02870232466397507,
+        "witness": {
+          "relative_time_s": 0.9600000000000007,
+          "ball_position": [
+            10.419999999999717,
+            0.28,
+            0.7013509625482994
+          ],
+          "geom": "k1_geom_19",
+          "body": "right_elbow_pitch_link"
+        },
+        "required_overlap_m": 0.015,
+        "assumption": "frozen current pose and candidate lateral translation"
+      }
+    },
+    {
+      "name": "air_high_left",
+      "g_source": "reports/prediction_validation/air_high_left_g_active",
+      "absent_source": "reports/prediction_validation/air_high_left_absent",
+      "g_trajectory_sha256": "27694fc2a76a081b8388bbd76564b77cf938effec8c38251435a6806af587a84",
+      "absent_trajectory_sha256": "c0c9b968d19f905071a5d385a584bf4382830923e5102912c428b22b93c7b849",
+      "launch_identical": true,
+      "launch": {
+        "position": [
+          5,
+          -0.15,
+          0.25
+        ],
+        "velocity": [
+          9,
+          0,
+          4.609666666666667
+        ],
+        "angular_velocity": [
+          0,
+          0,
+          0
+        ],
+        "time": 1.9999999999998905,
+        "initial_overlap": false
+      },
+      "first_postlaunch_50Hz_observation_s": 2.0199999999998886,
+      "first_postlaunch_G_refresh_s": 2.0999999999998797,
+      "first_postlaunch_G_refresh_wait_s": 0.09999999999998921,
+      "first_refresh_current_body_coverage": {
+        "covered": false,
+        "signed_distance_m": null,
+        "witness": null,
+        "required_overlap_m": 0.015,
+        "assumption": "frozen current pose; false can also mean sparse trajectory sampling"
+      },
+      "first_refresh_target_body_coverage": {
+        "covered": false,
+        "signed_distance_m": null,
+        "witness": null,
+        "required_overlap_m": 0.015,
+        "assumption": "frozen current pose; false can also mean sparse trajectory sampling"
+      },
+      "actual_crossings": {
+        "g_conservative_deadline": {
+          "time_s": 2.5113230956677097,
+          "time_after_launch_s": 0.5113230956678192,
+          "sample_bracket_indices": [
+            2511,
+            2512
+          ],
+          "sample_bracket_time_s": [
+            2.5109999999998345,
+            2.5119999999998344
+          ],
+          "interpolation_fraction": 0.32309566787544725,
+          "ball_position_world_m": [
+            9.601907861011053,
+            -0.15,
+            1.3221012509240773
+          ],
+          "robot_base_position_world_m": [
+            10.411907861011054,
+            0.0010824154122905838,
+            0.5509294092846765
+          ],
+          "plane_x_world_m": 9.601907861011053,
+          "ball_bottom_z_m": 1.2121012509240772,
+          "any_arm_conservative_upper_z_m": 1.214153707302443,
+          "ball_bottom_minus_any_arm_upper_m": -0.00205245637836593,
+          "any_arm_vertical_overlap_excluded_at_this_instant": false,
+          "base_z_needed_for_bound_not_to_exclude_m": 0.5488769529063106,
+          "hypothetical_launch_responsive_timing": {
+            "median_runtime_proxy": {
+              "action_start_time_s": 2.1213020414998796,
+              "full_rise_ready_time_s": 4.121302041499879,
+              "time_available_after_start_s": 0.3900210541678302,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.1950105270839151,
+              "quintic_commanded_residual_fraction": 0.05415972665840728,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.002707986332920364
+            },
+            "p95_runtime_proxy": {
+              "action_start_time_s": 2.12169071044988,
+              "full_rise_ready_time_s": 4.1216907104498794,
+              "time_available_after_start_s": 0.38963238521782984,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.19481619260891492,
+              "quintic_commanded_residual_fraction": 0.054016164637014905,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.0027008082318507455
+            },
+            "max_runtime_proxy": {
+              "action_start_time_s": 2.1218443339998796,
+              "full_rise_ready_time_s": 4.12184433399988,
+              "time_available_after_start_s": 0.38947876166783013,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.19473938083391507,
+              "quintic_commanded_residual_fraction": 0.05395948077872486,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.0026979740389362432
+            }
+          },
+          "zero_wait_zero_runtime_full_2s_rise_ready": false,
+          "crossing_after_original_robot_contact": false
+        },
+        "native_front_projection": {
+          "time_s": 2.5758109971302154,
+          "time_after_launch_s": 0.5758109971303249,
+          "sample_bracket_indices": [
+            2575,
+            2576
+          ],
+          "sample_bracket_time_s": [
+            2.5749999999998274,
+            2.5759999999998273
+          ],
+          "interpolation_fraction": 0.8109971303880521,
+          "ball_position_world_m": [
+            10.182298974173689,
+            -0.15,
+            1.2751781718269728
+          ],
+          "robot_base_position_world_m": [
+            10.41185080587619,
+            0.0011072158703254362,
+            0.550930223228429
+          ],
+          "plane_x_world_m": 10.182298974173689,
+          "ball_bottom_z_m": 1.1651781718269727,
+          "any_arm_conservative_upper_z_m": 1.2141545212461957,
+          "ball_bottom_minus_any_arm_upper_m": -0.04897634941922302,
+          "any_arm_vertical_overlap_excluded_at_this_instant": false,
+          "base_z_needed_for_bound_not_to_exclude_m": 0.5019538738092061,
+          "hypothetical_launch_responsive_timing": {
+            "median_runtime_proxy": {
+              "action_start_time_s": 2.1213020414998796,
+              "full_rise_ready_time_s": 4.121302041499879,
+              "time_available_after_start_s": 0.4545089556303359,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.22725447781516794,
+              "quintic_commanded_residual_fraction": 0.08099394415319928,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.004049697207659964
+            },
+            "p95_runtime_proxy": {
+              "action_start_time_s": 2.12169071044988,
+              "full_rise_ready_time_s": 4.1216907104498794,
+              "time_available_after_start_s": 0.45412028668033555,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.22706014334016777,
+              "quintic_commanded_residual_fraction": 0.08081426125393451,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.004040713062696726
+            },
+            "max_runtime_proxy": {
+              "action_start_time_s": 2.1218443339998796,
+              "full_rise_ready_time_s": 4.12184433399988,
+              "time_available_after_start_s": 0.45396666313033585,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.22698333156516792,
+              "quintic_commanded_residual_fraction": 0.0807433004538282,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.00403716502269141
+            }
+          },
+          "zero_wait_zero_runtime_full_2s_rise_ready": false,
+          "crossing_after_original_robot_contact": false
+        },
+        "robot_center": {
+          "time_s": 2.6013144271467152,
+          "time_after_launch_s": 0.6013144271468247,
+          "sample_bracket_indices": [
+            2601,
+            2602
+          ],
+          "sample_bracket_time_s": [
+            2.6009999999998246,
+            2.6019999999998245
+          ],
+          "interpolation_fraction": 0.3144271468907277,
+          "ball_position_world_m": [
+            10.411829844322222,
+            -0.15,
+            1.2453633737575773
+          ],
+          "robot_base_position_world_m": [
+            10.411829844322222,
+            0.0011168178240368823,
+            0.550930519661614
+          ],
+          "plane_x_world_m": 10.411829844322222,
+          "ball_bottom_z_m": 1.1353633737575772,
+          "any_arm_conservative_upper_z_m": 1.2141548176793806,
+          "ball_bottom_minus_any_arm_upper_m": -0.07879144392180337,
+          "any_arm_vertical_overlap_excluded_at_this_instant": false,
+          "base_z_needed_for_bound_not_to_exclude_m": 0.4721390757398106,
+          "hypothetical_launch_responsive_timing": {
+            "median_runtime_proxy": {
+              "action_start_time_s": 2.1213020414998796,
+              "full_rise_ready_time_s": 4.121302041499879,
+              "time_available_after_start_s": 0.4800123856468357,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.24000619282341784,
+              "quintic_commanded_residual_fraction": 0.09325735552159044,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.004662867776079522
+            },
+            "p95_runtime_proxy": {
+              "action_start_time_s": 2.12169071044988,
+              "full_rise_ready_time_s": 4.1216907104498794,
+              "time_available_after_start_s": 0.47962371669683534,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.23981185834841767,
+              "quintic_commanded_residual_fraction": 0.09306349229929199,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.0046531746149646
+            },
+            "max_runtime_proxy": {
+              "action_start_time_s": 2.1218443339998796,
+              "full_rise_ready_time_s": 4.12184433399988,
+              "time_available_after_start_s": 0.47947009314683564,
+              "full_rise_before_crossing": false,
+              "rise_phase_fraction": 0.23973504657341782,
+              "quintic_commanded_residual_fraction": 0.09298692606090635,
+              "initial_0_05rad_commanded_residual_at_crossing_rad": 0.0046493463030453175
+            }
+          },
+          "zero_wait_zero_runtime_full_2s_rise_ready": false,
+          "crossing_after_original_robot_contact": false
+        }
+      },
+      "absent_ball_against_G_reference_planes_posthoc": {
+        "g_conservative_deadline": {
+          "time_s": 2.5113230956677097,
+          "time_after_launch_s": 0.5113230956678192,
+          "sample_bracket_indices": [
+            2511,
+            2512
+          ],
+          "sample_bracket_time_s": [
+            2.5109999999998345,
+            2.5119999999998344
+          ],
+          "interpolation_fraction": 0.32309566787544725,
+          "ball_position_world_m": [
+            9.601907861011053,
+            -0.15,
+            1.3221012509240773
+          ],
+          "robot_base_position_world_m": [
+            10.411907861011054,
+            0.0010824154122905838,
+            0.5509294092846765
+          ],
+          "plane_x_world_m": 9.601907861011053,
+          "ball_bottom_z_m": 1.2121012509240772,
+          "any_arm_conservative_upper_z_m": 1.214153707302443,
+          "ball_bottom_minus_any_arm_upper_m": -0.00205245637836593,
+          "any_arm_vertical_overlap_excluded_at_this_instant": false,
+          "base_z_needed_for_bound_not_to_exclude_m": 0.5488769529063106
+        },
+        "native_front_projection": {
+          "time_s": 2.5758109971302154,
+          "time_after_launch_s": 0.5758109971303249,
+          "sample_bracket_indices": [
+            2575,
+            2576
+          ],
+          "sample_bracket_time_s": [
+            2.5749999999998274,
+            2.5759999999998273
+          ],
+          "interpolation_fraction": 0.8109971303880521,
+          "ball_position_world_m": [
+            10.182298974173689,
+            -0.15,
+            1.2751781718269728
+          ],
+          "robot_base_position_world_m": [
+            10.41185080587619,
+            0.0011072158703254362,
+            0.550930223228429
+          ],
+          "plane_x_world_m": 10.182298974173689,
+          "ball_bottom_z_m": 1.1651781718269727,
+          "any_arm_conservative_upper_z_m": 1.2141545212461957,
+          "ball_bottom_minus_any_arm_upper_m": -0.04897634941922302,
+          "any_arm_vertical_overlap_excluded_at_this_instant": false,
+          "base_z_needed_for_bound_not_to_exclude_m": 0.5019538738092061
+        },
+        "robot_center": {
+          "time_s": 2.6013144271467152,
+          "time_after_launch_s": 0.6013144271468247,
+          "sample_bracket_indices": [
+            2601,
+            2602
+          ],
+          "sample_bracket_time_s": [
+            2.6009999999998246,
+            2.6019999999998245
+          ],
+          "interpolation_fraction": 0.3144271468907277,
+          "ball_position_world_m": [
+            10.411829844322222,
+            -0.15,
+            1.2453633737575773
+          ],
+          "robot_base_position_world_m": [
+            10.411829844322222,
+            0.0011168178240368823,
+            0.550930519661614
+          ],
+          "plane_x_world_m": 10.411829844322222,
+          "ball_bottom_z_m": 1.1353633737575772,
+          "any_arm_conservative_upper_z_m": 1.2141548176793806,
+          "ball_bottom_minus_any_arm_upper_m": -0.07879144392180337,
+          "any_arm_vertical_overlap_excluded_at_this_instant": false,
+          "base_z_needed_for_bound_not_to_exclude_m": 0.4721390757398106
+        }
+      },
+      "first_original_robot_contact": null,
+      "G_outcome": {
+        "effective_contact": false,
+        "right_goal": true,
+        "completed": true
+      },
+      "first_refresh_interception": {
+        "valid": true,
+        "plane_x": 9.602399056235875,
+        "time_to_plane_s": 0.41137767291507815,
+        "lateral_m": -0.15,
+        "height_m": 1.3220787076101963,
+        "inside_aperture": true,
+        "model": "ball_floor_mujoco",
+        "future_floor_contact_unmodeled": false
+      },
+      "conclusion_limits": [
+        "Full 2 s rise cannot finish before these crossings even with zero waiting/runtime; incomplete rise may still make contact.",
+        "Pointwise geometric exclusions apply only at their stated instant and original measured base height; later descending flight/changed root height can alter them.",
+        "Small static candidate maximum height is not an arbitrary dynamic pose bound.",
+        "G used existing native pose/lateral gait; no new arm action was implemented. No action-failure attribution or H4 outcome is inferred."
+      ],
+      "first_refresh_reachability": {
+        "reachable": false,
+        "target_lateral_m": -0.15,
+        "decision_lateral_m": 0.0009041025916190747,
+        "interval_m": [
+          0.0009041025916190747,
+          0.0009041025916190747
+        ],
+        "travel_budget_m": 0.0,
+        "braking_reserve_m": 0.09,
+        "position_tolerance_m": 0.1,
+        "braking_time_available": true,
+        "reason": "insufficient time, braking time or post clearance"
+      },
+      "first_refresh_intercept_feasible": false,
+      "first_refresh_decision_body_coverage": {
+        "covered": false,
+        "signed_distance_m": null,
+        "witness": null,
+        "required_overlap_m": 0.015,
+        "assumption": "frozen current pose; false can also mean sparse trajectory sampling"
+      }
+    }
+  ],
+  "source_unchanged": true,
+  "no_new_simulation_or_action_executed": true
+}

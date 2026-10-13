@@ -1,0 +1,139 @@
+{
+  "stage": "I1",
+  "scope": "Serial interface validation; no training, optimization, collision modification or throughput benchmark",
+  "seed": 7,
+  "repetitions": 2,
+  "physics_dt_s": 0.001,
+  "control_dt_s": 0.02,
+  "torch_threads": 1,
+  "cases": [
+    {
+      "name": "body_standing",
+      "mode": "body_velocity",
+      "task": "standing",
+      "time_limit": 30.0
+    },
+    {
+      "name": "joint_standing",
+      "mode": "joint_targets",
+      "task": "standing",
+      "time_limit": 30.0
+    },
+    {
+      "name": "body_single_goal",
+      "mode": "body_velocity",
+      "task": "single_shot",
+      "time_limit": 8.0,
+      "launch_time": 2.0,
+      "shot": {
+        "name": "body_single_goal",
+        "position": [
+          7.0,
+          0.8,
+          0.111
+        ],
+        "velocity": [
+          4.0,
+          0.0,
+          0.0
+        ],
+        "angular_velocity": [
+          0.0,
+          36.36363636363637,
+          0.0
+        ],
+        "duration": 6.0,
+        "seed": 7
+      },
+      "initial_velocity_norm_m_s": 4.0
+    },
+    {
+      "name": "joint_single_goal",
+      "mode": "joint_targets",
+      "task": "single_shot",
+      "time_limit": 1.0,
+      "launch_time": 0.0,
+      "shot": {
+        "name": "joint_single_goal",
+        "position": [
+          10.9,
+          0.0,
+          0.5
+        ],
+        "velocity": [
+          8.0,
+          0.0,
+          0.0
+        ],
+        "angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "duration": 1.0,
+        "seed": 7
+      },
+      "initial_velocity_norm_m_s": 8.0
+    },
+    {
+      "name": "body_single_contact",
+      "mode": "body_velocity",
+      "task": "single_shot",
+      "time_limit": 8.0,
+      "launch_time": 2.0,
+      "shot": {
+        "name": "body_single_contact",
+        "position": [
+          7.0,
+          0.0,
+          0.111
+        ],
+        "velocity": [
+          2.0,
+          0.0,
+          0.0
+        ],
+        "angular_velocity": [
+          0.0,
+          18.181818181818183,
+          0.0
+        ],
+        "duration": 6.0,
+        "seed": 7
+      },
+      "initial_velocity_norm_m_s": 2.0
+    }
+  ],
+  "source_sha256": {
+    "k1_goalkeeper/training_actions.py": "1e647a1630cf86767f7ba245ae608206fc22552242ff870b83e8afe2f5e310b5",
+    "k1_goalkeeper/training_env.py": "05cce42cf89134ec8e2ae9d465e6ea8fc25847b9becc97351a65315198c01b50",
+    "scripts/validate_training_env.py": "ec516e7d05695b0b727ef4e43799271a67d858c83715ec9d1ca21a2b32f6bee0",
+    "requirements-training.txt": "cca2b5a2768dedf3f28dc9578b2b4ffc7755d9342710a95eee2c21852b0af0a2",
+    "requirements-walk.txt": "abb0cfc72363e6d1ea2bdcd28771c2478170c02031ba03f1eaa25836e2fc6720",
+    "requirements.txt": "2c688cbeba9377dc19fa8018cdfb38315c43a38c32e87b319436965e3971ef79"
+  },
+  "versions": {
+    "python": "3.13.13",
+    "numpy": "2.3.3",
+    "mujoco": "3.3.7",
+    "gymnasium": "1.4.0",
+    "torch": "2.9.0"
+  },
+  "protected_before": {
+    "file_count": 1070,
+    "manifest_sha256": "847380c63a4278c530b88c47a87debb0165b67f0155f7cebc89e0843c55b344f",
+    "all_match": true
+  },
+  "command": [
+    "/path/to/booster/scripts/validate_training_env.py"
+  ],
+  "pilot": false,
+  "channels": {
+    "actor": "Current simulation truth observations, prior delivered action, transition reward/flags",
+    "critic": "Current exact privileged state only",
+    "evaluation": "Actual native physics and final offline labels; never actor input"
+  },
+  "joint_standing_expectation": "Valid fall is an interface result; default PD targets are not a learned standing policy",
+  "contact_expectation": "Native positive-force ball/robot contact and continued physics; no save/recovery claim",
+  "gym_advisories": "Raw physical actions are not normalized; unrestricted current-state observations have infinite Box bounds"
+}

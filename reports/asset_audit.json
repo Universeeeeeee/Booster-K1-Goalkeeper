@@ -1,0 +1,1174 @@
+{
+  "versions": {
+    "python": "3.13.13",
+    "mujoco": "3.3.7",
+    "numpy": "2.3.3"
+  },
+  "source": {
+    "repository": "https://github.com/BoosterRobotics/booster_assets",
+    "pinned_commit": "12a97516f57469078707afb587a5f84c1cb110d1",
+    "checkout_commit": "12a97516f57469078707afb587a5f84c1cb110d1"
+  },
+  "asset_hashes": [
+    {
+      "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+      "sha256": "1f1a1cdd451f777600c66fc30ad8d7537198ee7bc51f8ed20d67a51b5001a651",
+      "matches_pinned_commit": true
+    },
+    {
+      "path": "assets/booster_assets/robots/K1/K1_22dof.urdf",
+      "sha256": "834e17faf4681e5fcae116130a9da6d81b696c7f8278b95f281cec0551ca6124",
+      "matches_pinned_commit": true
+    },
+    {
+      "path": "assets/booster_assets/robots/K1/meshes/Trunk.STL",
+      "sha256": "6c2fc1adb1d3d23c081b6cebab1a4d1da57adbd726d6e72c143281ba696ddd5d",
+      "matches_pinned_commit": true
+    },
+    {
+      "path": "assets/booster_assets/robots/K1/meshes/K1logo.STL",
+      "sha256": "93aab425a2e953fdd1c704ce9d9a4fb8d8431da9cc0cc4d2648838b11c47b487",
+      "matches_pinned_commit": true
+    },
+    {
+      "path": "assets/booster_assets/robots/K1/meshes/Head_1.STL",
+      "sha256": "9ab00ca2c2ae9b27cdd54cdbbe7d9e50b1873f5815163aef5d719beceb445c96",
+      "matches_pinned_commit": true
+    },
+    {
+      "path": "assets/booster_assets/robots/K1/meshes/Head_2.STL",
+      "sha256": "ae8f81b864fd0f16efaab6b0ee697a0fd80e54c2bd38f48526a326bc03085020",
+      "matches_pinned_commit": true
+    },
+    {
+      "path": "assets/booster_assets/robots/K1/meshes/Left_Arm_1.STL",
+      "sha256": "e1a6de4b34f17260daa09b81aa3bc115d450787b808190aca286073b45540775",
+      "matches_pinned_commit": true
+    },
+    {
+      "path": "assets/booster_assets/robots/K1/meshes/Left_Arm_2.STL",
+      "sha256": "b5861bc9f6119baf50f131bbc4f6420867e63c7c1de31792d1e788cac70ad8ae",
+      "matches_pinned_commit": true
+    },
+    {
+      "path": "assets/booster_assets/robots/K1/meshes/Left_Arm_3.STL",
+      "sha256": "5424bdfedad4e70edc2dab6587bf0062c44489768c6e53ba4c2e58d700267f78",
+      "matches_pinned_commit": true
+    },
+    {
+      "path": "assets/booster_assets/robots/K1/meshes/Left_Arm_4.STL",
+      "sha256": "e7de1dc79b85b23792eaf8d49688891876f46b4eab7234f2513ae9e241a72b14",
+      "matches_pinned_commit": true
+    },
+    {
+      "path": "assets/booster_assets/robots/K1/meshes/Right_Arm_1.STL",
+      "sha256": "1dc1518437d0b2de09d7c559d13f620ee4910b985ca0b70cb387f29fad67a7d6",
+      "matches_pinned_commit": true
+    },
+    {
+      "path": "assets/booster_assets/robots/K1/meshes/Right_Arm_2.STL",
+      "sha256": "2f7f4bf14aac5fdb06974c2336be24b5f5577b069a6e0a36e98a443779bb15cc",
+      "matches_pinned_commit": true
+    },
+    {
+      "path": "assets/booster_assets/robots/K1/meshes/Right_Arm_3.STL",
+      "sha256": "e3ae9cbd20736f4c3b29b2a455b07d8a59e6c093258d467fc20ecd4dc4b7486d",
+      "matches_pinned_commit": true
+    },
+    {
+      "path": "assets/booster_assets/robots/K1/meshes/Right_Arm_4.STL",
+      "sha256": "4a70e0006cc89bfeacb9b825821cdf715113b9cf7d267de6fe4b64ad3e5b9aad",
+      "matches_pinned_commit": true
+    },
+    {
+      "path": "assets/booster_assets/robots/K1/meshes/Left_Hip_Pitch.STL",
+      "sha256": "ca604e643aaf41ec4d05c8a13ff66ce39587f9d80be7268376c2a6368decd55f",
+      "matches_pinned_commit": true
+    },
+    {
+      "path": "assets/booster_assets/robots/K1/meshes/Left_Hip_Roll.STL",
+      "sha256": "aa278205ca751295c3d073ca3ddf682762a66218e6e5f239a22109b1d8f5ecf9",
+      "matches_pinned_commit": true
+    },
+    {
+      "path": "assets/booster_assets/robots/K1/meshes/Left_Hip_Yaw.STL",
+      "sha256": "2d8ed37c3a7c954937d5e3b462869f93292e4c4b76047fd4667380fedd3d66d2",
+      "matches_pinned_commit": true
+    },
+    {
+      "path": "assets/booster_assets/robots/K1/meshes/Left_Shank.STL",
+      "sha256": "0e99f5850ba752492a7d5fa0fb066efae03823cb4020e7e57a38e652a34be85c",
+      "matches_pinned_commit": true
+    },
+    {
+      "path": "assets/booster_assets/robots/K1/meshes/Left_Ankle_Cross.STL",
+      "sha256": "1798cb3b9721d82c913ce4b0080da9c0eaa69749445bc4a8d6f13dc6a69da232",
+      "matches_pinned_commit": true
+    },
+    {
+      "path": "assets/booster_assets/robots/K1/meshes/Left_Foot.STL",
+      "sha256": "1a391f4b3b87a27726e09f15f6d2ce7795c702c13c0d76307d4756d8aeaadde3",
+      "matches_pinned_commit": true
+    },
+    {
+      "path": "assets/booster_assets/robots/K1/meshes/Right_Hip_Pitch.STL",
+      "sha256": "ab6052ca8f6a2ddf75ad536e3daf51024cbd8f6b9fa5ca36a8ac966347d850ac",
+      "matches_pinned_commit": true
+    },
+    {
+      "path": "assets/booster_assets/robots/K1/meshes/Right_Hip_Roll.STL",
+      "sha256": "9655e49b0ae12366eb8dba28dcc9593d63d6ec7a8431d90dc692041c8bb74765",
+      "matches_pinned_commit": true
+    },
+    {
+      "path": "assets/booster_assets/robots/K1/meshes/Right_Hip_Yaw.STL",
+      "sha256": "dd54f3cd1cdbaead210692a4cd4e131a1b696ceefd9715ab1eb6a8e9f44d88aa",
+      "matches_pinned_commit": true
+    },
+    {
+      "path": "assets/booster_assets/robots/K1/meshes/Right_Shank.STL",
+      "sha256": "6a7e831055148894ba623bf8d2eca27f2cef32e324819566c39e33cb12c0b4f9",
+      "matches_pinned_commit": true
+    },
+    {
+      "path": "assets/booster_assets/robots/K1/meshes/Right_Ankle_Cross.STL",
+      "sha256": "fd59798e9b4b55661372b601db3dbec9ef5567256b631c3d679a2e3446638256",
+      "matches_pinned_commit": true
+    },
+    {
+      "path": "assets/booster_assets/robots/K1/meshes/Right_Foot.STL",
+      "sha256": "059b969922a9a31eb40828206070731d3612453f3aa3c2559702c566abb4b0fd",
+      "matches_pinned_commit": true
+    },
+    {
+      "path": "models/futsal_goal_3x2_reference.urdf",
+      "sha256": "10f67364f44a02182989416b7cce6b9d4f768fea411d44db6ccec08d9ffbfa2b",
+      "source": "user-supplied original URDF"
+    }
+  ],
+  "robot": {
+    "compiled": true,
+    "nq": 29,
+    "nv": 28,
+    "nu": 22,
+    "referenced_mesh_count": 24,
+    "compiled_mesh_count": 24,
+    "mass_kg": 19.666,
+    "options": {
+      "timestep_s": 0.001,
+      "solver": "mjSOL_NEWTON",
+      "integrator": "mjINT_EULER"
+    },
+    "actuators": [
+      {
+        "index": 0,
+        "name": "aahead_yaw_joint",
+        "joint": "aahead_yaw_joint",
+        "qpos_address": 7,
+        "dof_address": 6,
+        "joint_range_rad": [
+          -1.012,
+          1.012
+        ],
+        "force_range_nm": [
+          -6.0,
+          6.0
+        ],
+        "force_limited": true,
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "index": 1,
+        "name": "aahead_pitch_joint",
+        "joint": "aahead_pitch_joint",
+        "qpos_address": 8,
+        "dof_address": 7,
+        "joint_range_rad": [
+          -0.314,
+          0.794
+        ],
+        "force_range_nm": [
+          -6.0,
+          6.0
+        ],
+        "force_limited": true,
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "index": 2,
+        "name": "aaleft_shoulder_pitch_joint",
+        "joint": "aaleft_shoulder_pitch_joint",
+        "qpos_address": 9,
+        "dof_address": 8,
+        "joint_range_rad": [
+          -2.932,
+          1.196
+        ],
+        "force_range_nm": [
+          -14.0,
+          14.0
+        ],
+        "force_limited": true,
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "index": 3,
+        "name": "left_shoulder_roll_joint",
+        "joint": "left_shoulder_roll_joint",
+        "qpos_address": 10,
+        "dof_address": 9,
+        "joint_range_rad": [
+          -1.642,
+          1.629
+        ],
+        "force_range_nm": [
+          -14.0,
+          14.0
+        ],
+        "force_limited": true,
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "index": 4,
+        "name": "left_elbow_pitch_joint",
+        "joint": "left_elbow_pitch_joint",
+        "qpos_address": 11,
+        "dof_address": 10,
+        "joint_range_rad": [
+          -1.885,
+          1.885
+        ],
+        "force_range_nm": [
+          -14.0,
+          14.0
+        ],
+        "force_limited": true,
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "index": 5,
+        "name": "left_elbow_yaw_joint",
+        "joint": "left_elbow_yaw_joint",
+        "qpos_address": 12,
+        "dof_address": 11,
+        "joint_range_rad": [
+          -2.242,
+          0.816
+        ],
+        "force_range_nm": [
+          -14.0,
+          14.0
+        ],
+        "force_limited": true,
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "index": 6,
+        "name": "aaright_shoulder_pitch_joint",
+        "joint": "aaright_shoulder_pitch_joint",
+        "qpos_address": 13,
+        "dof_address": 12,
+        "joint_range_rad": [
+          -2.932,
+          1.196
+        ],
+        "force_range_nm": [
+          -14.0,
+          14.0
+        ],
+        "force_limited": true,
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "index": 7,
+        "name": "right_shoulder_roll_joint",
+        "joint": "right_shoulder_roll_joint",
+        "qpos_address": 14,
+        "dof_address": 13,
+        "joint_range_rad": [
+          -1.642,
+          1.629
+        ],
+        "force_range_nm": [
+          -14.0,
+          14.0
+        ],
+        "force_limited": true,
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "index": 8,
+        "name": "right_elbow_pitch_joint",
+        "joint": "right_elbow_pitch_joint",
+        "qpos_address": 15,
+        "dof_address": 14,
+        "joint_range_rad": [
+          -1.885,
+          1.885
+        ],
+        "force_range_nm": [
+          -14.0,
+          14.0
+        ],
+        "force_limited": true,
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "index": 9,
+        "name": "right_elbow_yaw_joint",
+        "joint": "right_elbow_yaw_joint",
+        "qpos_address": 16,
+        "dof_address": 15,
+        "joint_range_rad": [
+          -0.816,
+          2.242
+        ],
+        "force_range_nm": [
+          -14.0,
+          14.0
+        ],
+        "force_limited": true,
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "index": 10,
+        "name": "left_hip_pitch_joint",
+        "joint": "left_hip_pitch_joint",
+        "qpos_address": 17,
+        "dof_address": 16,
+        "joint_range_rad": [
+          -2.958,
+          2.226
+        ],
+        "force_range_nm": [
+          -68.0,
+          68.0
+        ],
+        "force_limited": true,
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "index": 11,
+        "name": "left_hip_roll_joint",
+        "joint": "left_hip_roll_joint",
+        "qpos_address": 18,
+        "dof_address": 17,
+        "joint_range_rad": [
+          -0.375,
+          1.536
+        ],
+        "force_range_nm": [
+          -43.0,
+          43.0
+        ],
+        "force_limited": true,
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "index": 12,
+        "name": "left_hip_yaw_joint",
+        "joint": "left_hip_yaw_joint",
+        "qpos_address": 19,
+        "dof_address": 18,
+        "joint_range_rad": [
+          -1.012,
+          1.012
+        ],
+        "force_range_nm": [
+          -38.3,
+          38.3
+        ],
+        "force_limited": true,
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "index": 13,
+        "name": "left_knee_pitch_joint",
+        "joint": "left_knee_pitch_joint",
+        "qpos_address": 20,
+        "dof_address": 19,
+        "joint_range_rad": [
+          0.0,
+          2.321
+        ],
+        "force_range_nm": [
+          -112.0,
+          112.0
+        ],
+        "force_limited": true,
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "index": 14,
+        "name": "left_ankle_pitch_joint",
+        "joint": "left_ankle_pitch_joint",
+        "qpos_address": 21,
+        "dof_address": 20,
+        "joint_range_rad": [
+          -0.87,
+          0.345
+        ],
+        "force_range_nm": [
+          -38.3,
+          38.3
+        ],
+        "force_limited": true,
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "index": 15,
+        "name": "left_ankle_roll_joint",
+        "joint": "left_ankle_roll_joint",
+        "qpos_address": 22,
+        "dof_address": 21,
+        "joint_range_rad": [
+          -0.345,
+          0.345
+        ],
+        "force_range_nm": [
+          -38.3,
+          38.3
+        ],
+        "force_limited": true,
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "index": 16,
+        "name": "right_hip_pitch_joint",
+        "joint": "right_hip_pitch_joint",
+        "qpos_address": 23,
+        "dof_address": 22,
+        "joint_range_rad": [
+          -2.958,
+          2.226
+        ],
+        "force_range_nm": [
+          -68.0,
+          68.0
+        ],
+        "force_limited": true,
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "index": 17,
+        "name": "right_hip_roll_joint",
+        "joint": "right_hip_roll_joint",
+        "qpos_address": 24,
+        "dof_address": 23,
+        "joint_range_rad": [
+          -1.536,
+          0.375
+        ],
+        "force_range_nm": [
+          -43.0,
+          43.0
+        ],
+        "force_limited": true,
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "index": 18,
+        "name": "right_hip_yaw_joint",
+        "joint": "right_hip_yaw_joint",
+        "qpos_address": 25,
+        "dof_address": 24,
+        "joint_range_rad": [
+          -1.012,
+          1.012
+        ],
+        "force_range_nm": [
+          -38.3,
+          38.3
+        ],
+        "force_limited": true,
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "index": 19,
+        "name": "right_knee_pitch_joint",
+        "joint": "right_knee_pitch_joint",
+        "qpos_address": 26,
+        "dof_address": 25,
+        "joint_range_rad": [
+          0.0,
+          2.321
+        ],
+        "force_range_nm": [
+          -112.0,
+          112.0
+        ],
+        "force_limited": true,
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "index": 20,
+        "name": "right_ankle_pitch_joint",
+        "joint": "right_ankle_pitch_joint",
+        "qpos_address": 27,
+        "dof_address": 26,
+        "joint_range_rad": [
+          -0.87,
+          0.345
+        ],
+        "force_range_nm": [
+          -38.3,
+          38.3
+        ],
+        "force_limited": true,
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "index": 21,
+        "name": "right_ankle_roll_joint",
+        "joint": "right_ankle_roll_joint",
+        "qpos_address": 28,
+        "dof_address": 27,
+        "joint_range_rad": [
+          -0.345,
+          0.345
+        ],
+        "force_range_nm": [
+          -38.3,
+          38.3
+        ],
+        "force_limited": true,
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "motor_order_matches_joint_order": true,
+    "collision_geometries": [
+      {
+        "geom_id": 2,
+        "body": "trunk",
+        "type": "mjGEOM_BOX",
+        "local_position": [
+          0.0,
+          0.0,
+          0.1
+        ],
+        "size": [
+          0.06,
+          0.08,
+          0.1
+        ],
+        "contype": 1,
+        "conaffinity": 1
+      },
+      {
+        "geom_id": 3,
+        "body": "trunk",
+        "type": "mjGEOM_CYLINDER",
+        "local_position": [
+          0.0,
+          0.0,
+          -0.06
+        ],
+        "size": [
+          0.05,
+          0.05,
+          0.0
+        ],
+        "contype": 1,
+        "conaffinity": 1
+      },
+      {
+        "geom_id": 6,
+        "body": "aahead_yaw_link",
+        "type": "mjGEOM_MESH",
+        "local_position": [
+          -0.0011654283491133938,
+          0.0016306378734805677,
+          0.03248242565432608
+        ],
+        "size": [
+          0.03244615959017996,
+          0.03626895021803002,
+          0.03770009222241733
+        ],
+        "contype": 1,
+        "conaffinity": 1
+      },
+      {
+        "geom_id": 8,
+        "body": "aahead_pitch_link",
+        "type": "mjGEOM_MESH",
+        "local_position": [
+          0.0030091915344255976,
+          -0.000500453772167688,
+          0.07625606306988517
+        ],
+        "size": [
+          0.06736824965550754,
+          0.08197851629261434,
+          0.10760913936901957
+        ],
+        "contype": 1,
+        "conaffinity": 1
+      },
+      {
+        "geom_id": 11,
+        "body": "left_shoulder_roll_link",
+        "type": "mjGEOM_CYLINDER",
+        "local_position": [
+          -0.007,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.035,
+          0.034,
+          0.0
+        ],
+        "contype": 1,
+        "conaffinity": 1
+      },
+      {
+        "geom_id": 13,
+        "body": "left_elbow_pitch_link",
+        "type": "mjGEOM_MESH",
+        "local_position": [
+          -0.0016218845806753716,
+          0.0725105413459935,
+          -0.0011597745039824338
+        ],
+        "size": [
+          0.04100503958082516,
+          0.041248718854482315,
+          0.08002364837734838
+        ],
+        "contype": 1,
+        "conaffinity": 1
+      },
+      {
+        "geom_id": 15,
+        "body": "left_elbow_yaw_link",
+        "type": "mjGEOM_MESH",
+        "local_position": [
+          -0.0011156113133144198,
+          0.10083378503992076,
+          0.004576300339183422
+        ],
+        "size": [
+          0.03099429062137426,
+          0.04204843315391511,
+          0.13239998809105838
+        ],
+        "contype": 1,
+        "conaffinity": 1
+      },
+      {
+        "geom_id": 18,
+        "body": "right_shoulder_roll_link",
+        "type": "mjGEOM_CYLINDER",
+        "local_position": [
+          -0.007,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.035,
+          0.034,
+          0.0
+        ],
+        "contype": 1,
+        "conaffinity": 1
+      },
+      {
+        "geom_id": 20,
+        "body": "right_elbow_pitch_link",
+        "type": "mjGEOM_MESH",
+        "local_position": [
+          -0.0017413833332522045,
+          -0.06579946751295972,
+          -0.0008459859417484968
+        ],
+        "size": [
+          0.03909335978454678,
+          0.04076882979938141,
+          0.08675084650621474
+        ],
+        "contype": 1,
+        "conaffinity": 1
+      },
+      {
+        "geom_id": 22,
+        "body": "right_elbow_yaw_link",
+        "type": "mjGEOM_MESH",
+        "local_position": [
+          -0.0009909802280883109,
+          -0.10082845720585065,
+          0.004579150957982185
+        ],
+        "size": [
+          0.030991127699156112,
+          0.04205182725944632,
+          0.13239314106830774
+        ],
+        "contype": 1,
+        "conaffinity": 1
+      },
+      {
+        "geom_id": 25,
+        "body": "left_hip_roll_link",
+        "type": "mjGEOM_CYLINDER",
+        "local_position": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.036,
+          0.047,
+          0.0
+        ],
+        "contype": 1,
+        "conaffinity": 1
+      },
+      {
+        "geom_id": 27,
+        "body": "left_hip_yaw_link",
+        "type": "mjGEOM_CYLINDER",
+        "local_position": [
+          0.0,
+          0.0,
+          -0.03
+        ],
+        "size": [
+          0.04,
+          0.033,
+          0.0
+        ],
+        "contype": 1,
+        "conaffinity": 1
+      },
+      {
+        "geom_id": 29,
+        "body": "left_knee_pitch_link",
+        "type": "mjGEOM_CYLINDER",
+        "local_position": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.045,
+          0.035,
+          0.0
+        ],
+        "contype": 1,
+        "conaffinity": 1
+      },
+      {
+        "geom_id": 30,
+        "body": "left_knee_pitch_link",
+        "type": "mjGEOM_BOX",
+        "local_position": [
+          0.0,
+          0.0,
+          -0.13
+        ],
+        "size": [
+          0.03,
+          0.03,
+          0.05
+        ],
+        "contype": 1,
+        "conaffinity": 1
+      },
+      {
+        "geom_id": 33,
+        "body": "left_ankle_roll_link",
+        "type": "mjGEOM_BOX",
+        "local_position": [
+          0.026,
+          0.0,
+          -0.02
+        ],
+        "size": [
+          0.09,
+          0.035,
+          0.018
+        ],
+        "contype": 1,
+        "conaffinity": 1
+      },
+      {
+        "geom_id": 36,
+        "body": "right_hip_roll_link",
+        "type": "mjGEOM_CYLINDER",
+        "local_position": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.036,
+          0.047,
+          0.0
+        ],
+        "contype": 1,
+        "conaffinity": 1
+      },
+      {
+        "geom_id": 38,
+        "body": "right_hip_yaw_link",
+        "type": "mjGEOM_CYLINDER",
+        "local_position": [
+          0.0,
+          0.0,
+          -0.03
+        ],
+        "size": [
+          0.04,
+          0.033,
+          0.0
+        ],
+        "contype": 1,
+        "conaffinity": 1
+      },
+      {
+        "geom_id": 40,
+        "body": "right_knee_pitch_link",
+        "type": "mjGEOM_CYLINDER",
+        "local_position": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.045,
+          0.035,
+          0.0
+        ],
+        "contype": 1,
+        "conaffinity": 1
+      },
+      {
+        "geom_id": 41,
+        "body": "right_knee_pitch_link",
+        "type": "mjGEOM_BOX",
+        "local_position": [
+          0.0,
+          0.0,
+          -0.13
+        ],
+        "size": [
+          0.03,
+          0.03,
+          0.05
+        ],
+        "contype": 1,
+        "conaffinity": 1
+      },
+      {
+        "geom_id": 44,
+        "body": "right_ankle_roll_link",
+        "type": "mjGEOM_BOX",
+        "local_position": [
+          0.026,
+          0.0,
+          -0.02
+        ],
+        "size": [
+          0.09,
+          0.035,
+          0.018
+        ],
+        "contype": 1,
+        "conaffinity": 1
+      }
+    ],
+    "visual_bodies_without_direct_collision": [
+      "aaleft_shoulder_pitch_link",
+      "aaright_shoulder_pitch_link",
+      "left_hip_pitch_link",
+      "left_ankle_pitch_link",
+      "right_hip_pitch_link",
+      "right_ankle_pitch_link"
+    ],
+    "collision_limitations": "Partial proxy coverage; active mesh geoms use convex hulls. Visual surface coverage is not guaranteed.",
+    "source_zero_pose_sole_z_m": {
+      "left": 0.44831,
+      "right": 0.44831
+    },
+    "stereo_optical_plus_z_in_robot_frame": [
+      0.9999999999998977,
+      3.2000000005361073e-07,
+      3.2000000005361073e-07
+    ],
+    "suggested_base_z_for_2mm_sole_clearance_m": 0.55369
+  },
+  "goal": {
+    "compiled": true,
+    "nq": 0,
+    "nv": 0,
+    "default_import_collision_geometries": {
+      "left_post_collision": {
+        "position": [
+          -1.54,
+          0.0,
+          1.04
+        ],
+        "size": [
+          0.04,
+          1.04,
+          0.0
+        ]
+      },
+      "right_post_collision": {
+        "position": [
+          1.54,
+          0.0,
+          1.04
+        ],
+        "size": [
+          0.04,
+          1.04,
+          0.0
+        ]
+      },
+      "crossbar_collision": {
+        "position": [
+          0.0,
+          0.0,
+          2.04
+        ],
+        "size": [
+          0.04,
+          1.54,
+          0.0
+        ]
+      }
+    },
+    "clear_width_m": 3.0,
+    "clear_height_m": 2.0,
+    "note": "Default URDF importer discards visuals. Scene conversion must retain visuals explicitly; rear support has no collision and no net is modeled."
+  },
+  "control": {
+    "standing_controller_found": false,
+    "pd_gains_found": false,
+    "policy_weights_found": false,
+    "filename_candidates": [],
+    "inspection_scope": "Pinned repository tracked filenames, model actuator definitions, Python motion metadata, and repository README.",
+    "motion_csv_files": [
+      "motions/K1/k1_fight_001.csv",
+      "motions/K1/k1_mj2_seg1.csv"
+    ],
+    "motion_name_mismatches": [
+      {
+        "index": 2,
+        "csv_metadata": "left_shoulder_pitch_joint",
+        "mjcf": "aaleft_shoulder_pitch_joint"
+      },
+      {
+        "index": 6,
+        "csv_metadata": "right_shoulder_pitch_joint",
+        "mjcf": "aaright_shoulder_pitch_joint"
+      }
+    ],
+    "interface": "MjData.ctrl follows the 22 motor order; motors apply torque (gear 1), with no built-in PD or balance policy.",
+    "blocking_item": "Dynamic standing and goalkeeper behavior require an independently validated controller."
+  },
+  "no_controller_baseline": {
+    "duration_s": 1.9999999999998905,
+    "control": "zero motor torque; no controller",
+    "initial_base_z_m": 0.55369,
+    "final_base_z_m": 0.2085249093950141,
+    "minimum_base_z_m": 0.20665051959602818,
+    "final_trunk_up_world_z": -0.07619360149428592,
+    "finite_state": true,
+    "dynamic_balance_verified": false
+  },
+  "scene": {
+    "robot_mode": "free",
+    "compiled": true,
+    "nq": 36,
+    "nv": 34,
+    "nu": 22,
+    "actuator_names_match_original": true,
+    "actuator_force_ranges_match_original": true,
+    "robot_base_position": [
+      10.4,
+      0.0,
+      0.55369
+    ],
+    "stereo_optical_forward_world": [
+      -0.9999999999998979,
+      -3.1999999983156613e-07,
+      3.200000001091219e-07
+    ],
+    "ball_radius_m": 0.11,
+    "ball_mass_kg": 0.43,
+    "ball_inertia_kg_m2": [
+      0.00346866666667,
+      0.00346866666667,
+      0.00346866666667
+    ],
+    "initial_contact_count": 0,
+    "initial_minimum_contact_distance_m": null,
+    "goals": {
+      "left": {
+        "joint_count": 0,
+        "collision_count": 3
+      },
+      "right": {
+        "joint_count": 0,
+        "collision_count": 3
+      }
+    }
+  }
+}

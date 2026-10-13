@@ -1,0 +1,286 @@
+{
+  "case": {
+    "name": "front_20",
+    "target_body": "trunk",
+    "speed": 20,
+    "offset_y": 0.0,
+    "robot_mode": "free",
+    "command": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "moving_duration": 0.0,
+    "miss": false,
+    "duration": 6.0,
+    "seed": 0,
+    "target_geom_index": 0
+  },
+  "launch": {
+    "position": [
+      9.942152149626871,
+      0.0008431202375968123,
+      0.6509177129814926
+    ],
+    "velocity": [
+      20,
+      0,
+      0.073575
+    ],
+    "angular_velocity": [
+      0,
+      0,
+      0
+    ],
+    "target_geom_id": 31,
+    "target_body": "trunk",
+    "target_geom_center_world": [
+      10.413287841660193,
+      0.0008431202375968123,
+      0.6509177129814926
+    ],
+    "nominal_free_flight_s": 0.015,
+    "construction": "0.3m gap from collider front plus ball radius; ballistic aim or rolling foot input",
+    "time": 1.9999999999998905,
+    "initial_overlap": false
+  },
+  "preimpact_robot": {
+    "base_position_world": [
+      10.412537340235566,
+      0.000854321662049591,
+      0.5509205299104695
+    ],
+    "body_linear_velocity": [
+      0.0013483238609504847,
+      -0.0005159775720464698,
+      6.958127562202845e-06
+    ],
+    "body_angular_velocity": [
+      -6.297779229092453e-06,
+      0.001123336240899585,
+      0.0014107331055180491
+    ],
+    "displacement_since_initial_world": [
+      0.012537721705292881,
+      0.000854321662049591,
+      -0.002769486359214368
+    ]
+  },
+  "physics_dt": 0.001,
+  "policy_dt": 0.02,
+  "physics_steps": 2529,
+  "policy_steps": 127,
+  "completed": false,
+  "simulated_duration_s": 2.5289999999998325,
+  "contacts": [
+    {
+      "kind": "robot",
+      "geom_id": 31,
+      "geom_name": "k1_geom_1",
+      "body": "trunk",
+      "start_time": 2.015999999999889,
+      "end_time": 2.0219999999998883,
+      "duration_s": 0.006,
+      "impulse_on_ball_world_ns": [
+        -11.910506725534308,
+        -0.04145419914523454,
+        0.1332095976767219
+      ],
+      "normal_impulse_ns": 11.911332719057846,
+      "peak_force_n": 3225.897745524304,
+      "ball_velocity_before": [
+        20.0,
+        3.232180579646376e-52,
+        -0.08338500000000001
+      ],
+      "ball_velocity_after": [
+        -7.698852850079782,
+        -0.09640511429124318,
+        0.16754476203888696
+      ]
+    },
+    {
+      "kind": "ground",
+      "geom_id": 0,
+      "geom_name": "ground",
+      "body": "world",
+      "start_time": 2.37199999999985,
+      "end_time": 2.378999999999849,
+      "duration_s": 0.007,
+      "impulse_on_ball_world_ns": [
+        1.1142680129971525,
+        0.01012868903860968,
+        2.061665810933314
+      ],
+      "normal_impulse_ns": 2.061665810933314,
+      "peak_force_n": 642.8036996471494,
+      "ball_velocity_before": [
+        -7.698852850079782,
+        -0.09640511429124318,
+        -3.2659552379611054
+      ],
+      "ball_velocity_after": [
+        -5.107531889621246,
+        -0.07285002350377609,
+        1.459946415372262
+      ]
+    }
+  ],
+  "effective_contact": true,
+  "fall_events": [
+    {
+      "time": 2.5289999999998325,
+      "height_m": 0.29970168566298155,
+      "tilt_degrees": 24.695570299424816
+    }
+  ],
+  "numerical_error": null,
+  "policy_stop": null,
+  "recovery": {
+    "verified": false,
+    "stop_delay_s": null,
+    "mean_body_velocity": [
+      -0.7973834730304143,
+      0.038982346248810286,
+      -0.050750490359272406
+    ],
+    "displacement_world": [
+      0.3528213649827059,
+      -0.0028410419556278207,
+      -0.2512386662549923
+    ]
+  },
+  "balance_maintained": false,
+  "balance_recovered": false,
+  "goal": null,
+  "exit_event": null,
+  "maximum_momentum_residual_ns": 3.3861802251067274e-14,
+  "joint_names": [
+    "aahead_yaw_joint",
+    "aahead_pitch_joint",
+    "aaleft_shoulder_pitch_joint",
+    "left_shoulder_roll_joint",
+    "left_elbow_pitch_joint",
+    "left_elbow_yaw_joint",
+    "aaright_shoulder_pitch_joint",
+    "right_shoulder_roll_joint",
+    "right_elbow_pitch_joint",
+    "right_elbow_yaw_joint",
+    "left_hip_pitch_joint",
+    "left_hip_roll_joint",
+    "left_hip_yaw_joint",
+    "left_knee_pitch_joint",
+    "left_ankle_pitch_joint",
+    "left_ankle_roll_joint",
+    "right_hip_pitch_joint",
+    "right_hip_roll_joint",
+    "right_hip_yaw_joint",
+    "right_knee_pitch_joint",
+    "right_ankle_pitch_joint",
+    "right_ankle_roll_joint"
+  ],
+  "effort_limits_nm": [
+    6.0,
+    6.0,
+    14.0,
+    14.0,
+    14.0,
+    14.0,
+    14.0,
+    14.0,
+    14.0,
+    14.0,
+    30.0,
+    20.0,
+    15.0,
+    35.0,
+    24.0,
+    15.0,
+    30.0,
+    20.0,
+    15.0,
+    35.0,
+    24.0,
+    15.0
+  ],
+  "trajectory_sha256": "378a3068884ab3d72a0a5d2377a8fd8cbbe4fae7c41a1d830ca2528cd292c8e2",
+  "minimum_base_height_m": 0.29970168566298155,
+  "maximum_tilt_degrees": 24.695570299424816,
+  "peak_body_angular_velocity_rad_s": [
+    2.1875388387993926,
+    3.2107856493018656,
+    2.8467597939354166
+  ],
+  "torque_saturation_fraction": [
+    0.0,
+    0.005660377358490566,
+    0.0,
+    0.0,
+    0.0018867924528301887,
+    0.0018867924528301887,
+    0.011320754716981131,
+    0.0,
+    0.0,
+    0.0,
+    0.11320754716981132,
+    0.022641509433962263,
+    0.11320754716981132,
+    0.42830188679245285,
+    0.0,
+    0.03018867924528302,
+    0.12264150943396226,
+    0.0,
+    0.018867924528301886,
+    0.22830188679245284,
+    0.03207547169811321,
+    0.0
+  ],
+  "peak_raw_torque_nm": [
+    2.160832643508911,
+    6.616367816925049,
+    12.589475631713867,
+    2.6775050163269043,
+    15.741020202636719,
+    15.11103343963623,
+    21.74747085571289,
+    4.204662322998047,
+    8.101760864257812,
+    12.872727394104004,
+    39.509010314941406,
+    24.849363327026367,
+    29.301654815673828,
+    99.2896728515625,
+    21.124004364013672,
+    17.349863052368164,
+    44.43136978149414,
+    13.663015365600586,
+    21.087873458862305,
+    119.66341400146484,
+    32.177188873291016,
+    7.675219535827637
+  ],
+  "reproducibility": {
+    "verified": true,
+    "repeat_hashes": [
+      "378a3068884ab3d72a0a5d2377a8fd8cbbe4fae7c41a1d830ca2528cd292c8e2",
+      "378a3068884ab3d72a0a5d2377a8fd8cbbe4fae7c41a1d830ca2528cd292c8e2"
+    ]
+  },
+  "experiment_valid": true,
+  "comparison": {
+    "control": "absent_front_20",
+    "launch_identical": true,
+    "maximum_position_deflection_m": 13.072911296113302,
+    "maximum_velocity_difference_m_s": 27.700752929353715,
+    "trajectory_changed": true,
+    "control_goal": true,
+    "control_defended_goal": true,
+    "successfully_blocked": null,
+    "observation_duration_s": 0.528999999999942,
+    "reason": "finite observation; physical contact and matched absent right Goal required; early fall is censored"
+  },
+  "defended_goal": null,
+  "momentum_precision_passed": true,
+  "maximum_robot_penetration_m": 0.03592115697338201,
+  "recovery_observation_complete": false
+}

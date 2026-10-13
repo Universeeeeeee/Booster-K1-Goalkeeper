@@ -1,0 +1,28 @@
+air_high absent contact False goal True repeat True
+air_high passive contact False goal True repeat True
+air_high g_active contact False goal True repeat True
+air_high h_stop_then_arm contact False goal True repeat True
+air_wide absent contact False goal True repeat True
+air_wide passive contact False goal True repeat True
+air_wide g_active contact False goal True repeat True
+air_wide h_stop_then_arm contact False goal True repeat True
+air_center absent contact False goal True repeat True
+air_center passive contact True goal False repeat True
+air_center g_active contact True goal False repeat True
+air_center h_stop_then_arm contact True goal False repeat True
+air_low_right absent contact False goal True repeat True
+air_low_right passive contact True goal True repeat True
+air_low_right g_active contact True goal True repeat True
+air_low_right h_stop_then_arm contact True goal True repeat True
+air_high_left absent contact False goal True repeat True
+air_high_left passive contact False goal True repeat True
+air_high_left g_active contact False goal True repeat True
+air_high_left h_stop_then_arm contact False goal True repeat True
+{
+  "absent": 0,
+  "passive": 1,
+  "g_active": 1,
+  "h_stop_then_arm": 1,
+  "added": 0,
+  "lost": 0
+}

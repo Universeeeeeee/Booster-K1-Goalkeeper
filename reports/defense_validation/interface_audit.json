@@ -1,0 +1,1677 @@
+{
+  "stage": "H0",
+  "status": "static_interface_audit_complete_no_motion_run",
+  "scope": "Pinned locally vendored official K1 locomotion policy and existing named MuJoCo adapter; no claim about latest upstream or omitted hardware controllers.",
+  "assumptions": [
+    "H0 is read-only except the two new audit outputs. H1 is a future isolated MuJoCo experiment, not authorized hardware control.",
+    "Active gains are K1WalkTaskCfg overrides, not base K1_CFG or prepare_state gains.",
+    "Indices are zero-based; source lines are one-based; angles are radians."
+  ],
+  "provenance": {
+    "repository": "https://github.com/BoosterRobotics/booster_deploy.git",
+    "revision": "7bb1462e2ac742eba5c01659b815e2e99fbe617f",
+    "manifest": {
+      "path": "assets/booster_deploy/manifest.json",
+      "line_start": 1,
+      "line_end": 28
+    },
+    "manifest_checked_files": 22,
+    "all_manifest_hashes_match": true,
+    "mismatches": [],
+    "official_tree_is_subset": true,
+    "hardware_controller_present": false,
+    "audit_source_hashes": {
+      "assets/booster_deploy/booster_deploy/robots/k1.py": "2e95ee5b761c327eb80db3f2aa73855b782c1fb415dab5ddffa445c054c17875",
+      "assets/booster_deploy/tasks/locomotion/robots/k1/__init__.py": "f8cab573789fcd4f014bfae946aa176b287ed4642f285456af58a6fe59be869d",
+      "assets/booster_deploy/tasks/locomotion/locomotion.py": "8ef1ebeb1a4f1a52a72b7afeeb7411d080028058dffd5f9147d6deb859a82103",
+      "assets/booster_assets/robots/K1/K1_22dof.xml": "1f1a1cdd451f777600c66fc30ad8d7537198ee7bc51f8ed20d67a51b5001a651",
+      "k1_goalkeeper/walk_controller.py": "57f108fc91dcf90416b8acb08d9c1bc7920bb733b7272968e87967f1fabe5144",
+      "k1_goalkeeper/scene_simulation.py": "20caab5441a7b75319bca59999be018d71780ee0f960f5aa3eab1cda7b18f388"
+    }
+  },
+  "independent_static_checks": {
+    "model_compile_only_no_mj_step": true,
+    "checkpoint_inspect_only_no_inference": true,
+    "nq": 29,
+    "nv": 28,
+    "nu": 22,
+    "source_xml_dt_s": 0.001,
+    "actor_parameter_shapes": {
+      "0.weight": [
+        512,
+        690
+      ],
+      "0.bias": [
+        512
+      ],
+      "2.weight": [
+        256,
+        512
+      ],
+      "2.bias": [
+        256
+      ],
+      "4.weight": [
+        128,
+        256
+      ],
+      "4.bias": [
+        128
+      ],
+      "6.weight": [
+        20,
+        128
+      ],
+      "6.bias": [
+        20
+      ]
+    },
+    "actor_input_width": 690,
+    "actor_output_width": 20,
+    "robot_names_match_compiled_hinge_order": true,
+    "actuator_names_match_robot_order": true,
+    "active_default_native_FK": [
+      {
+        "left_roll_offset_rad": 0,
+        "right_roll_offset_rad": 0,
+        "left_elbow_yaw_link_origin_world": [
+          -0.03151496218062527,
+          0.19732080894752216,
+          1.016448086795531
+        ],
+        "right_elbow_yaw_link_origin_world": [
+          -0.03151496218062527,
+          -0.19732080894752216,
+          1.016448086795531
+        ]
+      },
+      {
+        "left_roll_offset_rad": 0.05,
+        "right_roll_offset_rad": -0.05,
+        "left_elbow_yaw_link_origin_world": [
+          -0.03095635598159898,
+          0.2051252974848055,
+          1.0192037776897904
+        ],
+        "right_elbow_yaw_link_origin_world": [
+          -0.03095635598159898,
+          -0.2051252974848055,
+          1.0192037776897904
+        ]
+      },
+      {
+        "left_roll_offset_rad": 0.15,
+        "right_roll_offset_rad": -0.15,
+        "left_elbow_yaw_link_origin_world": [
+          -0.02961034611072736,
+          0.2202642972359032,
+          1.025843852846869
+        ],
+        "right_elbow_yaw_link_origin_world": [
+          -0.02961034611072736,
+          -0.2202642972359032,
+          1.025843852846869
+        ]
+      },
+      {
+        "left_roll_offset_rad": 0.3,
+        "right_roll_offset_rad": -0.3,
+        "left_elbow_yaw_link_origin_world": [
+          -0.027045952792864668,
+          0.24151751166856328,
+          1.0384944022458056
+        ],
+        "right_elbow_yaw_link_origin_world": [
+          -0.027045952792864668,
+          -0.24151751166856328,
+          1.0384944022458056
+        ]
+      }
+    ],
+    "native_FK_scope": "Separate MjData, active walk default, original XML, mj_forward only; arm body-origin change proves direction, not full collision-envelope extent or dynamic stability."
+  },
+  "joint_order": {
+    "robot": [
+      "aahead_yaw_joint",
+      "aahead_pitch_joint",
+      "aaleft_shoulder_pitch_joint",
+      "left_shoulder_roll_joint",
+      "left_elbow_pitch_joint",
+      "left_elbow_yaw_joint",
+      "aaright_shoulder_pitch_joint",
+      "right_shoulder_roll_joint",
+      "right_elbow_pitch_joint",
+      "right_elbow_yaw_joint",
+      "left_hip_pitch_joint",
+      "left_hip_roll_joint",
+      "left_hip_yaw_joint",
+      "left_knee_pitch_joint",
+      "left_ankle_pitch_joint",
+      "left_ankle_roll_joint",
+      "right_hip_pitch_joint",
+      "right_hip_roll_joint",
+      "right_hip_yaw_joint",
+      "right_knee_pitch_joint",
+      "right_ankle_pitch_joint",
+      "right_ankle_roll_joint"
+    ],
+    "policy": [
+      "aaleft_shoulder_pitch_joint",
+      "aaright_shoulder_pitch_joint",
+      "left_hip_pitch_joint",
+      "right_hip_pitch_joint",
+      "left_shoulder_roll_joint",
+      "right_shoulder_roll_joint",
+      "left_hip_roll_joint",
+      "right_hip_roll_joint",
+      "left_elbow_pitch_joint",
+      "right_elbow_pitch_joint",
+      "left_hip_yaw_joint",
+      "right_hip_yaw_joint",
+      "left_elbow_yaw_joint",
+      "right_elbow_yaw_joint",
+      "left_knee_pitch_joint",
+      "right_knee_pitch_joint",
+      "left_ankle_pitch_joint",
+      "right_ankle_pitch_joint",
+      "left_ankle_roll_joint",
+      "right_ankle_roll_joint"
+    ],
+    "policy_to_robot": [
+      2,
+      6,
+      10,
+      16,
+      3,
+      7,
+      11,
+      17,
+      4,
+      8,
+      12,
+      18,
+      5,
+      9,
+      13,
+      19,
+      14,
+      20,
+      15,
+      21
+    ],
+    "arm_robot_indices": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "arm_policy_indices": [
+      0,
+      1,
+      4,
+      5,
+      8,
+      9,
+      12,
+      13
+    ],
+    "source_robot": {
+      "path": "assets/booster_deploy/booster_deploy/robots/k1.py",
+      "line_start": 7,
+      "line_end": 17
+    },
+    "source_policy": {
+      "path": "assets/booster_deploy/tasks/locomotion/robots/k1/__init__.py",
+      "line_start": 50,
+      "line_end": 73
+    }
+  },
+  "joint_parameters": [
+    {
+      "robot_index": 0,
+      "name": "aahead_yaw_joint",
+      "group": "head",
+      "policy_index": null,
+      "active_default_rad": 0,
+      "active_kp_nm_per_rad": 4.0,
+      "active_kd_nm_s_per_rad": 1.0,
+      "active_effort_limit_nm": 6.0,
+      "base_k1_kp": 4.0,
+      "base_k1_kd": 1.0,
+      "base_k1_effort_limit": 6,
+      "xml_range_rad": [
+        -1.012,
+        1.012
+      ],
+      "xml_axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "xml_forcerange_nm": [
+        -6.0,
+        6.0
+      ],
+      "compiled_joint_id": 1,
+      "compiled_qpos_address": 7,
+      "compiled_dof_address": 6,
+      "compiled_actuator_id": 0,
+      "compiled_joint_limited": true,
+      "compiled_actuator_forcelimited": true,
+      "compiled_actuator_ctrllimited": false,
+      "joint_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 56,
+        "line_end": 56
+      },
+      "actuator_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 189,
+        "line_end": 189
+      }
+    },
+    {
+      "robot_index": 1,
+      "name": "aahead_pitch_joint",
+      "group": "head",
+      "policy_index": null,
+      "active_default_rad": 0,
+      "active_kp_nm_per_rad": 4.0,
+      "active_kd_nm_s_per_rad": 1.0,
+      "active_effort_limit_nm": 6.0,
+      "base_k1_kp": 4.0,
+      "base_k1_kd": 1.0,
+      "base_k1_effort_limit": 6,
+      "xml_range_rad": [
+        -0.314,
+        0.794
+      ],
+      "xml_axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "xml_forcerange_nm": [
+        -6.0,
+        6.0
+      ],
+      "compiled_joint_id": 2,
+      "compiled_qpos_address": 8,
+      "compiled_dof_address": 7,
+      "compiled_actuator_id": 1,
+      "compiled_joint_limited": true,
+      "compiled_actuator_forcelimited": true,
+      "compiled_actuator_ctrllimited": false,
+      "joint_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 61,
+        "line_end": 61
+      },
+      "actuator_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 190,
+        "line_end": 190
+      }
+    },
+    {
+      "robot_index": 2,
+      "name": "aaleft_shoulder_pitch_joint",
+      "group": "left_arm",
+      "policy_index": 0,
+      "active_default_rad": 0.2,
+      "active_kp_nm_per_rad": 20.0,
+      "active_kd_nm_s_per_rad": 2.0,
+      "active_effort_limit_nm": 14.0,
+      "base_k1_kp": 4.0,
+      "base_k1_kd": 1.0,
+      "base_k1_effort_limit": 14,
+      "xml_range_rad": [
+        -2.932,
+        1.196
+      ],
+      "xml_axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "xml_forcerange_nm": [
+        -14.0,
+        14.0
+      ],
+      "compiled_joint_id": 3,
+      "compiled_qpos_address": 9,
+      "compiled_dof_address": 8,
+      "compiled_actuator_id": 2,
+      "compiled_joint_limited": true,
+      "compiled_actuator_forcelimited": true,
+      "compiled_actuator_ctrllimited": false,
+      "joint_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 70,
+        "line_end": 70
+      },
+      "actuator_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 191,
+        "line_end": 191
+      }
+    },
+    {
+      "robot_index": 3,
+      "name": "left_shoulder_roll_joint",
+      "group": "left_arm",
+      "policy_index": 4,
+      "active_default_rad": -1.25,
+      "active_kp_nm_per_rad": 20.0,
+      "active_kd_nm_s_per_rad": 2.0,
+      "active_effort_limit_nm": 14.0,
+      "base_k1_kp": 4.0,
+      "base_k1_kd": 1.0,
+      "base_k1_effort_limit": 14,
+      "xml_range_rad": [
+        -1.642,
+        1.629
+      ],
+      "xml_axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "xml_forcerange_nm": [
+        -14.0,
+        14.0
+      ],
+      "compiled_joint_id": 4,
+      "compiled_qpos_address": 10,
+      "compiled_dof_address": 9,
+      "compiled_actuator_id": 3,
+      "compiled_joint_limited": true,
+      "compiled_actuator_forcelimited": true,
+      "compiled_actuator_ctrllimited": false,
+      "joint_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 74,
+        "line_end": 74
+      },
+      "actuator_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 192,
+        "line_end": 192
+      }
+    },
+    {
+      "robot_index": 4,
+      "name": "left_elbow_pitch_joint",
+      "group": "left_arm",
+      "policy_index": 8,
+      "active_default_rad": 0,
+      "active_kp_nm_per_rad": 20.0,
+      "active_kd_nm_s_per_rad": 2.0,
+      "active_effort_limit_nm": 14.0,
+      "base_k1_kp": 4.0,
+      "base_k1_kd": 1.0,
+      "base_k1_effort_limit": 14,
+      "xml_range_rad": [
+        -1.885,
+        1.885
+      ],
+      "xml_axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "xml_forcerange_nm": [
+        -14.0,
+        14.0
+      ],
+      "compiled_joint_id": 5,
+      "compiled_qpos_address": 11,
+      "compiled_dof_address": 10,
+      "compiled_actuator_id": 4,
+      "compiled_joint_limited": true,
+      "compiled_actuator_forcelimited": true,
+      "compiled_actuator_ctrllimited": false,
+      "joint_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 79,
+        "line_end": 79
+      },
+      "actuator_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 193,
+        "line_end": 193
+      }
+    },
+    {
+      "robot_index": 5,
+      "name": "left_elbow_yaw_joint",
+      "group": "left_arm",
+      "policy_index": 12,
+      "active_default_rad": -0.5,
+      "active_kp_nm_per_rad": 20.0,
+      "active_kd_nm_s_per_rad": 2.0,
+      "active_effort_limit_nm": 14.0,
+      "base_k1_kp": 4.0,
+      "base_k1_kd": 1.0,
+      "base_k1_effort_limit": 14,
+      "xml_range_rad": [
+        -2.242,
+        0.816
+      ],
+      "xml_axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "xml_forcerange_nm": [
+        -14.0,
+        14.0
+      ],
+      "compiled_joint_id": 6,
+      "compiled_qpos_address": 12,
+      "compiled_dof_address": 11,
+      "compiled_actuator_id": 5,
+      "compiled_joint_limited": true,
+      "compiled_actuator_forcelimited": true,
+      "compiled_actuator_ctrllimited": false,
+      "joint_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 84,
+        "line_end": 84
+      },
+      "actuator_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 194,
+        "line_end": 194
+      }
+    },
+    {
+      "robot_index": 6,
+      "name": "aaright_shoulder_pitch_joint",
+      "group": "right_arm",
+      "policy_index": 1,
+      "active_default_rad": 0.2,
+      "active_kp_nm_per_rad": 20.0,
+      "active_kd_nm_s_per_rad": 2.0,
+      "active_effort_limit_nm": 14.0,
+      "base_k1_kp": 4.0,
+      "base_k1_kd": 1.0,
+      "base_k1_effort_limit": 14,
+      "xml_range_rad": [
+        -2.932,
+        1.196
+      ],
+      "xml_axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "xml_forcerange_nm": [
+        -14.0,
+        14.0
+      ],
+      "compiled_joint_id": 7,
+      "compiled_qpos_address": 13,
+      "compiled_dof_address": 12,
+      "compiled_actuator_id": 6,
+      "compiled_joint_limited": true,
+      "compiled_actuator_forcelimited": true,
+      "compiled_actuator_ctrllimited": false,
+      "joint_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 93,
+        "line_end": 93
+      },
+      "actuator_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 195,
+        "line_end": 195
+      }
+    },
+    {
+      "robot_index": 7,
+      "name": "right_shoulder_roll_joint",
+      "group": "right_arm",
+      "policy_index": 5,
+      "active_default_rad": 1.25,
+      "active_kp_nm_per_rad": 20.0,
+      "active_kd_nm_s_per_rad": 2.0,
+      "active_effort_limit_nm": 14.0,
+      "base_k1_kp": 4.0,
+      "base_k1_kd": 1.0,
+      "base_k1_effort_limit": 14,
+      "xml_range_rad": [
+        -1.642,
+        1.629
+      ],
+      "xml_axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "xml_forcerange_nm": [
+        -14.0,
+        14.0
+      ],
+      "compiled_joint_id": 8,
+      "compiled_qpos_address": 14,
+      "compiled_dof_address": 13,
+      "compiled_actuator_id": 7,
+      "compiled_joint_limited": true,
+      "compiled_actuator_forcelimited": true,
+      "compiled_actuator_ctrllimited": false,
+      "joint_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 97,
+        "line_end": 97
+      },
+      "actuator_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 196,
+        "line_end": 196
+      }
+    },
+    {
+      "robot_index": 8,
+      "name": "right_elbow_pitch_joint",
+      "group": "right_arm",
+      "policy_index": 9,
+      "active_default_rad": 0,
+      "active_kp_nm_per_rad": 20.0,
+      "active_kd_nm_s_per_rad": 2.0,
+      "active_effort_limit_nm": 14.0,
+      "base_k1_kp": 4.0,
+      "base_k1_kd": 1.0,
+      "base_k1_effort_limit": 14,
+      "xml_range_rad": [
+        -1.885,
+        1.885
+      ],
+      "xml_axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "xml_forcerange_nm": [
+        -14.0,
+        14.0
+      ],
+      "compiled_joint_id": 9,
+      "compiled_qpos_address": 15,
+      "compiled_dof_address": 14,
+      "compiled_actuator_id": 8,
+      "compiled_joint_limited": true,
+      "compiled_actuator_forcelimited": true,
+      "compiled_actuator_ctrllimited": false,
+      "joint_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 102,
+        "line_end": 102
+      },
+      "actuator_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 197,
+        "line_end": 197
+      }
+    },
+    {
+      "robot_index": 9,
+      "name": "right_elbow_yaw_joint",
+      "group": "right_arm",
+      "policy_index": 13,
+      "active_default_rad": 0.5,
+      "active_kp_nm_per_rad": 20.0,
+      "active_kd_nm_s_per_rad": 2.0,
+      "active_effort_limit_nm": 14.0,
+      "base_k1_kp": 4.0,
+      "base_k1_kd": 1.0,
+      "base_k1_effort_limit": 14,
+      "xml_range_rad": [
+        -0.816,
+        2.242
+      ],
+      "xml_axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "xml_forcerange_nm": [
+        -14.0,
+        14.0
+      ],
+      "compiled_joint_id": 10,
+      "compiled_qpos_address": 16,
+      "compiled_dof_address": 15,
+      "compiled_actuator_id": 9,
+      "compiled_joint_limited": true,
+      "compiled_actuator_forcelimited": true,
+      "compiled_actuator_ctrllimited": false,
+      "joint_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 107,
+        "line_end": 107
+      },
+      "actuator_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 198,
+        "line_end": 198
+      }
+    },
+    {
+      "robot_index": 10,
+      "name": "left_hip_pitch_joint",
+      "group": "left_leg",
+      "policy_index": 2,
+      "active_default_rad": -0.15,
+      "active_kp_nm_per_rad": 100.0,
+      "active_kd_nm_s_per_rad": 2.0,
+      "active_effort_limit_nm": 30.0,
+      "base_k1_kp": 80.0,
+      "base_k1_kd": 2.0,
+      "base_k1_effort_limit": 30,
+      "xml_range_rad": [
+        -2.958,
+        2.226
+      ],
+      "xml_axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "xml_forcerange_nm": [
+        -68.0,
+        68.0
+      ],
+      "compiled_joint_id": 11,
+      "compiled_qpos_address": 17,
+      "compiled_dof_address": 16,
+      "compiled_actuator_id": 10,
+      "compiled_joint_limited": true,
+      "compiled_actuator_forcelimited": true,
+      "compiled_actuator_ctrllimited": false,
+      "joint_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 116,
+        "line_end": 116
+      },
+      "actuator_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 199,
+        "line_end": 199
+      }
+    },
+    {
+      "robot_index": 11,
+      "name": "left_hip_roll_joint",
+      "group": "left_leg",
+      "policy_index": 6,
+      "active_default_rad": 0,
+      "active_kp_nm_per_rad": 100.0,
+      "active_kd_nm_s_per_rad": 2.0,
+      "active_effort_limit_nm": 20.0,
+      "base_k1_kp": 80.0,
+      "base_k1_kd": 2.0,
+      "base_k1_effort_limit": 35,
+      "xml_range_rad": [
+        -0.375,
+        1.536
+      ],
+      "xml_axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "xml_forcerange_nm": [
+        -43.0,
+        43.0
+      ],
+      "compiled_joint_id": 12,
+      "compiled_qpos_address": 18,
+      "compiled_dof_address": 17,
+      "compiled_actuator_id": 11,
+      "compiled_joint_limited": true,
+      "compiled_actuator_forcelimited": true,
+      "compiled_actuator_ctrllimited": false,
+      "joint_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 120,
+        "line_end": 120
+      },
+      "actuator_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 200,
+        "line_end": 200
+      }
+    },
+    {
+      "robot_index": 12,
+      "name": "left_hip_yaw_joint",
+      "group": "left_leg",
+      "policy_index": 10,
+      "active_default_rad": 0,
+      "active_kp_nm_per_rad": 100.0,
+      "active_kd_nm_s_per_rad": 2.0,
+      "active_effort_limit_nm": 15.0,
+      "base_k1_kp": 80.0,
+      "base_k1_kd": 2.0,
+      "base_k1_effort_limit": 20,
+      "xml_range_rad": [
+        -1.012,
+        1.012
+      ],
+      "xml_axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "xml_forcerange_nm": [
+        -38.3,
+        38.3
+      ],
+      "compiled_joint_id": 13,
+      "compiled_qpos_address": 19,
+      "compiled_dof_address": 18,
+      "compiled_actuator_id": 12,
+      "compiled_joint_limited": true,
+      "compiled_actuator_forcelimited": true,
+      "compiled_actuator_ctrllimited": false,
+      "joint_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 125,
+        "line_end": 125
+      },
+      "actuator_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 201,
+        "line_end": 201
+      }
+    },
+    {
+      "robot_index": 13,
+      "name": "left_knee_pitch_joint",
+      "group": "left_leg",
+      "policy_index": 14,
+      "active_default_rad": 0.3,
+      "active_kp_nm_per_rad": 100.0,
+      "active_kd_nm_s_per_rad": 2.0,
+      "active_effort_limit_nm": 35.0,
+      "base_k1_kp": 80.0,
+      "base_k1_kd": 2.0,
+      "base_k1_effort_limit": 40,
+      "xml_range_rad": [
+        0.0,
+        2.321
+      ],
+      "xml_axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "xml_forcerange_nm": [
+        -112.0,
+        112.0
+      ],
+      "compiled_joint_id": 14,
+      "compiled_qpos_address": 20,
+      "compiled_dof_address": 19,
+      "compiled_actuator_id": 13,
+      "compiled_joint_limited": true,
+      "compiled_actuator_forcelimited": true,
+      "compiled_actuator_ctrllimited": false,
+      "joint_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 130,
+        "line_end": 130
+      },
+      "actuator_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 202,
+        "line_end": 202
+      }
+    },
+    {
+      "robot_index": 14,
+      "name": "left_ankle_pitch_joint",
+      "group": "left_leg",
+      "policy_index": 16,
+      "active_default_rad": -0.15,
+      "active_kp_nm_per_rad": 65.0,
+      "active_kd_nm_s_per_rad": 1.0,
+      "active_effort_limit_nm": 24.0,
+      "base_k1_kp": 30.0,
+      "base_k1_kd": 2.0,
+      "base_k1_effort_limit": 20,
+      "xml_range_rad": [
+        -0.87,
+        0.345
+      ],
+      "xml_axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "xml_forcerange_nm": [
+        -38.3,
+        38.3
+      ],
+      "compiled_joint_id": 15,
+      "compiled_qpos_address": 21,
+      "compiled_dof_address": 20,
+      "compiled_actuator_id": 14,
+      "compiled_joint_limited": true,
+      "compiled_actuator_forcelimited": true,
+      "compiled_actuator_ctrllimited": false,
+      "joint_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 136,
+        "line_end": 136
+      },
+      "actuator_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 203,
+        "line_end": 203
+      }
+    },
+    {
+      "robot_index": 15,
+      "name": "left_ankle_roll_joint",
+      "group": "left_leg",
+      "policy_index": 18,
+      "active_default_rad": 0,
+      "active_kp_nm_per_rad": 65.0,
+      "active_kd_nm_s_per_rad": 1.0,
+      "active_effort_limit_nm": 15.0,
+      "base_k1_kp": 30.0,
+      "base_k1_kd": 2.0,
+      "base_k1_effort_limit": 20,
+      "xml_range_rad": [
+        -0.345,
+        0.345
+      ],
+      "xml_axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "xml_forcerange_nm": [
+        -38.3,
+        38.3
+      ],
+      "compiled_joint_id": 16,
+      "compiled_qpos_address": 22,
+      "compiled_dof_address": 21,
+      "compiled_actuator_id": 15,
+      "compiled_joint_limited": true,
+      "compiled_actuator_forcelimited": true,
+      "compiled_actuator_ctrllimited": false,
+      "joint_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 140,
+        "line_end": 140
+      },
+      "actuator_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 204,
+        "line_end": 204
+      }
+    },
+    {
+      "robot_index": 16,
+      "name": "right_hip_pitch_joint",
+      "group": "right_leg",
+      "policy_index": 3,
+      "active_default_rad": -0.15,
+      "active_kp_nm_per_rad": 100.0,
+      "active_kd_nm_s_per_rad": 2.0,
+      "active_effort_limit_nm": 30.0,
+      "base_k1_kp": 80.0,
+      "base_k1_kd": 2.0,
+      "base_k1_effort_limit": 30,
+      "xml_range_rad": [
+        -2.958,
+        2.226
+      ],
+      "xml_axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "xml_forcerange_nm": [
+        -68.0,
+        68.0
+      ],
+      "compiled_joint_id": 17,
+      "compiled_qpos_address": 23,
+      "compiled_dof_address": 22,
+      "compiled_actuator_id": 16,
+      "compiled_joint_limited": true,
+      "compiled_actuator_forcelimited": true,
+      "compiled_actuator_ctrllimited": false,
+      "joint_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 152,
+        "line_end": 152
+      },
+      "actuator_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 205,
+        "line_end": 205
+      }
+    },
+    {
+      "robot_index": 17,
+      "name": "right_hip_roll_joint",
+      "group": "right_leg",
+      "policy_index": 7,
+      "active_default_rad": 0,
+      "active_kp_nm_per_rad": 100.0,
+      "active_kd_nm_s_per_rad": 2.0,
+      "active_effort_limit_nm": 20.0,
+      "base_k1_kp": 80.0,
+      "base_k1_kd": 2.0,
+      "base_k1_effort_limit": 35,
+      "xml_range_rad": [
+        -1.536,
+        0.375
+      ],
+      "xml_axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "xml_forcerange_nm": [
+        -43.0,
+        43.0
+      ],
+      "compiled_joint_id": 18,
+      "compiled_qpos_address": 24,
+      "compiled_dof_address": 23,
+      "compiled_actuator_id": 17,
+      "compiled_joint_limited": true,
+      "compiled_actuator_forcelimited": true,
+      "compiled_actuator_ctrllimited": false,
+      "joint_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 156,
+        "line_end": 156
+      },
+      "actuator_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 206,
+        "line_end": 206
+      }
+    },
+    {
+      "robot_index": 18,
+      "name": "right_hip_yaw_joint",
+      "group": "right_leg",
+      "policy_index": 11,
+      "active_default_rad": 0,
+      "active_kp_nm_per_rad": 100.0,
+      "active_kd_nm_s_per_rad": 2.0,
+      "active_effort_limit_nm": 15.0,
+      "base_k1_kp": 80.0,
+      "base_k1_kd": 2.0,
+      "base_k1_effort_limit": 20,
+      "xml_range_rad": [
+        -1.012,
+        1.012
+      ],
+      "xml_axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "xml_forcerange_nm": [
+        -38.3,
+        38.3
+      ],
+      "compiled_joint_id": 19,
+      "compiled_qpos_address": 25,
+      "compiled_dof_address": 24,
+      "compiled_actuator_id": 18,
+      "compiled_joint_limited": true,
+      "compiled_actuator_forcelimited": true,
+      "compiled_actuator_ctrllimited": false,
+      "joint_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 161,
+        "line_end": 161
+      },
+      "actuator_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 207,
+        "line_end": 207
+      }
+    },
+    {
+      "robot_index": 19,
+      "name": "right_knee_pitch_joint",
+      "group": "right_leg",
+      "policy_index": 15,
+      "active_default_rad": 0.3,
+      "active_kp_nm_per_rad": 100.0,
+      "active_kd_nm_s_per_rad": 2.0,
+      "active_effort_limit_nm": 35.0,
+      "base_k1_kp": 80.0,
+      "base_k1_kd": 2.0,
+      "base_k1_effort_limit": 40,
+      "xml_range_rad": [
+        0.0,
+        2.321
+      ],
+      "xml_axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "xml_forcerange_nm": [
+        -112.0,
+        112.0
+      ],
+      "compiled_joint_id": 20,
+      "compiled_qpos_address": 26,
+      "compiled_dof_address": 25,
+      "compiled_actuator_id": 19,
+      "compiled_joint_limited": true,
+      "compiled_actuator_forcelimited": true,
+      "compiled_actuator_ctrllimited": false,
+      "joint_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 166,
+        "line_end": 166
+      },
+      "actuator_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 208,
+        "line_end": 208
+      }
+    },
+    {
+      "robot_index": 20,
+      "name": "right_ankle_pitch_joint",
+      "group": "right_leg",
+      "policy_index": 17,
+      "active_default_rad": -0.15,
+      "active_kp_nm_per_rad": 65.0,
+      "active_kd_nm_s_per_rad": 1.0,
+      "active_effort_limit_nm": 24.0,
+      "base_k1_kp": 30.0,
+      "base_k1_kd": 2.0,
+      "base_k1_effort_limit": 20,
+      "xml_range_rad": [
+        -0.87,
+        0.345
+      ],
+      "xml_axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "xml_forcerange_nm": [
+        -38.3,
+        38.3
+      ],
+      "compiled_joint_id": 21,
+      "compiled_qpos_address": 27,
+      "compiled_dof_address": 26,
+      "compiled_actuator_id": 20,
+      "compiled_joint_limited": true,
+      "compiled_actuator_forcelimited": true,
+      "compiled_actuator_ctrllimited": false,
+      "joint_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 172,
+        "line_end": 172
+      },
+      "actuator_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 209,
+        "line_end": 209
+      }
+    },
+    {
+      "robot_index": 21,
+      "name": "right_ankle_roll_joint",
+      "group": "right_leg",
+      "policy_index": 19,
+      "active_default_rad": 0,
+      "active_kp_nm_per_rad": 65.0,
+      "active_kd_nm_s_per_rad": 1.0,
+      "active_effort_limit_nm": 15.0,
+      "base_k1_kp": 30.0,
+      "base_k1_kd": 2.0,
+      "base_k1_effort_limit": 20,
+      "xml_range_rad": [
+        -0.345,
+        0.345
+      ],
+      "xml_axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "xml_forcerange_nm": [
+        -38.3,
+        38.3
+      ],
+      "compiled_joint_id": 22,
+      "compiled_qpos_address": 28,
+      "compiled_dof_address": 27,
+      "compiled_actuator_id": 21,
+      "compiled_joint_limited": true,
+      "compiled_actuator_forcelimited": true,
+      "compiled_actuator_ctrllimited": false,
+      "joint_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 176,
+        "line_end": 176
+      },
+      "actuator_source": {
+        "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+        "line_start": 210,
+        "line_end": 210
+      }
+    }
+  ],
+  "gains_sources": {
+    "base_k1": {
+      "path": "assets/booster_deploy/booster_deploy/robots/k1.py",
+      "line_start": 29,
+      "line_end": 44
+    },
+    "active_walk": {
+      "path": "assets/booster_deploy/tasks/locomotion/robots/k1/__init__.py",
+      "line_start": 14,
+      "line_end": 43
+    },
+    "prepare_state_not_active_walk": {
+      "path": "assets/booster_deploy/booster_deploy/robots/k1.py",
+      "line_start": 66,
+      "line_end": 79
+    }
+  },
+  "observation": {
+    "frame_size": 69,
+    "history_frames": 10,
+    "flat_actor_input_size": 690,
+    "fields": [
+      {
+        "name": "base_ang_vel_body",
+        "slice": [
+          0,
+          3
+        ]
+      },
+      {
+        "name": "projected_gravity_body",
+        "slice": [
+          3,
+          6
+        ]
+      },
+      {
+        "name": "velocity_command_body_vx_vy_yaw",
+        "slice": [
+          6,
+          9
+        ]
+      },
+      {
+        "name": "policy_order_q_minus_default",
+        "slice": [
+          9,
+          29
+        ]
+      },
+      {
+        "name": "policy_order_dq_scaled_by_0.1",
+        "slice": [
+          29,
+          49
+        ]
+      },
+      {
+        "name": "previous_clipped_policy_action",
+        "slice": [
+          49,
+          69
+        ]
+      }
+    ],
+    "includes_all_eight_arm_q_dq": true,
+    "includes_arm_previous_actions": true,
+    "includes_head_q_dq": false,
+    "includes_ball": false,
+    "includes_requested_upper_body_pose": false,
+    "clip": 100.0,
+    "history_init": "repeat current first observation 10 times",
+    "history_update": "roll(-1) then replace newest frame; oldest-to-newest flatten",
+    "reset": "last_action zero; history None; filtered target copied from default",
+    "sources": [
+      {
+        "path": "assets/booster_deploy/tasks/locomotion/locomotion.py",
+        "line_start": 35,
+        "line_end": 68
+      },
+      {
+        "path": "assets/booster_deploy/tasks/locomotion/locomotion.py",
+        "line_start": 70,
+        "line_end": 85
+      },
+      {
+        "path": "assets/booster_deploy/tasks/locomotion/locomotion.py",
+        "line_start": 113,
+        "line_end": 182
+      },
+      {
+        "path": "assets/booster_deploy/tasks/locomotion/locomotion.py",
+        "line_start": 185,
+        "line_end": 210
+      }
+    ]
+  },
+  "action": {
+    "actor_actions": 20,
+    "all_eight_arms_policy_owned": true,
+    "return_target_count": 22,
+    "head_targets": "held at default zero through zero action scale",
+    "clip_action": 100.0,
+    "action_scale_rad": 0.25,
+    "right_elbow_pitch_offset_raw_action": -0.2,
+    "right_elbow_pitch_offset_unfiltered_rad": -0.05,
+    "formula": "q_raw = q_default + 0.25 * scatter(action, policy_to_robot), with right_elbow_pitch action reduced by 0.2; q_filtered[k] = 0.2*q_filtered[k-1] + 0.8*q_raw[k]",
+    "last_action_semantics": "clipped actor output BEFORE arm correction, scaling, and target filtering",
+    "joint_target_limits_enforced_by_policy": false,
+    "target_speed_limits_enforced_by_policy": false,
+    "sources": [
+      {
+        "path": "assets/booster_deploy/tasks/locomotion/locomotion.py",
+        "line_start": 87,
+        "line_end": 111
+      },
+      {
+        "path": "assets/booster_deploy/tasks/locomotion/locomotion.py",
+        "line_start": 156,
+        "line_end": 182
+      },
+      {
+        "path": "assets/booster_deploy/tasks/locomotion/locomotion.py",
+        "line_start": 185,
+        "line_end": 210
+      }
+    ]
+  },
+  "control": {
+    "policy_dt_s": 0.02,
+    "scene_physics_dt_s": 0.001,
+    "scene_decimation": 20,
+    "official_default_mujoco_decimation": 10,
+    "official_default_mujoco_physics_dt_s": 0.002,
+    "tau_formula": "clip(kp*(q_target-q_current)-kd*dq_current, -effort_limit, +effort_limit)",
+    "float32_state_for_pd": true,
+    "active_arm_kp": 20.0,
+    "active_arm_kd": 2.0,
+    "active_arm_effort_limit_nm": 14.0,
+    "xml_arm_forcerange_nm": [
+      -14.0,
+      14.0
+    ],
+    "joint_ranges_are_soft_solver_constraints_not_target_clamps": true,
+    "sources": [
+      {
+        "path": "assets/booster_deploy/booster_deploy/controllers/controller_cfg.py",
+        "line_start": 16,
+        "line_end": 21
+      },
+      {
+        "path": "assets/booster_deploy/booster_deploy/controllers/controller_cfg.py",
+        "line_start": 98,
+        "line_end": 112
+      },
+      {
+        "path": "assets/booster_deploy/booster_deploy/controllers/mujoco_controller.py",
+        "line_start": 221,
+        "line_end": 246
+      },
+      {
+        "path": "k1_goalkeeper/walk_controller.py",
+        "line_start": 131,
+        "line_end": 165
+      },
+      {
+        "path": "k1_goalkeeper/scene_simulation.py",
+        "line_start": 14,
+        "line_end": 24
+      },
+      {
+        "path": "k1_goalkeeper/scene_simulation.py",
+        "line_start": 49,
+        "line_end": 67
+      }
+    ]
+  },
+  "existing_upper_body_interface": {
+    "dedicated_pose_command": false,
+    "priority_mask": false,
+    "independent_arm_policy": false,
+    "supported_locomotion_command": "vx,vy,yaw only",
+    "velocity_interface": {
+      "path": "k1_goalkeeper/scene_simulation.py",
+      "line_start": 37,
+      "line_end": 47
+    },
+    "generic_full_joint_target_interface": {
+      "path": "assets/booster_deploy/booster_deploy/controllers/base_controller.py",
+      "line_start": 212,
+      "line_end": 235
+    },
+    "arm_action_fix_is_not_general_interface": {
+      "path": "assets/booster_deploy/tasks/locomotion/locomotion.py",
+      "line_start": 203,
+      "line_end": 210
+    },
+    "ghost_qpos_is_kinematic_render_only": {
+      "path": "assets/booster_deploy/booster_deploy/controllers/mujoco_controller.py",
+      "line_start": 101,
+      "line_end": 128
+    },
+    "conclusion": "No dedicated upper-body arbitration interface in the verified local subset. Generic 22-joint target boundary exists, but adding a mask is a new experiment."
+  },
+  "allowed_interfaces": [
+    {
+      "name": "official_body_velocity_command",
+      "status": "existing_baseline",
+      "details": "Existing set_velocity((vx,vy,yaw)) preserves official policy ownership of all eight arms."
+    },
+    {
+      "name": "read_only_state_target_history_telemetry",
+      "status": "H0_allowed",
+      "details": "Read original action, history, filtered target, named joint state, raw/clipped/delivered torques; do not mutate policy internals."
+    },
+    {
+      "name": "external_copy_of_22_joint_targets_before_PD",
+      "status": "candidate_for_H1_only_not_yet_verified",
+      "details": "New H-only wrapper calls compute_targets once per 20ms; clones tensor; modifies only selected named arm slots 2..9; passes a full tensor through existing apply_control/finish_physics_step. Never mutate original returned tensor or policy.filtered_dof_target; head and leg target slots must remain identical to that step original."
+    },
+    {
+      "name": "separate_MjData_forward_kinematics_preview",
+      "status": "H0_read_only_preview_possible",
+      "details": "A separate preview data object may set candidate qpos and call mj_forward for geometry only. It does not prove dynamic stability or interception."
+    }
+  ],
+  "forbidden_shortcuts": [
+    "Mutating original A-G code, tests, official source/model/XML, gains, limits, gravity, collision geometry or physics timestep.",
+    "Writing simulation qpos/qvel during controlled execution to enforce a pose; fixed base, mocap/weld support, or external forces to appear stable.",
+    "Writing data.ctrl directly then invoking scene.step: official apply_control overwrites it.",
+    "Setting scene.targets once before a policy tick: scene.step replaces it at every policy tick.",
+    "Using set_reference_qpos ghost rendering as proof that physical joints moved.",
+    "Treating arms as unobserved or removing them from policy/history or changing actor input/output shapes."
+  ],
+  "override_risks": [
+    {
+      "id": "policy_owns_arms",
+      "severity": "high",
+      "finding": "All eight arm joints occur in actor output and q/dq/history; action override is a coupled full-body policy intervention. Leg commands can change on future steps even if leg target slots are untouched now.",
+      "sources": [
+        {
+          "path": "assets/booster_deploy/tasks/locomotion/robots/k1/__init__.py",
+          "line_start": 50,
+          "line_end": 73
+        },
+        {
+          "path": "assets/booster_deploy/tasks/locomotion/locomotion.py",
+          "line_start": 147,
+          "line_end": 154
+        }
+      ]
+    },
+    {
+      "id": "history_mismatch",
+      "severity": "high",
+      "finding": "Post-filter target replacement leaves last_action as nominal actor output, not executed arm command. Keep this official nominal-action convention in the minimal H1, log both nominal and applied targets and action discrepancy; no unvalidated claim that history describes executed action.",
+      "alternative": "Writing reconstructed executed last_action changes actor inputs and is a separate ablation; (target-default)/0.25 ignores EMA memory and right-elbow correction and is not the original last_action.",
+      "sources": [
+        {
+          "path": "assets/booster_deploy/tasks/locomotion/locomotion.py",
+          "line_start": 95,
+          "line_end": 110
+        },
+        {
+          "path": "assets/booster_deploy/tasks/locomotion/locomotion.py",
+          "line_start": 169,
+          "line_end": 182
+        }
+      ]
+    },
+    {
+      "id": "filter_memory_release",
+      "severity": "high",
+      "finding": "External arm residual bypasses the official EMA and its internal filtered_dof_target retains nominal values. Removing residual abruptly can create a target discontinuity; rate-limit engage/release residual without writing filter state.",
+      "sources": [
+        {
+          "path": "assets/booster_deploy/tasks/locomotion/locomotion.py",
+          "line_start": 49,
+          "line_end": 68
+        },
+        {
+          "path": "assets/booster_deploy/tasks/locomotion/locomotion.py",
+          "line_start": 106,
+          "line_end": 110
+        }
+      ]
+    },
+    {
+      "id": "mask_order",
+      "severity": "high",
+      "finding": "Policy arm slots are [0,1,4,5,8,9,12,13], not a contiguous first-eight block. PD uses robot order indices2..9. Name mapping and explicit immutable complement are required.",
+      "sources": [
+        {
+          "path": "assets/booster_deploy/booster_deploy/robots/k1.py",
+          "line_start": 7,
+          "line_end": 17
+        },
+        {
+          "path": "assets/booster_deploy/tasks/locomotion/robots/k1/__init__.py",
+          "line_start": 50,
+          "line_end": 73
+        },
+        {
+          "path": "k1_goalkeeper/walk_controller.py",
+          "line_start": 36,
+          "line_end": 71
+        }
+      ]
+    },
+    {
+      "id": "target_out_of_range",
+      "severity": "high",
+      "finding": "Clip_action=100 allows nominal +/-25rad offsets before filtering; neither target-range nor target-slew clamps exist in the policy. XML joint constraints and +/-14Nm arms torque clips do not guarantee safe trajectories.",
+      "sources": [
+        {
+          "path": "assets/booster_deploy/tasks/locomotion/locomotion.py",
+          "line_start": 87,
+          "line_end": 111
+        },
+        {
+          "path": "assets/booster_deploy/tasks/locomotion/locomotion.py",
+          "line_start": 185,
+          "line_end": 210
+        },
+        {
+          "path": "k1_goalkeeper/walk_controller.py",
+          "line_start": 142,
+          "line_end": 155
+        }
+      ]
+    },
+    {
+      "id": "no_direct_ctrl_arbitration",
+      "severity": "high",
+      "finding": "Scene applies official PD every1ms; direct torque write is overwritten. Composed targets must be the inputs actually delivered to apply_control every substep.",
+      "sources": [
+        {
+          "path": "k1_goalkeeper/scene_simulation.py",
+          "line_start": 49,
+          "line_end": 61
+        }
+      ]
+    },
+    {
+      "id": "support_and_collision",
+      "severity": "high",
+      "finding": "Arm mass/inertia, self-contact and ball impulses couple into free-base balance. Shoulder-pitch root geometries are visual only; enabled arm collision primitives are shoulder-roll cylinders and elbow meshes, not a continuous arm envelope.",
+      "sources": [
+        {
+          "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+          "line_start": 68,
+          "line_end": 113
+        }
+      ]
+    },
+    {
+      "id": "safety_flag_not_full_safety",
+      "severity": "medium",
+      "finding": "Official falling check stops controller when projected_gravity.z>-0.5 but continues computing this inference. Named adapter blocks using its result after stop; neither official stop flag nor apply_control alone is a hard motor zeroing path. H wrapper must terminate before further physics/control after stop.",
+      "sources": [
+        {
+          "path": "assets/booster_deploy/tasks/locomotion/locomotion.py",
+          "line_start": 119,
+          "line_end": 131
+        },
+        {
+          "path": "k1_goalkeeper/walk_controller.py",
+          "line_start": 131,
+          "line_end": 148
+        },
+        {
+          "path": "assets/booster_deploy/booster_deploy/controllers/base_controller.py",
+          "line_start": 226,
+          "line_end": 228
+        }
+      ]
+    }
+  ],
+  "H1_minimal_proposal": {
+    "executed": false,
+    "purpose": "Verify whether one small arm residual actually changes delivered targets, torque and physical joint motion while the unchanged locomotion actor remains stable; no goalkeeper/save-success claim.",
+    "environment": "Separate H-only script/module and output directory, free-base unchanged scene, no ball contact, zero velocity command, 1ms physics and20ms original policy. Existing 297 tests remain unchanged.",
+    "nominal_history_choice": "Preserve original last_action, observations and history update; record intervention mismatch instead of editing actor input.",
+    "steps": [
+      "H1a zero residual path: original baseline and H wrapper on independent same initial MjData; bitwise compare per-substep time/qpos/qvel/ctrl and per-policy targets/last_action/history/filter. Any mismatch blocks nonzero tests.",
+      "H1b initial amplitude0.05rad,2s quintic ramp up and2s quintic ramp down,2s hold and recovery; separate matched zero baseline. Begin selected left/right roll feasibility with left positive/right negative, as native active-default FK confirms these lift and widen arms. Keep zero velocity/free base/no ball contact. Do not mutate obs/last_action/filter/PD.",
+      "H1c only after initial gate succeeds, separately consider0.15rad single-left roll/single-right roll/bilateral roll/bilateral shoulder pitch, then0.30rad only after every required0.15rad case succeeds. Higher-amplitude durations are to be fixed before execution; recompute slew bound from chosen ramp. No trial executed by this H0 audit.",
+      "Every selected joint must show direction-consistent median response at least50% of residual amplitude versus corresponding time-matched zero baseline during last1s hold. Insufficient response blocks upgrade. First unstable case stops larger-amplitude tests.",
+      "No further amplitude increase, locomotion/contact combination or goalkeeper-success claim in this feasibility experiment."
+    ],
+    "residual_max_rad": 0.05,
+    "residual_slew_max_rad_per_s": 0.046875,
+    "range_margin_rad": 0.05,
+    "required_logs": [
+      "nominal actor output20",
+      "nominal filtered target22",
+      "applied target22",
+      "arm residual and mask",
+      "last_action20 and full history10x69",
+      "named q/dq22",
+      "raw PD demand, ctrl, qfrc_actuator22",
+      "free-base z/quaternion/rpy/COM",
+      "self-contact pairs and foot contacts",
+      "BAD warnings and simulation time",
+      "stop reason and source hashes"
+    ],
+    "success_checks": [
+      "Zero residual gives exact baseline parity.",
+      "Applied target equals nominal target except selected arm slots at every physics step.",
+      "Leg/head target slots unchanged at each step relative to that same step nominal inference; future leg physical behavior may differ.",
+      "Nonzero residual reaches actual PD input and torque; actual joint q differs reproducibly from matched baseline, not merely a wrapper getter.",
+      "No fall, nonfinite value, BAD warning, unexpected time reset, new forbidden contact, limit margin violation or torque stop; returns to nominal target with bounded residual ramp.",
+      "Report achieved angle, settle/error, tilt/z, drift, torque saturation and recovery without claiming proven safe full-body arbitration."
+    ],
+    "decision": "Conditional go for isolated0.05rad post-filter residual feasibility gate;0.15/0.30rad only after previous gates. No official upper-body support or independent-balance guarantee.",
+    "conditional_second_stage_max_rad": 0.15,
+    "schedule": "Initial gate: quintic s(u)=10u^3-15u^4+6u^5,2s up,2s hold,2s down; peak slope=1.875*amplitude/ramp_duration =0.046875rad/s for0.05rad. Higher-stage schedule fixed before run, never inherited silently.",
+    "roll_sign_note": "Verified native FK using active default: left positive/right negative raises and widens elbow_yaw-link origins. At+left0.15/-right0.15, left y grows0.197320809 to0.220264297 and z grows1.016448087 to1.025843853 (right mirrors y). These body-origin observations do not establish full collision-envelope extent. Earlier unverified sign inference was corrected before execution.",
+    "response_score": "For every selected joint separately: median(sign(residual)*[q_H(t)-q_zero(t)]) over final1s hold divided by abs(residual amplitude). Time-aligned matched baseline required; do not accept instantaneous peak alone.",
+    "conditional_third_stage_max_rad": 0.3
+  },
+  "H1_stop_conditions": [
+    {
+      "name": "source_or_test_drift",
+      "criterion": "Any change to pinned official hashes or protected original A-G sources/tests; zero-residual parity failure.",
+      "kind": "preflight_block"
+    },
+    {
+      "name": "identity_mask_shape",
+      "criterion": "Missing/duplicate names, wrong mapping/transmission, target shape not22, actor output not20, history not10x69, or any unselected target changed.",
+      "kind": "immediate_stop"
+    },
+    {
+      "name": "numerical",
+      "criterion": "Any nonfinite state/target/action/torque/time, new BADQPOS/BADQVEL/BADQACC/BADCTRL warning, or unexpected time reset.",
+      "kind": "immediate_stop"
+    },
+    {
+      "name": "policy_stop",
+      "criterion": "Official projected_gravity.z>-0.5 or controller.is_running false; do not invoke any subsequent PD/physics step.",
+      "kind": "immediate_stop"
+    },
+    {
+      "name": "physical_fall",
+      "criterion": "Free-base z<0.3m or trunk upright z<0.5 (tilt>60degrees), from actual quaternion every physics step.",
+      "kind": "existing_failure_limit"
+    },
+    {
+      "name": "early_stability_guard",
+      "criterion": "After settling, trunk tilt>15degrees, free-base z<0.42m, or any new self-contact stops the current case and all larger-amplitude upgrades. These are experiment guards, not certified robot limits. Track baseline drift/height/tilt as context.",
+      "kind": "proposed_H1_guard"
+    },
+    {
+      "name": "range_or_slew",
+      "criterion": "Applied selected-arm target outside XML range inset0.05rad, actual q outside XML range, abs residual>current authorized stage amplitude(initial0.05rad;0.15/0.30rad only after gate), or derivative exceeds schedule-derived limit(initial0.046875rad/s for2s quintic). Check nominal+residual every substep, not only task default.",
+      "kind": "proposed_H1_guard"
+    },
+    {
+      "name": "torque_saturation",
+      "criterion": "Any arm raw PD demand reaches/exceeds14Nm continuously for>0.10s, or delivered torque/control exceeds official active limit plus1e-5Nm. Do not raise gains/limits to finish the experiment.",
+      "kind": "proposed_H1_guard"
+    },
+    {
+      "name": "unexpected_contact",
+      "criterion": "New self-contact/non-foot-ground contact after settling or any ball/goal contact in no-contact H1. First new self-contact stops case and larger amplitude upgrades; preserve pair IDs and delivered-step evidence.",
+      "kind": "proposed_H1_guard"
+    },
+    {
+      "name": "insufficient_delivered_response",
+      "criterion": "Any selected joint direction-consistent median response over final1s hold below50% of stage amplitude versus time-matched zero baseline blocks larger amplitude. This is limited feasibility, not a safe/effective-motion pass.",
+      "kind": "upgrade_block"
+    }
+  ],
+  "protected_originals": {
+    "original_test_files_modified": false,
+    "original_297_tests_run_by_this_audit": false,
+    "test_count_note": "297 is parent-provided protected baseline count; no additional test run or claim in this audit.",
+    "test_source_sha256": {
+      "tests/test_goal_collision.py": "f01c0f39b1bd6cebf7f80056a0cab1189d0311b39bb05e42c8fa5316eec452c3",
+      "tests/conftest.py": "26031d8eead6356243f4aa6ce51787e3095825e8052746287605c8c66c227bb4",
+      "tests/test_assets.py": "ff6f54a6abba73dd53aafe57c4ccc12801efe4a12625c54e978bfb6c98d0d4b6",
+      "tests/test_ball_physics.py": "8b63f4fb2c84159545f2350cefe38b27793b0389b811757dac09eaefced6e1a3",
+      "tests/test_velocity_validation.py": "d4a9cd3e077abc8a17c4299756896dd1f836dd9b30a30fba887163eef97be314",
+      "tests/test_positioning.py": "e32c19b67183278a87299842f83a9dca20bf83fc65b5bce5fa6a8bf974ab15fa",
+      "tests/test_goal_detection.py": "e49981acf1348d57417a6a409c810b19e8b8c73606bf51d570f9ced3e73a1191",
+      "tests/test_impact_validation.py": "3a1fbb6de8b170b185cf7a8e067cf888aae6c6195f948dc21e2764b3f6ed5d9e",
+      "tests/test_field_geometry.py": "10190add099aaa00d6462a782dda13842f109ebd6428607b0700670057850095",
+      "tests/test_scene_control.py": "6da1b220edb0c40631e1d1b3a3ad9b6d8c4d8ae94cc738e5f43b290f277dfa58",
+      "tests/test_walk_controller.py": "368b55711fd47b207c7c8aae2703697a2062b9d162778d0710b0e2e880474db3",
+      "tests/test_prediction_goalkeeper.py": "a0efcd01c53dc329a7eda6bb6f09b81ad3ff8aab7bac761f96b50971a93769a7",
+      "tests/test_prediction_validation.py": "cbb7a02c1fc2d71325c809e8054102477edecc1ddafa2df9215ad3b255de30f2",
+      "tests/test_scene_config.py": "f0669f3c70d8a2906e847dec7c114e6800da2a32a8e163a6068e58d7e271a899"
+    },
+    "read_only_protected_file_count": 72,
+    "all_hashes_unchanged_during_audit_write": true
+  }
+}

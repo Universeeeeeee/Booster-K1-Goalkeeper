@@ -1,0 +1,1145 @@
+{
+  "stage": "H4",
+  "protocol_sha256": "5113dccbd91a4540e266199b1a36f10beb9f927fcb6b4cfc573d7f7a8b036fe9",
+  "shots": [
+    {
+      "name": "air_high",
+      "launch": {
+        "position": [
+          4.0,
+          0.0,
+          0.2
+        ],
+        "velocity": [
+          8.0,
+          0.0,
+          5.424
+        ],
+        "angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "modes": {
+        "absent": {
+          "paths": [
+            "reports/defense_validation/goalkeeper/air_high_absent_r0",
+            "reports/defense_validation/goalkeeper/air_high_absent_r1"
+          ],
+          "trajectory_hashes": [
+            "967fa97c34ff39193a064f3525ca0a5e7612c2fb1eb7769be1feaf3631f41135",
+            "967fa97c34ff39193a064f3525ca0a5e7612c2fb1eb7769be1feaf3631f41135"
+          ],
+          "repeat_identical": true,
+          "completed": true,
+          "contact": false,
+          "right_goal": true,
+          "robot_contacts": [],
+          "fall_events": [],
+          "numerical_error": null,
+          "policy_stop": null,
+          "unexpected_contacts": [],
+          "h_guard": null,
+          "action_timing": null,
+          "minimum_base_height_m": null,
+          "maximum_tilt_degrees": null,
+          "arm_return_recovery": null,
+          "final_stop_recovery": null,
+          "blocked": false
+        },
+        "passive": {
+          "paths": [
+            "reports/defense_validation/goalkeeper/air_high_passive_r0",
+            "reports/defense_validation/goalkeeper/air_high_passive_r1"
+          ],
+          "trajectory_hashes": [
+            "1a79aebdfdf63f85031ed95ef4c057bcf4eae2c487596ba32f910bdd8b965b68",
+            "1a79aebdfdf63f85031ed95ef4c057bcf4eae2c487596ba32f910bdd8b965b68"
+          ],
+          "repeat_identical": true,
+          "completed": true,
+          "contact": false,
+          "right_goal": true,
+          "robot_contacts": [],
+          "fall_events": [],
+          "numerical_error": null,
+          "policy_stop": null,
+          "unexpected_contacts": [],
+          "h_guard": null,
+          "action_timing": null,
+          "minimum_base_height_m": 0.5467388461156403,
+          "maximum_tilt_degrees": 1.1906225153281245,
+          "arm_return_recovery": null,
+          "final_stop_recovery": {
+            "verified": true,
+            "stop_delay_s": 0.0,
+            "mean_body_velocity": [
+              1.1934833506440123e-05,
+              -7.165371248756679e-06,
+              5.275595204709078e-05
+            ],
+            "displacement_world": [
+              -0.001303170570880141,
+              0.001653573536118806,
+              1.1859251296986173e-05
+            ]
+          },
+          "blocked": false
+        },
+        "g_active": {
+          "paths": [
+            "reports/defense_validation/goalkeeper/air_high_g_active_r0",
+            "reports/defense_validation/goalkeeper/air_high_g_active_r1"
+          ],
+          "trajectory_hashes": [
+            "90141579985465289e0a454c1ff23a6d130c677507ef765b8ee50bb994ca6087",
+            "90141579985465289e0a454c1ff23a6d130c677507ef765b8ee50bb994ca6087"
+          ],
+          "repeat_identical": true,
+          "completed": true,
+          "contact": false,
+          "right_goal": true,
+          "robot_contacts": [],
+          "fall_events": [],
+          "numerical_error": null,
+          "policy_stop": null,
+          "unexpected_contacts": [],
+          "h_guard": null,
+          "action_timing": null,
+          "minimum_base_height_m": 0.5467388461156403,
+          "maximum_tilt_degrees": 1.1906225153281245,
+          "arm_return_recovery": null,
+          "final_stop_recovery": {
+            "verified": true,
+            "stop_delay_s": 0.0,
+            "mean_body_velocity": [
+              1.1934833506440123e-05,
+              -7.165371248756679e-06,
+              5.275595204709078e-05
+            ],
+            "displacement_world": [
+              -0.001303170570880141,
+              0.001653573536118806,
+              1.1859251296986173e-05
+            ]
+          },
+          "blocked": false
+        },
+        "h_stop_then_arm": {
+          "paths": [
+            "reports/defense_validation/goalkeeper/air_high_h_stop_then_arm_r0",
+            "reports/defense_validation/goalkeeper/air_high_h_stop_then_arm_r1"
+          ],
+          "trajectory_hashes": [
+            "433f5631c41549edd70d33a475583f52169c7f692377b5ca346ffc6854b7eb63",
+            "433f5631c41549edd70d33a475583f52169c7f692377b5ca346ffc6854b7eb63"
+          ],
+          "repeat_identical": true,
+          "completed": true,
+          "contact": false,
+          "right_goal": true,
+          "robot_contacts": [],
+          "fall_events": [],
+          "numerical_error": null,
+          "policy_stop": null,
+          "unexpected_contacts": [],
+          "h_guard": null,
+          "action_timing": {
+            "reference": "earliest actual robot contact or goal center-plane crossing",
+            "event_time_s": 2.8749999999998352,
+            "full_requested_pose_time_s": 4.09999999999988,
+            "full_requested_pose_before_event": false,
+            "full_requested_pose_held_at_event": false,
+            "requested_fraction_at_event": 0.2960735186767202,
+            "note": "requested envelope is not proof of actual pose tracking; actual qpos and targets saved"
+          },
+          "minimum_base_height_m": 0.5467388461156403,
+          "maximum_tilt_degrees": 1.1906225153281245,
+          "arm_return_recovery": {
+            "verified": true,
+            "stop_delay_s": 0.0,
+            "mean_body_velocity": [
+              1.2106144946655748e-05,
+              -7.455845502542919e-06,
+              5.4087607547012955e-05
+            ],
+            "displacement_world": [
+              0.0031634568417988618,
+              0.000358070895671679,
+              -3.988570193291796e-05
+            ]
+          },
+          "final_stop_recovery": {
+            "verified": true,
+            "stop_delay_s": 0.0,
+            "mean_body_velocity": [
+              1.2106144946655748e-05,
+              -7.455845502542919e-06,
+              5.4087607547012955e-05
+            ],
+            "displacement_world": [
+              -0.0012885271097804463,
+              0.0016532986290792144,
+              1.1944049797651957e-05
+            ]
+          },
+          "blocked": false
+        }
+      },
+      "added_over_G": false,
+      "lost_G_success": false
+    },
+    {
+      "name": "air_wide",
+      "launch": {
+        "position": [
+          4.0,
+          0.6,
+          0.2
+        ],
+        "velocity": [
+          8.0,
+          0.0,
+          4.3615
+        ],
+        "angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "modes": {
+        "absent": {
+          "paths": [
+            "reports/defense_validation/goalkeeper/air_wide_absent_r0",
+            "reports/defense_validation/goalkeeper/air_wide_absent_r1"
+          ],
+          "trajectory_hashes": [
+            "5adccac0f263b616ac3a44feeccceb9c30a10abae2ba33fe5afe42fddebf0119",
+            "5adccac0f263b616ac3a44feeccceb9c30a10abae2ba33fe5afe42fddebf0119"
+          ],
+          "repeat_identical": true,
+          "completed": true,
+          "contact": false,
+          "right_goal": true,
+          "robot_contacts": [],
+          "fall_events": [],
+          "numerical_error": null,
+          "policy_stop": null,
+          "unexpected_contacts": [],
+          "h_guard": null,
+          "action_timing": null,
+          "minimum_base_height_m": null,
+          "maximum_tilt_degrees": null,
+          "arm_return_recovery": null,
+          "final_stop_recovery": null,
+          "blocked": false
+        },
+        "passive": {
+          "paths": [
+            "reports/defense_validation/goalkeeper/air_wide_passive_r0",
+            "reports/defense_validation/goalkeeper/air_wide_passive_r1"
+          ],
+          "trajectory_hashes": [
+            "dc6400fc2a83044797ede6d986c75376d15c989cb086276791c34a8b9879b0d5",
+            "dc6400fc2a83044797ede6d986c75376d15c989cb086276791c34a8b9879b0d5"
+          ],
+          "repeat_identical": true,
+          "completed": true,
+          "contact": false,
+          "right_goal": true,
+          "robot_contacts": [],
+          "fall_events": [],
+          "numerical_error": null,
+          "policy_stop": null,
+          "unexpected_contacts": [],
+          "h_guard": null,
+          "action_timing": null,
+          "minimum_base_height_m": 0.5467388461156403,
+          "maximum_tilt_degrees": 1.1906225153281245,
+          "arm_return_recovery": null,
+          "final_stop_recovery": {
+            "verified": true,
+            "stop_delay_s": 0.0,
+            "mean_body_velocity": [
+              1.1934833506440123e-05,
+              -7.165371248756679e-06,
+              5.275595204709078e-05
+            ],
+            "displacement_world": [
+              -0.001303170570880141,
+              0.001653573536118806,
+              1.1859251296986173e-05
+            ]
+          },
+          "blocked": false
+        },
+        "g_active": {
+          "paths": [
+            "reports/defense_validation/goalkeeper/air_wide_g_active_r0",
+            "reports/defense_validation/goalkeeper/air_wide_g_active_r1"
+          ],
+          "trajectory_hashes": [
+            "7a06f11b6e3c5ebc14cd8a8bd439361a1fb68df592a5c7eb0bf116d6a66e4600",
+            "7a06f11b6e3c5ebc14cd8a8bd439361a1fb68df592a5c7eb0bf116d6a66e4600"
+          ],
+          "repeat_identical": true,
+          "completed": true,
+          "contact": false,
+          "right_goal": true,
+          "robot_contacts": [],
+          "fall_events": [],
+          "numerical_error": null,
+          "policy_stop": null,
+          "unexpected_contacts": [],
+          "h_guard": null,
+          "action_timing": null,
+          "minimum_base_height_m": 0.5467388461156403,
+          "maximum_tilt_degrees": 1.1906225153281245,
+          "arm_return_recovery": null,
+          "final_stop_recovery": {
+            "verified": true,
+            "stop_delay_s": 0.0,
+            "mean_body_velocity": [
+              1.1934833506440123e-05,
+              -7.165371248756679e-06,
+              5.275595204709078e-05
+            ],
+            "displacement_world": [
+              -0.001303170570880141,
+              0.001653573536118806,
+              1.1859251296986173e-05
+            ]
+          },
+          "blocked": false
+        },
+        "h_stop_then_arm": {
+          "paths": [
+            "reports/defense_validation/goalkeeper/air_wide_h_stop_then_arm_r0",
+            "reports/defense_validation/goalkeeper/air_wide_h_stop_then_arm_r1"
+          ],
+          "trajectory_hashes": [
+            "7cfe7f73d7fa30f4b168a1f038fb621604fb9f4e5896383c5ec2d8bfc063b727",
+            "7cfe7f73d7fa30f4b168a1f038fb621604fb9f4e5896383c5ec2d8bfc063b727"
+          ],
+          "repeat_identical": true,
+          "completed": true,
+          "contact": false,
+          "right_goal": true,
+          "robot_contacts": [],
+          "fall_events": [],
+          "numerical_error": null,
+          "policy_stop": null,
+          "unexpected_contacts": [],
+          "h_guard": null,
+          "action_timing": {
+            "reference": "earliest actual robot contact or goal center-plane crossing",
+            "event_time_s": 2.8749999999998352,
+            "full_requested_pose_time_s": 4.09999999999988,
+            "full_requested_pose_before_event": false,
+            "full_requested_pose_held_at_event": false,
+            "requested_fraction_at_event": 0.2960735186767202,
+            "note": "requested envelope is not proof of actual pose tracking; actual qpos and targets saved"
+          },
+          "minimum_base_height_m": 0.5467388461156403,
+          "maximum_tilt_degrees": 1.1906225153281245,
+          "arm_return_recovery": {
+            "verified": true,
+            "stop_delay_s": 0.0,
+            "mean_body_velocity": [
+              1.2106144946655748e-05,
+              -7.455845502542919e-06,
+              5.4087607547012955e-05
+            ],
+            "displacement_world": [
+              0.0031634568417988618,
+              0.000358070895671679,
+              -3.988570193291796e-05
+            ]
+          },
+          "final_stop_recovery": {
+            "verified": true,
+            "stop_delay_s": 0.0,
+            "mean_body_velocity": [
+              1.2106144946655748e-05,
+              -7.455845502542919e-06,
+              5.4087607547012955e-05
+            ],
+            "displacement_world": [
+              -0.0012885271097804463,
+              0.0016532986290792144,
+              1.1944049797651957e-05
+            ]
+          },
+          "blocked": false
+        }
+      },
+      "added_over_G": false,
+      "lost_G_success": false
+    },
+    {
+      "name": "air_center",
+      "launch": {
+        "position": [
+          4.0,
+          0.0,
+          0.2
+        ],
+        "velocity": [
+          8.0,
+          0.0,
+          4.3615
+        ],
+        "angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "modes": {
+        "absent": {
+          "paths": [
+            "reports/defense_validation/goalkeeper/air_center_absent_r0",
+            "reports/defense_validation/goalkeeper/air_center_absent_r1"
+          ],
+          "trajectory_hashes": [
+            "a5af8dd40b57eb05759cb584afde6b5fb0839b6a7b9efd0c0147c5311e2f0bb9",
+            "a5af8dd40b57eb05759cb584afde6b5fb0839b6a7b9efd0c0147c5311e2f0bb9"
+          ],
+          "repeat_identical": true,
+          "completed": true,
+          "contact": false,
+          "right_goal": true,
+          "robot_contacts": [],
+          "fall_events": [],
+          "numerical_error": null,
+          "policy_stop": null,
+          "unexpected_contacts": [],
+          "h_guard": null,
+          "action_timing": null,
+          "minimum_base_height_m": null,
+          "maximum_tilt_degrees": null,
+          "arm_return_recovery": null,
+          "final_stop_recovery": null,
+          "blocked": false
+        },
+        "passive": {
+          "paths": [
+            "reports/defense_validation/goalkeeper/air_center_passive_r0",
+            "reports/defense_validation/goalkeeper/air_center_passive_r1"
+          ],
+          "trajectory_hashes": [
+            "5b9d2649bb9981c823fd8dff5a20211390bc2e0e93e0312f7cafcf0efc3ffd03",
+            "5b9d2649bb9981c823fd8dff5a20211390bc2e0e93e0312f7cafcf0efc3ffd03"
+          ],
+          "repeat_identical": true,
+          "completed": true,
+          "contact": true,
+          "right_goal": false,
+          "robot_contacts": [
+            {
+              "kind": "robot",
+              "geom_id": 31,
+              "geom_name": "k1_geom_1",
+              "body": "trunk",
+              "start_time": 2.7809999999998047,
+              "end_time": 2.786999999999804,
+              "duration_s": 0.006,
+              "impulse_on_ball_world_ns": [
+                -4.700869236982499,
+                -0.020891812143160028,
+                0.5429326313180614
+              ],
+              "normal_impulse_ns": 4.704688439558232,
+              "peak_force_n": 1215.955493341606,
+              "ball_velocity_before": [
+                8.0,
+                0.0,
+                -3.3001099999999703
+              ],
+              "ball_velocity_after": [
+                -2.9322540394941856,
+                -0.0485856096352558,
+                -2.096335973678897
+              ]
+            }
+          ],
+          "fall_events": [],
+          "numerical_error": null,
+          "policy_stop": null,
+          "unexpected_contacts": [],
+          "h_guard": null,
+          "action_timing": null,
+          "minimum_base_height_m": 0.5335517471780977,
+          "maximum_tilt_degrees": 2.5311223982697273,
+          "arm_return_recovery": null,
+          "final_stop_recovery": {
+            "verified": true,
+            "stop_delay_s": 2.200000000000002,
+            "mean_body_velocity": [
+              9.2877873027544e-07,
+              -5.016483214065337e-06,
+              4.3482360858457456e-05
+            ],
+            "displacement_world": [
+              -0.002897313380476163,
+              0.0020001256450008793,
+              1.1350313304681059e-05
+            ]
+          },
+          "blocked": true
+        },
+        "g_active": {
+          "paths": [
+            "reports/defense_validation/goalkeeper/air_center_g_active_r0",
+            "reports/defense_validation/goalkeeper/air_center_g_active_r1"
+          ],
+          "trajectory_hashes": [
+            "8480aea313d7bf5a870bc617ee2293038fa50156586a0d7478cab413dfdf7b46",
+            "8480aea313d7bf5a870bc617ee2293038fa50156586a0d7478cab413dfdf7b46"
+          ],
+          "repeat_identical": true,
+          "completed": true,
+          "contact": true,
+          "right_goal": false,
+          "robot_contacts": [
+            {
+              "kind": "robot",
+              "geom_id": 31,
+              "geom_name": "k1_geom_1",
+              "body": "trunk",
+              "start_time": 2.7809999999998047,
+              "end_time": 2.786999999999804,
+              "duration_s": 0.006,
+              "impulse_on_ball_world_ns": [
+                -4.700869236982499,
+                -0.020891812143160028,
+                0.5429326313180614
+              ],
+              "normal_impulse_ns": 4.704688439558232,
+              "peak_force_n": 1215.955493341606,
+              "ball_velocity_before": [
+                8.0,
+                0.0,
+                -3.3001099999999703
+              ],
+              "ball_velocity_after": [
+                -2.9322540394941856,
+                -0.0485856096352558,
+                -2.096335973678897
+              ]
+            }
+          ],
+          "fall_events": [],
+          "numerical_error": null,
+          "policy_stop": null,
+          "unexpected_contacts": [],
+          "h_guard": null,
+          "action_timing": null,
+          "minimum_base_height_m": 0.5335517471780977,
+          "maximum_tilt_degrees": 2.5311223982697273,
+          "arm_return_recovery": null,
+          "final_stop_recovery": {
+            "verified": true,
+            "stop_delay_s": 2.200000000000002,
+            "mean_body_velocity": [
+              9.2877873027544e-07,
+              -5.016483214065337e-06,
+              4.3482360858457456e-05
+            ],
+            "displacement_world": [
+              -0.002897313380476163,
+              0.0020001256450008793,
+              1.1350313304681059e-05
+            ]
+          },
+          "blocked": true
+        },
+        "h_stop_then_arm": {
+          "paths": [
+            "reports/defense_validation/goalkeeper/air_center_h_stop_then_arm_r0",
+            "reports/defense_validation/goalkeeper/air_center_h_stop_then_arm_r1"
+          ],
+          "trajectory_hashes": [
+            "e704b0bcd9e240e81820293f99d9b6684867bcd410299a7b76cb00bbc46c2a1d",
+            "e704b0bcd9e240e81820293f99d9b6684867bcd410299a7b76cb00bbc46c2a1d"
+          ],
+          "repeat_identical": true,
+          "completed": true,
+          "contact": true,
+          "right_goal": false,
+          "robot_contacts": [
+            {
+              "kind": "robot",
+              "geom_id": 31,
+              "geom_name": "k1_geom_1",
+              "body": "trunk",
+              "start_time": 2.7809999999998047,
+              "end_time": 2.786999999999804,
+              "duration_s": 0.006,
+              "impulse_on_ball_world_ns": [
+                -4.707607150735565,
+                -0.02090437032858212,
+                0.5399206982451521
+              ],
+              "normal_impulse_ns": 4.7109470758247785,
+              "peak_force_n": 1222.6813794588065,
+              "ball_velocity_before": [
+                8.0,
+                0.0,
+                -3.3001099999999703
+              ],
+              "ball_velocity_after": [
+                -2.9479236063617793,
+                -0.04861481471763286,
+                -2.103340469197291
+              ]
+            }
+          ],
+          "fall_events": [],
+          "numerical_error": null,
+          "policy_stop": null,
+          "unexpected_contacts": [],
+          "h_guard": null,
+          "action_timing": {
+            "reference": "earliest actual robot contact or goal center-plane crossing",
+            "event_time_s": 2.7809999999998047,
+            "full_requested_pose_time_s": 4.09999999999988,
+            "full_requested_pose_before_event": false,
+            "full_requested_pose_held_at_event": false,
+            "requested_fraction_at_event": 0.22060672292664346,
+            "note": "requested envelope is not proof of actual pose tracking; actual qpos and targets saved"
+          },
+          "minimum_base_height_m": 0.5325371707129977,
+          "maximum_tilt_degrees": 2.4236827308907753,
+          "arm_return_recovery": {
+            "verified": true,
+            "stop_delay_s": 0.0,
+            "mean_body_velocity": [
+              -1.4307845823029143e-06,
+              -2.9315355772415094e-06,
+              3.385451802561365e-05
+            ],
+            "displacement_world": [
+              0.00349288937092318,
+              0.00013011307908982785,
+              -2.6806325241324203e-05
+            ]
+          },
+          "final_stop_recovery": {
+            "verified": true,
+            "stop_delay_s": 2.200000000000002,
+            "mean_body_velocity": [
+              -1.4307845823029143e-06,
+              -2.9315355772415094e-06,
+              3.385451802561365e-05
+            ],
+            "displacement_world": [
+              -0.0033504524203067376,
+              0.001767729525845893,
+              9.898216764114842e-06
+            ]
+          },
+          "blocked": true
+        }
+      },
+      "added_over_G": false,
+      "lost_G_success": false
+    },
+    {
+      "name": "air_low_right",
+      "launch": {
+        "position": [
+          3,
+          0.28,
+          0.2
+        ],
+        "velocity": [
+          7,
+          0,
+          5.677177606177607
+        ],
+        "angular_velocity": [
+          0,
+          0,
+          0
+        ]
+      },
+      "modes": {
+        "absent": {
+          "paths": [
+            "reports/defense_validation/goalkeeper/air_low_right_absent_r0",
+            "reports/defense_validation/goalkeeper/air_low_right_absent_r1"
+          ],
+          "trajectory_hashes": [
+            "319984b093d79470022f60a9cd1f746fc13b7181e9134c3024768e86ed255ef1",
+            "319984b093d79470022f60a9cd1f746fc13b7181e9134c3024768e86ed255ef1"
+          ],
+          "repeat_identical": true,
+          "completed": true,
+          "contact": false,
+          "right_goal": true,
+          "robot_contacts": [],
+          "fall_events": [],
+          "numerical_error": null,
+          "policy_stop": null,
+          "unexpected_contacts": [],
+          "h_guard": null,
+          "action_timing": null,
+          "minimum_base_height_m": null,
+          "maximum_tilt_degrees": null,
+          "arm_return_recovery": null,
+          "final_stop_recovery": null,
+          "blocked": false
+        },
+        "passive": {
+          "paths": [
+            "reports/defense_validation/goalkeeper/air_low_right_passive_r0",
+            "reports/defense_validation/goalkeeper/air_low_right_passive_r1"
+          ],
+          "trajectory_hashes": [
+            "d3d7cd596062893780aeb77ca8a3cb341b56e1242e3aa3279ed99b9b49a87541",
+            "d3d7cd596062893780aeb77ca8a3cb341b56e1242e3aa3279ed99b9b49a87541"
+          ],
+          "repeat_identical": true,
+          "completed": true,
+          "contact": true,
+          "right_goal": true,
+          "robot_contacts": [
+            {
+              "kind": "robot",
+              "geom_id": 47,
+              "geom_name": "k1_geom_17",
+              "body": "right_shoulder_roll_link",
+              "start_time": 3.049999999999775,
+              "end_time": 3.0549999999997746,
+              "duration_s": 0.005,
+              "impulse_on_ball_world_ns": [
+                -0.9393471452091597,
+                1.2349515265260396,
+                0.5754040395150366
+              ],
+              "normal_impulse_ns": 1.5156808599319638,
+              "peak_force_n": 628.6858191353978,
+              "ball_velocity_before": [
+                7.0,
+                5.146054152565142e-48,
+                -4.62332239382233
+              ],
+              "ball_velocity_after": [
+                4.815471755327535,
+                2.8719802942466024,
+                -3.3342234647175935
+              ]
+            }
+          ],
+          "fall_events": [],
+          "numerical_error": null,
+          "policy_stop": null,
+          "unexpected_contacts": [],
+          "h_guard": null,
+          "action_timing": null,
+          "minimum_base_height_m": 0.5467388461156403,
+          "maximum_tilt_degrees": 1.1906225153281245,
+          "arm_return_recovery": null,
+          "final_stop_recovery": {
+            "verified": true,
+            "stop_delay_s": 0.0,
+            "mean_body_velocity": [
+              1.131077085373987e-05,
+              -5.288392038719343e-06,
+              4.461990796612999e-05
+            ],
+            "displacement_world": [
+              -0.0013480108585017803,
+              0.0016790126129167177,
+              1.2043083566948276e-05
+            ]
+          },
+          "blocked": false
+        },
+        "g_active": {
+          "paths": [
+            "reports/defense_validation/goalkeeper/air_low_right_g_active_r0",
+            "reports/defense_validation/goalkeeper/air_low_right_g_active_r1"
+          ],
+          "trajectory_hashes": [
+            "76038fe25b63d8dc35ea2abfe93bfc1ef50178a6df40d248539e215e5c85668d",
+            "76038fe25b63d8dc35ea2abfe93bfc1ef50178a6df40d248539e215e5c85668d"
+          ],
+          "repeat_identical": true,
+          "completed": true,
+          "contact": true,
+          "right_goal": true,
+          "robot_contacts": [
+            {
+              "kind": "robot",
+              "geom_id": 47,
+              "geom_name": "k1_geom_17",
+              "body": "right_shoulder_roll_link",
+              "start_time": 3.049999999999775,
+              "end_time": 3.0549999999997746,
+              "duration_s": 0.005,
+              "impulse_on_ball_world_ns": [
+                -0.9393471452091597,
+                1.2349515265260396,
+                0.5754040395150366
+              ],
+              "normal_impulse_ns": 1.5156808599319638,
+              "peak_force_n": 628.6858191353978,
+              "ball_velocity_before": [
+                7.0,
+                5.146054152565142e-48,
+                -4.62332239382233
+              ],
+              "ball_velocity_after": [
+                4.815471755327535,
+                2.8719802942466024,
+                -3.3342234647175935
+              ]
+            }
+          ],
+          "fall_events": [],
+          "numerical_error": null,
+          "policy_stop": null,
+          "unexpected_contacts": [],
+          "h_guard": null,
+          "action_timing": null,
+          "minimum_base_height_m": 0.5467388461156403,
+          "maximum_tilt_degrees": 1.1906225153281245,
+          "arm_return_recovery": null,
+          "final_stop_recovery": {
+            "verified": true,
+            "stop_delay_s": 0.0,
+            "mean_body_velocity": [
+              1.131077085373987e-05,
+              -5.288392038719343e-06,
+              4.461990796612999e-05
+            ],
+            "displacement_world": [
+              -0.0013480108585017803,
+              0.0016790126129167177,
+              1.2043083566948276e-05
+            ]
+          },
+          "blocked": false
+        },
+        "h_stop_then_arm": {
+          "paths": [
+            "reports/defense_validation/goalkeeper/air_low_right_h_stop_then_arm_r0",
+            "reports/defense_validation/goalkeeper/air_low_right_h_stop_then_arm_r1"
+          ],
+          "trajectory_hashes": [
+            "4235e264a8552e954b878c6707b25cff96abaffbaf9e89ab85c13413f67f2a52",
+            "4235e264a8552e954b878c6707b25cff96abaffbaf9e89ab85c13413f67f2a52"
+          ],
+          "repeat_identical": true,
+          "completed": true,
+          "contact": true,
+          "right_goal": true,
+          "robot_contacts": [
+            {
+              "kind": "robot",
+              "geom_id": 47,
+              "geom_name": "k1_geom_17",
+              "body": "right_shoulder_roll_link",
+              "start_time": 3.049999999999775,
+              "end_time": 3.052999999999775,
+              "duration_s": 0.003,
+              "impulse_on_ball_world_ns": [
+                -0.7050069328846347,
+                0.8788189272610089,
+                0.4286170881926984
+              ],
+              "normal_impulse_ns": 1.101908237264402,
+              "peak_force_n": 638.1308726631056,
+              "ball_velocity_before": [
+                7.0,
+                5.146054152565142e-48,
+                -4.62332239382233
+              ],
+              "ball_velocity_after": [
+                4.964822677007738,
+                2.3989736807132815,
+                -3.2835602540227713
+              ]
+            },
+            {
+              "kind": "robot",
+              "geom_id": 49,
+              "geom_name": "k1_geom_19",
+              "body": "right_elbow_pitch_link",
+              "start_time": 3.051999999999775,
+              "end_time": 3.0569999999997743,
+              "duration_s": 0.005,
+              "impulse_on_ball_world_ns": [
+                -0.5768994612429406,
+                0.5426506343628421,
+                0.5120174560586316
+              ],
+              "normal_impulse_ns": 0.8621159079383962,
+              "peak_force_n": 279.1297245982084,
+              "ball_velocity_before": [
+                5.470874600107796,
+                1.9247568826206813,
+                -3.6672875039322377
+              ],
+              "ball_velocity_after": [
+                4.018822339238197,
+                3.305743166567095,
+                -2.5044701978890043
+              ]
+            }
+          ],
+          "fall_events": [],
+          "numerical_error": null,
+          "policy_stop": null,
+          "unexpected_contacts": [],
+          "h_guard": null,
+          "action_timing": {
+            "reference": "earliest actual robot contact or goal center-plane crossing",
+            "event_time_s": 3.049999999999775,
+            "full_requested_pose_time_s": 4.09999999999988,
+            "full_requested_pose_before_event": false,
+            "full_requested_pose_held_at_event": false,
+            "requested_fraction_at_event": 0.4532030664061524,
+            "note": "requested envelope is not proof of actual pose tracking; actual qpos and targets saved"
+          },
+          "minimum_base_height_m": 0.5467388461156403,
+          "maximum_tilt_degrees": 1.1906225153281245,
+          "arm_return_recovery": {
+            "verified": true,
+            "stop_delay_s": 0.0,
+            "mean_body_velocity": [
+              1.1766844353809029e-05,
+              -5.077679611581012e-06,
+              4.372189102972734e-05
+            ],
+            "displacement_world": [
+              0.0031770336718892622,
+              0.0002309033805401521,
+              -3.9156282193419933e-05
+            ]
+          },
+          "final_stop_recovery": {
+            "verified": true,
+            "stop_delay_s": 0.0,
+            "mean_body_velocity": [
+              1.1766844353809029e-05,
+              -5.077679611581012e-06,
+              4.372189102972734e-05
+            ],
+            "displacement_world": [
+              -0.001315056469001874,
+              0.0016625084818942587,
+              1.2038006018566527e-05
+            ]
+          },
+          "blocked": false
+        }
+      },
+      "added_over_G": false,
+      "lost_G_success": false
+    },
+    {
+      "name": "air_high_left",
+      "launch": {
+        "position": [
+          5,
+          -0.15,
+          0.25
+        ],
+        "velocity": [
+          9,
+          0,
+          4.609666666666667
+        ],
+        "angular_velocity": [
+          0,
+          0,
+          0
+        ]
+      },
+      "modes": {
+        "absent": {
+          "paths": [
+            "reports/defense_validation/goalkeeper/air_high_left_absent_r0",
+            "reports/defense_validation/goalkeeper/air_high_left_absent_r1"
+          ],
+          "trajectory_hashes": [
+            "c0c9b968d19f905071a5d385a584bf4382830923e5102912c428b22b93c7b849",
+            "c0c9b968d19f905071a5d385a584bf4382830923e5102912c428b22b93c7b849"
+          ],
+          "repeat_identical": true,
+          "completed": true,
+          "contact": false,
+          "right_goal": true,
+          "robot_contacts": [],
+          "fall_events": [],
+          "numerical_error": null,
+          "policy_stop": null,
+          "unexpected_contacts": [],
+          "h_guard": null,
+          "action_timing": null,
+          "minimum_base_height_m": null,
+          "maximum_tilt_degrees": null,
+          "arm_return_recovery": null,
+          "final_stop_recovery": null,
+          "blocked": false
+        },
+        "passive": {
+          "paths": [
+            "reports/defense_validation/goalkeeper/air_high_left_passive_r0",
+            "reports/defense_validation/goalkeeper/air_high_left_passive_r1"
+          ],
+          "trajectory_hashes": [
+            "190977654c43dca9c08a119fba81d97347fbed1bbaa82f8643ac0fdedf3f9ffc",
+            "190977654c43dca9c08a119fba81d97347fbed1bbaa82f8643ac0fdedf3f9ffc"
+          ],
+          "repeat_identical": true,
+          "completed": true,
+          "contact": false,
+          "right_goal": true,
+          "robot_contacts": [],
+          "fall_events": [],
+          "numerical_error": null,
+          "policy_stop": null,
+          "unexpected_contacts": [],
+          "h_guard": null,
+          "action_timing": null,
+          "minimum_base_height_m": 0.5467388461156403,
+          "maximum_tilt_degrees": 1.1906225153281245,
+          "arm_return_recovery": null,
+          "final_stop_recovery": {
+            "verified": true,
+            "stop_delay_s": 0.0,
+            "mean_body_velocity": [
+              1.1934833506440123e-05,
+              -7.165371248756679e-06,
+              5.275595204709078e-05
+            ],
+            "displacement_world": [
+              -0.001303170570880141,
+              0.001653573536118806,
+              1.1859251296986173e-05
+            ]
+          },
+          "blocked": false
+        },
+        "g_active": {
+          "paths": [
+            "reports/defense_validation/goalkeeper/air_high_left_g_active_r0",
+            "reports/defense_validation/goalkeeper/air_high_left_g_active_r1"
+          ],
+          "trajectory_hashes": [
+            "27694fc2a76a081b8388bbd76564b77cf938effec8c38251435a6806af587a84",
+            "27694fc2a76a081b8388bbd76564b77cf938effec8c38251435a6806af587a84"
+          ],
+          "repeat_identical": true,
+          "completed": true,
+          "contact": false,
+          "right_goal": true,
+          "robot_contacts": [],
+          "fall_events": [],
+          "numerical_error": null,
+          "policy_stop": null,
+          "unexpected_contacts": [],
+          "h_guard": null,
+          "action_timing": null,
+          "minimum_base_height_m": 0.5467388461156403,
+          "maximum_tilt_degrees": 1.1906225153281245,
+          "arm_return_recovery": null,
+          "final_stop_recovery": {
+            "verified": true,
+            "stop_delay_s": 0.0,
+            "mean_body_velocity": [
+              1.1934833506440123e-05,
+              -7.165371248756679e-06,
+              5.275595204709078e-05
+            ],
+            "displacement_world": [
+              -0.001303170570880141,
+              0.001653573536118806,
+              1.1859251296986173e-05
+            ]
+          },
+          "blocked": false
+        },
+        "h_stop_then_arm": {
+          "paths": [
+            "reports/defense_validation/goalkeeper/air_high_left_h_stop_then_arm_r0",
+            "reports/defense_validation/goalkeeper/air_high_left_h_stop_then_arm_r1"
+          ],
+          "trajectory_hashes": [
+            "4a5daaaebb7c00aad70edfe64a26269439a7e2a243cdc01d548d15af78853830",
+            "4a5daaaebb7c00aad70edfe64a26269439a7e2a243cdc01d548d15af78853830"
+          ],
+          "repeat_identical": true,
+          "completed": true,
+          "contact": false,
+          "right_goal": true,
+          "robot_contacts": [],
+          "fall_events": [],
+          "numerical_error": null,
+          "policy_stop": null,
+          "unexpected_contacts": [],
+          "h_guard": null,
+          "action_timing": {
+            "reference": "earliest actual robot contact or goal center-plane crossing",
+            "event_time_s": 2.6666666666664587,
+            "full_requested_pose_time_s": 4.09999999999988,
+            "full_requested_pose_before_event": false,
+            "full_requested_pose_held_at_event": false,
+            "requested_fraction_at_event": 0.14174156635797042,
+            "note": "requested envelope is not proof of actual pose tracking; actual qpos and targets saved"
+          },
+          "minimum_base_height_m": 0.5467388461156403,
+          "maximum_tilt_degrees": 1.1906225153281245,
+          "arm_return_recovery": {
+            "verified": true,
+            "stop_delay_s": 0.0,
+            "mean_body_velocity": [
+              1.2106144946655748e-05,
+              -7.455845502542919e-06,
+              5.4087607547012955e-05
+            ],
+            "displacement_world": [
+              0.0031634568417988618,
+              0.000358070895671679,
+              -3.988570193291796e-05
+            ]
+          },
+          "final_stop_recovery": {
+            "verified": true,
+            "stop_delay_s": 0.0,
+            "mean_body_velocity": [
+              1.2106144946655748e-05,
+              -7.455845502542919e-06,
+              5.4087607547012955e-05
+            ],
+            "displacement_world": [
+              -0.0012885271097804463,
+              0.0016532986290792144,
+              1.1944049797651957e-05
+            ]
+          },
+          "blocked": false
+        }
+      },
+      "added_over_G": false,
+      "lost_G_success": false
+    }
+  ],
+  "all_repeats_identical": true,
+  "protected_files_unchanged": true,
+  "code_unchanged": true,
+  "summary": {
+    "absent": 0,
+    "passive": 1,
+    "g_active": 1,
+    "h_stop_then_arm": 1,
+    "added": 0,
+    "lost": 0
+  }
+}

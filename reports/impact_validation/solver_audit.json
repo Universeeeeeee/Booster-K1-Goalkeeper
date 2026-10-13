@@ -1,0 +1,1022 @@
+{
+  "official_solver_termination_reference": "https://mujoco.readthedocs.io/en/3.3.7/XMLreference.html#option-tolerance",
+  "termination_rule": "Newton stops when the smaller of normalized cost improvement and gradient norm is below tolerance. All six worst steps have improvement below the unchanged 1e-6 tolerance and finite gradient.",
+  "mujoco_version": "3.3.7",
+  "generation": ".venv/bin/python scripts/audit_impact_solver.py",
+  "strict_momentum_tolerance_ns": 1e-06,
+  "strict_precision_miss_case_count": 6,
+  "parameters_modified": false,
+  "protected_sha256_before": {
+    "assets/booster_assets/robots/K1/K1_22dof.xml": "1f1a1cdd451f777600c66fc30ad8d7537198ee7bc51f8ed20d67a51b5001a651",
+    "assets/booster_deploy/tasks/locomotion/robots/k1/models/k1_walk.pt": "2d860167ed827e8d44cd65abd4c27f474904352bcb98c0cfa97c078f63e2fea5",
+    "models/futsal_goal_3x2_reference.urdf": "10f67364f44a02182989416b7cce6b9d4f768fea411d44db6ccec08d9ffbfa2b",
+    "k1_goalkeeper/walk_controller.py": "57f108fc91dcf90416b8acb08d9c1bc7920bb733b7272968e87967f1fabe5144",
+    "k1_goalkeeper/scene_simulation.py": "20caab5441a7b75319bca59999be018d71780ee0f960f5aa3eab1cda7b18f388",
+    "config/simulation.json": "d8b7f8ee51a0e2032ee23073048313fb68f70c30d240b65636d073c6c76da92f"
+  },
+  "protected_sha256_after": {
+    "assets/booster_assets/robots/K1/K1_22dof.xml": "1f1a1cdd451f777600c66fc30ad8d7537198ee7bc51f8ed20d67a51b5001a651",
+    "assets/booster_deploy/tasks/locomotion/robots/k1/models/k1_walk.pt": "2d860167ed827e8d44cd65abd4c27f474904352bcb98c0cfa97c078f63e2fea5",
+    "models/futsal_goal_3x2_reference.urdf": "10f67364f44a02182989416b7cce6b9d4f768fea411d44db6ccec08d9ffbfa2b",
+    "k1_goalkeeper/walk_controller.py": "57f108fc91dcf90416b8acb08d9c1bc7920bb733b7272968e87967f1fabe5144",
+    "k1_goalkeeper/scene_simulation.py": "20caab5441a7b75319bca59999be018d71780ee0f960f5aa3eab1cda7b18f388",
+    "config/simulation.json": "d8b7f8ee51a0e2032ee23073048313fb68f70c30d240b65636d073c6c76da92f"
+  },
+  "protected_unchanged": true,
+  "input_and_audit_code_sha256": {
+    "reports/impact_validation/results.json": "b6d6e1741b59316554d19ff14adf552e9310fc2098183bea3523aa3778f85882",
+    "k1_goalkeeper/impact_validation.py": "c13b126cdb3b701f2a661082a4ce0878f3b1acad20e96635c733c67fd8dc0d8d",
+    "scripts/audit_impact_solver.py": "ed3bcb66a8cb75b474ad5ad57ae2faa022c7ca1b3348b736c74e2b764442898c",
+    "reports/impact_validation/scene_free.xml": "9ffa16f227c9e54ea36fd58c84c826224f21d832076bc8b3b517edd4ee481875",
+    "reports/impact_validation/eccentric_-1_4/summary.json": "42d15b4a32102d11663dea64ca8e93489e99c7dbd6606818f28589203e6faa40",
+    "reports/impact_validation/left_foot_2/summary.json": "c1790bdb85cbf1fd1982ce43cc585b71a89e163a24441b705f6254770e8e7087",
+    "reports/impact_validation/left_shank_8/summary.json": "768363357b0038b42b1bb6f658c5653734fe6b4d4e4a9d2fa4f0cbad5664c09c",
+    "reports/impact_validation/right_foot_2/summary.json": "3cf4e98192a7301d06a111924ae7d9d4b51db7d43f3d937ba4ba764e1b1c3335",
+    "reports/impact_validation/scene_absent.xml": "506dc57d046152cd43788624be80b3cd17287c247d22863bc4e2d9ea7b3b193a",
+    "reports/impact_validation/absent_moving_8/summary.json": "9a3c81c49d4c16570b9b2bffbe6937f7c937ae64e568a04e7ff6c9bb67b8b088",
+    "reports/impact_validation/absent_right_forearm_2/summary.json": "3f6ab2fd66914df538f3172a6c63a98dd4307c920b6cacb3de859c1cf33e7be1"
+  },
+  "methods": [
+    "Contact-frame forces on the ball summed independently and compared with qfrc_constraint translation DOFs.",
+    "Delivered delta velocity compared with native qacc * timestep.",
+    "Momentum residual compared with timestep * (mass*qacc-qfrc_smooth-qfrc_constraint).",
+    "Ball solver island identified from dof_island; solver statistics indexed with island*mjNSOLVER+iteration."
+  ],
+  "assessment": "The strict 1e-6 Ns criterion remains unmet in these cases. Native-force reconstruction and integration are correct; official Newton termination with finite dynamics gradient explains the residual. This is a solver accuracy limitation, not NaN instability or a reconstruction error. No tolerance or physics parameter is changed.",
+  "all_trajectories_identical": true,
+  "results": [
+    {
+      "case": "eccentric_-1_4",
+      "case_parameters": {
+        "name": "eccentric_-1_4",
+        "target_body": "trunk",
+        "speed": 4,
+        "offset_y": -0.07,
+        "robot_mode": "free",
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "moving_duration": 0.0,
+        "miss": false,
+        "duration": 6.0,
+        "seed": 0,
+        "target_geom_index": 0
+      },
+      "recorded_launch": {
+        "position": [
+          9.942152149626871,
+          -0.0691568797624032,
+          0.6509177129814926
+        ],
+        "velocity": [
+          4,
+          0,
+          0.367875
+        ],
+        "angular_velocity": [
+          0,
+          0,
+          0
+        ],
+        "target_geom_id": 31,
+        "target_body": "trunk",
+        "target_geom_center_world": [
+          10.413287841660193,
+          0.0008431202375968123,
+          0.6509177129814926
+        ],
+        "nominal_free_flight_s": 0.075,
+        "construction": "0.3m gap from collider front plus ball radius; ballistic aim or rolling foot input",
+        "time": 1.9999999999998905,
+        "initial_overlap": false
+      },
+      "strict_momentum_precision_passed": false,
+      "max_force_reconstruction_error_n": 1.1368683772161603e-13,
+      "max_integration_error_m_s": 2.220446049250313e-16,
+      "max_gradient_explanation_error_ns": 2.220446049250313e-16,
+      "max_residual_robot_contact_ns": 2.220446049250313e-16,
+      "largest": {
+        "before_time": 2.9379999999997874,
+        "after_time": 2.9389999999997873,
+        "force_contacts_world_n": [
+          0.000691437587583289,
+          0.0,
+          5.124280242826782
+        ],
+        "qfrc_constraint_ball_n": [
+          0.000691437587583289,
+          0.0,
+          5.124280242826782
+        ],
+        "qfrc_smooth_ball_n": [
+          8.673617379884035e-19,
+          -2.7755575615628914e-17,
+          -4.218300000000001
+        ],
+        "qfrc_bias_ball_n": [
+          -8.673617379884035e-19,
+          2.7755575615628914e-17,
+          4.218300000000001
+        ],
+        "qfrc_passive_ball_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ball_qacc": [
+          0.0016079784141275664,
+          -6.122236907193546e-18,
+          2.1042544659695177
+        ],
+        "ball_delta_velocity": [
+          1.6079784140865527e-06,
+          0.0,
+          0.0021042544659695176
+        ],
+        "delta_velocity_minus_accdt": [
+          -4.101375882252685e-17,
+          6.122236907193546e-21,
+          0.0
+        ],
+        "contact_force_minus_constraint_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dynamics_gradient_ball_n": [
+          -6.869508436375092e-09,
+          2.512301374553569e-17,
+          -0.001150822459888623
+        ],
+        "momentum_residual_ns": [
+          -6.869526071341015e-12,
+          0.0,
+          -1.1508224598896907e-06
+        ],
+        "ball_solver_island": 1,
+        "solver_niter": [
+          1,
+          2
+        ],
+        "ball_solver_stats": [
+          {
+            "gradient": 0.0007261460314655925,
+            "improvement": 1.794923244200957,
+            "lineslope": 9.358352159717914e-16,
+            "nactive": 1.0,
+            "nchange": 1.0,
+            "neval": 10.0,
+            "nupdate": 1.0
+          },
+          {
+            "gradient": 0.0008849716893148577,
+            "improvement": 8.909018528556023e-07,
+            "lineslope": 7.279947503736072e-20,
+            "nactive": 2.0,
+            "nchange": 1.0,
+            "neval": 5.0,
+            "nupdate": 1.0
+          }
+        ],
+        "contacts": [
+          {
+            "geom": "ground",
+            "force_world_n": [
+              0.000691437587583289,
+              0.0,
+              5.124280242826782
+            ],
+            "normal_n": 5.124280242826782,
+            "dist_m": -1.1433561904916623e-05,
+            "efc_address": 32
+          }
+        ]
+      },
+      "solver_tolerance": 1e-06,
+      "solver_iterations": 100,
+      "parameters_modified": false,
+      "numerical_error": null,
+      "completed": true,
+      "reproduced_trajectory_hash": "41b56af6bbb6c0942bfea262761da440ba3322e398d95d781e9a6e2608bb765f",
+      "original_trajectory_hash": "41b56af6bbb6c0942bfea262761da440ba3322e398d95d781e9a6e2608bb765f",
+      "identical_trajectory": true
+    },
+    {
+      "case": "left_foot_2",
+      "case_parameters": {
+        "name": "left_foot_2",
+        "target_body": "left_ankle_roll_link",
+        "speed": 2,
+        "offset_y": 0.0,
+        "robot_mode": "free",
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "moving_duration": 0.0,
+        "miss": false,
+        "duration": 6.0,
+        "seed": 0,
+        "target_geom_index": 0
+      },
+      "recorded_launch": {
+        "position": [
+          9.882301282310328,
+          -0.09990195817010995,
+          0.111
+        ],
+        "velocity": [
+          2,
+          0,
+          0
+        ],
+        "angular_velocity": [
+          0,
+          18.181818181818183,
+          0
+        ],
+        "target_geom_id": 62,
+        "target_body": "left_ankle_roll_link",
+        "target_geom_center_world": [
+          10.383521728606082,
+          -0.09990195817010995,
+          0.017999545499489206
+        ],
+        "nominal_free_flight_s": 0.15,
+        "construction": "0.3m gap from collider front plus ball radius; ballistic aim or rolling foot input",
+        "time": 1.9999999999998905,
+        "initial_overlap": false
+      },
+      "strict_momentum_precision_passed": false,
+      "max_force_reconstruction_error_n": 2.842170943040401e-14,
+      "max_integration_error_m_s": 1.1102230246251565e-16,
+      "max_gradient_explanation_error_ns": 7.005507285384738e-17,
+      "max_residual_robot_contact_ns": 1.8214596497756474e-16,
+      "largest": {
+        "before_time": 2.7479999999998084,
+        "after_time": 2.7489999999998083,
+        "force_contacts_world_n": [
+          -0.007454898548380719,
+          0.0021677838752260656,
+          5.363268402973358
+        ],
+        "qfrc_constraint_ball_n": [
+          -0.007454898548380719,
+          0.0021677838752260656,
+          5.363268402973358
+        ],
+        "qfrc_smooth_ball_n": [
+          0.0,
+          -7.806255641895632e-18,
+          -4.2183
+        ],
+        "qfrc_bias_ball_n": [
+          0.0,
+          7.806255641895632e-18,
+          4.2183
+        ],
+        "qfrc_passive_ball_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ball_qacc": [
+          -0.01679148243987569,
+          0.0017926794554780625,
+          2.628427253930309
+        ],
+        "ball_delta_velocity": [
+          -1.6791482439881822e-05,
+          1.792679455478452e-06,
+          0.002628427253930309
+        ],
+        "delta_velocity_minus_accdt": [
+          -6.129130406332117e-18,
+          3.894233975001646e-19,
+          0.0
+        ],
+        "contact_force_minus_constraint_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dynamics_gradient_ball_n": [
+          0.00023456109923417155,
+          -0.0013969317093704909,
+          -0.014744683783325385
+        ],
+        "momentum_residual_ns": [
+          2.3456109923153547e-07,
+          -1.3969317093703315e-06,
+          -1.4744683783325446e-05
+        ],
+        "ball_solver_island": 1,
+        "solver_niter": [
+          1,
+          3
+        ],
+        "ball_solver_stats": [
+          {
+            "gradient": 0.0060585096738177075,
+            "improvement": 0.4758726701740457,
+            "lineslope": 4.4208216803783637e-16,
+            "nactive": 3.0,
+            "nchange": 3.0,
+            "neval": 13.0,
+            "nupdate": 3.0
+          },
+          {
+            "gradient": 0.009627691341722037,
+            "improvement": 1.7807190478869664e-05,
+            "lineslope": 3.61757734428349e-19,
+            "nactive": 4.0,
+            "nchange": 1.0,
+            "neval": 7.0,
+            "nupdate": 1.0
+          },
+          {
+            "gradient": 0.011391753351580245,
+            "improvement": 7.52009024024785e-07,
+            "lineslope": 3.041179446728213e-19,
+            "nactive": 5.0,
+            "nchange": 1.0,
+            "neval": 5.0,
+            "nupdate": 1.0
+          }
+        ],
+        "contacts": [
+          {
+            "geom": "ground",
+            "force_world_n": [
+              -0.007454898548380719,
+              0.0021677838752260656,
+              5.363268402973358
+            ],
+            "normal_n": 5.363268402973358,
+            "dist_m": -1.1348921868464812e-05,
+            "efc_address": 32
+          }
+        ]
+      },
+      "solver_tolerance": 1e-06,
+      "solver_iterations": 100,
+      "parameters_modified": false,
+      "numerical_error": null,
+      "completed": true,
+      "reproduced_trajectory_hash": "118e5e1957e70d80c5f9e2b4d82f4a9dc66a446a97c4b5930aaf3b29ee37df10",
+      "original_trajectory_hash": "118e5e1957e70d80c5f9e2b4d82f4a9dc66a446a97c4b5930aaf3b29ee37df10",
+      "identical_trajectory": true
+    },
+    {
+      "case": "left_shank_8",
+      "case_parameters": {
+        "name": "left_shank_8",
+        "target_body": "left_knee_pitch_link",
+        "speed": 8,
+        "offset_y": 0.0,
+        "robot_mode": "free",
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "moving_duration": 0.0,
+        "miss": false,
+        "duration": 6.0,
+        "seed": 0,
+        "target_geom_index": 1
+      },
+      "recorded_launch": {
+        "position": [
+          9.960990990337073,
+          -0.09783024928878507,
+          0.1530692022976573
+        ],
+        "velocity": [
+          8,
+          0,
+          0.1839375
+        ],
+        "angular_velocity": [
+          0,
+          0,
+          0
+        ],
+        "target_geom_id": 59,
+        "target_body": "left_knee_pitch_link",
+        "target_geom_center_world": [
+          10.404354078960493,
+          -0.09783024928878507,
+          0.1530692022976573
+        ],
+        "nominal_free_flight_s": 0.0375,
+        "construction": "0.3m gap from collider front plus ball radius; ballistic aim or rolling foot input",
+        "time": 1.9999999999998905,
+        "initial_overlap": false
+      },
+      "strict_momentum_precision_passed": false,
+      "max_force_reconstruction_error_n": 1.1368683772161603e-13,
+      "max_integration_error_m_s": 4.440892098500626e-16,
+      "max_gradient_explanation_error_ns": 1.1102230246251565e-16,
+      "max_residual_robot_contact_ns": 3.352873534367973e-14,
+      "largest": {
+        "before_time": 2.2389999999998644,
+        "after_time": 2.2399999999998643,
+        "force_contacts_world_n": [
+          0.0021103213372356917,
+          0.004044832315020733,
+          4.356172562198077
+        ],
+        "qfrc_constraint_ball_n": [
+          0.0021103213372356917,
+          0.004044832315020733,
+          4.356172562198077
+        ],
+        "qfrc_smooth_ball_n": [
+          6.938893903907228e-18,
+          0.0,
+          -4.218299999999999
+        ],
+        "qfrc_bias_ball_n": [
+          -6.938893903907228e-18,
+          0.0,
+          4.218299999999999
+        ],
+        "qfrc_passive_ball_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ball_qacc": [
+          0.00448750639900924,
+          0.003970273866030877,
+          0.2972307384081409
+        ],
+        "ball_delta_velocity": [
+          4.48750639892026e-06,
+          3.970273866032992e-06,
+          0.00029723073840814095
+        ],
+        "delta_velocity_minus_accdt": [
+          -8.8979964076117e-17,
+          2.1141942363467336e-18,
+          5.421010862427522e-20
+        ],
+        "contact_force_minus_constraint_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dynamics_gradient_ball_n": [
+          -0.00018069358566172528,
+          -0.002337614552627456,
+          -0.010063344682577302
+        ],
+        "momentum_residual_ns": [
+          -1.806935856999797e-07,
+          -2.3376145526265466e-06,
+          -1.0063344682576577e-05
+        ],
+        "ball_solver_island": 1,
+        "solver_niter": [
+          1,
+          3
+        ],
+        "ball_solver_stats": [
+          {
+            "gradient": 0.00489146700740942,
+            "improvement": 2.7138596192624673,
+            "lineslope": 2.4648139331794163e-16,
+            "nactive": 1.0,
+            "nchange": 1.0,
+            "neval": 12.0,
+            "nupdate": 1.0
+          },
+          {
+            "gradient": 0.005824266991750261,
+            "improvement": 0.00010530867010903048,
+            "lineslope": 1.2743837434821182e-18,
+            "nactive": 2.0,
+            "nchange": 1.0,
+            "neval": 8.0,
+            "nupdate": 1.0
+          },
+          {
+            "gradient": 0.007946578773310668,
+            "improvement": 7.529293349030659e-07,
+            "lineslope": 6.6504556103574e-19,
+            "nactive": 3.0,
+            "nchange": 1.0,
+            "neval": 5.0,
+            "nupdate": 1.0
+          }
+        ],
+        "contacts": [
+          {
+            "geom": "ground",
+            "force_world_n": [
+              0.0021103213372356917,
+              0.004044832315020733,
+              4.356172562198077
+            ],
+            "normal_n": 4.356172562198077,
+            "dist_m": -4.16395740437947e-06,
+            "efc_address": 32
+          }
+        ]
+      },
+      "solver_tolerance": 1e-06,
+      "solver_iterations": 100,
+      "parameters_modified": false,
+      "numerical_error": null,
+      "completed": true,
+      "reproduced_trajectory_hash": "e779a167a133043e3e7308afc5513c5d86b3ad9f8c35049a6ef34ed7ce45e3c3",
+      "original_trajectory_hash": "e779a167a133043e3e7308afc5513c5d86b3ad9f8c35049a6ef34ed7ce45e3c3",
+      "identical_trajectory": true
+    },
+    {
+      "case": "right_foot_2",
+      "case_parameters": {
+        "name": "right_foot_2",
+        "target_body": "right_ankle_roll_link",
+        "speed": 2,
+        "offset_y": 0.0,
+        "robot_mode": "free",
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "moving_duration": 0.0,
+        "miss": false,
+        "duration": 6.0,
+        "seed": 0,
+        "target_geom_index": 0
+      },
+      "recorded_launch": {
+        "position": [
+          9.882370028354252,
+          0.09970519183677543,
+          0.111
+        ],
+        "velocity": [
+          2,
+          0,
+          0
+        ],
+        "angular_velocity": [
+          0,
+          18.181818181818183,
+          0
+        ],
+        "target_geom_id": 73,
+        "target_body": "right_ankle_roll_link",
+        "target_geom_center_world": [
+          10.38354149495185,
+          0.09970519183677543,
+          0.017999541323693847
+        ],
+        "nominal_free_flight_s": 0.15,
+        "construction": "0.3m gap from collider front plus ball radius; ballistic aim or rolling foot input",
+        "time": 1.9999999999998905,
+        "initial_overlap": false
+      },
+      "strict_momentum_precision_passed": false,
+      "max_force_reconstruction_error_n": 5.684341886080802e-14,
+      "max_integration_error_m_s": 1.1102230246251565e-16,
+      "max_gradient_explanation_error_ns": 5.81756864903582e-17,
+      "max_residual_robot_contact_ns": 8.326672684688674e-17,
+      "largest": {
+        "before_time": 2.851999999999797,
+        "after_time": 2.852999999999797,
+        "force_contacts_world_n": [
+          0.003989382009281893,
+          -0.00033354521721464057,
+          4.999452309188138
+        ],
+        "qfrc_constraint_ball_n": [
+          0.003989382009281893,
+          -0.00033354521721464057,
+          4.999452309188138
+        ],
+        "qfrc_smooth_ball_n": [
+          1.6263032587282567e-19,
+          -2.168404344971009e-18,
+          -4.2183
+        ],
+        "qfrc_bias_ball_n": [
+          -1.6263032587282567e-19,
+          2.168404344971009e-18,
+          4.2183
+        ],
+        "qfrc_passive_ball_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ball_qacc": [
+          0.008872373993096788,
+          -0.004877329120492401,
+          1.762842461960169
+        ],
+        "ball_delta_velocity": [
+          8.872373993107363e-06,
+          -4.8773291204951e-06,
+          0.001762842461960169
+        ],
+        "delta_velocity_minus_accdt": [
+          1.0574359313522685e-17,
+          -2.698646969952201e-18,
+          0.0
+        ],
+        "contact_force_minus_constraint_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dynamics_gradient_ball_n": [
+          -0.00017426119225027363,
+          -0.0017637063045970896,
+          -0.023130050545264957
+        ],
+        "momentum_residual_ns": [
+          -1.7426119224572596e-07,
+          -1.7637063045982523e-06,
+          -2.3130050545265243e-05
+        ],
+        "ball_solver_island": 1,
+        "solver_niter": [
+          1,
+          3
+        ],
+        "ball_solver_stats": [
+          {
+            "gradient": 0.016660991769356447,
+            "improvement": 2.4643766783898173,
+            "lineslope": 5.1371928099181845e-15,
+            "nactive": 5.0,
+            "nchange": 5.0,
+            "neval": 10.0,
+            "nupdate": 5.0
+          },
+          {
+            "gradient": 0.01326919003061579,
+            "improvement": 2.2324010974589904e-05,
+            "lineslope": 3.250454064595038e-20,
+            "nactive": 4.0,
+            "nchange": 3.0,
+            "neval": 8.0,
+            "nupdate": 3.0
+          },
+          {
+            "gradient": 0.017839575981764437,
+            "improvement": 5.214158737556088e-07,
+            "lineslope": 1.1979465957984516e-20,
+            "nactive": 5.0,
+            "nchange": 1.0,
+            "neval": 5.0,
+            "nupdate": 1.0
+          }
+        ],
+        "contacts": [
+          {
+            "geom": "ground",
+            "force_world_n": [
+              0.003989382009281893,
+              -0.00033354521721464057,
+              4.999452309188138
+            ],
+            "normal_n": 4.999452309188138,
+            "dist_m": -1.4158217015378116e-05,
+            "efc_address": 32
+          }
+        ]
+      },
+      "solver_tolerance": 1e-06,
+      "solver_iterations": 100,
+      "parameters_modified": false,
+      "numerical_error": null,
+      "completed": true,
+      "reproduced_trajectory_hash": "89ca15b6e9347dd7d686a4b0ddf16c4c46e23d339585bfc9015f1b214358e400",
+      "original_trajectory_hash": "89ca15b6e9347dd7d686a4b0ddf16c4c46e23d339585bfc9015f1b214358e400",
+      "identical_trajectory": true
+    },
+    {
+      "case": "absent_moving_8",
+      "case_parameters": {
+        "name": "absent_moving_8",
+        "target_body": "trunk",
+        "speed": 8,
+        "offset_y": 0.0,
+        "robot_mode": "absent",
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "moving_duration": 0,
+        "miss": false,
+        "duration": 6.0,
+        "seed": 0,
+        "target_geom_index": 0
+      },
+      "recorded_launch": {
+        "position": [
+          9.932895621193722,
+          -0.19024941202240778,
+          0.6068918494884334
+        ],
+        "velocity": [
+          8,
+          0,
+          0.1839375
+        ],
+        "angular_velocity": [
+          0,
+          0,
+          0
+        ],
+        "target_geom_id": 31,
+        "target_body": "trunk",
+        "target_geom_center_world": [
+          10.409243413864594,
+          -0.19024941202240778,
+          0.6068918494884334
+        ],
+        "nominal_free_flight_s": 0.0375,
+        "construction": "0.3m gap from collider front plus ball radius; ballistic aim or rolling foot input",
+        "time": 1.9999999999998905,
+        "initial_overlap": false
+      },
+      "strict_momentum_precision_passed": false,
+      "max_force_reconstruction_error_n": 0.0,
+      "max_integration_error_m_s": 4.4407565732290655e-16,
+      "max_gradient_explanation_error_ns": 1.9095591400437525e-16,
+      "max_residual_robot_contact_ns": 0.0,
+      "largest": {
+        "before_time": 2.9939999999997813,
+        "after_time": 2.994999999999781,
+        "force_contacts_world_n": [
+          -0.0013437642441987015,
+          0.0,
+          5.403203407058992
+        ],
+        "qfrc_constraint_ball_n": [
+          -0.0013437642441987015,
+          0.0,
+          5.403203407058992
+        ],
+        "qfrc_smooth_ball_n": [
+          3.469446951953614e-18,
+          7.888609052210118e-31,
+          -4.218299999999999
+        ],
+        "qfrc_bias_ball_n": [
+          -3.469446951953614e-18,
+          -7.888609052210118e-31,
+          4.218299999999999
+        ],
+        "qfrc_passive_ball_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ball_qacc": [
+          -0.0031250075701590003,
+          1.6266485880736962e-20,
+          2.7503874458074544
+        ],
+        "ball_delta_velocity": [
+          -3.1250075700484103e-06,
+          1.6266485809486865e-23,
+          0.0027503874458074543
+        ],
+        "delta_velocity_minus_accdt": [
+          1.1058989214294233e-16,
+          -7.125009802706921e-32,
+          0.0
+        ],
+        "contact_force_minus_constraint_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dynamics_gradient_ball_n": [
+          1.0989030328062421e-08,
+          6.994588927928032e-21,
+          -0.0022368053617878303
+        ],
+        "momentum_residual_ns": [
+          1.0989077885049117e-11,
+          6.994588898079351e-24,
+          -2.2368053617868866e-06
+        ],
+        "ball_solver_island": 0,
+        "solver_niter": [
+          2
+        ],
+        "ball_solver_stats": [
+          {
+            "gradient": 0.001083353442840185,
+            "improvement": 2.913587715234939,
+            "lineslope": 5.873640384996105e-16,
+            "nactive": 1.0,
+            "nchange": 1.0,
+            "neval": 12.0,
+            "nupdate": 1.0
+          },
+          {
+            "gradient": 0.0017200823484993337,
+            "improvement": 2.9932398058285787e-07,
+            "lineslope": 9.12757477993043e-19,
+            "nactive": 2.0,
+            "nchange": 1.0,
+            "neval": 5.0,
+            "nupdate": 1.0
+          }
+        ],
+        "contacts": [
+          {
+            "geom": "ground",
+            "force_world_n": [
+              -0.0013437642441987015,
+              0.0,
+              5.403203407058992
+            ],
+            "normal_n": 5.403203407058992,
+            "dist_m": -2.1345019962509815e-06,
+            "efc_address": 0
+          }
+        ]
+      },
+      "solver_tolerance": 1e-06,
+      "solver_iterations": 100,
+      "parameters_modified": false,
+      "numerical_error": null,
+      "completed": true,
+      "reproduced_trajectory_hash": "fd30dd1084c7a33f2e9af0855778d3e97ecec5f7ad6c6c69e9c90563d73138eb",
+      "original_trajectory_hash": "fd30dd1084c7a33f2e9af0855778d3e97ecec5f7ad6c6c69e9c90563d73138eb",
+      "identical_trajectory": true
+    },
+    {
+      "case": "absent_right_forearm_2",
+      "case_parameters": {
+        "name": "absent_right_forearm_2",
+        "target_body": "right_elbow_yaw_link",
+        "speed": 2.0,
+        "offset_y": 0.0,
+        "robot_mode": "absent",
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "moving_duration": 0,
+        "miss": false,
+        "duration": 6.0,
+        "seed": 0,
+        "target_geom_index": 0
+      },
+      "recorded_launch": {
+        "position": [
+          9.888830295236712,
+          0.22424406929454427,
+          0.486589604766696
+        ],
+        "velocity": [
+          2.0,
+          0,
+          0.73575
+        ],
+        "angular_velocity": [
+          0,
+          0,
+          0
+        ],
+        "target_geom_id": 51,
+        "target_body": "right_elbow_yaw_link",
+        "target_geom_center_world": [
+          10.376009338921337,
+          0.22424406929454427,
+          0.486589604766696
+        ],
+        "nominal_free_flight_s": 0.15,
+        "construction": "0.3m gap from collider front plus ball radius; ballistic aim or rolling foot input",
+        "time": 1.9999999999998905,
+        "initial_overlap": false
+      },
+      "strict_momentum_precision_passed": false,
+      "max_force_reconstruction_error_n": 1.7763568394002505e-15,
+      "max_integration_error_m_s": 1.2663481374630692e-16,
+      "max_gradient_explanation_error_ns": 5.684341886080802e-17,
+      "max_residual_robot_contact_ns": 0.0,
+      "largest": {
+        "before_time": 2.7999999999998026,
+        "after_time": 2.8009999999998025,
+        "force_contacts_world_n": [
+          -0.0009001859326779648,
+          0.0,
+          5.1247912865938
+        ],
+        "qfrc_constraint_ball_n": [
+          -0.0009001859326779648,
+          0.0,
+          5.1247912865938
+        ],
+        "qfrc_smooth_ball_n": [
+          -8.673617379884035e-19,
+          7.888609052210118e-31,
+          -4.218299999999999
+        ],
+        "qfrc_bias_ball_n": [
+          8.673617379884035e-19,
+          -7.888609052210118e-31,
+          4.218299999999999
+        ],
+        "qfrc_passive_ball_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ball_qacc": [
+          -0.002093439882901938,
+          3.822070410959826e-31,
+          2.104634786273517
+        ],
+        "ball_delta_velocity": [
+          -2.0934398829997036e-06,
+          0.0,
+          0.002104634786273517
+        ],
+        "delta_velocity_minus_accdt": [
+          -9.77653898050386e-17,
+          -3.822070410959826e-34,
+          0.0
+        ],
+        "contact_force_minus_constraint_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dynamics_gradient_ball_n": [
+          6.783030132256722e-09,
+          -6.245118775497393e-31,
+          -0.0014983284961891385
+        ],
+        "momentum_residual_ns": [
+          6.782988092240404e-12,
+          0.0,
+          -1.4983284961878843e-06
+        ],
+        "ball_solver_island": 0,
+        "solver_niter": [
+          2
+        ],
+        "ball_solver_stats": [
+          {
+            "gradient": 0.000844099031123084,
+            "improvement": 1.7911172101949864,
+            "lineslope": 1.247478698972988e-15,
+            "nactive": 1.0,
+            "nchange": 1.0,
+            "neval": 10.0,
+            "nupdate": 1.0
+          },
+          {
+            "gradient": 0.001152200563627253,
+            "improvement": 8.307649328033595e-07,
+            "lineslope": 8.574194938609864e-19,
+            "nactive": 2.0,
+            "nchange": 1.0,
+            "neval": 5.0,
+            "nupdate": 1.0
+          }
+        ],
+        "contacts": [
+          {
+            "geom": "ground",
+            "force_world_n": [
+              -0.0009001859326779648,
+              0.0,
+              5.1247912865938
+            ],
+            "normal_n": 5.1247912865938,
+            "dist_m": -1.0269717873656603e-05,
+            "efc_address": 0
+          }
+        ]
+      },
+      "solver_tolerance": 1e-06,
+      "solver_iterations": 100,
+      "parameters_modified": false,
+      "numerical_error": null,
+      "completed": true,
+      "reproduced_trajectory_hash": "9a8b62148a55413a05bb5288ab69f98081532ee938105dc2178a82bc2a85d6ab",
+      "original_trajectory_hash": "9a8b62148a55413a05bb5288ab69f98081532ee938105dc2178a82bc2a85d6ab",
+      "identical_trajectory": true
+    }
+  ]
+}

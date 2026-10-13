@@ -1,0 +1,49 @@
+{
+  "checks": {
+    "protected_A_to_F_files_unchanged": true,
+    "execution_source_snapshot": true,
+    "physics_controller_code_unchanged": true,
+    "all_complete": true,
+    "all_repeats_identical": true,
+    "1ms_50hz": true,
+    "all_launches_paired": true,
+    "strict_three_valued_outcomes_equal": true,
+    "all_matched_absent_right_goals": true,
+    "no_falls_numerics_unexpected_contacts": true,
+    "f_baseline_replayed_exactly": true,
+    "all_94_raw_trajectory_hashes_and_decisions_checked": true,
+    "frozen_protocol": true,
+    "ablation_physical_trajectory_identical_to_G": true,
+    "ablation_trace_hash": true
+  },
+  "all_passed": true,
+  "formal_cases": 94,
+  "new_formal_executions": 114,
+  "historical_executions_referenced": 74,
+  "posthoc_ablation_executions": 2,
+  "independent_F_replay_executions": 1,
+  "tests_passed": 297,
+  "protected_file_count": 640,
+  "validation_runner_hardening": {
+    "original_runner_sha256": "7d98f13f6c41ddd0540428786f79a4179b7c66528ae76b18432ded635f12579f",
+    "current_runner_sha256": "2f5bf59fd583d1a9df0294b49dbd5bdf10ed9508066c9cc15bb3cff8b4763f97",
+    "execution_source_snapshot": "reports/prediction_validation/execution_sources/validate_prediction.py",
+    "description": "Post-execution validation-only guards: read-only missing archive, scene/runner cache fingerprint, ternary censored pair comparison, repeat/numerics exit checks. Physical execution inputs and controller code unchanged."
+  },
+  "final_source_sha256": {
+    "k1_goalkeeper/predictive_goalkeeper.py": "da8e8f0179cb9211039586814c8d6deb428698ba1371ef12a3b7b7d848ebc017",
+    "k1_goalkeeper/ball_prediction.py": "6dc8b00cdfa0ab95dab871cf675248d2e6249c53deee6667e62b191760521476",
+    "scripts/analyze_prediction_results.py": "c5db715bb832002f947832b89e760ab15aafa9f041c00579411b2ec2a22adc8e",
+    "scripts/audit_ball_prediction.py": "e25830d038880ecaa2f8af3c0c403e2ed0f46d592aed449377eb5e0ce51003d1",
+    "scripts/report_prediction.py": "bf1a9e1eaac24560ffcca18287f3b62b8327df43a068447ee7d58609423ec8ad",
+    "scripts/audit_goalkeeper_failures.py": "f528f3cbfdf2a18d232b5e44574dbbe181be83f283d8a723e5f14c83630e4cc5",
+    "scripts/validate_prediction.py": "2f5bf59fd583d1a9df0294b49dbd5bdf10ed9508066c9cc15bb3cff8b4763f97",
+    "scripts/ablate_prediction.py": "62be59b0afaf63fbc9424f577ab55f10aeb20f435a899e4bb98ad723c9255592",
+    "scripts/compare_prediction_models.py": "bf37bbdfe9b192286ad8cbb3d7549fa9dad6012e413ba8276892a754b1782a19",
+    "tests/test_prediction_goalkeeper.py": "a0efcd01c53dc329a7eda6bb6f09b81ad3ff8aab7bac761f96b50971a93769a7",
+    "tests/test_prediction_validation.py": "cbb7a02c1fc2d71325c809e8054102477edecc1ddafa2df9215ad3b255de30f2",
+    "docs/prediction_validation.md": "d3b78bacdc4d66b9fd52f0868615823cb761bd2f84ca097658f77958b6df97d2",
+    "README.md": "d381863f3fb51343f91ff3802736823b63b8f805b0091f02bec641d9f83f2004"
+  },
+  "independent_review": "Final independent review confirmed protected hashes, source snapshots, protocol, paired outcomes and report; no blocking findings."
+}

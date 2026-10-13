@@ -1,0 +1,189 @@
+{
+  "verification": {
+    "protected_sha256": true,
+    "code_sha256": true,
+    "saved_trajectories": true,
+    "physics_policy_timing": true,
+    "repeats": true,
+    "matched_launches": true,
+    "all_completed": true,
+    "no_numerical_errors": true,
+    "no_unexpected_contacts": true,
+    "e_recorder_parity": true,
+    "response_audit_inputs": true,
+    "deadline_audit_inputs": true
+  },
+  "input_sha256": "b164d0ce301aaf8cb816709a7c5e754c1d3d5a45eb88a58186fee5951a13d701",
+  "python_version": "3.13.13",
+  "report_code_sha256": "7e9cb38a0cabebcf23210c30d7e93dec0154ac0e72ad82edb9a44325a7758b81",
+  "response_audit_sha256": "cc9de9dcecec3eff53becd40d0ce5238d6f943c68dc3a78050543c673474cc2e",
+  "tests": "........................................................................ [ 28%]\n........................................................................ [ 56%]\n........................................................................ [ 85%]\n.....................................                                    [100%]\n253 passed in 12.90s\nWARNING: Nan, Inf or huge value in QVEL at DOF 0. The simulation is unstable. Time = 0.0000.\n\n",
+  "case_count": 37,
+  "execution_count": 74,
+  "alignment_at_unobstructed_robot_plane": {
+    "center_passive": {
+      "time": 8.457321982781423,
+      "robot_goal_lateral_m": 0.002121481595156712,
+      "unobstructed_ball_lateral_m": -5.197429273727681e-19,
+      "lateral_error_m": 0.0021214815951567123,
+      "unobstructed_ball_height_m": 0.10999592191707312,
+      "interpretation": "offline matched absent ball crossing observed robot center X; after-contact robot response may affect this score"
+    },
+    "center_active": {
+      "time": 8.457321982781423,
+      "robot_goal_lateral_m": 0.002121481595156712,
+      "unobstructed_ball_lateral_m": -5.197429273727681e-19,
+      "lateral_error_m": 0.0021214815951567123,
+      "unobstructed_ball_height_m": 0.10999592191707312,
+      "interpretation": "offline matched absent ball crossing observed robot center X; after-contact robot response may affect this score"
+    },
+    "reachable_left_passive": {
+      "time": 11.236019222473512,
+      "robot_goal_lateral_m": 0.0023502906085566106,
+      "unobstructed_ball_lateral_m": -0.35,
+      "lateral_error_m": 0.3523502906085566,
+      "unobstructed_ball_height_m": 0.10999368178231161,
+      "interpretation": "offline matched absent ball crossing observed robot center X; after-contact robot response may affect this score"
+    },
+    "reachable_left_active": {
+      "time": 11.207097390780246,
+      "robot_goal_lateral_m": -0.2757648278091993,
+      "unobstructed_ball_lateral_m": -0.35,
+      "lateral_error_m": 0.07423517219080067,
+      "unobstructed_ball_height_m": 0.109991238917679,
+      "interpretation": "offline matched absent ball crossing observed robot center X; after-contact robot response may affect this score"
+    },
+    "reachable_right_passive": {
+      "time": 11.236019222473512,
+      "robot_goal_lateral_m": 0.0023502906085566106,
+      "unobstructed_ball_lateral_m": 0.35,
+      "lateral_error_m": -0.34764970939144335,
+      "unobstructed_ball_height_m": 0.10999368178231161,
+      "interpretation": "offline matched absent ball crossing observed robot center X; after-contact robot response may affect this score"
+    },
+    "reachable_right_active": {
+      "time": 11.202269419109777,
+      "robot_goal_lateral_m": 0.2799372586555486,
+      "unobstructed_ball_lateral_m": 0.35,
+      "lateral_error_m": -0.0700627413444514,
+      "unobstructed_ball_height_m": 0.10999784377636901,
+      "interpretation": "offline matched absent ball crossing observed robot center X; after-contact robot response may affect this score"
+    },
+    "wide_left_passive": {
+      "time": 5.488547699048475,
+      "robot_goal_lateral_m": 0.0018290757233898462,
+      "unobstructed_ball_lateral_m": -0.9,
+      "lateral_error_m": 0.9018290757233899,
+      "unobstructed_ball_height_m": 0.10999681734577586,
+      "interpretation": "offline matched absent ball crossing observed robot center X; after-contact robot response may affect this score"
+    },
+    "wide_left_active": {
+      "time": 5.488547699048475,
+      "robot_goal_lateral_m": 0.0018290757233898462,
+      "unobstructed_ball_lateral_m": -0.9,
+      "lateral_error_m": 0.9018290757233899,
+      "unobstructed_ball_height_m": 0.10999681734577586,
+      "interpretation": "offline matched absent ball crossing observed robot center X; after-contact robot response may affect this score"
+    },
+    "wide_right_passive": {
+      "time": 5.488547699048475,
+      "robot_goal_lateral_m": 0.0018290757233898462,
+      "unobstructed_ball_lateral_m": 0.9,
+      "lateral_error_m": -0.8981709242766102,
+      "unobstructed_ball_height_m": 0.10999681734577586,
+      "interpretation": "offline matched absent ball crossing observed robot center X; after-contact robot response may affect this score"
+    },
+    "wide_right_active": {
+      "time": 5.488547699048475,
+      "robot_goal_lateral_m": 0.0018290757233898462,
+      "unobstructed_ball_lateral_m": 0.9,
+      "lateral_error_m": -0.8981709242766102,
+      "unobstructed_ball_height_m": 0.10999681734577586,
+      "interpretation": "offline matched absent ball crossing observed robot center X; after-contact robot response may affect this score"
+    },
+    "angled_passive": {
+      "time": 11.236019221060074,
+      "robot_goal_lateral_m": 0.00235029060849688,
+      "unobstructed_ball_lateral_m": 0.33124172989542805,
+      "lateral_error_m": -0.32889143928693115,
+      "unobstructed_ball_height_m": 0.10999368177763337,
+      "interpretation": "offline matched absent ball crossing observed robot center X; after-contact robot response may affect this score"
+    },
+    "angled_active": {
+      "time": 11.215764503727156,
+      "robot_goal_lateral_m": 0.1892763501676209,
+      "unobstructed_ball_lateral_m": 0.32941880533546497,
+      "lateral_error_m": -0.14014245516784407,
+      "unobstructed_ball_height_m": 0.10999614981526418,
+      "interpretation": "offline matched absent ball crossing observed robot center X; after-contact robot response may affect this score"
+    },
+    "air_center_passive": {
+      "time": 2.802236587914104,
+      "robot_goal_lateral_m": 0.0012196602982422096,
+      "unobstructed_ball_lateral_m": 0.0,
+      "lateral_error_m": 0.0012196602982422096,
+      "unobstructed_ball_height_m": 0.5382417434544859,
+      "interpretation": "offline matched absent ball crossing observed robot center X; after-contact robot response may affect this score"
+    },
+    "air_center_active": {
+      "time": 2.802236587914104,
+      "robot_goal_lateral_m": 0.0012196602982422096,
+      "unobstructed_ball_lateral_m": 0.0,
+      "lateral_error_m": 0.0012196602982422096,
+      "unobstructed_ball_height_m": 0.5382417434544859,
+      "interpretation": "offline matched absent ball crossing observed robot center X; after-contact robot response may affect this score"
+    },
+    "air_wide_passive": {
+      "time": 2.801461787169688,
+      "robot_goal_lateral_m": 0.0011887171316763813,
+      "unobstructed_ball_lateral_m": 0.6,
+      "lateral_error_m": -0.5988112828683236,
+      "unobstructed_ball_height_m": 0.5409606087679372,
+      "interpretation": "offline matched absent ball crossing observed robot center X; after-contact robot response may affect this score"
+    },
+    "air_wide_active": {
+      "time": 2.801461787169688,
+      "robot_goal_lateral_m": 0.0011887171316763813,
+      "unobstructed_ball_lateral_m": 0.6,
+      "lateral_error_m": -0.5988112828683236,
+      "unobstructed_ball_height_m": 0.5409606087679372,
+      "interpretation": "offline matched absent ball crossing observed robot center X; after-contact robot response may affect this score"
+    },
+    "air_high_passive": {
+      "time": 2.801461787169688,
+      "robot_goal_lateral_m": 0.0011887171316763813,
+      "unobstructed_ball_lateral_m": -2.0420205884491107e-48,
+      "lateral_error_m": 0.0011887171316763813,
+      "unobstructed_ball_height_m": 1.3925137576359485,
+      "interpretation": "offline matched absent ball crossing observed robot center X; after-contact robot response may affect this score"
+    },
+    "air_high_active": {
+      "time": 2.801461787169688,
+      "robot_goal_lateral_m": 0.0011887171316763813,
+      "unobstructed_ball_lateral_m": -2.0420205884491107e-48,
+      "lateral_error_m": 0.0011887171316763813,
+      "unobstructed_ball_height_m": 1.3925137576359485,
+      "interpretation": "offline matched absent ball crossing observed robot center X; after-contact robot response may affect this score"
+    },
+    "bouncing_passive": {
+      "time": 6.464725553648575,
+      "robot_goal_lateral_m": 0.0019745978100328154,
+      "unobstructed_ball_lateral_m": -0.35,
+      "lateral_error_m": 0.3519745978100328,
+      "unobstructed_ball_height_m": 0.10999418888469185,
+      "interpretation": "offline matched absent ball crossing observed robot center X; after-contact robot response may affect this score"
+    },
+    "bouncing_active": {
+      "time": 6.464725553648575,
+      "robot_goal_lateral_m": 0.0019745978100328154,
+      "unobstructed_ball_lateral_m": -0.35,
+      "lateral_error_m": 0.3519745978100328,
+      "unobstructed_ball_height_m": 0.10999418888469185,
+      "interpretation": "offline matched absent ball crossing observed robot center X; after-contact robot response may affect this score"
+    }
+  },
+  "active_block_count": 5,
+  "passive_block_count": 2,
+  "added_success_count": 3,
+  "lost_passive_success_count": 0
+}

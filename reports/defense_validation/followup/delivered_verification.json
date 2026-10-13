@@ -1,0 +1,530 @@
+{
+  "stage": "H3 delivered-result verification",
+  "protocol_sha256": "0979dabcad1b3996237559b4aed49254cef03b0d321f40fca1fbbfd7d2102dbd",
+  "all_gates_passed": true,
+  "runs": [
+    {
+      "name": "move_stop_vy_+0.20_baseline_r0",
+      "trajectory_sha256": "aeee4450240715bcf994edf0bbd16c1692fc59cfca04b1ee361050b5f87b29c3",
+      "summary_file_sha256": "d3e684ce0f23a383d39517ad38ee2e70698bd4df2f9cb3a87a30fcc00b921856",
+      "trajectory_file_sha256": "1133297bc35d8b79f58b0e57b07500176f6bd04aec9249c5c9001a0d2dbfc3c6",
+      "policy_tick_rows": 1150,
+      "native_target_contact_episodes": 0,
+      "target_geom_names": [],
+      "first_target_contact_time_s": null,
+      "peak_native_target_force_n": 0.0,
+      "normal_native_target_impulse_ns": 0,
+      "post_settle_minimum_base_z_m": 0.5126260495368754,
+      "post_settle_maximum_tilt_deg": 2.681911917072995,
+      "passed": true,
+      "stop": null,
+      "selected_target_margin_guard": "frozen pre-PD checked hook",
+      "zero_offset_targets_identical": true,
+      "nominal_plus_offset_equals_delivered": true,
+      "active_self_contact_row_count": 0,
+      "active_nonfoot_ground_row_count": 0,
+      "active_external_robot_row_count": 0,
+      "resumed_walk_t17_to_t18": {
+        "command_body_vx_m_s": 0.4,
+        "mean_body_velocity_m_s": [
+          0.1682169046518482,
+          0.013158160174269368,
+          -0.01904732526867797
+        ],
+        "base_displacement_world_m": [
+          -0.16794805463299767,
+          -0.01463883636709807,
+          -0.020003951799752895
+        ],
+        "base_displacement_in_t17_body_m": [
+          0.1679134065233881,
+          0.01356451104664462,
+          -0.021026046289655688
+        ],
+        "scope": "descriptive delivered walking response; frozen H3 protocol unchanged"
+      }
+    },
+    {
+      "name": "move_stop_vy_+0.20_baseline_r1",
+      "trajectory_sha256": "aeee4450240715bcf994edf0bbd16c1692fc59cfca04b1ee361050b5f87b29c3",
+      "summary_file_sha256": "6723e6b6c6df0294fbecb6f85611c8155309a0c7d073c69bd5769b584da64dc3",
+      "trajectory_file_sha256": "1133297bc35d8b79f58b0e57b07500176f6bd04aec9249c5c9001a0d2dbfc3c6",
+      "policy_tick_rows": 1150,
+      "native_target_contact_episodes": 0,
+      "target_geom_names": [],
+      "first_target_contact_time_s": null,
+      "peak_native_target_force_n": 0.0,
+      "normal_native_target_impulse_ns": 0,
+      "post_settle_minimum_base_z_m": 0.5126260495368754,
+      "post_settle_maximum_tilt_deg": 2.681911917072995,
+      "passed": true,
+      "stop": null,
+      "selected_target_margin_guard": "frozen pre-PD checked hook",
+      "zero_offset_targets_identical": true,
+      "nominal_plus_offset_equals_delivered": true,
+      "active_self_contact_row_count": 0,
+      "active_nonfoot_ground_row_count": 0,
+      "active_external_robot_row_count": 0,
+      "resumed_walk_t17_to_t18": {
+        "command_body_vx_m_s": 0.4,
+        "mean_body_velocity_m_s": [
+          0.1682169046518482,
+          0.013158160174269368,
+          -0.01904732526867797
+        ],
+        "base_displacement_world_m": [
+          -0.16794805463299767,
+          -0.01463883636709807,
+          -0.020003951799752895
+        ],
+        "base_displacement_in_t17_body_m": [
+          0.1679134065233881,
+          0.01356451104664462,
+          -0.021026046289655688
+        ],
+        "scope": "descriptive delivered walking response; frozen H3 protocol unchanged"
+      }
+    },
+    {
+      "name": "move_stop_vy_+0.20_arms_r0",
+      "trajectory_sha256": "659e6a84844ef83d2d7274c72493fa4e8e0be5039287c9055aa341b41ca3c3d5",
+      "summary_file_sha256": "ad973eae756c77e8b98169572a7560f687e612305a44fe63f3808c0782678a44",
+      "trajectory_file_sha256": "330236037cbb0659388d7ec572231e780aef0edf698db57c4a055fa2b8ded78b",
+      "policy_tick_rows": 1150,
+      "native_target_contact_episodes": 0,
+      "target_geom_names": [],
+      "first_target_contact_time_s": null,
+      "peak_native_target_force_n": 0.0,
+      "normal_native_target_impulse_ns": 0,
+      "post_settle_minimum_base_z_m": 0.512396556781565,
+      "post_settle_maximum_tilt_deg": 2.681911917072995,
+      "passed": true,
+      "stop": null,
+      "selected_target_margin_guard": "frozen pre-PD checked hook",
+      "zero_offset_targets_identical": true,
+      "nominal_plus_offset_equals_delivered": true,
+      "active_self_contact_row_count": 0,
+      "active_nonfoot_ground_row_count": 0,
+      "active_external_robot_row_count": 0,
+      "resumed_walk_t17_to_t18": {
+        "command_body_vx_m_s": 0.4,
+        "mean_body_velocity_m_s": [
+          0.16880089402162943,
+          0.012540996955879655,
+          -0.019647839811063182
+        ],
+        "base_displacement_world_m": [
+          -0.16855028361044155,
+          -0.014052962837428497,
+          -0.020670172713629364
+        ],
+        "base_displacement_in_t17_body_m": [
+          0.16850613145676718,
+          0.012990611536448605,
+          -0.021699483474624744
+        ],
+        "scope": "descriptive delivered walking response; frozen H3 protocol unchanged"
+      }
+    },
+    {
+      "name": "move_stop_vy_+0.20_arms_r1",
+      "trajectory_sha256": "659e6a84844ef83d2d7274c72493fa4e8e0be5039287c9055aa341b41ca3c3d5",
+      "summary_file_sha256": "54cd4654953b5313884c74f680307525f144c2340db925891b5739b6d2c1736a",
+      "trajectory_file_sha256": "330236037cbb0659388d7ec572231e780aef0edf698db57c4a055fa2b8ded78b",
+      "policy_tick_rows": 1150,
+      "native_target_contact_episodes": 0,
+      "target_geom_names": [],
+      "first_target_contact_time_s": null,
+      "peak_native_target_force_n": 0.0,
+      "normal_native_target_impulse_ns": 0,
+      "post_settle_minimum_base_z_m": 0.512396556781565,
+      "post_settle_maximum_tilt_deg": 2.681911917072995,
+      "passed": true,
+      "stop": null,
+      "selected_target_margin_guard": "frozen pre-PD checked hook",
+      "zero_offset_targets_identical": true,
+      "nominal_plus_offset_equals_delivered": true,
+      "active_self_contact_row_count": 0,
+      "active_nonfoot_ground_row_count": 0,
+      "active_external_robot_row_count": 0,
+      "resumed_walk_t17_to_t18": {
+        "command_body_vx_m_s": 0.4,
+        "mean_body_velocity_m_s": [
+          0.16880089402162943,
+          0.012540996955879655,
+          -0.019647839811063182
+        ],
+        "base_displacement_world_m": [
+          -0.16855028361044155,
+          -0.014052962837428497,
+          -0.020670172713629364
+        ],
+        "base_displacement_in_t17_body_m": [
+          0.16850613145676718,
+          0.012990611536448605,
+          -0.021699483474624744
+        ],
+        "scope": "descriptive delivered walking response; frozen H3 protocol unchanged"
+      }
+    },
+    {
+      "name": "move_stop_vy_-0.20_baseline_r0",
+      "trajectory_sha256": "b97a283baaf029e6d18f96f548b992cbcc86fbf956a1903498e8dcbec02e1fb1",
+      "summary_file_sha256": "5c1bc4ff5428b1c2b2faee465f19590c9a2e23b747130e9a7e94f248af8f0527",
+      "trajectory_file_sha256": "69d8ec79880653a6ca5338b304d0ebeae7ed02c4f2f3e7399db7ead2bdd27ac6",
+      "policy_tick_rows": 1150,
+      "native_target_contact_episodes": 0,
+      "target_geom_names": [],
+      "first_target_contact_time_s": null,
+      "peak_native_target_force_n": 0.0,
+      "normal_native_target_impulse_ns": 0,
+      "post_settle_minimum_base_z_m": 0.5179437314447567,
+      "post_settle_maximum_tilt_deg": 2.7318388006135037,
+      "passed": true,
+      "stop": null,
+      "selected_target_margin_guard": "frozen pre-PD checked hook",
+      "zero_offset_targets_identical": true,
+      "nominal_plus_offset_equals_delivered": true,
+      "active_self_contact_row_count": 0,
+      "active_nonfoot_ground_row_count": 0,
+      "active_external_robot_row_count": 0,
+      "resumed_walk_t17_to_t18": {
+        "command_body_vx_m_s": 0.4,
+        "mean_body_velocity_m_s": [
+          0.18930463916244122,
+          -0.013594789684868607,
+          -0.01716138025671209
+        ],
+        "base_displacement_world_m": [
+          -0.1893363091335747,
+          0.011557034687640291,
+          -0.01783407756518307
+        ],
+        "base_displacement_in_t17_body_m": [
+          0.18902646241366594,
+          -0.014381230020079218,
+          -0.019027192651081833
+        ],
+        "scope": "descriptive delivered walking response; frozen H3 protocol unchanged"
+      }
+    },
+    {
+      "name": "move_stop_vy_-0.20_baseline_r1",
+      "trajectory_sha256": "b97a283baaf029e6d18f96f548b992cbcc86fbf956a1903498e8dcbec02e1fb1",
+      "summary_file_sha256": "1e8d7923d8781139f8938a03c9a0e8b718c7ade9615159cfe9420d29cbedc585",
+      "trajectory_file_sha256": "69d8ec79880653a6ca5338b304d0ebeae7ed02c4f2f3e7399db7ead2bdd27ac6",
+      "policy_tick_rows": 1150,
+      "native_target_contact_episodes": 0,
+      "target_geom_names": [],
+      "first_target_contact_time_s": null,
+      "peak_native_target_force_n": 0.0,
+      "normal_native_target_impulse_ns": 0,
+      "post_settle_minimum_base_z_m": 0.5179437314447567,
+      "post_settle_maximum_tilt_deg": 2.7318388006135037,
+      "passed": true,
+      "stop": null,
+      "selected_target_margin_guard": "frozen pre-PD checked hook",
+      "zero_offset_targets_identical": true,
+      "nominal_plus_offset_equals_delivered": true,
+      "active_self_contact_row_count": 0,
+      "active_nonfoot_ground_row_count": 0,
+      "active_external_robot_row_count": 0,
+      "resumed_walk_t17_to_t18": {
+        "command_body_vx_m_s": 0.4,
+        "mean_body_velocity_m_s": [
+          0.18930463916244122,
+          -0.013594789684868607,
+          -0.01716138025671209
+        ],
+        "base_displacement_world_m": [
+          -0.1893363091335747,
+          0.011557034687640291,
+          -0.01783407756518307
+        ],
+        "base_displacement_in_t17_body_m": [
+          0.18902646241366594,
+          -0.014381230020079218,
+          -0.019027192651081833
+        ],
+        "scope": "descriptive delivered walking response; frozen H3 protocol unchanged"
+      }
+    },
+    {
+      "name": "move_stop_vy_-0.20_arms_r0",
+      "trajectory_sha256": "26f4e7c82e976c9ccd0edff97cbafe5e84e7c9751d522b4684fb6b677d1e7f9f",
+      "summary_file_sha256": "f44dfa077e1a2ec78cb4bc888f8760032ce61b812776614703748706b9ce7bc3",
+      "trajectory_file_sha256": "1487b696d64140ed8f11552a3170da34d256773d9d3b108e6a5522e9e78fd7be",
+      "policy_tick_rows": 1150,
+      "native_target_contact_episodes": 0,
+      "target_geom_names": [],
+      "first_target_contact_time_s": null,
+      "peak_native_target_force_n": 0.0,
+      "normal_native_target_impulse_ns": 0,
+      "post_settle_minimum_base_z_m": 0.5178402247157222,
+      "post_settle_maximum_tilt_deg": 2.671833542211899,
+      "passed": true,
+      "stop": null,
+      "selected_target_margin_guard": "frozen pre-PD checked hook",
+      "zero_offset_targets_identical": true,
+      "nominal_plus_offset_equals_delivered": true,
+      "active_self_contact_row_count": 0,
+      "active_nonfoot_ground_row_count": 0,
+      "active_external_robot_row_count": 0,
+      "resumed_walk_t17_to_t18": {
+        "command_body_vx_m_s": 0.4,
+        "mean_body_velocity_m_s": [
+          0.19355633595814334,
+          -0.00780373236519595,
+          -0.01993656073418481
+        ],
+        "base_displacement_world_m": [
+          -0.19350801267666817,
+          0.0056508288876487844,
+          -0.020534398314178137
+        ],
+        "base_displacement_in_t17_body_m": [
+          0.19326919358189854,
+          -0.008524000682134485,
+          -0.021755564251245578
+        ],
+        "scope": "descriptive delivered walking response; frozen H3 protocol unchanged"
+      }
+    },
+    {
+      "name": "move_stop_vy_-0.20_arms_r1",
+      "trajectory_sha256": "26f4e7c82e976c9ccd0edff97cbafe5e84e7c9751d522b4684fb6b677d1e7f9f",
+      "summary_file_sha256": "d24e7451bb0c660a055a9aae0745078716fcb5dba6ddf44aa55ded14e971c5d2",
+      "trajectory_file_sha256": "1487b696d64140ed8f11552a3170da34d256773d9d3b108e6a5522e9e78fd7be",
+      "policy_tick_rows": 1150,
+      "native_target_contact_episodes": 0,
+      "target_geom_names": [],
+      "first_target_contact_time_s": null,
+      "peak_native_target_force_n": 0.0,
+      "normal_native_target_impulse_ns": 0,
+      "post_settle_minimum_base_z_m": 0.5178402247157222,
+      "post_settle_maximum_tilt_deg": 2.671833542211899,
+      "passed": true,
+      "stop": null,
+      "selected_target_margin_guard": "frozen pre-PD checked hook",
+      "zero_offset_targets_identical": true,
+      "nominal_plus_offset_equals_delivered": true,
+      "active_self_contact_row_count": 0,
+      "active_nonfoot_ground_row_count": 0,
+      "active_external_robot_row_count": 0,
+      "resumed_walk_t17_to_t18": {
+        "command_body_vx_m_s": 0.4,
+        "mean_body_velocity_m_s": [
+          0.19355633595814334,
+          -0.00780373236519595,
+          -0.01993656073418481
+        ],
+        "base_displacement_world_m": [
+          -0.19350801267666817,
+          0.0056508288876487844,
+          -0.020534398314178137
+        ],
+        "base_displacement_in_t17_body_m": [
+          0.19326919358189854,
+          -0.008524000682134485,
+          -0.021755564251245578
+        ],
+        "scope": "descriptive delivered walking response; frozen H3 protocol unchanged"
+      }
+    },
+    {
+      "name": "native_arm_impact_1.0_baseline_r0",
+      "trajectory_sha256": "e6c832a046feee313a756724bb706156989bad6fbf173a04c88044af4c58b330",
+      "summary_file_sha256": "90beb9b3ec082daafa65ee6bcba3538b577d7911f53f2a15490810829c786fe6",
+      "trajectory_file_sha256": "2ac930dee66058d4b15052c4b16ec231fa01e6fdd9c4e161825d2c686a6791e4",
+      "policy_tick_rows": 700,
+      "native_target_contact_episodes": 7,
+      "target_geom_names": [
+        "k1_geom_14"
+      ],
+      "first_target_contact_time_s": 6.328000000000448,
+      "peak_native_target_force_n": 70.46493819677983,
+      "normal_native_target_impulse_ns": 0.5026992428080649,
+      "post_settle_minimum_base_z_m": 0.5506920347467505,
+      "post_settle_maximum_tilt_deg": 0.9298729486467404,
+      "passed": true,
+      "stop": null,
+      "selected_target_margin_guard": "frozen pre-PD checked hook",
+      "zero_offset_targets_identical": true,
+      "nominal_plus_offset_equals_delivered": true,
+      "active_self_contact_row_count": 0,
+      "active_nonfoot_ground_row_count": 0,
+      "active_external_robot_row_count": 23
+    },
+    {
+      "name": "native_arm_impact_1.0_baseline_r1",
+      "trajectory_sha256": "e6c832a046feee313a756724bb706156989bad6fbf173a04c88044af4c58b330",
+      "summary_file_sha256": "d4c5e2ae360c5c3cd55a86c8aa9ab5b64649cd1107e2ec0831a58d0b32f24bd5",
+      "trajectory_file_sha256": "2ac930dee66058d4b15052c4b16ec231fa01e6fdd9c4e161825d2c686a6791e4",
+      "policy_tick_rows": 700,
+      "native_target_contact_episodes": 7,
+      "target_geom_names": [
+        "k1_geom_14"
+      ],
+      "first_target_contact_time_s": 6.328000000000448,
+      "peak_native_target_force_n": 70.46493819677983,
+      "normal_native_target_impulse_ns": 0.5026992428080649,
+      "post_settle_minimum_base_z_m": 0.5506920347467505,
+      "post_settle_maximum_tilt_deg": 0.9298729486467404,
+      "passed": true,
+      "stop": null,
+      "selected_target_margin_guard": "frozen pre-PD checked hook",
+      "zero_offset_targets_identical": true,
+      "nominal_plus_offset_equals_delivered": true,
+      "active_self_contact_row_count": 0,
+      "active_nonfoot_ground_row_count": 0,
+      "active_external_robot_row_count": 23
+    },
+    {
+      "name": "native_arm_impact_1.0_arms_r0",
+      "trajectory_sha256": "37a8f8d337f246d89418293bce814cc0f6bd8de73ff559c38741f51b838e434a",
+      "summary_file_sha256": "b48419ca3a4a767f3a7d8f9f950de126c7a68d0dc894c627956f741fbe0ca3db",
+      "trajectory_file_sha256": "0cfeeea9a6f0f6fe45a2d7306277b64ade5e9425763de2e428c666277d02b021",
+      "policy_tick_rows": 700,
+      "native_target_contact_episodes": 10,
+      "target_geom_names": [
+        "k1_geom_14"
+      ],
+      "first_target_contact_time_s": 6.316000000000444,
+      "peak_native_target_force_n": 66.01471503555914,
+      "normal_native_target_impulse_ns": 0.5848312579469201,
+      "post_settle_minimum_base_z_m": 0.5508393917134335,
+      "post_settle_maximum_tilt_deg": 1.009157263834345,
+      "passed": true,
+      "stop": null,
+      "selected_target_margin_guard": "frozen pre-PD checked hook",
+      "zero_offset_targets_identical": true,
+      "nominal_plus_offset_equals_delivered": true,
+      "active_self_contact_row_count": 0,
+      "active_nonfoot_ground_row_count": 0,
+      "active_external_robot_row_count": 43
+    },
+    {
+      "name": "native_arm_impact_1.0_arms_r1",
+      "trajectory_sha256": "37a8f8d337f246d89418293bce814cc0f6bd8de73ff559c38741f51b838e434a",
+      "summary_file_sha256": "e04c4d5788edd933a9a9b4767db17f78ff067f8d960219bc314b8fb51f3a9b53",
+      "trajectory_file_sha256": "0cfeeea9a6f0f6fe45a2d7306277b64ade5e9425763de2e428c666277d02b021",
+      "policy_tick_rows": 700,
+      "native_target_contact_episodes": 10,
+      "target_geom_names": [
+        "k1_geom_14"
+      ],
+      "first_target_contact_time_s": 6.316000000000444,
+      "peak_native_target_force_n": 66.01471503555914,
+      "normal_native_target_impulse_ns": 0.5848312579469201,
+      "post_settle_minimum_base_z_m": 0.5508393917134335,
+      "post_settle_maximum_tilt_deg": 1.009157263834345,
+      "passed": true,
+      "stop": null,
+      "selected_target_margin_guard": "frozen pre-PD checked hook",
+      "zero_offset_targets_identical": true,
+      "nominal_plus_offset_equals_delivered": true,
+      "active_self_contact_row_count": 0,
+      "active_nonfoot_ground_row_count": 0,
+      "active_external_robot_row_count": 43
+    },
+    {
+      "name": "native_arm_impact_2.0_baseline_r0",
+      "trajectory_sha256": "bcbd6fdb6243f0772bb157a32e405557e4bc15222d4edfa60289fb01125eb8ca",
+      "summary_file_sha256": "b5de1166e70b2f3d64216f6fff41c8da170e8f7630f8c15bdf1474da4d21c101",
+      "trajectory_file_sha256": "fc21172df9cd8f8903195f3ffae3e35cf98fda77a4f61d65a2a9d5c113cbc55e",
+      "policy_tick_rows": 700,
+      "native_target_contact_episodes": 18,
+      "target_geom_names": [
+        "k1_geom_14"
+      ],
+      "first_target_contact_time_s": 6.1710000000003955,
+      "peak_native_target_force_n": 102.86746515344126,
+      "normal_native_target_impulse_ns": 1.0250169556759448,
+      "post_settle_minimum_base_z_m": 0.5503018910829928,
+      "post_settle_maximum_tilt_deg": 1.4657753333234598,
+      "passed": true,
+      "stop": null,
+      "selected_target_margin_guard": "frozen pre-PD checked hook",
+      "zero_offset_targets_identical": true,
+      "nominal_plus_offset_equals_delivered": true,
+      "active_self_contact_row_count": 0,
+      "active_nonfoot_ground_row_count": 0,
+      "active_external_robot_row_count": 80
+    },
+    {
+      "name": "native_arm_impact_2.0_baseline_r1",
+      "trajectory_sha256": "bcbd6fdb6243f0772bb157a32e405557e4bc15222d4edfa60289fb01125eb8ca",
+      "summary_file_sha256": "fb092da7ce99163bc7fe13e621e3857bc26644c208ed2e3a94a7132fc2fbf0a4",
+      "trajectory_file_sha256": "fc21172df9cd8f8903195f3ffae3e35cf98fda77a4f61d65a2a9d5c113cbc55e",
+      "policy_tick_rows": 700,
+      "native_target_contact_episodes": 18,
+      "target_geom_names": [
+        "k1_geom_14"
+      ],
+      "first_target_contact_time_s": 6.1710000000003955,
+      "peak_native_target_force_n": 102.86746515344126,
+      "normal_native_target_impulse_ns": 1.0250169556759448,
+      "post_settle_minimum_base_z_m": 0.5503018910829928,
+      "post_settle_maximum_tilt_deg": 1.4657753333234598,
+      "passed": true,
+      "stop": null,
+      "selected_target_margin_guard": "frozen pre-PD checked hook",
+      "zero_offset_targets_identical": true,
+      "nominal_plus_offset_equals_delivered": true,
+      "active_self_contact_row_count": 0,
+      "active_nonfoot_ground_row_count": 0,
+      "active_external_robot_row_count": 80
+    },
+    {
+      "name": "native_arm_impact_2.0_arms_r0",
+      "trajectory_sha256": "da01e7c77d75a5deef32866907e87f07ac2a9d13bfdd23461717bc61213ccfdd",
+      "summary_file_sha256": "1a191378ea743e7bd2cabbc07302d89aa93f60a50e6972125395244ffe32640f",
+      "trajectory_file_sha256": "88d10c2253611f526b74957e87f46d59c8ae555128644c406cf5949320970f03",
+      "policy_tick_rows": 700,
+      "native_target_contact_episodes": 15,
+      "target_geom_names": [
+        "k1_geom_14"
+      ],
+      "first_target_contact_time_s": 6.1620000000003925,
+      "peak_native_target_force_n": 98.23474323848025,
+      "normal_native_target_impulse_ns": 1.1539579894180518,
+      "post_settle_minimum_base_z_m": 0.5506102990530957,
+      "post_settle_maximum_tilt_deg": 1.06079476311595,
+      "passed": true,
+      "stop": null,
+      "selected_target_margin_guard": "frozen pre-PD checked hook",
+      "zero_offset_targets_identical": true,
+      "nominal_plus_offset_equals_delivered": true,
+      "active_self_contact_row_count": 0,
+      "active_nonfoot_ground_row_count": 0,
+      "active_external_robot_row_count": 101
+    },
+    {
+      "name": "native_arm_impact_2.0_arms_r1",
+      "trajectory_sha256": "da01e7c77d75a5deef32866907e87f07ac2a9d13bfdd23461717bc61213ccfdd",
+      "summary_file_sha256": "9899af76088989edf5972fde9e6dd7a59e28ef3d850a0db95e781bec13058779",
+      "trajectory_file_sha256": "88d10c2253611f526b74957e87f46d59c8ae555128644c406cf5949320970f03",
+      "policy_tick_rows": 700,
+      "native_target_contact_episodes": 15,
+      "target_geom_names": [
+        "k1_geom_14"
+      ],
+      "first_target_contact_time_s": 6.1620000000003925,
+      "peak_native_target_force_n": 98.23474323848025,
+      "normal_native_target_impulse_ns": 1.1539579894180518,
+      "post_settle_minimum_base_z_m": 0.5506102990530957,
+      "post_settle_maximum_tilt_deg": 1.06079476311595,
+      "passed": true,
+      "stop": null,
+      "selected_target_margin_guard": "frozen pre-PD checked hook",
+      "zero_offset_targets_identical": true,
+      "nominal_plus_offset_equals_delivered": true,
+      "active_self_contact_row_count": 0,
+      "active_nonfoot_ground_row_count": 0,
+      "active_external_robot_row_count": 101
+    }
+  ],
+  "protected_original_files_checked": 840,
+  "all_executed_repeats_identical": true,
+  "protected_original_files_unchanged_at_final_verification": true
+}

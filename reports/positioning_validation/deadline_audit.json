@@ -1,0 +1,322 @@
+{
+  "stage": "F",
+  "audit": "Independent deadline geometry review of diagnostic pilot before conservative-plane revision",
+  "source_directory": "reports/positioning_validation_pilot",
+  "pilot_planning_offset_from_current_base_x_m": 0.15,
+  "recommended_planning_offset_from_current_base_x_m": 0.81,
+  "recommended_planning_plane_formula": "current_base_world_x - 0.81",
+  "geometry": {
+    "eligible_robot_collision_geoms": 20,
+    "all_articulation_root_radius_m": 0.6930840624906045,
+    "ball_radius_m": 0.11,
+    "exact_combined_front_offset_bound_m": 0.8030840624906045,
+    "rounded_combined_front_offset_bound_m": 0.81,
+    "rounding_clearance_m": 0.0069159375093955505,
+    "pilot_plane_geometric_gap_vs_full_articulation_bound_m": 0.6530840624906045,
+    "geometry_bounds": [
+      {
+        "geom": "k1_geom_1",
+        "root_radius_bound_m": 0.2414213562373095
+      },
+      {
+        "geom": "k1_geom_2",
+        "root_radius_bound_m": 0.13071067811865478
+      },
+      {
+        "geom": "k1_geom_5",
+        "root_radius_bound_m": 0.3090759643394542
+      },
+      {
+        "geom": "k1_geom_7",
+        "root_radius_bound_m": 0.475414740001521
+      },
+      {
+        "geom": "k1_geom_10",
+        "root_radius_bound_m": 0.32509078644248574
+      },
+      {
+        "geom": "k1_geom_12",
+        "root_radius_bound_m": 0.4851887656963181
+      },
+      {
+        "geom": "k1_geom_14",
+        "root_radius_bound_m": 0.6784993030730547
+      },
+      {
+        "geom": "k1_geom_17",
+        "root_radius_bound_m": 0.32509078644248574
+      },
+      {
+        "geom": "k1_geom_19",
+        "root_radius_bound_m": 0.4830698234197308
+      },
+      {
+        "geom": "k1_geom_21",
+        "root_radius_bound_m": 0.6784867546203668
+      },
+      {
+        "geom": "k1_geom_24",
+        "root_radius_bound_m": 0.208268063925671
+      },
+      {
+        "geom": "k1_geom_26",
+        "root_radius_bound_m": 0.28088307804000817
+      },
+      {
+        "geom": "k1_geom_28",
+        "root_radius_bound_m": 0.37387091052953586
+      },
+      {
+        "geom": "k1_geom_29",
+        "root_radius_bound_m": 0.512436524517599
+      },
+      {
+        "geom": "k1_geom_32",
+        "root_radius_bound_m": 0.6930840624906045
+      },
+      {
+        "geom": "k1_geom_35",
+        "root_radius_bound_m": 0.208268063925671
+      },
+      {
+        "geom": "k1_geom_37",
+        "root_radius_bound_m": 0.28088307804000817
+      },
+      {
+        "geom": "k1_geom_39",
+        "root_radius_bound_m": 0.37387091052953586
+      },
+      {
+        "geom": "k1_geom_40",
+        "root_radius_bound_m": 0.512436524517599
+      },
+      {
+        "geom": "k1_geom_43",
+        "root_radius_bound_m": 0.6930840624906045
+      }
+    ]
+  },
+  "aggregate": {
+    "active_cases_audited": 10,
+    "valid_precontact_prediction_samples": 2354,
+    "cases_with_effective_robot_contact": 5,
+    "largest_snapshot_deadline_overestimate": {
+      "case": "reachable_right_active",
+      "time_s": 4.599999999999871,
+      "forecast_ball_vx_mps": 1.473660991181032,
+      "base_x_m": 10.414172033340666,
+      "pilot_plane_x_m": 10.264172033340666,
+      "snapshot_union_front_geom": "k1_geom_32",
+      "snapshot_union_ball_center_front_plane_x_m": 10.12291886423355,
+      "snapshot_geometric_gap_m": 0.14125316910711483,
+      "snapshot_deadline_overestimate_s": 0.09585187499189396,
+      "all_articulation_deadline_overestimate_s": 0.44317116785944444,
+      "planning_usable": true,
+      "reachable_label": true,
+      "nominal_prediction_absolute_time_s": 10.976368009526936,
+      "actual_first_contact_s": 11.072999999999302,
+      "actual_contact_deadline_overestimate_s": -0.09663199047236581
+    },
+    "largest_all_articulation_deadline_overestimate": {
+      "case": "reachable_left_active",
+      "time_s": 11.05999999999931,
+      "forecast_ball_vx_mps": 1.4045660945774439,
+      "base_x_m": 10.370576302699856,
+      "pilot_plane_x_m": 10.220576302699856,
+      "snapshot_union_front_geom": "k1_geom_43",
+      "snapshot_union_ball_center_front_plane_x_m": 10.127067919253976,
+      "snapshot_geometric_gap_m": 0.09350838344587942,
+      "snapshot_deadline_overestimate_s": 0.06657456975993067,
+      "all_articulation_deadline_overestimate_s": 0.4649721113245876,
+      "planning_usable": true,
+      "reachable_label": false,
+      "nominal_prediction_absolute_time_s": 11.100080502392894,
+      "actual_first_contact_s": 11.0759999999993,
+      "actual_contact_deadline_overestimate_s": 0.02408050239359305
+    },
+    "largest_actual_first_contact_deadline_overestimate": {
+      "case": "reachable_left_active",
+      "time_s": 11.05999999999931,
+      "forecast_ball_vx_mps": 1.4045660945774439,
+      "base_x_m": 10.370576302699856,
+      "pilot_plane_x_m": 10.220576302699856,
+      "snapshot_union_front_geom": "k1_geom_43",
+      "snapshot_union_ball_center_front_plane_x_m": 10.127067919253976,
+      "snapshot_geometric_gap_m": 0.09350838344587942,
+      "snapshot_deadline_overestimate_s": 0.06657456975993067,
+      "all_articulation_deadline_overestimate_s": 0.4649721113245876,
+      "planning_usable": true,
+      "reachable_label": false,
+      "nominal_prediction_absolute_time_s": 11.100080502392894,
+      "actual_first_contact_s": 11.0759999999993,
+      "actual_contact_deadline_overestimate_s": 0.02408050239359305
+    },
+    "largest_snapshot_overestimate_while_reachable_s": 0.09585187499189396
+  },
+  "measurement_definitions": {
+    "valid_forecast_selection": "Read high_level_records with time>2 s, valid interception_prediction, and time strictly before first force-based robot contact if one exists. Forecasts include diagnostic predictions; planning_usable marks reachability entry present (therefore actual active planner accepted the prediction).",
+    "actual_first_contact": "Minimum start_time among source summary contacts whose kind is robot. Stage E recorder requires solved normal force>1e-6 N. Episode start_time is physics-step before_time, giving 1 ms timing resolution.",
+    "actual_contact_deadline_overestimate_s": "record.time + interception_prediction.time_to_plane_s - actual_first_contact_s; positive means forecast later than actual first contact. This includes dynamics/geometry/current-plane effects, and is available only in contact cases.",
+    "snapshot_deadline_overestimate_s": "(pilot_prediction_plane_x - (minimum eligible robot geom world-X support - ball_radius)) / current_ball_world_vx. This isolates plane geometry at the current recorded configuration, using the same constant-Vx timing approximation; it is not a future physical contact prediction.",
+    "all_articulation_deadline_overestimate_s": "(all_articulation_root_radius + ball_radius - pilot_front_offset) / current_ball_world_vx. This is the timing difference between representative plane and all-articulation sphere plane at current root under constant current Vx.",
+    "reachable_label": "Original pilot reachability boolean, preserved as evidence; not recomputed under revised final tolerance/plane."
+  },
+  "native_geometry_support_method": {
+    "state_reconstruction": "Compile untouched pilot scene_free.xml through MjModel.from_xml_path. At each high-level record, select exact matching full trace qpos/qvel timestamp (assert mismatch<1e-9 s), assign to independent MjData, call mujoco.mj_forward, then read geom_xpos and geom_xmat. No simulations or policies rerun.",
+    "box_min_world_x": "geom_xpos_x - dot(abs(geom_xmat row0), geom_size half_extents)",
+    "cylinder_min_world_x": "geom_xpos_x - half_length*abs(axis_world_x) - radius*sqrt(1-axis_world_x**2)",
+    "mesh_min_world_x": "geom_xpos_x + min(mesh_vert @ geom_xmat row0), using compiled centered/oriented mesh vertices and actual geom transformation; support extrema of original vertices equal convex hull support in this direction.",
+    "union_front": "Minimum world-X support across all 20 E-audited eligible official robot collision geoms, then subtract ball radius; intentionally ignores whether that frontmost geom shares the ball height/lateral coordinate.",
+    "all_articulation_radius": "For each geom, sum norms of body_pos offsets from free trunk down its ancestor chain + norm(geom_pos) + native geom_rbound; take maximum. Triangle inequality is invariant to arbitrary joint and trunk rotations, so the same bound applies along world X and lateral Y."
+  },
+  "conclusion": {
+    "revision_needed_for_conservative_geometry_claim": true,
+    "recommendation": "Use current_base_world_x-0.81 and rerun full protocol. Keep representative-plane diagnostics separate if retained.",
+    "observed_pilot_contact_deadline_optimism_max_s": 0.02408050239359305,
+    "observed_snapshot_plane_optimism_max_s": 0.09585187499189396,
+    "reserves_interpretation": "Startup 1 s, stopping 1 s and 0.09 m distance reserves appear ample compared with observed deadline discrepancy, but those reserves already serve motion response/braking and should not excuse a geometry deadline that is later than possible collision. No pilot blocking success is reclassified solely by this geometry audit."
+  },
+  "limitations": [
+    "The -.81 plane bounds instantaneous collision geometry at current base pose, not unknown future base fore-aft drift or external impact motion.",
+    "Constant-current-Vx arrival time remains a current-state empirical forecast. Ball deceleration, accelerations, spin and floor bounces require separate handling; unsupported bounces are planner abstentions.",
+    "Earliest union-front sphere/shape plane is more conservative than a height/lateral-conditioned collider. Snapshot timing discrepancy therefore exceeds observed actual-contact timing discrepancy.",
+    "Actual contact results and matched-absent goal outcomes are the physical verification; geometry/reachability alone cannot promise interception, blocking, or balance recovery.",
+    "This audit preserves pilot labels and outcomes; final rerun uses the revised plane and tolerance and must have separately recorded results."
+  ],
+  "input_manifest": [
+    {
+      "path": "assets/booster_assets/robots/K1/K1_22dof.xml",
+      "sha256": "1f1a1cdd451f777600c66fc30ad8d7537198ee7bc51f8ed20d67a51b5001a651",
+      "size_bytes": 18722
+    },
+    {
+      "path": "models/futsal_goal_3x2_reference.urdf",
+      "sha256": "10f67364f44a02182989416b7cce6b9d4f768fea411d44db6ccec08d9ffbfa2b",
+      "size_bytes": 3717
+    },
+    {
+      "path": "reports/collision_audit.json",
+      "sha256": "5f0365111d7b02ab07ed083476ad1dc851c78dc9752097dc5addc30f6c1037f7",
+      "size_bytes": 151313
+    },
+    {
+      "path": "reports/positioning_validation_pilot/air_center_active/summary.json",
+      "sha256": "3d676f4c26cd8460bbce9684fb6b179bcd53790ed996bed339f73db62ce2b213",
+      "size_bytes": 3194053
+    },
+    {
+      "path": "reports/positioning_validation_pilot/air_center_active/trajectory.npz",
+      "sha256": "a48fb5abb0842d60129db818df0973ac1df9569e3df2bd254f1b22b054a29978",
+      "size_bytes": 18543641
+    },
+    {
+      "path": "reports/positioning_validation_pilot/air_high_active/summary.json",
+      "sha256": "f1fa150dea184bf5475d5a42486703e7725c52d0ecdefcdde344b411d86e050e",
+      "size_bytes": 3800676
+    },
+    {
+      "path": "reports/positioning_validation_pilot/air_high_active/trajectory.npz",
+      "sha256": "f17ae4c648f9712dc0803826c4b0481a7d7845d95fac3ba48e00e42e61f25d3e",
+      "size_bytes": 18490010
+    },
+    {
+      "path": "reports/positioning_validation_pilot/air_wide_active/summary.json",
+      "sha256": "e6b29d6dcf3bfa40640384a06a04d8e5a6d1e76a4f4c14d7199f758835f4876a",
+      "size_bytes": 3852616
+    },
+    {
+      "path": "reports/positioning_validation_pilot/air_wide_active/trajectory.npz",
+      "sha256": "9ca722e7432793fcfedbe38169f44254c413478100297b7c6b722cb8474656be",
+      "size_bytes": 18136928
+    },
+    {
+      "path": "reports/positioning_validation_pilot/angled_active/summary.json",
+      "sha256": "6620fa495a45cb3177e24c7c09527d91bcdecdf822c48c07d2feafb783cd2e04",
+      "size_bytes": 3846289
+    },
+    {
+      "path": "reports/positioning_validation_pilot/angled_active/trajectory.npz",
+      "sha256": "f0190aaef69607e0c0aa093e4a2dfb115213f2e7d8ae5e863a58637d5a6146a6",
+      "size_bytes": 19656787
+    },
+    {
+      "path": "reports/positioning_validation_pilot/bouncing_active/summary.json",
+      "sha256": "76f5d4561362ef57cc31a8763bc9834e90a3e149e0360da8060d75508d0fc8ec",
+      "size_bytes": 3452293
+    },
+    {
+      "path": "reports/positioning_validation_pilot/bouncing_active/trajectory.npz",
+      "sha256": "c1dd9266f791a7a86111ea879bc198a5201b6e9b503e9ad7fc217d102cbe22c4",
+      "size_bytes": 18307727
+    },
+    {
+      "path": "reports/positioning_validation_pilot/center_active/summary.json",
+      "sha256": "35371b4481310a5c8908e4062cdf446a5bf4238d09d9b337d26aba50917d9a4a",
+      "size_bytes": 3531804
+    },
+    {
+      "path": "reports/positioning_validation_pilot/center_active/trajectory.npz",
+      "sha256": "089e331e855ba7a5c11d7bfdef78b980bc5a27466227ae745a18188e0a46cf64",
+      "size_bytes": 19176093
+    },
+    {
+      "path": "reports/positioning_validation_pilot/reachable_left_active/summary.json",
+      "sha256": "8f756beb11dc5634c64ae4f1bdab37efd8024136e0565283e06b5977a405e148",
+      "size_bytes": 3846042
+    },
+    {
+      "path": "reports/positioning_validation_pilot/reachable_left_active/trajectory.npz",
+      "sha256": "7027c2e952c5d1f85f1b6b278adb3163777f8c4dbdc8e07d22f00a037370dc47",
+      "size_bytes": 19783123
+    },
+    {
+      "path": "reports/positioning_validation_pilot/reachable_right_active/summary.json",
+      "sha256": "9bbdc8232892ca1b5c42f40ba91fb266238b70e717f862e770bb6498b85535a3",
+      "size_bytes": 3835946
+    },
+    {
+      "path": "reports/positioning_validation_pilot/reachable_right_active/trajectory.npz",
+      "sha256": "3af59ec6986c8c076ab122a7f6092c654f15e340fae01b7a86240d10a31a5e89",
+      "size_bytes": 19626066
+    },
+    {
+      "path": "reports/positioning_validation_pilot/response_audit.json",
+      "sha256": "cc9de9dcecec3eff53becd40d0ce5238d6f943c68dc3a78050543c673474cc2e",
+      "size_bytes": 62553
+    },
+    {
+      "path": "reports/positioning_validation_pilot/results.json",
+      "sha256": "8c2310d07f994d5050eae1e86b3d2127baeb5b1e7efc36c2e02d85dbc1f7b4b4",
+      "size_bytes": 81450685
+    },
+    {
+      "path": "reports/positioning_validation_pilot/scene_free.xml",
+      "sha256": "9ffa16f227c9e54ea36fd58c84c826224f21d832076bc8b3b517edd4ee481875",
+      "size_bytes": 154704
+    },
+    {
+      "path": "reports/positioning_validation_pilot/wide_left_active/summary.json",
+      "sha256": "4c9a41593678785a8d2bc213fcc696a5c8a4f827b1ab9bf3d46bc4b6de4c4476",
+      "size_bytes": 3860611
+    },
+    {
+      "path": "reports/positioning_validation_pilot/wide_left_active/trajectory.npz",
+      "sha256": "f7250174ed2a5971033ebf99ab6ee9abb41f7bb2e6ce9ee655b673eb913a1019",
+      "size_bytes": 18389003
+    },
+    {
+      "path": "reports/positioning_validation_pilot/wide_right_active/summary.json",
+      "sha256": "ebf617e37e7b32cd1951f54a90274413bb094850c30065a2492028349d2e5af3",
+      "size_bytes": 3858896
+    },
+    {
+      "path": "reports/positioning_validation_pilot/wide_right_active/trajectory.npz",
+      "sha256": "403c0ede3d20411d9cdfca07cd26261b1a4ef547f309b1798f10a9b81e0dbe04",
+      "size_bytes": 18389067
+    }
+  ],
+  "environment": {
+    "mujoco": "3.3.7",
+    "numpy": "2.3.3"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "stage": "H0",
+  "decision": "conditional_isolated_H1_probe",
+  "audits": {
+    "interface_audit.json": "a18814e243b600dba257ef4d0fd119f4cba8d9555bead0a95d0e1b7d4e991b39",
+    "geometry_audit.json": "37e8ae56d8c270b454112437abdf733a0b0660b06b02282da28dd039330f5160",
+    "predictor_latency.json": "67eadff5427e312851f98b8b7f8959c99cb284d0f7c26613cba15ab7960668b6"
+  },
+  "protected_file_count": 840,
+  "protected_files_unchanged": true,
+  "original_tests_passed": 297,
+  "control_boundary": "copy official post-filter targets and add explicitly selected arm residuals; retain original actor, observation, action history, filter, PD and physical model",
+  "not_proven": [
+    "independent upper-body control",
+    "dynamic stability with residual",
+    "real-time G prediction"
+  ],
+  "native_collision_only": true,
+  "first_experiment": {
+    "zero_offset_exact_parity_required": true,
+    "amplitude_rad": 0.05,
+    "rise_s": 2,
+    "hold_s": 2,
+    "return_s": 2,
+    "curve": "quintic 10u^3-15u^4+6u^5",
+    "minimum_signed_actual_response_fraction": 0.5,
+    "response_window": "final one second of hold vs same-time original baseline"
+  },
+  "escalation": "require all prospective safety, actual-response and recovery gates before larger amplitude or H3/H4; record failed experiments without changing official gains or thresholds"
+}

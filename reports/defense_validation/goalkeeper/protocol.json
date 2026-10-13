@@ -1,0 +1,136 @@
+{
+  "stage": "H4",
+  "repeats": 2,
+  "shots": [
+    {
+      "name": "air_high",
+      "kind": "airborne",
+      "launch": {
+        "position": [
+          4.0,
+          0.0,
+          0.2
+        ],
+        "velocity": [
+          8.0,
+          0.0,
+          5.424
+        ],
+        "angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "split": "regression"
+    },
+    {
+      "name": "air_wide",
+      "kind": "airborne",
+      "launch": {
+        "position": [
+          4.0,
+          0.6,
+          0.2
+        ],
+        "velocity": [
+          8.0,
+          0.0,
+          4.3615
+        ],
+        "angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "split": "regression"
+    },
+    {
+      "name": "air_center",
+      "kind": "airborne",
+      "launch": {
+        "position": [
+          4.0,
+          0.0,
+          0.2
+        ],
+        "velocity": [
+          8.0,
+          0.0,
+          4.3615
+        ],
+        "angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "split": "regression"
+    },
+    {
+      "name": "air_low_right",
+      "kind": "airborne",
+      "split": "holdout",
+      "launch": {
+        "position": [
+          3,
+          0.28,
+          0.2
+        ],
+        "velocity": [
+          7,
+          0,
+          5.677177606177607
+        ],
+        "angular_velocity": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "name": "air_high_left",
+      "kind": "airborne",
+      "split": "holdout",
+      "launch": {
+        "position": [
+          5,
+          -0.15,
+          0.25
+        ],
+        "velocity": [
+          9,
+          0,
+          4.609666666666667
+        ],
+        "angular_velocity": [
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ],
+  "modes": [
+    "absent",
+    "passive",
+    "g_active",
+    "h_stop_then_arm"
+  ],
+  "h1_sha256": "4db121a4c8ccde342a43085b4dcbd98634eca8e06ae42cd9f71e0ead384311ee",
+  "h3_sha256": "3809a7e4c1a0f9a53b7ba07eb49412aff452b7d8f94e894d12f7e7733769ae1f",
+  "code_sha256": {
+    "k1_goalkeeper/defense_goalkeeper.py": "7c3dcc3e6f3df4504bc4f9749784fcc3d010426e11534aded07ca8a447ae1f79",
+    "k1_goalkeeper/defense_controller.py": "bab0e339fd4c3415a2a7f2a9191c795715a61ebf9d3f7e04ea1a1d993fdf8d85",
+    "k1_goalkeeper/defense_validation.py": "e8454d7e515bbacf6c9a9e57530bd03178974b9e7292ae3abeba1d9d85e1a223",
+    "scripts/validate_defense_goalkeeper.py": "18d19d583b2f56e8a9e77fd7b8f319aa9a5794fd98497f1e3f59ae940663128e"
+  },
+  "action": "native both shoulder roll +0.15/-0.15; 2s quintic rise,2s hold,2s return",
+  "activation": "current valid in-aperture G forecast and positive conservative robot-plane deadline; actual robot slow>=1s; shorter-than-2s rise budget labeled late partial experiment, not claimed feasible save; no future actual trajectory",
+  "motion": "suspend G translation from arm request through single-shot episode end; no untested simultaneous gait or return to stale G positioning state",
+  "timing": "offline simulation; synchronous wall latency measured in H0, not injected here",
+  "success": "absent goes right goal, robot contact, completed non-goal trajectory; contact alone not success",
+  "native_only": true
+}

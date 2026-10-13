@@ -1,0 +1,37 @@
+{
+  "selection": "Post-hoc selected new success; outside frozen primary protocol, not independent generalization evidence",
+  "name": "bounce_early_right",
+  "change": "Replace only G settling-margin subclass with original F LateralPositionController",
+  "reproducibility": {
+    "verified": true,
+    "hashes": [
+      "0c59428fcb92d2934f9169e5b0e77c2c0698bbf6812db7b4e317e77f463183df",
+      "0c59428fcb92d2934f9169e5b0e77c2c0698bbf6812db7b4e317e77f463183df"
+    ]
+  },
+  "contact": true,
+  "right_goal": false,
+  "blocked": true,
+  "fall": false,
+  "numerical_error": null,
+  "recovery": {
+    "verified": true,
+    "stop_delay_s": 0.20000000000000018,
+    "mean_body_velocity": [
+      1.6988557237093845e-06,
+      -7.931925777588335e-07,
+      -6.0753398887026964e-05
+    ],
+    "displacement_world": [
+      -0.02952965984903777,
+      0.023049383466076157,
+      0.03987370232416387
+    ]
+  },
+  "code_sha256": {
+    "scripts/ablate_prediction.py": "62be59b0afaf63fbc9424f577ab55f10aeb20f435a899e4bb98ad723c9255592",
+    "k1_goalkeeper/ball_prediction.py": "6dc8b00cdfa0ab95dab871cf675248d2e6249c53deee6667e62b191760521476",
+    "k1_goalkeeper/predictive_goalkeeper.py": "da8e8f0179cb9211039586814c8d6deb428698ba1371ef12a3b7b7d848ebc017",
+    "k1_goalkeeper/positioning.py": "369bb4f8dc55a729cc4d5f4cb20da78e048d59b2c80933fe475c3b86e1cbcaba"
+  }
+}

@@ -1,0 +1,416 @@
+{
+  "selection": "Declared before G simulations; variations of position, speed, angle, height and first landing, no outcome-based tuning",
+  "regression": [
+    {
+      "name": "center",
+      "kind": "rolling",
+      "launch": {
+        "position": [
+          -1.0,
+          0.0,
+          0.111
+        ],
+        "velocity": [
+          1.8,
+          0.0,
+          0.0
+        ],
+        "angular_velocity": [
+          0.0,
+          16.363636363636363,
+          0.0
+        ]
+      },
+      "split": "regression"
+    },
+    {
+      "name": "reachable_left",
+      "kind": "rolling",
+      "launch": {
+        "position": [
+          -3.0,
+          -0.35,
+          0.111
+        ],
+        "velocity": [
+          1.5,
+          0.0,
+          0.0
+        ],
+        "angular_velocity": [
+          0.0,
+          13.636363636363637,
+          0.0
+        ]
+      },
+      "split": "regression"
+    },
+    {
+      "name": "reachable_right",
+      "kind": "rolling",
+      "launch": {
+        "position": [
+          -3.0,
+          0.35,
+          0.111
+        ],
+        "velocity": [
+          1.5,
+          0.0,
+          0.0
+        ],
+        "angular_velocity": [
+          0.0,
+          13.636363636363637,
+          0.0
+        ]
+      },
+      "split": "regression"
+    },
+    {
+      "name": "wide_left",
+      "kind": "rolling",
+      "launch": {
+        "position": [
+          0.0,
+          -0.9,
+          0.111
+        ],
+        "velocity": [
+          3.0,
+          0.0,
+          0.0
+        ],
+        "angular_velocity": [
+          0.0,
+          27.272727272727273,
+          0.0
+        ]
+      },
+      "split": "regression"
+    },
+    {
+      "name": "wide_right",
+      "kind": "rolling",
+      "launch": {
+        "position": [
+          0.0,
+          0.9,
+          0.111
+        ],
+        "velocity": [
+          3.0,
+          0.0,
+          0.0
+        ],
+        "angular_velocity": [
+          0.0,
+          27.272727272727273,
+          0.0
+        ]
+      },
+      "split": "regression"
+    },
+    {
+      "name": "angled",
+      "kind": "rolling",
+      "launch": {
+        "position": [
+          -3.0,
+          -0.5,
+          0.111
+        ],
+        "velocity": [
+          1.5,
+          0.09,
+          0.0
+        ],
+        "angular_velocity": [
+          -0.8181818181818181,
+          13.636363636363637,
+          0.0
+        ]
+      },
+      "split": "regression"
+    },
+    {
+      "name": "air_center",
+      "kind": "airborne",
+      "launch": {
+        "position": [
+          4.0,
+          0.0,
+          0.2
+        ],
+        "velocity": [
+          8.0,
+          0.0,
+          4.3615
+        ],
+        "angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "split": "regression"
+    },
+    {
+      "name": "air_wide",
+      "kind": "airborne",
+      "launch": {
+        "position": [
+          4.0,
+          0.6,
+          0.2
+        ],
+        "velocity": [
+          8.0,
+          0.0,
+          4.3615
+        ],
+        "angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "split": "regression"
+    },
+    {
+      "name": "air_high",
+      "kind": "airborne",
+      "launch": {
+        "position": [
+          4.0,
+          0.0,
+          0.2
+        ],
+        "velocity": [
+          8.0,
+          0.0,
+          5.424
+        ],
+        "angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "split": "regression"
+    },
+    {
+      "name": "bouncing",
+      "kind": "bouncing",
+      "launch": {
+        "position": [
+          2.0,
+          -0.35,
+          0.8
+        ],
+        "velocity": [
+          3.0,
+          0.0,
+          0.0
+        ],
+        "angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "split": "regression"
+    }
+  ],
+  "holdout": [
+    {
+      "name": "roll_near_left",
+      "kind": "rolling",
+      "split": "holdout",
+      "launch": {
+        "position": [
+          -4,
+          -0.22,
+          0.111
+        ],
+        "velocity": [
+          2.2,
+          0,
+          0
+        ],
+        "angular_velocity": [
+          0.0,
+          20.0,
+          0
+        ]
+      }
+    },
+    {
+      "name": "roll_far_right",
+      "kind": "rolling",
+      "split": "holdout",
+      "launch": {
+        "position": [
+          -2,
+          0.55,
+          0.111
+        ],
+        "velocity": [
+          2.8,
+          0,
+          0
+        ],
+        "angular_velocity": [
+          0.0,
+          25.454545454545453,
+          0
+        ]
+      }
+    },
+    {
+      "name": "angle_left",
+      "kind": "rolling",
+      "split": "holdout",
+      "launch": {
+        "position": [
+          -3,
+          0.35,
+          0.111
+        ],
+        "velocity": [
+          2.0,
+          -0.12,
+          0
+        ],
+        "angular_velocity": [
+          1.0909090909090908,
+          18.181818181818183,
+          0
+        ]
+      }
+    },
+    {
+      "name": "angle_right",
+      "kind": "rolling",
+      "split": "holdout",
+      "launch": {
+        "position": [
+          -5,
+          -0.4,
+          0.111
+        ],
+        "velocity": [
+          2.3,
+          0.1,
+          0
+        ],
+        "angular_velocity": [
+          -0.9090909090909092,
+          20.909090909090907,
+          0
+        ]
+      }
+    },
+    {
+      "name": "air_low_right",
+      "kind": "airborne",
+      "split": "holdout",
+      "launch": {
+        "position": [
+          3,
+          0.28,
+          0.2
+        ],
+        "velocity": [
+          7,
+          0,
+          5.677177606177607
+        ],
+        "angular_velocity": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "name": "air_high_left",
+      "kind": "airborne",
+      "split": "holdout",
+      "launch": {
+        "position": [
+          5,
+          -0.15,
+          0.25
+        ],
+        "velocity": [
+          9,
+          0,
+          4.609666666666667
+        ],
+        "angular_velocity": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "name": "bounce_early_right",
+      "kind": "bouncing",
+      "split": "holdout",
+      "launch": {
+        "position": [
+          0,
+          0.28,
+          0.45
+        ],
+        "velocity": [
+          2.6,
+          0,
+          0
+        ],
+        "angular_velocity": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "name": "bounce_late_left",
+      "kind": "bouncing",
+      "split": "holdout",
+      "launch": {
+        "position": [
+          2,
+          -0.42,
+          1.25
+        ],
+        "velocity": [
+          4,
+          0,
+          1
+        ],
+        "angular_velocity": [
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ],
+  "position_targets": [
+    0,
+    0.2,
+    -0.2,
+    0.4,
+    -0.4,
+    0.6,
+    -0.6,
+    0.3,
+    -0.3,
+    0.5,
+    -0.5
+  ]
+}

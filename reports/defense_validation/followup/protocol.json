@@ -1,0 +1,210 @@
+{
+  "stage": "H3",
+  "repeats": 2,
+  "seed": 0,
+  "native_collision_only": true,
+  "H4": "not_implemented",
+  "H1_gate": {
+    "results_sha256": "4db121a4c8ccde342a43085b4dcbd98634eca8e06ae42cd9f71e0ead384311ee",
+    "protocol_sha256": "29e036b4b1e37f2f8d428eb1d8423e83e12095897232b87a96060097585b5392",
+    "gate_passed": true,
+    "trial_count": 24
+  },
+  "physics_dt_s": 0.001,
+  "policy_dt_s": 0.02,
+  "selected_action": {
+    "family": "both_roll",
+    "amplitude_rad": 0.15,
+    "offsets": [
+      [
+        "left_shoulder_roll_joint",
+        0.15
+      ],
+      [
+        "right_shoulder_roll_joint",
+        -0.15
+      ]
+    ]
+  },
+  "pulse_curve": "unchanged DefensePulse quintic, peak slew .140625 rad/s",
+  "motion": {
+    "directions_body_vy_m_s": [
+      0.2,
+      -0.2
+    ],
+    "end_s": 23.0,
+    "pulse": {
+      "joint_offsets": [
+        [
+          "left_shoulder_roll_joint",
+          0.15
+        ],
+        [
+          "right_shoulder_roll_joint",
+          -0.15
+        ]
+      ],
+      "start_s": 6.0,
+      "rise_s": 2.0,
+      "hold_s": 2.0,
+      "return_s": 2.0
+    },
+    "body_segments": {
+      "lateral": [
+        2.0,
+        3.0
+      ],
+      "zero_before_pulse": [
+        3.0,
+        6.0
+      ],
+      "pulse_and_recovery": [
+        6.0,
+        17.0
+      ],
+      "forward_vx_0_4": [
+        17.0,
+        18.0
+      ],
+      "final_zero": [
+        18.0,
+        23.0
+      ]
+    },
+    "recovery_windows": [
+      [
+        12.0,
+        17.0
+      ],
+      [
+        18.0,
+        23.0
+      ]
+    ],
+    "matched_baseline": "same entire body command timeline without arm intervention"
+  },
+  "impact": {
+    "speeds_m_s": [
+      1.0,
+      2.0
+    ],
+    "launch_time_s": 6.0,
+    "end_s": 14.0,
+    "moving_duration_s": 4.0,
+    "pulse": {
+      "joint_offsets": [
+        [
+          "left_shoulder_roll_joint",
+          0.15
+        ],
+        [
+          "right_shoulder_roll_joint",
+          -0.15
+        ]
+      ],
+      "start_s": 3.0,
+      "rise_s": 2.0,
+      "hold_s": 2.0,
+      "return_s": 2.0
+    },
+    "target_body": "left_elbow_yaw_link",
+    "recovery_windows": [
+      [
+        9.0,
+        14.0
+      ]
+    ],
+    "launches": {
+      "1.0": {
+        "position": [
+          9.884708022869315,
+          -0.25891337984626905,
+          0.5031658048640673
+        ],
+        "velocity": [
+          1.0,
+          0,
+          1.4715
+        ],
+        "angular_velocity": [
+          0,
+          0,
+          0
+        ],
+        "target_geom_id": 44,
+        "target_body": "left_elbow_yaw_link",
+        "target_geom_center_world": [
+          10.368643496035542,
+          -0.25891337984626905,
+          0.5031658048640673
+        ],
+        "nominal_free_flight_s": 0.3,
+        "construction": "0.3m gap from collider front plus ball radius; ballistic aim or rolling foot input"
+      },
+      "2.0": {
+        "position": [
+          9.884708022869315,
+          -0.25891337984626905,
+          0.5031658048640673
+        ],
+        "velocity": [
+          2.0,
+          0,
+          0.73575
+        ],
+        "angular_velocity": [
+          0,
+          0,
+          0
+        ],
+        "target_geom_id": 44,
+        "target_body": "left_elbow_yaw_link",
+        "target_geom_center_world": [
+          10.368643496035542,
+          -0.25891337984626905,
+          0.5031658048640673
+        ],
+        "nominal_free_flight_s": 0.15,
+        "construction": "0.3m gap from collider front plus ball radius; ballistic aim or rolling foot input"
+      }
+    },
+    "same_launch_for_baseline_and_arms": true,
+    "reference": {
+      "path": "reports/defense_validation/both_roll_0.15_r0",
+      "trajectory_sha256": "9f0289544c90abdefa7adfe4208c1827436f90273c8ef58233be8c507ea18945",
+      "archive_index": 6000,
+      "archive_time_s": 6.000000000000338,
+      "summary_file_sha256": "841b476b5394ff6be39aae9ad5a6480fab6a4c6d407a8030cc8d24e9c9d40eb2",
+      "trajectory_file_sha256": "0e0a153cf99b93fdb006a57de50c592e7dfec3d961888f3d05330ed2bf6a9022"
+    },
+    "construction": "independent static FK of already passed H1 t6 qpos then unchanged E _launch; predeclared fixed scene input, not an online predictor",
+    "escalation": "1m/s arms must pass safety+response+recovery+native target contact x2 before 2m/s; miss is unverifiable, not unsafe"
+  },
+  "guards": {
+    "start_s": 2.0,
+    "minimum_base_z_m": 0.42,
+    "maximum_tilt_degrees": 15.0,
+    "selected_target_margin_rad": 0.05,
+    "selected_actual_q": "inside XML range",
+    "continuous_arm_raw_saturation_s": 0.1,
+    "control_torque_limit_tolerance_nm": 1e-05,
+    "new_self_contact": "stop against same-step matched baseline",
+    "new_nonfoot_ground_contact": "stop against same-step matched baseline",
+    "robot_ball": "allowed only in impact",
+    "robot_goal_or_other_external": "stop",
+    "nonfinite": "true numerical failure; deliberate contact/balance/target guard is censored"
+  },
+  "response": "every selected signed median actual E qpos delta vs same-time baseline in final1s hold >=50% amplitude",
+  "recorder": "unchanged E full recorder; add only policy-tick nominal/delivered/offset plus active self/nonfoot/external pair rows",
+  "implementation_sha256": {
+    "k1_goalkeeper/defense_followup.py": "0eab7de1195a0559b98098b8a316f506748769f77b0b0438698d9fc544f58270",
+    "scripts/validate_defense_followup.py": "0e46c5d8dbfc74c2f157d4a0ea00452a53a5dd37ffdb4147aa284079c3b499f6",
+    "k1_goalkeeper/defense_controller.py": "bab0e339fd4c3415a2a7f2a9191c795715a61ebf9d3f7e04ea1a1d993fdf8d85"
+  },
+  "H1_helper_sha256": {
+    "contact_state": "a8377d403b6f9aa2cfba78e469a88bf10ad0a3aa83f6c3d503cfa6166924869b",
+    "_pairs_by_step": "5848e0db4a3e5b6b09ba667a762c4512314576620f06b13e9fe16ebe38295ddb"
+  },
+  "scene_sha256": "9ffa16f227c9e54ea36fd58c84c826224f21d832076bc8b3b517edd4ee481875",
+  "original_protected_manifest_sha256": "41ecbd5e60c0106a8b3790d3d95395f06d1511d41830626b5b3c10cef530f814"
+}

@@ -1,0 +1,11 @@
+{
+  "k1_ngeom": 44,
+  "k1_ball_collision_eligible_count": 20,
+  "k1_disabled_visual_count": 24,
+  "protected_unchanged": true,
+  "official_compiled_k1_geometry_identical": true
+}
+WARNING: Nan, Inf or huge value in QVEL at DOF 0. The simulation is unstable. Time = 0.0000.
+
+WARNING: Nan, Inf or huge value in QVEL at DOF 0. The simulation is unstable. Time = 0.0000.
+

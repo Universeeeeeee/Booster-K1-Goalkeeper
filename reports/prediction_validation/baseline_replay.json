@@ -1,0 +1,7 @@
+{
+  "case": "center_active",
+  "original_trajectory_sha256": "6652a5cf970a2dd5e3c3476eea2f3fd0434d889411745539bcc916bac6cf4072",
+  "replayed_trajectory_sha256": "6652a5cf970a2dd5e3c3476eea2f3fd0434d889411745539bcc916bac6cf4072",
+  "identical": true,
+  "purpose": "Independent fresh execution verifies archived F controller/physics/recorder baseline"
+}

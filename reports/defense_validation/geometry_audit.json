@@ -1,0 +1,4153 @@
+{
+  "stage": "H0",
+  "mujoco_version": "3.3.7",
+  "generation": ".venv/bin/python scripts/audit_defense_geometry.py",
+  "model": "assets/booster_assets/robots/K1/K1_22dof.xml",
+  "compiled_directly_from_official_filepath": true,
+  "method": {
+    "dynamics_steps": 0,
+    "policy_inferences": 0,
+    "controls_applied": 0,
+    "static_calls": [
+      "mj_kinematics",
+      "mj_comPos",
+      "mj_collision",
+      "mj_geomDistance"
+    ],
+    "base_pose": "upright trunk at fixed reference height .55369 m; all joints use active k1_walk task default_joint_pos",
+    "joint_defaults_source": "assets/booster_deploy/tasks/locomotion/robots/k1/__init__.py",
+    "reference_base_height_m": 0.55369,
+    "projection": "Orthographic along trunk +x; y-z convex native-geom silhouettes; trunk-relative coordinates",
+    "mesh_projection": "2-D convex hull of compiled mesh vertices, matching convex collision silhouette; no visual-only geometry included",
+    "cylinder_projection": "256-segment approximation",
+    "grid_cell_m": 0.0025,
+    "grid_bounds_yz_m": [
+      [
+        -0.75,
+        0.75
+      ],
+      [
+        -0.3,
+        0.5
+      ]
+    ],
+    "interpolation_samples_per_pose": 11,
+    "scope": "trunk and both arms only; projected solid geometry is not ball-inflated, contact area, interception probability, or dynamic safety"
+  },
+  "protected_sha256_before": {
+    "assets/booster_assets/robots/K1/K1_22dof.xml": "1f1a1cdd451f777600c66fc30ad8d7537198ee7bc51f8ed20d67a51b5001a651",
+    "assets/booster_deploy/booster_deploy/robots/k1.py": "2e95ee5b761c327eb80db3f2aa73855b782c1fb415dab5ddffa445c054c17875",
+    "assets/booster_deploy/tasks/locomotion/robots/k1/__init__.py": "f8cab573789fcd4f014bfae946aa176b287ed4642f285456af58a6fe59be869d",
+    "reports/collision_audit.json": "5f0365111d7b02ab07ed083476ad1dc851c78dc9752097dc5addc30f6c1037f7",
+    "k1_goalkeeper/walk_controller.py": "57f108fc91dcf90416b8acb08d9c1bc7920bb733b7272968e87967f1fabe5144",
+    "assets/booster_deploy/tasks/locomotion/robots/k1/models/k1_walk.pt": "2d860167ed827e8d44cd65abd4c27f474904352bcb98c0cfa97c078f63e2fea5",
+    "assets/booster_assets/robots/K1/meshes/Trunk.STL": "6c2fc1adb1d3d23c081b6cebab1a4d1da57adbd726d6e72c143281ba696ddd5d",
+    "assets/booster_assets/robots/K1/meshes/K1logo.STL": "93aab425a2e953fdd1c704ce9d9a4fb8d8431da9cc0cc4d2648838b11c47b487",
+    "assets/booster_assets/robots/K1/meshes/Head_1.STL": "9ab00ca2c2ae9b27cdd54cdbbe7d9e50b1873f5815163aef5d719beceb445c96",
+    "assets/booster_assets/robots/K1/meshes/Head_2.STL": "ae8f81b864fd0f16efaab6b0ee697a0fd80e54c2bd38f48526a326bc03085020",
+    "assets/booster_assets/robots/K1/meshes/Left_Arm_1.STL": "e1a6de4b34f17260daa09b81aa3bc115d450787b808190aca286073b45540775",
+    "assets/booster_assets/robots/K1/meshes/Left_Arm_2.STL": "b5861bc9f6119baf50f131bbc4f6420867e63c7c1de31792d1e788cac70ad8ae",
+    "assets/booster_assets/robots/K1/meshes/Left_Arm_3.STL": "5424bdfedad4e70edc2dab6587bf0062c44489768c6e53ba4c2e58d700267f78",
+    "assets/booster_assets/robots/K1/meshes/Left_Arm_4.STL": "e7de1dc79b85b23792eaf8d49688891876f46b4eab7234f2513ae9e241a72b14",
+    "assets/booster_assets/robots/K1/meshes/Right_Arm_1.STL": "1dc1518437d0b2de09d7c559d13f620ee4910b985ca0b70cb387f29fad67a7d6",
+    "assets/booster_assets/robots/K1/meshes/Right_Arm_2.STL": "2f7f4bf14aac5fdb06974c2336be24b5f5577b069a6e0a36e98a443779bb15cc",
+    "assets/booster_assets/robots/K1/meshes/Right_Arm_3.STL": "e3ae9cbd20736f4c3b29b2a455b07d8a59e6c093258d467fc20ecd4dc4b7486d",
+    "assets/booster_assets/robots/K1/meshes/Right_Arm_4.STL": "4a70e0006cc89bfeacb9b825821cdf715113b9cf7d267de6fe4b64ad3e5b9aad",
+    "assets/booster_assets/robots/K1/meshes/Left_Hip_Pitch.STL": "ca604e643aaf41ec4d05c8a13ff66ce39587f9d80be7268376c2a6368decd55f",
+    "assets/booster_assets/robots/K1/meshes/Left_Hip_Roll.STL": "aa278205ca751295c3d073ca3ddf682762a66218e6e5f239a22109b1d8f5ecf9",
+    "assets/booster_assets/robots/K1/meshes/Left_Hip_Yaw.STL": "2d8ed37c3a7c954937d5e3b462869f93292e4c4b76047fd4667380fedd3d66d2",
+    "assets/booster_assets/robots/K1/meshes/Left_Shank.STL": "0e99f5850ba752492a7d5fa0fb066efae03823cb4020e7e57a38e652a34be85c",
+    "assets/booster_assets/robots/K1/meshes/Left_Ankle_Cross.STL": "1798cb3b9721d82c913ce4b0080da9c0eaa69749445bc4a8d6f13dc6a69da232",
+    "assets/booster_assets/robots/K1/meshes/Left_Foot.STL": "1a391f4b3b87a27726e09f15f6d2ce7795c702c13c0d76307d4756d8aeaadde3",
+    "assets/booster_assets/robots/K1/meshes/Right_Hip_Pitch.STL": "ab6052ca8f6a2ddf75ad536e3daf51024cbd8f6b9fa5ca36a8ac966347d850ac",
+    "assets/booster_assets/robots/K1/meshes/Right_Hip_Roll.STL": "9655e49b0ae12366eb8dba28dcc9593d63d6ec7a8431d90dc692041c8bb74765",
+    "assets/booster_assets/robots/K1/meshes/Right_Hip_Yaw.STL": "dd54f3cd1cdbaead210692a4cd4e131a1b696ceefd9715ab1eb6a8e9f44d88aa",
+    "assets/booster_assets/robots/K1/meshes/Right_Shank.STL": "6a7e831055148894ba623bf8d2eca27f2cef32e324819566c39e33cb12c0b4f9",
+    "assets/booster_assets/robots/K1/meshes/Right_Ankle_Cross.STL": "fd59798e9b4b55661372b601db3dbec9ef5567256b631c3d679a2e3446638256",
+    "assets/booster_assets/robots/K1/meshes/Right_Foot.STL": "059b969922a9a31eb40828206070731d3612453f3aa3c2559702c566abb4b0fd"
+  },
+  "protected_sha256_after": {
+    "assets/booster_assets/robots/K1/K1_22dof.xml": "1f1a1cdd451f777600c66fc30ad8d7537198ee7bc51f8ed20d67a51b5001a651",
+    "assets/booster_deploy/booster_deploy/robots/k1.py": "2e95ee5b761c327eb80db3f2aa73855b782c1fb415dab5ddffa445c054c17875",
+    "assets/booster_deploy/tasks/locomotion/robots/k1/__init__.py": "f8cab573789fcd4f014bfae946aa176b287ed4642f285456af58a6fe59be869d",
+    "reports/collision_audit.json": "5f0365111d7b02ab07ed083476ad1dc851c78dc9752097dc5addc30f6c1037f7",
+    "k1_goalkeeper/walk_controller.py": "57f108fc91dcf90416b8acb08d9c1bc7920bb733b7272968e87967f1fabe5144",
+    "assets/booster_deploy/tasks/locomotion/robots/k1/models/k1_walk.pt": "2d860167ed827e8d44cd65abd4c27f474904352bcb98c0cfa97c078f63e2fea5",
+    "assets/booster_assets/robots/K1/meshes/Trunk.STL": "6c2fc1adb1d3d23c081b6cebab1a4d1da57adbd726d6e72c143281ba696ddd5d",
+    "assets/booster_assets/robots/K1/meshes/K1logo.STL": "93aab425a2e953fdd1c704ce9d9a4fb8d8431da9cc0cc4d2648838b11c47b487",
+    "assets/booster_assets/robots/K1/meshes/Head_1.STL": "9ab00ca2c2ae9b27cdd54cdbbe7d9e50b1873f5815163aef5d719beceb445c96",
+    "assets/booster_assets/robots/K1/meshes/Head_2.STL": "ae8f81b864fd0f16efaab6b0ee697a0fd80e54c2bd38f48526a326bc03085020",
+    "assets/booster_assets/robots/K1/meshes/Left_Arm_1.STL": "e1a6de4b34f17260daa09b81aa3bc115d450787b808190aca286073b45540775",
+    "assets/booster_assets/robots/K1/meshes/Left_Arm_2.STL": "b5861bc9f6119baf50f131bbc4f6420867e63c7c1de31792d1e788cac70ad8ae",
+    "assets/booster_assets/robots/K1/meshes/Left_Arm_3.STL": "5424bdfedad4e70edc2dab6587bf0062c44489768c6e53ba4c2e58d700267f78",
+    "assets/booster_assets/robots/K1/meshes/Left_Arm_4.STL": "e7de1dc79b85b23792eaf8d49688891876f46b4eab7234f2513ae9e241a72b14",
+    "assets/booster_assets/robots/K1/meshes/Right_Arm_1.STL": "1dc1518437d0b2de09d7c559d13f620ee4910b985ca0b70cb387f29fad67a7d6",
+    "assets/booster_assets/robots/K1/meshes/Right_Arm_2.STL": "2f7f4bf14aac5fdb06974c2336be24b5f5577b069a6e0a36e98a443779bb15cc",
+    "assets/booster_assets/robots/K1/meshes/Right_Arm_3.STL": "e3ae9cbd20736f4c3b29b2a455b07d8a59e6c093258d467fc20ecd4dc4b7486d",
+    "assets/booster_assets/robots/K1/meshes/Right_Arm_4.STL": "4a70e0006cc89bfeacb9b825821cdf715113b9cf7d267de6fe4b64ad3e5b9aad",
+    "assets/booster_assets/robots/K1/meshes/Left_Hip_Pitch.STL": "ca604e643aaf41ec4d05c8a13ff66ce39587f9d80be7268376c2a6368decd55f",
+    "assets/booster_assets/robots/K1/meshes/Left_Hip_Roll.STL": "aa278205ca751295c3d073ca3ddf682762a66218e6e5f239a22109b1d8f5ecf9",
+    "assets/booster_assets/robots/K1/meshes/Left_Hip_Yaw.STL": "2d8ed37c3a7c954937d5e3b462869f93292e4c4b76047fd4667380fedd3d66d2",
+    "assets/booster_assets/robots/K1/meshes/Left_Shank.STL": "0e99f5850ba752492a7d5fa0fb066efae03823cb4020e7e57a38e652a34be85c",
+    "assets/booster_assets/robots/K1/meshes/Left_Ankle_Cross.STL": "1798cb3b9721d82c913ce4b0080da9c0eaa69749445bc4a8d6f13dc6a69da232",
+    "assets/booster_assets/robots/K1/meshes/Left_Foot.STL": "1a391f4b3b87a27726e09f15f6d2ce7795c702c13c0d76307d4756d8aeaadde3",
+    "assets/booster_assets/robots/K1/meshes/Right_Hip_Pitch.STL": "ab6052ca8f6a2ddf75ad536e3daf51024cbd8f6b9fa5ca36a8ac966347d850ac",
+    "assets/booster_assets/robots/K1/meshes/Right_Hip_Roll.STL": "9655e49b0ae12366eb8dba28dcc9593d63d6ec7a8431d90dc692041c8bb74765",
+    "assets/booster_assets/robots/K1/meshes/Right_Hip_Yaw.STL": "dd54f3cd1cdbaead210692a4cd4e131a1b696ceefd9715ab1eb6a8e9f44d88aa",
+    "assets/booster_assets/robots/K1/meshes/Right_Shank.STL": "6a7e831055148894ba623bf8d2eca27f2cef32e324819566c39e33cb12c0b4f9",
+    "assets/booster_assets/robots/K1/meshes/Right_Ankle_Cross.STL": "fd59798e9b4b55661372b601db3dbec9ef5567256b631c3d679a2e3446638256",
+    "assets/booster_assets/robots/K1/meshes/Right_Foot.STL": "059b969922a9a31eb40828206070731d3612453f3aa3c2559702c566abb4b0fd"
+  },
+  "protected_unchanged": true,
+  "existing_e0_reconciled": true,
+  "geometry": [
+    {
+      "official_geom_id": 1,
+      "e0_alias": "k1_geom_0",
+      "body": "trunk",
+      "region": "trunk",
+      "type": "mjGEOM_MESH",
+      "mesh": "Trunk",
+      "contype": 0,
+      "conaffinity": 0,
+      "native_collision_enabled": false,
+      "local_position_m": [
+        0.0011758985488022004,
+        1.3031462248589787e-06,
+        0.08277350317192483
+      ],
+      "local_quaternion_wxyz": [
+        0.9999999927237596,
+        1.0140774168949778e-05,
+        -9.261248423149659e-05,
+        -7.663271516036751e-05
+      ],
+      "size_m": [
+        0.07819222409490885,
+        0.10253443829166495,
+        0.19227395874820888
+      ],
+      "matches_existing_e0": true
+    },
+    {
+      "official_geom_id": 2,
+      "e0_alias": "k1_geom_1",
+      "body": "trunk",
+      "region": "trunk",
+      "type": "mjGEOM_BOX",
+      "mesh": null,
+      "contype": 1,
+      "conaffinity": 1,
+      "native_collision_enabled": true,
+      "local_position_m": [
+        0.0,
+        0.0,
+        0.1
+      ],
+      "local_quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.06,
+        0.08,
+        0.1
+      ],
+      "matches_existing_e0": true
+    },
+    {
+      "official_geom_id": 3,
+      "e0_alias": "k1_geom_2",
+      "body": "trunk",
+      "region": "trunk",
+      "type": "mjGEOM_CYLINDER",
+      "mesh": null,
+      "contype": 1,
+      "conaffinity": 1,
+      "native_collision_enabled": true,
+      "local_position_m": [
+        0.0,
+        0.0,
+        -0.06
+      ],
+      "local_quaternion_wxyz": [
+        0.7071052811843601,
+        0.707108281185553,
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        0.05,
+        0.05,
+        0.0
+      ],
+      "matches_existing_e0": true
+    },
+    {
+      "official_geom_id": 4,
+      "e0_alias": "k1_geom_3",
+      "body": "trunk",
+      "region": "trunk",
+      "type": "mjGEOM_MESH",
+      "mesh": "K1logo",
+      "contype": 0,
+      "conaffinity": 0,
+      "native_collision_enabled": false,
+      "local_position_m": [
+        0.07326038719096933,
+        -0.000687901213104754,
+        0.17728058122029192
+      ],
+      "local_quaternion_wxyz": [
+        0.6955467377869358,
+        0.7001557514272451,
+        -0.11438608834493602,
+        0.1136331029693696
+      ],
+      "size_m": [
+        0.0007935434020843302,
+        0.006511240691621683,
+        0.040921639023639385
+      ],
+      "matches_existing_e0": true
+    },
+    {
+      "official_geom_id": 9,
+      "e0_alias": "k1_geom_8",
+      "body": "aaleft_shoulder_pitch_link",
+      "region": "left_arm",
+      "type": "mjGEOM_MESH",
+      "mesh": "Left_Arm_1",
+      "contype": 0,
+      "conaffinity": 0,
+      "native_collision_enabled": false,
+      "local_position_m": [
+        -0.0031139435104444377,
+        0.061833563568366216,
+        -0.011565971995852523
+      ],
+      "local_quaternion_wxyz": [
+        0.5354293354974059,
+        0.403062289522214,
+        -0.4124319711814395,
+        0.617054362760132
+      ],
+      "size_m": [
+        0.03854917615927493,
+        0.03832367632235884,
+        0.058884251516279455
+      ],
+      "matches_existing_e0": true
+    },
+    {
+      "official_geom_id": 10,
+      "e0_alias": "k1_geom_9",
+      "body": "left_shoulder_roll_link",
+      "region": "left_arm",
+      "type": "mjGEOM_MESH",
+      "mesh": "Left_Arm_2",
+      "contype": 0,
+      "conaffinity": 0,
+      "native_collision_enabled": false,
+      "local_position_m": [
+        0.013593035559646803,
+        0.018858052986565683,
+        -3.197109833916215e-05
+      ],
+      "local_quaternion_wxyz": [
+        0.6751248576292096,
+        0.67534551077644,
+        0.21022450628432382,
+        0.20957224206168673
+      ],
+      "size_m": [
+        0.027416591296657047,
+        0.035014655267942354,
+        0.05252773475485526
+      ],
+      "matches_existing_e0": true
+    },
+    {
+      "official_geom_id": 11,
+      "e0_alias": "k1_geom_10",
+      "body": "left_shoulder_roll_link",
+      "region": "left_arm",
+      "type": "mjGEOM_CYLINDER",
+      "mesh": null,
+      "contype": 1,
+      "conaffinity": 1,
+      "native_collision_enabled": true,
+      "local_position_m": [
+        -0.007,
+        0.0,
+        0.0
+      ],
+      "local_quaternion_wxyz": [
+        0.7071052811843601,
+        0.0,
+        0.707108281185553,
+        0.0
+      ],
+      "size_m": [
+        0.035,
+        0.034,
+        0.0
+      ],
+      "matches_existing_e0": true
+    },
+    {
+      "official_geom_id": 12,
+      "e0_alias": "k1_geom_11",
+      "body": "left_elbow_pitch_link",
+      "region": "left_arm",
+      "type": "mjGEOM_MESH",
+      "mesh": "Left_Arm_3",
+      "contype": 0,
+      "conaffinity": 0,
+      "native_collision_enabled": false,
+      "local_position_m": [
+        -0.0016218845806753716,
+        0.0725105413459935,
+        -0.0011597745039824338
+      ],
+      "local_quaternion_wxyz": [
+        0.6262870852660366,
+        0.6055244312856244,
+        -0.3426077899964841,
+        0.35174501016918625
+      ],
+      "size_m": [
+        0.04100503958082516,
+        0.041248718854482315,
+        0.08002364837734838
+      ],
+      "matches_existing_e0": true
+    },
+    {
+      "official_geom_id": 13,
+      "e0_alias": "k1_geom_12",
+      "body": "left_elbow_pitch_link",
+      "region": "left_arm",
+      "type": "mjGEOM_MESH",
+      "mesh": "Left_Arm_3",
+      "contype": 1,
+      "conaffinity": 1,
+      "native_collision_enabled": true,
+      "local_position_m": [
+        -0.0016218845806753716,
+        0.0725105413459935,
+        -0.0011597745039824338
+      ],
+      "local_quaternion_wxyz": [
+        0.6262870852660366,
+        0.6055244312856244,
+        -0.3426077899964841,
+        0.35174501016918625
+      ],
+      "size_m": [
+        0.04100503958082516,
+        0.041248718854482315,
+        0.08002364837734838
+      ],
+      "matches_existing_e0": true
+    },
+    {
+      "official_geom_id": 14,
+      "e0_alias": "k1_geom_13",
+      "body": "left_elbow_yaw_link",
+      "region": "left_arm",
+      "type": "mjGEOM_MESH",
+      "mesh": "Left_Arm_4",
+      "contype": 0,
+      "conaffinity": 0,
+      "native_collision_enabled": false,
+      "local_position_m": [
+        -0.0011156113133144198,
+        0.10083378503992076,
+        0.004576300339183422
+      ],
+      "local_quaternion_wxyz": [
+        0.7284501328879883,
+        0.6731865290467962,
+        0.0815438325589444,
+        -0.09762635083316104
+      ],
+      "size_m": [
+        0.03099429062137426,
+        0.04204843315391511,
+        0.13239998809105838
+      ],
+      "matches_existing_e0": true
+    },
+    {
+      "official_geom_id": 15,
+      "e0_alias": "k1_geom_14",
+      "body": "left_elbow_yaw_link",
+      "region": "left_arm",
+      "type": "mjGEOM_MESH",
+      "mesh": "Left_Arm_4",
+      "contype": 1,
+      "conaffinity": 1,
+      "native_collision_enabled": true,
+      "local_position_m": [
+        -0.0011156113133144198,
+        0.10083378503992076,
+        0.004576300339183422
+      ],
+      "local_quaternion_wxyz": [
+        0.7284501328879883,
+        0.6731865290467962,
+        0.0815438325589444,
+        -0.09762635083316104
+      ],
+      "size_m": [
+        0.03099429062137426,
+        0.04204843315391511,
+        0.13239998809105838
+      ],
+      "matches_existing_e0": true
+    },
+    {
+      "official_geom_id": 16,
+      "e0_alias": "k1_geom_15",
+      "body": "aaright_shoulder_pitch_link",
+      "region": "right_arm",
+      "type": "mjGEOM_MESH",
+      "mesh": "Right_Arm_1",
+      "contype": 0,
+      "conaffinity": 0,
+      "native_collision_enabled": false,
+      "local_position_m": [
+        -0.0031141845134924134,
+        -0.061833876086096945,
+        -0.011566942710599576
+      ],
+      "local_quaternion_wxyz": [
+        0.40299982244486415,
+        0.5352757223255732,
+        -0.6171649580828887,
+        0.41252691877354203
+      ],
+      "size_m": [
+        0.03856293816389125,
+        0.03833544177315104,
+        0.058884467320014226
+      ],
+      "matches_existing_e0": true
+    },
+    {
+      "official_geom_id": 17,
+      "e0_alias": "k1_geom_16",
+      "body": "right_shoulder_roll_link",
+      "region": "right_arm",
+      "type": "mjGEOM_MESH",
+      "mesh": "Right_Arm_2",
+      "contype": 0,
+      "conaffinity": 0,
+      "native_collision_enabled": false,
+      "local_position_m": [
+        0.01358270376867113,
+        -0.018916386526791645,
+        3.25205880473024e-05
+      ],
+      "local_quaternion_wxyz": [
+        0.6750432062397199,
+        0.6752747480221497,
+        -0.21047915041291737,
+        -0.20980755857375383
+      ],
+      "size_m": [
+        0.02739835673467301,
+        0.0350157452483918,
+        0.05256819781277479
+      ],
+      "matches_existing_e0": true
+    },
+    {
+      "official_geom_id": 18,
+      "e0_alias": "k1_geom_17",
+      "body": "right_shoulder_roll_link",
+      "region": "right_arm",
+      "type": "mjGEOM_CYLINDER",
+      "mesh": null,
+      "contype": 1,
+      "conaffinity": 1,
+      "native_collision_enabled": true,
+      "local_position_m": [
+        -0.007,
+        0.0,
+        0.0
+      ],
+      "local_quaternion_wxyz": [
+        0.7071052811843601,
+        0.0,
+        0.707108281185553,
+        0.0
+      ],
+      "size_m": [
+        0.035,
+        0.034,
+        0.0
+      ],
+      "matches_existing_e0": true
+    },
+    {
+      "official_geom_id": 19,
+      "e0_alias": "k1_geom_18",
+      "body": "right_elbow_pitch_link",
+      "region": "right_arm",
+      "type": "mjGEOM_MESH",
+      "mesh": "Right_Arm_3",
+      "contype": 0,
+      "conaffinity": 0,
+      "native_collision_enabled": false,
+      "local_position_m": [
+        -0.0017413833332522045,
+        -0.06579946751295972,
+        -0.0008459859417484968
+      ],
+      "local_quaternion_wxyz": [
+        0.5815292186747666,
+        0.5950428121623376,
+        -0.4028153789925712,
+        0.3814283549613564
+      ],
+      "size_m": [
+        0.03909335978454678,
+        0.04076882979938141,
+        0.08675084650621474
+      ],
+      "matches_existing_e0": true
+    },
+    {
+      "official_geom_id": 20,
+      "e0_alias": "k1_geom_19",
+      "body": "right_elbow_pitch_link",
+      "region": "right_arm",
+      "type": "mjGEOM_MESH",
+      "mesh": "Right_Arm_3",
+      "contype": 1,
+      "conaffinity": 1,
+      "native_collision_enabled": true,
+      "local_position_m": [
+        -0.0017413833332522045,
+        -0.06579946751295972,
+        -0.0008459859417484968
+      ],
+      "local_quaternion_wxyz": [
+        0.5815292186747666,
+        0.5950428121623376,
+        -0.4028153789925712,
+        0.3814283549613564
+      ],
+      "size_m": [
+        0.03909335978454678,
+        0.04076882979938141,
+        0.08675084650621474
+      ],
+      "matches_existing_e0": true
+    },
+    {
+      "official_geom_id": 21,
+      "e0_alias": "k1_geom_20",
+      "body": "right_elbow_yaw_link",
+      "region": "right_arm",
+      "type": "mjGEOM_MESH",
+      "mesh": "Right_Arm_4",
+      "contype": 0,
+      "conaffinity": 0,
+      "native_collision_enabled": false,
+      "local_position_m": [
+        -0.0009909802280883109,
+        -0.10082845720585065,
+        0.004579150957982185
+      ],
+      "local_quaternion_wxyz": [
+        0.6732473061807279,
+        0.7284114068154298,
+        0.09793970703609232,
+        -0.08101049887048757
+      ],
+      "size_m": [
+        0.030991127699156112,
+        0.04205182725944632,
+        0.13239314106830774
+      ],
+      "matches_existing_e0": true
+    },
+    {
+      "official_geom_id": 22,
+      "e0_alias": "k1_geom_21",
+      "body": "right_elbow_yaw_link",
+      "region": "right_arm",
+      "type": "mjGEOM_MESH",
+      "mesh": "Right_Arm_4",
+      "contype": 1,
+      "conaffinity": 1,
+      "native_collision_enabled": true,
+      "local_position_m": [
+        -0.0009909802280883109,
+        -0.10082845720585065,
+        0.004579150957982185
+      ],
+      "local_quaternion_wxyz": [
+        0.6732473061807279,
+        0.7284114068154298,
+        0.09793970703609232,
+        -0.08101049887048757
+      ],
+      "size_m": [
+        0.030991127699156112,
+        0.04205182725944632,
+        0.13239314106830774
+      ],
+      "matches_existing_e0": true
+    }
+  ],
+  "joints": [
+    {
+      "name": "aahead_yaw_joint",
+      "default_angle_rad": 0,
+      "limited": true,
+      "range_rad": [
+        -1.012,
+        1.012
+      ],
+      "axis_local": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "actuator_force_limited": true,
+      "actuator_force_range": [
+        -6.0,
+        6.0
+      ],
+      "actuator_gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "deploy_effort_limit_nm": 6.0,
+      "is_arm": false
+    },
+    {
+      "name": "aahead_pitch_joint",
+      "default_angle_rad": 0,
+      "limited": true,
+      "range_rad": [
+        -0.314,
+        0.794
+      ],
+      "axis_local": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "actuator_force_limited": true,
+      "actuator_force_range": [
+        -6.0,
+        6.0
+      ],
+      "actuator_gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "deploy_effort_limit_nm": 6.0,
+      "is_arm": false
+    },
+    {
+      "name": "aaleft_shoulder_pitch_joint",
+      "default_angle_rad": 0.2,
+      "limited": true,
+      "range_rad": [
+        -2.932,
+        1.196
+      ],
+      "axis_local": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "actuator_force_limited": true,
+      "actuator_force_range": [
+        -14.0,
+        14.0
+      ],
+      "actuator_gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "deploy_effort_limit_nm": 14.0,
+      "is_arm": true
+    },
+    {
+      "name": "left_shoulder_roll_joint",
+      "default_angle_rad": -1.25,
+      "limited": true,
+      "range_rad": [
+        -1.642,
+        1.629
+      ],
+      "axis_local": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "actuator_force_limited": true,
+      "actuator_force_range": [
+        -14.0,
+        14.0
+      ],
+      "actuator_gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "deploy_effort_limit_nm": 14.0,
+      "is_arm": true
+    },
+    {
+      "name": "left_elbow_pitch_joint",
+      "default_angle_rad": 0,
+      "limited": true,
+      "range_rad": [
+        -1.885,
+        1.885
+      ],
+      "axis_local": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "actuator_force_limited": true,
+      "actuator_force_range": [
+        -14.0,
+        14.0
+      ],
+      "actuator_gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "deploy_effort_limit_nm": 14.0,
+      "is_arm": true
+    },
+    {
+      "name": "left_elbow_yaw_joint",
+      "default_angle_rad": -0.5,
+      "limited": true,
+      "range_rad": [
+        -2.242,
+        0.816
+      ],
+      "axis_local": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "actuator_force_limited": true,
+      "actuator_force_range": [
+        -14.0,
+        14.0
+      ],
+      "actuator_gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "deploy_effort_limit_nm": 14.0,
+      "is_arm": true
+    },
+    {
+      "name": "aaright_shoulder_pitch_joint",
+      "default_angle_rad": 0.2,
+      "limited": true,
+      "range_rad": [
+        -2.932,
+        1.196
+      ],
+      "axis_local": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "actuator_force_limited": true,
+      "actuator_force_range": [
+        -14.0,
+        14.0
+      ],
+      "actuator_gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "deploy_effort_limit_nm": 14.0,
+      "is_arm": true
+    },
+    {
+      "name": "right_shoulder_roll_joint",
+      "default_angle_rad": 1.25,
+      "limited": true,
+      "range_rad": [
+        -1.642,
+        1.629
+      ],
+      "axis_local": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "actuator_force_limited": true,
+      "actuator_force_range": [
+        -14.0,
+        14.0
+      ],
+      "actuator_gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "deploy_effort_limit_nm": 14.0,
+      "is_arm": true
+    },
+    {
+      "name": "right_elbow_pitch_joint",
+      "default_angle_rad": 0,
+      "limited": true,
+      "range_rad": [
+        -1.885,
+        1.885
+      ],
+      "axis_local": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "actuator_force_limited": true,
+      "actuator_force_range": [
+        -14.0,
+        14.0
+      ],
+      "actuator_gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "deploy_effort_limit_nm": 14.0,
+      "is_arm": true
+    },
+    {
+      "name": "right_elbow_yaw_joint",
+      "default_angle_rad": 0.5,
+      "limited": true,
+      "range_rad": [
+        -0.816,
+        2.242
+      ],
+      "axis_local": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "actuator_force_limited": true,
+      "actuator_force_range": [
+        -14.0,
+        14.0
+      ],
+      "actuator_gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "deploy_effort_limit_nm": 14.0,
+      "is_arm": true
+    },
+    {
+      "name": "left_hip_pitch_joint",
+      "default_angle_rad": -0.15,
+      "limited": true,
+      "range_rad": [
+        -2.958,
+        2.226
+      ],
+      "axis_local": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "actuator_force_limited": true,
+      "actuator_force_range": [
+        -68.0,
+        68.0
+      ],
+      "actuator_gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "deploy_effort_limit_nm": 30.0,
+      "is_arm": false
+    },
+    {
+      "name": "left_hip_roll_joint",
+      "default_angle_rad": 0,
+      "limited": true,
+      "range_rad": [
+        -0.375,
+        1.536
+      ],
+      "axis_local": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "actuator_force_limited": true,
+      "actuator_force_range": [
+        -43.0,
+        43.0
+      ],
+      "actuator_gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "deploy_effort_limit_nm": 20.0,
+      "is_arm": false
+    },
+    {
+      "name": "left_hip_yaw_joint",
+      "default_angle_rad": 0,
+      "limited": true,
+      "range_rad": [
+        -1.012,
+        1.012
+      ],
+      "axis_local": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "actuator_force_limited": true,
+      "actuator_force_range": [
+        -38.3,
+        38.3
+      ],
+      "actuator_gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "deploy_effort_limit_nm": 15.0,
+      "is_arm": false
+    },
+    {
+      "name": "left_knee_pitch_joint",
+      "default_angle_rad": 0.3,
+      "limited": true,
+      "range_rad": [
+        0.0,
+        2.321
+      ],
+      "axis_local": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "actuator_force_limited": true,
+      "actuator_force_range": [
+        -112.0,
+        112.0
+      ],
+      "actuator_gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "deploy_effort_limit_nm": 35.0,
+      "is_arm": false
+    },
+    {
+      "name": "left_ankle_pitch_joint",
+      "default_angle_rad": -0.15,
+      "limited": true,
+      "range_rad": [
+        -0.87,
+        0.345
+      ],
+      "axis_local": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "actuator_force_limited": true,
+      "actuator_force_range": [
+        -38.3,
+        38.3
+      ],
+      "actuator_gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "deploy_effort_limit_nm": 24.0,
+      "is_arm": false
+    },
+    {
+      "name": "left_ankle_roll_joint",
+      "default_angle_rad": 0,
+      "limited": true,
+      "range_rad": [
+        -0.345,
+        0.345
+      ],
+      "axis_local": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "actuator_force_limited": true,
+      "actuator_force_range": [
+        -38.3,
+        38.3
+      ],
+      "actuator_gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "deploy_effort_limit_nm": 15.0,
+      "is_arm": false
+    },
+    {
+      "name": "right_hip_pitch_joint",
+      "default_angle_rad": -0.15,
+      "limited": true,
+      "range_rad": [
+        -2.958,
+        2.226
+      ],
+      "axis_local": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "actuator_force_limited": true,
+      "actuator_force_range": [
+        -68.0,
+        68.0
+      ],
+      "actuator_gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "deploy_effort_limit_nm": 30.0,
+      "is_arm": false
+    },
+    {
+      "name": "right_hip_roll_joint",
+      "default_angle_rad": 0,
+      "limited": true,
+      "range_rad": [
+        -1.536,
+        0.375
+      ],
+      "axis_local": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "actuator_force_limited": true,
+      "actuator_force_range": [
+        -43.0,
+        43.0
+      ],
+      "actuator_gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "deploy_effort_limit_nm": 20.0,
+      "is_arm": false
+    },
+    {
+      "name": "right_hip_yaw_joint",
+      "default_angle_rad": 0,
+      "limited": true,
+      "range_rad": [
+        -1.012,
+        1.012
+      ],
+      "axis_local": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "actuator_force_limited": true,
+      "actuator_force_range": [
+        -38.3,
+        38.3
+      ],
+      "actuator_gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "deploy_effort_limit_nm": 15.0,
+      "is_arm": false
+    },
+    {
+      "name": "right_knee_pitch_joint",
+      "default_angle_rad": 0.3,
+      "limited": true,
+      "range_rad": [
+        0.0,
+        2.321
+      ],
+      "axis_local": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "actuator_force_limited": true,
+      "actuator_force_range": [
+        -112.0,
+        112.0
+      ],
+      "actuator_gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "deploy_effort_limit_nm": 35.0,
+      "is_arm": false
+    },
+    {
+      "name": "right_ankle_pitch_joint",
+      "default_angle_rad": -0.15,
+      "limited": true,
+      "range_rad": [
+        -0.87,
+        0.345
+      ],
+      "axis_local": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "actuator_force_limited": true,
+      "actuator_force_range": [
+        -38.3,
+        38.3
+      ],
+      "actuator_gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "deploy_effort_limit_nm": 24.0,
+      "is_arm": false
+    },
+    {
+      "name": "right_ankle_roll_joint",
+      "default_angle_rad": 0,
+      "limited": true,
+      "range_rad": [
+        -0.345,
+        0.345
+      ],
+      "axis_local": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "actuator_force_limited": true,
+      "actuator_force_range": [
+        -38.3,
+        38.3
+      ],
+      "actuator_gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "deploy_effort_limit_nm": 15.0,
+      "is_arm": false
+    }
+  ],
+  "self_collision": {
+    "native_enabled_geom_masks": "all audited collision geoms are 1/1",
+    "parent_child_filter_enabled": true,
+    "explicit_body_excludes": [],
+    "explicit_geom_pairs": 0,
+    "upper_body_pairs": [
+      {
+        "geom1": "k1_geom_1",
+        "geom2": "k1_geom_2",
+        "official_ids": [
+          2,
+          3
+        ],
+        "filtered_reasons": [
+          "same_or_welded_body"
+        ],
+        "default_collision_eligible": false
+      },
+      {
+        "geom1": "k1_geom_1",
+        "geom2": "k1_geom_10",
+        "official_ids": [
+          2,
+          11
+        ],
+        "filtered_reasons": [],
+        "default_collision_eligible": true
+      },
+      {
+        "geom1": "k1_geom_1",
+        "geom2": "k1_geom_12",
+        "official_ids": [
+          2,
+          13
+        ],
+        "filtered_reasons": [],
+        "default_collision_eligible": true
+      },
+      {
+        "geom1": "k1_geom_1",
+        "geom2": "k1_geom_14",
+        "official_ids": [
+          2,
+          15
+        ],
+        "filtered_reasons": [],
+        "default_collision_eligible": true
+      },
+      {
+        "geom1": "k1_geom_1",
+        "geom2": "k1_geom_17",
+        "official_ids": [
+          2,
+          18
+        ],
+        "filtered_reasons": [],
+        "default_collision_eligible": true
+      },
+      {
+        "geom1": "k1_geom_1",
+        "geom2": "k1_geom_19",
+        "official_ids": [
+          2,
+          20
+        ],
+        "filtered_reasons": [],
+        "default_collision_eligible": true
+      },
+      {
+        "geom1": "k1_geom_1",
+        "geom2": "k1_geom_21",
+        "official_ids": [
+          2,
+          22
+        ],
+        "filtered_reasons": [],
+        "default_collision_eligible": true
+      },
+      {
+        "geom1": "k1_geom_2",
+        "geom2": "k1_geom_10",
+        "official_ids": [
+          3,
+          11
+        ],
+        "filtered_reasons": [],
+        "default_collision_eligible": true
+      },
+      {
+        "geom1": "k1_geom_2",
+        "geom2": "k1_geom_12",
+        "official_ids": [
+          3,
+          13
+        ],
+        "filtered_reasons": [],
+        "default_collision_eligible": true
+      },
+      {
+        "geom1": "k1_geom_2",
+        "geom2": "k1_geom_14",
+        "official_ids": [
+          3,
+          15
+        ],
+        "filtered_reasons": [],
+        "default_collision_eligible": true
+      },
+      {
+        "geom1": "k1_geom_2",
+        "geom2": "k1_geom_17",
+        "official_ids": [
+          3,
+          18
+        ],
+        "filtered_reasons": [],
+        "default_collision_eligible": true
+      },
+      {
+        "geom1": "k1_geom_2",
+        "geom2": "k1_geom_19",
+        "official_ids": [
+          3,
+          20
+        ],
+        "filtered_reasons": [],
+        "default_collision_eligible": true
+      },
+      {
+        "geom1": "k1_geom_2",
+        "geom2": "k1_geom_21",
+        "official_ids": [
+          3,
+          22
+        ],
+        "filtered_reasons": [],
+        "default_collision_eligible": true
+      },
+      {
+        "geom1": "k1_geom_10",
+        "geom2": "k1_geom_12",
+        "official_ids": [
+          11,
+          13
+        ],
+        "filtered_reasons": [
+          "default_parent_child_filter"
+        ],
+        "default_collision_eligible": false
+      },
+      {
+        "geom1": "k1_geom_10",
+        "geom2": "k1_geom_14",
+        "official_ids": [
+          11,
+          15
+        ],
+        "filtered_reasons": [],
+        "default_collision_eligible": true
+      },
+      {
+        "geom1": "k1_geom_10",
+        "geom2": "k1_geom_17",
+        "official_ids": [
+          11,
+          18
+        ],
+        "filtered_reasons": [],
+        "default_collision_eligible": true
+      },
+      {
+        "geom1": "k1_geom_10",
+        "geom2": "k1_geom_19",
+        "official_ids": [
+          11,
+          20
+        ],
+        "filtered_reasons": [],
+        "default_collision_eligible": true
+      },
+      {
+        "geom1": "k1_geom_10",
+        "geom2": "k1_geom_21",
+        "official_ids": [
+          11,
+          22
+        ],
+        "filtered_reasons": [],
+        "default_collision_eligible": true
+      },
+      {
+        "geom1": "k1_geom_12",
+        "geom2": "k1_geom_14",
+        "official_ids": [
+          13,
+          15
+        ],
+        "filtered_reasons": [
+          "default_parent_child_filter"
+        ],
+        "default_collision_eligible": false
+      },
+      {
+        "geom1": "k1_geom_12",
+        "geom2": "k1_geom_17",
+        "official_ids": [
+          13,
+          18
+        ],
+        "filtered_reasons": [],
+        "default_collision_eligible": true
+      },
+      {
+        "geom1": "k1_geom_12",
+        "geom2": "k1_geom_19",
+        "official_ids": [
+          13,
+          20
+        ],
+        "filtered_reasons": [],
+        "default_collision_eligible": true
+      },
+      {
+        "geom1": "k1_geom_12",
+        "geom2": "k1_geom_21",
+        "official_ids": [
+          13,
+          22
+        ],
+        "filtered_reasons": [],
+        "default_collision_eligible": true
+      },
+      {
+        "geom1": "k1_geom_14",
+        "geom2": "k1_geom_17",
+        "official_ids": [
+          15,
+          18
+        ],
+        "filtered_reasons": [],
+        "default_collision_eligible": true
+      },
+      {
+        "geom1": "k1_geom_14",
+        "geom2": "k1_geom_19",
+        "official_ids": [
+          15,
+          20
+        ],
+        "filtered_reasons": [],
+        "default_collision_eligible": true
+      },
+      {
+        "geom1": "k1_geom_14",
+        "geom2": "k1_geom_21",
+        "official_ids": [
+          15,
+          22
+        ],
+        "filtered_reasons": [],
+        "default_collision_eligible": true
+      },
+      {
+        "geom1": "k1_geom_17",
+        "geom2": "k1_geom_19",
+        "official_ids": [
+          18,
+          20
+        ],
+        "filtered_reasons": [
+          "default_parent_child_filter"
+        ],
+        "default_collision_eligible": false
+      },
+      {
+        "geom1": "k1_geom_17",
+        "geom2": "k1_geom_21",
+        "official_ids": [
+          18,
+          22
+        ],
+        "filtered_reasons": [],
+        "default_collision_eligible": true
+      },
+      {
+        "geom1": "k1_geom_19",
+        "geom2": "k1_geom_21",
+        "official_ids": [
+          20,
+          22
+        ],
+        "filtered_reasons": [
+          "default_parent_child_filter"
+        ],
+        "default_collision_eligible": false
+      }
+    ],
+    "distance_cross_check": "Separate compiled diagnostic copy disables nativeccd only for libccd distance queries; official source and primary model unchanged, no dynamics steps. Backend disagreement means signed distance cannot be treated as certified clearance.",
+    "note": "Filtered pairs are not monitored by default self collision; zero detected contacts is not proof against visual-shell overlap or unsampled path collision."
+  },
+  "poses": [
+    {
+      "name": "native_default",
+      "joint_delta_from_default_rad": {},
+      "arm_joint_angles_rad": {
+        "aaleft_shoulder_pitch_joint": 0.2,
+        "left_shoulder_roll_joint": -1.25,
+        "left_elbow_pitch_joint": 0.0,
+        "left_elbow_yaw_joint": -0.5,
+        "aaright_shoulder_pitch_joint": 0.2,
+        "right_shoulder_roll_joint": 1.25,
+        "right_elbow_pitch_joint": 0.0,
+        "right_elbow_yaw_joint": 0.5
+      },
+      "arm_limit_margin_rad": {
+        "aaleft_shoulder_pitch_joint": 0.996,
+        "left_shoulder_roll_joint": 0.3919999999999999,
+        "left_elbow_pitch_joint": 1.885,
+        "left_elbow_yaw_joint": 1.3159999999999998,
+        "aaright_shoulder_pitch_joint": 0.996,
+        "right_shoulder_roll_joint": 0.379,
+        "right_elbow_pitch_joint": 1.885,
+        "right_elbow_yaw_joint": 1.3159999999999998
+      },
+      "all_arm_angles_within_limits": true,
+      "static_samples": [
+        {
+          "interpolation_fraction": 0.0,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.1,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.2,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.30000000000000004,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.4,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.5,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.6000000000000001,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.7000000000000001,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.8,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.9,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 1.0,
+          "robot_self_contacts": []
+        }
+      ],
+      "eligible_pair_min_distance_over_samples_m": {
+        "k1_geom_1:k1_geom_10": 0.02999986310943001,
+        "k1_geom_1:k1_geom_12": 0.04853613281183687,
+        "k1_geom_1:k1_geom_14": 0.0977785129593351,
+        "k1_geom_1:k1_geom_17": 0.02999986310943001,
+        "k1_geom_1:k1_geom_19": 0.0484858418003457,
+        "k1_geom_1:k1_geom_21": 0.09776469665887151,
+        "k1_geom_2:k1_geom_10": 0.16593183311490722,
+        "k1_geom_2:k1_geom_12": 0.11512227882844986,
+        "k1_geom_2:k1_geom_14": 0.12571762589621266,
+        "k1_geom_2:k1_geom_17": 0.16593200565894842,
+        "k1_geom_2:k1_geom_19": 0.115121108835176,
+        "k1_geom_2:k1_geom_21": 0.12570814569538483,
+        "k1_geom_10:k1_geom_14": 0.10311570976264474,
+        "k1_geom_10:k1_geom_17": 0.21999972621880698,
+        "k1_geom_10:k1_geom_19": 0.24305412237118773,
+        "k1_geom_10:k1_geom_21": 0.3368739957348679,
+        "k1_geom_12:k1_geom_17": 0.24310066210557116,
+        "k1_geom_12:k1_geom_19": 0.25702850053951826,
+        "k1_geom_12:k1_geom_21": 0.33271108861123777,
+        "k1_geom_14:k1_geom_17": 0.3368904581594625,
+        "k1_geom_14:k1_geom_19": 0.3326257734634692,
+        "k1_geom_14:k1_geom_21": 0.35142577382026047,
+        "k1_geom_17:k1_geom_21": 0.10311297605322675
+      },
+      "libccd_diagnostic_pair_min_distance_over_samples_m": {
+        "k1_geom_1:k1_geom_10": 0.006922198041631411,
+        "k1_geom_1:k1_geom_12": 0.02077056590732429,
+        "k1_geom_1:k1_geom_14": 0.07628097207734852,
+        "k1_geom_1:k1_geom_17": 0.006975687497647209,
+        "k1_geom_1:k1_geom_19": 0.02505351141926182,
+        "k1_geom_1:k1_geom_21": 0.076270968863555,
+        "k1_geom_2:k1_geom_10": 0.16422257828455633,
+        "k1_geom_2:k1_geom_12": 0.10232730565090442,
+        "k1_geom_2:k1_geom_14": 0.12230069468559313,
+        "k1_geom_2:k1_geom_17": 0.16423612926513242,
+        "k1_geom_2:k1_geom_19": 0.1003115134639414,
+        "k1_geom_2:k1_geom_21": 0.12235080816211319,
+        "k1_geom_10:k1_geom_14": 0.09368551104960399,
+        "k1_geom_10:k1_geom_17": 0.2199997262188056,
+        "k1_geom_10:k1_geom_19": 0.24078505972274922,
+        "k1_geom_10:k1_geom_21": 0.32724006919628423,
+        "k1_geom_12:k1_geom_17": 0.24047357363093336,
+        "k1_geom_12:k1_geom_19": 0.256989232917183,
+        "k1_geom_12:k1_geom_21": 0.3321667989026802,
+        "k1_geom_14:k1_geom_17": 0.32735702343134454,
+        "k1_geom_14:k1_geom_19": 0.33218400235947954,
+        "k1_geom_14:k1_geom_21": 0.35142637471372695,
+        "k1_geom_17:k1_geom_21": 0.09369393056206077
+      },
+      "distance_backend_disagreement_over_1mm_pairs": [
+        "k1_geom_1:k1_geom_10",
+        "k1_geom_1:k1_geom_12",
+        "k1_geom_1:k1_geom_14",
+        "k1_geom_1:k1_geom_17",
+        "k1_geom_1:k1_geom_19",
+        "k1_geom_1:k1_geom_21",
+        "k1_geom_2:k1_geom_10",
+        "k1_geom_2:k1_geom_12",
+        "k1_geom_2:k1_geom_14",
+        "k1_geom_2:k1_geom_17",
+        "k1_geom_2:k1_geom_19",
+        "k1_geom_2:k1_geom_21",
+        "k1_geom_10:k1_geom_14",
+        "k1_geom_10:k1_geom_19",
+        "k1_geom_10:k1_geom_21",
+        "k1_geom_12:k1_geom_17",
+        "k1_geom_14:k1_geom_17",
+        "k1_geom_17:k1_geom_21"
+      ],
+      "static_self_contact_count": 0,
+      "kinematic_time_s": 0.0,
+      "coverage": {
+        "region_projected_area_m2": {
+          "trunk": 0.042,
+          "left_arm": 0.02515625,
+          "right_arm": 0.0251625
+        },
+        "upper_body_union_projected_area_m2": 0.09231875,
+        "arms_outside_trunk_projected_area_m2": 0.05031875,
+        "region_projection_bounds_trunk_relative_m": {
+          "trunk": {
+            "y_min": -0.08,
+            "y_max": 0.08,
+            "z_min": -0.11000021213166872,
+            "z_max": 0.19999999999999996
+          },
+          "left_arm": {
+            "y_min": 0.10999991538364234,
+            "y_max": 0.27839855376143324,
+            "z_min": -0.19356400768403642,
+            "z_max": 0.2132201847515015
+          },
+          "right_arm": {
+            "y_min": -0.278360310119956,
+            "y_max": -0.10999991538364234,
+            "z_min": -0.19349725179968147,
+            "z_max": 0.2132201847515015
+          }
+        },
+        "union_delta_from_default_m2": 0.0
+      },
+      "distal_elbow_yaw_body_origin_trunk_relative_m": {
+        "left": [
+          -0.03151496218062527,
+          0.19732080894752216,
+          0.016448086795531003
+        ],
+        "right": [
+          -0.03151496218062527,
+          -0.19732080894752216,
+          0.016448086795531003
+        ]
+      },
+      "native_arm_max_height_at_reference_base_m": 0.7669101847515015
+    },
+    {
+      "name": "left_raise_0.15",
+      "joint_delta_from_default_rad": {
+        "left_shoulder_roll_joint": 0.15
+      },
+      "arm_joint_angles_rad": {
+        "aaleft_shoulder_pitch_joint": 0.2,
+        "left_shoulder_roll_joint": -1.1,
+        "left_elbow_pitch_joint": 0.0,
+        "left_elbow_yaw_joint": -0.5,
+        "aaright_shoulder_pitch_joint": 0.2,
+        "right_shoulder_roll_joint": 1.25,
+        "right_elbow_pitch_joint": 0.0,
+        "right_elbow_yaw_joint": 0.5
+      },
+      "arm_limit_margin_rad": {
+        "aaleft_shoulder_pitch_joint": 0.996,
+        "left_shoulder_roll_joint": 0.5419999999999998,
+        "left_elbow_pitch_joint": 1.885,
+        "left_elbow_yaw_joint": 1.3159999999999998,
+        "aaright_shoulder_pitch_joint": 0.996,
+        "right_shoulder_roll_joint": 0.379,
+        "right_elbow_pitch_joint": 1.885,
+        "right_elbow_yaw_joint": 1.3159999999999998
+      },
+      "all_arm_angles_within_limits": true,
+      "static_samples": [
+        {
+          "interpolation_fraction": 0.0,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.1,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.2,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.30000000000000004,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.4,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.5,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.6000000000000001,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.7000000000000001,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.8,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.9,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 1.0,
+          "robot_self_contacts": []
+        }
+      ],
+      "eligible_pair_min_distance_over_samples_m": {
+        "k1_geom_1:k1_geom_10": 0.02999986310943001,
+        "k1_geom_1:k1_geom_12": 0.0,
+        "k1_geom_1:k1_geom_14": 0.0977785129593351,
+        "k1_geom_1:k1_geom_17": 0.02999986310943001,
+        "k1_geom_1:k1_geom_19": 0.0484858418003457,
+        "k1_geom_1:k1_geom_21": 0.09776469665887151,
+        "k1_geom_2:k1_geom_10": 0.1659318207570914,
+        "k1_geom_2:k1_geom_12": 0.11512227882844986,
+        "k1_geom_2:k1_geom_14": 0.12571762589621266,
+        "k1_geom_2:k1_geom_17": 0.16593200565894842,
+        "k1_geom_2:k1_geom_19": 0.115121108835176,
+        "k1_geom_2:k1_geom_21": 0.12570814569538483,
+        "k1_geom_10:k1_geom_14": 0.10311570976264456,
+        "k1_geom_10:k1_geom_17": 0.21999972621880698,
+        "k1_geom_10:k1_geom_19": 0.24305412237118773,
+        "k1_geom_10:k1_geom_21": 0.33687399447179533,
+        "k1_geom_12:k1_geom_17": 0.24310066210557116,
+        "k1_geom_12:k1_geom_19": 0.25702850053951826,
+        "k1_geom_12:k1_geom_21": 0.33271108861123777,
+        "k1_geom_14:k1_geom_17": 0.3368904581594625,
+        "k1_geom_14:k1_geom_19": 0.3326257734634692,
+        "k1_geom_14:k1_geom_21": 0.35142577382026047,
+        "k1_geom_17:k1_geom_21": 0.10311297605322675
+      },
+      "libccd_diagnostic_pair_min_distance_over_samples_m": {
+        "k1_geom_1:k1_geom_10": 0.006922196110176415,
+        "k1_geom_1:k1_geom_12": 0.02077056590732429,
+        "k1_geom_1:k1_geom_14": 0.07628097207734852,
+        "k1_geom_1:k1_geom_17": 0.006975687497647209,
+        "k1_geom_1:k1_geom_19": 0.02505351141926182,
+        "k1_geom_1:k1_geom_21": 0.076270968863555,
+        "k1_geom_2:k1_geom_10": 0.16422256412188063,
+        "k1_geom_2:k1_geom_12": 0.10232730565090442,
+        "k1_geom_2:k1_geom_14": 0.12230069468559313,
+        "k1_geom_2:k1_geom_17": 0.16423612926513242,
+        "k1_geom_2:k1_geom_19": 0.1003115134639414,
+        "k1_geom_2:k1_geom_21": 0.12235080816211319,
+        "k1_geom_10:k1_geom_14": 0.09368551104957579,
+        "k1_geom_10:k1_geom_17": 0.2199997262188056,
+        "k1_geom_10:k1_geom_19": 0.24078505972274922,
+        "k1_geom_10:k1_geom_21": 0.32724006819917495,
+        "k1_geom_12:k1_geom_17": 0.24047357363093336,
+        "k1_geom_12:k1_geom_19": 0.256989232917183,
+        "k1_geom_12:k1_geom_21": 0.3321667989026802,
+        "k1_geom_14:k1_geom_17": 0.32735702343134454,
+        "k1_geom_14:k1_geom_19": 0.33218400235947954,
+        "k1_geom_14:k1_geom_21": 0.35142637471372695,
+        "k1_geom_17:k1_geom_21": 0.09369393056206077
+      },
+      "distance_backend_disagreement_over_1mm_pairs": [
+        "k1_geom_1:k1_geom_10",
+        "k1_geom_1:k1_geom_12",
+        "k1_geom_1:k1_geom_14",
+        "k1_geom_1:k1_geom_17",
+        "k1_geom_1:k1_geom_19",
+        "k1_geom_1:k1_geom_21",
+        "k1_geom_2:k1_geom_10",
+        "k1_geom_2:k1_geom_12",
+        "k1_geom_2:k1_geom_14",
+        "k1_geom_2:k1_geom_17",
+        "k1_geom_2:k1_geom_19",
+        "k1_geom_2:k1_geom_21",
+        "k1_geom_10:k1_geom_14",
+        "k1_geom_10:k1_geom_19",
+        "k1_geom_10:k1_geom_21",
+        "k1_geom_12:k1_geom_17",
+        "k1_geom_14:k1_geom_17",
+        "k1_geom_17:k1_geom_21"
+      ],
+      "static_self_contact_count": 0,
+      "kinematic_time_s": 0.0,
+      "coverage": {
+        "region_projected_area_m2": {
+          "trunk": 0.042,
+          "left_arm": 0.025212500000000002,
+          "right_arm": 0.0251625
+        },
+        "upper_body_union_projected_area_m2": 0.092375,
+        "arms_outside_trunk_projected_area_m2": 0.050375,
+        "region_projection_bounds_trunk_relative_m": {
+          "trunk": {
+            "y_min": -0.08,
+            "y_max": 0.08,
+            "z_min": -0.11000021213166872,
+            "z_max": 0.19999999999999996
+          },
+          "left_arm": {
+            "y_min": 0.11000022050952847,
+            "y_max": 0.3260546801800837,
+            "z_min": -0.17400260955230445,
+            "z_max": 0.21321990941431257
+          },
+          "right_arm": {
+            "y_min": -0.278360310119956,
+            "y_max": -0.10999991538364234,
+            "z_min": -0.19349725179968147,
+            "z_max": 0.2132201847515015
+          }
+        },
+        "union_delta_from_default_m2": 5.6249999999993805e-05
+      },
+      "distal_elbow_yaw_body_origin_trunk_relative_m": {
+        "left": [
+          -0.02961034611072736,
+          0.2202642972359032,
+          0.025843852846869075
+        ],
+        "right": [
+          -0.03151496218062527,
+          -0.19732080894752216,
+          0.016448086795531003
+        ]
+      },
+      "native_arm_max_height_at_reference_base_m": 0.7669101847515015
+    },
+    {
+      "name": "right_raise_0.15",
+      "joint_delta_from_default_rad": {
+        "right_shoulder_roll_joint": -0.15
+      },
+      "arm_joint_angles_rad": {
+        "aaleft_shoulder_pitch_joint": 0.2,
+        "left_shoulder_roll_joint": -1.25,
+        "left_elbow_pitch_joint": 0.0,
+        "left_elbow_yaw_joint": -0.5,
+        "aaright_shoulder_pitch_joint": 0.2,
+        "right_shoulder_roll_joint": 1.1,
+        "right_elbow_pitch_joint": 0.0,
+        "right_elbow_yaw_joint": 0.5
+      },
+      "arm_limit_margin_rad": {
+        "aaleft_shoulder_pitch_joint": 0.996,
+        "left_shoulder_roll_joint": 0.3919999999999999,
+        "left_elbow_pitch_joint": 1.885,
+        "left_elbow_yaw_joint": 1.3159999999999998,
+        "aaright_shoulder_pitch_joint": 0.996,
+        "right_shoulder_roll_joint": 0.5289999999999999,
+        "right_elbow_pitch_joint": 1.885,
+        "right_elbow_yaw_joint": 1.3159999999999998
+      },
+      "all_arm_angles_within_limits": true,
+      "static_samples": [
+        {
+          "interpolation_fraction": 0.0,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.1,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.2,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.30000000000000004,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.4,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.5,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.6000000000000001,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.7000000000000001,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.8,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.9,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 1.0,
+          "robot_self_contacts": []
+        }
+      ],
+      "eligible_pair_min_distance_over_samples_m": {
+        "k1_geom_1:k1_geom_10": 0.02999986310943001,
+        "k1_geom_1:k1_geom_12": 0.04853613281183687,
+        "k1_geom_1:k1_geom_14": 0.0977785129593351,
+        "k1_geom_1:k1_geom_17": 0.02999986310943001,
+        "k1_geom_1:k1_geom_19": 0.0,
+        "k1_geom_1:k1_geom_21": 0.09776469665887151,
+        "k1_geom_2:k1_geom_10": 0.16593183311490722,
+        "k1_geom_2:k1_geom_12": 0.11512227882844986,
+        "k1_geom_2:k1_geom_14": 0.12571762589621266,
+        "k1_geom_2:k1_geom_17": 0.16593199330109273,
+        "k1_geom_2:k1_geom_19": 0.115121108835176,
+        "k1_geom_2:k1_geom_21": 0.12570814569538483,
+        "k1_geom_10:k1_geom_14": 0.10311570976264474,
+        "k1_geom_10:k1_geom_17": 0.21999972621880698,
+        "k1_geom_10:k1_geom_19": 0.24305412237118773,
+        "k1_geom_10:k1_geom_21": 0.3368739957348679,
+        "k1_geom_12:k1_geom_17": 0.24310066210557116,
+        "k1_geom_12:k1_geom_19": 0.25702850053951826,
+        "k1_geom_12:k1_geom_21": 0.33271108861123777,
+        "k1_geom_14:k1_geom_17": 0.33689045690264763,
+        "k1_geom_14:k1_geom_19": 0.3326257734634692,
+        "k1_geom_14:k1_geom_21": 0.35142577382026047,
+        "k1_geom_17:k1_geom_21": 0.1031129760532267
+      },
+      "libccd_diagnostic_pair_min_distance_over_samples_m": {
+        "k1_geom_1:k1_geom_10": 0.006922198041631411,
+        "k1_geom_1:k1_geom_12": 0.02077056590732429,
+        "k1_geom_1:k1_geom_14": 0.07628097207734852,
+        "k1_geom_1:k1_geom_17": 0.006975687354575877,
+        "k1_geom_1:k1_geom_19": 0.02505351141926182,
+        "k1_geom_1:k1_geom_21": 0.076270968863555,
+        "k1_geom_2:k1_geom_10": 0.16422257828455633,
+        "k1_geom_2:k1_geom_12": 0.10232730565090442,
+        "k1_geom_2:k1_geom_14": 0.12230069468559313,
+        "k1_geom_2:k1_geom_17": 0.164236046908127,
+        "k1_geom_2:k1_geom_19": 0.1003115134639414,
+        "k1_geom_2:k1_geom_21": 0.12235080816211319,
+        "k1_geom_10:k1_geom_14": 0.09368551104960399,
+        "k1_geom_10:k1_geom_17": 0.2199997262188056,
+        "k1_geom_10:k1_geom_19": 0.24078505972274922,
+        "k1_geom_10:k1_geom_21": 0.32724006919628423,
+        "k1_geom_12:k1_geom_17": 0.24047357363093336,
+        "k1_geom_12:k1_geom_19": 0.256989232917183,
+        "k1_geom_12:k1_geom_21": 0.3321667989026802,
+        "k1_geom_14:k1_geom_17": 0.32735700052186867,
+        "k1_geom_14:k1_geom_19": 0.33218400235947954,
+        "k1_geom_14:k1_geom_21": 0.35142637471372695,
+        "k1_geom_17:k1_geom_21": 0.09369393056206077
+      },
+      "distance_backend_disagreement_over_1mm_pairs": [
+        "k1_geom_1:k1_geom_10",
+        "k1_geom_1:k1_geom_12",
+        "k1_geom_1:k1_geom_14",
+        "k1_geom_1:k1_geom_17",
+        "k1_geom_1:k1_geom_19",
+        "k1_geom_1:k1_geom_21",
+        "k1_geom_2:k1_geom_10",
+        "k1_geom_2:k1_geom_12",
+        "k1_geom_2:k1_geom_14",
+        "k1_geom_2:k1_geom_17",
+        "k1_geom_2:k1_geom_19",
+        "k1_geom_2:k1_geom_21",
+        "k1_geom_10:k1_geom_14",
+        "k1_geom_10:k1_geom_19",
+        "k1_geom_10:k1_geom_21",
+        "k1_geom_12:k1_geom_17",
+        "k1_geom_14:k1_geom_17",
+        "k1_geom_17:k1_geom_21"
+      ],
+      "static_self_contact_count": 0,
+      "kinematic_time_s": 0.0,
+      "coverage": {
+        "region_projected_area_m2": {
+          "trunk": 0.042,
+          "left_arm": 0.02515625,
+          "right_arm": 0.02520625
+        },
+        "upper_body_union_projected_area_m2": 0.0923625,
+        "arms_outside_trunk_projected_area_m2": 0.050362500000000004,
+        "region_projection_bounds_trunk_relative_m": {
+          "trunk": {
+            "y_min": -0.08,
+            "y_max": 0.08,
+            "z_min": -0.11000021213166872,
+            "z_max": 0.19999999999999996
+          },
+          "left_arm": {
+            "y_min": 0.10999991538364234,
+            "y_max": 0.27839855376143324,
+            "z_min": -0.19356400768403642,
+            "z_max": 0.2132201847515015
+          },
+          "right_arm": {
+            "y_min": -0.32599884714475086,
+            "y_max": -0.11000022050952848,
+            "z_min": -0.17394098063503965,
+            "z_max": 0.21321990941431257
+          }
+        },
+        "union_delta_from_default_m2": 4.374999999999518e-05
+      },
+      "distal_elbow_yaw_body_origin_trunk_relative_m": {
+        "left": [
+          -0.03151496218062527,
+          0.19732080894752216,
+          0.016448086795531003
+        ],
+        "right": [
+          -0.02961034611072736,
+          -0.2202642972359032,
+          0.025843852846869075
+        ]
+      },
+      "native_arm_max_height_at_reference_base_m": 0.7669101847515015
+    },
+    {
+      "name": "both_raise_0.15",
+      "joint_delta_from_default_rad": {
+        "left_shoulder_roll_joint": 0.15,
+        "right_shoulder_roll_joint": -0.15
+      },
+      "arm_joint_angles_rad": {
+        "aaleft_shoulder_pitch_joint": 0.2,
+        "left_shoulder_roll_joint": -1.1,
+        "left_elbow_pitch_joint": 0.0,
+        "left_elbow_yaw_joint": -0.5,
+        "aaright_shoulder_pitch_joint": 0.2,
+        "right_shoulder_roll_joint": 1.1,
+        "right_elbow_pitch_joint": 0.0,
+        "right_elbow_yaw_joint": 0.5
+      },
+      "arm_limit_margin_rad": {
+        "aaleft_shoulder_pitch_joint": 0.996,
+        "left_shoulder_roll_joint": 0.5419999999999998,
+        "left_elbow_pitch_joint": 1.885,
+        "left_elbow_yaw_joint": 1.3159999999999998,
+        "aaright_shoulder_pitch_joint": 0.996,
+        "right_shoulder_roll_joint": 0.5289999999999999,
+        "right_elbow_pitch_joint": 1.885,
+        "right_elbow_yaw_joint": 1.3159999999999998
+      },
+      "all_arm_angles_within_limits": true,
+      "static_samples": [
+        {
+          "interpolation_fraction": 0.0,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.1,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.2,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.30000000000000004,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.4,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.5,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.6000000000000001,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.7000000000000001,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.8,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.9,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 1.0,
+          "robot_self_contacts": []
+        }
+      ],
+      "eligible_pair_min_distance_over_samples_m": {
+        "k1_geom_1:k1_geom_10": 0.02999986310943001,
+        "k1_geom_1:k1_geom_12": 0.0,
+        "k1_geom_1:k1_geom_14": 0.0977785129593351,
+        "k1_geom_1:k1_geom_17": 0.02999986310943001,
+        "k1_geom_1:k1_geom_19": 0.0,
+        "k1_geom_1:k1_geom_21": 0.09776469665887151,
+        "k1_geom_2:k1_geom_10": 0.1659318207570914,
+        "k1_geom_2:k1_geom_12": 0.11512227882844986,
+        "k1_geom_2:k1_geom_14": 0.12571762589621266,
+        "k1_geom_2:k1_geom_17": 0.16593199330109273,
+        "k1_geom_2:k1_geom_19": 0.115121108835176,
+        "k1_geom_2:k1_geom_21": 0.12570814569538483,
+        "k1_geom_10:k1_geom_14": 0.10311570976264456,
+        "k1_geom_10:k1_geom_17": 0.21999972621880698,
+        "k1_geom_10:k1_geom_19": 0.24305412237118773,
+        "k1_geom_10:k1_geom_21": 0.3368739957348679,
+        "k1_geom_12:k1_geom_17": 0.24310066210557116,
+        "k1_geom_12:k1_geom_19": 0.25702850053951826,
+        "k1_geom_12:k1_geom_21": 0.33271108861123777,
+        "k1_geom_14:k1_geom_17": 0.3368904581594625,
+        "k1_geom_14:k1_geom_19": 0.3326257734634692,
+        "k1_geom_14:k1_geom_21": 0.35142577382026047,
+        "k1_geom_17:k1_geom_21": 0.1031129760532267
+      },
+      "libccd_diagnostic_pair_min_distance_over_samples_m": {
+        "k1_geom_1:k1_geom_10": 0.006922196110176415,
+        "k1_geom_1:k1_geom_12": 0.02077056590732429,
+        "k1_geom_1:k1_geom_14": 0.07628097207734852,
+        "k1_geom_1:k1_geom_17": 0.006975687354575877,
+        "k1_geom_1:k1_geom_19": 0.02505351141926182,
+        "k1_geom_1:k1_geom_21": 0.076270968863555,
+        "k1_geom_2:k1_geom_10": 0.16422256412188063,
+        "k1_geom_2:k1_geom_12": 0.10232730565090442,
+        "k1_geom_2:k1_geom_14": 0.12230069468559313,
+        "k1_geom_2:k1_geom_17": 0.164236046908127,
+        "k1_geom_2:k1_geom_19": 0.1003115134639414,
+        "k1_geom_2:k1_geom_21": 0.12235080816211319,
+        "k1_geom_10:k1_geom_14": 0.09368551104957579,
+        "k1_geom_10:k1_geom_17": 0.2199997262188056,
+        "k1_geom_10:k1_geom_19": 0.24078505972274922,
+        "k1_geom_10:k1_geom_21": 0.32724006919628423,
+        "k1_geom_12:k1_geom_17": 0.24047357363093336,
+        "k1_geom_12:k1_geom_19": 0.256989232917183,
+        "k1_geom_12:k1_geom_21": 0.3321667989026802,
+        "k1_geom_14:k1_geom_17": 0.32735702343134454,
+        "k1_geom_14:k1_geom_19": 0.33218400235947954,
+        "k1_geom_14:k1_geom_21": 0.35142637471372695,
+        "k1_geom_17:k1_geom_21": 0.09369393056206077
+      },
+      "distance_backend_disagreement_over_1mm_pairs": [
+        "k1_geom_1:k1_geom_10",
+        "k1_geom_1:k1_geom_12",
+        "k1_geom_1:k1_geom_14",
+        "k1_geom_1:k1_geom_17",
+        "k1_geom_1:k1_geom_19",
+        "k1_geom_1:k1_geom_21",
+        "k1_geom_2:k1_geom_10",
+        "k1_geom_2:k1_geom_12",
+        "k1_geom_2:k1_geom_14",
+        "k1_geom_2:k1_geom_17",
+        "k1_geom_2:k1_geom_19",
+        "k1_geom_2:k1_geom_21",
+        "k1_geom_10:k1_geom_14",
+        "k1_geom_10:k1_geom_19",
+        "k1_geom_10:k1_geom_21",
+        "k1_geom_12:k1_geom_17",
+        "k1_geom_14:k1_geom_17",
+        "k1_geom_17:k1_geom_21"
+      ],
+      "static_self_contact_count": 0,
+      "kinematic_time_s": 0.0,
+      "coverage": {
+        "region_projected_area_m2": {
+          "trunk": 0.042,
+          "left_arm": 0.025212500000000002,
+          "right_arm": 0.02520625
+        },
+        "upper_body_union_projected_area_m2": 0.09241875000000001,
+        "arms_outside_trunk_projected_area_m2": 0.050418750000000005,
+        "region_projection_bounds_trunk_relative_m": {
+          "trunk": {
+            "y_min": -0.08,
+            "y_max": 0.08,
+            "z_min": -0.11000021213166872,
+            "z_max": 0.19999999999999996
+          },
+          "left_arm": {
+            "y_min": 0.11000022050952847,
+            "y_max": 0.3260546801800837,
+            "z_min": -0.17400260955230445,
+            "z_max": 0.21321990941431257
+          },
+          "right_arm": {
+            "y_min": -0.32599884714475086,
+            "y_max": -0.11000022050952848,
+            "z_min": -0.17394098063503965,
+            "z_max": 0.21321990941431257
+          }
+        },
+        "union_delta_from_default_m2": 0.00010000000000000286
+      },
+      "distal_elbow_yaw_body_origin_trunk_relative_m": {
+        "left": [
+          -0.02961034611072736,
+          0.2202642972359032,
+          0.025843852846869075
+        ],
+        "right": [
+          -0.02961034611072736,
+          -0.2202642972359032,
+          0.025843852846869075
+        ]
+      },
+      "native_arm_max_height_at_reference_base_m": 0.7669099094143126
+    },
+    {
+      "name": "left_extend_0.15",
+      "joint_delta_from_default_rad": {
+        "aaleft_shoulder_pitch_joint": -0.15
+      },
+      "arm_joint_angles_rad": {
+        "aaleft_shoulder_pitch_joint": 0.05000000000000002,
+        "left_shoulder_roll_joint": -1.25,
+        "left_elbow_pitch_joint": 0.0,
+        "left_elbow_yaw_joint": -0.5,
+        "aaright_shoulder_pitch_joint": 0.2,
+        "right_shoulder_roll_joint": 1.25,
+        "right_elbow_pitch_joint": 0.0,
+        "right_elbow_yaw_joint": 0.5
+      },
+      "arm_limit_margin_rad": {
+        "aaleft_shoulder_pitch_joint": 1.146,
+        "left_shoulder_roll_joint": 0.3919999999999999,
+        "left_elbow_pitch_joint": 1.885,
+        "left_elbow_yaw_joint": 1.3159999999999998,
+        "aaright_shoulder_pitch_joint": 0.996,
+        "right_shoulder_roll_joint": 0.379,
+        "right_elbow_pitch_joint": 1.885,
+        "right_elbow_yaw_joint": 1.3159999999999998
+      },
+      "all_arm_angles_within_limits": true,
+      "static_samples": [
+        {
+          "interpolation_fraction": 0.0,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.1,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.2,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.30000000000000004,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.4,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.5,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.6000000000000001,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.7000000000000001,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.8,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.9,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 1.0,
+          "robot_self_contacts": []
+        }
+      ],
+      "eligible_pair_min_distance_over_samples_m": {
+        "k1_geom_1:k1_geom_10": 0.02999986310941589,
+        "k1_geom_1:k1_geom_12": 0.048536132811836843,
+        "k1_geom_1:k1_geom_14": 0.0977695995068109,
+        "k1_geom_1:k1_geom_17": 0.02999986310943001,
+        "k1_geom_1:k1_geom_19": 0.0484858418003457,
+        "k1_geom_1:k1_geom_21": 0.09776469665887151,
+        "k1_geom_2:k1_geom_10": 0.16593183311490722,
+        "k1_geom_2:k1_geom_12": 0.11378990653521304,
+        "k1_geom_2:k1_geom_14": 0.12571762287698632,
+        "k1_geom_2:k1_geom_17": 0.16593200565894842,
+        "k1_geom_2:k1_geom_19": 0.115121108835176,
+        "k1_geom_2:k1_geom_21": 0.12570814569538483,
+        "k1_geom_10:k1_geom_14": 0.10311570976264459,
+        "k1_geom_10:k1_geom_17": 0.21999972621880698,
+        "k1_geom_10:k1_geom_19": 0.24299054107879978,
+        "k1_geom_10:k1_geom_21": 0.3368739957348679,
+        "k1_geom_12:k1_geom_17": 0.24295473150547983,
+        "k1_geom_12:k1_geom_19": 0.2570219947458877,
+        "k1_geom_12:k1_geom_21": 0.33239673561245736,
+        "k1_geom_14:k1_geom_17": 0.335040480924014,
+        "k1_geom_14:k1_geom_19": 0.3326257734634692,
+        "k1_geom_14:k1_geom_21": 0.35142577382026047,
+        "k1_geom_17:k1_geom_21": 0.10311297605322675
+      },
+      "libccd_diagnostic_pair_min_distance_over_samples_m": {
+        "k1_geom_1:k1_geom_10": 0.006922198041631411,
+        "k1_geom_1:k1_geom_12": 0.02077056590732429,
+        "k1_geom_1:k1_geom_14": 0.07069714400902205,
+        "k1_geom_1:k1_geom_17": 0.006975687497647209,
+        "k1_geom_1:k1_geom_19": 0.02505351141926182,
+        "k1_geom_1:k1_geom_21": 0.076270968863555,
+        "k1_geom_2:k1_geom_10": 0.16422257828455633,
+        "k1_geom_2:k1_geom_12": 0.10076193515810705,
+        "k1_geom_2:k1_geom_14": 0.11739497621882045,
+        "k1_geom_2:k1_geom_17": 0.16423612926513242,
+        "k1_geom_2:k1_geom_19": 0.1003115134639414,
+        "k1_geom_2:k1_geom_21": 0.12235080816211319,
+        "k1_geom_10:k1_geom_14": 0.09368551104958156,
+        "k1_geom_10:k1_geom_17": 0.2199997262188056,
+        "k1_geom_10:k1_geom_19": 0.2401284448269756,
+        "k1_geom_10:k1_geom_21": 0.32724006919628423,
+        "k1_geom_12:k1_geom_17": 0.23879382536931493,
+        "k1_geom_12:k1_geom_19": 0.25697678405053925,
+        "k1_geom_12:k1_geom_21": 0.3321081342037018,
+        "k1_geom_14:k1_geom_17": 0.3254000130023076,
+        "k1_geom_14:k1_geom_19": 0.33218400235947954,
+        "k1_geom_14:k1_geom_21": 0.35142637471372695,
+        "k1_geom_17:k1_geom_21": 0.09369393056206077
+      },
+      "distance_backend_disagreement_over_1mm_pairs": [
+        "k1_geom_1:k1_geom_10",
+        "k1_geom_1:k1_geom_12",
+        "k1_geom_1:k1_geom_14",
+        "k1_geom_1:k1_geom_17",
+        "k1_geom_1:k1_geom_19",
+        "k1_geom_1:k1_geom_21",
+        "k1_geom_2:k1_geom_10",
+        "k1_geom_2:k1_geom_12",
+        "k1_geom_2:k1_geom_14",
+        "k1_geom_2:k1_geom_17",
+        "k1_geom_2:k1_geom_19",
+        "k1_geom_2:k1_geom_21",
+        "k1_geom_10:k1_geom_14",
+        "k1_geom_10:k1_geom_19",
+        "k1_geom_10:k1_geom_21",
+        "k1_geom_12:k1_geom_17",
+        "k1_geom_14:k1_geom_17",
+        "k1_geom_17:k1_geom_21"
+      ],
+      "static_self_contact_count": 0,
+      "kinematic_time_s": 0.0,
+      "coverage": {
+        "region_projected_area_m2": {
+          "trunk": 0.042,
+          "left_arm": 0.023825000000000002,
+          "right_arm": 0.0251625
+        },
+        "upper_body_union_projected_area_m2": 0.0909875,
+        "arms_outside_trunk_projected_area_m2": 0.0489875,
+        "region_projection_bounds_trunk_relative_m": {
+          "trunk": {
+            "y_min": -0.08,
+            "y_max": 0.08,
+            "z_min": -0.11000021213166872,
+            "z_max": 0.19999999999999996
+          },
+          "left_arm": {
+            "y_min": 0.10999991538364234,
+            "y_max": 0.2783985537614332,
+            "z_min": -0.18497765879318756,
+            "z_max": 0.20789731950681423
+          },
+          "right_arm": {
+            "y_min": -0.278360310119956,
+            "y_max": -0.10999991538364234,
+            "z_min": -0.19349725179968147,
+            "z_max": 0.2132201847515015
+          }
+        },
+        "union_delta_from_default_m2": -0.001331250000000006
+      },
+      "distal_elbow_yaw_body_origin_trunk_relative_m": {
+        "left": [
+          -0.006047719058559223,
+          0.19732080894752216,
+          0.013625591538354298
+        ],
+        "right": [
+          -0.03151496218062527,
+          -0.19732080894752216,
+          0.016448086795531003
+        ]
+      },
+      "native_arm_max_height_at_reference_base_m": 0.7669101847515015
+    },
+    {
+      "name": "right_extend_0.15",
+      "joint_delta_from_default_rad": {
+        "aaright_shoulder_pitch_joint": -0.15
+      },
+      "arm_joint_angles_rad": {
+        "aaleft_shoulder_pitch_joint": 0.2,
+        "left_shoulder_roll_joint": -1.25,
+        "left_elbow_pitch_joint": 0.0,
+        "left_elbow_yaw_joint": -0.5,
+        "aaright_shoulder_pitch_joint": 0.05000000000000002,
+        "right_shoulder_roll_joint": 1.25,
+        "right_elbow_pitch_joint": 0.0,
+        "right_elbow_yaw_joint": 0.5
+      },
+      "arm_limit_margin_rad": {
+        "aaleft_shoulder_pitch_joint": 0.996,
+        "left_shoulder_roll_joint": 0.3919999999999999,
+        "left_elbow_pitch_joint": 1.885,
+        "left_elbow_yaw_joint": 1.3159999999999998,
+        "aaright_shoulder_pitch_joint": 1.146,
+        "right_shoulder_roll_joint": 0.379,
+        "right_elbow_pitch_joint": 1.885,
+        "right_elbow_yaw_joint": 1.3159999999999998
+      },
+      "all_arm_angles_within_limits": true,
+      "static_samples": [
+        {
+          "interpolation_fraction": 0.0,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.1,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.2,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.30000000000000004,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.4,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.5,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.6000000000000001,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.7000000000000001,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.8,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.9,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 1.0,
+          "robot_self_contacts": []
+        }
+      ],
+      "eligible_pair_min_distance_over_samples_m": {
+        "k1_geom_1:k1_geom_10": 0.02999986310943001,
+        "k1_geom_1:k1_geom_12": 0.04853613281183687,
+        "k1_geom_1:k1_geom_14": 0.0977785129593351,
+        "k1_geom_1:k1_geom_17": 0.02999986310941589,
+        "k1_geom_1:k1_geom_19": 0.0,
+        "k1_geom_1:k1_geom_21": 0.09775483028786033,
+        "k1_geom_2:k1_geom_10": 0.16593183311490722,
+        "k1_geom_2:k1_geom_12": 0.11512227882844986,
+        "k1_geom_2:k1_geom_14": 0.12571762589621266,
+        "k1_geom_2:k1_geom_17": 0.16593200565894842,
+        "k1_geom_2:k1_geom_19": 0.11376805224556144,
+        "k1_geom_2:k1_geom_21": 0.12570814569538483,
+        "k1_geom_10:k1_geom_14": 0.10311570976264474,
+        "k1_geom_10:k1_geom_17": 0.21999972621880698,
+        "k1_geom_10:k1_geom_19": 0.242859585805671,
+        "k1_geom_10:k1_geom_21": 0.3350227245638543,
+        "k1_geom_12:k1_geom_17": 0.2429903648328742,
+        "k1_geom_12:k1_geom_19": 0.25702850053951826,
+        "k1_geom_12:k1_geom_21": 0.33271108861123777,
+        "k1_geom_14:k1_geom_17": 0.3368904581594625,
+        "k1_geom_14:k1_geom_19": 0.33237157147430396,
+        "k1_geom_14:k1_geom_21": 0.35142577382026047,
+        "k1_geom_17:k1_geom_21": 0.10311297605322665
+      },
+      "libccd_diagnostic_pair_min_distance_over_samples_m": {
+        "k1_geom_1:k1_geom_10": 0.006922198041631411,
+        "k1_geom_1:k1_geom_12": 0.02077056590732429,
+        "k1_geom_1:k1_geom_14": 0.07628097207734852,
+        "k1_geom_1:k1_geom_17": 0.006975687497647209,
+        "k1_geom_1:k1_geom_19": 0.02505351141926182,
+        "k1_geom_1:k1_geom_21": 0.0708533677007448,
+        "k1_geom_2:k1_geom_10": 0.16422257828455633,
+        "k1_geom_2:k1_geom_12": 0.10232730565090442,
+        "k1_geom_2:k1_geom_14": 0.12230069468559313,
+        "k1_geom_2:k1_geom_17": 0.16423612926513242,
+        "k1_geom_2:k1_geom_19": 0.09847133134053054,
+        "k1_geom_2:k1_geom_21": 0.11735568968664989,
+        "k1_geom_10:k1_geom_14": 0.09368551104960399,
+        "k1_geom_10:k1_geom_17": 0.2199997262188056,
+        "k1_geom_10:k1_geom_19": 0.2393832979019539,
+        "k1_geom_10:k1_geom_21": 0.325340649100055,
+        "k1_geom_12:k1_geom_17": 0.23947386637224488,
+        "k1_geom_12:k1_geom_19": 0.256989232917183,
+        "k1_geom_12:k1_geom_21": 0.3321667989026802,
+        "k1_geom_14:k1_geom_17": 0.32735702343134454,
+        "k1_geom_14:k1_geom_19": 0.3320835081944331,
+        "k1_geom_14:k1_geom_21": 0.35142637471372695,
+        "k1_geom_17:k1_geom_21": 0.09369393056206077
+      },
+      "distance_backend_disagreement_over_1mm_pairs": [
+        "k1_geom_1:k1_geom_10",
+        "k1_geom_1:k1_geom_12",
+        "k1_geom_1:k1_geom_14",
+        "k1_geom_1:k1_geom_17",
+        "k1_geom_1:k1_geom_19",
+        "k1_geom_1:k1_geom_21",
+        "k1_geom_2:k1_geom_10",
+        "k1_geom_2:k1_geom_12",
+        "k1_geom_2:k1_geom_14",
+        "k1_geom_2:k1_geom_17",
+        "k1_geom_2:k1_geom_19",
+        "k1_geom_2:k1_geom_21",
+        "k1_geom_10:k1_geom_14",
+        "k1_geom_10:k1_geom_19",
+        "k1_geom_10:k1_geom_21",
+        "k1_geom_12:k1_geom_17",
+        "k1_geom_14:k1_geom_17",
+        "k1_geom_17:k1_geom_21"
+      ],
+      "static_self_contact_count": 0,
+      "kinematic_time_s": 0.0,
+      "coverage": {
+        "region_projected_area_m2": {
+          "trunk": 0.042,
+          "left_arm": 0.02515625,
+          "right_arm": 0.02381875
+        },
+        "upper_body_union_projected_area_m2": 0.090975,
+        "arms_outside_trunk_projected_area_m2": 0.048975000000000005,
+        "region_projection_bounds_trunk_relative_m": {
+          "trunk": {
+            "y_min": -0.08,
+            "y_max": 0.08,
+            "z_min": -0.11000021213166872,
+            "z_max": 0.19999999999999996
+          },
+          "left_arm": {
+            "y_min": 0.10999991538364234,
+            "y_max": 0.27839855376143324,
+            "z_min": -0.19356400768403642,
+            "z_max": 0.2132201847515015
+          },
+          "right_arm": {
+            "y_min": -0.27836031011995593,
+            "y_max": -0.10999991538364234,
+            "z_min": -0.18487404397728785,
+            "z_max": 0.20789731950681423
+          }
+        },
+        "union_delta_from_default_m2": -0.0013437500000000047
+      },
+      "distal_elbow_yaw_body_origin_trunk_relative_m": {
+        "left": [
+          -0.03151496218062527,
+          0.19732080894752216,
+          0.016448086795531003
+        ],
+        "right": [
+          -0.006047719058559223,
+          -0.19732080894752216,
+          0.013625591538354298
+        ]
+      },
+      "native_arm_max_height_at_reference_base_m": 0.7669101847515015
+    },
+    {
+      "name": "both_extend_0.15",
+      "joint_delta_from_default_rad": {
+        "aaleft_shoulder_pitch_joint": -0.15,
+        "aaright_shoulder_pitch_joint": -0.15
+      },
+      "arm_joint_angles_rad": {
+        "aaleft_shoulder_pitch_joint": 0.05000000000000002,
+        "left_shoulder_roll_joint": -1.25,
+        "left_elbow_pitch_joint": 0.0,
+        "left_elbow_yaw_joint": -0.5,
+        "aaright_shoulder_pitch_joint": 0.05000000000000002,
+        "right_shoulder_roll_joint": 1.25,
+        "right_elbow_pitch_joint": 0.0,
+        "right_elbow_yaw_joint": 0.5
+      },
+      "arm_limit_margin_rad": {
+        "aaleft_shoulder_pitch_joint": 1.146,
+        "left_shoulder_roll_joint": 0.3919999999999999,
+        "left_elbow_pitch_joint": 1.885,
+        "left_elbow_yaw_joint": 1.3159999999999998,
+        "aaright_shoulder_pitch_joint": 1.146,
+        "right_shoulder_roll_joint": 0.379,
+        "right_elbow_pitch_joint": 1.885,
+        "right_elbow_yaw_joint": 1.3159999999999998
+      },
+      "all_arm_angles_within_limits": true,
+      "static_samples": [
+        {
+          "interpolation_fraction": 0.0,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.1,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.2,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.30000000000000004,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.4,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.5,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.6000000000000001,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.7000000000000001,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.8,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.9,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 1.0,
+          "robot_self_contacts": []
+        }
+      ],
+      "eligible_pair_min_distance_over_samples_m": {
+        "k1_geom_1:k1_geom_10": 0.02999986310941589,
+        "k1_geom_1:k1_geom_12": 0.048536132811836843,
+        "k1_geom_1:k1_geom_14": 0.0977695995068109,
+        "k1_geom_1:k1_geom_17": 0.02999986310941589,
+        "k1_geom_1:k1_geom_19": 0.0,
+        "k1_geom_1:k1_geom_21": 0.09775483028786033,
+        "k1_geom_2:k1_geom_10": 0.16593183311490722,
+        "k1_geom_2:k1_geom_12": 0.11378990653521304,
+        "k1_geom_2:k1_geom_14": 0.12571762287698632,
+        "k1_geom_2:k1_geom_17": 0.16593200565894842,
+        "k1_geom_2:k1_geom_19": 0.11376805224556144,
+        "k1_geom_2:k1_geom_21": 0.12570814569538483,
+        "k1_geom_10:k1_geom_14": 0.10311570976264459,
+        "k1_geom_10:k1_geom_17": 0.21999972621880695,
+        "k1_geom_10:k1_geom_19": 0.24305412237118765,
+        "k1_geom_10:k1_geom_21": 0.3368739957348677,
+        "k1_geom_12:k1_geom_17": 0.2431006621055711,
+        "k1_geom_12:k1_geom_19": 0.2570285005395182,
+        "k1_geom_12:k1_geom_21": 0.33271108861123755,
+        "k1_geom_14:k1_geom_17": 0.3368904581594624,
+        "k1_geom_14:k1_geom_19": 0.33262577346346917,
+        "k1_geom_14:k1_geom_21": 0.35142577382026036,
+        "k1_geom_17:k1_geom_21": 0.10311297605322665
+      },
+      "libccd_diagnostic_pair_min_distance_over_samples_m": {
+        "k1_geom_1:k1_geom_10": 0.006922198041631411,
+        "k1_geom_1:k1_geom_12": 0.02077056590732429,
+        "k1_geom_1:k1_geom_14": 0.07069714400902205,
+        "k1_geom_1:k1_geom_17": 0.006975687497647209,
+        "k1_geom_1:k1_geom_19": 0.02505351141926182,
+        "k1_geom_1:k1_geom_21": 0.0708533677007448,
+        "k1_geom_2:k1_geom_10": 0.16422257828455633,
+        "k1_geom_2:k1_geom_12": 0.10076193515810705,
+        "k1_geom_2:k1_geom_14": 0.11739497621882045,
+        "k1_geom_2:k1_geom_17": 0.16423612926513242,
+        "k1_geom_2:k1_geom_19": 0.09847133134053054,
+        "k1_geom_2:k1_geom_21": 0.11735568968664989,
+        "k1_geom_10:k1_geom_14": 0.09368551104958156,
+        "k1_geom_10:k1_geom_17": 0.2199997262188047,
+        "k1_geom_10:k1_geom_19": 0.24078505972274922,
+        "k1_geom_10:k1_geom_21": 0.3272400691962756,
+        "k1_geom_12:k1_geom_17": 0.2404735736309278,
+        "k1_geom_12:k1_geom_19": 0.256989232917183,
+        "k1_geom_12:k1_geom_21": 0.332166798902678,
+        "k1_geom_14:k1_geom_17": 0.3273570234313419,
+        "k1_geom_14:k1_geom_19": 0.332184002359476,
+        "k1_geom_14:k1_geom_21": 0.35142637471372695,
+        "k1_geom_17:k1_geom_21": 0.09369393056206077
+      },
+      "distance_backend_disagreement_over_1mm_pairs": [
+        "k1_geom_1:k1_geom_10",
+        "k1_geom_1:k1_geom_12",
+        "k1_geom_1:k1_geom_14",
+        "k1_geom_1:k1_geom_17",
+        "k1_geom_1:k1_geom_19",
+        "k1_geom_1:k1_geom_21",
+        "k1_geom_2:k1_geom_10",
+        "k1_geom_2:k1_geom_12",
+        "k1_geom_2:k1_geom_14",
+        "k1_geom_2:k1_geom_17",
+        "k1_geom_2:k1_geom_19",
+        "k1_geom_2:k1_geom_21",
+        "k1_geom_10:k1_geom_14",
+        "k1_geom_10:k1_geom_19",
+        "k1_geom_10:k1_geom_21",
+        "k1_geom_12:k1_geom_17",
+        "k1_geom_14:k1_geom_17",
+        "k1_geom_17:k1_geom_21"
+      ],
+      "static_self_contact_count": 0,
+      "kinematic_time_s": 0.0,
+      "coverage": {
+        "region_projected_area_m2": {
+          "trunk": 0.042,
+          "left_arm": 0.023825000000000002,
+          "right_arm": 0.02381875
+        },
+        "upper_body_union_projected_area_m2": 0.08964375000000001,
+        "arms_outside_trunk_projected_area_m2": 0.047643750000000006,
+        "region_projection_bounds_trunk_relative_m": {
+          "trunk": {
+            "y_min": -0.08,
+            "y_max": 0.08,
+            "z_min": -0.11000021213166872,
+            "z_max": 0.19999999999999996
+          },
+          "left_arm": {
+            "y_min": 0.10999991538364234,
+            "y_max": 0.2783985537614332,
+            "z_min": -0.18497765879318756,
+            "z_max": 0.20789731950681423
+          },
+          "right_arm": {
+            "y_min": -0.27836031011995593,
+            "y_max": -0.10999991538364234,
+            "z_min": -0.18487404397728785,
+            "z_max": 0.20789731950681423
+          }
+        },
+        "union_delta_from_default_m2": -0.002674999999999997
+      },
+      "distal_elbow_yaw_body_origin_trunk_relative_m": {
+        "left": [
+          -0.006047719058559223,
+          0.19732080894752216,
+          0.013625591538354298
+        ],
+        "right": [
+          -0.006047719058559223,
+          -0.19732080894752216,
+          0.013625591538354298
+        ]
+      },
+      "native_arm_max_height_at_reference_base_m": 0.7615873195068142
+    },
+    {
+      "name": "left_raise_0.30",
+      "joint_delta_from_default_rad": {
+        "left_shoulder_roll_joint": 0.3
+      },
+      "arm_joint_angles_rad": {
+        "aaleft_shoulder_pitch_joint": 0.2,
+        "left_shoulder_roll_joint": -0.95,
+        "left_elbow_pitch_joint": 0.0,
+        "left_elbow_yaw_joint": -0.5,
+        "aaright_shoulder_pitch_joint": 0.2,
+        "right_shoulder_roll_joint": 1.25,
+        "right_elbow_pitch_joint": 0.0,
+        "right_elbow_yaw_joint": 0.5
+      },
+      "arm_limit_margin_rad": {
+        "aaleft_shoulder_pitch_joint": 0.996,
+        "left_shoulder_roll_joint": 0.692,
+        "left_elbow_pitch_joint": 1.885,
+        "left_elbow_yaw_joint": 1.3159999999999998,
+        "aaright_shoulder_pitch_joint": 0.996,
+        "right_shoulder_roll_joint": 0.379,
+        "right_elbow_pitch_joint": 1.885,
+        "right_elbow_yaw_joint": 1.3159999999999998
+      },
+      "all_arm_angles_within_limits": true,
+      "static_samples": [
+        {
+          "interpolation_fraction": 0.0,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.1,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.2,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.30000000000000004,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.4,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.5,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.6000000000000001,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.7000000000000001,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.8,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.9,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 1.0,
+          "robot_self_contacts": []
+        }
+      ],
+      "eligible_pair_min_distance_over_samples_m": {
+        "k1_geom_1:k1_geom_10": 0.02999986310943001,
+        "k1_geom_1:k1_geom_12": 0.0,
+        "k1_geom_1:k1_geom_14": 0.0977785129593351,
+        "k1_geom_1:k1_geom_17": 0.02999986310943001,
+        "k1_geom_1:k1_geom_19": 0.0484858418003457,
+        "k1_geom_1:k1_geom_21": 0.09776469665887151,
+        "k1_geom_2:k1_geom_10": 0.16593181081752223,
+        "k1_geom_2:k1_geom_12": 0.11512227882844986,
+        "k1_geom_2:k1_geom_14": 0.12571762589621266,
+        "k1_geom_2:k1_geom_17": 0.16593200565894842,
+        "k1_geom_2:k1_geom_19": 0.115121108835176,
+        "k1_geom_2:k1_geom_21": 0.12570814569538483,
+        "k1_geom_10:k1_geom_14": 0.10311570976264456,
+        "k1_geom_10:k1_geom_17": 0.21999972621880698,
+        "k1_geom_10:k1_geom_19": 0.24305412237118773,
+        "k1_geom_10:k1_geom_21": 0.33687399447179533,
+        "k1_geom_12:k1_geom_17": 0.24310066210557116,
+        "k1_geom_12:k1_geom_19": 0.25702850053951826,
+        "k1_geom_12:k1_geom_21": 0.33271108861123777,
+        "k1_geom_14:k1_geom_17": 0.3368904581594625,
+        "k1_geom_14:k1_geom_19": 0.3326257734634692,
+        "k1_geom_14:k1_geom_21": 0.35142577382026047,
+        "k1_geom_17:k1_geom_21": 0.10311297605322675
+      },
+      "libccd_diagnostic_pair_min_distance_over_samples_m": {
+        "k1_geom_1:k1_geom_10": 0.006922196110380696,
+        "k1_geom_1:k1_geom_12": 0.02077056590732429,
+        "k1_geom_1:k1_geom_14": 0.07628097207734852,
+        "k1_geom_1:k1_geom_17": 0.006975687497647209,
+        "k1_geom_1:k1_geom_19": 0.02505351141926182,
+        "k1_geom_1:k1_geom_21": 0.076270968863555,
+        "k1_geom_2:k1_geom_10": 0.16422255320451207,
+        "k1_geom_2:k1_geom_12": 0.10232730565090442,
+        "k1_geom_2:k1_geom_14": 0.12230069468559313,
+        "k1_geom_2:k1_geom_17": 0.16423612926513242,
+        "k1_geom_2:k1_geom_19": 0.1003115134639414,
+        "k1_geom_2:k1_geom_21": 0.12235080816211319,
+        "k1_geom_10:k1_geom_14": 0.0936855110495527,
+        "k1_geom_10:k1_geom_17": 0.2199997262188056,
+        "k1_geom_10:k1_geom_19": 0.24078505972274922,
+        "k1_geom_10:k1_geom_21": 0.32724006678153805,
+        "k1_geom_12:k1_geom_17": 0.24047357363093336,
+        "k1_geom_12:k1_geom_19": 0.256989232917183,
+        "k1_geom_12:k1_geom_21": 0.3321667989026802,
+        "k1_geom_14:k1_geom_17": 0.32735702343134454,
+        "k1_geom_14:k1_geom_19": 0.33218400235947954,
+        "k1_geom_14:k1_geom_21": 0.35142637471372695,
+        "k1_geom_17:k1_geom_21": 0.09369393056206077
+      },
+      "distance_backend_disagreement_over_1mm_pairs": [
+        "k1_geom_1:k1_geom_10",
+        "k1_geom_1:k1_geom_12",
+        "k1_geom_1:k1_geom_14",
+        "k1_geom_1:k1_geom_17",
+        "k1_geom_1:k1_geom_19",
+        "k1_geom_1:k1_geom_21",
+        "k1_geom_2:k1_geom_10",
+        "k1_geom_2:k1_geom_12",
+        "k1_geom_2:k1_geom_14",
+        "k1_geom_2:k1_geom_17",
+        "k1_geom_2:k1_geom_19",
+        "k1_geom_2:k1_geom_21",
+        "k1_geom_10:k1_geom_14",
+        "k1_geom_10:k1_geom_19",
+        "k1_geom_10:k1_geom_21",
+        "k1_geom_12:k1_geom_17",
+        "k1_geom_14:k1_geom_17",
+        "k1_geom_17:k1_geom_21"
+      ],
+      "static_self_contact_count": 0,
+      "kinematic_time_s": 0.0,
+      "coverage": {
+        "region_projected_area_m2": {
+          "trunk": 0.042,
+          "left_arm": 0.02526875,
+          "right_arm": 0.0251625
+        },
+        "upper_body_union_projected_area_m2": 0.09243125,
+        "arms_outside_trunk_projected_area_m2": 0.050431250000000004,
+        "region_projection_bounds_trunk_relative_m": {
+          "trunk": {
+            "y_min": -0.08,
+            "y_max": 0.08,
+            "z_min": -0.11000021213166872,
+            "z_max": 0.19999999999999996
+          },
+          "left_arm": {
+            "y_min": 0.11000079087243972,
+            "y_max": 0.3699331148641819,
+            "z_min": -0.1478076460547385,
+            "z_max": 0.21321937580368877
+          },
+          "right_arm": {
+            "y_min": -0.278360310119956,
+            "y_max": -0.10999991538364234,
+            "z_min": -0.19349725179968147,
+            "z_max": 0.2132201847515015
+          }
+        },
+        "union_delta_from_default_m2": 0.00011250000000000149
+      },
+      "distal_elbow_yaw_body_origin_trunk_relative_m": {
+        "left": [
+          -0.027045952792864668,
+          0.24151751166856328,
+          0.038494402245805914
+        ],
+        "right": [
+          -0.03151496218062527,
+          -0.19732080894752216,
+          0.016448086795531003
+        ]
+      },
+      "native_arm_max_height_at_reference_base_m": 0.7669101847515015
+    },
+    {
+      "name": "right_raise_0.30",
+      "joint_delta_from_default_rad": {
+        "right_shoulder_roll_joint": -0.3
+      },
+      "arm_joint_angles_rad": {
+        "aaleft_shoulder_pitch_joint": 0.2,
+        "left_shoulder_roll_joint": -1.25,
+        "left_elbow_pitch_joint": 0.0,
+        "left_elbow_yaw_joint": -0.5,
+        "aaright_shoulder_pitch_joint": 0.2,
+        "right_shoulder_roll_joint": 0.95,
+        "right_elbow_pitch_joint": 0.0,
+        "right_elbow_yaw_joint": 0.5
+      },
+      "arm_limit_margin_rad": {
+        "aaleft_shoulder_pitch_joint": 0.996,
+        "left_shoulder_roll_joint": 0.3919999999999999,
+        "left_elbow_pitch_joint": 1.885,
+        "left_elbow_yaw_joint": 1.3159999999999998,
+        "aaright_shoulder_pitch_joint": 0.996,
+        "right_shoulder_roll_joint": 0.679,
+        "right_elbow_pitch_joint": 1.885,
+        "right_elbow_yaw_joint": 1.3159999999999998
+      },
+      "all_arm_angles_within_limits": true,
+      "static_samples": [
+        {
+          "interpolation_fraction": 0.0,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.1,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.2,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.30000000000000004,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.4,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.5,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.6000000000000001,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.7000000000000001,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.8,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.9,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 1.0,
+          "robot_self_contacts": []
+        }
+      ],
+      "eligible_pair_min_distance_over_samples_m": {
+        "k1_geom_1:k1_geom_10": 0.02999986310943001,
+        "k1_geom_1:k1_geom_12": 0.04853613281183687,
+        "k1_geom_1:k1_geom_14": 0.0977785129593351,
+        "k1_geom_1:k1_geom_17": 0.02999986310943001,
+        "k1_geom_1:k1_geom_19": 0.0484858418003457,
+        "k1_geom_1:k1_geom_21": 0.09776469665887151,
+        "k1_geom_2:k1_geom_10": 0.16593183311490722,
+        "k1_geom_2:k1_geom_12": 0.11512227882844986,
+        "k1_geom_2:k1_geom_14": 0.12571762589621266,
+        "k1_geom_2:k1_geom_17": 0.16593198336147832,
+        "k1_geom_2:k1_geom_19": 0.115121108835176,
+        "k1_geom_2:k1_geom_21": 0.12570814569538483,
+        "k1_geom_10:k1_geom_14": 0.10311570976264474,
+        "k1_geom_10:k1_geom_17": 0.21999972621880698,
+        "k1_geom_10:k1_geom_19": 0.24305412237118773,
+        "k1_geom_10:k1_geom_21": 0.3368739957348679,
+        "k1_geom_12:k1_geom_17": 0.24310066210557116,
+        "k1_geom_12:k1_geom_19": 0.25702850053951826,
+        "k1_geom_12:k1_geom_21": 0.33271108861123777,
+        "k1_geom_14:k1_geom_17": 0.33689045690264763,
+        "k1_geom_14:k1_geom_19": 0.3326257734634692,
+        "k1_geom_14:k1_geom_21": 0.35142577382026047,
+        "k1_geom_17:k1_geom_21": 0.10311297605322657
+      },
+      "libccd_diagnostic_pair_min_distance_over_samples_m": {
+        "k1_geom_1:k1_geom_10": 0.006922198041631411,
+        "k1_geom_1:k1_geom_12": 0.02077056590732429,
+        "k1_geom_1:k1_geom_14": 0.07628097207734852,
+        "k1_geom_1:k1_geom_17": 0.0069756873579489564,
+        "k1_geom_1:k1_geom_19": 0.02505351141926182,
+        "k1_geom_1:k1_geom_21": 0.076270968863555,
+        "k1_geom_2:k1_geom_10": 0.16422257828455633,
+        "k1_geom_2:k1_geom_12": 0.10232730565090442,
+        "k1_geom_2:k1_geom_14": 0.12230069468559313,
+        "k1_geom_2:k1_geom_17": 0.16423598362685476,
+        "k1_geom_2:k1_geom_19": 0.1003115134639414,
+        "k1_geom_2:k1_geom_21": 0.12235080816211319,
+        "k1_geom_10:k1_geom_14": 0.09368551104960399,
+        "k1_geom_10:k1_geom_17": 0.2199997262188056,
+        "k1_geom_10:k1_geom_19": 0.24078505972274922,
+        "k1_geom_10:k1_geom_21": 0.32724006919628423,
+        "k1_geom_12:k1_geom_17": 0.24047357363093336,
+        "k1_geom_12:k1_geom_19": 0.256989232917183,
+        "k1_geom_12:k1_geom_21": 0.3321667989026802,
+        "k1_geom_14:k1_geom_17": 0.32735699946165564,
+        "k1_geom_14:k1_geom_19": 0.33218400235947954,
+        "k1_geom_14:k1_geom_21": 0.35142637471372695,
+        "k1_geom_17:k1_geom_21": 0.09369393056206077
+      },
+      "distance_backend_disagreement_over_1mm_pairs": [
+        "k1_geom_1:k1_geom_10",
+        "k1_geom_1:k1_geom_12",
+        "k1_geom_1:k1_geom_14",
+        "k1_geom_1:k1_geom_17",
+        "k1_geom_1:k1_geom_19",
+        "k1_geom_1:k1_geom_21",
+        "k1_geom_2:k1_geom_10",
+        "k1_geom_2:k1_geom_12",
+        "k1_geom_2:k1_geom_14",
+        "k1_geom_2:k1_geom_17",
+        "k1_geom_2:k1_geom_19",
+        "k1_geom_2:k1_geom_21",
+        "k1_geom_10:k1_geom_14",
+        "k1_geom_10:k1_geom_19",
+        "k1_geom_10:k1_geom_21",
+        "k1_geom_12:k1_geom_17",
+        "k1_geom_14:k1_geom_17",
+        "k1_geom_17:k1_geom_21"
+      ],
+      "static_self_contact_count": 0,
+      "kinematic_time_s": 0.0,
+      "coverage": {
+        "region_projected_area_m2": {
+          "trunk": 0.042,
+          "left_arm": 0.02515625,
+          "right_arm": 0.02525625
+        },
+        "upper_body_union_projected_area_m2": 0.09241250000000001,
+        "arms_outside_trunk_projected_area_m2": 0.0504125,
+        "region_projection_bounds_trunk_relative_m": {
+          "trunk": {
+            "y_min": -0.08,
+            "y_max": 0.08,
+            "z_min": -0.11000021213166872,
+            "z_max": 0.19999999999999996
+          },
+          "left_arm": {
+            "y_min": 0.10999991538364234,
+            "y_max": 0.27839855376143324,
+            "z_min": -0.19356400768403642,
+            "z_max": 0.2132201847515015
+          },
+          "right_arm": {
+            "y_min": -0.369862090447155,
+            "y_max": -0.11000079087243972,
+            "z_min": -0.14775866740286275,
+            "z_max": 0.21321937580368877
+          }
+        },
+        "union_delta_from_default_m2": 9.375000000000355e-05
+      },
+      "distal_elbow_yaw_body_origin_trunk_relative_m": {
+        "left": [
+          -0.03151496218062527,
+          0.19732080894752216,
+          0.016448086795531003
+        ],
+        "right": [
+          -0.027045952792864668,
+          -0.24151751166856328,
+          0.038494402245805914
+        ]
+      },
+      "native_arm_max_height_at_reference_base_m": 0.7669101847515015
+    },
+    {
+      "name": "both_raise_0.30",
+      "joint_delta_from_default_rad": {
+        "left_shoulder_roll_joint": 0.3,
+        "right_shoulder_roll_joint": -0.3
+      },
+      "arm_joint_angles_rad": {
+        "aaleft_shoulder_pitch_joint": 0.2,
+        "left_shoulder_roll_joint": -0.95,
+        "left_elbow_pitch_joint": 0.0,
+        "left_elbow_yaw_joint": -0.5,
+        "aaright_shoulder_pitch_joint": 0.2,
+        "right_shoulder_roll_joint": 0.95,
+        "right_elbow_pitch_joint": 0.0,
+        "right_elbow_yaw_joint": 0.5
+      },
+      "arm_limit_margin_rad": {
+        "aaleft_shoulder_pitch_joint": 0.996,
+        "left_shoulder_roll_joint": 0.692,
+        "left_elbow_pitch_joint": 1.885,
+        "left_elbow_yaw_joint": 1.3159999999999998,
+        "aaright_shoulder_pitch_joint": 0.996,
+        "right_shoulder_roll_joint": 0.679,
+        "right_elbow_pitch_joint": 1.885,
+        "right_elbow_yaw_joint": 1.3159999999999998
+      },
+      "all_arm_angles_within_limits": true,
+      "static_samples": [
+        {
+          "interpolation_fraction": 0.0,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.1,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.2,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.30000000000000004,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.4,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.5,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.6000000000000001,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.7000000000000001,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.8,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.9,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 1.0,
+          "robot_self_contacts": []
+        }
+      ],
+      "eligible_pair_min_distance_over_samples_m": {
+        "k1_geom_1:k1_geom_10": 0.02999986310943001,
+        "k1_geom_1:k1_geom_12": 0.0,
+        "k1_geom_1:k1_geom_14": 0.0977785129593351,
+        "k1_geom_1:k1_geom_17": 0.02999986310943001,
+        "k1_geom_1:k1_geom_19": 0.0484858418003457,
+        "k1_geom_1:k1_geom_21": 0.09776469665887151,
+        "k1_geom_2:k1_geom_10": 0.16593181081752223,
+        "k1_geom_2:k1_geom_12": 0.11512227882844986,
+        "k1_geom_2:k1_geom_14": 0.12571762589621266,
+        "k1_geom_2:k1_geom_17": 0.16593198336147832,
+        "k1_geom_2:k1_geom_19": 0.115121108835176,
+        "k1_geom_2:k1_geom_21": 0.12570814569538483,
+        "k1_geom_10:k1_geom_14": 0.10311570976264456,
+        "k1_geom_10:k1_geom_17": 0.21999972621880698,
+        "k1_geom_10:k1_geom_19": 0.24305412237118773,
+        "k1_geom_10:k1_geom_21": 0.3368739957348679,
+        "k1_geom_12:k1_geom_17": 0.24310066210557116,
+        "k1_geom_12:k1_geom_19": 0.25702850053951826,
+        "k1_geom_12:k1_geom_21": 0.33271108861123777,
+        "k1_geom_14:k1_geom_17": 0.3368904581594625,
+        "k1_geom_14:k1_geom_19": 0.3326257734634692,
+        "k1_geom_14:k1_geom_21": 0.35142577382026047,
+        "k1_geom_17:k1_geom_21": 0.10311297605322657
+      },
+      "libccd_diagnostic_pair_min_distance_over_samples_m": {
+        "k1_geom_1:k1_geom_10": 0.006922196110380696,
+        "k1_geom_1:k1_geom_12": 0.02077056590732429,
+        "k1_geom_1:k1_geom_14": 0.07628097207734852,
+        "k1_geom_1:k1_geom_17": 0.0069756873579489564,
+        "k1_geom_1:k1_geom_19": 0.02505351141926182,
+        "k1_geom_1:k1_geom_21": 0.076270968863555,
+        "k1_geom_2:k1_geom_10": 0.16422255320451207,
+        "k1_geom_2:k1_geom_12": 0.10232730565090442,
+        "k1_geom_2:k1_geom_14": 0.12230069468559313,
+        "k1_geom_2:k1_geom_17": 0.16423598362685476,
+        "k1_geom_2:k1_geom_19": 0.1003115134639414,
+        "k1_geom_2:k1_geom_21": 0.12235080816211319,
+        "k1_geom_10:k1_geom_14": 0.0936855110495527,
+        "k1_geom_10:k1_geom_17": 0.2199997262188056,
+        "k1_geom_10:k1_geom_19": 0.24078505972274922,
+        "k1_geom_10:k1_geom_21": 0.32724006919628423,
+        "k1_geom_12:k1_geom_17": 0.24047357363093336,
+        "k1_geom_12:k1_geom_19": 0.256989232917183,
+        "k1_geom_12:k1_geom_21": 0.3321667989026802,
+        "k1_geom_14:k1_geom_17": 0.32735702343134454,
+        "k1_geom_14:k1_geom_19": 0.33218400235947954,
+        "k1_geom_14:k1_geom_21": 0.35142637471372695,
+        "k1_geom_17:k1_geom_21": 0.09369393056206077
+      },
+      "distance_backend_disagreement_over_1mm_pairs": [
+        "k1_geom_1:k1_geom_10",
+        "k1_geom_1:k1_geom_12",
+        "k1_geom_1:k1_geom_14",
+        "k1_geom_1:k1_geom_17",
+        "k1_geom_1:k1_geom_19",
+        "k1_geom_1:k1_geom_21",
+        "k1_geom_2:k1_geom_10",
+        "k1_geom_2:k1_geom_12",
+        "k1_geom_2:k1_geom_14",
+        "k1_geom_2:k1_geom_17",
+        "k1_geom_2:k1_geom_19",
+        "k1_geom_2:k1_geom_21",
+        "k1_geom_10:k1_geom_14",
+        "k1_geom_10:k1_geom_19",
+        "k1_geom_10:k1_geom_21",
+        "k1_geom_12:k1_geom_17",
+        "k1_geom_14:k1_geom_17",
+        "k1_geom_17:k1_geom_21"
+      ],
+      "static_self_contact_count": 0,
+      "kinematic_time_s": 0.0,
+      "coverage": {
+        "region_projected_area_m2": {
+          "trunk": 0.042,
+          "left_arm": 0.02526875,
+          "right_arm": 0.02525625
+        },
+        "upper_body_union_projected_area_m2": 0.09252500000000001,
+        "arms_outside_trunk_projected_area_m2": 0.050525,
+        "region_projection_bounds_trunk_relative_m": {
+          "trunk": {
+            "y_min": -0.08,
+            "y_max": 0.08,
+            "z_min": -0.11000021213166872,
+            "z_max": 0.19999999999999996
+          },
+          "left_arm": {
+            "y_min": 0.11000079087243972,
+            "y_max": 0.3699331148641819,
+            "z_min": -0.1478076460547385,
+            "z_max": 0.21321937580368877
+          },
+          "right_arm": {
+            "y_min": -0.369862090447155,
+            "y_max": -0.11000079087243972,
+            "z_min": -0.14775866740286275,
+            "z_max": 0.21321937580368877
+          }
+        },
+        "union_delta_from_default_m2": 0.00020625000000000504
+      },
+      "distal_elbow_yaw_body_origin_trunk_relative_m": {
+        "left": [
+          -0.027045952792864668,
+          0.24151751166856328,
+          0.038494402245805914
+        ],
+        "right": [
+          -0.027045952792864668,
+          -0.24151751166856328,
+          0.038494402245805914
+        ]
+      },
+      "native_arm_max_height_at_reference_base_m": 0.7669093758036888
+    },
+    {
+      "name": "left_extend_0.30",
+      "joint_delta_from_default_rad": {
+        "aaleft_shoulder_pitch_joint": -0.3
+      },
+      "arm_joint_angles_rad": {
+        "aaleft_shoulder_pitch_joint": -0.09999999999999998,
+        "left_shoulder_roll_joint": -1.25,
+        "left_elbow_pitch_joint": 0.0,
+        "left_elbow_yaw_joint": -0.5,
+        "aaright_shoulder_pitch_joint": 0.2,
+        "right_shoulder_roll_joint": 1.25,
+        "right_elbow_pitch_joint": 0.0,
+        "right_elbow_yaw_joint": 0.5
+      },
+      "arm_limit_margin_rad": {
+        "aaleft_shoulder_pitch_joint": 1.2959999999999998,
+        "left_shoulder_roll_joint": 0.3919999999999999,
+        "left_elbow_pitch_joint": 1.885,
+        "left_elbow_yaw_joint": 1.3159999999999998,
+        "aaright_shoulder_pitch_joint": 0.996,
+        "right_shoulder_roll_joint": 0.379,
+        "right_elbow_pitch_joint": 1.885,
+        "right_elbow_yaw_joint": 1.3159999999999998
+      },
+      "all_arm_angles_within_limits": true,
+      "static_samples": [
+        {
+          "interpolation_fraction": 0.0,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.1,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.2,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.30000000000000004,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.4,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.5,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.6000000000000001,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.7000000000000001,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.8,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.9,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 1.0,
+          "robot_self_contacts": []
+        }
+      ],
+      "eligible_pair_min_distance_over_samples_m": {
+        "k1_geom_1:k1_geom_10": 0.02999986310940975,
+        "k1_geom_1:k1_geom_12": 0.048536132811836843,
+        "k1_geom_1:k1_geom_14": 0.09694491872656337,
+        "k1_geom_1:k1_geom_17": 0.02999986310943001,
+        "k1_geom_1:k1_geom_19": 0.0484858418003457,
+        "k1_geom_1:k1_geom_21": 0.09776469665887151,
+        "k1_geom_2:k1_geom_10": 0.16593183311490722,
+        "k1_geom_2:k1_geom_12": 0.11370019039386274,
+        "k1_geom_2:k1_geom_14": 0.12571762287698632,
+        "k1_geom_2:k1_geom_17": 0.16593200565894842,
+        "k1_geom_2:k1_geom_19": 0.115121108835176,
+        "k1_geom_2:k1_geom_21": 0.12570814569538483,
+        "k1_geom_10:k1_geom_14": 0.10311570976264464,
+        "k1_geom_10:k1_geom_17": 0.21999972621880698,
+        "k1_geom_10:k1_geom_19": 0.24263558639844007,
+        "k1_geom_10:k1_geom_21": 0.3355688074186593,
+        "k1_geom_12:k1_geom_17": 0.24256787444411737,
+        "k1_geom_12:k1_geom_19": 0.2570219947458877,
+        "k1_geom_12:k1_geom_21": 0.33239673561245736,
+        "k1_geom_14:k1_geom_17": 0.33351394469697887,
+        "k1_geom_14:k1_geom_19": 0.3326257734634692,
+        "k1_geom_14:k1_geom_21": 0.35142577382026047,
+        "k1_geom_17:k1_geom_21": 0.10311297605322675
+      },
+      "libccd_diagnostic_pair_min_distance_over_samples_m": {
+        "k1_geom_1:k1_geom_10": 0.006922198041631411,
+        "k1_geom_1:k1_geom_12": 0.02077056590732429,
+        "k1_geom_1:k1_geom_14": 0.06723755891514394,
+        "k1_geom_1:k1_geom_17": 0.006975687497647209,
+        "k1_geom_1:k1_geom_19": 0.02505351141926182,
+        "k1_geom_1:k1_geom_21": 0.076270968863555,
+        "k1_geom_2:k1_geom_10": 0.16422257828455633,
+        "k1_geom_2:k1_geom_12": 0.10075173533934922,
+        "k1_geom_2:k1_geom_14": 0.1162721790544996,
+        "k1_geom_2:k1_geom_17": 0.16423612926513242,
+        "k1_geom_2:k1_geom_19": 0.1003115134639414,
+        "k1_geom_2:k1_geom_21": 0.12235080816211319,
+        "k1_geom_10:k1_geom_14": 0.09368551104958156,
+        "k1_geom_10:k1_geom_17": 0.2199775727087927,
+        "k1_geom_10:k1_geom_19": 0.23847259457943437,
+        "k1_geom_10:k1_geom_21": 0.32724006919628423,
+        "k1_geom_12:k1_geom_17": 0.23754800353633088,
+        "k1_geom_12:k1_geom_19": 0.25697858954395314,
+        "k1_geom_12:k1_geom_21": 0.33211110663377297,
+        "k1_geom_14:k1_geom_17": 0.32379728680974584,
+        "k1_geom_14:k1_geom_19": 0.33218400235947954,
+        "k1_geom_14:k1_geom_21": 0.35142637471372695,
+        "k1_geom_17:k1_geom_21": 0.09369393056206077
+      },
+      "distance_backend_disagreement_over_1mm_pairs": [
+        "k1_geom_1:k1_geom_10",
+        "k1_geom_1:k1_geom_12",
+        "k1_geom_1:k1_geom_14",
+        "k1_geom_1:k1_geom_17",
+        "k1_geom_1:k1_geom_19",
+        "k1_geom_1:k1_geom_21",
+        "k1_geom_2:k1_geom_10",
+        "k1_geom_2:k1_geom_12",
+        "k1_geom_2:k1_geom_14",
+        "k1_geom_2:k1_geom_17",
+        "k1_geom_2:k1_geom_19",
+        "k1_geom_2:k1_geom_21",
+        "k1_geom_10:k1_geom_14",
+        "k1_geom_10:k1_geom_19",
+        "k1_geom_10:k1_geom_21",
+        "k1_geom_12:k1_geom_17",
+        "k1_geom_14:k1_geom_17",
+        "k1_geom_17:k1_geom_21"
+      ],
+      "static_self_contact_count": 0,
+      "kinematic_time_s": 0.0,
+      "coverage": {
+        "region_projected_area_m2": {
+          "trunk": 0.042,
+          "left_arm": 0.023275,
+          "right_arm": 0.0251625
+        },
+        "upper_body_union_projected_area_m2": 0.0904375,
+        "arms_outside_trunk_projected_area_m2": 0.0484375,
+        "region_projection_bounds_trunk_relative_m": {
+          "trunk": {
+            "y_min": -0.08,
+            "y_max": 0.08,
+            "z_min": -0.11000021213166872,
+            "z_max": 0.19999999999999996
+          },
+          "left_arm": {
+            "y_min": 0.10999991538364236,
+            "y_max": 0.2783985537614332,
+            "z_min": -0.16883018476582878,
+            "z_max": 0.20883758272362685
+          },
+          "right_arm": {
+            "y_min": -0.278360310119956,
+            "y_max": -0.10999991538364234,
+            "z_min": -0.19349725179968147,
+            "z_max": 0.2132201847515015
+          }
+        },
+        "union_delta_from_default_m2": -0.001881250000000001
+      },
+      "distal_elbow_yaw_body_origin_trunk_relative_m": {
+        "left": [
+          0.019555342795453366,
+          0.19732080894752216,
+          0.014640567111858793
+        ],
+        "right": [
+          -0.03151496218062527,
+          -0.19732080894752216,
+          0.016448086795531003
+        ]
+      },
+      "native_arm_max_height_at_reference_base_m": 0.7669101847515015
+    },
+    {
+      "name": "right_extend_0.30",
+      "joint_delta_from_default_rad": {
+        "aaright_shoulder_pitch_joint": -0.3
+      },
+      "arm_joint_angles_rad": {
+        "aaleft_shoulder_pitch_joint": 0.2,
+        "left_shoulder_roll_joint": -1.25,
+        "left_elbow_pitch_joint": 0.0,
+        "left_elbow_yaw_joint": -0.5,
+        "aaright_shoulder_pitch_joint": -0.09999999999999998,
+        "right_shoulder_roll_joint": 1.25,
+        "right_elbow_pitch_joint": 0.0,
+        "right_elbow_yaw_joint": 0.5
+      },
+      "arm_limit_margin_rad": {
+        "aaleft_shoulder_pitch_joint": 0.996,
+        "left_shoulder_roll_joint": 0.3919999999999999,
+        "left_elbow_pitch_joint": 1.885,
+        "left_elbow_yaw_joint": 1.3159999999999998,
+        "aaright_shoulder_pitch_joint": 1.2959999999999998,
+        "right_shoulder_roll_joint": 0.379,
+        "right_elbow_pitch_joint": 1.885,
+        "right_elbow_yaw_joint": 1.3159999999999998
+      },
+      "all_arm_angles_within_limits": true,
+      "static_samples": [
+        {
+          "interpolation_fraction": 0.0,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.1,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.2,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.30000000000000004,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.4,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.5,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.6000000000000001,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.7000000000000001,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.8,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.9,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 1.0,
+          "robot_self_contacts": []
+        }
+      ],
+      "eligible_pair_min_distance_over_samples_m": {
+        "k1_geom_1:k1_geom_10": 0.02999986310943001,
+        "k1_geom_1:k1_geom_12": 0.04853613281183687,
+        "k1_geom_1:k1_geom_14": 0.0977785129593351,
+        "k1_geom_1:k1_geom_17": 0.02999986310940975,
+        "k1_geom_1:k1_geom_19": 0.0,
+        "k1_geom_1:k1_geom_21": 0.0969305816133086,
+        "k1_geom_2:k1_geom_10": 0.16593183311490722,
+        "k1_geom_2:k1_geom_12": 0.11512227882844986,
+        "k1_geom_2:k1_geom_14": 0.12571762589621266,
+        "k1_geom_2:k1_geom_17": 0.16593200565894842,
+        "k1_geom_2:k1_geom_19": 0.11368666407002642,
+        "k1_geom_2:k1_geom_21": 0.12570814173044859,
+        "k1_geom_10:k1_geom_14": 0.10311570976264474,
+        "k1_geom_10:k1_geom_17": 0.21999972621880698,
+        "k1_geom_10:k1_geom_19": 0.2424294947406598,
+        "k1_geom_10:k1_geom_21": 0.33349630630269395,
+        "k1_geom_12:k1_geom_17": 0.242635404290189,
+        "k1_geom_12:k1_geom_19": 0.25702850053951826,
+        "k1_geom_12:k1_geom_21": 0.33271108861123777,
+        "k1_geom_14:k1_geom_17": 0.3355787379729648,
+        "k1_geom_14:k1_geom_19": 0.33237689904349876,
+        "k1_geom_14:k1_geom_21": 0.35142577382026047,
+        "k1_geom_17:k1_geom_21": 0.10311297605322665
+      },
+      "libccd_diagnostic_pair_min_distance_over_samples_m": {
+        "k1_geom_1:k1_geom_10": 0.006922198041631411,
+        "k1_geom_1:k1_geom_12": 0.02077056590732429,
+        "k1_geom_1:k1_geom_14": 0.07628097207734852,
+        "k1_geom_1:k1_geom_17": 0.006975687497647209,
+        "k1_geom_1:k1_geom_19": 0.02505351141926182,
+        "k1_geom_1:k1_geom_21": 0.06722408114508438,
+        "k1_geom_2:k1_geom_10": 0.16422257828455633,
+        "k1_geom_2:k1_geom_12": 0.10232730565090442,
+        "k1_geom_2:k1_geom_14": 0.12230069468559313,
+        "k1_geom_2:k1_geom_17": 0.16423612926513242,
+        "k1_geom_2:k1_geom_19": 0.09837662873071262,
+        "k1_geom_2:k1_geom_21": 0.11626891085671098,
+        "k1_geom_10:k1_geom_14": 0.09368551104960399,
+        "k1_geom_10:k1_geom_17": 0.2199775727087927,
+        "k1_geom_10:k1_geom_19": 0.23817680396638363,
+        "k1_geom_10:k1_geom_21": 0.3238237222316498,
+        "k1_geom_12:k1_geom_17": 0.23780678045670012,
+        "k1_geom_12:k1_geom_19": 0.256989232917183,
+        "k1_geom_12:k1_geom_21": 0.3321667989026802,
+        "k1_geom_14:k1_geom_17": 0.32735702343134454,
+        "k1_geom_14:k1_geom_19": 0.3320835081944331,
+        "k1_geom_14:k1_geom_21": 0.35142637471372695,
+        "k1_geom_17:k1_geom_21": 0.09369393056206077
+      },
+      "distance_backend_disagreement_over_1mm_pairs": [
+        "k1_geom_1:k1_geom_10",
+        "k1_geom_1:k1_geom_12",
+        "k1_geom_1:k1_geom_14",
+        "k1_geom_1:k1_geom_17",
+        "k1_geom_1:k1_geom_19",
+        "k1_geom_1:k1_geom_21",
+        "k1_geom_2:k1_geom_10",
+        "k1_geom_2:k1_geom_12",
+        "k1_geom_2:k1_geom_14",
+        "k1_geom_2:k1_geom_17",
+        "k1_geom_2:k1_geom_19",
+        "k1_geom_2:k1_geom_21",
+        "k1_geom_10:k1_geom_14",
+        "k1_geom_10:k1_geom_19",
+        "k1_geom_10:k1_geom_21",
+        "k1_geom_12:k1_geom_17",
+        "k1_geom_14:k1_geom_17",
+        "k1_geom_17:k1_geom_21"
+      ],
+      "static_self_contact_count": 0,
+      "kinematic_time_s": 0.0,
+      "coverage": {
+        "region_projected_area_m2": {
+          "trunk": 0.042,
+          "left_arm": 0.02515625,
+          "right_arm": 0.023256250000000003
+        },
+        "upper_body_union_projected_area_m2": 0.0904125,
+        "arms_outside_trunk_projected_area_m2": 0.048412500000000004,
+        "region_projection_bounds_trunk_relative_m": {
+          "trunk": {
+            "y_min": -0.08,
+            "y_max": 0.08,
+            "z_min": -0.11000021213166872,
+            "z_max": 0.19999999999999996
+          },
+          "left_arm": {
+            "y_min": 0.10999991538364234,
+            "y_max": 0.27839855376143324,
+            "z_min": -0.19356400768403642,
+            "z_max": 0.2132201847515015
+          },
+          "right_arm": {
+            "y_min": -0.27836031011995593,
+            "y_max": -0.10999991538364236,
+            "z_min": -0.1686973865691066,
+            "z_max": 0.20883758272362685
+          }
+        },
+        "union_delta_from_default_m2": -0.0019062499999999982
+      },
+      "distal_elbow_yaw_body_origin_trunk_relative_m": {
+        "left": [
+          -0.03151496218062527,
+          0.19732080894752216,
+          0.016448086795531003
+        ],
+        "right": [
+          0.019555342795453366,
+          -0.19732080894752216,
+          0.014640567111858793
+        ]
+      },
+      "native_arm_max_height_at_reference_base_m": 0.7669101847515015
+    },
+    {
+      "name": "both_extend_0.30",
+      "joint_delta_from_default_rad": {
+        "aaleft_shoulder_pitch_joint": -0.3,
+        "aaright_shoulder_pitch_joint": -0.3
+      },
+      "arm_joint_angles_rad": {
+        "aaleft_shoulder_pitch_joint": -0.09999999999999998,
+        "left_shoulder_roll_joint": -1.25,
+        "left_elbow_pitch_joint": 0.0,
+        "left_elbow_yaw_joint": -0.5,
+        "aaright_shoulder_pitch_joint": -0.09999999999999998,
+        "right_shoulder_roll_joint": 1.25,
+        "right_elbow_pitch_joint": 0.0,
+        "right_elbow_yaw_joint": 0.5
+      },
+      "arm_limit_margin_rad": {
+        "aaleft_shoulder_pitch_joint": 1.2959999999999998,
+        "left_shoulder_roll_joint": 0.3919999999999999,
+        "left_elbow_pitch_joint": 1.885,
+        "left_elbow_yaw_joint": 1.3159999999999998,
+        "aaright_shoulder_pitch_joint": 1.2959999999999998,
+        "right_shoulder_roll_joint": 0.379,
+        "right_elbow_pitch_joint": 1.885,
+        "right_elbow_yaw_joint": 1.3159999999999998
+      },
+      "all_arm_angles_within_limits": true,
+      "static_samples": [
+        {
+          "interpolation_fraction": 0.0,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.1,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.2,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.30000000000000004,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.4,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.5,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.6000000000000001,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.7000000000000001,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.8,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 0.9,
+          "robot_self_contacts": []
+        },
+        {
+          "interpolation_fraction": 1.0,
+          "robot_self_contacts": []
+        }
+      ],
+      "eligible_pair_min_distance_over_samples_m": {
+        "k1_geom_1:k1_geom_10": 0.02999986310940975,
+        "k1_geom_1:k1_geom_12": 0.048536132811836843,
+        "k1_geom_1:k1_geom_14": 0.09694491872656337,
+        "k1_geom_1:k1_geom_17": 0.02999986310940975,
+        "k1_geom_1:k1_geom_19": 0.0,
+        "k1_geom_1:k1_geom_21": 0.0969305816133086,
+        "k1_geom_2:k1_geom_10": 0.16593183311490722,
+        "k1_geom_2:k1_geom_12": 0.11370019039386274,
+        "k1_geom_2:k1_geom_14": 0.12571762287698632,
+        "k1_geom_2:k1_geom_17": 0.16593200565894842,
+        "k1_geom_2:k1_geom_19": 0.11368666407002642,
+        "k1_geom_2:k1_geom_21": 0.12570814173044859,
+        "k1_geom_10:k1_geom_14": 0.10311570976264464,
+        "k1_geom_10:k1_geom_17": 0.21999972621880695,
+        "k1_geom_10:k1_geom_19": 0.2430541223711877,
+        "k1_geom_10:k1_geom_21": 0.3368739957348677,
+        "k1_geom_12:k1_geom_17": 0.24310066210557113,
+        "k1_geom_12:k1_geom_19": 0.25702850053951826,
+        "k1_geom_12:k1_geom_21": 0.33271108861123705,
+        "k1_geom_14:k1_geom_17": 0.3368904581594624,
+        "k1_geom_14:k1_geom_19": 0.33262577346346917,
+        "k1_geom_14:k1_geom_21": 0.35142577382026047,
+        "k1_geom_17:k1_geom_21": 0.10311297605322665
+      },
+      "libccd_diagnostic_pair_min_distance_over_samples_m": {
+        "k1_geom_1:k1_geom_10": 0.006922198041631411,
+        "k1_geom_1:k1_geom_12": 0.02077056590732429,
+        "k1_geom_1:k1_geom_14": 0.06723755891514394,
+        "k1_geom_1:k1_geom_17": 0.006975687497647209,
+        "k1_geom_1:k1_geom_19": 0.02505351141926182,
+        "k1_geom_1:k1_geom_21": 0.06722408114508438,
+        "k1_geom_2:k1_geom_10": 0.16422257828455633,
+        "k1_geom_2:k1_geom_12": 0.10075173533934922,
+        "k1_geom_2:k1_geom_14": 0.1162721790544996,
+        "k1_geom_2:k1_geom_17": 0.16423612926513242,
+        "k1_geom_2:k1_geom_19": 0.09837662873071262,
+        "k1_geom_2:k1_geom_21": 0.11626891085671098,
+        "k1_geom_10:k1_geom_14": 0.09368551104958156,
+        "k1_geom_10:k1_geom_17": 0.21999972621880515,
+        "k1_geom_10:k1_geom_19": 0.24078505972274922,
+        "k1_geom_10:k1_geom_21": 0.327240069196276,
+        "k1_geom_12:k1_geom_17": 0.2404735736309278,
+        "k1_geom_12:k1_geom_19": 0.256989232917183,
+        "k1_geom_12:k1_geom_21": 0.332166798902678,
+        "k1_geom_14:k1_geom_17": 0.327357023431339,
+        "k1_geom_14:k1_geom_19": 0.332184002359476,
+        "k1_geom_14:k1_geom_21": 0.3514263747137263,
+        "k1_geom_17:k1_geom_21": 0.09369393056206077
+      },
+      "distance_backend_disagreement_over_1mm_pairs": [
+        "k1_geom_1:k1_geom_10",
+        "k1_geom_1:k1_geom_12",
+        "k1_geom_1:k1_geom_14",
+        "k1_geom_1:k1_geom_17",
+        "k1_geom_1:k1_geom_19",
+        "k1_geom_1:k1_geom_21",
+        "k1_geom_2:k1_geom_10",
+        "k1_geom_2:k1_geom_12",
+        "k1_geom_2:k1_geom_14",
+        "k1_geom_2:k1_geom_17",
+        "k1_geom_2:k1_geom_19",
+        "k1_geom_2:k1_geom_21",
+        "k1_geom_10:k1_geom_14",
+        "k1_geom_10:k1_geom_19",
+        "k1_geom_10:k1_geom_21",
+        "k1_geom_12:k1_geom_17",
+        "k1_geom_14:k1_geom_17",
+        "k1_geom_17:k1_geom_21"
+      ],
+      "static_self_contact_count": 0,
+      "kinematic_time_s": 0.0,
+      "coverage": {
+        "region_projected_area_m2": {
+          "trunk": 0.042,
+          "left_arm": 0.023275,
+          "right_arm": 0.023256250000000003
+        },
+        "upper_body_union_projected_area_m2": 0.08853125,
+        "arms_outside_trunk_projected_area_m2": 0.04653125,
+        "region_projection_bounds_trunk_relative_m": {
+          "trunk": {
+            "y_min": -0.08,
+            "y_max": 0.08,
+            "z_min": -0.11000021213166872,
+            "z_max": 0.19999999999999996
+          },
+          "left_arm": {
+            "y_min": 0.10999991538364236,
+            "y_max": 0.2783985537614332,
+            "z_min": -0.16883018476582878,
+            "z_max": 0.20883758272362685
+          },
+          "right_arm": {
+            "y_min": -0.27836031011995593,
+            "y_max": -0.10999991538364236,
+            "z_min": -0.1686973865691066,
+            "z_max": 0.20883758272362685
+          }
+        },
+        "union_delta_from_default_m2": -0.003787499999999999
+      },
+      "distal_elbow_yaw_body_origin_trunk_relative_m": {
+        "left": [
+          0.019555342795453366,
+          0.19732080894752216,
+          0.014640567111858793
+        ],
+        "right": [
+          0.019555342795453366,
+          -0.19732080894752216,
+          0.014640567111858793
+        ]
+      },
+      "native_arm_max_height_at_reference_base_m": 0.7625275827236269
+    }
+  ],
+  "static_reach_bound": {
+    "method": "Triangle inequality: norm(shoulder anchor) + sum descendant body offset lengths + native shape circumradius + 1 micrometre numerical slack; independent of root orientation and arm joint angles",
+    "per_geom": [
+      {
+        "geom": "k1_geom_10",
+        "body_offsets_to_trunk": [
+          {
+            "body": "aaleft_shoulder_pitch_link",
+            "offset_length_m": 0.19992311021990428
+          },
+          {
+            "body": "left_shoulder_roll_link",
+            "offset_length_m": 0.06937218462755805
+          }
+        ],
+        "native_shape_radius_about_body_origin_m": 0.05579549159502341,
+        "conservative_radius_from_trunk_origin_m": 0.3250917864424857
+      },
+      {
+        "geom": "k1_geom_12",
+        "body_offsets_to_trunk": [
+          {
+            "body": "aaleft_shoulder_pitch_link",
+            "offset_length_m": 0.19992311021990428
+          },
+          {
+            "body": "left_shoulder_roll_link",
+            "offset_length_m": 0.06937218462755805
+          },
+          {
+            "body": "left_elbow_pitch_link",
+            "offset_length_m": 0.044428
+          }
+        ],
+        "native_shape_radius_about_body_origin_m": 0.15460135639286635,
+        "conservative_radius_from_trunk_origin_m": 0.4683256512403286
+      },
+      {
+        "geom": "k1_geom_14",
+        "body_offsets_to_trunk": [
+          {
+            "body": "aaleft_shoulder_pitch_link",
+            "offset_length_m": 0.19992311021990428
+          },
+          {
+            "body": "left_shoulder_roll_link",
+            "offset_length_m": 0.06937218462755805
+          },
+          {
+            "body": "left_elbow_pitch_link",
+            "offset_length_m": 0.044428
+          },
+          {
+            "body": "left_elbow_yaw_link",
+            "offset_length_m": 0.1215
+          }
+        ],
+        "native_shape_radius_about_body_origin_m": 0.22800000317030422,
+        "conservative_radius_from_trunk_origin_m": 0.6632242980177666
+      },
+      {
+        "geom": "k1_geom_17",
+        "body_offsets_to_trunk": [
+          {
+            "body": "aaright_shoulder_pitch_link",
+            "offset_length_m": 0.19992311021990428
+          },
+          {
+            "body": "right_shoulder_roll_link",
+            "offset_length_m": 0.06937218462755805
+          }
+        ],
+        "native_shape_radius_about_body_origin_m": 0.05579549159502341,
+        "conservative_radius_from_trunk_origin_m": 0.3250917864424857
+      },
+      {
+        "geom": "k1_geom_19",
+        "body_offsets_to_trunk": [
+          {
+            "body": "aaright_shoulder_pitch_link",
+            "offset_length_m": 0.19992311021990428
+          },
+          {
+            "body": "right_shoulder_roll_link",
+            "offset_length_m": 0.06937218462755805
+          },
+          {
+            "body": "right_elbow_pitch_link",
+            "offset_length_m": 0.044428
+          }
+        ],
+        "native_shape_radius_about_body_origin_m": 0.1546012624231616,
+        "conservative_radius_from_trunk_origin_m": 0.4683255572706239
+      },
+      {
+        "geom": "k1_geom_21",
+        "body_offsets_to_trunk": [
+          {
+            "body": "aaright_shoulder_pitch_link",
+            "offset_length_m": 0.19992311021990428
+          },
+          {
+            "body": "right_shoulder_roll_link",
+            "offset_length_m": 0.06937218462755805
+          },
+          {
+            "body": "right_elbow_pitch_link",
+            "offset_length_m": 0.044428
+          },
+          {
+            "body": "right_elbow_yaw_link",
+            "offset_length_m": 0.1215
+          }
+        ],
+        "native_shape_radius_about_body_origin_m": 0.22800000064996986,
+        "conservative_radius_from_trunk_origin_m": 0.6632242954974322
+      }
+    ],
+    "native_arm_max_radius_from_trunk_m": 0.6632242980177666,
+    "reference_base_height_m": 0.55369,
+    "max_arm_height_at_reference_base_m": 1.2169142980177665,
+    "air_high_ball_center_height_m": 1.4,
+    "ball_radius_m": 0.11,
+    "air_high_ball_bottom_m": 1.29,
+    "base_height_threshold_for_possible_vertical_overlap_m": 0.6267757019822334,
+    "air_high_vertical_overlap_impossible_at_fixed_reference_base": true,
+    "scope": "Conditional static exclusion only when instantaneous trunk origin z stays below threshold. No statement about base rise, jumping, ball-flight height changes, contact timing, or dynamic safety."
+  },
+  "gaps": {
+    "visual_only_shoulder_pitch_bodies": [
+      "aaleft_shoulder_pitch_link",
+      "aaright_shoulder_pitch_link"
+    ],
+    "supplement_required_for_native_torso_distal_arm_candidates": false,
+    "supplement_required_for_continuous_visual_shoulder_coverage_claim": true,
+    "decision": "native first; no collision geometry added; shoulder-root contact remains unverified"
+  },
+  "recommendation": {
+    "sequence": [
+      "native_default",
+      "left_raise_0.15",
+      "right_raise_0.15",
+      "both_raise_0.15",
+      "left_extend_0.15",
+      "right_extend_0.15",
+      "both_extend_0.15",
+      "0.30 rad candidates after H0 decision and controlled trial checks"
+    ],
+    "approval_status": "H0 informs already-authorized controlled H1 trials; static report alone is not execution or dynamic safety evidence",
+    "required_next_evidence": [
+      "controller joint ownership and transition protocol settled by H0 decision",
+      "free-base balance, actual tracking, torque saturation, warnings and self contacts",
+      "actual native geom IDs in ball contacts and matched torso-only baselines"
+    ],
+    "static_is_not_dynamic_safety_proof": true
+  }
+}

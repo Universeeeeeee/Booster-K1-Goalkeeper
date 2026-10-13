@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+Reference model, not an official WHRG-provided asset.
+Dimensions: clear opening 3.0 m wide x 2.0 m high.
+Front frame: round posts/crossbar diameter 0.08 m (FIFA futsal standard).
+Rear support geometry is illustrative: upper depth 0.8 m, ground depth 1.0 m.
+Origin: center of goal line on the ground. X = horizontal; Y = front/back
+(+Y points out toward the playing field); Z = up. No net modeled.
+Goal-line detection must be implemented separately in the simulation.
+-->
+<robot name="futsal_goal_3x2_reference">
+  <material name="white"><color rgba="0.97 0.97 0.97 1"/></material>
+  <material name="light_gray"><color rgba="0.65 0.68 0.70 1"/></material>
+  <link name="goal_frame">
+    <inertial>
+      <origin xyz="0 -0.4 1.0" rpy="0 0 0"/>
+      <mass value="30.0"/>
+      <inertia ixx="20" ixy="0" ixz="0" iyy="40" iyz="0" izz="30"/>
+    </inertial>
+    <!-- Front uprights: inner edges at x +/-1.5 m. -->
+    <visual name="left_post"><origin xyz="-1.54 0 1.04" rpy="0 0 0"/><geometry><cylinder radius="0.04" length="2.08"/></geometry><material name="white"/></visual>
+    <collision name="left_post_collision"><origin xyz="-1.54 0 1.04" rpy="0 0 0"/><geometry><cylinder radius="0.04" length="2.08"/></geometry></collision>
+    <visual name="right_post"><origin xyz="1.54 0 1.04" rpy="0 0 0"/><geometry><cylinder radius="0.04" length="2.08"/></geometry><material name="white"/></visual>
+    <collision name="right_post_collision"><origin xyz="1.54 0 1.04" rpy="0 0 0"/><geometry><cylinder radius="0.04" length="2.08"/></geometry></collision>
+    <!-- Crossbar lower edge at z=2.00m. -->
+    <visual name="crossbar"><origin xyz="0 0 2.04" rpy="0 1.5707963267948966 0"/><geometry><cylinder radius="0.04" length="3.08"/></geometry><material name="white"/></visual>
+    <collision name="crossbar_collision"><origin xyz="0 0 2.04" rpy="0 1.5707963267948966 0"/><geometry><cylinder radius="0.04" length="3.08"/></geometry></collision>
+    <!-- Example rear support (not confirmed to match WHRG event equipment). -->
+    <visual name="left_upper_depth"><origin xyz="-1.54 -0.4 2.04" rpy="1.5707963267948966 0 0"/><geometry><cylinder radius="0.02" length="0.8"/></geometry><material name="light_gray"/></visual>
+    <visual name="right_upper_depth"><origin xyz="1.54 -0.4 2.04" rpy="1.5707963267948966 0 0"/><geometry><cylinder radius="0.02" length="0.8"/></geometry><material name="light_gray"/></visual>
+    <visual name="left_ground_depth"><origin xyz="-1.54 -0.5 0.02" rpy="1.5707963267948966 0 0"/><geometry><cylinder radius="0.02" length="1.0"/></geometry><material name="light_gray"/></visual>
+    <visual name="right_ground_depth"><origin xyz="1.54 -0.5 0.02" rpy="1.5707963267948966 0 0"/><geometry><cylinder radius="0.02" length="1.0"/></geometry><material name="light_gray"/></visual>
+    <visual name="left_rear_support"><origin xyz="-1.54 -0.9 1.03" rpy="-0.0986977799 0 0"/><geometry><cylinder radius="0.02" length="2.0298768435"/></geometry><material name="light_gray"/></visual>
+    <visual name="right_rear_support"><origin xyz="1.54 -0.9 1.03" rpy="-0.0986977799 0 0"/><geometry><cylinder radius="0.02" length="2.0298768435"/></geometry><material name="light_gray"/></visual>
+    <visual name="rear_top_bar"><origin xyz="0 -0.8 2.04" rpy="0 1.5707963267948966 0"/><geometry><cylinder radius="0.02" length="3.08"/></geometry><material name="light_gray"/></visual>
+    <visual name="rear_bottom_bar"><origin xyz="0 -1.0 0.02" rpy="0 1.5707963267948966 0"/><geometry><cylinder radius="0.02" length="3.08"/></geometry><material name="light_gray"/></visual>
+  </link>
+  <!-- Gazebo-only extension; ignored by pure URDF viewers. -->
+  <gazebo><static>true</static></gazebo>
+</robot>

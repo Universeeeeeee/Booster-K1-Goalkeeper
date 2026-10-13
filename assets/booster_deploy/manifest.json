@@ -1,0 +1,28 @@
+{
+  "repository": "https://github.com/BoosterRobotics/booster_deploy.git",
+  "revision": "7bb1462e2ac742eba5c01659b815e2e99fbe617f",
+  "files": {
+    "LICENSE": "47d3bf4d0108359c1ac54bd4c5710a77efdac3741dfc02129f1a1a594b6d9c84",
+    "README.md": "3934942759c6c683b1b0169aa9b5daa84f10f9cfe8d3fc7617fbbf5f31b85cf5",
+    "booster_deploy/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "booster_deploy/controllers/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "booster_deploy/controllers/base_controller.py": "6abf68b38bb0cf6631655b9e82896288466faa1a78e67098e0273b1dba52aa7e",
+    "booster_deploy/controllers/controller_cfg.py": "fbff8b6940ab78a7620cc008f2b7590b9886e91dd79cc2a8d08c07a75bea2b79",
+    "booster_deploy/controllers/mujoco_controller.py": "0c93fe227df892527c0ef25469a0f69064b7e0eb88c5a4f22efaf3f96a633970",
+    "booster_deploy/robots/k1.py": "2e95ee5b761c327eb80db3f2aa73855b782c1fb415dab5ddffa445c054c17875",
+    "booster_deploy/utils/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "booster_deploy/utils/isaaclab/array.py": "2e429c90f5560326c0bd0deaa66604336b7c7b438943b3c773b923a967b85d20",
+    "booster_deploy/utils/isaaclab/configclass.py": "63f132825eff58333b0b2eed0d120bb51d822e3fcbdb5a41cc6febeb811e7511",
+    "booster_deploy/utils/isaaclab/dict.py": "68a424ae35f84fcf5157e2d0402ad95ec1475e13095ff8cbf39432673f9eda1c",
+    "booster_deploy/utils/isaaclab/math.py": "38d2d1c553fc872e661d256778943da07ebc71d4fc99c168af67d673820832b5",
+    "booster_deploy/utils/isaaclab/string.py": "5becb9f1e7be97f1c5871dd4ee7a9366f3790a3ba6a80715ccfd514c10d8069a",
+    "booster_deploy/utils/policy_runner.py": "f4cf0227974b4f460764a3bb495236933b66586ad3ccf85a96eac36fb5679894",
+    "booster_deploy/utils/registry.py": "d0e40c136c26fb70ec28793d688a83fd6a5c515926cd1d5a94fda497f7c70dd7",
+    "tasks/__init__.py": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+    "tasks/locomotion/__init__.py": "9fe0dc89bfe32b47889e64a16646df1822e36528b4fa340ff543492d6547dddc",
+    "tasks/locomotion/locomotion.py": "8ef1ebeb1a4f1a52a72b7afeeb7411d080028058dffd5f9147d6deb859a82103",
+    "tasks/locomotion/robots/__init__.py": "2d297ff8d0b1c1fdfa12542d08b28cbd819eba0db10479f889718b52fd07136a",
+    "tasks/locomotion/robots/k1/__init__.py": "f8cab573789fcd4f014bfae946aa176b287ed4642f285456af58a6fe59be869d",
+    "tasks/locomotion/robots/k1/models/k1_walk.pt": "2d860167ed827e8d44cd65abd4c27f474904352bcb98c0cfa97c078f63e2fea5"
+  }
+}

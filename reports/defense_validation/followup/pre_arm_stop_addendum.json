@@ -1,0 +1,152 @@
+{
+  "stage": "H3 pre-arm stop addendum",
+  "protocol_sha256": "0979dabcad1b3996237559b4aed49254cef03b0d321f40fca1fbbfd7d2102dbd",
+  "method": "Original recovery_metrics applied posthoc to unchanged E arrays over t3..6; frozen H3 protocol is unchanged. This checks the stop_then_arm prerequisite.",
+  "runs": [
+    {
+      "name": "move_stop_vy_+0.20_baseline_r0",
+      "trajectory_sha256": "aeee4450240715bcf994edf0bbd16c1692fc59cfca04b1ee361050b5f87b29c3",
+      "recovery_t3_to_t6": {
+        "verified": true,
+        "stop_delay_s": 0.6000000000000005,
+        "mean_body_velocity": [
+          -0.004233444777080397,
+          -0.0027413509230294454,
+          -0.0005147237310889886
+        ],
+        "displacement_world": [
+          -0.004001190540162014,
+          0.0355205032558508,
+          0.027195763435216458
+        ]
+      }
+    },
+    {
+      "name": "move_stop_vy_+0.20_baseline_r1",
+      "trajectory_sha256": "aeee4450240715bcf994edf0bbd16c1692fc59cfca04b1ee361050b5f87b29c3",
+      "recovery_t3_to_t6": {
+        "verified": true,
+        "stop_delay_s": 0.6000000000000005,
+        "mean_body_velocity": [
+          -0.004233444777080397,
+          -0.0027413509230294454,
+          -0.0005147237310889886
+        ],
+        "displacement_world": [
+          -0.004001190540162014,
+          0.0355205032558508,
+          0.027195763435216458
+        ]
+      }
+    },
+    {
+      "name": "move_stop_vy_+0.20_arms_r0",
+      "trajectory_sha256": "659e6a84844ef83d2d7274c72493fa4e8e0be5039287c9055aa341b41ca3c3d5",
+      "recovery_t3_to_t6": {
+        "verified": true,
+        "stop_delay_s": 0.6000000000000005,
+        "mean_body_velocity": [
+          -0.004233444777080397,
+          -0.0027413509230294454,
+          -0.0005147237310889886
+        ],
+        "displacement_world": [
+          -0.004001190540162014,
+          0.0355205032558508,
+          0.027195763435216458
+        ]
+      }
+    },
+    {
+      "name": "move_stop_vy_+0.20_arms_r1",
+      "trajectory_sha256": "659e6a84844ef83d2d7274c72493fa4e8e0be5039287c9055aa341b41ca3c3d5",
+      "recovery_t3_to_t6": {
+        "verified": true,
+        "stop_delay_s": 0.6000000000000005,
+        "mean_body_velocity": [
+          -0.004233444777080397,
+          -0.0027413509230294454,
+          -0.0005147237310889886
+        ],
+        "displacement_world": [
+          -0.004001190540162014,
+          0.0355205032558508,
+          0.027195763435216458
+        ]
+      }
+    },
+    {
+      "name": "move_stop_vy_-0.20_baseline_r0",
+      "trajectory_sha256": "b97a283baaf029e6d18f96f548b992cbcc86fbf956a1903498e8dcbec02e1fb1",
+      "recovery_t3_to_t6": {
+        "verified": true,
+        "stop_delay_s": 0.40000000000000036,
+        "mean_body_velocity": [
+          -0.004126695171864715,
+          0.0007072366844730427,
+          0.0019001989142730343
+        ],
+        "displacement_world": [
+          -0.004069300259502029,
+          -0.03383869492767798,
+          0.02694869387123655
+        ]
+      }
+    },
+    {
+      "name": "move_stop_vy_-0.20_baseline_r1",
+      "trajectory_sha256": "b97a283baaf029e6d18f96f548b992cbcc86fbf956a1903498e8dcbec02e1fb1",
+      "recovery_t3_to_t6": {
+        "verified": true,
+        "stop_delay_s": 0.40000000000000036,
+        "mean_body_velocity": [
+          -0.004126695171864715,
+          0.0007072366844730427,
+          0.0019001989142730343
+        ],
+        "displacement_world": [
+          -0.004069300259502029,
+          -0.03383869492767798,
+          0.02694869387123655
+        ]
+      }
+    },
+    {
+      "name": "move_stop_vy_-0.20_arms_r0",
+      "trajectory_sha256": "26f4e7c82e976c9ccd0edff97cbafe5e84e7c9751d522b4684fb6b677d1e7f9f",
+      "recovery_t3_to_t6": {
+        "verified": true,
+        "stop_delay_s": 0.40000000000000036,
+        "mean_body_velocity": [
+          -0.004126695171864715,
+          0.0007072366844730427,
+          0.0019001989142730343
+        ],
+        "displacement_world": [
+          -0.004069300259502029,
+          -0.03383869492767798,
+          0.02694869387123655
+        ]
+      }
+    },
+    {
+      "name": "move_stop_vy_-0.20_arms_r1",
+      "trajectory_sha256": "26f4e7c82e976c9ccd0edff97cbafe5e84e7c9751d522b4684fb6b677d1e7f9f",
+      "recovery_t3_to_t6": {
+        "verified": true,
+        "stop_delay_s": 0.40000000000000036,
+        "mean_body_velocity": [
+          -0.004126695171864715,
+          0.0007072366844730427,
+          0.0019001989142730343
+        ],
+        "displacement_world": [
+          -0.004069300259502029,
+          -0.03383869492767798,
+          0.02694869387123655
+        ]
+      }
+    }
+  ],
+  "all_pre_arm_stops_verified": true
+}

@@ -1,0 +1,429 @@
+{
+  "stage": "H4 independent delivery audit",
+  "archives_verified": 40,
+  "protected_file_count": 840,
+  "protected_files_unchanged": true,
+  "native_model_arrays_match_H0": {
+    "body_mass": true,
+    "body_inertia": true,
+    "body_ipos": true,
+    "body_iquat": true,
+    "geom_type": true,
+    "geom_bodyid": true,
+    "geom_size": true,
+    "geom_pos": true,
+    "geom_quat": true,
+    "geom_contype": true,
+    "geom_conaffinity": true,
+    "jnt_range": true,
+    "actuator_ctrlrange": true,
+    "actuator_forcerange": true,
+    "actuator_gear": true
+  },
+  "paired_launches": [
+    {
+      "shot": "air_high",
+      "all_eight_launch_states_identical": true,
+      "launch": {
+        "position": [
+          4.0,
+          0.0,
+          0.2
+        ],
+        "velocity": [
+          8.0,
+          0.0,
+          5.424
+        ],
+        "angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "time": 1.9999999999998905
+      }
+    },
+    {
+      "shot": "air_wide",
+      "all_eight_launch_states_identical": true,
+      "launch": {
+        "position": [
+          4.0,
+          0.6,
+          0.2
+        ],
+        "velocity": [
+          8.0,
+          0.0,
+          4.3615
+        ],
+        "angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "time": 1.9999999999998905
+      }
+    },
+    {
+      "shot": "air_center",
+      "all_eight_launch_states_identical": true,
+      "launch": {
+        "position": [
+          4.0,
+          0.0,
+          0.2
+        ],
+        "velocity": [
+          8.0,
+          0.0,
+          4.3615
+        ],
+        "angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "time": 1.9999999999998905
+      }
+    },
+    {
+      "shot": "air_low_right",
+      "all_eight_launch_states_identical": true,
+      "launch": {
+        "position": [
+          3,
+          0.28,
+          0.2
+        ],
+        "velocity": [
+          7,
+          0,
+          5.677177606177607
+        ],
+        "angular_velocity": [
+          0,
+          0,
+          0
+        ],
+        "time": 1.9999999999998905
+      }
+    },
+    {
+      "shot": "air_high_left",
+      "all_eight_launch_states_identical": true,
+      "launch": {
+        "position": [
+          5,
+          -0.15,
+          0.25
+        ],
+        "velocity": [
+          9,
+          0,
+          4.609666666666667
+        ],
+        "angular_velocity": [
+          0,
+          0,
+          0
+        ],
+        "time": 1.9999999999998905
+      }
+    }
+  ],
+  "method": "reconstruct unchanged PD from prior actual qpos/qvel and delivered target at integer policy tick; compare raw demand, motor controls and applied actuator torque exactly",
+  "time_note": "compact H target matrix timestamps are float32 with <1us quantization; original E physical time remains float64 and governs control",
+  "runs": [
+    {
+      "path": "reports/defense_validation/goalkeeper/air_high_h_stop_then_arm_r0",
+      "pd_raw_motor_applied_exact": true,
+      "policy_time_dtype": "float32",
+      "maximum_time_quantization_s": 9.155273446026513e-07,
+      "pre_action_1ms_maximum_abs_body_xy_velocity": [
+        0.012305060740642778,
+        0.0007957560427984051
+      ],
+      "pre_action_1ms_maximum_abs_yaw_rate": 0.0018432098867093994,
+      "post_action_body_commands_zero": true,
+      "arm_joint_names": [
+        "left_shoulder_roll_joint",
+        "right_shoulder_roll_joint"
+      ],
+      "last_pre_event_time_s": 2.8749999999997944,
+      "actual_arm_q_at_pre_event_rad": [
+        -1.1067493601249412,
+        1.1208226000106134
+      ],
+      "delivered_arm_target_at_pre_event_rad": [
+        -1.0667724609375,
+        1.0819019079208374
+      ],
+      "actual_target_error_at_pre_event_rad": [
+        -0.039976899187441184,
+        0.038920692089776
+      ]
+    },
+    {
+      "path": "reports/defense_validation/goalkeeper/air_high_h_stop_then_arm_r1",
+      "pd_raw_motor_applied_exact": true,
+      "policy_time_dtype": "float32",
+      "maximum_time_quantization_s": 9.155273446026513e-07,
+      "pre_action_1ms_maximum_abs_body_xy_velocity": [
+        0.012305060740642778,
+        0.0007957560427984051
+      ],
+      "pre_action_1ms_maximum_abs_yaw_rate": 0.0018432098867093994,
+      "post_action_body_commands_zero": true,
+      "arm_joint_names": [
+        "left_shoulder_roll_joint",
+        "right_shoulder_roll_joint"
+      ],
+      "last_pre_event_time_s": 2.8749999999997944,
+      "actual_arm_q_at_pre_event_rad": [
+        -1.1067493601249412,
+        1.1208226000106134
+      ],
+      "delivered_arm_target_at_pre_event_rad": [
+        -1.0667724609375,
+        1.0819019079208374
+      ],
+      "actual_target_error_at_pre_event_rad": [
+        -0.039976899187441184,
+        0.038920692089776
+      ]
+    },
+    {
+      "path": "reports/defense_validation/goalkeeper/air_wide_h_stop_then_arm_r0",
+      "pd_raw_motor_applied_exact": true,
+      "policy_time_dtype": "float32",
+      "maximum_time_quantization_s": 9.155273446026513e-07,
+      "pre_action_1ms_maximum_abs_body_xy_velocity": [
+        0.012305060740642778,
+        0.0007957560427984051
+      ],
+      "pre_action_1ms_maximum_abs_yaw_rate": 0.0018432098867093994,
+      "post_action_body_commands_zero": true,
+      "arm_joint_names": [
+        "left_shoulder_roll_joint",
+        "right_shoulder_roll_joint"
+      ],
+      "last_pre_event_time_s": 2.8749999999997944,
+      "actual_arm_q_at_pre_event_rad": [
+        -1.1067493601249412,
+        1.1208226000106134
+      ],
+      "delivered_arm_target_at_pre_event_rad": [
+        -1.0667724609375,
+        1.0819019079208374
+      ],
+      "actual_target_error_at_pre_event_rad": [
+        -0.039976899187441184,
+        0.038920692089776
+      ]
+    },
+    {
+      "path": "reports/defense_validation/goalkeeper/air_wide_h_stop_then_arm_r1",
+      "pd_raw_motor_applied_exact": true,
+      "policy_time_dtype": "float32",
+      "maximum_time_quantization_s": 9.155273446026513e-07,
+      "pre_action_1ms_maximum_abs_body_xy_velocity": [
+        0.012305060740642778,
+        0.0007957560427984051
+      ],
+      "pre_action_1ms_maximum_abs_yaw_rate": 0.0018432098867093994,
+      "post_action_body_commands_zero": true,
+      "arm_joint_names": [
+        "left_shoulder_roll_joint",
+        "right_shoulder_roll_joint"
+      ],
+      "last_pre_event_time_s": 2.8749999999997944,
+      "actual_arm_q_at_pre_event_rad": [
+        -1.1067493601249412,
+        1.1208226000106134
+      ],
+      "delivered_arm_target_at_pre_event_rad": [
+        -1.0667724609375,
+        1.0819019079208374
+      ],
+      "actual_target_error_at_pre_event_rad": [
+        -0.039976899187441184,
+        0.038920692089776
+      ]
+    },
+    {
+      "path": "reports/defense_validation/goalkeeper/air_center_h_stop_then_arm_r0",
+      "pd_raw_motor_applied_exact": true,
+      "policy_time_dtype": "float32",
+      "maximum_time_quantization_s": 9.155273446026513e-07,
+      "pre_action_1ms_maximum_abs_body_xy_velocity": [
+        0.012305060740642778,
+        0.0007957560427984051
+      ],
+      "pre_action_1ms_maximum_abs_yaw_rate": 0.0018432098867093994,
+      "post_action_body_commands_zero": true,
+      "arm_joint_names": [
+        "left_shoulder_roll_joint",
+        "right_shoulder_roll_joint"
+      ],
+      "last_pre_event_time_s": 2.779999999999805,
+      "actual_arm_q_at_pre_event_rad": [
+        -1.1170875009682635,
+        1.1306527036236218
+      ],
+      "delivered_arm_target_at_pre_event_rad": [
+        -1.0801284313201904,
+        1.0947036743164062
+      ],
+      "actual_target_error_at_pre_event_rad": [
+        -0.03695906964807305,
+        0.03594902930721555
+      ]
+    },
+    {
+      "path": "reports/defense_validation/goalkeeper/air_center_h_stop_then_arm_r1",
+      "pd_raw_motor_applied_exact": true,
+      "policy_time_dtype": "float32",
+      "maximum_time_quantization_s": 9.155273446026513e-07,
+      "pre_action_1ms_maximum_abs_body_xy_velocity": [
+        0.012305060740642778,
+        0.0007957560427984051
+      ],
+      "pre_action_1ms_maximum_abs_yaw_rate": 0.0018432098867093994,
+      "post_action_body_commands_zero": true,
+      "arm_joint_names": [
+        "left_shoulder_roll_joint",
+        "right_shoulder_roll_joint"
+      ],
+      "last_pre_event_time_s": 2.779999999999805,
+      "actual_arm_q_at_pre_event_rad": [
+        -1.1170875009682635,
+        1.1306527036236218
+      ],
+      "delivered_arm_target_at_pre_event_rad": [
+        -1.0801284313201904,
+        1.0947036743164062
+      ],
+      "actual_target_error_at_pre_event_rad": [
+        -0.03695906964807305,
+        0.03594902930721555
+      ]
+    },
+    {
+      "path": "reports/defense_validation/goalkeeper/air_low_right_h_stop_then_arm_r0",
+      "pd_raw_motor_applied_exact": true,
+      "policy_time_dtype": "float32",
+      "maximum_time_quantization_s": 9.155273446026513e-07,
+      "pre_action_1ms_maximum_abs_body_xy_velocity": [
+        0.012305060740642778,
+        0.0007957560427984051
+      ],
+      "pre_action_1ms_maximum_abs_yaw_rate": 0.0018432098867093994,
+      "post_action_body_commands_zero": true,
+      "arm_joint_names": [
+        "left_shoulder_roll_joint",
+        "right_shoulder_roll_joint"
+      ],
+      "last_pre_event_time_s": 3.0489999999997752,
+      "actual_arm_q_at_pre_event_rad": [
+        -1.083670997124099,
+        1.0986644816104423
+      ],
+      "delivered_arm_target_at_pre_event_rad": [
+        -1.0388206243515015,
+        1.0549463033676147
+      ],
+      "actual_target_error_at_pre_event_rad": [
+        -0.04485037277259751,
+        0.04371817824282753
+      ]
+    },
+    {
+      "path": "reports/defense_validation/goalkeeper/air_low_right_h_stop_then_arm_r1",
+      "pd_raw_motor_applied_exact": true,
+      "policy_time_dtype": "float32",
+      "maximum_time_quantization_s": 9.155273446026513e-07,
+      "pre_action_1ms_maximum_abs_body_xy_velocity": [
+        0.012305060740642778,
+        0.0007957560427984051
+      ],
+      "pre_action_1ms_maximum_abs_yaw_rate": 0.0018432098867093994,
+      "post_action_body_commands_zero": true,
+      "arm_joint_names": [
+        "left_shoulder_roll_joint",
+        "right_shoulder_roll_joint"
+      ],
+      "last_pre_event_time_s": 3.0489999999997752,
+      "actual_arm_q_at_pre_event_rad": [
+        -1.083670997124099,
+        1.0986644816104423
+      ],
+      "delivered_arm_target_at_pre_event_rad": [
+        -1.0388206243515015,
+        1.0549463033676147
+      ],
+      "actual_target_error_at_pre_event_rad": [
+        -0.04485037277259751,
+        0.04371817824282753
+      ]
+    },
+    {
+      "path": "reports/defense_validation/goalkeeper/air_high_left_h_stop_then_arm_r0",
+      "pd_raw_motor_applied_exact": true,
+      "policy_time_dtype": "float32",
+      "maximum_time_quantization_s": 9.155273446026513e-07,
+      "pre_action_1ms_maximum_abs_body_xy_velocity": [
+        0.012305060740642778,
+        0.0007957560427984051
+      ],
+      "pre_action_1ms_maximum_abs_yaw_rate": 0.0018432098867093994,
+      "post_action_body_commands_zero": true,
+      "arm_joint_names": [
+        "left_shoulder_roll_joint",
+        "right_shoulder_roll_joint"
+      ],
+      "last_pre_event_time_s": 2.6659999999998174,
+      "actual_arm_q_at_pre_event_rad": [
+        -1.1269699497871786,
+        1.1399157270721183
+      ],
+      "delivered_arm_target_at_pre_event_rad": [
+        -1.0914132595062256,
+        1.105427861213684
+      ],
+      "actual_target_error_at_pre_event_rad": [
+        -0.035556690280952985,
+        0.03448786585843422
+      ]
+    },
+    {
+      "path": "reports/defense_validation/goalkeeper/air_high_left_h_stop_then_arm_r1",
+      "pd_raw_motor_applied_exact": true,
+      "policy_time_dtype": "float32",
+      "maximum_time_quantization_s": 9.155273446026513e-07,
+      "pre_action_1ms_maximum_abs_body_xy_velocity": [
+        0.012305060740642778,
+        0.0007957560427984051
+      ],
+      "pre_action_1ms_maximum_abs_yaw_rate": 0.0018432098867093994,
+      "post_action_body_commands_zero": true,
+      "arm_joint_names": [
+        "left_shoulder_roll_joint",
+        "right_shoulder_roll_joint"
+      ],
+      "last_pre_event_time_s": 2.6659999999998174,
+      "actual_arm_q_at_pre_event_rad": [
+        -1.1269699497871786,
+        1.1399157270721183
+      ],
+      "delivered_arm_target_at_pre_event_rad": [
+        -1.0914132595062256,
+        1.105427861213684
+      ],
+      "actual_target_error_at_pre_event_rad": [
+        -0.035556690280952985,
+        0.03448786585843422
+      ]
+    }
+  ]
+}

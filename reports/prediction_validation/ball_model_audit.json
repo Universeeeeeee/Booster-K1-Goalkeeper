@@ -1,0 +1,3333 @@
+{
+  "purpose": "Stage G model selection evidence; F cases are development data, not independent holdouts",
+  "causality": "Each forecast receives only current qpos/qvel or current and past velocities; future reference is read exclusively by evaluator after forecast",
+  "limitations": [
+    "Floor-only forecast excludes goal/robot contact; evaluation must stop before such physical contact",
+    "qpos quaternion is required because freejoint angular velocity is in the body frame",
+    "Warmstart is reset; measured error includes this approximation",
+    "Known simulated contact parameters do not certify real-ball fidelity"
+  ],
+  "source_sha256": {
+    "reports/positioning_validation/scene_absent.xml": "506dc57d046152cd43788624be80b3cd17287c247d22863bc4e2d9ea7b3b193a",
+    "reports/positioning_validation/air_center_absent/trajectory.npz": "700d6d84a57af3a28a5abd1610513534d3c10864f2e4dd3af3ae93db52863b36",
+    "reports/positioning_validation/air_high_absent/trajectory.npz": "98f5faf6a34cf56d086adff25d60a08efe3757b98da11491b98736dd66899471",
+    "reports/positioning_validation/air_wide_absent/trajectory.npz": "51b3ae370eb6c1a209253052fb3735f7183e4ea4db021dab8661b7099b2f2d33",
+    "reports/positioning_validation/angled_absent/trajectory.npz": "5f562e2a3483ee9642774f70478387a4b5b690a476a1eb70a93e60b526c6aef1",
+    "reports/positioning_validation/bouncing_absent/trajectory.npz": "28a20c8f9bcc75f332743e497106cd19a77d1b67bb30850ad1ff54740414c034",
+    "reports/positioning_validation/center_absent/trajectory.npz": "3e6db02e33a40d0cf171a1e6b9520175b46eaeb6d4c452a659d20038d8e3eb69",
+    "reports/positioning_validation/reachable_left_absent/trajectory.npz": "9deaedb00e088c186679252182b65571364188a0bda92af8cb76dc026d214829",
+    "reports/positioning_validation/reachable_right_absent/trajectory.npz": "ca62f7b15049e82893531868b02fb51131ba9427404cf0f4bac478d4ee4eda40",
+    "reports/positioning_validation/wide_left_absent/trajectory.npz": "c3cecd3e6d04d6d6f1853891f81b9d5bc4ef5179169265b30ebf519d1cb9ed63",
+    "reports/positioning_validation/wide_right_absent/trajectory.npz": "4b191e99af579d086116641af925f9e090bb05293f75bd9ec7ef67b8c9a2db38",
+    "reports/positioning_validation/air_center_absent/summary.json": "9186c7b1e0edf36c611c5edd1e297ed9b7f124c6b56d605b91aa44e18735d8d0",
+    "reports/positioning_validation/air_high_absent/summary.json": "d6f014e9bd3898af227e777d891a0f2bfa5461271d52b7610c0c8292ce35ed3d",
+    "reports/positioning_validation/air_wide_absent/summary.json": "fe47fa757e176ff68bdd11ec3e70deacbb46b42f49084af66631a2a5ccdf829c",
+    "reports/positioning_validation/angled_absent/summary.json": "5abc07963848634702837430db9fd382cd4dbbed0243355b7a5d848234600501",
+    "reports/positioning_validation/bouncing_absent/summary.json": "5e6cf0dc2e4fab5d4b30c637763209b5a68d2488463709c8bba7e49a1fd20f7a",
+    "reports/positioning_validation/center_absent/summary.json": "3b118564ac06eef9f172d0919a0aebfee36e4cc8420a87dac609c3e8edceba34",
+    "reports/positioning_validation/reachable_left_absent/summary.json": "d7c594381c95d678bb690ebf4c6adf4cf4b7824f1e8fbc3c6990dd078af97675",
+    "reports/positioning_validation/reachable_right_absent/summary.json": "77147f2ca52dd5e0d79ead10cf96208ce7a9a7ade8c7b457f1356aa205cf2c26",
+    "reports/positioning_validation/wide_left_absent/summary.json": "a3e2af56fbc16980078e7288c0a38dd877bf7d91c2875e5910f7d0d81a6f1301",
+    "reports/positioning_validation/wide_right_absent/summary.json": "6d3bbceef874d96c2d38aa65c1909294084d0da64d0ede9aff042dcec5eaaf59"
+  },
+  "parameters": {
+    "mujoco_version": "3.3.7",
+    "timestep": 0.001,
+    "gravity": [
+      0.0,
+      0.0,
+      -9.81
+    ],
+    "ball_mass": 0.43,
+    "ball_inertia": [
+      0.00346866666667,
+      0.00346866666667,
+      0.00346866666667
+    ],
+    "ball_friction": [
+      0.6,
+      0.005,
+      0.0002
+    ],
+    "ball_solref": [
+      0.008,
+      0.35
+    ],
+    "ball_solimp": [
+      0.9,
+      0.95,
+      0.001,
+      0.5,
+      2.0
+    ],
+    "ball_priority": 1,
+    "ball_condim": 6,
+    "ground_friction": [
+      0.4,
+      0.005,
+      0.0001
+    ],
+    "ground_condim": 1
+  },
+  "cases": [
+    {
+      "name": "air_center_absent",
+      "reference": {
+        "time": 2.8749999999998352,
+        "position": [
+          11.0,
+          0.0,
+          0.2566299999998461
+        ]
+      },
+      "samples": [
+        {
+          "time": 2.0199999999998886,
+          "physical_wall_s": 0.0073865000158548355,
+          "physical_error": [
+            9.459100169806334e-14,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            5.3290705182007514e-14,
+            0.0,
+            0.004193775000155664
+          ],
+          "naive_unmodeled_floor_contact": false
+        },
+        {
+          "time": 2.5199999999998335,
+          "physical_wall_s": 0.006139207980595529,
+          "physical_error": [
+            3.952393967665557e-14,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            0.0,
+            0.0,
+            0.001741275000164355
+          ],
+          "naive_unmodeled_floor_contact": false
+        }
+      ],
+      "bounce_episodes": [],
+      "rolling_acceleration": {
+        "x_m_s2": null,
+        "y_m_s2": null
+      },
+      "physical_errors": {
+        "count": 2,
+        "maximum_absolute": [
+          9.459100169806334e-14,
+          0.0,
+          0.0
+        ],
+        "rmse": [
+          7.248999727482037e-14,
+          0.0,
+          0.0
+        ],
+        "columns": [
+          "time_s",
+          "lateral_m",
+          "height_m"
+        ]
+      },
+      "naive_errors": {
+        "count": 2,
+        "maximum_absolute": [
+          5.3290705182007514e-14,
+          0.0,
+          0.004193775000155664
+        ],
+        "rmse": [
+          3.76822190084106e-14,
+          0.0,
+          0.0032109023169607648
+        ],
+        "columns": [
+          "time_s",
+          "lateral_m",
+          "height_m"
+        ]
+      },
+      "history_errors": null,
+      "full_scene_first_forecast_error": [
+        9.459100169806334e-14,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "air_high_absent",
+      "reference": {
+        "time": 2.8749999999998352,
+        "position": [
+          11.0,
+          -2.2764989732208413e-48,
+          1.1863174999998964
+        ]
+      },
+      "samples": [
+        {
+          "time": 2.0199999999998886,
+          "physical_wall_s": 0.00756649998947978,
+          "physical_error": [
+            9.459100169806334e-14,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            5.3290705182007514e-14,
+            2.2764989732208413e-48,
+            0.004193775000105315
+          ],
+          "naive_unmodeled_floor_contact": false
+        },
+        {
+          "time": 2.5199999999998335,
+          "physical_wall_s": 0.006502833013655618,
+          "physical_error": [
+            3.952393967665557e-14,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            0.0,
+            -2.026332572230087e-49,
+            0.0017412750001246646
+          ],
+          "naive_unmodeled_floor_contact": false
+        }
+      ],
+      "bounce_episodes": [],
+      "rolling_acceleration": {
+        "x_m_s2": null,
+        "y_m_s2": null
+      },
+      "physical_errors": {
+        "count": 2,
+        "maximum_absolute": [
+          9.459100169806334e-14,
+          0.0,
+          0.0
+        ],
+        "rmse": [
+          7.248999727482037e-14,
+          0.0,
+          0.0
+        ],
+        "columns": [
+          "time_s",
+          "lateral_m",
+          "height_m"
+        ]
+      },
+      "naive_errors": {
+        "count": 2,
+        "maximum_absolute": [
+          5.3290705182007514e-14,
+          2.2764989732208413e-48,
+          0.004193775000105315
+        ],
+        "rmse": [
+          3.76822190084106e-14,
+          1.6160921712588596e-48,
+          0.0032109023169171226
+        ],
+        "columns": [
+          "time_s",
+          "lateral_m",
+          "height_m"
+        ]
+      },
+      "history_errors": null,
+      "full_scene_first_forecast_error": [
+        9.459100169806334e-14,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "air_wide_absent",
+      "reference": {
+        "time": 2.8749999999998352,
+        "position": [
+          11.0,
+          0.6,
+          0.2566299999998461
+        ]
+      },
+      "samples": [
+        {
+          "time": 2.0199999999998886,
+          "physical_wall_s": 0.007385250006336719,
+          "physical_error": [
+            9.459100169806334e-14,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            5.3290705182007514e-14,
+            0.0,
+            0.004193775000155664
+          ],
+          "naive_unmodeled_floor_contact": false
+        },
+        {
+          "time": 2.5199999999998335,
+          "physical_wall_s": 0.005949957994744182,
+          "physical_error": [
+            3.952393967665557e-14,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            0.0,
+            0.0,
+            0.001741275000164355
+          ],
+          "naive_unmodeled_floor_contact": false
+        }
+      ],
+      "bounce_episodes": [],
+      "rolling_acceleration": {
+        "x_m_s2": null,
+        "y_m_s2": null
+      },
+      "physical_errors": {
+        "count": 2,
+        "maximum_absolute": [
+          9.459100169806334e-14,
+          0.0,
+          0.0
+        ],
+        "rmse": [
+          7.248999727482037e-14,
+          0.0,
+          0.0
+        ],
+        "columns": [
+          "time_s",
+          "lateral_m",
+          "height_m"
+        ]
+      },
+      "naive_errors": {
+        "count": 2,
+        "maximum_absolute": [
+          5.3290705182007514e-14,
+          0.0,
+          0.004193775000155664
+        ],
+        "rmse": [
+          3.76822190084106e-14,
+          0.0,
+          0.0032109023169607648
+        ],
+        "columns": [
+          "time_s",
+          "lateral_m",
+          "height_m"
+        ]
+      },
+      "history_errors": null,
+      "full_scene_first_forecast_error": [
+        9.459100169806334e-14,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "angled_absent",
+      "reference": {
+        "time": 11.656352839009664,
+        "position": [
+          11.0,
+          0.36907175551090327,
+          0.10999476934551766
+        ]
+      },
+      "samples": [
+        {
+          "time": 2.0199999999998886,
+          "physical_wall_s": 0.04079820797778666,
+          "physical_error": [
+            8.959588626566983e-11,
+            7.97301114019433e-12,
+            2.9322377859131166e-13
+          ],
+          "naive_error": [
+            -0.32235365408147487,
+            -0.029011828867356593,
+            5.230654482338282e-06
+          ],
+          "naive_unmodeled_floor_contact": false
+        },
+        {
+          "time": 2.5199999999998335,
+          "physical_wall_s": 0.03702945899567567,
+          "physical_error": [
+            1.2256862191861728e-12,
+            -3.3306690738754696e-16,
+            -1.3877787807814457e-17
+          ],
+          "naive_error": [
+            -0.2983646560096318,
+            -0.02685281904089648,
+            5.230654482338282e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -0.079732874951425,
+            -0.007175958745657851,
+            5.230654482338282e-06
+          ]
+        },
+        {
+          "time": 3.0199999999997784,
+          "physical_wall_s": 0.03509270801441744,
+          "physical_error": [
+            1.4530598946294049e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.2676757690227163,
+            -0.024090819212079395,
+            5.230654482338282e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -0.0012289430009957414,
+            -0.00011060487012476417,
+            5.230654482338282e-06
+          ]
+        },
+        {
+          "time": 3.5199999999997234,
+          "physical_wall_s": 0.03332945899455808,
+          "physical_error": [
+            1.673328142715036e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.23835244675682077,
+            -0.0214517202081545,
+            5.230654482338282e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            0.0007814098983054407,
+            7.032689080693766e-05,
+            5.230654482338282e-06
+          ]
+        },
+        {
+          "time": 4.019999999999677,
+          "physical_wall_s": 0.03173333400627598,
+          "physical_error": [
+            1.5827339439056232e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.21074366092092767,
+            -0.018966929482930495,
+            5.230654482338282e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -0.00024992554685177026,
+            -2.2493299263570687e-05,
+            5.230654482338282e-06
+          ]
+        },
+        {
+          "time": 4.519999999999844,
+          "physical_wall_s": 0.02971895900554955,
+          "physical_error": [
+            1.5862866575844237e-12,
+            3.3306690738754696e-16,
+            1.3877787807814457e-17
+          ],
+          "naive_error": [
+            -0.18474725127401115,
+            -0.016627252614733468,
+            5.230654482338282e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -0.0002721984758942142,
+            -2.4497862902983503e-05,
+            5.230654482338282e-06
+          ]
+        },
+        {
+          "time": 5.020000000000011,
+          "physical_wall_s": 0.02863641601288691,
+          "physical_error": [
+            1.5827339439056232e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.16028573203392327,
+            -0.014425715883144397,
+            5.230654482338282e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            0.0004874210232195253,
+            4.3867891998450315e-05,
+            5.230654482338282e-06
+          ]
+        },
+        {
+          "time": 5.520000000000178,
+          "physical_wall_s": 0.026755957980640233,
+          "physical_error": [
+            1.5827339439056232e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.13766471143143022,
+            -0.012389824028931684,
+            5.230654482338282e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -0.0009153672093695775,
+            -8.238304894631066e-05,
+            5.230654482338282e-06
+          ]
+        },
+        {
+          "time": 6.020000000000345,
+          "physical_wall_s": 0.024700250010937452,
+          "physical_error": [
+            1.5827339439056232e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.11645670092388549,
+            -0.010481103083264276,
+            5.230654482338282e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            0.0007580951872547814,
+            6.822856673832645e-05,
+            5.230654482338282e-06
+          ]
+        },
+        {
+          "time": 6.520000000000512,
+          "physical_wall_s": 0.023230416991282254,
+          "physical_error": [
+            1.5827339439056232e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.09713919548787686,
+            -0.008742527594035099,
+            5.230654482338282e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -0.0004550916324408405,
+            -4.0958247045919105e-05,
+            5.230654482338282e-06
+          ]
+        },
+        {
+          "time": 7.020000000000679,
+          "physical_wall_s": 0.021742832992458716,
+          "physical_error": [
+            1.5827339439056232e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.07939323754150962,
+            -0.007145391378874932,
+            5.230654482338282e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            0.0002567733642990788,
+            2.31096026479527e-05,
+            5.230654482338282e-06
+          ]
+        },
+        {
+          "time": 7.520000000000846,
+          "physical_wall_s": 0.020038707996718585,
+          "physical_error": [
+            1.5827339439056232e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.06344179932623106,
+            -0.005709761939514946,
+            5.230654482338282e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -7.800405648339392e-05,
+            -7.020365237753179e-06,
+            5.230654482338282e-06
+          ]
+        },
+        {
+          "time": 8.020000000000994,
+          "physical_wall_s": 0.018115999992005527,
+          "physical_error": [
+            1.7248424910576432e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.04922992881216359,
+            -0.004430693593262314,
+            5.230654482338282e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -8.245257320282917e-05,
+            -7.420731755802823e-06,
+            5.230654482338282e-06
+          ]
+        },
+        {
+          "time": 8.520000000000717,
+          "physical_wall_s": 0.016498792014317587,
+          "physical_error": [
+            1.5027978861326119e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.036730405084894,
+            -0.003305736457781372,
+            5.230654482338282e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            0.00011430497790598793,
+            1.0287447870682698e-05,
+            5.230654482338282e-06
+          ]
+        },
+        {
+          "time": 9.02000000000044,
+          "physical_wall_s": 0.01477750000776723,
+          "physical_error": [
+            1.2807532812075806e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.02610328074169921,
+            -0.002349295266865503,
+            5.230654482338282e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -0.00019547702238220666,
+            -1.7592932126997418e-05,
+            5.230654482338282e-06
+          ]
+        },
+        {
+          "time": 9.520000000000163,
+          "physical_wall_s": 0.013036416989052668,
+          "physical_error": [
+            1.0587086762825493e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.01716471739247183,
+            -0.0015448245654067772,
+            5.230654482338282e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            0.00011560265481591614,
+            1.040423884929309e-05,
+            5.230654482338282e-06
+          ]
+        },
+        {
+          "time": 10.019999999999886,
+          "physical_wall_s": 0.011277457990217954,
+          "physical_error": [
+            8.36664071357518e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.01013095040541856,
+            -0.0009117855365436411,
+            5.230654482338282e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -5.7389443412603214e-05,
+            -5.165049963062884e-06,
+            5.230654482338282e-06
+          ]
+        },
+        {
+          "time": 10.519999999999609,
+          "physical_wall_s": 0.009725333977257833,
+          "physical_error": [
+            6.146194664324867e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.004894635856670604,
+            -0.00044051722713317476,
+            5.230654482338282e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            1.6716239368719243e-05,
+            1.5044615103709802e-06,
+            5.230654482338282e-06
+          ]
+        },
+        {
+          "time": 11.019999999999332,
+          "physical_wall_s": 0.007994667015736923,
+          "physical_error": [
+            3.5349501104064984e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.0015428548576554846,
+            -0.0001388569372073878,
+            5.230654482338282e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -3.1643433917594166e-06,
+            -2.84790923510414e-07,
+            5.230654482338282e-06
+          ]
+        },
+        {
+          "time": 11.519999999999055,
+          "physical_wall_s": 0.0063805840036366135,
+          "physical_error": [
+            7.460698725481052e-14,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -7.19824325834395e-05,
+            -6.4784189364730516e-06,
+            5.230654482338282e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -1.0285415044108959e-06,
+            -9.256873934049281e-08,
+            5.230654482338282e-06
+          ]
+        }
+      ],
+      "bounce_episodes": [
+        {
+          "start_time": 2.013999999999889,
+          "duration_s": 0.009000000000000001,
+          "effective_restitution": 0.25299144457752587,
+          "velocity_before": [
+            1.5,
+            0.09,
+            -0.13734
+          ],
+          "velocity_after": [
+            1.4998928172750134,
+            0.09,
+            0.0347458449982774
+          ],
+          "world_spin_before": [
+            -0.8181818181818181,
+            13.636363636363637,
+            4.8757726541350336e-17
+          ],
+          "world_spin_after": [
+            -0.8181818117472408,
+            13.631373009440383,
+            5.572921545536977e-07
+          ],
+          "horizontal_contact_slip_before": [
+            0.0,
+            0.0
+          ],
+          "horizontal_contact_slip_after": [
+            0.00044178623657131766,
+            7.078035102470182e-10
+          ]
+        }
+      ],
+      "rolling_acceleration": {
+        "x_m_s2": {
+          "count": 19,
+          "minimum": -0.010759664033751911,
+          "maximum": -0.010635534199662294,
+          "mean": -0.010693141625521443,
+          "std": 4.28846565123387e-05
+        },
+        "y_m_s2": {
+          "count": 19,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "std": 0.0
+        }
+      },
+      "physical_errors": {
+        "count": 20,
+        "maximum_absolute": [
+          8.959588626566983e-11,
+          7.97301114019433e-12,
+          2.9322377859131166e-13
+        ],
+        "rmse": [
+          2.007870905960587e-11,
+          1.782819492594946e-12,
+          6.556683030181974e-14
+        ],
+        "columns": [
+          "time_s",
+          "lateral_m",
+          "height_m"
+        ]
+      },
+      "naive_errors": {
+        "count": 20,
+        "maximum_absolute": [
+          0.32235365408147487,
+          0.029011828867356593,
+          5.230654482338282e-06
+        ],
+        "rmse": [
+          0.15536845073668282,
+          0.01398316056635058,
+          5.230654482338282e-06
+        ],
+        "columns": [
+          "time_s",
+          "lateral_m",
+          "height_m"
+        ]
+      },
+      "history_errors": {
+        "count": 19,
+        "maximum_absolute": [
+          0.079732874951425,
+          0.007175958745657851,
+          5.230654482338282e-06
+        ],
+        "rmse": [
+          0.018298106227531592,
+          0.0016468295604847823,
+          5.230654482338282e-06
+        ],
+        "columns": [
+          "time_s",
+          "lateral_m",
+          "height_m"
+        ]
+      },
+      "full_scene_first_forecast_error": [
+        8.959588626566983e-11,
+        7.97301114019433e-12,
+        2.9322377859131166e-13
+      ]
+    },
+    {
+      "name": "bouncing_absent",
+      "reference": {
+        "time": 6.801811430424382,
+        "position": [
+          11.0,
+          -0.35,
+          0.10999758534448022
+        ]
+      },
+      "samples": [
+        {
+          "time": 2.0199999999998886,
+          "physical_wall_s": 0.020713500009151176,
+          "physical_error": [
+            -7.86926079854311e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -1.801811430424494,
+            0.0,
+            -43.45509568534445
+          ],
+          "naive_unmodeled_floor_contact": true
+        },
+        {
+          "time": 2.5199999999998335,
+          "physical_wall_s": 0.019572374993003905,
+          "physical_error": [
+            -1.0089706847793423e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.37906770907161036,
+            0.0,
+            -74.53795962982386
+          ],
+          "naive_unmodeled_floor_contact": true
+        },
+        {
+          "time": 3.0199999999997784,
+          "physical_wall_s": 0.01821875001769513,
+          "physical_error": [
+            -1.13420384195706e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.04283913146394536,
+            5.551115123125783e-17,
+            2.414655519783482e-06
+          ],
+          "naive_unmodeled_floor_contact": false
+        },
+        {
+          "time": 3.5199999999997234,
+          "physical_wall_s": 0.01657366700237617,
+          "physical_error": [
+            -1.13420384195706e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.03239500039390819,
+            5.551115123125783e-17,
+            2.414655519783482e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -0.00016053023422113455,
+            5.551115123125783e-17,
+            2.414655519783482e-06
+          ]
+        },
+        {
+          "time": 4.019999999999677,
+          "physical_wall_s": 0.015065999992657453,
+          "physical_error": [
+            -1.1253220577600587e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.02332421909047966,
+            5.551115123125783e-17,
+            2.414655519783482e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            7.52192814053032e-05,
+            5.551115123125783e-17,
+            2.414655519783482e-06
+          ]
+        },
+        {
+          "time": 4.519999999999844,
+          "physical_wall_s": 0.012988041999051347,
+          "physical_error": [
+            -9.032774528350274e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.01574723185837268,
+            5.551115123125783e-17,
+            2.414655519783482e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -2.1032485051364347e-05,
+            5.551115123125783e-17,
+            2.414655519783482e-06
+          ]
+        },
+        {
+          "time": 5.020000000000011,
+          "physical_wall_s": 0.011994458007393405,
+          "physical_error": [
+            -6.812328479099961e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.009638493303966378,
+            5.551115123125783e-17,
+            2.414655519783482e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -2.17792159924457e-05,
+            5.551115123125783e-17,
+            2.414655519783482e-06
+          ]
+        },
+        {
+          "time": 5.520000000000178,
+          "physical_wall_s": 0.009784166992176324,
+          "physical_error": [
+            -4.591882429849647e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.004994166029401725,
+            0.0,
+            2.414655519783482e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            1.8380404556594954e-05,
+            0.0,
+            2.414655519783482e-06
+          ]
+        },
+        {
+          "time": 6.020000000000345,
+          "physical_wall_s": 0.008053916011704132,
+          "physical_error": [
+            -2.611244553918368e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.0018760999611782125,
+            0.0,
+            2.414655519783482e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -2.176821645516469e-05,
+            0.0,
+            2.414655519783482e-06
+          ]
+        },
+        {
+          "time": 6.520000000000512,
+          "physical_wall_s": 0.006352041003992781,
+          "physical_error": [
+            -9.414691248821327e-14,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.0002418678173743416,
+            0.0,
+            2.414655519783482e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            2.6736074563160628e-06,
+            0.0,
+            2.414655519783482e-06
+          ]
+        }
+      ],
+      "bounce_episodes": [
+        {
+          "start_time": 2.3749999999998495,
+          "duration_s": 0.007,
+          "effective_restitution": 0.3734200233131811,
+          "velocity_before": [
+            3.0,
+            -7.4496838885845385e-50,
+            -3.6787499999999875
+          ],
+          "velocity_after": [
+            1.945066792392314,
+            4.372781554301634e-18,
+            1.3737189107633603
+          ],
+          "world_spin_before": [
+            -3.364685062522493e-47,
+            1.1417697662135287e-14,
+            1.988590974758043e-32
+          ],
+          "world_spin_after": [
+            -2.1727945279553767e-16,
+            14.104962804455672,
+            2.6233824882475104e-15
+          ],
+          "horizontal_contact_slip_before": [
+            2.9999999999999987,
+            -3.775650407660588e-48
+          ],
+          "horizontal_contact_slip_after": [
+            0.39352088390219,
+            -1.952795825320751e-17
+          ]
+        },
+        {
+          "start_time": 2.660999999999818,
+          "duration_s": 0.006,
+          "effective_restitution": 0.41933100461637396,
+          "velocity_before": [
+            1.945066792392314,
+            4.372781554301595e-18,
+            -1.3632710892366446
+          ],
+          "velocity_after": [
+            1.806651547833162,
+            1.816697330044072e-17,
+            0.5716618354140606
+          ],
+          "world_spin_before": [
+            -2.1727945279553954e-16,
+            14.104962804455672,
+            2.6233824882475116e-15
+          ],
+          "world_spin_after": [
+            -2.2709049156620387e-16,
+            15.952359031174698,
+            6.066174159817962e-15
+          ],
+          "horizontal_contact_slip_before": [
+            0.39352088390219,
+            -1.9527958253207755e-17
+          ],
+          "horizontal_contact_slip_after": [
+            0.051892054403945176,
+            -6.8129807718417084e-18
+          ]
+        },
+        {
+          "start_time": 2.7809999999998047,
+          "duration_s": 0.007,
+          "effective_restitution": 0.32656084351740733,
+          "velocity_before": [
+            1.806651547833162,
+            1.8166973300440635e-17,
+            -0.5466781645859381
+          ],
+          "velocity_after": [
+            1.7869067186407108,
+            1.8571900136239168e-17,
+            0.17852368255973197
+          ],
+          "world_spin_before": [
+            -2.2709049156621057e-16,
+            15.952359031174698,
+            6.066174159817976e-15
+          ],
+          "world_spin_after": [
+            -2.1267915528618857e-16,
+            16.205548540330135,
+            3.689540301459626e-15
+          ],
+          "horizontal_contact_slip_before": [
+            0.051892054403945176,
+            -6.812980771842528e-18
+          ],
+          "horizontal_contact_slip_after": [
+            0.0042963792043959614,
+            -4.8228069452415746e-18
+          ]
+        },
+        {
+          "start_time": 2.8219999999998002,
+          "duration_s": 0.009000000000000001,
+          "effective_restitution": 0.25320670589778527,
+          "velocity_before": [
+            1.7869067186407108,
+            1.8571900136239177e-17,
+            -0.1550163174402682
+          ],
+          "velocity_after": [
+            1.7856277890437577,
+            1.8541594904583657e-17,
+            0.03925117109945571
+          ],
+          "world_spin_before": [
+            -2.126791552861866e-16,
+            16.205548540330135,
+            3.6895403014596226e-15
+          ],
+          "world_spin_after": [
+            -2.132769747699608e-16,
+            16.21602511345428,
+            3.689531235287253e-15
+          ],
+          "horizontal_contact_slip_before": [
+            0.0042963792043959614,
+            -4.8228069452413496e-18
+          ],
+          "horizontal_contact_slip_after": [
+            0.0018650265637869534,
+            -4.918872320112031e-18
+          ]
+        }
+      ],
+      "rolling_acceleration": {
+        "x_m_s2": {
+          "count": 7,
+          "minimum": -0.010760221387712448,
+          "maximum": -0.010634906197846317,
+          "mean": -0.010695508459126216,
+          "std": 4.1432792997150244e-05
+        },
+        "y_m_s2": {
+          "count": 7,
+          "minimum": -1.3309050480380773e-19,
+          "maximum": 3.406809533993258e-20,
+          "mean": -5.800925861878964e-20,
+          "std": 5.185036726524109e-20
+        }
+      },
+      "physical_errors": {
+        "count": 10,
+        "maximum_absolute": [
+          1.13420384195706e-12,
+          0.0,
+          0.0
+        ],
+        "rmse": [
+          8.393064253598132e-13,
+          0.0,
+          0.0
+        ],
+        "columns": [
+          "time_s",
+          "lateral_m",
+          "height_m"
+        ]
+      },
+      "naive_errors": {
+        "count": 10,
+        "maximum_absolute": [
+          1.801811430424494,
+          5.551115123125783e-17,
+          74.53795962982386
+        ],
+        "rmse": [
+          0.5825817368498823,
+          3.925231146709438e-17,
+          27.284157980043542
+        ],
+        "columns": [
+          "time_s",
+          "lateral_m",
+          "height_m"
+        ]
+      },
+      "history_errors": {
+        "count": 7,
+        "maximum_absolute": [
+          0.00016053023422113455,
+          5.551115123125783e-17,
+          2.414655519783482e-06
+        ],
+        "rmse": [
+          6.883047369862261e-05,
+          4.1962486042515756e-17,
+          2.4146555197834822e-06
+        ],
+        "columns": [
+          "time_s",
+          "lateral_m",
+          "height_m"
+        ]
+      },
+      "full_scene_first_forecast_error": [
+        -7.86926079854311e-13,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "center_absent",
+      "reference": {
+        "time": 8.7970805076464,
+        "position": [
+          11.0,
+          -5.976693769000697e-19,
+          0.10999164105123542
+        ]
+      },
+      "samples": [
+        {
+          "time": 2.0199999999998886,
+          "physical_wall_s": 0.028632208006456494,
+          "physical_error": [
+            -7.815970093361102e-14,
+            -7.36844581087825e-20,
+            0.0
+          ],
+          "naive_error": [
+            -0.13041384097984654,
+            7.490607197765257e-19,
+            8.358948764580765e-06
+          ],
+          "naive_unmodeled_floor_contact": false
+        },
+        {
+          "time": 2.5199999999998335,
+          "physical_wall_s": 0.02687512501142919,
+          "physical_error": [
+            -3.0020430585864233e-13,
+            3.4634809580606484e-21,
+            0.0
+          ],
+          "naive_error": [
+            -0.1172784349255167,
+            7.731377457221897e-19,
+            8.358948764580765e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -0.036338548026661144,
+            8.534586003775429e-19,
+            8.358948764580765e-06
+          ]
+        },
+        {
+          "time": 3.0199999999997784,
+          "physical_wall_s": 0.025305707997176796,
+          "physical_error": [
+            -5.222489107836736e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.09970241896558463,
+            7.39452185543745e-19,
+            8.358948764580765e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -0.0004659564729738719,
+            5.365939558520259e-19,
+            8.358948764580765e-06
+          ]
+        },
+        {
+          "time": 3.5199999999997234,
+          "physical_wall_s": 0.023474708024878055,
+          "physical_error": [
+            -7.442935157087049e-13,
+            3.640527032438877e-21,
+            0.0
+          ],
+          "naive_error": [
+            -0.0833965968641035,
+            4.187906425351579e-19,
+            8.358948764580765e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            0.0002674969601503818,
+            -1.2511860019338084e-18,
+            8.358948764580765e-06
+          ]
+        },
+        {
+          "time": 4.019999999999677,
+          "physical_wall_s": 0.02202666600351222,
+          "physical_error": [
+            -9.57456336436735e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.06856110346043742,
+            3.252591613487325e-19,
+            8.358948764580765e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -8.246362508934624e-05,
+            -1.1079844452149464e-19,
+            8.358948764580765e-06
+          ]
+        },
+        {
+          "time": 4.519999999999844,
+          "physical_wall_s": 0.02016300000832416,
+          "physical_error": [
+            -9.57456336436735e-13,
+            -1.4246046188144935e-20,
+            0.0
+          ],
+          "naive_error": [
+            -0.05514185846032227,
+            3.0794300506044147e-19,
+            8.358948764580765e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -9.238825368385051e-05,
+            2.6664155485633247e-19,
+            8.358948764580765e-06
+          ]
+        },
+        {
+          "time": 5.020000000000011,
+          "physical_wall_s": 0.018565041973488405,
+          "physical_error": [
+            -8.57980353430321e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.043103117498178634,
+            3.007529001257412e-19,
+            8.358948764580765e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            0.00013824500673997875,
+            2.9544376407193984e-19,
+            8.358948764580765e-06
+          ]
+        },
+        {
+          "time": 5.520000000000178,
+          "physical_wall_s": 0.017056291981134564,
+          "physical_error": [
+            -6.359357485052897e-13,
+            4.264885959002023e-21,
+            0.0
+          ],
+          "naive_error": [
+            -0.032599423000659655,
+            1.9062361646108067e-19,
+            8.358948764580765e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -0.00023519035107710806,
+            -1.297962686533175e-19,
+            8.358948764580765e-06
+          ]
+        },
+        {
+          "time": 6.020000000000345,
+          "physical_wall_s": 0.015328957990277559,
+          "physical_error": [
+            -4.1389114358025836e-13,
+            -3.992424185499014e-21,
+            0.0
+          ],
+          "naive_error": [
+            -0.023437110675386563,
+            2.4540923663028973e-19,
+            8.358948764580765e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            0.00015636104771488135,
+            3.842843225473244e-19,
+            8.358948764580765e-06
+          ]
+        },
+        {
+          "time": 6.520000000000512,
+          "physical_wall_s": 0.01375283399829641,
+          "physical_error": [
+            -1.9184653865522705e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.015831604323887305,
+            1.4935354958065267e-19,
+            8.358948764580765e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -8.358109046646689e-05,
+            -4.2979549158206345e-20,
+            8.358948764580765e-06
+          ]
+        },
+        {
+          "time": 7.020000000000679,
+          "physical_wall_s": 0.011878374993102625,
+          "physical_error": [
+            3.019806626980426e-14,
+            -2.593091572614422e-21,
+            0.0
+          ],
+          "naive_error": [
+            -0.009658600571997411,
+            4.3322416697603805e-20,
+            8.358948764580765e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            3.1743819770113646e-05,
+            -1.3081180841127848e-19,
+            8.358948764580765e-06
+          ]
+        },
+        {
+          "time": 7.520000000000846,
+          "physical_wall_s": 0.010120749997440726,
+          "physical_error": [
+            2.5224267119483557e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.005007015025746853,
+            1.7252149813788357e-20,
+            8.358948764580765e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -7.756485677745673e-06,
+            -7.631866551349974e-21,
+            8.358948764580765e-06
+          ]
+        },
+        {
+          "time": 8.020000000000994,
+          "physical_wall_s": 0.008550166006898507,
+          "physical_error": [
+            4.298783551348606e-13,
+            3.2183202587345697e-21,
+            0.0
+          ],
+          "naive_error": [
+            -0.0018630186017656314,
+            2.9567163435427687e-20,
+            8.358948764580765e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -6.658750894672494e-06,
+            3.485161412758681e-20,
+            8.358948764580765e-06
+          ]
+        },
+        {
+          "time": 8.520000000000717,
+          "physical_wall_s": 0.0068370000226423144,
+          "physical_error": [
+            1.5276668818842154e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.0002361554098637697,
+            2.0116547921838046e-21,
+            8.358948764580765e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            1.5568830811218959e-06,
+            -2.130109838528662e-21,
+            8.358948764580765e-06
+          ]
+        }
+      ],
+      "bounce_episodes": [
+        {
+          "start_time": 2.013999999999889,
+          "duration_s": 0.009000000000000001,
+          "effective_restitution": 0.25296983879370327,
+          "velocity_before": [
+            1.8,
+            0.0,
+            -0.13734000000000002
+          ],
+          "velocity_after": [
+            1.8,
+            2.5036006778846475e-20,
+            0.03474287765992721
+          ],
+          "world_spin_before": [
+            0.0,
+            16.363636363636363,
+            0.0
+          ],
+          "world_spin_after": [
+            3.7148978319849076e-19,
+            16.35718083774398,
+            -5.416995486121764e-20
+          ],
+          "horizontal_contact_slip_before": [
+            0.0,
+            0.0
+          ],
+          "horizontal_contact_slip_after": [
+            0.000710107848162389,
+            6.589988293068046e-20
+          ]
+        }
+      ],
+      "rolling_acceleration": {
+        "x_m_s2": {
+          "count": 13,
+          "minimum": -0.010760243679918976,
+          "maximum": -0.010233398400103306,
+          "mean": -0.010661793083520058,
+          "std": 0.000130826645449123
+        },
+        "y_m_s2": {
+          "count": 13,
+          "minimum": -1.2609479577245989e-19,
+          "maximum": 9.478274975442514e-21,
+          "mean": -4.030536064627844e-20,
+          "std": 4.4896274159402646e-20
+        }
+      },
+      "physical_errors": {
+        "count": 14,
+        "maximum_absolute": [
+          9.57456336436735e-13,
+          7.36844581087825e-20,
+          0.0
+        ],
+        "rmse": [
+          5.591907727531421e-13,
+          2.01933665708612e-20,
+          0.0
+        ],
+        "columns": [
+          "time_s",
+          "lateral_m",
+          "height_m"
+        ]
+      },
+      "naive_errors": {
+        "count": 14,
+        "maximum_absolute": [
+          0.13041384097984654,
+          7.731377457221897e-19,
+          8.358948764580765e-06
+        ],
+        "rmse": [
+          0.06505011240709015,
+          4.047932512682748e-19,
+          8.358948764580765e-06
+        ],
+        "columns": [
+          "time_s",
+          "lateral_m",
+          "height_m"
+        ]
+      },
+      "history_errors": {
+        "count": 13,
+        "maximum_absolute": [
+          0.036338548026661144,
+          1.2511860019338084e-18,
+          8.358948764580765e-06
+        ],
+        "rmse": [
+          0.01008006812377126,
+          4.753306541284176e-19,
+          8.358948764580765e-06
+        ],
+        "columns": [
+          "time_s",
+          "lateral_m",
+          "height_m"
+        ]
+      },
+      "full_scene_first_forecast_error": [
+        -7.815970093361102e-14,
+        -7.36844581087825e-20,
+        0.0
+      ]
+    },
+    {
+      "name": "reachable_left_absent",
+      "reference": {
+        "time": 11.656352840493255,
+        "position": [
+          11.0,
+          -0.35,
+          0.10999476935042815
+        ]
+      },
+      "samples": [
+        {
+          "time": 2.0199999999998886,
+          "physical_wall_s": 0.038160041003720835,
+          "physical_error": [
+            1.0089706847793423e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.32235365556506324,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false
+        },
+        {
+          "time": 2.5199999999998335,
+          "physical_wall_s": 0.03697074999217875,
+          "physical_error": [
+            1.2292389328649733e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.2983646561500528,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -0.0797328624185134,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 3.0199999999997784,
+          "physical_wall_s": 0.035052584018558264,
+          "physical_error": [
+            1.4530598946294049e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.2676757691538505,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -0.0012289430016778624,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 3.5199999999997234,
+          "physical_wall_s": 0.03342270900611766,
+          "physical_error": [
+            1.673328142715036e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.23835244687876234,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            0.0007814098987424245,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 4.019999999999677,
+          "physical_wall_s": 0.03161750000435859,
+          "physical_error": [
+            1.5845103007450234e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.21074366103388797,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -0.00024992554704539316,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 4.519999999999844,
+          "physical_wall_s": 0.030106999998679385,
+          "physical_error": [
+            1.5845103007450234e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.1847472513781554,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -0.0002721984760185592,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 5.020000000000011,
+          "physical_wall_s": 0.027958624996244907,
+          "physical_error": [
+            1.5845103007450234e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.16028573212940067,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            0.00048742102350551875,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 5.520000000000178,
+          "physical_wall_s": 0.026286875014193356,
+          "physical_error": [
+            1.5845103007450234e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.13766471151850013,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -0.0009153672099557753,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 6.020000000000345,
+          "physical_wall_s": 0.024538708006730303,
+          "physical_error": [
+            1.5845103007450234e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.11645670100263139,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            0.000758095187750385,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 6.520000000000512,
+          "physical_wall_s": 0.022611666994635016,
+          "physical_error": [
+            1.5845103007450234e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.09713919555857231,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -0.00045509163279611187,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 7.020000000000679,
+          "physical_wall_s": 0.02128433299367316,
+          "physical_error": [
+            1.5845103007450234e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.07939323760428785,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            0.00025677336453711064,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 7.520000000000846,
+          "physical_wall_s": 0.019306917005451396,
+          "physical_error": [
+            1.5845103007450234e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.0634417993813372,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -7.800405655089548e-05,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 8.020000000000994,
+          "physical_wall_s": 0.017939665995072573,
+          "physical_error": [
+            1.7266188478970435e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.04922992885981259,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -8.245257328098887e-05,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 8.520000000000717,
+          "physical_wall_s": 0.016005583020159975,
+          "physical_error": [
+            1.5045742429720121e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.03673040512525816,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            0.00011430497801434569,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 9.02000000000044,
+          "physical_wall_s": 0.014575084001990035,
+          "physical_error": [
+            1.2825296380469808e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.026103280775057414,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -0.00019547702260780397,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 9.520000000000163,
+          "physical_wall_s": 0.012773540976922959,
+          "physical_error": [
+            1.0604850331219495e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.017164717418967967,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            0.00011560265496690647,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 10.019999999999886,
+          "physical_wall_s": 0.010937709012068808,
+          "physical_error": [
+            8.384404281969182e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.010130950425336849,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -5.73894435120792e-05,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 10.519999999999609,
+          "physical_wall_s": 0.00940654199803248,
+          "physical_error": [
+            6.163958232718869e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.004894635870211772,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            1.6716239413128164e-05,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 11.019999999999332,
+          "physical_wall_s": 0.007711667014518753,
+          "physical_error": [
+            3.5349501104064984e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.0015428548650913143,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -3.164343409522985e-06,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 11.519999999999055,
+          "physical_wall_s": 0.0060451669851318,
+          "physical_error": [
+            7.638334409421077e-14,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -7.198243415373895e-05,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -1.0285415203981074e-06,
+            0.0,
+            5.230649571849599e-06
+          ]
+        }
+      ],
+      "bounce_episodes": [
+        {
+          "start_time": 2.013999999999889,
+          "duration_s": 0.009000000000000001,
+          "effective_restitution": 0.2529914445770678,
+          "velocity_before": [
+            1.5,
+            0.0,
+            -0.13733999999999996
+          ],
+          "velocity_after": [
+            1.499892817275013,
+            5.1577029813514935e-21,
+            0.03474584499821448
+          ],
+          "world_spin_before": [
+            0.0,
+            13.636363636363637,
+            0.0
+          ],
+          "world_spin_after": [
+            9.178260365243922e-20,
+            13.631373009054187,
+            2.04702928266977e-20
+          ],
+          "horizontal_contact_slip_before": [
+            0.0,
+            0.0
+          ],
+          "horizontal_contact_slip_after": [
+            0.0004417862790524474,
+            1.525378938311981e-20
+          ]
+        }
+      ],
+      "rolling_acceleration": {
+        "x_m_s2": {
+          "count": 19,
+          "minimum": -0.010759664033750135,
+          "maximum": -0.01063553419966407,
+          "mean": -0.010693141632786557,
+          "std": 4.2884650901238254e-05
+        },
+        "y_m_s2": {
+          "count": 19,
+          "minimum": -1.0795968223762789e-19,
+          "maximum": 5.879148219633407e-20,
+          "mean": -5.041263638544437e-21,
+          "std": 4.7798229174605294e-20
+        }
+      },
+      "physical_errors": {
+        "count": 20,
+        "maximum_absolute": [
+          1.7266188478970435e-12,
+          0.0,
+          0.0
+        ],
+        "rmse": [
+          1.3556184907612238e-12,
+          0.0,
+          0.0
+        ],
+        "columns": [
+          "time_s",
+          "lateral_m",
+          "height_m"
+        ]
+      },
+      "naive_errors": {
+        "count": 20,
+        "maximum_absolute": [
+          0.32235365556506324,
+          0.0,
+          5.230649571849599e-06
+        ],
+        "rmse": [
+          0.15536845095699495,
+          0.0,
+          5.2306495718496e-06
+        ],
+        "columns": [
+          "time_s",
+          "lateral_m",
+          "height_m"
+        ]
+      },
+      "history_errors": {
+        "count": 19,
+        "maximum_absolute": [
+          0.0797328624185134,
+          0.0,
+          5.230649571849599e-06
+        ],
+        "rmse": [
+          0.0182981033532553,
+          0.0,
+          5.2306495718496e-06
+        ],
+        "columns": [
+          "time_s",
+          "lateral_m",
+          "height_m"
+        ]
+      },
+      "full_scene_first_forecast_error": [
+        1.0089706847793423e-12,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "reachable_right_absent",
+      "reference": {
+        "time": 11.656352840493255,
+        "position": [
+          11.0,
+          0.35,
+          0.10999476935042815
+        ]
+      },
+      "samples": [
+        {
+          "time": 2.0199999999998886,
+          "physical_wall_s": 0.03849416700541042,
+          "physical_error": [
+            1.0089706847793423e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.32235365556506324,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false
+        },
+        {
+          "time": 2.5199999999998335,
+          "physical_wall_s": 0.03698541602352634,
+          "physical_error": [
+            1.2292389328649733e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.2983646561500528,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -0.0797328624185134,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 3.0199999999997784,
+          "physical_wall_s": 0.03452812501927838,
+          "physical_error": [
+            1.4530598946294049e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.2676757691538505,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -0.0012289430016778624,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 3.5199999999997234,
+          "physical_wall_s": 0.03332375001627952,
+          "physical_error": [
+            1.673328142715036e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.23835244687876234,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            0.0007814098987424245,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 4.019999999999677,
+          "physical_wall_s": 0.03152416701777838,
+          "physical_error": [
+            1.5845103007450234e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.21074366103388797,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -0.00024992554704539316,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 4.519999999999844,
+          "physical_wall_s": 0.030188624979928136,
+          "physical_error": [
+            1.5845103007450234e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.1847472513781554,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -0.0002721984760185592,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 5.020000000000011,
+          "physical_wall_s": 0.02815112500684336,
+          "physical_error": [
+            1.5845103007450234e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.16028573212940067,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            0.00048742102350551875,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 5.520000000000178,
+          "physical_wall_s": 0.026337457995396107,
+          "physical_error": [
+            1.5845103007450234e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.13766471151850013,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -0.0009153672099557753,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 6.020000000000345,
+          "physical_wall_s": 0.025277832988649607,
+          "physical_error": [
+            1.5845103007450234e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.11645670100263139,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            0.000758095187750385,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 6.520000000000512,
+          "physical_wall_s": 0.022823708975920454,
+          "physical_error": [
+            1.5845103007450234e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.09713919555857231,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -0.00045509163279611187,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 7.020000000000679,
+          "physical_wall_s": 0.02165725000668317,
+          "physical_error": [
+            1.5845103007450234e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.07939323760428785,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            0.00025677336453711064,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 7.520000000000846,
+          "physical_wall_s": 0.01953195800888352,
+          "physical_error": [
+            1.5845103007450234e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.0634417993813372,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -7.800405655089548e-05,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 8.020000000000994,
+          "physical_wall_s": 0.01849575000233017,
+          "physical_error": [
+            1.7266188478970435e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.04922992885981259,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -8.245257328098887e-05,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 8.520000000000717,
+          "physical_wall_s": 0.016390708013204858,
+          "physical_error": [
+            1.5045742429720121e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.03673040512525816,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            0.00011430497801434569,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 9.02000000000044,
+          "physical_wall_s": 0.014435165998293087,
+          "physical_error": [
+            1.2825296380469808e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.026103280775057414,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -0.00019547702260780397,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 9.520000000000163,
+          "physical_wall_s": 0.012716124998405576,
+          "physical_error": [
+            1.0604850331219495e-12,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.017164717418967967,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            0.00011560265496690647,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 10.019999999999886,
+          "physical_wall_s": 0.011314542003674433,
+          "physical_error": [
+            8.384404281969182e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.010130950425336849,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -5.73894435120792e-05,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 10.519999999999609,
+          "physical_wall_s": 0.009317749994806945,
+          "physical_error": [
+            6.163958232718869e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.004894635870211772,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            1.6716239413128164e-05,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 11.019999999999332,
+          "physical_wall_s": 0.0077205420238897204,
+          "physical_error": [
+            3.5349501104064984e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.0015428548650913143,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -3.164343409522985e-06,
+            0.0,
+            5.230649571849599e-06
+          ]
+        },
+        {
+          "time": 11.519999999999055,
+          "physical_wall_s": 0.005881167016923428,
+          "physical_error": [
+            7.638334409421077e-14,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -7.198243415373895e-05,
+            0.0,
+            5.230649571849599e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -1.0285415203981074e-06,
+            0.0,
+            5.230649571849599e-06
+          ]
+        }
+      ],
+      "bounce_episodes": [
+        {
+          "start_time": 2.013999999999889,
+          "duration_s": 0.009000000000000001,
+          "effective_restitution": 0.2529914445770678,
+          "velocity_before": [
+            1.5,
+            0.0,
+            -0.13733999999999996
+          ],
+          "velocity_after": [
+            1.499892817275013,
+            5.1577029813515175e-21,
+            0.03474584499821448
+          ],
+          "world_spin_before": [
+            0.0,
+            13.636363636363637,
+            0.0
+          ],
+          "world_spin_after": [
+            9.178260365238985e-20,
+            13.631373009054187,
+            2.0470292826707068e-20
+          ],
+          "horizontal_contact_slip_before": [
+            0.0,
+            0.0
+          ],
+          "horizontal_contact_slip_after": [
+            0.0004417862790524474,
+            1.52537893831144e-20
+          ]
+        }
+      ],
+      "rolling_acceleration": {
+        "x_m_s2": {
+          "count": 19,
+          "minimum": -0.010759664033750135,
+          "maximum": -0.01063553419966407,
+          "mean": -0.010693141632786557,
+          "std": 4.2884650901238254e-05
+        },
+        "y_m_s2": {
+          "count": 19,
+          "minimum": -1.0795968223765915e-19,
+          "maximum": 5.87914821964424e-20,
+          "mean": -5.041263638550107e-21,
+          "std": 4.779822917461473e-20
+        }
+      },
+      "physical_errors": {
+        "count": 20,
+        "maximum_absolute": [
+          1.7266188478970435e-12,
+          0.0,
+          0.0
+        ],
+        "rmse": [
+          1.3556184907612238e-12,
+          0.0,
+          0.0
+        ],
+        "columns": [
+          "time_s",
+          "lateral_m",
+          "height_m"
+        ]
+      },
+      "naive_errors": {
+        "count": 20,
+        "maximum_absolute": [
+          0.32235365556506324,
+          0.0,
+          5.230649571849599e-06
+        ],
+        "rmse": [
+          0.15536845095699495,
+          0.0,
+          5.2306495718496e-06
+        ],
+        "columns": [
+          "time_s",
+          "lateral_m",
+          "height_m"
+        ]
+      },
+      "history_errors": {
+        "count": 19,
+        "maximum_absolute": [
+          0.0797328624185134,
+          0.0,
+          5.230649571849599e-06
+        ],
+        "rmse": [
+          0.0182981033532553,
+          0.0,
+          5.2306495718496e-06
+        ],
+        "columns": [
+          "time_s",
+          "lateral_m",
+          "height_m"
+        ]
+      },
+      "full_scene_first_forecast_error": [
+        1.0089706847793423e-12,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "wide_left_absent",
+      "reference": {
+        "time": 5.687057990324648,
+        "position": [
+          11.0,
+          -0.9,
+          0.1099936498283127
+        ]
+      },
+      "samples": [
+        {
+          "time": 2.0199999999998886,
+          "physical_wall_s": 0.017966249986784533,
+          "physical_error": [
+            -6.377121053446899e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.020391323658093263,
+            0.0,
+            6.35017168730545e-06
+          ],
+          "naive_unmodeled_floor_contact": false
+        },
+        {
+          "time": 2.5199999999998335,
+          "physical_wall_s": 0.015924000006634742,
+          "physical_error": [
+            -6.377121053446899e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.017899835875853753,
+            0.0,
+            6.35017168730545e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -0.01027107543314898,
+            0.0,
+            6.35017168730545e-06
+          ]
+        },
+        {
+          "time": 3.0199999999997784,
+          "physical_wall_s": 0.014190124988090247,
+          "physical_error": [
+            -6.377121053446899e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.012726367034729513,
+            0.0,
+            6.35017168730545e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -3.7890610641078126e-05,
+            0.0,
+            6.35017168730545e-06
+          ]
+        },
+        {
+          "time": 3.5199999999997234,
+          "physical_wall_s": 0.012784332997398451,
+          "physical_error": [
+            -6.377121053446899e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.008426395537616926,
+            0.0,
+            6.35017168730545e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -3.473608776793924e-05,
+            0.0,
+            6.35017168730545e-06
+          ]
+        },
+        {
+          "time": 4.019999999999677,
+          "physical_wall_s": 0.010891165991779417,
+          "physical_error": [
+            -6.288303211476887e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.00498729238003115,
+            0.0,
+            6.35017168730545e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            1.6554730946083396e-05,
+            0.0,
+            6.35017168730545e-06
+          ]
+        },
+        {
+          "time": 4.519999999999844,
+          "physical_wall_s": 0.009347042010631412,
+          "physical_error": [
+            -4.0678571622265736e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.0024531625512320687,
+            0.0,
+            6.35017168730545e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -1.0518638539736003e-05,
+            0.0,
+            6.35017168730545e-06
+          ]
+        },
+        {
+          "time": 5.020000000000011,
+          "physical_wall_s": 0.007690166006796062,
+          "physical_error": [
+            -2.220446049250313e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.0007996833531755954,
+            0.0,
+            6.35017168730545e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            4.372266421803772e-06,
+            0.0,
+            6.35017168730545e-06
+          ]
+        },
+        {
+          "time": 5.520000000000178,
+          "physical_wall_s": 0.00594312499742955,
+          "physical_error": [
+            -5.5067062021407764e-14,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -5.062737406902329e-05,
+            0.0,
+            6.35017168730545e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -4.0596571704298867e-07,
+            0.0,
+            6.35017168730545e-06
+          ]
+        }
+      ],
+      "bounce_episodes": [
+        {
+          "start_time": 2.013999999999889,
+          "duration_s": 0.009000000000000001,
+          "effective_restitution": 0.25285932330271293,
+          "velocity_before": [
+            3.0,
+            0.0,
+            -0.13733999999999988
+          ],
+          "velocity_after": [
+            3.0,
+            1.091339921363109e-19,
+            0.03472769946239456
+          ],
+          "world_spin_before": [
+            0.0,
+            27.272727272727273,
+            0.0
+          ],
+          "world_spin_after": [
+            -1.5461872965413886e-19,
+            27.266272123153836,
+            -9.798331653845155e-21
+          ],
+          "horizontal_contact_slip_before": [
+            0.0,
+            0.0
+          ],
+          "horizontal_contact_slip_after": [
+            0.0007100664530779177,
+            9.212593187435562e-20
+          ]
+        }
+      ],
+      "rolling_acceleration": {
+        "x_m_s2": {
+          "count": 7,
+          "minimum": -0.010737047055437838,
+          "maximum": -0.007352096326258916,
+          "mean": -0.010224183374547332,
+          "std": 0.0011729222717453507
+        },
+        "y_m_s2": {
+          "count": 7,
+          "minimum": -9.406264686773332e-20,
+          "maximum": 1.1654178822803945e-19,
+          "mean": 5.6185794856759376e-21,
+          "std": 6.544167948094723e-20
+        }
+      },
+      "physical_errors": {
+        "count": 8,
+        "maximum_absolute": [
+          6.377121053446899e-13,
+          0.0,
+          0.0
+        ],
+        "rmse": [
+          5.291438009683776e-13,
+          0.0,
+          0.0
+        ],
+        "columns": [
+          "time_s",
+          "lateral_m",
+          "height_m"
+        ]
+      },
+      "naive_errors": {
+        "count": 8,
+        "maximum_absolute": [
+          0.020391323658093263,
+          0.0,
+          6.35017168730545e-06
+        ],
+        "rmse": [
+          0.011184296541097653,
+          0.0,
+          6.35017168730545e-06
+        ],
+        "columns": [
+          "time_s",
+          "lateral_m",
+          "height_m"
+        ]
+      },
+      "history_errors": {
+        "count": 7,
+        "maximum_absolute": [
+          0.01027107543314898,
+          0.0,
+          6.35017168730545e-06
+        ],
+        "rmse": [
+          0.0038821576627658255,
+          0.0,
+          6.35017168730545e-06
+        ],
+        "columns": [
+          "time_s",
+          "lateral_m",
+          "height_m"
+        ]
+      },
+      "full_scene_first_forecast_error": [
+        -6.377121053446899e-13,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "wide_right_absent",
+      "reference": {
+        "time": 5.687057990324648,
+        "position": [
+          11.0,
+          0.9,
+          0.1099936498283127
+        ]
+      },
+      "samples": [
+        {
+          "time": 2.0199999999998886,
+          "physical_wall_s": 0.0174944169993978,
+          "physical_error": [
+            -6.377121053446899e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.020391323658093263,
+            0.0,
+            6.35017168730545e-06
+          ],
+          "naive_unmodeled_floor_contact": false
+        },
+        {
+          "time": 2.5199999999998335,
+          "physical_wall_s": 0.015957499999785796,
+          "physical_error": [
+            -6.377121053446899e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.017899835875853753,
+            0.0,
+            6.35017168730545e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -0.01027107543314898,
+            0.0,
+            6.35017168730545e-06
+          ]
+        },
+        {
+          "time": 3.0199999999997784,
+          "physical_wall_s": 0.014308459009043872,
+          "physical_error": [
+            -6.377121053446899e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.012726367034729513,
+            0.0,
+            6.35017168730545e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -3.7890610641078126e-05,
+            0.0,
+            6.35017168730545e-06
+          ]
+        },
+        {
+          "time": 3.5199999999997234,
+          "physical_wall_s": 0.01266887498786673,
+          "physical_error": [
+            -6.377121053446899e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.008426395537616926,
+            0.0,
+            6.35017168730545e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -3.473608776793924e-05,
+            0.0,
+            6.35017168730545e-06
+          ]
+        },
+        {
+          "time": 4.019999999999677,
+          "physical_wall_s": 0.011098207993200049,
+          "physical_error": [
+            -6.288303211476887e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.00498729238003115,
+            0.0,
+            6.35017168730545e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            1.6554730946083396e-05,
+            0.0,
+            6.35017168730545e-06
+          ]
+        },
+        {
+          "time": 4.519999999999844,
+          "physical_wall_s": 0.009182582987705246,
+          "physical_error": [
+            -4.0678571622265736e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.0024531625512320687,
+            0.0,
+            6.35017168730545e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -1.0518638539736003e-05,
+            0.0,
+            6.35017168730545e-06
+          ]
+        },
+        {
+          "time": 5.020000000000011,
+          "physical_wall_s": 0.007471667020581663,
+          "physical_error": [
+            -2.220446049250313e-13,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -0.0007996833531755954,
+            0.0,
+            6.35017168730545e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            4.372266421803772e-06,
+            0.0,
+            6.35017168730545e-06
+          ]
+        },
+        {
+          "time": 5.520000000000178,
+          "physical_wall_s": 0.005722875008359551,
+          "physical_error": [
+            -5.5067062021407764e-14,
+            0.0,
+            0.0
+          ],
+          "naive_error": [
+            -5.062737406902329e-05,
+            0.0,
+            6.35017168730545e-06
+          ],
+          "naive_unmodeled_floor_contact": false,
+          "history_error": [
+            -4.0596571704298867e-07,
+            0.0,
+            6.35017168730545e-06
+          ]
+        }
+      ],
+      "bounce_episodes": [
+        {
+          "start_time": 2.013999999999889,
+          "duration_s": 0.009000000000000001,
+          "effective_restitution": 0.25285932330271293,
+          "velocity_before": [
+            3.0,
+            0.0,
+            -0.13733999999999988
+          ],
+          "velocity_after": [
+            3.0,
+            1.091339921363109e-19,
+            0.03472769946239456
+          ],
+          "world_spin_before": [
+            0.0,
+            27.272727272727273,
+            0.0
+          ],
+          "world_spin_after": [
+            -1.5461872965413886e-19,
+            27.266272123153836,
+            -9.798331653845155e-21
+          ],
+          "horizontal_contact_slip_before": [
+            0.0,
+            0.0
+          ],
+          "horizontal_contact_slip_after": [
+            0.0007100664530779177,
+            9.212593187435562e-20
+          ]
+        }
+      ],
+      "rolling_acceleration": {
+        "x_m_s2": {
+          "count": 7,
+          "minimum": -0.010737047055437838,
+          "maximum": -0.007352096326258916,
+          "mean": -0.010224183374547332,
+          "std": 0.0011729222717453507
+        },
+        "y_m_s2": {
+          "count": 7,
+          "minimum": -9.406264686773332e-20,
+          "maximum": 1.1654178822803945e-19,
+          "mean": 5.6185794856759376e-21,
+          "std": 6.544167948094723e-20
+        }
+      },
+      "physical_errors": {
+        "count": 8,
+        "maximum_absolute": [
+          6.377121053446899e-13,
+          0.0,
+          0.0
+        ],
+        "rmse": [
+          5.291438009683776e-13,
+          0.0,
+          0.0
+        ],
+        "columns": [
+          "time_s",
+          "lateral_m",
+          "height_m"
+        ]
+      },
+      "naive_errors": {
+        "count": 8,
+        "maximum_absolute": [
+          0.020391323658093263,
+          0.0,
+          6.35017168730545e-06
+        ],
+        "rmse": [
+          0.011184296541097653,
+          0.0,
+          6.35017168730545e-06
+        ],
+        "columns": [
+          "time_s",
+          "lateral_m",
+          "height_m"
+        ]
+      },
+      "history_errors": {
+        "count": 7,
+        "maximum_absolute": [
+          0.01027107543314898,
+          0.0,
+          6.35017168730545e-06
+        ],
+        "rmse": [
+          0.0038821576627658255,
+          0.0,
+          6.35017168730545e-06
+        ],
+        "columns": [
+          "time_s",
+          "lateral_m",
+          "height_m"
+        ]
+      },
+      "full_scene_first_forecast_error": [
+        -6.377121053446899e-13,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "aggregate_errors": {
+    "physical": {
+      "count": 106,
+      "maximum_absolute": [
+        8.959588626566983e-11,
+        7.97301114019433e-12,
+        2.9322377859131166e-13
+      ],
+      "rmse": [
+        8.76987376597408e-12,
+        7.744073014401841e-13,
+        2.848041112906702e-14
+      ],
+      "columns": [
+        "time_s",
+        "lateral_m",
+        "height_m"
+      ]
+    },
+    "naive": {
+      "count": 106,
+      "maximum_absolute": [
+        1.801811430424494,
+        0.029011828867356593,
+        74.53795962982386
+      ],
+      "rmse": [
+        0.21508266924191366,
+        0.006073896816121813,
+        8.380262541853902
+      ],
+      "columns": [
+        "time_s",
+        "lateral_m",
+        "height_m"
+      ]
+    },
+    "history": {
+      "count": 91,
+      "maximum_absolute": [
+        0.079732874951425,
+        0.007175958745657851,
+        8.358948764580765e-06
+      ],
+      "rmse": [
+        0.01505181735228919,
+        0.0007524969747260829,
+        5.811318400297395e-06
+      ],
+      "columns": [
+        "time_s",
+        "lateral_m",
+        "height_m"
+      ]
+    }
+  },
+  "forecast_wall_seconds": {
+    "reduced_model": {
+      "count": 106,
+      "minimum": 0.005722875008359551,
+      "maximum": 0.04079820797778666,
+      "mean": 0.018451662737171096,
+      "std": 0.009514384149804154
+    },
+    "full_absent_model_first_forecasts": {
+      "count": 10,
+      "minimum": 0.009513958997558802,
+      "maximum": 0.07464116701157764,
+      "mean": 0.03944084170507267,
+      "std": 0.025382451476407285
+    }
+  },
+  "source_unchanged": true,
+  "recommendation": "Choose fixed-parameter MuJoCo floor+ball current-state clone for bounce and rolling; retain cheap ballistic/linear baseline as benchmark. Evaluate distinct held-out launches before controller integration."
+}

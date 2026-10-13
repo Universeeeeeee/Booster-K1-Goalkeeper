@@ -1,0 +1,310 @@
+{
+  "name": "stand_30s",
+  "physics_dt": 0.001,
+  "initial_yaw": 3.141592653589793,
+  "seed": 0,
+  "requested_duration_s": 30.0,
+  "simulated_duration_s": 30.00000000001368,
+  "completed": true,
+  "error": null,
+  "fall_events": [],
+  "minimum_base_height_m": 0.5467388461156403,
+  "maximum_trunk_tilt_degrees": 1.1906225153281245,
+  "segments": [
+    {
+      "name": "stand",
+      "duration": 30,
+      "command": [
+        0,
+        0,
+        0
+      ],
+      "start_time_s": 0.0,
+      "end_time_s": 30.0,
+      "steady_window_start_s": 2.0,
+      "completed": true,
+      "physics_samples": 30000,
+      "steady_physics_samples": 28000,
+      "displacement_world": [
+        0.011122135786099108,
+        0.0025305742014772067,
+        -0.0027572756369328433
+      ],
+      "yaw_change_radians": 0.012298688222646792,
+      "torque_saturation_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "any_saturation_step_fraction": 0.0,
+      "peak_raw_torque_nm": [
+        0.07016099244356155,
+        0.49690744280815125,
+        2.5828757286071777,
+        1.046461582183838,
+        5.383406162261963,
+        0.9885338544845581,
+        2.5932323932647705,
+        1.074722409248352,
+        4.588994979858398,
+        0.9846956729888916,
+        2.296154260635376,
+        5.414675235748291,
+        2.8835036754608154,
+        5.666188716888428,
+        3.98726487159729,
+        2.1284754276275635,
+        2.4243555068969727,
+        5.4931182861328125,
+        2.8884434700012207,
+        5.759086608886719,
+        3.990691661834717,
+        2.1209957599639893
+      ],
+      "peak_motor_controls_nm": [
+        0.07016099244356155,
+        0.49690744280815125,
+        2.5828757286071777,
+        1.046461582183838,
+        5.383406162261963,
+        0.9885338544845581,
+        2.5932323932647705,
+        1.074722409248352,
+        4.588994979858398,
+        0.9846956729888916,
+        2.296154260635376,
+        5.414675235748291,
+        2.8835036754608154,
+        5.666188716888428,
+        3.98726487159729,
+        2.1284754276275635,
+        2.4243555068969727,
+        5.4931182861328125,
+        2.8884434700012207,
+        5.759086608886719,
+        3.990691661834717,
+        2.1209957599639893
+      ],
+      "minimum_base_height_m": 0.5467388461156403,
+      "maximum_trunk_tilt_degrees": 1.1906225153281245,
+      "mean_body_velocity": [
+        5.006756510775817e-05,
+        -6.021337496365662e-05,
+        0.0002661688505816093
+      ],
+      "mean_tracking_error": [
+        5.006756510775817e-05,
+        -6.021337496365662e-05,
+        0.0002661688505816093
+      ],
+      "tracking_rmse": [
+        0.000190510837027599,
+        0.0001139762299685737,
+        0.00044995373730827905
+      ],
+      "steady_torque_saturation_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "steady_displacement_world": [
+        -0.0014155859191937736,
+        0.0016762525394276157,
+        1.2210722281524866e-05
+      ],
+      "finite_difference_world_velocity": [
+        -5.05566399711813e-05,
+        5.986616212238536e-05,
+        4.36097224339959e-07
+      ],
+      "finite_difference_yaw_rate": 0.0002661695883664769,
+      "finite_difference_body_linear_velocity": [
+        5.006756510877902e-05,
+        -6.021337496366648e-05,
+        7.333670707685532e-08
+      ],
+      "velocity_position_consistency_error": [
+        1.0208508842944608e-15,
+        -9.859463506040056e-18
+      ],
+      "mean_world_vertical_angular_velocity": 0.000266136824248898,
+      "response_gain": [
+        null,
+        null,
+        null
+      ],
+      "response_present": true,
+      "tracks_command": true,
+      "tracking_tolerance": [
+        0.05,
+        0.05,
+        0.1
+      ]
+    }
+  ],
+  "zero_recovery": {
+    "verified": false,
+    "stop_delay_s": null
+  },
+  "zero_recoveries": [],
+  "mobility_usable": false,
+  "trajectory_sha256": "16bedeadf8d60ce578631337265943f12ca5051f008d6554805f45c0ba464d09",
+  "scene": {
+    "control_mode": "k1_walk",
+    "physics_steps": 30000,
+    "policy_steps": 1500,
+    "unexpected_contact_events": [],
+    "goal_origin_world": [
+      11.0,
+      0.0,
+      0.0
+    ],
+    "goal_rotation_world": [
+      [
+        0.0,
+        -0.9999999999999998,
+        0.0
+      ],
+      [
+        0.9999999999999998,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.9999999999999998
+      ]
+    ],
+    "initial_body_rotation_world": [
+      [
+        -1.0,
+        -1.2246468525851679e-16,
+        0.0
+      ],
+      [
+        1.2246468525851679e-16,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "ball_maximum_horizontal_displacement_m": 7.343315094863098e-13,
+    "ball_actuator_force_final_maximum": 0.0
+  },
+  "joint_names": [
+    "aahead_yaw_joint",
+    "aahead_pitch_joint",
+    "aaleft_shoulder_pitch_joint",
+    "left_shoulder_roll_joint",
+    "left_elbow_pitch_joint",
+    "left_elbow_yaw_joint",
+    "aaright_shoulder_pitch_joint",
+    "right_shoulder_roll_joint",
+    "right_elbow_pitch_joint",
+    "right_elbow_yaw_joint",
+    "left_hip_pitch_joint",
+    "left_hip_roll_joint",
+    "left_hip_yaw_joint",
+    "left_knee_pitch_joint",
+    "left_ankle_pitch_joint",
+    "left_ankle_roll_joint",
+    "right_hip_pitch_joint",
+    "right_hip_roll_joint",
+    "right_hip_yaw_joint",
+    "right_knee_pitch_joint",
+    "right_ankle_pitch_joint",
+    "right_ankle_roll_joint"
+  ],
+  "effort_limits_nm": [
+    6.0,
+    6.0,
+    14.0,
+    14.0,
+    14.0,
+    14.0,
+    14.0,
+    14.0,
+    14.0,
+    14.0,
+    30.0,
+    20.0,
+    15.0,
+    35.0,
+    24.0,
+    15.0,
+    30.0,
+    20.0,
+    15.0,
+    35.0,
+    24.0,
+    15.0
+  ],
+  "standing_stability": {
+    "verified": true,
+    "stop_delay_s": 0.0,
+    "mean_body_velocity": [
+      1.0801705559807821e-05,
+      -1.0049427893160648e-06,
+      2.5157212837575296e-05
+    ],
+    "displacement_world": [
+      0.011122135786099108,
+      0.0025305742014772067,
+      -0.0027572756369328433
+    ]
+  },
+  "direction_checks": [],
+  "scene_integration_passed": true,
+  "maximum_steady_joint_saturation_fraction": 0.0,
+  "stage": "D4.1",
+  "reproducibility": {
+    "verified": true,
+    "repeat_hashes": [
+      "16bedeadf8d60ce578631337265943f12ca5051f008d6554805f45c0ba464d09",
+      "16bedeadf8d60ce578631337265943f12ca5051f008d6554805f45c0ba464d09"
+    ]
+  }
+}

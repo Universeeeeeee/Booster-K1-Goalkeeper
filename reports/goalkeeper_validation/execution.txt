@@ -1,0 +1,14 @@
+D4.1 stand_30s: integration=True tracking=False recoveries=[] repeat=True
+D4.2 lateral_+0.15: integration=True tracking=False recoveries=[True] repeat=True
+D4.2 lateral_-0.15: integration=True tracking=False recoveries=[True] repeat=True
+D4.2 lateral_+0.2: integration=True tracking=True recoveries=[True] repeat=True
+D4.2 lateral_-0.2: integration=True tracking=True recoveries=[True] repeat=True
+D4.2 lateral_+0.25: integration=True tracking=True recoveries=[True] repeat=True
+D4.2 lateral_-0.25: integration=True tracking=True recoveries=[True] repeat=True
+D4.3 forward: integration=True tracking=True recoveries=[True] repeat=True
+D4.3 backward: integration=True tracking=False recoveries=[True] repeat=True
+D4.3 turn_+0.2: integration=True tracking=True recoveries=[True] repeat=True
+D4.3 turn_-0.2: integration=True tracking=True recoveries=[True] repeat=True
+D4.3 turn_+0.4: integration=True tracking=True recoveries=[True] repeat=True
+D4.3 turn_-0.4: integration=True tracking=True recoveries=[True] repeat=True
+D4.4 switch_lateral_stop_reverse_turn: integration=True tracking=True recoveries=[True, True] repeat=True

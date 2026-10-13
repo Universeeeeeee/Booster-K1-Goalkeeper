@@ -1,0 +1,61 @@
+{
+  "stage": "I1",
+  "completed": true,
+  "physics_dt_s": 0.001,
+  "default_action_dt_s": 0.02,
+  "gymnasium_version": "1.4.0",
+  "action_modes": [
+    "joint_targets",
+    "body_velocity"
+  ],
+  "default_mode_policy_weights_required": false,
+  "observation_scope": "current_simulation_truth_only",
+  "actor_dimensions": {
+    "joint_targets": 87,
+    "body_velocity": 68
+  },
+  "critic_and_offline_channels_separate": true,
+  "formal_cases": 5,
+  "formal_executions": 10,
+  "all_repeats_identical": true,
+  "gym_checks_passed": true,
+  "no_future_information_and_repeated_reset_proofs_passed": true,
+  "original_tests": 322,
+  "new_tests": 71,
+  "all_tests": 393,
+  "formal_bad_warnings": 0,
+  "protected": {
+    "file_count": 1070,
+    "manifest_sha256": "847380c63a4278c530b88c47a87debb0165b67f0155f7cebc89e0843c55b344f",
+    "all_match": true
+  },
+  "constraints": {
+    "policy_training": false,
+    "collision_extensions": false,
+    "parallel_training": false,
+    "reward_tuning": false,
+    "A_H_results_modified": false
+  },
+  "I2_required_work": [
+    "Independent versioned training model and physics fingerprint",
+    "Asset-based necessary collision coverage, self-contact and launch-interpenetration checks",
+    "Ball inertia, friction and impact/restitution calibration",
+    "Native contact validation independent of geometry-distance getter",
+    "Mass/inertia and 1ms standing/contact/goal/reset regression gates"
+  ],
+  "artifacts": {
+    "reports/training_interface_validation/protocol.json": "bf47300e833e6171e1c4e4b2989b6bf4ed929887fa3e45b1138eb2fa41c1c575",
+    "reports/training_interface_validation/results.json": "41b24ebac312c1db04d07d5f7f03f7da8a36e0bb1c4cdfc6c93297dad3ed829a",
+    "reports/training_interface_validation/interface_audit.json": "76d6c61290f6cabdda5724f29da43e7ceff10bc6262dc6fa8098a90e8ae487d0",
+    "reports/training_interface_validation/protected_manifest.json": "847380c63a4278c530b88c47a87debb0165b67f0155f7cebc89e0843c55b344f",
+    "reports/training_interface_validation/tests_after.txt": "d61ab40bdc59d0f602bbc6e461228457731f88d93e1ac12e9be5a4addacdff05"
+  },
+  "implementation_sha256": {
+    "k1_goalkeeper/training_actions.py": "1e647a1630cf86767f7ba245ae608206fc22552242ff870b83e8afe2f5e310b5",
+    "k1_goalkeeper/training_env.py": "05cce42cf89134ec8e2ae9d465e6ea8fc25847b9becc97351a65315198c01b50",
+    "scripts/validate_training_env.py": "ec516e7d05695b0b727ef4e43799271a67d858c83715ec9d1ca21a2b32f6bee0",
+    "requirements-training.txt": "cca2b5a2768dedf3f28dc9578b2b4ffc7755d9342710a95eee2c21852b0af0a2",
+    "requirements-walk.txt": "abb0cfc72363e6d1ea2bdcd28771c2478170c02031ba03f1eaa25836e2fc6720",
+    "requirements.txt": "2c688cbeba9377dc19fa8018cdfb38315c43a38c32e87b319436965e3971ef79"
+  }
+}
