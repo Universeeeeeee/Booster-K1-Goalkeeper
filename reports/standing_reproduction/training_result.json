@@ -1,0 +1,31 @@
+{
+  "actual_steps": 16384,
+  "optimizer_epochs": 160,
+  "completed_episodes": 79,
+  "rollouts": 32,
+  "wall_seconds": 35.270795207994524,
+  "steps_per_second": 464.5202894741194,
+  "parameter_l2_changes": {
+    "log_std": 0.06899502128362656,
+    "mlp_extractor.policy_net.0.weight": 1.2188655138015747,
+    "mlp_extractor.policy_net.0.bias": 0.10423070192337036,
+    "mlp_extractor.policy_net.2.weight": 1.08027184009552,
+    "mlp_extractor.policy_net.2.bias": 0.09988172352313995,
+    "mlp_extractor.value_net.0.weight": 2.4589996337890625,
+    "mlp_extractor.value_net.0.bias": 0.23026935756206512,
+    "mlp_extractor.value_net.2.weight": 3.1189639568328857,
+    "mlp_extractor.value_net.2.bias": 0.1751648485660553,
+    "action_net.weight": 0.5213437080383301,
+    "action_net.bias": 0.05134912580251694,
+    "value_net.weight": 0.4565797448158264,
+    "value_net.bias": 0.003796068951487541
+  },
+  "actor_weights_changed": true,
+  "parameters_finite": true,
+  "reload_actions_identical": true,
+  "checkpoint_sha256": {
+    "initial": "e42482a04744aece8e60de5ce1f3d871f1c85bbf1bc4698123ccb2b1e9dc87d1",
+    "final": "4da0b071fa6a236d958c3375c53af5d988f5c5bce282ba3d0c86fd2f1e12c6a6"
+  },
+  "passed": true
+}

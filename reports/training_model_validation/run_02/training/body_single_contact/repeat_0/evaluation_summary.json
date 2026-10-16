@@ -1,0 +1,169 @@
+{
+  "case": {
+    "name": "body_single_contact",
+    "mode": "body_velocity",
+    "task": "single_shot",
+    "time_limit": 8.0,
+    "launch_time": 2.0,
+    "shot": {
+      "name": "body_single_contact",
+      "position": [
+        7.0,
+        0.0,
+        0.111
+      ],
+      "velocity": [
+        2.0,
+        0.0,
+        0.0
+      ],
+      "angular_velocity": [
+        0.0,
+        18.181818181818183,
+        0.0
+      ],
+      "duration": 6.0,
+      "seed": 7
+    }
+  },
+  "seed": 7,
+  "action_semantics": "constant backend default_action",
+  "actual_outcome": "time_limit",
+  "exit_event": null,
+  "final_info": {
+    "action_mode": "body_velocity",
+    "task": "single_shot",
+    "simulation_time": 8.000000000001005,
+    "returned_observation_time": 8.000000000001005,
+    "last_valid_physics_time": 8.000000000001005,
+    "physics_steps": 8000,
+    "decision_steps": 400,
+    "elapsed_dt": 0.02000000000000579,
+    "termination_reason": "time_limit",
+    "reward_terms": {
+      "right_goal": -0.0,
+      "fall": -0.0
+    },
+    "exit_event": null,
+    "robot_contact_seen": true,
+    "active_contact_count": 9,
+    "transition_valid": true,
+    "discard_transition": false,
+    "invalid_state": false,
+    "numerical_error": null,
+    "bootstrap_allowed": true,
+    "observation_source": "current_simulation_truth"
+  },
+  "right_goal": false,
+  "scheduled_shot": {
+    "name": "body_single_contact",
+    "position": [
+      7.0,
+      0.0,
+      0.111
+    ],
+    "velocity": [
+      2.0,
+      0.0,
+      0.0
+    ],
+    "angular_velocity": [
+      0.0,
+      18.181818181818183,
+      0.0
+    ],
+    "duration": 6.0,
+    "seed": 7
+  },
+  "scheduled_launch_time": 2.0,
+  "scheduled_initial_velocity_norm_m_s": 2.0,
+  "delivered_launch": {
+    "time": 1.9999999999998905,
+    "position": [
+      7.0,
+      0.0,
+      0.111
+    ],
+    "velocity": [
+      2.0,
+      0.0,
+      0.0
+    ],
+    "angular_velocity_body": [
+      0.0,
+      18.181818181818183,
+      0.0
+    ]
+  },
+  "launch_initial_robot_overlap": false,
+  "robot_contact_seen": true,
+  "native_contact_flag_matches_info": true,
+  "native_ball_robot_contact_samples": 86,
+  "first_ball_robot_contact_time": 3.630999999999711,
+  "contact_did_not_immediately_terminate": true,
+  "contact_geom_pairs": [
+    [
+      "ball_collision",
+      "k1_geom_29"
+    ],
+    [
+      "ball_collision",
+      "k1_geom_32"
+    ],
+    [
+      "ball_collision",
+      "k1_geom_40"
+    ],
+    [
+      "ball_collision",
+      "k1_geom_43"
+    ]
+  ],
+  "maximum_ball_robot_normal_force_n": 270.2207323554011,
+  "minimum_base_height_m": 0.5467388461156403,
+  "maximum_tilt_degrees": 1.1906225153290428,
+  "maximum_absolute_motor_control_nm": [
+    0.07016099244356155,
+    0.49690744280815125,
+    2.5828757286071777,
+    1.046461582183838,
+    5.383406162261963,
+    0.9885338544845581,
+    2.5932323932647705,
+    1.074722409248352,
+    4.588994979858398,
+    0.9846956729888916,
+    2.296154260635376,
+    5.414675235748291,
+    2.8835036754608154,
+    5.666188716888428,
+    3.98726487159729,
+    2.1284754276275635,
+    2.4243555068969727,
+    5.4931182861328125,
+    2.8884434700012207,
+    5.759086608886719,
+    3.990691661834717,
+    2.1209957599639893
+  ],
+  "warning_counts": {
+    "mjWARN_BADQPOS": 0,
+    "mjWARN_BADQVEL": 0,
+    "mjWARN_BADQACC": 0,
+    "mjWARN_BADCTRL": 0
+  },
+  "all_transitions_valid": true,
+  "standing_capability_claim": false,
+  "save_or_recovery_claim": false,
+  "channel_array_sha256": {
+    "actor": "ae9426ce0541da017a891a4f2e801f79f3bf3f6663a976b633a7247181e868b4",
+    "critic": "e6c8fc549ea8ee18deaa53b62db30d26225b60a0fe89fda7636330413e030860",
+    "evaluation": "3b16b8902d1417e0964e42537e8c6de98439bd4dfea11e280ce9342a3ee92700"
+  },
+  "archive_sha256": {
+    "actor": "7de881bd68c227b15f1d7e59b01eb2314477a37ecfa23010efe85732b38e137e",
+    "critic": "4f4a54cfc700d39ea5108f07588e70ff79b7200c53b1f4e02a6796e2b589318d",
+    "evaluation": "eae71d85294503f6480b5e08a27ede6b97beafc476571ff8260dfcd71852f04c"
+  },
+  "interface_passed": true
+}

@@ -1,0 +1,37 @@
+{
+  "case": {
+    "name": "unperturbed",
+    "force": [
+      0.0,
+      0.0
+    ],
+    "duration": 30.0,
+    "seed": 101
+  },
+  "completed": true,
+  "duration_s": 30.00000000001368,
+  "termination_reason": "time_limit",
+  "maximum_tilt_degrees": 3.5094896620503655,
+  "rms_tilt_degrees": 1.7295619839391296,
+  "maximum_xy_drift_m": 0.030724536357938384,
+  "minimum_base_height_m": 0.5454623562333204,
+  "return": 73.1570731087156,
+  "actual_push_impulse_ns": [
+    0.0,
+    0.0
+  ],
+  "push_delivery_matches": true,
+  "positive_force_self_contact_samples": 0,
+  "torque_saturation_fraction": 0.0,
+  "finite_physics": true,
+  "bad_warning_count": 0,
+  "stable": true,
+  "array_sha256": {
+    "physics": "efbaff1c3d0f3ac9abb211ed2a4ff4ebb105e3a0b37631bfa9d69be703d3af70",
+    "transitions": "e5293187e7f52b6088cdeb982d011b5da712ef2fdf3769b829d95f88aa6cb862"
+  },
+  "file_sha256": {
+    "physics": "35a4d6df80ebda078f1c74f3d9e193581e0855cdf93458409afdcda436344695",
+    "transitions": "b0c355ee377089837eced84650a10271ec36bf54ff2b4f8aa91434da2e61b9ea"
+  }
+}

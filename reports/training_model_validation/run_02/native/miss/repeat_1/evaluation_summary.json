@@ -1,0 +1,172 @@
+{
+  "case": {
+    "name": "miss",
+    "mode": "joint_targets",
+    "task": "single_shot",
+    "launch_time": 0.0,
+    "time_limit": 3.0,
+    "shot": {
+      "name": "custom",
+      "position": [
+        10.0,
+        2.0,
+        0.5
+      ],
+      "velocity": [
+        4.0,
+        0.0,
+        0.0
+      ],
+      "angular_velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "duration": 3.0,
+      "seed": 0
+    }
+  },
+  "seed": 7,
+  "action_semantics": "constant backend default_action",
+  "actual_outcome": "Miss",
+  "exit_event": {
+    "outcome": "Miss",
+    "reason": "outside_goal_aperture",
+    "time": 0.2775000000000306,
+    "position": [
+      11.11,
+      2.0,
+      0.1209219799999163
+    ],
+    "goal": "right"
+  },
+  "final_info": {
+    "action_mode": "joint_targets",
+    "task": "single_shot",
+    "simulation_time": 0.2780000000000002,
+    "returned_observation_time": 0.2780000000000002,
+    "last_valid_physics_time": 0.2780000000000002,
+    "physics_steps": 278,
+    "decision_steps": 14,
+    "elapsed_dt": 0.018000000000000016,
+    "termination_reason": "outside_goal_aperture",
+    "reward_terms": {
+      "right_goal": -0.0,
+      "fall": -0.0
+    },
+    "exit_event": {
+      "outcome": "Miss",
+      "reason": "outside_goal_aperture",
+      "time": 0.2775000000000306,
+      "position": [
+        11.11,
+        2.0,
+        0.1209219799999163
+      ],
+      "goal": "right"
+    },
+    "robot_contact_seen": false,
+    "active_contact_count": 8,
+    "transition_valid": true,
+    "discard_transition": false,
+    "invalid_state": false,
+    "numerical_error": null,
+    "bootstrap_allowed": false,
+    "observation_source": "current_simulation_truth"
+  },
+  "right_goal": false,
+  "scheduled_shot": {
+    "name": "custom",
+    "position": [
+      10.0,
+      2.0,
+      0.5
+    ],
+    "velocity": [
+      4.0,
+      0.0,
+      0.0
+    ],
+    "angular_velocity": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "duration": 3.0,
+    "seed": 0
+  },
+  "scheduled_launch_time": 0.0,
+  "scheduled_initial_velocity_norm_m_s": 4.0,
+  "delivered_launch": {
+    "time": 0.0,
+    "position": [
+      10.0,
+      2.0,
+      0.5
+    ],
+    "velocity": [
+      4.0,
+      0.0,
+      0.0
+    ],
+    "angular_velocity_body": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "launch_initial_robot_overlap": false,
+  "robot_contact_seen": false,
+  "native_contact_flag_matches_info": true,
+  "native_ball_robot_contact_samples": 0,
+  "first_ball_robot_contact_time": null,
+  "contact_did_not_immediately_terminate": false,
+  "contact_geom_pairs": [],
+  "maximum_ball_robot_normal_force_n": 0.0,
+  "minimum_base_height_m": 0.5458479323655914,
+  "maximum_tilt_degrees": 1.2263256955325008,
+  "maximum_absolute_motor_control_nm": [
+    0.007063692435622215,
+    0.6776425838470459,
+    0.9040874242782593,
+    1.3683875799179077,
+    0.49138668179512024,
+    2.301621675491333,
+    0.9043979048728943,
+    1.366884708404541,
+    0.4913266599178314,
+    2.3008174896240234,
+    1.3276045322418213,
+    0.0036451630294322968,
+    0.0037240434903651476,
+    3.647787570953369,
+    1.6242645978927612,
+    0.0023899085354059935,
+    1.320432424545288,
+    0.00349755329079926,
+    0.002481267787516117,
+    3.6657285690307617,
+    1.6295167207717896,
+    0.0023384741507470608
+  ],
+  "warning_counts": {
+    "mjWARN_BADQPOS": 0,
+    "mjWARN_BADQVEL": 0,
+    "mjWARN_BADQACC": 0,
+    "mjWARN_BADCTRL": 0
+  },
+  "all_transitions_valid": true,
+  "standing_capability_claim": false,
+  "save_or_recovery_claim": false,
+  "channel_array_sha256": {
+    "actor": "4a674c632d863b31404abb35bfa0155d82d8fadd2b241929ebe7fe9178f053c4",
+    "critic": "2431bba8a59d5bada7080fb672f9261e1ebbd4ed84e0e416f40812c0fbaebb12",
+    "evaluation": "d19ea62cc34ed20ebf6a883068b14840d3430d450aa93139ae362d99bca71e38"
+  },
+  "archive_sha256": {
+    "actor": "80c6a33af4361a885f93b5dcc0ee2a3a4a2ba1b48bb1428eb45d41fc7d51ef11",
+    "critic": "7ebfff2404ba5625e213ebbd56f302ef016aea35a67eb27658967a846c6cf359",
+    "evaluation": "8e397cb9169e28142b42fe56c25c969b596f3e78b8a377d1a88dfc7422db1c3f"
+  },
+  "interface_passed": true
+}

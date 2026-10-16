@@ -1,0 +1,116 @@
+{
+  "task_version": "standing_v1",
+  "seed": 7,
+  "total_steps": 16384,
+  "algorithm": "stable_baselines3.PPO / MlpPolicy",
+  "ppo": {
+    "n_steps": 512,
+    "batch_size": 128,
+    "n_epochs": 5,
+    "learning_rate": 0.0003,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "clip_range": 0.2,
+    "ent_coef": 0.0,
+    "vf_coef": 0.5,
+    "max_grad_norm": 0.5,
+    "target_kl": 0.02,
+    "policy_kwargs": {
+      "net_arch": {
+        "pi": [
+          64,
+          64
+        ],
+        "vf": [
+          64,
+          64
+        ]
+      },
+      "log_std_init": -0.7
+    }
+  },
+  "training_episode_s": 5.0,
+  "physics_dt_s": 0.001,
+  "control_dt_s": 0.02,
+  "action_scale_rad": 0.15,
+  "actor_dimensions": 78,
+  "critic": "same 78 current-state observations; no privileged or future inputs",
+  "training_push": {
+    "world_xy_uniform_per_axis_n": [
+      -10.0,
+      10.0
+    ],
+    "start_s": 1.0,
+    "duration_s": 0.1
+  },
+  "evaluation_cases": [
+    {
+      "name": "unperturbed",
+      "force": [
+        0.0,
+        0.0
+      ],
+      "duration": 30.0,
+      "seed": 101
+    },
+    {
+      "name": "push_x_positive",
+      "force": [
+        15.0,
+        0.0
+      ],
+      "duration": 10.0,
+      "seed": 103
+    },
+    {
+      "name": "push_x_negative",
+      "force": [
+        -15.0,
+        0.0
+      ],
+      "duration": 10.0,
+      "seed": 107
+    },
+    {
+      "name": "push_y_positive",
+      "force": [
+        0.0,
+        15.0
+      ],
+      "duration": 10.0,
+      "seed": 109
+    },
+    {
+      "name": "push_y_negative",
+      "force": [
+        0.0,
+        -15.0
+      ],
+      "duration": 10.0,
+      "seed": 113
+    }
+  ],
+  "evaluation_repeats": 2,
+  "evaluation_stable_criteria": {
+    "completed": true,
+    "max_tilt_degrees": 10.0,
+    "max_xy_drift_m": 0.1
+  },
+  "model_sha256": "fa6074ba90ebf72486b711d5b2353a0292aeef8e824a4e5ffc16672df50eae02",
+  "sources": {
+    "k1_goalkeeper/standing_task.py": "2b14c55846a39ac30ca2809fbb6111fdb07be6979a5456860e01173f88ec4789",
+    "k1_goalkeeper/training_model.py": "8b498bb6b814efab6f91878c6d7b9b6945593051cd013d976059b418dbd64546",
+    "k1_goalkeeper/training_env.py": "05cce42cf89134ec8e2ae9d465e6ea8fc25847b9becc97351a65315198c01b50",
+    "k1_goalkeeper/training_actions.py": "1e647a1630cf86767f7ba245ae608206fc22552242ff870b83e8afe2f5e310b5",
+    "scripts/train_standing.py": "36230b9eadfda9c75bd03a555c6fd28f2d3c26c7bfc4bd397d35b8cdf9702ba4",
+    "scripts/evaluate_standing.py": "388d8029e47be5ec3f669f75872f81a1a0dc1c9ce626ca224c1af914b0137706",
+    "requirements-ppo.txt": "d2b31e4ade5bb3d8a446486509329c5a089d36671463259b5eba3c12d9d76da0"
+  },
+  "packages": {
+    "mujoco": "3.3.7",
+    "gymnasium": "1.4.0",
+    "torch": "2.9.0",
+    "stable-baselines3": "2.9.0",
+    "numpy": "2.3.3"
+  }
+}

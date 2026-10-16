@@ -1,0 +1,325 @@
+{
+  "all_passed": true,
+  "archive_count": 60,
+  "archives": [
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/reference/unperturbed/repeat_0/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/reference/unperturbed/repeat_0/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/reference/unperturbed/repeat_1/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/reference/unperturbed/repeat_1/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/reference/push_x_positive/repeat_0/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/reference/push_x_positive/repeat_0/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/reference/push_x_positive/repeat_1/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/reference/push_x_positive/repeat_1/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/reference/push_x_negative/repeat_0/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/reference/push_x_negative/repeat_0/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/reference/push_x_negative/repeat_1/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/reference/push_x_negative/repeat_1/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/reference/push_y_positive/repeat_0/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/reference/push_y_positive/repeat_0/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/reference/push_y_positive/repeat_1/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/reference/push_y_positive/repeat_1/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/reference/push_y_negative/repeat_0/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/reference/push_y_negative/repeat_0/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/reference/push_y_negative/repeat_1/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/reference/push_y_negative/repeat_1/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/initial/unperturbed/repeat_0/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/initial/unperturbed/repeat_0/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/initial/unperturbed/repeat_1/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/initial/unperturbed/repeat_1/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/initial/push_x_positive/repeat_0/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/initial/push_x_positive/repeat_0/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/initial/push_x_positive/repeat_1/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/initial/push_x_positive/repeat_1/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/initial/push_x_negative/repeat_0/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/initial/push_x_negative/repeat_0/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/initial/push_x_negative/repeat_1/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/initial/push_x_negative/repeat_1/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/initial/push_y_positive/repeat_0/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/initial/push_y_positive/repeat_0/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/initial/push_y_positive/repeat_1/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/initial/push_y_positive/repeat_1/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/initial/push_y_negative/repeat_0/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/initial/push_y_negative/repeat_0/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/initial/push_y_negative/repeat_1/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/initial/push_y_negative/repeat_1/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/final/unperturbed/repeat_0/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/final/unperturbed/repeat_0/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/final/unperturbed/repeat_1/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/final/unperturbed/repeat_1/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/final/push_x_positive/repeat_0/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/final/push_x_positive/repeat_0/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/final/push_x_positive/repeat_1/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/final/push_x_positive/repeat_1/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/final/push_x_negative/repeat_0/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/final/push_x_negative/repeat_0/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/final/push_x_negative/repeat_1/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/final/push_x_negative/repeat_1/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/final/push_y_positive/repeat_0/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/final/push_y_positive/repeat_0/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/final/push_y_positive/repeat_1/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/final/push_y_positive/repeat_1/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/final/push_y_negative/repeat_0/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/final/push_y_negative/repeat_0/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/final/push_y_negative/repeat_1/physics.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    },
+    {
+      "path": "reports/standing_training_validation/run_01/evaluation/final/push_y_negative/repeat_1/transitions.npz",
+      "array_hash_matches": true,
+      "file_hash_matches": true
+    }
+  ],
+  "reload_actions_identical": true,
+  "finite_logged_training_statistics": true,
+  "source_hashes_match": {
+    "k1_goalkeeper/standing_task.py": true,
+    "k1_goalkeeper/training_model.py": true,
+    "k1_goalkeeper/training_env.py": true,
+    "k1_goalkeeper/training_actions.py": true,
+    "scripts/train_standing.py": true,
+    "scripts/evaluate_standing.py": true,
+    "requirements-ppo.txt": true
+  },
+  "protected_file_count": 1341,
+  "changed_protected_files": [],
+  "checkpoint_hashes_match": {
+    "initial": true,
+    "final": true
+  },
+  "exact_pulse_and_1ms_time_verified": true,
+  "normalized_actor_action_arrays_verified": true
+}

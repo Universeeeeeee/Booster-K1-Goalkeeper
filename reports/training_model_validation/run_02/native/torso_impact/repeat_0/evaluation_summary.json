@@ -1,0 +1,157 @@
+{
+  "case": {
+    "name": "torso_impact",
+    "mode": "joint_targets",
+    "task": "single_shot",
+    "launch_time": 0.0,
+    "time_limit": 3.0,
+    "shot": {
+      "name": "custom",
+      "position": [
+        9.8,
+        0.0,
+        0.72
+      ],
+      "velocity": [
+        3.0,
+        0.0,
+        0.0
+      ],
+      "angular_velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "duration": 3.0,
+      "seed": 0
+    }
+  },
+  "seed": 7,
+  "action_semantics": "constant backend default_action",
+  "actual_outcome": "time_limit",
+  "exit_event": null,
+  "final_info": {
+    "action_mode": "joint_targets",
+    "task": "single_shot",
+    "simulation_time": 2.9999999999997806,
+    "returned_observation_time": 2.9999999999997806,
+    "last_valid_physics_time": 2.9999999999997806,
+    "physics_steps": 3000,
+    "decision_steps": 150,
+    "elapsed_dt": 0.019999999999997797,
+    "termination_reason": "time_limit",
+    "reward_terms": {
+      "right_goal": -0.0,
+      "fall": -0.0
+    },
+    "exit_event": null,
+    "robot_contact_seen": true,
+    "active_contact_count": 9,
+    "transition_valid": true,
+    "discard_transition": false,
+    "invalid_state": false,
+    "numerical_error": null,
+    "bootstrap_allowed": true,
+    "observation_source": "current_simulation_truth"
+  },
+  "right_goal": false,
+  "scheduled_shot": {
+    "name": "custom",
+    "position": [
+      9.8,
+      0.0,
+      0.72
+    ],
+    "velocity": [
+      3.0,
+      0.0,
+      0.0
+    ],
+    "angular_velocity": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "duration": 3.0,
+    "seed": 0
+  },
+  "scheduled_launch_time": 0.0,
+  "scheduled_initial_velocity_norm_m_s": 3.0,
+  "delivered_launch": {
+    "time": 0.0,
+    "position": [
+      9.8,
+      0.0,
+      0.72
+    ],
+    "velocity": [
+      3.0,
+      0.0,
+      0.0
+    ],
+    "angular_velocity_body": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "launch_initial_robot_overlap": false,
+  "robot_contact_seen": true,
+  "native_contact_flag_matches_info": true,
+  "native_ball_robot_contact_samples": 6,
+  "first_ball_robot_contact_time": 0.1450000000000001,
+  "contact_did_not_immediately_terminate": true,
+  "contact_geom_pairs": [
+    [
+      "ball_collision",
+      "k1_geom_1"
+    ]
+  ],
+  "maximum_ball_robot_normal_force_n": 495.4341092825484,
+  "minimum_base_height_m": 0.5439392164568575,
+  "maximum_tilt_degrees": 6.302822043748256,
+  "maximum_absolute_motor_control_nm": [
+    0.015261967666447163,
+    0.7098703980445862,
+    1.2584209442138672,
+    1.3683875799179077,
+    0.49138668179512024,
+    2.301621675491333,
+    1.2484064102172852,
+    1.366884708404541,
+    0.4913266599178314,
+    2.3008174896240234,
+    1.3254423141479492,
+    0.0036451630294322968,
+    0.010741474106907845,
+    3.995802164077759,
+    6.037092208862305,
+    0.00275233993306756,
+    1.3180652856826782,
+    0.0035098297521471977,
+    0.009513439610600471,
+    4.007941246032715,
+    6.041445732116699,
+    0.0026746063958853483
+  ],
+  "warning_counts": {
+    "mjWARN_BADQPOS": 0,
+    "mjWARN_BADQVEL": 0,
+    "mjWARN_BADQACC": 0,
+    "mjWARN_BADCTRL": 0
+  },
+  "all_transitions_valid": true,
+  "standing_capability_claim": false,
+  "save_or_recovery_claim": false,
+  "channel_array_sha256": {
+    "actor": "740ff95e8b7b78092ef8a48801fd10e42eccb3ca52ff5485d16c71c9a1b2eccd",
+    "critic": "449e8360a350064ef88d7d75f0645d70cac4a46a4876fc3cdab51a622d7ee3a0",
+    "evaluation": "40af27c49ffb393318b0f37dd3b2761407d21bee36e8f0f0d9cb8e0c07d5c1c3"
+  },
+  "archive_sha256": {
+    "actor": "d24869622389bde25aeddf6ed135616dd165838c86f4a21763d70d0be48de390",
+    "critic": "31becb8807378c60e95086eacc1e224c7e5c2c7dace8a578e29addaab3c2c4b9",
+    "evaluation": "af51bd19db9ca0e3589184f2e24654e7f30753d354f3439c0abc5e8f97c88558"
+  },
+  "interface_passed": true
+}

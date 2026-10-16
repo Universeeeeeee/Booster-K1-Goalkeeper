@@ -1,0 +1,601 @@
+{
+  "archives_checked": 108,
+  "archives": [
+    {
+      "path": "reports/training_model_validation/run_02/native/body_standing/repeat_0/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/body_standing/repeat_0/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/body_standing/repeat_0/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/body_standing/repeat_1/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/body_standing/repeat_1/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/body_standing/repeat_1/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/body_standing/repeat_0/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/body_standing/repeat_0/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/body_standing/repeat_0/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/body_standing/repeat_1/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/body_standing/repeat_1/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/body_standing/repeat_1/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/joint_standing/repeat_0/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/joint_standing/repeat_0/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/joint_standing/repeat_0/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/joint_standing/repeat_1/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/joint_standing/repeat_1/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/joint_standing/repeat_1/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/joint_standing/repeat_0/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/joint_standing/repeat_0/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/joint_standing/repeat_0/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/joint_standing/repeat_1/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/joint_standing/repeat_1/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/joint_standing/repeat_1/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/body_single_goal/repeat_0/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/body_single_goal/repeat_0/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/body_single_goal/repeat_0/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/body_single_goal/repeat_1/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/body_single_goal/repeat_1/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/body_single_goal/repeat_1/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/body_single_goal/repeat_0/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/body_single_goal/repeat_0/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/body_single_goal/repeat_0/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/body_single_goal/repeat_1/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/body_single_goal/repeat_1/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/body_single_goal/repeat_1/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/joint_single_goal/repeat_0/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/joint_single_goal/repeat_0/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/joint_single_goal/repeat_0/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/joint_single_goal/repeat_1/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/joint_single_goal/repeat_1/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/joint_single_goal/repeat_1/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/joint_single_goal/repeat_0/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/joint_single_goal/repeat_0/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/joint_single_goal/repeat_0/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/joint_single_goal/repeat_1/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/joint_single_goal/repeat_1/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/joint_single_goal/repeat_1/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/body_single_contact/repeat_0/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/body_single_contact/repeat_0/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/body_single_contact/repeat_0/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/body_single_contact/repeat_1/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/body_single_contact/repeat_1/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/body_single_contact/repeat_1/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/body_single_contact/repeat_0/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/body_single_contact/repeat_0/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/body_single_contact/repeat_0/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/body_single_contact/repeat_1/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/body_single_contact/repeat_1/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/body_single_contact/repeat_1/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/left_shank_impact/repeat_0/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/left_shank_impact/repeat_0/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/left_shank_impact/repeat_0/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/left_shank_impact/repeat_1/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/left_shank_impact/repeat_1/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/left_shank_impact/repeat_1/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/left_shank_impact/repeat_0/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/left_shank_impact/repeat_0/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/left_shank_impact/repeat_0/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/left_shank_impact/repeat_1/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/left_shank_impact/repeat_1/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/left_shank_impact/repeat_1/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/right_shank_impact/repeat_0/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/right_shank_impact/repeat_0/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/right_shank_impact/repeat_0/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/right_shank_impact/repeat_1/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/right_shank_impact/repeat_1/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/right_shank_impact/repeat_1/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/right_shank_impact/repeat_0/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/right_shank_impact/repeat_0/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/right_shank_impact/repeat_0/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/right_shank_impact/repeat_1/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/right_shank_impact/repeat_1/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/right_shank_impact/repeat_1/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/torso_impact/repeat_0/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/torso_impact/repeat_0/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/torso_impact/repeat_0/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/torso_impact/repeat_1/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/torso_impact/repeat_1/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/torso_impact/repeat_1/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/torso_impact/repeat_0/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/torso_impact/repeat_0/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/torso_impact/repeat_0/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/torso_impact/repeat_1/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/torso_impact/repeat_1/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/torso_impact/repeat_1/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/miss/repeat_0/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/miss/repeat_0/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/miss/repeat_0/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/miss/repeat_1/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/miss/repeat_1/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/native/miss/repeat_1/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/miss/repeat_0/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/miss/repeat_0/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/miss/repeat_0/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/miss/repeat_1/actor.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/miss/repeat_1/critic.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    },
+    {
+      "path": "reports/training_model_validation/run_02/training/miss/repeat_1/evaluation.npz",
+      "array_hash_matches": true,
+      "archive_hash_matches": true
+    }
+  ],
+  "paired_actor_critic_equality": [
+    {
+      "case": "body_single_contact",
+      "actor": true,
+      "critic": true
+    },
+    {
+      "case": "body_single_goal",
+      "actor": true,
+      "critic": true
+    },
+    {
+      "case": "body_standing",
+      "actor": true,
+      "critic": true
+    },
+    {
+      "case": "joint_single_goal",
+      "actor": true,
+      "critic": true
+    },
+    {
+      "case": "joint_standing",
+      "actor": true,
+      "critic": true
+    },
+    {
+      "case": "left_shank_impact",
+      "actor": false,
+      "critic": false
+    },
+    {
+      "case": "miss",
+      "actor": true,
+      "critic": true
+    },
+    {
+      "case": "right_shank_impact",
+      "actor": false,
+      "critic": false
+    },
+    {
+      "case": "torso_impact",
+      "actor": true,
+      "critic": true
+    }
+  ],
+  "source_hashes_match": {
+    "k1_goalkeeper/training_model.py": true,
+    "scripts/validate_training_model.py": true,
+    "scripts/validate_training_env.py": true,
+    "k1_goalkeeper/training_env.py": true
+  },
+  "protected_changed_files": [],
+  "protected_count": 1176,
+  "all_passed": true
+}

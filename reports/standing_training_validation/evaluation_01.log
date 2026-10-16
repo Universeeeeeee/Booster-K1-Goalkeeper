@@ -1,0 +1,15 @@
+reference unperturbed stable= True tilt= 3.346
+reference push_x_positive stable= True tilt= 4.436
+reference push_x_negative stable= True tilt= 8.264
+reference push_y_positive stable= True tilt= 3.342
+reference push_y_negative stable= True tilt= 3.342
+initial unperturbed stable= True tilt= 3.509
+initial push_x_positive stable= True tilt= 4.488
+initial push_x_negative stable= True tilt= 8.448
+initial push_y_positive stable= True tilt= 3.507
+initial push_y_negative stable= True tilt= 3.502
+final unperturbed stable= True tilt= 2.714
+final push_x_positive stable= True tilt= 4.163
+final push_x_negative stable= True tilt= 6.552
+final push_y_positive stable= True tilt= 2.711
+final push_y_negative stable= True tilt= 2.74

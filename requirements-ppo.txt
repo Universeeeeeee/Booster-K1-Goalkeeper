@@ -1,0 +1,3 @@
+-r requirements-training.txt
+torch==2.9.0
+stable-baselines3==2.9.0

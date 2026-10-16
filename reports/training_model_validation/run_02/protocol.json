@@ -1,0 +1,226 @@
+{
+  "version": "i2_shank_capsules_v1",
+  "cases": [
+    {
+      "name": "body_standing",
+      "mode": "body_velocity",
+      "task": "standing",
+      "time_limit": 30.0
+    },
+    {
+      "name": "joint_standing",
+      "mode": "joint_targets",
+      "task": "standing",
+      "time_limit": 30.0
+    },
+    {
+      "name": "body_single_goal",
+      "mode": "body_velocity",
+      "task": "single_shot",
+      "time_limit": 8.0,
+      "launch_time": 2.0,
+      "shot": {
+        "name": "body_single_goal",
+        "position": [
+          7.0,
+          0.8,
+          0.111
+        ],
+        "velocity": [
+          4.0,
+          0.0,
+          0.0
+        ],
+        "angular_velocity": [
+          0.0,
+          36.36363636363637,
+          0.0
+        ],
+        "duration": 6.0,
+        "seed": 7
+      }
+    },
+    {
+      "name": "joint_single_goal",
+      "mode": "joint_targets",
+      "task": "single_shot",
+      "time_limit": 1.0,
+      "launch_time": 0.0,
+      "shot": {
+        "name": "joint_single_goal",
+        "position": [
+          10.9,
+          0.0,
+          0.5
+        ],
+        "velocity": [
+          8.0,
+          0.0,
+          0.0
+        ],
+        "angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "duration": 1.0,
+        "seed": 7
+      }
+    },
+    {
+      "name": "body_single_contact",
+      "mode": "body_velocity",
+      "task": "single_shot",
+      "time_limit": 8.0,
+      "launch_time": 2.0,
+      "shot": {
+        "name": "body_single_contact",
+        "position": [
+          7.0,
+          0.0,
+          0.111
+        ],
+        "velocity": [
+          2.0,
+          0.0,
+          0.0
+        ],
+        "angular_velocity": [
+          0.0,
+          18.181818181818183,
+          0.0
+        ],
+        "duration": 6.0,
+        "seed": 7
+      }
+    },
+    {
+      "name": "left_shank_impact",
+      "mode": "joint_targets",
+      "task": "single_shot",
+      "launch_time": 0.0,
+      "time_limit": 3.0,
+      "shot": {
+        "name": "custom",
+        "position": [
+          10.12862374556,
+          -0.096,
+          0.1754145
+        ],
+        "velocity": [
+          4.0,
+          0.0,
+          0.0
+        ],
+        "angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "duration": 3.0,
+        "seed": 0
+      }
+    },
+    {
+      "name": "right_shank_impact",
+      "mode": "joint_targets",
+      "task": "single_shot",
+      "launch_time": 0.0,
+      "time_limit": 3.0,
+      "shot": {
+        "name": "custom",
+        "position": [
+          10.12862374556,
+          0.096,
+          0.1754145
+        ],
+        "velocity": [
+          4.0,
+          0.0,
+          0.0
+        ],
+        "angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "duration": 3.0,
+        "seed": 0
+      }
+    },
+    {
+      "name": "torso_impact",
+      "mode": "joint_targets",
+      "task": "single_shot",
+      "launch_time": 0.0,
+      "time_limit": 3.0,
+      "shot": {
+        "name": "custom",
+        "position": [
+          9.8,
+          0.0,
+          0.72
+        ],
+        "velocity": [
+          3.0,
+          0.0,
+          0.0
+        ],
+        "angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "duration": 3.0,
+        "seed": 0
+      }
+    },
+    {
+      "name": "miss",
+      "mode": "joint_targets",
+      "task": "single_shot",
+      "launch_time": 0.0,
+      "time_limit": 3.0,
+      "shot": {
+        "name": "custom",
+        "position": [
+          10.0,
+          2.0,
+          0.5
+        ],
+        "velocity": [
+          4.0,
+          0.0,
+          0.0
+        ],
+        "angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "duration": 3.0,
+        "seed": 0
+      }
+    }
+  ],
+  "repeats": 2,
+  "physics_dt_s": 0.001,
+  "control_dt_s": 0.02,
+  "package_versions": {
+    "mujoco": "3.3.7",
+    "numpy": "2.3.3",
+    "gymnasium": "1.4.0",
+    "torch": "2.9.0"
+  },
+  "source_sha256": {
+    "k1_goalkeeper/training_model.py": "8b498bb6b814efab6f91878c6d7b9b6945593051cd013d976059b418dbd64546",
+    "scripts/validate_training_model.py": "993ae6e98485e27b4c5dc3f7879f28379b1c8119028532071bf7f0ad109e6fdd",
+    "scripts/validate_training_env.py": "ec516e7d05695b0b727ef4e43799271a67d858c83715ec9d1ca21a2b32f6bee0",
+    "k1_goalkeeper/training_env.py": "05cce42cf89134ec8e2ae9d465e6ea8fc25847b9becc97351a65315198c01b50"
+  },
+  "model_hashes": {
+    "native": "511bbe079774602cc4a061597674a64f84337b42e393bdd93e56dc44fa69120f",
+    "training": "fa6074ba90ebf72486b711d5b2353a0292aeef8e824a4e5ffc16672df50eae02"
+  },
+  "scope": "Fixed reference controls; no learning, recovery or save-rate claim"
+}

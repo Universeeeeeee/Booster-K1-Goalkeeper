@@ -1,0 +1,37 @@
+{
+  "case": {
+    "name": "push_x_positive",
+    "force": [
+      15.0,
+      0.0
+    ],
+    "duration": 10.0,
+    "seed": 103
+  },
+  "completed": true,
+  "duration_s": 9.999999999999897,
+  "termination_reason": "time_limit",
+  "maximum_tilt_degrees": 4.436395866940402,
+  "rms_tilt_degrees": 2.067711038936922,
+  "maximum_xy_drift_m": 0.037074916823859265,
+  "minimum_base_height_m": 0.5450468773897549,
+  "return": 24.242529779012855,
+  "actual_push_impulse_ns": [
+    1.5,
+    0.0
+  ],
+  "push_delivery_matches": true,
+  "positive_force_self_contact_samples": 0,
+  "torque_saturation_fraction": 0.0,
+  "finite_physics": true,
+  "bad_warning_count": 0,
+  "stable": true,
+  "array_sha256": {
+    "physics": "3092435cc06ac8ee23bd928edff44b00bd7f206c0bf7ae7a73135c0564d525d3",
+    "transitions": "41f74a7cd2ebd6e45c30e5951bfeba94d9c779913bb5839d27bfae59fcd0f6e2"
+  },
+  "file_sha256": {
+    "physics": "24e0df2b7df631fa6985bfdcd3b0dea481bf9c2c98922b6d63870c9dac04c784",
+    "transitions": "669ded18b62262e9bb31b28952edb72f0b4503907ef8ca010421fefaab85ab4c"
+  }
+}

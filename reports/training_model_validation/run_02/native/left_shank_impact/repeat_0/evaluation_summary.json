@@ -1,0 +1,157 @@
+{
+  "case": {
+    "name": "left_shank_impact",
+    "mode": "joint_targets",
+    "task": "single_shot",
+    "launch_time": 0.0,
+    "time_limit": 3.0,
+    "shot": {
+      "name": "custom",
+      "position": [
+        10.12862374556,
+        -0.096,
+        0.1754145
+      ],
+      "velocity": [
+        4.0,
+        0.0,
+        0.0
+      ],
+      "angular_velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "duration": 3.0,
+      "seed": 0
+    }
+  },
+  "seed": 7,
+  "action_semantics": "constant backend default_action",
+  "actual_outcome": "time_limit",
+  "exit_event": null,
+  "final_info": {
+    "action_mode": "joint_targets",
+    "task": "single_shot",
+    "simulation_time": 2.9999999999997806,
+    "returned_observation_time": 2.9999999999997806,
+    "last_valid_physics_time": 2.9999999999997806,
+    "physics_steps": 3000,
+    "decision_steps": 150,
+    "elapsed_dt": 0.019999999999997797,
+    "termination_reason": "time_limit",
+    "reward_terms": {
+      "right_goal": -0.0,
+      "fall": -0.0
+    },
+    "exit_event": null,
+    "robot_contact_seen": true,
+    "active_contact_count": 9,
+    "transition_valid": true,
+    "discard_transition": false,
+    "invalid_state": false,
+    "numerical_error": null,
+    "bootstrap_allowed": true,
+    "observation_source": "current_simulation_truth"
+  },
+  "right_goal": false,
+  "scheduled_shot": {
+    "name": "custom",
+    "position": [
+      10.12862374556,
+      -0.096,
+      0.1754145
+    ],
+    "velocity": [
+      4.0,
+      0.0,
+      0.0
+    ],
+    "angular_velocity": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "duration": 3.0,
+    "seed": 0
+  },
+  "scheduled_launch_time": 0.0,
+  "scheduled_initial_velocity_norm_m_s": 4.0,
+  "delivered_launch": {
+    "time": 0.0,
+    "position": [
+      10.12862374556,
+      -0.096,
+      0.1754145
+    ],
+    "velocity": [
+      4.0,
+      0.0,
+      0.0
+    ],
+    "angular_velocity_body": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "launch_initial_robot_overlap": false,
+  "robot_contact_seen": true,
+  "native_contact_flag_matches_info": true,
+  "native_ball_robot_contact_samples": 7,
+  "first_ball_robot_contact_time": 0.03200000000000002,
+  "contact_did_not_immediately_terminate": true,
+  "contact_geom_pairs": [
+    [
+      "ball_collision",
+      "k1_geom_29"
+    ]
+  ],
+  "maximum_ball_robot_normal_force_n": 613.5412599882208,
+  "minimum_base_height_m": 0.5454072736128053,
+  "maximum_tilt_degrees": 3.65635107773627,
+  "maximum_absolute_motor_control_nm": [
+    0.14611665904521942,
+    0.524520993232727,
+    2.370319128036499,
+    1.328376054763794,
+    0.9726430773735046,
+    1.435730218887329,
+    0.8955703377723694,
+    1.249796986579895,
+    0.47213059663772583,
+    2.380018472671509,
+    2.295424461364746,
+    0.9545966982841492,
+    1.2522927522659302,
+    3.626607894897461,
+    4.2925262451171875,
+    0.16790224611759186,
+    1.4069228172302246,
+    0.7979850769042969,
+    0.7778382301330566,
+    3.0050442218780518,
+    3.9603288173675537,
+    0.16878220438957214
+  ],
+  "warning_counts": {
+    "mjWARN_BADQPOS": 0,
+    "mjWARN_BADQVEL": 0,
+    "mjWARN_BADQACC": 0,
+    "mjWARN_BADCTRL": 0
+  },
+  "all_transitions_valid": true,
+  "standing_capability_claim": false,
+  "save_or_recovery_claim": false,
+  "channel_array_sha256": {
+    "actor": "5ab38d4069630efdc7cca58b3ed1041ce99c780f49f1ad5c1da0624547ef998d",
+    "critic": "4ec881c54403dadea7421d2fd03ff6511975b0fb63793ec22d6fc4a51dc804f7",
+    "evaluation": "60923e434632dde67baa9e5f4e12bdb1a49e93a98a372677b8b8e04d6a1c5735"
+  },
+  "archive_sha256": {
+    "actor": "5b7033efa41c13ec7b2de73ec4166e9b7f756abbedad45c9c952e5bac43890ef",
+    "critic": "49946b6f83addcc8542f5209f4fcba21787e26927c4d87daf28f53dcbd486dc9",
+    "evaluation": "faed8401393b7f49d14008e9918d238c9cb0ad85db49eb6f6f575be432c56cfe"
+  },
+  "interface_passed": true
+}

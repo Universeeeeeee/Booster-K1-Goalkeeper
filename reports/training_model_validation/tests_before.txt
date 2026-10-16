@@ -1,0 +1,26 @@
+........................................................................ [ 18%]
+........................................................................ [ 36%]
+........................................................................ [ 54%]
+........................................................................ [ 73%]
+........................................................................ [ 91%]
+.................................                                        [100%]
+=============================== warnings summary ===============================
+tests/test_training_env.py::test_gymnasium_contract_and_initial_observation[env-22]
+tests/test_training_env.py::test_gymnasium_contract_and_initial_observation[velocity_env-3]
+  /path/to/booster/.venv/lib/python3.13/site-packages/gymnasium/utils/env_checker.py:394: UserWarning: [33mWARN: For Box action spaces, we recommend using a symmetric and normalized space (range=[-1, 1] or [0, 1]). See https://stable-baselines3.readthedocs.io/en/master/guide/rl_tips.html for more information.[0m
+    logger.warn(
+
+tests/test_training_env.py::test_gymnasium_contract_and_initial_observation[env-22]
+tests/test_training_env.py::test_gymnasium_contract_and_initial_observation[velocity_env-3]
+  /path/to/booster/.venv/lib/python3.13/site-packages/gymnasium/utils/env_checker.py:372: UserWarning: [33mWARN: A Box observation space minimum value is -infinity. This is probably too low.[0m
+    logger.warn(
+
+tests/test_training_env.py::test_gymnasium_contract_and_initial_observation[env-22]
+tests/test_training_env.py::test_gymnasium_contract_and_initial_observation[velocity_env-3]
+  /path/to/booster/.venv/lib/python3.13/site-packages/gymnasium/utils/env_checker.py:376: UserWarning: [33mWARN: A Box observation space maximum value is infinity. This is probably too high.[0m
+    logger.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+393 passed, 6 warnings in 12.80s
+WARNING: Nan, Inf or huge value in QVEL at DOF 0. The simulation is unstable. Time = 0.0000.
+

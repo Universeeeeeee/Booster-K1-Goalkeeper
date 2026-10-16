@@ -1,0 +1,1250 @@
+{
+  "model": {
+    "version": "i2_shank_capsules_v1",
+    "only_xml_changes_are_two_capsules_and_model_name": true,
+    "additions": [
+      {
+        "body": "left_knee_pitch_link",
+        "name": "i2_left_shank",
+        "type": "capsule",
+        "fromto": "0.007 0 -0.05 0.007 0 -0.18",
+        "size": "0.027",
+        "density": "0",
+        "contype": "1",
+        "conaffinity": "1",
+        "group": "3",
+        "rgba": "0 0.6 1 0"
+      },
+      {
+        "body": "right_knee_pitch_link",
+        "name": "i2_right_shank",
+        "type": "capsule",
+        "fromto": "0.007 0 -0.05 0.007 0 -0.18",
+        "size": "0.027",
+        "density": "0",
+        "contype": "1",
+        "conaffinity": "1",
+        "group": "3",
+        "rgba": "0 0.6 1 0"
+      }
+    ],
+    "compiled_invariants": {
+      "qpos0": true,
+      "body_mass": true,
+      "body_inertia": true,
+      "body_ipos": true,
+      "body_iquat": true,
+      "body_pos": true,
+      "body_quat": true,
+      "jnt_range": true,
+      "jnt_axis": true,
+      "jnt_pos": true,
+      "dof_armature": true,
+      "dof_damping": true,
+      "dof_frictionloss": true,
+      "actuator_gear": true,
+      "actuator_forcerange": true,
+      "actuator_ctrlrange": true,
+      "actuator_gainprm": true,
+      "actuator_biasprm": true
+    },
+    "native_inertia_sha256": "820ef4898ddc4a9a6d355f1430a256db618508e99b1e318c8d357c82dd65d18c",
+    "training_inertia_sha256": "820ef4898ddc4a9a6d355f1430a256db618508e99b1e318c8d357c82dd65d18c",
+    "physics_dt_s": 0.001,
+    "native_enabled_robot_geoms": 20,
+    "training_enabled_robot_geoms": 22,
+    "passed": true
+  },
+  "hull": [
+    {
+      "side": "left",
+      "source": "assets/booster_assets/robots/K1/meshes/Left_Shank.STL",
+      "source_sha256": "0e99f5850ba752492a7d5fa0fb066efae03823cb4020e7e57a38e652a34be85c",
+      "hull_faces": 958,
+      "minimum_capsule_inside_hull_margin_m": 0.0012645192532969272,
+      "raw_stl_max_hull_plane_violation_m": 3.059520445880537e-07,
+      "raw_stl_vs_compiled_bounds_error_m": 3.4587033237443165e-09,
+      "passed": true
+    },
+    {
+      "side": "right",
+      "source": "assets/booster_assets/robots/K1/meshes/Right_Shank.STL",
+      "source_sha256": "6a7e831055148894ba623bf8d2eca27f2cef32e324819566c39e33cb12c0b4f9",
+      "hull_faces": 958,
+      "minimum_capsule_inside_hull_margin_m": 0.0012645196938910301,
+      "raw_stl_max_hull_plane_violation_m": 2.3147666870781958e-07,
+      "raw_stl_vs_compiled_bounds_error_m": 5.873057762340039e-09,
+      "passed": true
+    }
+  ],
+  "static": {
+    "native": {
+      "initial_penetrations": [],
+      "moderate_poses": [
+        {
+          "name": "default",
+          "self_contacts": []
+        },
+        {
+          "name": "raise_0.1",
+          "self_contacts": []
+        },
+        {
+          "name": "raise_0.2",
+          "self_contacts": []
+        },
+        {
+          "name": "raise_0.3",
+          "self_contacts": []
+        },
+        {
+          "name": "raise_0.4",
+          "self_contacts": []
+        },
+        {
+          "name": "raise_0.5",
+          "self_contacts": []
+        },
+        {
+          "name": "raise_0.6",
+          "self_contacts": []
+        },
+        {
+          "name": "raise_0.7",
+          "self_contacts": []
+        },
+        {
+          "name": "raise_0.8",
+          "self_contacts": []
+        },
+        {
+          "name": "raise_0.9",
+          "self_contacts": []
+        },
+        {
+          "name": "raise_1.0",
+          "self_contacts": []
+        },
+        {
+          "name": "extend_0.1",
+          "self_contacts": []
+        },
+        {
+          "name": "extend_0.2",
+          "self_contacts": []
+        },
+        {
+          "name": "extend_0.3",
+          "self_contacts": []
+        },
+        {
+          "name": "extend_0.4",
+          "self_contacts": []
+        },
+        {
+          "name": "extend_0.5",
+          "self_contacts": []
+        },
+        {
+          "name": "extend_0.6",
+          "self_contacts": []
+        },
+        {
+          "name": "extend_0.7",
+          "self_contacts": []
+        },
+        {
+          "name": "extend_0.8",
+          "self_contacts": []
+        },
+        {
+          "name": "extend_0.9",
+          "self_contacts": []
+        },
+        {
+          "name": "extend_1.0",
+          "self_contacts": []
+        },
+        {
+          "name": "crouch_0.1",
+          "self_contacts": []
+        },
+        {
+          "name": "crouch_0.2",
+          "self_contacts": []
+        },
+        {
+          "name": "crouch_0.3",
+          "self_contacts": []
+        },
+        {
+          "name": "crouch_0.4",
+          "self_contacts": []
+        },
+        {
+          "name": "crouch_0.5",
+          "self_contacts": []
+        },
+        {
+          "name": "crouch_0.6",
+          "self_contacts": []
+        },
+        {
+          "name": "crouch_0.7",
+          "self_contacts": []
+        },
+        {
+          "name": "crouch_0.8",
+          "self_contacts": []
+        },
+        {
+          "name": "crouch_0.9",
+          "self_contacts": []
+        },
+        {
+          "name": "crouch_1.0",
+          "self_contacts": []
+        }
+      ],
+      "joint_limit_samples": 198,
+      "joint_limit_colliding_samples": [
+        {
+          "joint": "left_shoulder_roll_joint",
+          "angle_rad": -1.642,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_24",
+                "k1_geom_14"
+              ],
+              "distance_m": -0.0342462284154818
+            },
+            {
+              "geoms": [
+                "k1_geom_26",
+                "k1_geom_14"
+              ],
+              "distance_m": -0.040273170796897816
+            }
+          ]
+        },
+        {
+          "joint": "right_shoulder_roll_joint",
+          "angle_rad": 1.629,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_35",
+                "k1_geom_21"
+              ],
+              "distance_m": -0.030732536403446385
+            },
+            {
+              "geoms": [
+                "k1_geom_37",
+                "k1_geom_21"
+              ],
+              "distance_m": -0.035881727515370325
+            }
+          ]
+        },
+        {
+          "joint": "left_hip_pitch_joint",
+          "angle_rad": -2.958,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_26",
+                "k1_geom_1"
+              ],
+              "distance_m": -0.023999946436775773
+            },
+            {
+              "geoms": [
+                "k1_geom_1",
+                "k1_geom_29"
+              ],
+              "distance_m": -0.002433072456136671
+            },
+            {
+              "geoms": [
+                "k1_geom_1",
+                "k1_geom_29"
+              ],
+              "distance_m": -0.004798127694741623
+            },
+            {
+              "geoms": [
+                "k1_geom_1",
+                "k1_geom_29"
+              ],
+              "distance_m": -0.002433072456136672
+            },
+            {
+              "geoms": [
+                "k1_geom_1",
+                "k1_geom_29"
+              ],
+              "distance_m": -0.004798127694741623
+            },
+            {
+              "geoms": [
+                "k1_geom_28",
+                "k1_geom_1"
+              ],
+              "distance_m": -0.019000118666874725
+            },
+            {
+              "geoms": [
+                "k1_geom_32",
+                "k1_geom_7"
+              ],
+              "distance_m": -0.006796408285304671
+            },
+            {
+              "geoms": [
+                "k1_geom_10",
+                "k1_geom_28"
+              ],
+              "distance_m": -0.015142681733448234
+            },
+            {
+              "geoms": [
+                "k1_geom_28",
+                "k1_geom_12"
+              ],
+              "distance_m": -0.002174916526517234
+            }
+          ]
+        },
+        {
+          "joint": "left_hip_pitch_joint",
+          "angle_rad": -2.31,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_26",
+                "k1_geom_1"
+              ],
+              "distance_m": -0.02338405335651784
+            }
+          ]
+        },
+        {
+          "joint": "left_hip_pitch_joint",
+          "angle_rad": 2.226,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_26",
+                "k1_geom_1"
+              ],
+              "distance_m": -0.00015057126997040387
+            }
+          ]
+        },
+        {
+          "joint": "left_hip_roll_joint",
+          "angle_rad": -0.375,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_32",
+                "k1_geom_43"
+              ],
+              "distance_m": -0.007822234242869871
+            },
+            {
+              "geoms": [
+                "k1_geom_32",
+                "k1_geom_43"
+              ],
+              "distance_m": -0.006018417946621888
+            }
+          ]
+        },
+        {
+          "joint": "left_hip_roll_joint",
+          "angle_rad": 0.819375,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_28",
+                "k1_geom_14"
+              ],
+              "distance_m": -0.002869733450936615
+            }
+          ]
+        },
+        {
+          "joint": "left_hip_roll_joint",
+          "angle_rad": 1.0582500000000001,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_26",
+                "k1_geom_14"
+              ],
+              "distance_m": -0.001842161756162136
+            },
+            {
+              "geoms": [
+                "k1_geom_28",
+                "k1_geom_14"
+              ],
+              "distance_m": -0.04284296081339401
+            }
+          ]
+        },
+        {
+          "joint": "left_hip_roll_joint",
+          "angle_rad": 1.297125,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_26",
+                "k1_geom_14"
+              ],
+              "distance_m": -0.011833582650890205
+            },
+            {
+              "geoms": [
+                "k1_geom_28",
+                "k1_geom_14"
+              ],
+              "distance_m": -0.05506671840927335
+            }
+          ]
+        },
+        {
+          "joint": "left_hip_roll_joint",
+          "angle_rad": 1.536,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_26",
+                "k1_geom_14"
+              ],
+              "distance_m": -0.01536158854651402
+            },
+            {
+              "geoms": [
+                "k1_geom_28",
+                "k1_geom_14"
+              ],
+              "distance_m": -0.052331285223168295
+            }
+          ]
+        },
+        {
+          "joint": "right_hip_pitch_joint",
+          "angle_rad": -2.958,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_37",
+                "k1_geom_1"
+              ],
+              "distance_m": -0.02399967522469235
+            },
+            {
+              "geoms": [
+                "k1_geom_1",
+                "k1_geom_40"
+              ],
+              "distance_m": -0.004798127694741623
+            },
+            {
+              "geoms": [
+                "k1_geom_1",
+                "k1_geom_40"
+              ],
+              "distance_m": -0.002433072456136675
+            },
+            {
+              "geoms": [
+                "k1_geom_1",
+                "k1_geom_40"
+              ],
+              "distance_m": -0.0024330724561366754
+            },
+            {
+              "geoms": [
+                "k1_geom_1",
+                "k1_geom_40"
+              ],
+              "distance_m": -0.004798127694741623
+            },
+            {
+              "geoms": [
+                "k1_geom_39",
+                "k1_geom_1"
+              ],
+              "distance_m": -0.018999990983956213
+            },
+            {
+              "geoms": [
+                "k1_geom_43",
+                "k1_geom_7"
+              ],
+              "distance_m": -0.00679640642895915
+            },
+            {
+              "geoms": [
+                "k1_geom_17",
+                "k1_geom_39"
+              ],
+              "distance_m": -0.015142568448128047
+            },
+            {
+              "geoms": [
+                "k1_geom_39",
+                "k1_geom_19"
+              ],
+              "distance_m": -0.00223018705107398
+            }
+          ]
+        },
+        {
+          "joint": "right_hip_pitch_joint",
+          "angle_rad": -2.31,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_37",
+                "k1_geom_1"
+              ],
+              "distance_m": -0.023383811449847136
+            }
+          ]
+        },
+        {
+          "joint": "right_hip_pitch_joint",
+          "angle_rad": 2.226,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_37",
+                "k1_geom_1"
+              ],
+              "distance_m": -0.0001504965802119869
+            }
+          ]
+        },
+        {
+          "joint": "right_hip_roll_joint",
+          "angle_rad": -1.536,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_37",
+                "k1_geom_21"
+              ],
+              "distance_m": -0.015384531168980087
+            },
+            {
+              "geoms": [
+                "k1_geom_39",
+                "k1_geom_21"
+              ],
+              "distance_m": -0.05217848585075012
+            }
+          ]
+        },
+        {
+          "joint": "right_hip_roll_joint",
+          "angle_rad": -1.297125,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_37",
+                "k1_geom_21"
+              ],
+              "distance_m": -0.01186240650597915
+            },
+            {
+              "geoms": [
+                "k1_geom_39",
+                "k1_geom_21"
+              ],
+              "distance_m": -0.05485598434496733
+            }
+          ]
+        },
+        {
+          "joint": "right_hip_roll_joint",
+          "angle_rad": -1.0582500000000001,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_37",
+                "k1_geom_21"
+              ],
+              "distance_m": -0.0018694623707297708
+            },
+            {
+              "geoms": [
+                "k1_geom_39",
+                "k1_geom_21"
+              ],
+              "distance_m": -0.04283447394067407
+            }
+          ]
+        },
+        {
+          "joint": "right_hip_roll_joint",
+          "angle_rad": -0.819375,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_39",
+                "k1_geom_21"
+              ],
+              "distance_m": -0.002874019771365691
+            }
+          ]
+        },
+        {
+          "joint": "right_hip_roll_joint",
+          "angle_rad": 0.375,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_32",
+                "k1_geom_43"
+              ],
+              "distance_m": -0.00782223424286988
+            },
+            {
+              "geoms": [
+                "k1_geom_32",
+                "k1_geom_43"
+              ],
+              "distance_m": -0.006018417946621903
+            }
+          ]
+        }
+      ],
+      "passed": true
+    },
+    "training": {
+      "initial_penetrations": [],
+      "moderate_poses": [
+        {
+          "name": "default",
+          "self_contacts": []
+        },
+        {
+          "name": "raise_0.1",
+          "self_contacts": []
+        },
+        {
+          "name": "raise_0.2",
+          "self_contacts": []
+        },
+        {
+          "name": "raise_0.3",
+          "self_contacts": []
+        },
+        {
+          "name": "raise_0.4",
+          "self_contacts": []
+        },
+        {
+          "name": "raise_0.5",
+          "self_contacts": []
+        },
+        {
+          "name": "raise_0.6",
+          "self_contacts": []
+        },
+        {
+          "name": "raise_0.7",
+          "self_contacts": []
+        },
+        {
+          "name": "raise_0.8",
+          "self_contacts": []
+        },
+        {
+          "name": "raise_0.9",
+          "self_contacts": []
+        },
+        {
+          "name": "raise_1.0",
+          "self_contacts": []
+        },
+        {
+          "name": "extend_0.1",
+          "self_contacts": []
+        },
+        {
+          "name": "extend_0.2",
+          "self_contacts": []
+        },
+        {
+          "name": "extend_0.3",
+          "self_contacts": []
+        },
+        {
+          "name": "extend_0.4",
+          "self_contacts": []
+        },
+        {
+          "name": "extend_0.5",
+          "self_contacts": []
+        },
+        {
+          "name": "extend_0.6",
+          "self_contacts": []
+        },
+        {
+          "name": "extend_0.7",
+          "self_contacts": []
+        },
+        {
+          "name": "extend_0.8",
+          "self_contacts": []
+        },
+        {
+          "name": "extend_0.9",
+          "self_contacts": []
+        },
+        {
+          "name": "extend_1.0",
+          "self_contacts": []
+        },
+        {
+          "name": "crouch_0.1",
+          "self_contacts": []
+        },
+        {
+          "name": "crouch_0.2",
+          "self_contacts": []
+        },
+        {
+          "name": "crouch_0.3",
+          "self_contacts": []
+        },
+        {
+          "name": "crouch_0.4",
+          "self_contacts": []
+        },
+        {
+          "name": "crouch_0.5",
+          "self_contacts": []
+        },
+        {
+          "name": "crouch_0.6",
+          "self_contacts": []
+        },
+        {
+          "name": "crouch_0.7",
+          "self_contacts": []
+        },
+        {
+          "name": "crouch_0.8",
+          "self_contacts": []
+        },
+        {
+          "name": "crouch_0.9",
+          "self_contacts": []
+        },
+        {
+          "name": "crouch_1.0",
+          "self_contacts": []
+        }
+      ],
+      "joint_limit_samples": 198,
+      "joint_limit_colliding_samples": [
+        {
+          "joint": "left_shoulder_roll_joint",
+          "angle_rad": -1.642,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_24",
+                "k1_geom_14"
+              ],
+              "distance_m": -0.0342462284154818
+            },
+            {
+              "geoms": [
+                "k1_geom_26",
+                "k1_geom_14"
+              ],
+              "distance_m": -0.040273170796897816
+            }
+          ]
+        },
+        {
+          "joint": "right_shoulder_roll_joint",
+          "angle_rad": 1.629,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_35",
+                "k1_geom_21"
+              ],
+              "distance_m": -0.030732536403446385
+            },
+            {
+              "geoms": [
+                "k1_geom_37",
+                "k1_geom_21"
+              ],
+              "distance_m": -0.035881727515370325
+            }
+          ]
+        },
+        {
+          "joint": "left_hip_pitch_joint",
+          "angle_rad": -2.958,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_26",
+                "k1_geom_1"
+              ],
+              "distance_m": -0.023999946436775773
+            },
+            {
+              "geoms": [
+                "k1_geom_1",
+                "k1_geom_29"
+              ],
+              "distance_m": -0.002433072456136671
+            },
+            {
+              "geoms": [
+                "k1_geom_1",
+                "k1_geom_29"
+              ],
+              "distance_m": -0.004798127694741623
+            },
+            {
+              "geoms": [
+                "k1_geom_1",
+                "k1_geom_29"
+              ],
+              "distance_m": -0.002433072456136672
+            },
+            {
+              "geoms": [
+                "k1_geom_1",
+                "k1_geom_29"
+              ],
+              "distance_m": -0.004798127694741623
+            },
+            {
+              "geoms": [
+                "k1_geom_28",
+                "k1_geom_1"
+              ],
+              "distance_m": -0.019000118666874725
+            },
+            {
+              "geoms": [
+                "i2_left_shank",
+                "k1_geom_1"
+              ],
+              "distance_m": -0.010999999999999985
+            },
+            {
+              "geoms": [
+                "i2_left_shank",
+                "k1_geom_1"
+              ],
+              "distance_m": -0.010999999999999985
+            },
+            {
+              "geoms": [
+                "k1_geom_32",
+                "k1_geom_7"
+              ],
+              "distance_m": -0.006796408285304671
+            },
+            {
+              "geoms": [
+                "k1_geom_10",
+                "k1_geom_28"
+              ],
+              "distance_m": -0.015142681733448234
+            },
+            {
+              "geoms": [
+                "k1_geom_28",
+                "k1_geom_12"
+              ],
+              "distance_m": -0.002174916526517234
+            }
+          ]
+        },
+        {
+          "joint": "left_hip_pitch_joint",
+          "angle_rad": -2.31,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_26",
+                "k1_geom_1"
+              ],
+              "distance_m": -0.02338405335651784
+            }
+          ]
+        },
+        {
+          "joint": "left_hip_pitch_joint",
+          "angle_rad": 2.226,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_26",
+                "k1_geom_1"
+              ],
+              "distance_m": -0.00015057126997040387
+            }
+          ]
+        },
+        {
+          "joint": "left_hip_roll_joint",
+          "angle_rad": -0.375,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_32",
+                "k1_geom_43"
+              ],
+              "distance_m": -0.007822234242869871
+            },
+            {
+              "geoms": [
+                "k1_geom_32",
+                "k1_geom_43"
+              ],
+              "distance_m": -0.006018417946621888
+            }
+          ]
+        },
+        {
+          "joint": "left_hip_roll_joint",
+          "angle_rad": 0.819375,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_28",
+                "k1_geom_14"
+              ],
+              "distance_m": -0.002869733450936615
+            }
+          ]
+        },
+        {
+          "joint": "left_hip_roll_joint",
+          "angle_rad": 1.0582500000000001,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_26",
+                "k1_geom_14"
+              ],
+              "distance_m": -0.001842161756162136
+            },
+            {
+              "geoms": [
+                "k1_geom_28",
+                "k1_geom_14"
+              ],
+              "distance_m": -0.04284296081339401
+            }
+          ]
+        },
+        {
+          "joint": "left_hip_roll_joint",
+          "angle_rad": 1.297125,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_26",
+                "k1_geom_14"
+              ],
+              "distance_m": -0.011833582650890205
+            },
+            {
+              "geoms": [
+                "k1_geom_28",
+                "k1_geom_14"
+              ],
+              "distance_m": -0.05506671840927335
+            }
+          ]
+        },
+        {
+          "joint": "left_hip_roll_joint",
+          "angle_rad": 1.536,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_26",
+                "k1_geom_14"
+              ],
+              "distance_m": -0.01536158854651402
+            },
+            {
+              "geoms": [
+                "k1_geom_28",
+                "k1_geom_14"
+              ],
+              "distance_m": -0.052331285223168295
+            }
+          ]
+        },
+        {
+          "joint": "right_hip_pitch_joint",
+          "angle_rad": -2.958,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_37",
+                "k1_geom_1"
+              ],
+              "distance_m": -0.02399967522469235
+            },
+            {
+              "geoms": [
+                "k1_geom_1",
+                "k1_geom_40"
+              ],
+              "distance_m": -0.004798127694741623
+            },
+            {
+              "geoms": [
+                "k1_geom_1",
+                "k1_geom_40"
+              ],
+              "distance_m": -0.002433072456136675
+            },
+            {
+              "geoms": [
+                "k1_geom_1",
+                "k1_geom_40"
+              ],
+              "distance_m": -0.0024330724561366754
+            },
+            {
+              "geoms": [
+                "k1_geom_1",
+                "k1_geom_40"
+              ],
+              "distance_m": -0.004798127694741623
+            },
+            {
+              "geoms": [
+                "k1_geom_39",
+                "k1_geom_1"
+              ],
+              "distance_m": -0.018999990983956213
+            },
+            {
+              "geoms": [
+                "i2_right_shank",
+                "k1_geom_1"
+              ],
+              "distance_m": -0.011000000000000013
+            },
+            {
+              "geoms": [
+                "i2_right_shank",
+                "k1_geom_1"
+              ],
+              "distance_m": -0.011000000000000013
+            },
+            {
+              "geoms": [
+                "k1_geom_43",
+                "k1_geom_7"
+              ],
+              "distance_m": -0.00679640642895915
+            },
+            {
+              "geoms": [
+                "k1_geom_17",
+                "k1_geom_39"
+              ],
+              "distance_m": -0.015142568448128047
+            },
+            {
+              "geoms": [
+                "k1_geom_39",
+                "k1_geom_19"
+              ],
+              "distance_m": -0.00223018705107398
+            }
+          ]
+        },
+        {
+          "joint": "right_hip_pitch_joint",
+          "angle_rad": -2.31,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_37",
+                "k1_geom_1"
+              ],
+              "distance_m": -0.023383811449847136
+            }
+          ]
+        },
+        {
+          "joint": "right_hip_pitch_joint",
+          "angle_rad": 2.226,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_37",
+                "k1_geom_1"
+              ],
+              "distance_m": -0.0001504965802119869
+            }
+          ]
+        },
+        {
+          "joint": "right_hip_roll_joint",
+          "angle_rad": -1.536,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_37",
+                "k1_geom_21"
+              ],
+              "distance_m": -0.015384531168980087
+            },
+            {
+              "geoms": [
+                "k1_geom_39",
+                "k1_geom_21"
+              ],
+              "distance_m": -0.05217848585075012
+            }
+          ]
+        },
+        {
+          "joint": "right_hip_roll_joint",
+          "angle_rad": -1.297125,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_37",
+                "k1_geom_21"
+              ],
+              "distance_m": -0.01186240650597915
+            },
+            {
+              "geoms": [
+                "k1_geom_39",
+                "k1_geom_21"
+              ],
+              "distance_m": -0.05485598434496733
+            }
+          ]
+        },
+        {
+          "joint": "right_hip_roll_joint",
+          "angle_rad": -1.0582500000000001,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_37",
+                "k1_geom_21"
+              ],
+              "distance_m": -0.0018694623707297708
+            },
+            {
+              "geoms": [
+                "k1_geom_39",
+                "k1_geom_21"
+              ],
+              "distance_m": -0.04283447394067407
+            }
+          ]
+        },
+        {
+          "joint": "right_hip_roll_joint",
+          "angle_rad": -0.819375,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_39",
+                "k1_geom_21"
+              ],
+              "distance_m": -0.002874019771365691
+            }
+          ]
+        },
+        {
+          "joint": "right_hip_roll_joint",
+          "angle_rad": 0.375,
+          "self_contacts": [
+            {
+              "geoms": [
+                "k1_geom_32",
+                "k1_geom_43"
+              ],
+              "distance_m": -0.00782223424286988
+            },
+            {
+              "geoms": [
+                "k1_geom_32",
+                "k1_geom_43"
+              ],
+              "distance_m": -0.006018417946621903
+            }
+          ]
+        }
+      ],
+      "passed": true
+    }
+  },
+  "probes": [
+    {
+      "side": "left",
+      "ball_position": [
+        10.24862374556,
+        -0.096,
+        0.171
+      ],
+      "models": {
+        "native": [],
+        "training": [
+          {
+            "geom": "i2_left_shank",
+            "distance_m": -0.0033236168810859452
+          }
+        ]
+      },
+      "analytic_sphere_capsule_distance_m": -0.0033236168810859452,
+      "analytic_matches_solver": true,
+      "passed": true
+    },
+    {
+      "side": "right",
+      "ball_position": [
+        10.24862374556,
+        0.096,
+        0.171
+      ],
+      "models": {
+        "native": [],
+        "training": [
+          {
+            "geom": "i2_right_shank",
+            "distance_m": -0.0033236168810859452
+          }
+        ]
+      },
+      "analytic_sphere_capsule_distance_m": -0.0033236168810859452,
+      "analytic_matches_solver": true,
+      "passed": true
+    }
+  ]
+}

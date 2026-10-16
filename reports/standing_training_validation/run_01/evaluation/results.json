@@ -1,0 +1,1235 @@
+{
+  "protocol_sha256": "c9d2ef8b94de4f0ad80b3a31b2ff91d24f4974ace7dd246ba37b2c3e8a7d2675",
+  "results": [
+    {
+      "controller": "reference",
+      "case": "unperturbed",
+      "deterministic": true,
+      "repeats": [
+        {
+          "case": {
+            "name": "unperturbed",
+            "force": [
+              0.0,
+              0.0
+            ],
+            "duration": 30.0,
+            "seed": 101
+          },
+          "completed": true,
+          "duration_s": 30.00000000001368,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 3.346323987029331,
+          "rms_tilt_degrees": 1.6381856367334666,
+          "maximum_xy_drift_m": 0.029499112411713897,
+          "minimum_base_height_m": 0.5455360270533882,
+          "return": 73.2787499054916,
+          "actual_push_impulse_ns": [
+            0.0,
+            0.0
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "23721a82c9ec44f05e7e58a943808a6b46b21059d9ea008684e41e30060ed8d4",
+            "transitions": "aaf22143defd1e346ee37f0bfa72545b5fa5276a4678937f861f47cc1b0022d9"
+          },
+          "file_sha256": {
+            "physics": "eed8cbdda2a487a1093df4517553cdccd583dfd0469b9701ebe4fb5856468891",
+            "transitions": "092a772a5e6ca086848bee77d2412ec1fb9f8be157f8a1a001c6a4d7d6b3b5ef"
+          }
+        },
+        {
+          "case": {
+            "name": "unperturbed",
+            "force": [
+              0.0,
+              0.0
+            ],
+            "duration": 30.0,
+            "seed": 101
+          },
+          "completed": true,
+          "duration_s": 30.00000000001368,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 3.346323987029331,
+          "rms_tilt_degrees": 1.6381856367334666,
+          "maximum_xy_drift_m": 0.029499112411713897,
+          "minimum_base_height_m": 0.5455360270533882,
+          "return": 73.2787499054916,
+          "actual_push_impulse_ns": [
+            0.0,
+            0.0
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "23721a82c9ec44f05e7e58a943808a6b46b21059d9ea008684e41e30060ed8d4",
+            "transitions": "aaf22143defd1e346ee37f0bfa72545b5fa5276a4678937f861f47cc1b0022d9"
+          },
+          "file_sha256": {
+            "physics": "eed8cbdda2a487a1093df4517553cdccd583dfd0469b9701ebe4fb5856468891",
+            "transitions": "092a772a5e6ca086848bee77d2412ec1fb9f8be157f8a1a001c6a4d7d6b3b5ef"
+          }
+        }
+      ]
+    },
+    {
+      "controller": "reference",
+      "case": "push_x_positive",
+      "deterministic": true,
+      "repeats": [
+        {
+          "case": {
+            "name": "push_x_positive",
+            "force": [
+              15.0,
+              0.0
+            ],
+            "duration": 10.0,
+            "seed": 103
+          },
+          "completed": true,
+          "duration_s": 9.999999999999897,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 4.436395866940402,
+          "rms_tilt_degrees": 2.067711038936922,
+          "maximum_xy_drift_m": 0.037074916823859265,
+          "minimum_base_height_m": 0.5450468773897549,
+          "return": 24.242529779012855,
+          "actual_push_impulse_ns": [
+            1.5,
+            0.0
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "3092435cc06ac8ee23bd928edff44b00bd7f206c0bf7ae7a73135c0564d525d3",
+            "transitions": "41f74a7cd2ebd6e45c30e5951bfeba94d9c779913bb5839d27bfae59fcd0f6e2"
+          },
+          "file_sha256": {
+            "physics": "24e0df2b7df631fa6985bfdcd3b0dea481bf9c2c98922b6d63870c9dac04c784",
+            "transitions": "669ded18b62262e9bb31b28952edb72f0b4503907ef8ca010421fefaab85ab4c"
+          }
+        },
+        {
+          "case": {
+            "name": "push_x_positive",
+            "force": [
+              15.0,
+              0.0
+            ],
+            "duration": 10.0,
+            "seed": 103
+          },
+          "completed": true,
+          "duration_s": 9.999999999999897,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 4.436395866940402,
+          "rms_tilt_degrees": 2.067711038936922,
+          "maximum_xy_drift_m": 0.037074916823859265,
+          "minimum_base_height_m": 0.5450468773897549,
+          "return": 24.242529779012855,
+          "actual_push_impulse_ns": [
+            1.5,
+            0.0
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "3092435cc06ac8ee23bd928edff44b00bd7f206c0bf7ae7a73135c0564d525d3",
+            "transitions": "41f74a7cd2ebd6e45c30e5951bfeba94d9c779913bb5839d27bfae59fcd0f6e2"
+          },
+          "file_sha256": {
+            "physics": "24e0df2b7df631fa6985bfdcd3b0dea481bf9c2c98922b6d63870c9dac04c784",
+            "transitions": "669ded18b62262e9bb31b28952edb72f0b4503907ef8ca010421fefaab85ab4c"
+          }
+        }
+      ]
+    },
+    {
+      "controller": "reference",
+      "case": "push_x_negative",
+      "deterministic": true,
+      "repeats": [
+        {
+          "case": {
+            "name": "push_x_negative",
+            "force": [
+              -15.0,
+              0.0
+            ],
+            "duration": 10.0,
+            "seed": 107
+          },
+          "completed": true,
+          "duration_s": 9.999999999999897,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 8.264387386146394,
+          "rms_tilt_degrees": 3.290747577528274,
+          "maximum_xy_drift_m": 0.06361762956136771,
+          "minimum_base_height_m": 0.5424050050650286,
+          "return": 23.532042371212043,
+          "actual_push_impulse_ns": [
+            -1.5,
+            0.0
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "94498c97f8c6387a6bb010e6cd8410f885c809e2b72a6cb2a552ca1ecd1dfd7c",
+            "transitions": "4aae87fffc6d8a69ec082ad46e3cfc0a58e68dd6ddfb84e9dd72af4bac0c205e"
+          },
+          "file_sha256": {
+            "physics": "daa607924196f9b153e6d306ed500004f30075186190891782626c79ee58be10",
+            "transitions": "6ec6c56620998153076fa37d8beb619675ce819f001dc84302021673565a2656"
+          }
+        },
+        {
+          "case": {
+            "name": "push_x_negative",
+            "force": [
+              -15.0,
+              0.0
+            ],
+            "duration": 10.0,
+            "seed": 107
+          },
+          "completed": true,
+          "duration_s": 9.999999999999897,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 8.264387386146394,
+          "rms_tilt_degrees": 3.290747577528274,
+          "maximum_xy_drift_m": 0.06361762956136771,
+          "minimum_base_height_m": 0.5424050050650286,
+          "return": 23.532042371212043,
+          "actual_push_impulse_ns": [
+            -1.5,
+            0.0
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "94498c97f8c6387a6bb010e6cd8410f885c809e2b72a6cb2a552ca1ecd1dfd7c",
+            "transitions": "4aae87fffc6d8a69ec082ad46e3cfc0a58e68dd6ddfb84e9dd72af4bac0c205e"
+          },
+          "file_sha256": {
+            "physics": "daa607924196f9b153e6d306ed500004f30075186190891782626c79ee58be10",
+            "transitions": "6ec6c56620998153076fa37d8beb619675ce819f001dc84302021673565a2656"
+          }
+        }
+      ]
+    },
+    {
+      "controller": "reference",
+      "case": "push_y_positive",
+      "deterministic": true,
+      "repeats": [
+        {
+          "case": {
+            "name": "push_y_positive",
+            "force": [
+              0.0,
+              15.0
+            ],
+            "duration": 10.0,
+            "seed": 109
+          },
+          "completed": true,
+          "duration_s": 9.999999999999897,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 3.34237503445335,
+          "rms_tilt_degrees": 1.7569392635303938,
+          "maximum_xy_drift_m": 0.029911885941877867,
+          "minimum_base_height_m": 0.5455020797579352,
+          "return": 24.37733877519739,
+          "actual_push_impulse_ns": [
+            0.0,
+            1.5
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "dfdeb102f2d8b1931edcec725e718d89ff20473ffdc803bc3a9e0615a1f352b1",
+            "transitions": "0bc5d2a285136a9c8fa04edbbfc6ee73405bfbe4533bdbf37c8f55a9cde89e92"
+          },
+          "file_sha256": {
+            "physics": "a68cbcdb2fb52bb0bba993bafb90f41b2c9e065049ef1e0f69d236d03cf18ee2",
+            "transitions": "6b8f261e20682b517efacaf521a1a793b52343c58c632333f8e00bcfa01c82c1"
+          }
+        },
+        {
+          "case": {
+            "name": "push_y_positive",
+            "force": [
+              0.0,
+              15.0
+            ],
+            "duration": 10.0,
+            "seed": 109
+          },
+          "completed": true,
+          "duration_s": 9.999999999999897,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 3.34237503445335,
+          "rms_tilt_degrees": 1.7569392635303938,
+          "maximum_xy_drift_m": 0.029911885941877867,
+          "minimum_base_height_m": 0.5455020797579352,
+          "return": 24.37733877519739,
+          "actual_push_impulse_ns": [
+            0.0,
+            1.5
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "dfdeb102f2d8b1931edcec725e718d89ff20473ffdc803bc3a9e0615a1f352b1",
+            "transitions": "0bc5d2a285136a9c8fa04edbbfc6ee73405bfbe4533bdbf37c8f55a9cde89e92"
+          },
+          "file_sha256": {
+            "physics": "a68cbcdb2fb52bb0bba993bafb90f41b2c9e065049ef1e0f69d236d03cf18ee2",
+            "transitions": "6b8f261e20682b517efacaf521a1a793b52343c58c632333f8e00bcfa01c82c1"
+          }
+        }
+      ]
+    },
+    {
+      "controller": "reference",
+      "case": "push_y_negative",
+      "deterministic": true,
+      "repeats": [
+        {
+          "case": {
+            "name": "push_y_negative",
+            "force": [
+              0.0,
+              -15.0
+            ],
+            "duration": 10.0,
+            "seed": 113
+          },
+          "completed": true,
+          "duration_s": 9.999999999999897,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 3.342073914112067,
+          "rms_tilt_degrees": 1.7569402744931226,
+          "maximum_xy_drift_m": 0.029914155824815762,
+          "minimum_base_height_m": 0.5455016691418143,
+          "return": 24.37733987891292,
+          "actual_push_impulse_ns": [
+            0.0,
+            -1.5
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "28c17c7568712eecfb203539bb093497134e40c8687f495b995fb55fb292b426",
+            "transitions": "6ed52a0c80a83dd44444b5e4f16a40f921a676dc0f74d77707f9898a78485409"
+          },
+          "file_sha256": {
+            "physics": "77d7956d809eb3e65b27701f61f71cd9f9ed158d6de7c9fbaa700c8a1cb0753e",
+            "transitions": "c851f516ffba48af661ebf524bc7b7742aa68c1d672a6d2a43bb8e5e5777ca70"
+          }
+        },
+        {
+          "case": {
+            "name": "push_y_negative",
+            "force": [
+              0.0,
+              -15.0
+            ],
+            "duration": 10.0,
+            "seed": 113
+          },
+          "completed": true,
+          "duration_s": 9.999999999999897,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 3.342073914112067,
+          "rms_tilt_degrees": 1.7569402744931226,
+          "maximum_xy_drift_m": 0.029914155824815762,
+          "minimum_base_height_m": 0.5455016691418143,
+          "return": 24.37733987891292,
+          "actual_push_impulse_ns": [
+            0.0,
+            -1.5
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "28c17c7568712eecfb203539bb093497134e40c8687f495b995fb55fb292b426",
+            "transitions": "6ed52a0c80a83dd44444b5e4f16a40f921a676dc0f74d77707f9898a78485409"
+          },
+          "file_sha256": {
+            "physics": "77d7956d809eb3e65b27701f61f71cd9f9ed158d6de7c9fbaa700c8a1cb0753e",
+            "transitions": "c851f516ffba48af661ebf524bc7b7742aa68c1d672a6d2a43bb8e5e5777ca70"
+          }
+        }
+      ]
+    },
+    {
+      "controller": "initial",
+      "case": "unperturbed",
+      "deterministic": true,
+      "repeats": [
+        {
+          "case": {
+            "name": "unperturbed",
+            "force": [
+              0.0,
+              0.0
+            ],
+            "duration": 30.0,
+            "seed": 101
+          },
+          "completed": true,
+          "duration_s": 30.00000000001368,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 3.5094896620503655,
+          "rms_tilt_degrees": 1.7295619839391296,
+          "maximum_xy_drift_m": 0.030724536357938384,
+          "minimum_base_height_m": 0.5454623562333204,
+          "return": 73.1570731087156,
+          "actual_push_impulse_ns": [
+            0.0,
+            0.0
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "efbaff1c3d0f3ac9abb211ed2a4ff4ebb105e3a0b37631bfa9d69be703d3af70",
+            "transitions": "e5293187e7f52b6088cdeb982d011b5da712ef2fdf3769b829d95f88aa6cb862"
+          },
+          "file_sha256": {
+            "physics": "35a4d6df80ebda078f1c74f3d9e193581e0855cdf93458409afdcda436344695",
+            "transitions": "b0c355ee377089837eced84650a10271ec36bf54ff2b4f8aa91434da2e61b9ea"
+          }
+        },
+        {
+          "case": {
+            "name": "unperturbed",
+            "force": [
+              0.0,
+              0.0
+            ],
+            "duration": 30.0,
+            "seed": 101
+          },
+          "completed": true,
+          "duration_s": 30.00000000001368,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 3.5094896620503655,
+          "rms_tilt_degrees": 1.7295619839391296,
+          "maximum_xy_drift_m": 0.030724536357938384,
+          "minimum_base_height_m": 0.5454623562333204,
+          "return": 73.1570731087156,
+          "actual_push_impulse_ns": [
+            0.0,
+            0.0
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "efbaff1c3d0f3ac9abb211ed2a4ff4ebb105e3a0b37631bfa9d69be703d3af70",
+            "transitions": "e5293187e7f52b6088cdeb982d011b5da712ef2fdf3769b829d95f88aa6cb862"
+          },
+          "file_sha256": {
+            "physics": "35a4d6df80ebda078f1c74f3d9e193581e0855cdf93458409afdcda436344695",
+            "transitions": "b0c355ee377089837eced84650a10271ec36bf54ff2b4f8aa91434da2e61b9ea"
+          }
+        }
+      ]
+    },
+    {
+      "controller": "initial",
+      "case": "push_x_positive",
+      "deterministic": true,
+      "repeats": [
+        {
+          "case": {
+            "name": "push_x_positive",
+            "force": [
+              15.0,
+              0.0
+            ],
+            "duration": 10.0,
+            "seed": 103
+          },
+          "completed": true,
+          "duration_s": 9.999999999999897,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 4.488250838826295,
+          "rms_tilt_degrees": 2.114587282249359,
+          "maximum_xy_drift_m": 0.03752124154805725,
+          "minimum_base_height_m": 0.5450117310959107,
+          "return": 24.21656710650404,
+          "actual_push_impulse_ns": [
+            1.5,
+            0.0
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "df2e306f2822cd1d51546993e9477350c3e493629f64078ac7060f97a85e78bc",
+            "transitions": "a2491ea4293ca616e20191d2dc8c06be9bcada7ffbaafea68a6630167c1a968a"
+          },
+          "file_sha256": {
+            "physics": "a79188eed15b70c20e308aca869963519ce132115c7e6c8715deae932c857304",
+            "transitions": "b3fa939df8fd14ec1555d3e2ed29f2d970fc40003002b4ee9a2bf30a949152a5"
+          }
+        },
+        {
+          "case": {
+            "name": "push_x_positive",
+            "force": [
+              15.0,
+              0.0
+            ],
+            "duration": 10.0,
+            "seed": 103
+          },
+          "completed": true,
+          "duration_s": 9.999999999999897,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 4.488250838826295,
+          "rms_tilt_degrees": 2.114587282249359,
+          "maximum_xy_drift_m": 0.03752124154805725,
+          "minimum_base_height_m": 0.5450117310959107,
+          "return": 24.21656710650404,
+          "actual_push_impulse_ns": [
+            1.5,
+            0.0
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "df2e306f2822cd1d51546993e9477350c3e493629f64078ac7060f97a85e78bc",
+            "transitions": "a2491ea4293ca616e20191d2dc8c06be9bcada7ffbaafea68a6630167c1a968a"
+          },
+          "file_sha256": {
+            "physics": "a79188eed15b70c20e308aca869963519ce132115c7e6c8715deae932c857304",
+            "transitions": "b3fa939df8fd14ec1555d3e2ed29f2d970fc40003002b4ee9a2bf30a949152a5"
+          }
+        }
+      ]
+    },
+    {
+      "controller": "initial",
+      "case": "push_x_negative",
+      "deterministic": true,
+      "repeats": [
+        {
+          "case": {
+            "name": "push_x_negative",
+            "force": [
+              -15.0,
+              0.0
+            ],
+            "duration": 10.0,
+            "seed": 107
+          },
+          "completed": true,
+          "duration_s": 9.999999999999897,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 8.44819656412403,
+          "rms_tilt_degrees": 3.3770742212462306,
+          "maximum_xy_drift_m": 0.064952030119121,
+          "minimum_base_height_m": 0.5422301678342212,
+          "return": 23.470865434458478,
+          "actual_push_impulse_ns": [
+            -1.5,
+            0.0
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "1ae2d64022c82dcd824f7c7ee4a11366a18f03762d5d11aa88b07dc06737718b",
+            "transitions": "42ac701b7fac117eb35225b1e9fd8dc024e6abe8ac1a8f8ea2b8a2f23df55bb3"
+          },
+          "file_sha256": {
+            "physics": "f4f44e721e086457d878ef44fa53bfd9450ba026bee64e4c354ecc62a6b35ae1",
+            "transitions": "5ce01323f9ea3b87136dcb66843553ed4c195cb1e24e47d466b5ba8bb615f780"
+          }
+        },
+        {
+          "case": {
+            "name": "push_x_negative",
+            "force": [
+              -15.0,
+              0.0
+            ],
+            "duration": 10.0,
+            "seed": 107
+          },
+          "completed": true,
+          "duration_s": 9.999999999999897,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 8.44819656412403,
+          "rms_tilt_degrees": 3.3770742212462306,
+          "maximum_xy_drift_m": 0.064952030119121,
+          "minimum_base_height_m": 0.5422301678342212,
+          "return": 23.470865434458478,
+          "actual_push_impulse_ns": [
+            -1.5,
+            0.0
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "1ae2d64022c82dcd824f7c7ee4a11366a18f03762d5d11aa88b07dc06737718b",
+            "transitions": "42ac701b7fac117eb35225b1e9fd8dc024e6abe8ac1a8f8ea2b8a2f23df55bb3"
+          },
+          "file_sha256": {
+            "physics": "f4f44e721e086457d878ef44fa53bfd9450ba026bee64e4c354ecc62a6b35ae1",
+            "transitions": "5ce01323f9ea3b87136dcb66843553ed4c195cb1e24e47d466b5ba8bb615f780"
+          }
+        }
+      ]
+    },
+    {
+      "controller": "initial",
+      "case": "push_y_positive",
+      "deterministic": true,
+      "repeats": [
+        {
+          "case": {
+            "name": "push_y_positive",
+            "force": [
+              0.0,
+              15.0
+            ],
+            "duration": 10.0,
+            "seed": 109
+          },
+          "completed": true,
+          "duration_s": 9.999999999999897,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 3.507018378956163,
+          "rms_tilt_degrees": 1.8506665256703962,
+          "maximum_xy_drift_m": 0.031119327715706312,
+          "minimum_base_height_m": 0.5454283944342116,
+          "return": 24.333594086687988,
+          "actual_push_impulse_ns": [
+            0.0,
+            1.5
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "fe9ab427745f11a3cec975361a74f62813f3dc577e833b2b1b116eb5960d09ee",
+            "transitions": "2c86d855a55bb1a708d362c9eff78dc9b85f4df895ad608befab3be6ac8aa8d3"
+          },
+          "file_sha256": {
+            "physics": "81f9bfcb8225cb40d8b2faac767843fece73b0df89017571c77d0b8e6ab713a8",
+            "transitions": "ebb5474711f3c54bd50742474c3bf42423e1659026f1f138f747bdd0c5b106f1"
+          }
+        },
+        {
+          "case": {
+            "name": "push_y_positive",
+            "force": [
+              0.0,
+              15.0
+            ],
+            "duration": 10.0,
+            "seed": 109
+          },
+          "completed": true,
+          "duration_s": 9.999999999999897,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 3.507018378956163,
+          "rms_tilt_degrees": 1.8506665256703962,
+          "maximum_xy_drift_m": 0.031119327715706312,
+          "minimum_base_height_m": 0.5454283944342116,
+          "return": 24.333594086687988,
+          "actual_push_impulse_ns": [
+            0.0,
+            1.5
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "fe9ab427745f11a3cec975361a74f62813f3dc577e833b2b1b116eb5960d09ee",
+            "transitions": "2c86d855a55bb1a708d362c9eff78dc9b85f4df895ad608befab3be6ac8aa8d3"
+          },
+          "file_sha256": {
+            "physics": "81f9bfcb8225cb40d8b2faac767843fece73b0df89017571c77d0b8e6ab713a8",
+            "transitions": "ebb5474711f3c54bd50742474c3bf42423e1659026f1f138f747bdd0c5b106f1"
+          }
+        }
+      ]
+    },
+    {
+      "controller": "initial",
+      "case": "push_y_negative",
+      "deterministic": true,
+      "repeats": [
+        {
+          "case": {
+            "name": "push_y_negative",
+            "force": [
+              0.0,
+              -15.0
+            ],
+            "duration": 10.0,
+            "seed": 113
+          },
+          "completed": true,
+          "duration_s": 9.999999999999897,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 3.5018370627802136,
+          "rms_tilt_degrees": 1.8504380317222204,
+          "maximum_xy_drift_m": 0.03114082977968216,
+          "minimum_base_height_m": 0.5454268483877261,
+          "return": 24.333714420301074,
+          "actual_push_impulse_ns": [
+            0.0,
+            -1.5
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "45785a10ead7196aed72dc25593a0a99d7ca33b4a218426745d1979a6809554d",
+            "transitions": "6df1756b2f53e6466cf410735145280ebdf73b61968c51bd1a4f7f286e173305"
+          },
+          "file_sha256": {
+            "physics": "6a1692b8f86908b4b7b668e3657697e51ee92c206137a181a5d0ac7bb6e3a259",
+            "transitions": "a2c1df8b3c3eb0f63e45ab926fa2915f2164ebb4d60d2f9d2876aab0e741ccf0"
+          }
+        },
+        {
+          "case": {
+            "name": "push_y_negative",
+            "force": [
+              0.0,
+              -15.0
+            ],
+            "duration": 10.0,
+            "seed": 113
+          },
+          "completed": true,
+          "duration_s": 9.999999999999897,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 3.5018370627802136,
+          "rms_tilt_degrees": 1.8504380317222204,
+          "maximum_xy_drift_m": 0.03114082977968216,
+          "minimum_base_height_m": 0.5454268483877261,
+          "return": 24.333714420301074,
+          "actual_push_impulse_ns": [
+            0.0,
+            -1.5
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "45785a10ead7196aed72dc25593a0a99d7ca33b4a218426745d1979a6809554d",
+            "transitions": "6df1756b2f53e6466cf410735145280ebdf73b61968c51bd1a4f7f286e173305"
+          },
+          "file_sha256": {
+            "physics": "6a1692b8f86908b4b7b668e3657697e51ee92c206137a181a5d0ac7bb6e3a259",
+            "transitions": "a2c1df8b3c3eb0f63e45ab926fa2915f2164ebb4d60d2f9d2876aab0e741ccf0"
+          }
+        }
+      ]
+    },
+    {
+      "controller": "final",
+      "case": "unperturbed",
+      "deterministic": true,
+      "repeats": [
+        {
+          "case": {
+            "name": "unperturbed",
+            "force": [
+              0.0,
+              0.0
+            ],
+            "duration": 30.0,
+            "seed": 101
+          },
+          "completed": true,
+          "duration_s": 30.00000000001368,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 2.7144160208403827,
+          "rms_tilt_degrees": 1.1462654321240964,
+          "maximum_xy_drift_m": 0.02716185729570033,
+          "minimum_base_height_m": 0.5447878253321375,
+          "return": 73.41232187656988,
+          "actual_push_impulse_ns": [
+            0.0,
+            0.0
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "6728347932b78b392f65f716db4f5a666ecc9628fd4241a02e6be87addf6280c",
+            "transitions": "58e1addaf0ecf2aebcc07be791969a1141fbee9932e06ea1092d0636e5bb5494"
+          },
+          "file_sha256": {
+            "physics": "1f09a7c6b86450c3a7db59ccc798058fa4607b2be19220194f88d031db6c20db",
+            "transitions": "aa1abe10f72717bb25a6c59d05cff7316f9e77ab847d947189d1fb873dd34601"
+          }
+        },
+        {
+          "case": {
+            "name": "unperturbed",
+            "force": [
+              0.0,
+              0.0
+            ],
+            "duration": 30.0,
+            "seed": 101
+          },
+          "completed": true,
+          "duration_s": 30.00000000001368,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 2.7144160208403827,
+          "rms_tilt_degrees": 1.1462654321240964,
+          "maximum_xy_drift_m": 0.02716185729570033,
+          "minimum_base_height_m": 0.5447878253321375,
+          "return": 73.41232187656988,
+          "actual_push_impulse_ns": [
+            0.0,
+            0.0
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "6728347932b78b392f65f716db4f5a666ecc9628fd4241a02e6be87addf6280c",
+            "transitions": "58e1addaf0ecf2aebcc07be791969a1141fbee9932e06ea1092d0636e5bb5494"
+          },
+          "file_sha256": {
+            "physics": "1f09a7c6b86450c3a7db59ccc798058fa4607b2be19220194f88d031db6c20db",
+            "transitions": "aa1abe10f72717bb25a6c59d05cff7316f9e77ab847d947189d1fb873dd34601"
+          }
+        }
+      ]
+    },
+    {
+      "controller": "final",
+      "case": "push_x_positive",
+      "deterministic": true,
+      "repeats": [
+        {
+          "case": {
+            "name": "push_x_positive",
+            "force": [
+              15.0,
+              0.0
+            ],
+            "duration": 10.0,
+            "seed": 103
+          },
+          "completed": true,
+          "duration_s": 9.999999999999897,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 4.162500048494715,
+          "rms_tilt_degrees": 1.8302836352912655,
+          "maximum_xy_drift_m": 0.03700557870516984,
+          "minimum_base_height_m": 0.5441527389740812,
+          "return": 24.229992060616098,
+          "actual_push_impulse_ns": [
+            1.5,
+            0.0
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "51558b4a2a9c895d475d777748a894fdebf56cf405155610cb3eabb101b7c679",
+            "transitions": "fef8ae311ff7b0b825f5f706866307dd397009a2d6d1c442db12ad27e32deb78"
+          },
+          "file_sha256": {
+            "physics": "6768aa76fb893133a09e9ae7b1741eee6732d4eec0da19c121d8ed793ae165ae",
+            "transitions": "9ed35721ec2a0b90c27af4d9f14a2cfe37d43fc5a5e19548e94a9569467962ae"
+          }
+        },
+        {
+          "case": {
+            "name": "push_x_positive",
+            "force": [
+              15.0,
+              0.0
+            ],
+            "duration": 10.0,
+            "seed": 103
+          },
+          "completed": true,
+          "duration_s": 9.999999999999897,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 4.162500048494715,
+          "rms_tilt_degrees": 1.8302836352912655,
+          "maximum_xy_drift_m": 0.03700557870516984,
+          "minimum_base_height_m": 0.5441527389740812,
+          "return": 24.229992060616098,
+          "actual_push_impulse_ns": [
+            1.5,
+            0.0
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "51558b4a2a9c895d475d777748a894fdebf56cf405155610cb3eabb101b7c679",
+            "transitions": "fef8ae311ff7b0b825f5f706866307dd397009a2d6d1c442db12ad27e32deb78"
+          },
+          "file_sha256": {
+            "physics": "6768aa76fb893133a09e9ae7b1741eee6732d4eec0da19c121d8ed793ae165ae",
+            "transitions": "9ed35721ec2a0b90c27af4d9f14a2cfe37d43fc5a5e19548e94a9569467962ae"
+          }
+        }
+      ]
+    },
+    {
+      "controller": "final",
+      "case": "push_x_negative",
+      "deterministic": true,
+      "repeats": [
+        {
+          "case": {
+            "name": "push_x_negative",
+            "force": [
+              -15.0,
+              0.0
+            ],
+            "duration": 10.0,
+            "seed": 107
+          },
+          "completed": true,
+          "duration_s": 9.999999999999897,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 6.551534302677648,
+          "rms_tilt_degrees": 2.6502545428485735,
+          "maximum_xy_drift_m": 0.05331144363155428,
+          "minimum_base_height_m": 0.5426715873470397,
+          "return": 23.794783672574937,
+          "actual_push_impulse_ns": [
+            -1.5,
+            0.0
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "667390c6e1121cb45c3978f5b84779cbed4ecbf9659d7aaf5111c4402f4f5cf1",
+            "transitions": "2d7394974ae32858bd307366fd6e8297f1a2732f0f0469828b694ff25d52bb57"
+          },
+          "file_sha256": {
+            "physics": "5aaf4800d7647fd6ebcf4cf3fb32b9893bc35e2494d4fecd2cee580f3f6d1675",
+            "transitions": "7ffd49c438aaad393cea3666d4d078a4a0f287f2c8ebdb42debe797a5a50604b"
+          }
+        },
+        {
+          "case": {
+            "name": "push_x_negative",
+            "force": [
+              -15.0,
+              0.0
+            ],
+            "duration": 10.0,
+            "seed": 107
+          },
+          "completed": true,
+          "duration_s": 9.999999999999897,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 6.551534302677648,
+          "rms_tilt_degrees": 2.6502545428485735,
+          "maximum_xy_drift_m": 0.05331144363155428,
+          "minimum_base_height_m": 0.5426715873470397,
+          "return": 23.794783672574937,
+          "actual_push_impulse_ns": [
+            -1.5,
+            0.0
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "667390c6e1121cb45c3978f5b84779cbed4ecbf9659d7aaf5111c4402f4f5cf1",
+            "transitions": "2d7394974ae32858bd307366fd6e8297f1a2732f0f0469828b694ff25d52bb57"
+          },
+          "file_sha256": {
+            "physics": "5aaf4800d7647fd6ebcf4cf3fb32b9893bc35e2494d4fecd2cee580f3f6d1675",
+            "transitions": "7ffd49c438aaad393cea3666d4d078a4a0f287f2c8ebdb42debe797a5a50604b"
+          }
+        }
+      ]
+    },
+    {
+      "controller": "final",
+      "case": "push_y_positive",
+      "deterministic": true,
+      "repeats": [
+        {
+          "case": {
+            "name": "push_y_positive",
+            "force": [
+              0.0,
+              15.0
+            ],
+            "duration": 10.0,
+            "seed": 109
+          },
+          "completed": true,
+          "duration_s": 9.999999999999897,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 2.7112013233651013,
+          "rms_tilt_degrees": 1.292572718273888,
+          "maximum_xy_drift_m": 0.026464318638881802,
+          "minimum_base_height_m": 0.5448494780622329,
+          "return": 24.427423020572732,
+          "actual_push_impulse_ns": [
+            0.0,
+            1.5
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "1617dffb1fcbb31e6643824e3c9a6487a2c333f298e1e768e9a49c6c88eba22c",
+            "transitions": "3bb001d72c346213551164c9226ff7b49f90afa9838ee25f69a27695c4eb84e7"
+          },
+          "file_sha256": {
+            "physics": "eab45320be7b02f1a8b7eb28a1c3419648a43be4b22fe0717e2d32a75c3f931a",
+            "transitions": "eb87343e01540d6f3ed579dd151010477fc8a2490f2093865d8bd07d63e6837e"
+          }
+        },
+        {
+          "case": {
+            "name": "push_y_positive",
+            "force": [
+              0.0,
+              15.0
+            ],
+            "duration": 10.0,
+            "seed": 109
+          },
+          "completed": true,
+          "duration_s": 9.999999999999897,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 2.7112013233651013,
+          "rms_tilt_degrees": 1.292572718273888,
+          "maximum_xy_drift_m": 0.026464318638881802,
+          "minimum_base_height_m": 0.5448494780622329,
+          "return": 24.427423020572732,
+          "actual_push_impulse_ns": [
+            0.0,
+            1.5
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "1617dffb1fcbb31e6643824e3c9a6487a2c333f298e1e768e9a49c6c88eba22c",
+            "transitions": "3bb001d72c346213551164c9226ff7b49f90afa9838ee25f69a27695c4eb84e7"
+          },
+          "file_sha256": {
+            "physics": "eab45320be7b02f1a8b7eb28a1c3419648a43be4b22fe0717e2d32a75c3f931a",
+            "transitions": "eb87343e01540d6f3ed579dd151010477fc8a2490f2093865d8bd07d63e6837e"
+          }
+        }
+      ]
+    },
+    {
+      "controller": "final",
+      "case": "push_y_negative",
+      "deterministic": true,
+      "repeats": [
+        {
+          "case": {
+            "name": "push_y_negative",
+            "force": [
+              0.0,
+              -15.0
+            ],
+            "duration": 10.0,
+            "seed": 113
+          },
+          "completed": true,
+          "duration_s": 9.999999999999897,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 2.7403562219302273,
+          "rms_tilt_degrees": 1.335168523719646,
+          "maximum_xy_drift_m": 0.030818043253977575,
+          "minimum_base_height_m": 0.5446868498088027,
+          "return": 24.411473050455538,
+          "actual_push_impulse_ns": [
+            0.0,
+            -1.5
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "74f8bd260ac76ba85bfd54b8a3cf2a5872ce9eae8632d91415d52b35547cf7f9",
+            "transitions": "397cfd10252bd0f3e2992941066b7d33a9eb970288dda71692ec00cb70592d01"
+          },
+          "file_sha256": {
+            "physics": "77e92d718273e359665a2ab7695158a8eddfbf3d5b8697e43ac2f05e197d154c",
+            "transitions": "207bb245e3c79fbcd2ef783da8a1b0903ca15141c77b9f402b142d2caf7fe15f"
+          }
+        },
+        {
+          "case": {
+            "name": "push_y_negative",
+            "force": [
+              0.0,
+              -15.0
+            ],
+            "duration": 10.0,
+            "seed": 113
+          },
+          "completed": true,
+          "duration_s": 9.999999999999897,
+          "termination_reason": "time_limit",
+          "maximum_tilt_degrees": 2.7403562219302273,
+          "rms_tilt_degrees": 1.335168523719646,
+          "maximum_xy_drift_m": 0.030818043253977575,
+          "minimum_base_height_m": 0.5446868498088027,
+          "return": 24.411473050455538,
+          "actual_push_impulse_ns": [
+            0.0,
+            -1.5
+          ],
+          "push_delivery_matches": true,
+          "positive_force_self_contact_samples": 0,
+          "torque_saturation_fraction": 0.0,
+          "finite_physics": true,
+          "bad_warning_count": 0,
+          "stable": true,
+          "array_sha256": {
+            "physics": "74f8bd260ac76ba85bfd54b8a3cf2a5872ce9eae8632d91415d52b35547cf7f9",
+            "transitions": "397cfd10252bd0f3e2992941066b7d33a9eb970288dda71692ec00cb70592d01"
+          },
+          "file_sha256": {
+            "physics": "77e92d718273e359665a2ab7695158a8eddfbf3d5b8697e43ac2f05e197d154c",
+            "transitions": "207bb245e3c79fbcd2ef783da8a1b0903ca15141c77b9f402b142d2caf7fe15f"
+          }
+        }
+      ]
+    }
+  ],
+  "controller_summary": {
+    "reference": {
+      "stable_cases": 5,
+      "total_cases": 5
+    },
+    "initial": {
+      "stable_cases": 5,
+      "total_cases": 5
+    },
+    "final": {
+      "stable_cases": 5,
+      "total_cases": 5
+    }
+  },
+  "verification_passed": true
+}

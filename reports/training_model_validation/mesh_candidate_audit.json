@@ -1,0 +1,181 @@
+{
+  "mujoco_version": "3.3.7",
+  "candidates": [
+    {
+      "geom": "candidate_Left_Arm_1",
+      "backends": {
+        "nativeccd": {
+          "ball_center_m": [
+            10.405349294438494,
+            -0.1388335635683662,
+            0.7274732387655979
+          ],
+          "ball_radius_m": 0.11,
+          "maximum_distance_to_mesh_vertex_m": 0.05987811317375331,
+          "ball_contains_every_mesh_vertex": true,
+          "target_contact_distances_m": []
+        },
+        "libccd": {
+          "ball_center_m": [
+            10.405349294438494,
+            -0.1388335635683662,
+            0.7274732387655979
+          ],
+          "ball_radius_m": 0.11,
+          "maximum_distance_to_mesh_vertex_m": 0.05987811317375331,
+          "ball_contains_every_mesh_vertex": true,
+          "target_contact_distances_m": [
+            -0.15441149157311032
+          ]
+        }
+      }
+    },
+    {
+      "geom": "candidate_Right_Arm_1",
+      "backends": {
+        "nativeccd": {
+          "ball_center_m": [
+            10.40534972348878,
+            0.13883387608609693,
+            0.7274723352804332
+          ],
+          "ball_radius_m": 0.11,
+          "maximum_distance_to_mesh_vertex_m": 0.059878881412112256,
+          "ball_contains_every_mesh_vertex": true,
+          "target_contact_distances_m": []
+        },
+        "libccd": {
+          "ball_center_m": [
+            10.40534972348878,
+            0.13883387608609693,
+            0.7274723352804332
+          ],
+          "ball_radius_m": 0.11,
+          "maximum_distance_to_mesh_vertex_m": 0.059878881412112256,
+          "ball_contains_every_mesh_vertex": true,
+          "target_contact_distances_m": [
+            -0.15441089056450452
+          ]
+        }
+      }
+    },
+    {
+      "geom": "candidate_Left_Hip_Pitch",
+      "backends": {
+        "nativeccd": {
+          "ball_center_m": [
+            10.404939606091611,
+            -0.09627550994687431,
+            0.45107427960910174
+          ],
+          "ball_radius_m": 0.11,
+          "maximum_distance_to_mesh_vertex_m": 0.06093307193285568,
+          "ball_contains_every_mesh_vertex": true,
+          "target_contact_distances_m": []
+        },
+        "libccd": {
+          "ball_center_m": [
+            10.404939606091611,
+            -0.09627550994687431,
+            0.45107427960910174
+          ],
+          "ball_radius_m": 0.11,
+          "maximum_distance_to_mesh_vertex_m": 0.06093307193285568,
+          "ball_contains_every_mesh_vertex": true,
+          "target_contact_distances_m": [
+            -0.15723057980922525
+          ]
+        }
+      }
+    },
+    {
+      "geom": "candidate_Left_Ankle_Cross",
+      "backends": {
+        "nativeccd": {
+          "ball_center_m": [
+            10.409805632987325,
+            -0.0962007895260884,
+            0.04457543423409455
+          ],
+          "ball_radius_m": 0.11,
+          "maximum_distance_to_mesh_vertex_m": 0.01858124580891801,
+          "ball_contains_every_mesh_vertex": true,
+          "target_contact_distances_m": []
+        },
+        "libccd": {
+          "ball_center_m": [
+            10.409805632987325,
+            -0.0962007895260884,
+            0.04457543423409455
+          ],
+          "ball_radius_m": 0.11,
+          "maximum_distance_to_mesh_vertex_m": 0.01858124580891801,
+          "ball_contains_every_mesh_vertex": true,
+          "target_contact_distances_m": [
+            -0.12722128252398007
+          ]
+        }
+      }
+    },
+    {
+      "geom": "candidate_Right_Hip_Pitch",
+      "backends": {
+        "nativeccd": {
+          "ball_center_m": [
+            10.40494030108893,
+            0.09627491335404122,
+            0.4510748942465834
+          ],
+          "ball_radius_m": 0.11,
+          "maximum_distance_to_mesh_vertex_m": 0.060932330850475544,
+          "ball_contains_every_mesh_vertex": true,
+          "target_contact_distances_m": []
+        },
+        "libccd": {
+          "ball_center_m": [
+            10.40494030108893,
+            0.09627491335404122,
+            0.4510748942465834
+          ],
+          "ball_radius_m": 0.11,
+          "maximum_distance_to_mesh_vertex_m": 0.060932330850475544,
+          "ball_contains_every_mesh_vertex": true,
+          "target_contact_distances_m": [
+            -0.1572297994696055
+          ]
+        }
+      }
+    },
+    {
+      "geom": "candidate_Right_Ankle_Cross",
+      "backends": {
+        "nativeccd": {
+          "ball_center_m": [
+            10.409805632462538,
+            0.0961992104713595,
+            0.044575434190269415
+          ],
+          "ball_radius_m": 0.11,
+          "maximum_distance_to_mesh_vertex_m": 0.01858124580848179,
+          "ball_contains_every_mesh_vertex": true,
+          "target_contact_distances_m": []
+        },
+        "libccd": {
+          "ball_center_m": [
+            10.409805632462538,
+            0.0961992104713595,
+            0.044575434190269415
+          ],
+          "ball_radius_m": 0.11,
+          "maximum_distance_to_mesh_vertex_m": 0.01858124580848179,
+          "ball_contains_every_mesh_vertex": true,
+          "target_contact_distances_m": [
+            -0.1272212744065004
+          ]
+        }
+      }
+    }
+  ],
+  "purpose": "Deep-overlap diagnostic, not a legal shot or dynamic safety test",
+  "decision": "Rejected direct mesh copies for this I2 version; main model keeps nativeccd"
+}
