@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/stereolabs/zed-ros2-description",
+  "revision": "22468247c1653d08a1e213809f3e9ce76291487d",
+  "license": "Apache-2.0 (upstream LICENSE preserved verbatim)",
+  "files": {
+    "models/zedx.stl": "af5eafb51c386672326e4a7435f294059af70c661547ff3ba53b1c56506f5ae2",
+    "docs/licenses/zed-ros2-description-Apache-2.0.txt": "a427e18c20d55e736c7889b3f5e4b3e3babb1b4e5d49ee792e8a1932b9ee31c5"
+  },
+  "mesh_upstream_path": "meshes/zedx.stl",
+  "mesh_modified": false,
+  "notes": "Native mesh reused without ROS dependency. Optical cameras and massless/collision-free MJCF wrapper added locally. Housing placement and robot attachment are simulation assumptions."
+}

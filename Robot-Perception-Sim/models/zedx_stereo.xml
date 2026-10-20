@@ -1,0 +1,17 @@
+<mujoco>
+  <asset>
+    <mesh name="zedx_housing_mesh" file="zedx.stl"/>
+  </asset>
+  <!-- Massless optical component. Parameters are filled from zedx_wide.json. -->
+  <worldbody>
+    <body name="zedx_mount">
+      <!-- Upstream ROS mesh axes -> optical axes; visual clearance is a simulation assumption. -->
+      <geom name="zedx_housing_visual" type="mesh" mesh="zedx_housing_mesh"
+            pos="0 0.016 -0.020" quat="0.5 0.5 -0.5 0.5"
+            rgba="0.25 0.25 0.25 1" contype="0" conaffinity="0" density="0" group="2"/>
+      <!-- Optical -> MuJoCo camera rotation: Rx(pi), wxyz quaternion. -->
+      <camera name="zedx_left_camera" mode="fixed" quat="0 1 0 0"/>
+      <camera name="zedx_right_camera" mode="fixed" quat="0 1 0 0"/>
+    </body>
+  </worldbody>
+</mujoco>

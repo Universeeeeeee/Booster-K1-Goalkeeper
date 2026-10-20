@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "name": "zedx_wide_nominal",
+  "reference_device": "Stereolabs ZED X, 2.2 mm Wide",
+  "image_width_px": 960,
+  "image_height_px": 600,
+  "baseline_m": 0.12,
+  "horizontal_fov_deg": 110.0,
+  "reference_vertical_fov_deg": 80.0,
+  "reference_fps": 120,
+  "mount": {
+    "parent_body": "head_booster_stereo_rgb_link",
+    "position_parent_m": [0.0351, 0.0, 0.04],
+    "quaternion_parent_from_mount_wxyz": [1.0, 0.0, 0.0, 0.0]
+  },
+  "model": {
+    "projection": "pinhole",
+    "square_pixels": true,
+    "distortion": "ideal_zero",
+    "pixel_coordinates": "integer pixel centres; top-left centre is (0,0)",
+    "principal_point": "((width-1)/2, (height-1)/2)",
+    "stereo": "parallel axes; same intrinsics; right centre is +baseline along left optical X",
+    "sampling": "instantaneous synchronized stereo; reference_fps is not a realtime guarantee"
+  },
+  "provenance": {
+    "vendor_reference": {
+      "category": "vendor_spec",
+      "url": "https://www.stereolabs.com/en-us/products/zed-x",
+      "fields": ["baseline_m", "reference_fps", "image_width_px", "image_height_px"],
+      "note": "Nominal product references, not per-device calibration"
+    },
+    "intrinsics": {
+      "category": "nominal_model",
+      "note": "Lens 2.2 mm and 110x80 degree FOV references come from docs/plan.md, not device calibration. Horizontal FOV 110 degrees is the primary constraint; fx=fy=width/(2*tan(hfov/2)); derive vertical FOV from image height"
+    },
+    "mount_and_imaging": {
+      "category": "simulation_assumption",
+      "note": "Reuse the official head_booster_stereo_rgb_link optical frame. Shift mount centre 35.1 mm optical-right and 40 mm optical-forward as a virtual clearance assumption, not hardware extrinsics. Zero distortion, ideal rectification and instantaneous exposure."
+    },
+    "device_calibration": null
+  }
+}
