@@ -18,7 +18,7 @@
 
 官方 ZED X 外观网格原样复用 [zed-ros2-description](https://github.com/stereolabs/zed-ros2-description/tree/22468247c1653d08a1e213809f3e9ce76291487d)，通过 [models/zedx_stereo.xml](models/zedx_stereo.xml) 添加无质量、无碰撞的相机组件。参数见 [config/cameras/zedx_wide.json](config/cameras/zedx_wide.json)。官方 SDK 的[系统要求](https://www.stereolabs.com/docs/development/zed-sdk/specifications)列出 Windows、Ubuntu、Jetson Linux，当前 macOS Apple Silicon 使用 MuJoCo 接口。未来支持的平台优先评估官方 SDK；当前接口不提供 SDK 深度、跟踪或 IMU 功能。
 
-采集接口直接接收已有 `MjData`，不推进物理时间；左右目在调用之间不修改状态的单线程仿真循环中采集，得到相同采样时刻：
+采集接口直接接收已有 `MjData`，默认以 **10 ms 全局曝光**、10 个时间子样本进行左右同步累积，不推进调用者的物理时间。曝光期间以当前 `qvel` 不变近似运动，通过 MuJoCo 的 `mj_integratePos` 更新状态副本；静止场景画面不变，有速度的物体或头部会产生运动模糊。`timestamp_s` 是曝光开始时刻，帧中还返回 `exposure_start_s`、`exposure_end_s` 和 `exposure_samples`：
 
 ```python
 from robot_perception_sim.stereo import StereoCamera
@@ -32,6 +32,8 @@ with StereoCamera(model, camera_config) as camera:
 
 命令入口会设置本目录和父项目的导入路径。若自行编写入口，需将这两个目录加入 Python 模块搜索路径。保持同一线程更新物理和采集图像；本轮预览只使用 `mj_forward`，不验证机器人动态站立。
 
-首版为理想针孔模型：960×600、120 mm 基线、水平 FOV 110°、方形像素，推导垂直 FOV 约 83.50°。挂载偏移、外观网格放置和零畸变均为仿真假设，不是实机标定。120 fps 只是参考模式，不代表实际渲染速度。
+首版为理想针孔模型：960×600、120 mm 基线、水平 FOV 110°、方形像素，推导垂直 FOV 约 83.50°。挂载偏移、外观网格放置和零畸变均为仿真假设，不是实机标定。10 ms 超过 120 fps 的 8.33 ms 帧周期，因此参考模式改为 **60 fps**；采样帧率调度尚未实现，不代表实际渲染速度。
+
+曝光参数为 `exposure_time_ms: 10.0`、`exposure_samples: 10`；设为 0 ms 可恢复瞬时成像。当前为等权 RGB 时间平均的运动模糊近似，不模拟曝光期间的加速度、接触响应、自动曝光或真实传感器亮度/噪声。默认静态预览速度为零，因此即使曝光 10 ms 也不会出现拖影。运动足球的 0/10 ms 对照图由测试生成在 `results/tests/exposure/`。
 
 验证结果与坐标定义见 [docs/mac_validation.md](docs/mac_validation.md)，来源见 [docs/sources.md](docs/sources.md)，后续路线见 [docs/plan.md](docs/plan.md)。本轮范围止于 P0–P1。

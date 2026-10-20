@@ -21,6 +21,15 @@ def load_camera_config(path=None):
         raise ValueError("baseline_m must be finite and positive")
     if not math.isfinite(config["horizontal_fov_deg"]) or not 0 < config["horizontal_fov_deg"] < 180:
         raise ValueError("horizontal_fov_deg must be between 0 and 180")
+    exposure = config["exposure_time_ms"]
+    if not math.isfinite(exposure) or exposure < 0:
+        raise ValueError("exposure_time_ms must be finite and nonnegative")
+    samples = config["exposure_samples"]
+    if type(samples) is not int or samples < 1:
+        raise ValueError("exposure_samples must be a positive integer")
+    fps = config["reference_fps"]
+    if not math.isfinite(fps) or fps <= 0 or exposure > 1000 / fps:
+        raise ValueError("Exposure must fit the positive reference_fps frame period")
     position = np.asarray(config["mount"]["position_parent_m"], dtype=float)
     quaternion = np.asarray(config["mount"]["quaternion_parent_from_mount_wxyz"], dtype=float)
     if position.shape != (3,) or not np.isfinite(position).all():

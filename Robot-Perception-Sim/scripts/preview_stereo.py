@@ -83,6 +83,11 @@ def main():
         "K": calibration.tolist(),
         "derived_vertical_fov_deg": vertical_fov_deg(config),
         "timestamp_s": frame["timestamp_s"],
+        "timestamp_reference": "exposure_start",
+        "exposure_time_ms": config["exposure_time_ms"],
+        "exposure_start_s": frame["exposure_start_s"],
+        "exposure_end_s": frame["exposure_end_s"],
+        "exposure_samples": frame["exposure_samples"],
         "left_timestamp_s": frame["timestamp_s"], "right_timestamp_s": frame["timestamp_s"],
         "T_world_from_left_optical": poses["left"].tolist(),
         "T_world_from_right_optical": poses["right"].tolist(),
@@ -90,7 +95,7 @@ def main():
         "measured_baseline_m": float(np.linalg.norm(poses["right"][:3, 3] - poses["left"][:3, 3])),
         "head_yaw_pitch_rad": [args.head_yaw, args.head_pitch],
         "diagnostic_ground_truth": {"ball_world_m": ball_world.tolist(), "ball_projection": projections},
-        "assumptions": "Static mj_forward; ideal instantaneous stereo, zero distortion; no hardware calibration or realtime FPS claim",
+        "assumptions": "Synchronized global exposure approximated by equal-weight RGB samples with constant qvel; static preview has zero velocity and no motion blur. Zero distortion; no sensor radiometry, hardware calibration or realtime FPS claim.",
     }
     (output / "metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
     print(f"Saved stereo RGB, overview and geometry metadata: {output}")

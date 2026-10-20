@@ -29,7 +29,10 @@ def test_nominal_calibration(config):
 
 
 @pytest.mark.parametrize("key,value", [("baseline_m", 0), ("baseline_m", float("nan")),
-    ("horizontal_fov_deg", 180), ("image_width_px", 0), ("image_height_px", 1.5)])
+    ("horizontal_fov_deg", 180), ("image_width_px", 0), ("image_height_px", 1.5),
+    ("exposure_time_ms", -1), ("exposure_time_ms", float("nan")),
+    ("exposure_time_ms", float("inf")), ("exposure_samples", 0),
+    ("exposure_samples", 1.5), ("reference_fps", 120)])
 def test_invalid_calibration(tmp_path, key, value):
     config = json.loads(DEFAULT_CONFIG.read_text())
     config[key] = value

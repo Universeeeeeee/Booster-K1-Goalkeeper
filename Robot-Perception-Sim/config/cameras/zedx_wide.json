@@ -7,7 +7,9 @@
   "baseline_m": 0.12,
   "horizontal_fov_deg": 110.0,
   "reference_vertical_fov_deg": 80.0,
-  "reference_fps": 120,
+  "reference_fps": 60,
+  "exposure_time_ms": 10.0,
+  "exposure_samples": 10,
   "mount": {
     "parent_body": "head_booster_stereo_rgb_link",
     "position_parent_m": [0.0351, 0.0, 0.04],
@@ -20,14 +22,14 @@
     "pixel_coordinates": "integer pixel centres; top-left centre is (0,0)",
     "principal_point": "((width-1)/2, (height-1)/2)",
     "stereo": "parallel axes; same intrinsics; right centre is +baseline along left optical X",
-    "sampling": "instantaneous synchronized stereo; reference_fps is not a realtime guarantee"
+    "sampling": "synchronized global exposure; equal-weight RGB accumulation at midpoint sub-samples; constant generalized velocity during exposure; timestamp_s denotes exposure start; reference_fps is not a realtime guarantee"
   },
   "provenance": {
     "vendor_reference": {
       "category": "vendor_spec",
       "url": "https://www.stereolabs.com/en-us/products/zed-x",
       "fields": ["baseline_m", "reference_fps", "image_width_px", "image_height_px"],
-      "note": "Nominal product references, not per-device calibration"
+      "note": "Nominal product references, not per-device calibration. Reference mode is 60 fps to accommodate 10 ms exposure; 120 fps has only an 8.33 ms frame period."
     },
     "intrinsics": {
       "category": "nominal_model",
@@ -35,7 +37,7 @@
     },
     "mount_and_imaging": {
       "category": "simulation_assumption",
-      "note": "Reuse the official head_booster_stereo_rgb_link optical frame. Shift mount centre 35.1 mm optical-right and 40 mm optical-forward as a virtual clearance assumption, not hardware extrinsics. Zero distortion, ideal rectification and instantaneous exposure."
+      "note": "Reuse the official head_booster_stereo_rgb_link optical frame. Shift mount centre 35.1 mm optical-right and 40 mm optical-forward as a virtual clearance assumption, not hardware extrinsics. Zero distortion and ideal rectification. Exposure is a user-selected 10 ms simulation assumption, approximated with 10 RGB samples and constant qvel; no sensor radiometry, acceleration or contact prediction."
     },
     "device_calibration": null
   }
