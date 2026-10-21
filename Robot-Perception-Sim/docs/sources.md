@@ -16,6 +16,8 @@
 
 新增逻辑仅包含 MJCF 相机组件、相机参数与坐标变换、原场景扩展、双目采集、预览和验证。没有迁移或复制控制器、训练环境、射门和碰撞逻辑。
 
+2026-10-21 运动采集继续直接复用 `k1_goalkeeper.simulation.preset_shots` 的射门参数，以及 `k1_goalkeeper.impact_validation.run_impact` 的 2 秒站立、射门初始化、物理推进、接触记录和轨迹记录；不另写仿真或控制循环。按实际物理时间选择帧后，复用已有双目采集器渲染。MP4 使用用户 `robot` 环境已有 FFmpeg 编码，没有新增 Python 依赖。
+
 上游 K1 的 BSD-3-Clause 许可证见 [licenses/booster_assets-BSD-3-Clause.txt](licenses/booster_assets-BSD-3-Clause.txt)（原资产目录中也保留）。ZED 资产采用 Apache-2.0，上游 LICENSE 完整保存在 [licenses/zed-ros2-description-Apache-2.0.txt](licenses/zed-ros2-description-Apache-2.0.txt)，未删改其中附带的其他声明。
 
 相机外观网格未修改；新增 MJCF 包装移除了质量与碰撞作用，使用仿真安装偏移和视觉避让偏移，不代表实物安装或镜头标定。

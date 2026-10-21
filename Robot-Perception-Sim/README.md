@@ -36,4 +36,21 @@ with StereoCamera(model, camera_config) as camera:
 
 曝光参数为 `exposure_time_ms: 10.0`、`exposure_samples: 10`；设为 0 ms 可恢复瞬时成像。当前为等权 RGB 时间平均的运动模糊近似，不模拟曝光期间的加速度、接触响应、自动曝光或真实传感器亮度/噪声。默认静态预览速度为零，因此即使曝光 10 ms 也不会出现拖影。运动足球的 0/10 ms 对照图由测试生成在 `results/tests/exposure/`。
 
-验证结果与坐标定义见 [docs/mac_validation.md](docs/mac_validation.md)，来源见 [docs/sources.md](docs/sources.md)，后续路线见 [docs/plan.md](docs/plan.md)。本轮范围止于 P0–P1。
+验证结果与坐标定义见 [docs/mac_validation.md](docs/mac_validation.md)，来源见 [docs/sources.md](docs/sources.md)，后续路线见 [docs/plan.md](docs/plan.md)。
+
+## 运动足球双目视频
+
+2026-10-21 增加 P2 物理射门的最小采集闭环。激活已有 `robot` 环境后，在仓库根目录执行：
+
+```bash
+python Robot-Perception-Sim/scripts/record_stereo.py --preset right --duration 1 --output-dir Robot-Perception-Sim/results/moving_stereo
+python Robot-Perception-Sim/scripts/record_stereo.py --preset post --duration 1 --output-dir Robot-Perception-Sim/results/moving_stereo_post
+```
+
+默认 60 fps，先复用原有控制器站立 2 秒，再执行已有射门预设。只模拟一次物理轨迹，同一状态分别生成 0 ms 和配置曝光（默认 10 ms）的左右图像。支持已有射门预设、`--duration`、`--seed`、`--fps`、`--camera-config`。
+
+视频编码使用现有 FFmpeg，从 PATH 或 Python 同目录查找。当前 `robot` 环境已包含 FFmpeg；使用根目录 `.venv` 时，可通过 `--ffmpeg` 指向现有可执行文件，无需安装新 Python 依赖。输出目录必须为空，已有记录不会被覆盖。
+
+每次运行保存四个 MP4（`left_0ms.mp4`、`right_0ms.mp4`、`left_exposed.mp4`、`right_exposed.mp4`），以及原始 PNG、`frames.jsonl`、`ground_truth.npz`、`metadata.json`、`simulation.json` 和 `diagnostics.json`。PNG 为算法输入，H.264 视频用于浏览。帧时间与实际物理步时间的偏差单独记录，视频按标称帧率播放。
+
+完整说明与本机结果见 [docs/moving_stereo_validation.md](docs/moving_stereo_validation.md)。仍采用匀速曝光近似，接触期间的误差单独报告；没有实现规则轨迹、CSV 回放或足球检测算法。
