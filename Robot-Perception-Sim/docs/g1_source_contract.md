@@ -31,3 +31,30 @@
 用该契约逐项核对 USD/PhysX 的自由基座、22关节轴方向/limits、20动作映射、质量/惯量和惯性坐标、视觉与碰撞几何、球门净口及碰撞过滤。额外相机外壳应保持无动态负载，真实相机质量另做实验。源端哈希不能证明转换后模型等价。
 
 之后才运行自由球、落体、弹跳、入门、撞框用例，在两个引擎以同一初态记录位置、速度、接触与结局。MuJoCo solref/solimp 不能直接当作 PhysX restitution；首弹高度、能量损失、接触时长与事件时刻都尚未配对验证。
+
+## MuJoCo 源端五类物理参考（追加）
+
+新增小型 CLI 直接调用现有 `Shot`、`preset_shots`、`run_shot`；全程 CPU、不渲染、无机器人。`run_shot` 内部继续使用原 `GoalDetector`，没有重写球物理或进门判定。
+
+```sh
+.venv/bin/python Robot-Perception-Sim/scripts/record_physics_reference.py
+.venv/bin/python -m pytest -q Robot-Perception-Sim/tests/test_physics_reference.py Robot-Perception-Sim/tests/test_isaac_source_contract.py
+```
+
+实际结果目录：`results/g1/physics_reference_20261023T173052_077419Z/`。`protocol.json` 保存固定输入和来源；`source_scene_absent.xml` 保存独立场景；每例两份 `*_repeat_0.json` / `*_repeat_1.json` 保存原 `run_shot` 的完整初态/末态、逐1ms球位置/线速度/角速度、真实接触onset和终局；`manifest.json` 保存实际观察、重复比较及来源哈希。未覆盖任何先前结果。若原判定器首先捕获整球出界，按原语义提前终止。
+
+| 输入案例 | 实际终局 | 实际事件/观察 | 两次完整记录 |
+|---|---|---|---|
+| free_fall，1.5m静止释放，0.1s | Timeout | 无接触；解析自由落体高度误差−0.0004905m，Vz误差约1.7e−15m/s | SHA一致 |
+| ground_bounce，1.2m静止释放，2s | Timeout | 实际ground接触；按下述阈值检测4次反弹；最低球心0.1035793m | SHA一致 |
+| center_low，原preset | Goal | 整球越过右门线，未碰门框 | SHA一致 |
+| post，原preset | Timeout | 0.232s碰右门的right_post_collision | SHA一致 |
+| crossbar，原preset | Timeout | 0.232s碰右门crossbar_collision | SHA一致 |
+
+表中名称仅说明输入意图；终局与碰撞来自实际记录。Timeout表示固定观察时长内没有整球出界，不等于失败或进球。球门接触与进球分别记录。
+
+接触记录是原 recorder 的**新接触pair onset**，含soft-contact反复开闭；ground_bounce有119个onset，不能把它们称为119次反弹。新增离线标签要求真实ground onset前Vz为负，且在下个ground onset前某个样本Vz大于0.05m/s；一个onset最多对应一次反弹。该阈值在protocol冻结，微小静态抖动不计入标签。原onset时间是`mj_step`前时刻，after速度是该步结束时刻；事件分辨率1ms，不声称精确撞击时刻或完整接触力/时长。
+
+新增标签边界测试与原源契约测试合计 **6 passed**。另在临时工作目录运行父工程原球物理/门碰撞/进球检测回归：**48 passed**；其中既有异常状态拒绝测试故意注入1e100m/s异常速度并触发原生MuJoCo警告，未将警告算作正常物理参考。五类实际参考均为有限状态，重复的完整记录（含状态、轨迹、事件）各自SHA完全相同。
+
+这些仅是MuJoCo源端参考；尚未生成USD、未采集PhysX对应轨迹，也未完成跨引擎首弹高度、能量损失、接触时长或终局配对。G1 Gate仍未通过。
