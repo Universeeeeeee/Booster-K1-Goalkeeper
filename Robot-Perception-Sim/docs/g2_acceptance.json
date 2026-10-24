@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "date_local": "2026-10-24",
+  "timezone": "Asia/Shanghai",
+  "scope": "G2 fixed-environment single virtual ZED X SDK PoC; not the full project",
+  "status": "passed",
+  "gpu_physical_indices": [
+    0
+  ],
+  "port_reused": 30000,
+  "versions": {
+    "isaac": "4.5.0-rc.36+release.19112.f59b3005.gl",
+    "zed_extension": "v3.2.0",
+    "receiver_sdk": "5.0.7",
+    "host_driver": "575.57.08",
+    "sender_userspace": "isolated Ubuntu22 on unchanged Ubuntu20 host"
+  },
+  "runs": [
+    {
+      "sender": "sender_022_final",
+      "receiver": "receiver_007_final",
+      "exit_codes": {
+        "sender": 0,
+        "receiver": 0
+      },
+      "sdk_frames": 100,
+      "source_pixel_reference_matches": 100,
+      "reference_residual_ns_max": 0,
+      "depth_plane_median_m": 2.0188835859298706,
+      "depth_absolute_error_m": 0.018883585929870605,
+      "central_depth_valid_fraction_min": 1.0,
+      "receiver_host_fps": 9.964909828235553,
+      "unobserved_author_state_updates": 193,
+      "independent_report": "results/g2/receiver_007_final_parent_readback.json",
+      "independent_report_sha256": "839a037a99c8beba4292780bb51095629d1b6efdbafb96f72adb3e596da82714",
+      "sender_metadata_sha256": "01cbba91a27f1abcdcbfda281f797fbc6db7b02ab6f744d99b87327934579786"
+    },
+    {
+      "sender": "sender_023_final",
+      "receiver": "receiver_008_final",
+      "exit_codes": {
+        "sender": 0,
+        "receiver": 0
+      },
+      "sdk_frames": 100,
+      "source_pixel_reference_matches": 100,
+      "reference_residual_ns_max": 0,
+      "depth_plane_median_m": 2.018857479095459,
+      "depth_absolute_error_m": 0.018857479095458984,
+      "central_depth_valid_fraction_min": 1.0,
+      "receiver_host_fps": 9.91365860162898,
+      "unobserved_author_state_updates": 192,
+      "independent_report": "results/g2/receiver_008_final_parent_readback.json",
+      "independent_report_sha256": "7a1e2198be775f747001c865ac1c329097f17ab8f635acf6a5d4261f9ea1b05c",
+      "sender_metadata_sha256": "01cbba91a27f1abcdcbfda281f797fbc6db7b02ab6f744d99b87327934579786"
+    }
+  ],
+  "negative_scene_error_exit": 1,
+  "unit_tests_passed": 17,
+  "source_sha256": {
+    "scripts/zed_sim_poc.py": "6167ee231c3388c363f56b66b8e0cf60360748ac9ee1edb318f0ef6e854b9278",
+    "scripts/verify_zed_sdk_stream.py": "a3929b389a59c24bb8e56e5ae940d4e1c5f5d0be98a7e4676ed142a849d3821b",
+    "isaac/zed_sdk_receiver.cpp": "0cf5aea1ecae325b5ad218113aad968902739e40c5a801e9dbe202d999f16e20",
+    "isaac/CMakeLists.txt": "c6c1ae5d31790d5b8b971d1b3325bdd220dc0a1cb38e9a3d6bd10a9d600c1ab7",
+    "isaac/run_in_ubuntu22.sh": "5a818118b852b9d7e3ba545c5b4281587ba905c9120b5040f0b109d2e45e1a09"
+  },
+  "depth_source_control": {
+    "receiver": "results/g2/receiver_002_right_shift",
+    "physical_plane_m": 2.0,
+    "actual_baseline_m": 0.14,
+    "sdk_baseline_m": 0.12,
+    "observed_sdk_depth_m": 1.7191205,
+    "expected_miscalibrated_depth_m": 1.714285714285714,
+    "interpretation": "negative control, not correct physical distance"
+  },
+  "limits": [
+    "Full per-extension Kit shutdown=False remains unsupported; official default True tested with explicit error codes.",
+    "Raw SDK clock is paired render reference; World association uses event pixels, not a fitted epoch.",
+    "Configured30fps is not achieved recorded throughput; diagnostic CPU readback and disk costs included.",
+    "No real camera calibration, exposure realism, dynamic K1 or full-scene claims."
+  ],
+  "raw_data_locations": [
+    "Robot-Perception-Sim/results/g2",
+    "lizhengran-server:/home/lizhengran/isaacsim-workspace/g2_zed_poc/runs"
+  ]
+}

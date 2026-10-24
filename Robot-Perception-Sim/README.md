@@ -54,3 +54,7 @@ python Robot-Perception-Sim/scripts/record_stereo.py --preset post --duration 1 
 每次运行保存四个 MP4（`left_0ms.mp4`、`right_0ms.mp4`、`left_exposed.mp4`、`right_exposed.mp4`），以及原始 PNG、`frames.jsonl`、`ground_truth.npz`、`metadata.json`、`simulation.json` 和 `diagnostics.json`。PNG 为算法输入，H.264 视频用于浏览。帧时间与实际物理步时间的偏差单独记录，视频按标称帧率播放。
 
 完整说明与本机结果见 [docs/moving_stereo_validation.md](docs/moving_stereo_validation.md)。仍采用匀速曝光近似，接触期间的误差单独报告；没有实现规则轨迹、CSV 回放或足球检测算法。
+
+## Isaac / ZED SDK 独立 PoC
+
+G2 已在目标 Linux 主机完成两轮各100帧真实 SDK 验收，包括正常/异常退出、同端口重启、实际两目图像身份与渲染参考时间关联。固定环境、运行命令及适用边界见 [G2 验收报告](docs/zed_sdk_stream.md)。当前为单相机2m纹理平面、瞬时成像；不代表完整 K1 迁移、真实曝光或30fps实时性能已完成。
