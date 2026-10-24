@@ -1,0 +1,788 @@
+{
+  "scope": "G1 migration, five robot-absent PhysX cases, free-base runtime smoke; G2 frozen and G3 not started",
+  "migration_and_bounded_validation_complete": true,
+  "full_physics_equivalence_verified": false,
+  "source_parameters_changed": false,
+  "source_references_regenerated": false,
+  "inputs": [
+    {
+      "path": "results/g1/physics_comparison_20261024T071819_652815Z/comparison.json",
+      "sha256": "f8bea927a6103d78ef08d83e7292c52147993f13f6bdaa6a4736732c923268dd"
+    },
+    {
+      "path": "results/g1/robot_smoke_contacts_v6/robot_runtime_smoke.json",
+      "sha256": "686e0c906ee2080b3c2fa79a880a28aa69b9c660f4b9cf7cbcecc1665fc008af"
+    },
+    {
+      "path": "results/g1/physx_final_v6/manifest.json",
+      "sha256": "636a15d48ebfc14c746a3eb05644383174891eec8aa7a4f4a975011ecf251573"
+    },
+    {
+      "path": "results/g1/robot_smoke_contacts_v6/manifest.json",
+      "sha256": "54686fd13d9f2b0c9cc98fc2944e048a7885587b83c624e015c1d12be1b4d393"
+    }
+  ],
+  "cases": [
+    {
+      "case": "free_fall",
+      "repeats": 2,
+      "repeat_identical": true,
+      "source_record_hashes": [
+        "32b1ae619df20b7122c8e1378fe33675283ded2579ef2bb92eef614224fbccb7",
+        "32b1ae619df20b7122c8e1378fe33675283ded2579ef2bb92eef614224fbccb7"
+      ],
+      "target_record_hashes": [
+        "fcc4ee035f776c5a32b164cdb9c20e6f29f02ca0ee45b986b76933b63d3720a3",
+        "fcc4ee035f776c5a32b164cdb9c20e6f29f02ca0ee45b986b76933b63d3720a3"
+      ],
+      "source_outcome": "Timeout",
+      "physx_outcome": "Timeout",
+      "trajectory_errors": {
+        "method": "linear interpolation on union of original timestamps within overlap; no extrapolation",
+        "overlap_start_s": 0.0,
+        "overlap_end_s": 0.10000000000000007,
+        "aligned_samples": 200,
+        "source_end_s": 0.10000000000000007,
+        "target_end_s": 0.10000000474974513,
+        "position": {
+          "time_weighted_rms_m": 4.776501445133287e-08,
+          "max_m": 1.281701660360568e-07,
+          "at_overlap_end_m": 1.0415430717891638e-07
+        },
+        "velocity": {
+          "time_weighted_rms_m_s": 5.626248557940009e-07,
+          "max_m_s": 1.411302804177339e-06,
+          "at_overlap_end_m_s": 1.411302804177339e-06
+        }
+      },
+      "first_contacts": {},
+      "source_ground_rebound_count": 0,
+      "physx_ground_rebound_count": 0,
+      "source_first_rebound": null,
+      "physx_first_rebound": null,
+      "source_energy": {
+        "definition": "0.5*m*|v|^2 + 0.5*sum(I*w_body^2) - m*g dot position; datum z=0",
+        "initial_j": 6.32745,
+        "final_j": 6.325380923849998,
+        "change_j": -0.0020690761500015142
+      },
+      "physx_energy": {
+        "definition": "0.5*m*|v|^2 + 0.5*sum(I*w_body^2) - m*g dot position; datum z=0",
+        "initial_j": 6.32745,
+        "final_j": 6.325380767875127,
+        "change_j": -0.002069232124872755
+      }
+    },
+    {
+      "case": "ground_bounce",
+      "repeats": 2,
+      "repeat_identical": true,
+      "source_record_hashes": [
+        "177f20dae2a42736b74800aa6a6eee46281a5534e742d2daef1d67f6cdddf037",
+        "177f20dae2a42736b74800aa6a6eee46281a5534e742d2daef1d67f6cdddf037"
+      ],
+      "target_record_hashes": [
+        "06520bc5a252e7bdb4dc4121c33f85577439f90f750c23361be4c31222d7be6d",
+        "06520bc5a252e7bdb4dc4121c33f85577439f90f750c23361be4c31222d7be6d"
+      ],
+      "source_outcome": "Timeout",
+      "physx_outcome": "Timeout",
+      "trajectory_errors": {
+        "method": "linear interpolation on union of original timestamps within overlap; no extrapolation",
+        "overlap_start_s": 0.0,
+        "overlap_end_s": 1.9999999999998905,
+        "aligned_samples": 4000,
+        "source_end_s": 1.9999999999998905,
+        "target_end_s": 2.0000000949949026,
+        "position": {
+          "time_weighted_rms_m": 0.002872482971200939,
+          "max_m": 0.011921543506382798,
+          "at_overlap_end_m": 1.1283776329947874e-05
+        },
+        "velocity": {
+          "time_weighted_rms_m_s": 0.21284913298024685,
+          "max_m_s": 4.883031393839527,
+          "at_overlap_end_m_s": 0.0005271943799089998
+        }
+      },
+      "first_contacts": {
+        "ground": {
+          "source": {
+            "time_s": 0.47100000000000036,
+            "kind": "ground",
+            "observation": "source contact-pair onset"
+          },
+          "target": {
+            "time_s": 0.47100002237129956,
+            "kind": "ground",
+            "observation": "CONTACT_FOUND"
+          },
+          "target_minus_source_s": 2.2371299202017525e-08
+        }
+      },
+      "source_ground_rebound_count": 4,
+      "physx_ground_rebound_count": 3,
+      "source_first_rebound": {
+        "ground_contact_onset_s": 0.47100000000000036,
+        "first_upward_sample_s": 0.47500000000000037,
+        "sampled_apex_time_s": 0.6360000000000005,
+        "sampled_apex_center_height_m": 0.2297635655733633,
+        "sampled_apex_clearance_m": 0.1197635655733633,
+        "apex_bracketed_by_descent": true,
+        "energy_before_onset_sample_j": 5.052214651333459,
+        "energy_at_apex_sample_j": 0.9692116681689413,
+        "energy_change_to_apex_j": -4.083002983164518,
+        "energy_fraction_retained_to_apex": 0.19183897262028085
+      },
+      "physx_first_rebound": {
+        "ground_contact_onset_s": 0.47100002237129956,
+        "first_upward_sample_s": 0.472000022418797,
+        "sampled_apex_time_s": 0.6280000298283994,
+        "sampled_apex_center_height_m": 0.22911889851093292,
+        "sampled_apex_clearance_m": 0.11911889851093292,
+        "apex_bracketed_by_descent": true,
+        "energy_before_onset_sample_j": 5.052201823507266,
+        "energy_at_apex_sample_j": 0.9664961118504906,
+        "energy_change_to_apex_j": -4.085705711656775,
+        "energy_fraction_retained_to_apex": 0.19130196013815293
+      },
+      "source_energy": {
+        "definition": "0.5*m*|v|^2 + 0.5*sum(I*w_body^2) - m*g dot position; datum z=0",
+        "initial_j": 5.06196,
+        "final_j": 0.4639663100519147,
+        "change_j": -4.597993689948085
+      },
+      "physx_energy": {
+        "definition": "0.5*m*|v|^2 + 0.5*sum(I*w_body^2) - m*g dot position; datum z=0",
+        "initial_j": 5.061960201144219,
+        "final_j": 0.46401405937735624,
+        "change_j": -4.597946141766863
+      }
+    },
+    {
+      "case": "center_low",
+      "repeats": 2,
+      "repeat_identical": true,
+      "source_record_hashes": [
+        "9a2478306a9ae832e7a7d845c7d8e8d6ab741d44cb3683a3d16d118b218f9d4c",
+        "9a2478306a9ae832e7a7d845c7d8e8d6ab741d44cb3683a3d16d118b218f9d4c"
+      ],
+      "target_record_hashes": [
+        "46c94db41299ce6baed2f51e6282fa2990a206460f9abb47935a69678426ac20",
+        "46c94db41299ce6baed2f51e6282fa2990a206460f9abb47935a69678426ac20"
+      ],
+      "source_outcome": "Goal",
+      "physx_outcome": "Goal",
+      "trajectory_errors": {
+        "method": "linear interpolation on union of original timestamps within overlap; no extrapolation",
+        "overlap_start_s": 0.0,
+        "overlap_end_s": 0.5140000000000003,
+        "aligned_samples": 1028,
+        "source_end_s": 0.5140000000000003,
+        "target_end_s": 0.51400002441369,
+        "position": {
+          "time_weighted_rms_m": 0.0005933660785122788,
+          "max_m": 0.001305309948057158,
+          "at_overlap_end_m": 0.001305309948057158
+        },
+        "velocity": {
+          "time_weighted_rms_m_s": 0.014625169076490368,
+          "max_m_s": 0.18286458405076592,
+          "at_overlap_end_m_s": 0.0037440815224904674
+        }
+      },
+      "first_contacts": {
+        "ground": {
+          "source": {
+            "time_s": 0.014000000000000005,
+            "kind": "ground",
+            "observation": "source contact-pair onset"
+          },
+          "target": {
+            "time_s": 0.0,
+            "kind": "ground",
+            "observation": "CONTACT_PERSISTS"
+          },
+          "target_minus_source_s": -0.014000000000000005
+        }
+      },
+      "source_ground_rebound_count": 0,
+      "physx_ground_rebound_count": 0,
+      "source_first_rebound": null,
+      "physx_first_rebound": null,
+      "source_energy": {
+        "definition": "0.5*m*|v|^2 + 0.5*sum(I*w_body^2) - m*g dot position; datum z=0",
+        "initial_j": 23.40156463334215,
+        "final_j": 23.365799211040713,
+        "change_j": -0.035765422301437866
+      },
+      "physx_energy": {
+        "definition": "0.5*m*|v|^2 + 0.5*sum(I*w_body^2) - m*g dot position; datum z=0",
+        "initial_j": 23.401564464409027,
+        "final_j": 23.40119529611781,
+        "change_j": -0.00036916829121835804
+      }
+    },
+    {
+      "case": "post",
+      "repeats": 2,
+      "repeat_identical": true,
+      "source_record_hashes": [
+        "d93069534ad50886a7b5214cdb02392c1d8261e3b8090bf0c21304fb5dadf258",
+        "d93069534ad50886a7b5214cdb02392c1d8261e3b8090bf0c21304fb5dadf258"
+      ],
+      "target_record_hashes": [
+        "ae89a707a351fd0c872a2409522ea5e45f6ad98b5af6a88db7c8ed167056fcd1",
+        "ae89a707a351fd0c872a2409522ea5e45f6ad98b5af6a88db7c8ed167056fcd1"
+      ],
+      "source_outcome": "Timeout",
+      "physx_outcome": "Timeout",
+      "trajectory_errors": {
+        "method": "linear interpolation on union of original timestamps within overlap; no extrapolation",
+        "overlap_start_s": 0.0,
+        "overlap_end_s": 2.9999999999997806,
+        "aligned_samples": 6000,
+        "source_end_s": 2.9999999999997806,
+        "target_end_s": 3.000000142492354,
+        "position": {
+          "time_weighted_rms_m": 0.5258656579918232,
+          "max_m": 0.9261448119871396,
+          "at_overlap_end_m": 0.9261448119871396
+        },
+        "velocity": {
+          "time_weighted_rms_m_s": 0.43977020976277836,
+          "max_m_s": 10.684112046206659,
+          "at_overlap_end_m_s": 0.31334289280074834
+        }
+      },
+      "first_contacts": {
+        "goal_right_right_post_collision": {
+          "source": {
+            "time_s": 0.23200000000000018,
+            "kind": "goal",
+            "observation": "source contact-pair onset"
+          },
+          "target": {
+            "time_s": 0.23100001097191125,
+            "kind": "goal",
+            "observation": "CONTACT_FOUND"
+          },
+          "target_minus_source_s": -0.0009999890280889268
+        },
+        "ground": {
+          "source": {
+            "time_s": 0.3020000000000002,
+            "kind": "ground",
+            "observation": "source contact-pair onset"
+          },
+          "target": {
+            "time_s": 0.3020000143442303,
+            "kind": "ground",
+            "observation": "CONTACT_FOUND"
+          },
+          "target_minus_source_s": 1.4344230081508869e-08
+        }
+      },
+      "source_ground_rebound_count": 3,
+      "physx_ground_rebound_count": 3,
+      "source_first_rebound": {
+        "ground_contact_onset_s": 0.3020000000000002,
+        "first_upward_sample_s": 0.3050000000000002,
+        "sampled_apex_time_s": 0.4000000000000003,
+        "sampled_apex_center_height_m": 0.15001550862116975,
+        "sampled_apex_clearance_m": 0.040015508621169746,
+        "apex_bracketed_by_descent": true,
+        "energy_before_onset_sample_j": 3.9369535532900044,
+        "energy_at_apex_sample_j": 2.763168443447533,
+        "energy_change_to_apex_j": -1.1737851098424712,
+        "energy_fraction_retained_to_apex": 0.701854468447673
+      },
+      "physx_first_rebound": {
+        "ground_contact_onset_s": 0.3020000143442303,
+        "first_upward_sample_s": 0.30300001439172775,
+        "sampled_apex_time_s": 0.37500001781154424,
+        "sampled_apex_center_height_m": 0.13540470600128174,
+        "sampled_apex_clearance_m": 0.025404706001281738,
+        "apex_bracketed_by_descent": true,
+        "energy_before_onset_sample_j": 3.1804164472853667,
+        "energy_at_apex_sample_j": 2.142610728112633,
+        "energy_change_to_apex_j": -1.0378057191727335,
+        "energy_fraction_retained_to_apex": 0.6736887334177419
+      },
+      "source_energy": {
+        "definition": "0.5*m*|v|^2 + 0.5*sum(I*w_body^2) - m*g dot position; datum z=0",
+        "initial_j": 15.86915,
+        "final_j": 2.5379042028090804,
+        "change_j": -13.331245797190919
+      },
+      "physx_energy": {
+        "definition": "0.5*m*|v|^2 + 0.5*sum(I*w_body^2) - m*g dot position; datum z=0",
+        "initial_j": 15.86915,
+        "final_j": 2.036590925312031,
+        "change_j": -13.832559074687968
+      }
+    },
+    {
+      "case": "crossbar",
+      "repeats": 2,
+      "repeat_identical": true,
+      "source_record_hashes": [
+        "28f006107a509125ea2b8756564d7e6d9e1eab71dc01b927755893c679fba978",
+        "28f006107a509125ea2b8756564d7e6d9e1eab71dc01b927755893c679fba978"
+      ],
+      "target_record_hashes": [
+        "22708edbd9b077a06de9279c11090cbaa0ef64c7f123f97e1584f03120bb3592",
+        "22708edbd9b077a06de9279c11090cbaa0ef64c7f123f97e1584f03120bb3592"
+      ],
+      "source_outcome": "Timeout",
+      "physx_outcome": "Timeout",
+      "trajectory_errors": {
+        "method": "linear interpolation on union of original timestamps within overlap; no extrapolation",
+        "overlap_start_s": 0.0,
+        "overlap_end_s": 2.9999999999997806,
+        "aligned_samples": 6000,
+        "source_end_s": 2.9999999999997806,
+        "target_end_s": 3.000000142492354,
+        "position": {
+          "time_weighted_rms_m": 0.5286629450181989,
+          "max_m": 0.8691377214418988,
+          "at_overlap_end_m": 0.8691377214418988
+        },
+        "velocity": {
+          "time_weighted_rms_m_s": 0.6754687535106543,
+          "max_m_s": 8.319981216047344,
+          "at_overlap_end_m_s": 0.2382995988653829
+        }
+      },
+      "first_contacts": {
+        "goal_right_crossbar_collision": {
+          "source": {
+            "time_s": 0.23200000000000018,
+            "kind": "goal",
+            "observation": "source contact-pair onset"
+          },
+          "target": {
+            "time_s": 0.2320000110194087,
+            "kind": "goal",
+            "observation": "CONTACT_FOUND"
+          },
+          "target_minus_source_s": 1.1019408524548524e-08
+        },
+        "ground": {
+          "source": {
+            "time_s": 0.9100000000000007,
+            "kind": "ground",
+            "observation": "source contact-pair onset"
+          },
+          "target": {
+            "time_s": 0.9020000428427011,
+            "kind": "ground",
+            "observation": "CONTACT_FOUND"
+          },
+          "target_minus_source_s": -0.00799995715729962
+        }
+      },
+      "source_ground_rebound_count": 4,
+      "physx_ground_rebound_count": 3,
+      "source_first_rebound": {
+        "ground_contact_onset_s": 0.9100000000000007,
+        "first_upward_sample_s": 0.9140000000000007,
+        "sampled_apex_time_s": 1.1389999999999854,
+        "sampled_apex_center_height_m": 0.3485979462507123,
+        "sampled_apex_clearance_m": 0.2385979462507123,
+        "apex_bracketed_by_descent": true,
+        "energy_before_onset_sample_j": 10.75448895363181,
+        "energy_at_apex_sample_j": 2.695160247943866,
+        "energy_change_to_apex_j": -8.059328705687944,
+        "energy_fraction_retained_to_apex": 0.25060793307465395
+      },
+      "physx_first_rebound": {
+        "ground_contact_onset_s": 0.9020000428427011,
+        "first_upward_sample_s": 0.9030000428901985,
+        "sampled_apex_time_s": 1.1120000528171659,
+        "sampled_apex_center_height_m": 0.3237159550189972,
+        "sampled_apex_clearance_m": 0.2137159550189972,
+        "apex_bracketed_by_descent": true,
+        "energy_before_onset_sample_j": 10.213421685226876,
+        "energy_at_apex_sample_j": 2.267102172012029,
+        "energy_change_to_apex_j": -7.946319513214847,
+        "energy_fraction_retained_to_apex": 0.2219728355376985
+      },
+      "source_energy": {
+        "definition": "0.5*m*|v|^2 + 0.5*sum(I*w_body^2) - m*g dot position; datum z=0",
+        "initial_j": 22.688625148437502,
+        "final_j": 1.6548706853254458,
+        "change_j": -21.033754463112057
+      },
+      "physx_energy": {
+        "definition": "0.5*m*|v|^2 + 0.5*sum(I*w_body^2) - m*g dot position; datum z=0",
+        "initial_j": 22.688625015179454,
+        "final_j": 1.3660268758421725,
+        "change_j": -21.32259813933728
+      }
+    }
+  ],
+  "runtime_robot": {
+    "num_dof": 22,
+    "body_count": 23,
+    "mass_sum_kg": 19.665999464690685,
+    "body_errors": [
+      {
+        "name": "trunk",
+        "mass_error_kg": 4.76837158203125e-07,
+        "principal_inertia_max_error_kg_m2": 7.096038714959896e-09
+      },
+      {
+        "name": "aahead_yaw_link",
+        "mass_error_kg": 1.1920928966180355e-08,
+        "principal_inertia_max_error_kg_m2": 4.693297709018954e-11
+      },
+      {
+        "name": "aaleft_shoulder_pitch_link",
+        "mass_error_kg": 0.0,
+        "principal_inertia_max_error_kg_m2": 5.6112563814186833e-11
+      },
+      {
+        "name": "aaright_shoulder_pitch_link",
+        "mass_error_kg": 0.0,
+        "principal_inertia_max_error_kg_m2": 1.698899926988462e-10
+      },
+      {
+        "name": "left_hip_pitch_link",
+        "mass_error_kg": 2.38418573772492e-09,
+        "principal_inertia_max_error_kg_m2": 1.6255485954692894e-10
+      },
+      {
+        "name": "right_hip_pitch_link",
+        "mass_error_kg": 2.38418573772492e-09,
+        "principal_inertia_max_error_kg_m2": 1.7623728431476193e-10
+      },
+      {
+        "name": "aahead_pitch_link",
+        "mass_error_kg": 1.1920928910669204e-08,
+        "principal_inertia_max_error_kg_m2": 3.6167384798863056e-10
+      },
+      {
+        "name": "left_shoulder_roll_link",
+        "mass_error_kg": 3.5762786898541066e-09,
+        "principal_inertia_max_error_kg_m2": 3.097858639533255e-11
+      },
+      {
+        "name": "right_shoulder_roll_link",
+        "mass_error_kg": 3.5762786898541066e-09,
+        "principal_inertia_max_error_kg_m2": 3.097858789966306e-11
+      },
+      {
+        "name": "left_hip_roll_link",
+        "mass_error_kg": 4.768371586472142e-09,
+        "principal_inertia_max_error_kg_m2": 6.918570024608967e-11
+      },
+      {
+        "name": "right_hip_roll_link",
+        "mass_error_kg": 4.768371586472142e-09,
+        "principal_inertia_max_error_kg_m2": 6.918570024608967e-11
+      },
+      {
+        "name": "left_elbow_pitch_link",
+        "mass_error_kg": 1.1920928910669204e-08,
+        "principal_inertia_max_error_kg_m2": 1.4913080440687176e-09
+      },
+      {
+        "name": "right_elbow_pitch_link",
+        "mass_error_kg": 1.1920928910669204e-08,
+        "principal_inertia_max_error_kg_m2": 1.5251287220977017e-09
+      },
+      {
+        "name": "left_hip_yaw_link",
+        "mass_error_kg": 2.3841857821338408e-08,
+        "principal_inertia_max_error_kg_m2": 3.045229918924308e-09
+      },
+      {
+        "name": "right_hip_yaw_link",
+        "mass_error_kg": 2.3841857821338408e-08,
+        "principal_inertia_max_error_kg_m2": 4.507376531043272e-09
+      },
+      {
+        "name": "left_elbow_yaw_link",
+        "mass_error_kg": 2.384185793236071e-09,
+        "principal_inertia_max_error_kg_m2": 6.060259750625963e-10
+      },
+      {
+        "name": "right_elbow_yaw_link",
+        "mass_error_kg": 2.384185793236071e-09,
+        "principal_inertia_max_error_kg_m2": 7.759855236676161e-10
+      },
+      {
+        "name": "left_knee_pitch_link",
+        "mass_error_kg": 0.0,
+        "principal_inertia_max_error_kg_m2": 2.6057132007650807e-09
+      },
+      {
+        "name": "right_knee_pitch_link",
+        "mass_error_kg": 0.0,
+        "principal_inertia_max_error_kg_m2": 2.3747246842564795e-09
+      },
+      {
+        "name": "left_ankle_pitch_link",
+        "mass_error_kg": 8.046627045232846e-10,
+        "principal_inertia_max_error_kg_m2": 1.0099028987479042e-14
+      },
+      {
+        "name": "right_ankle_pitch_link",
+        "mass_error_kg": 8.046627045232846e-10,
+        "principal_inertia_max_error_kg_m2": 1.0099028987479042e-14
+      },
+      {
+        "name": "left_ankle_roll_link",
+        "mass_error_kg": 1.2159347528850617e-08,
+        "principal_inertia_max_error_kg_m2": 2.242049187365508e-10
+      },
+      {
+        "name": "right_ankle_roll_link",
+        "mass_error_kg": 1.2159347528850617e-08,
+        "principal_inertia_max_error_kg_m2": 2.242049187365508e-10
+      }
+    ],
+    "maximum_joint_limit_error_rad": 1.2874603272372553e-07,
+    "initial": {
+      "base_position": [
+        10.399999618530273,
+        1.1641532182693481e-10,
+        0.5536900162696838
+      ],
+      "base_quaternion_wxyz": [
+        0.0,
+        0.0,
+        2.0736479200422764e-10,
+        1.0
+      ],
+      "base_linear_velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "base_angular_velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "joint_positions": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "joint_velocities": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dof_names": [
+        "aahead_yaw_joint",
+        "aaleft_shoulder_pitch_joint",
+        "aaright_shoulder_pitch_joint",
+        "left_hip_pitch_joint",
+        "right_hip_pitch_joint",
+        "aahead_pitch_joint",
+        "left_shoulder_roll_joint",
+        "right_shoulder_roll_joint",
+        "left_hip_roll_joint",
+        "right_hip_roll_joint",
+        "left_elbow_pitch_joint",
+        "right_elbow_pitch_joint",
+        "left_hip_yaw_joint",
+        "right_hip_yaw_joint",
+        "left_elbow_yaw_joint",
+        "right_elbow_yaw_joint",
+        "left_knee_pitch_joint",
+        "right_knee_pitch_joint",
+        "left_ankle_pitch_joint",
+        "right_ankle_pitch_joint",
+        "left_ankle_roll_joint",
+        "right_ankle_roll_joint"
+      ],
+      "num_dof": 22
+    },
+    "after_100_steps": {
+      "base_position": [
+        10.399654388427734,
+        -2.474698703736067e-06,
+        0.5516855120658875
+      ],
+      "base_quaternion_wxyz": [
+        -3.528629895299673e-05,
+        0.001943289302289486,
+        3.3553769753780216e-06,
+        0.999998152256012
+      ],
+      "base_linear_velocity": [
+        -0.002312851371243596,
+        -8.987396722659469e-05,
+        0.0007784368935972452
+      ],
+      "base_angular_velocity": [
+        -0.004642440006136894,
+        0.0884699895977974,
+        -0.001348950550891459
+      ],
+      "joint_positions": [
+        -8.895904466044158e-05,
+        0.01785608008503914,
+        0.018660008907318115,
+        0.004992151167243719,
+        0.005526851862668991,
+        0.03674826771020889,
+        -0.21088077127933502,
+        0.2109086811542511,
+        4.887159957434051e-05,
+        -0.0002151044609490782,
+        -0.011176499538123608,
+        -0.01120773795992136,
+        -5.9425528888823465e-05,
+        7.605877181049436e-05,
+        -0.006355889141559601,
+        0.006318656727671623,
+        3.3749285648809746e-05,
+        0.0002192626998294145,
+        -0.0011394553584977984,
+        -0.0018604526994749904,
+        -5.4964777518762276e-05,
+        0.00020829516870435327
+      ],
+      "joint_velocities": [
+        0.0018557459115982056,
+        0.2678035497665405,
+        0.2601800560951233,
+        0.10584689676761627,
+        0.11433930695056915,
+        0.7930136322975159,
+        -4.354251384735107,
+        4.341569423675537,
+        -0.009722357615828514,
+        -0.009629057720303535,
+        -0.19613461196422577,
+        -0.1875065118074417,
+        0.0040692901238799095,
+        0.0001241321733687073,
+        -0.17689703404903412,
+        0.1833183616399765,
+        -0.0036665871739387512,
+        0.017857322469353676,
+        0.038836244493722916,
+        -0.030279546976089478,
+        -0.004216242115944624,
+        -0.0034826984629034996
+      ],
+      "dof_names": [
+        "aahead_yaw_joint",
+        "aaleft_shoulder_pitch_joint",
+        "aaright_shoulder_pitch_joint",
+        "left_hip_pitch_joint",
+        "right_hip_pitch_joint",
+        "aahead_pitch_joint",
+        "left_shoulder_roll_joint",
+        "right_shoulder_roll_joint",
+        "left_hip_roll_joint",
+        "right_hip_roll_joint",
+        "left_elbow_pitch_joint",
+        "right_elbow_pitch_joint",
+        "left_hip_yaw_joint",
+        "right_hip_yaw_joint",
+        "left_elbow_yaw_joint",
+        "right_elbow_yaw_joint",
+        "left_knee_pitch_joint",
+        "right_knee_pitch_joint",
+        "left_ankle_pitch_joint",
+        "right_ankle_pitch_joint",
+        "left_ankle_roll_joint",
+        "right_ankle_roll_joint"
+      ],
+      "num_dof": 22
+    },
+    "free_base_displacement_m": [
+      -0.0003452301025390625,
+      -2.4748151190578938e-06,
+      -0.0020045042037963867
+    ],
+    "first_step_contacts": [
+      {
+        "type": "ContactEventType.CONTACT_PERSIST",
+        "colliders": [
+          "/World/Bodies/b28_ball/g102_ball_collision",
+          "/World/Bodies/b0_world/g0_ground"
+        ],
+        "separations_m": [
+          0.000321999192237854
+        ]
+      }
+    ],
+    "first_step_contact_semantics": "reports from first1ms step after exact source state reset, not pre-step contact query",
+    "policy_to_physx_indices": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ]
+  },
+  "limitations": [
+    "Contact law is not equivalent; first apex restitution estimate is fitted on frozen source drop.",
+    "No rolling/torsional friction equivalence; source4 vs PhysX3 ground_bounce rebounds.",
+    "Full robot scene ball material priority differs from absent fixture.",
+    "No walk policy, standing stability, G1+G2 integration, exposure or G3 validation.",
+    "Source contact onsets cannot recover exact contact duration.",
+    "PhysX first-observed PERSISTS is not a new impact."
+  ]
+}

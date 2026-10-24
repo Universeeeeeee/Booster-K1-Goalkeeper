@@ -1,5 +1,7 @@
 # G1 MuJoCo 源资产契约（迁移前冻结）
 
+后续进展：本文保留迁移前冻结记录；本轮 USD/PhysX 迁移与对照见 [G1报告](physics_parity.md)。以下“尚未迁移”等描述指冻结时状态，原始参考数据未修改。
+
 当前仅完成 G1 的源端契约准备，**没有生成 USD、没有运行 Isaac/PhysX、没有通过 G1 Gate**。此工作可与 G2 SDK 最小场景独立推进，不加载 GPU、不运行控制器、不执行物理步。
 
 实际证据：`results/g1/source_contract_20261023T172323_398380Z/asset_manifest.json` 与同目录 `source_scene.xml`。结果目录被 Git 忽略，保留在本地；本文记录复现命令和实测摘要。

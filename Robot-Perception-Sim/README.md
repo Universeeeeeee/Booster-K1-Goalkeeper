@@ -58,3 +58,7 @@ python Robot-Perception-Sim/scripts/record_stereo.py --preset post --duration 1 
 ## Isaac / ZED SDK 独立 PoC
 
 G2 已在目标 Linux 主机完成两轮各100帧真实 SDK 验收，包括正常/异常退出、同端口重启、实际两目图像身份与渲染参考时间关联。固定环境、运行命令及适用边界见 [G2 验收报告](docs/zed_sdk_stream.md)。当前为单相机2m纹理平面、瞬时成像；不代表完整 K1 迁移、真实曝光或30fps实时性能已完成。
+
+## Isaac / PhysX G1 迁移
+
+已生成自包含K1/球场/球门/足球USD，完成五类无机器人PhysX各两次对照及自由基座22DoF运行检查。终局一致，但撞框后轨迹和完整场景材料规则仍有差异，不能宣称完整物理等价。资产、实际数据、时间步修复和复现命令见 [G1报告](docs/physics_parity.md)。G2保持冻结，本轮未开发G3。
