@@ -294,7 +294,7 @@ def read_capture(root, expected_frames):
                                       "max": float(intervals.max())},
             "depth_source_declared": metadata["depth_source"],
             "provenance_verified_by_this_script": False,
-            "frame_association": "single-grab timestamp guard; no independent Mat timestamp API",
+            "frame_association": "single-grab timestamp guard; Mat manipulation time is not independent per-eye sensor capture time",
             "plane_median_m": float(np.median([row["plane_median_m"] for row in rows])),
             "minimum_plane_valid_fraction": min(row["plane_valid_fraction"] for row in rows),
             "disparity_checks": disparity_checks, "per_frame": rows}

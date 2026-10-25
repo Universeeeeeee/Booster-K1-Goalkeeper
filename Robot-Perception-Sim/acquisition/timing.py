@@ -66,3 +66,14 @@ def rational_seconds(value):
     """JSON-safe exact seconds; retain this alongside any display float."""
     value = _fraction(value, "seconds")
     return {"numerator": value.numerator, "denominator": value.denominator}
+
+
+def exposure_sample_times(start_s, exposure_ms, fps, samples):
+    """Exact midpoint quadrature times shared by both eyes, including zero baseline."""
+    if type(samples) is not int or samples <= 0:
+        raise ValueError("samples must be a positive integer")
+    window = exposure_window(start_s, exposure_ms, fps)
+    duration = window["end_s"] - window["start_s"]
+    if duration == 0:
+        return (window["start_s"],)
+    return tuple(window["start_s"] + Fraction(2*i + 1, 2*samples) * duration for i in range(samples))

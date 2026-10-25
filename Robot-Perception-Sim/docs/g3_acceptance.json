@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "g2_prior_gate": "passed ba4b57b fixed-version100frame PoC; not realtime/exposure gate",
-  "g3_full_gate_passed": false,
-  "status": "local finite-exposure and replay validated; SDK current-run validation pending",
+  "g3_full_gate_passed": true,
+  "status": "passed for the documented fixed-version offline simulation acquisition profile",
   "exposure_matrix": {
     "frames": 63,
     "png_count": 378,
@@ -56,7 +56,9 @@
         2,
         4,
         4
-      ]
+      ],
+      "source_snapshot_commit": "da4540c",
+      "source_snapshots_verified_against_recorded_sha256": true
     },
     "diagnostics": {
       "frames_visible_in_both_eyes": 6,
@@ -97,17 +99,689 @@
     },
     {
       "path": "results/g3/k1_recording_final/parent_readback.json",
-      "sha256": "594f67450838b60280f3c3aa27f11543d08364f9b2ffef6432cbfdb1ca213a5c"
+      "sha256": "dbaa41a1f73174fdee2fda248cbd62298dd828dce508359dc8a8b3bc75ba6383"
     }
   ],
   "limitations": [
-    "MuJoCo uses constant qvel and encoded RGB averaging, not contact-aware radiance integration.",
-    "60/120/200Hz scheduling tests do not prove actual SDK throughput or IMU acquisition.",
-    "SDK finite exposure requires delivered-pixel validation; no metadata-only completion claim."
+    "Finite exposure is midpoint quadrature of encoded RGB; not linear radiometry, native ISP or hardware calibration.",
+    "SDK images are obtained from real vendor APIs after offline precomputation and replay; this is not an online physics or real-time60/120fps claim.",
+    "120Hz RGB and200Hz IMU scheduling are exact in tests; actual SDK120fps or200Hz sensor acquisition was not validated.",
+    "Source sphere/camera poses and joined files are diagnostic oracle data, separate from observation inputs.",
+    "Unreceived published IDs include startup/stop; they are not identified network drops.",
+    "G1 full contact equivalence remains unverified, and G4/later stages are not part of G3."
   ],
   "tests": {
-    "focused_with_existing_render_regression_passed": 133,
-    "includes_sdk_verifier_unit_tests": true,
-    "actual_sdk_capture_proven_by_unit_tests": false
-  }
+    "focused_with_actual_render_and_integration_passed": 185,
+    "project_nonrender_passed": 194,
+    "project_render_and_integration_covered": 13,
+    "cpp_invalid_calibration_cli_cases_passed": 2,
+    "tests_do_not_replace_actual_sdk_evidence": true,
+    "final_all_project_tests_passed": 207,
+    "final_all_project_tests_duration_s": 3.77
+  },
+  "scope": "G3 sampling, shared exposure, replayable poses and genuine SDK image/clock association; no hardware ISP or real-time-throughput claim",
+  "date_local": "2026-10-25",
+  "timezone": "Asia/Shanghai",
+  "versions": {
+    "isaac": "4.5.0-rc.36+release.19112.f59b3005.gl",
+    "zed_extension": "v3.2.0",
+    "sender_private_sdk": "5.1.0",
+    "receiver_sdk": "5.1.0",
+    "host_driver": "575.57.08",
+    "userspace": "isolated G3 Ubuntu22; unchanged Ubuntu20 host"
+  },
+  "nominal_sdk_calibration": {
+    "path": "config/cameras/SN45626933.conf",
+    "sha256": "a4856611b40913db85d6968430c4d0a80e296c01607ce655950f313618cafb7e",
+    "hardware_calibration": false,
+    "fx_fy_px": [
+      370.8,
+      370.8
+    ],
+    "cx_cy_px": [
+      480,
+      300
+    ],
+    "resolution": [
+      960,
+      600
+    ],
+    "baseline_m": 0.12
+  },
+  "sdk_profile": {
+    "transport": "ipc",
+    "publication": "precompute real paired windows, immutable CUDA buffers, official node, steady wall-clock replay",
+    "authored_fps": 60,
+    "configured_wall_replay_hz": 10,
+    "native_world_clock_is_not_authored_clock": true,
+    "sdk_reference": "declared exposure midpoint; raw SDK nanoseconds retained",
+    "earliest_available_authored_s": "derived exposure-end causal bound, not measured host or native World availability",
+    "codec_baseline": "results/g3/sdk/receiver_027_sdk51_full_static/composite_verification.json",
+    "baseline_maximum_roi_rgb_mae": 1.772838283828383,
+    "frozen_maximum_roi_rgb_mae_bound": 3.6592574257425743,
+    "quality_cap_on_new_static_baseline": 8,
+    "sdk_zero_frames": 300,
+    "sdk_finite_frames": 36,
+    "cases": [
+      {
+        "scenario": "static",
+        "exposure_ms": 0,
+        "samples_per_exposure": 1,
+        "source": "results/g3/sdk/uniform_static100_058",
+        "receiver": "results/g3/sdk/receiver_047_uniform_static100",
+        "sdk_frames": 100,
+        "verified": true,
+        "prepared_windows": 192,
+        "published_windows": 114,
+        "verified_published_subframes": 114,
+        "unpublished_prepared_windows": 78,
+        "published_ids_not_received": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          111,
+          112,
+          113
+        ],
+        "maximum_reference_residual_ns": 0,
+        "maximum_roi_rgb_mae": 1.7733003300330032,
+        "frozen_roi_rgb_mae_bound": 3.6592574257425743,
+        "max_source_pose_projection_error_px": 0.6478613736879598,
+        "max_sdk_vs_composite_centre_error_px": 0.22059683356868334,
+        "secondary_mixed_cells": 0,
+        "measured_host_delivery_fps_including_saves": 9.99614035793564,
+        "host_rate_is_not_configured_fps": true,
+        "source_producer_sha256": {
+          "sender": "dc3f0051ed8721302094b3c35818f18af81a7c693bf693a8e886a594fd6f5743",
+          "sdk_state": "e2e0794d865a3f6974dff44d9eb88332f00c2bd1575b3c749c406a74f479033c",
+          "sdk_exposure": "9dba0ff880018f10d6008a5bfc6ef7d1d8c51c8c21f40f66ed80f3ab10662557",
+          "timing": "dc10f05d20d9478b3cabea9b1d4661570328397eb5a57716576591fdeffb4be0"
+        },
+        "exit_codes": {
+          "sender": 0,
+          "receiver": 0
+        }
+      },
+      {
+        "scenario": "ball_motion",
+        "exposure_ms": 0,
+        "samples_per_exposure": 1,
+        "source": "results/g3/sdk/uniform_ball100_056",
+        "receiver": "results/g3/sdk/receiver_045_uniform_ball100",
+        "sdk_frames": 100,
+        "verified": true,
+        "prepared_windows": 192,
+        "published_windows": 113,
+        "verified_published_subframes": 113,
+        "unpublished_prepared_windows": 79,
+        "published_ids_not_received": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          106,
+          110,
+          111,
+          112
+        ],
+        "maximum_reference_residual_ns": 0,
+        "maximum_roi_rgb_mae": 3.266336633663366,
+        "frozen_roi_rgb_mae_bound": 3.6592574257425743,
+        "max_source_pose_projection_error_px": 1.1438154120923933,
+        "max_sdk_vs_composite_centre_error_px": 0.4109776870766418,
+        "secondary_mixed_cells": 0,
+        "measured_host_delivery_fps_including_saves": 9.917930125017548,
+        "host_rate_is_not_configured_fps": true,
+        "source_producer_sha256": {
+          "sender": "dc3f0051ed8721302094b3c35818f18af81a7c693bf693a8e886a594fd6f5743",
+          "sdk_state": "e2e0794d865a3f6974dff44d9eb88332f00c2bd1575b3c749c406a74f479033c",
+          "sdk_exposure": "9dba0ff880018f10d6008a5bfc6ef7d1d8c51c8c21f40f66ed80f3ab10662557",
+          "timing": "dc10f05d20d9478b3cabea9b1d4661570328397eb5a57716576591fdeffb4be0"
+        },
+        "exit_codes": {
+          "sender": 0,
+          "receiver": 0
+        }
+      },
+      {
+        "scenario": "camera_motion",
+        "exposure_ms": 0,
+        "samples_per_exposure": 1,
+        "source": "results/g3/sdk/uniform_camera100_057",
+        "receiver": "results/g3/sdk/receiver_046_uniform_camera100",
+        "sdk_frames": 100,
+        "verified": true,
+        "prepared_windows": 192,
+        "published_windows": 114,
+        "verified_published_subframes": 114,
+        "unpublished_prepared_windows": 78,
+        "published_ids_not_received": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          17,
+          111,
+          112,
+          113
+        ],
+        "maximum_reference_residual_ns": 0,
+        "maximum_roi_rgb_mae": 3.35271051857661,
+        "frozen_roi_rgb_mae_bound": 3.6592574257425743,
+        "max_source_pose_projection_error_px": 0.7659997279236808,
+        "max_sdk_vs_composite_centre_error_px": 0.332526067004418,
+        "secondary_mixed_cells": 0,
+        "measured_host_delivery_fps_including_saves": 9.87308810034933,
+        "host_rate_is_not_configured_fps": true,
+        "source_producer_sha256": {
+          "sender": "dc3f0051ed8721302094b3c35818f18af81a7c693bf693a8e886a594fd6f5743",
+          "sdk_state": "e2e0794d865a3f6974dff44d9eb88332f00c2bd1575b3c749c406a74f479033c",
+          "sdk_exposure": "9dba0ff880018f10d6008a5bfc6ef7d1d8c51c8c21f40f66ed80f3ab10662557",
+          "timing": "dc10f05d20d9478b3cabea9b1d4661570328397eb5a57716576591fdeffb4be0"
+        },
+        "exit_codes": {
+          "sender": 0,
+          "receiver": 0
+        }
+      },
+      {
+        "scenario": "static",
+        "exposure_ms": 10.0,
+        "samples_per_exposure": 3,
+        "source": "results/g3/sdk/fast_finite_static_054",
+        "receiver": "results/g3/sdk/receiver_043_fast_finite_static",
+        "sdk_frames": 12,
+        "verified": true,
+        "prepared_windows": 96,
+        "published_windows": 26,
+        "verified_published_subframes": 78,
+        "unpublished_prepared_windows": 70,
+        "published_ids_not_received": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          22,
+          23,
+          24,
+          25
+        ],
+        "maximum_reference_residual_ns": 0,
+        "maximum_roi_rgb_mae": 1.7534323432343235,
+        "frozen_roi_rgb_mae_bound": 3.6592574257425743,
+        "max_source_pose_projection_error_px": 0.6549159460553317,
+        "max_sdk_vs_composite_centre_error_px": 0.2108492308479782,
+        "secondary_mixed_cells": 102,
+        "measured_host_delivery_fps_including_saves": 9.986420293192603,
+        "host_rate_is_not_configured_fps": true,
+        "source_producer_sha256": {
+          "sender": "f0d8ea5101ef12318618eb62ece8584dd08e03215f76925fc0f2bc7e6a680ea9",
+          "sdk_state": "6a54c563252b13c4fb8c8aa65508f8c831920711c8204827d196c3a8dfa7b5ef",
+          "sdk_exposure": "9dba0ff880018f10d6008a5bfc6ef7d1d8c51c8c21f40f66ed80f3ab10662557",
+          "timing": "dc10f05d20d9478b3cabea9b1d4661570328397eb5a57716576591fdeffb4be0"
+        },
+        "exit_codes": {
+          "sender": 0,
+          "receiver": 0
+        }
+      },
+      {
+        "scenario": "ball_motion",
+        "exposure_ms": 10.0,
+        "samples_per_exposure": 3,
+        "source": "results/g3/sdk/fast_finite_ball_052",
+        "receiver": "results/g3/sdk/receiver_041_fast_finite_ball",
+        "sdk_frames": 12,
+        "verified": true,
+        "prepared_windows": 96,
+        "published_windows": 29,
+        "verified_published_subframes": 87,
+        "unpublished_prepared_windows": 67,
+        "published_ids_not_received": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          26,
+          27,
+          28
+        ],
+        "maximum_reference_residual_ns": 0,
+        "maximum_roi_rgb_mae": 3.2452373950266313,
+        "frozen_roi_rgb_mae_bound": 3.6592574257425743,
+        "max_source_pose_projection_error_px": 1.1453999514495792,
+        "max_sdk_vs_composite_centre_error_px": 0.3523285281764159,
+        "secondary_mixed_cells": 94,
+        "measured_host_delivery_fps_including_saves": 10.036273107388608,
+        "host_rate_is_not_configured_fps": true,
+        "source_producer_sha256": {
+          "sender": "f0d8ea5101ef12318618eb62ece8584dd08e03215f76925fc0f2bc7e6a680ea9",
+          "sdk_state": "6a54c563252b13c4fb8c8aa65508f8c831920711c8204827d196c3a8dfa7b5ef",
+          "sdk_exposure": "9dba0ff880018f10d6008a5bfc6ef7d1d8c51c8c21f40f66ed80f3ab10662557",
+          "timing": "dc10f05d20d9478b3cabea9b1d4661570328397eb5a57716576591fdeffb4be0"
+        },
+        "finite_motion_proof": {
+          "high_motion_eye_frames": 16,
+          "mean_source_composite_vs_midinstant_rgb_mae": 1.1411605528061268,
+          "mean_sdk_composite_improvement_over_midinstant_rgb_mae": 0.8425603592922913,
+          "fraction_closer_to_composite": 1.0
+        },
+        "exit_codes": {
+          "sender": 0,
+          "receiver": 0
+        }
+      },
+      {
+        "scenario": "camera_motion",
+        "exposure_ms": 10.0,
+        "samples_per_exposure": 3,
+        "source": "results/g3/sdk/fast_finite_camera_053",
+        "receiver": "results/g3/sdk/receiver_042_fast_finite_camera",
+        "sdk_frames": 12,
+        "verified": true,
+        "prepared_windows": 96,
+        "published_windows": 28,
+        "verified_published_subframes": 84,
+        "unpublished_prepared_windows": 68,
+        "published_ids_not_received": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          25,
+          26,
+          27
+        ],
+        "maximum_reference_residual_ns": 0,
+        "maximum_roi_rgb_mae": 3.01351824087956,
+        "frozen_roi_rgb_mae_bound": 3.6592574257425743,
+        "max_source_pose_projection_error_px": 1.1757616918032934,
+        "max_sdk_vs_composite_centre_error_px": 0.3541559067852934,
+        "secondary_mixed_cells": 96,
+        "measured_host_delivery_fps_including_saves": 10.120803912052853,
+        "host_rate_is_not_configured_fps": true,
+        "source_producer_sha256": {
+          "sender": "f0d8ea5101ef12318618eb62ece8584dd08e03215f76925fc0f2bc7e6a680ea9",
+          "sdk_state": "6a54c563252b13c4fb8c8aa65508f8c831920711c8204827d196c3a8dfa7b5ef",
+          "sdk_exposure": "9dba0ff880018f10d6008a5bfc6ef7d1d8c51c8c21f40f66ed80f3ab10662557",
+          "timing": "dc10f05d20d9478b3cabea9b1d4661570328397eb5a57716576591fdeffb4be0"
+        },
+        "finite_motion_proof": {
+          "high_motion_eye_frames": 16,
+          "mean_source_composite_vs_midinstant_rgb_mae": 3.9989100882920185,
+          "mean_sdk_composite_improvement_over_midinstant_rgb_mae": 2.95662609882007,
+          "fraction_closer_to_composite": 1.0
+        },
+        "exit_codes": {
+          "sender": 0,
+          "receiver": 0
+        }
+      }
+    ]
+  },
+  "gpu_mapping": {
+    "user_authorized_temporary": true,
+    "sender": {
+      "physical_index": 6,
+      "cuda_logical_index": 0,
+      "uuid": "GPU-28d2f1b7-9192-0a8b-4efe-36018c0bd307"
+    },
+    "receiver": {
+      "physical_index": 7,
+      "cuda_logical_index": 0,
+      "uuid": "GPU-70a53f3b-dfd4-a41f-d1be-432767f54fb2"
+    },
+    "existing_jobs_stopped": false
+  },
+  "payload_manifest": {
+    "path": "results/g3/final_payload_sha256.json",
+    "sha256": "5add6c00a5377993ad241216f360c50c68249d032b4623a975dd7b5e24918992",
+    "files": 6036,
+    "bytes": 1878947001
+  },
+  "sdk_evidence_inputs": [
+    {
+      "path": "results/g3/sdk/uniform_static100_058/metadata.json",
+      "sha256": "fe3901e0155b3536e9252bfad0bc336ead6ebe87f6967c89872c94dd51242937"
+    },
+    {
+      "path": "results/g3/sdk/uniform_static100_058/prepared_exposures.jsonl",
+      "sha256": "88993c92d35c5f1d5a3e3a14b3b2a02bbeca812bd53de4a9a1c5e948ff531ed0"
+    },
+    {
+      "path": "results/g3/sdk/uniform_static100_058/source_frames.jsonl",
+      "sha256": "1ca2fb893bf870b51e1f2b0400c250b5d21d6e80d6b5db2443b807f3f4320069"
+    },
+    {
+      "path": "results/g3/sdk/receiver_047_uniform_static100/metadata.json",
+      "sha256": "c15b3421259459670a478eb5871c2a62cc870988ffda893b88a0f06cc645996e"
+    },
+    {
+      "path": "results/g3/sdk/receiver_047_uniform_static100/frames.jsonl",
+      "sha256": "7415627b717db058a39a0841d9df9cdb378e4331fa275fcfd96282bfda0216e8"
+    },
+    {
+      "path": "results/g3/sdk/receiver_047_uniform_static100/composite_verification.json",
+      "sha256": "98160730bd033ad734e0a4eb4998f3a7f40203b3f2d3430f58a79f51eab120a6"
+    },
+    {
+      "path": "results/g3/sdk/receiver_047_uniform_static100/joined_frames.jsonl",
+      "sha256": "8b733cef60a677fc9ea534425154a2add1866480a1f15a311f2a7a311a743762"
+    },
+    {
+      "path": "results/g3/sdk/receiver_047_uniform_static100/settings/SN45626933.conf",
+      "sha256": "a4856611b40913db85d6968430c4d0a80e296c01607ce655950f313618cafb7e"
+    },
+    {
+      "path": "results/g3/sdk/uniform_ball100_056/metadata.json",
+      "sha256": "aacee90912f0f76c1fbcfadc592c7f48a8a6a923266ccdebf528a6ac4f326b44"
+    },
+    {
+      "path": "results/g3/sdk/uniform_ball100_056/prepared_exposures.jsonl",
+      "sha256": "0b03455bc12e12409c82fc71b5cdb012c49ff9ee449550f2def7e2c75c8d5c24"
+    },
+    {
+      "path": "results/g3/sdk/uniform_ball100_056/source_frames.jsonl",
+      "sha256": "caa5adb1b27a96670d4f19abc467968b476cc4a3c0214676d4cc4b28ef7e05d0"
+    },
+    {
+      "path": "results/g3/sdk/receiver_045_uniform_ball100/metadata.json",
+      "sha256": "c15b3421259459670a478eb5871c2a62cc870988ffda893b88a0f06cc645996e"
+    },
+    {
+      "path": "results/g3/sdk/receiver_045_uniform_ball100/frames.jsonl",
+      "sha256": "1b14b3c4ddb9d5bb8635726527b0d2947eacf72deb10f2a25da228a7fe55d09b"
+    },
+    {
+      "path": "results/g3/sdk/receiver_045_uniform_ball100/composite_verification.json",
+      "sha256": "85bf77736407413d6388a2dc9bf93c62977f6ca9dd3f2e1d85c2952a19b0cf70"
+    },
+    {
+      "path": "results/g3/sdk/receiver_045_uniform_ball100/joined_frames.jsonl",
+      "sha256": "b92e14df6b6d77362d8f76548ebac12231f6e9d05c7d317a26737a6e4abebffc"
+    },
+    {
+      "path": "results/g3/sdk/receiver_045_uniform_ball100/settings/SN45626933.conf",
+      "sha256": "a4856611b40913db85d6968430c4d0a80e296c01607ce655950f313618cafb7e"
+    },
+    {
+      "path": "results/g3/sdk/uniform_camera100_057/metadata.json",
+      "sha256": "af5824cb47bcfe34382d4f0dcf107438b99b3828f0558f3cba7addf72d903cc7"
+    },
+    {
+      "path": "results/g3/sdk/uniform_camera100_057/prepared_exposures.jsonl",
+      "sha256": "806cae02b9cfa4f4b88c2a9dcc65893b9d358aafe6de4ce0d9b68eb1e0524084"
+    },
+    {
+      "path": "results/g3/sdk/uniform_camera100_057/source_frames.jsonl",
+      "sha256": "70024487ee9b9b7c73ea593c62c8294df250a499ffddec02ea566997b110c8c2"
+    },
+    {
+      "path": "results/g3/sdk/receiver_046_uniform_camera100/metadata.json",
+      "sha256": "c15b3421259459670a478eb5871c2a62cc870988ffda893b88a0f06cc645996e"
+    },
+    {
+      "path": "results/g3/sdk/receiver_046_uniform_camera100/frames.jsonl",
+      "sha256": "727f5331218bb61c182495046d359b51264a295bbe9fa3945479e3df17d61880"
+    },
+    {
+      "path": "results/g3/sdk/receiver_046_uniform_camera100/composite_verification.json",
+      "sha256": "5368f427ba62bddc47f50e0b00496ac30430281ddf6e2714acbb57d2e9a3cf8b"
+    },
+    {
+      "path": "results/g3/sdk/receiver_046_uniform_camera100/joined_frames.jsonl",
+      "sha256": "7e26e8a0c99695b83dae8253ca80430d5527ca388993b50e366806a837e62e80"
+    },
+    {
+      "path": "results/g3/sdk/receiver_046_uniform_camera100/settings/SN45626933.conf",
+      "sha256": "a4856611b40913db85d6968430c4d0a80e296c01607ce655950f313618cafb7e"
+    },
+    {
+      "path": "results/g3/sdk/fast_finite_static_054/metadata.json",
+      "sha256": "cbd8c6d2a0c32b89df70e3fafb0edb4d2b7dcf0278f10a40880e20dd14422702"
+    },
+    {
+      "path": "results/g3/sdk/fast_finite_static_054/prepared_exposures.jsonl",
+      "sha256": "c5fbaee576f5d75e0b912d93b54b28e3f71b439b71fe14420bfe9b840152cc9b"
+    },
+    {
+      "path": "results/g3/sdk/fast_finite_static_054/source_frames.jsonl",
+      "sha256": "f7eb0f4e86dc326e02ce1af3a44a386abae60295deda43703e15315c8b03943d"
+    },
+    {
+      "path": "results/g3/sdk/receiver_043_fast_finite_static/metadata.json",
+      "sha256": "b2714183bc6d15b5b5be281cf8bc579f5028499f58fbd4e4ff3a89fd91eb5e24"
+    },
+    {
+      "path": "results/g3/sdk/receiver_043_fast_finite_static/frames.jsonl",
+      "sha256": "f0f129c30e5a90dd7b9c309328a4921090a60294656d1d7a401c26f9eb7a72df"
+    },
+    {
+      "path": "results/g3/sdk/receiver_043_fast_finite_static/composite_verification.json",
+      "sha256": "c8c2abd4e1bb1e18fe107007efab7dfafd8bac55c822a3fc31a2f94932519f17"
+    },
+    {
+      "path": "results/g3/sdk/receiver_043_fast_finite_static/joined_frames.jsonl",
+      "sha256": "65394e7a20b66dce44c8138c4feb3053ab6fc2fbbc0979b6959aff40e9445807"
+    },
+    {
+      "path": "results/g3/sdk/receiver_043_fast_finite_static/settings/SN45626933.conf",
+      "sha256": "a4856611b40913db85d6968430c4d0a80e296c01607ce655950f313618cafb7e"
+    },
+    {
+      "path": "results/g3/sdk/fast_finite_ball_052/metadata.json",
+      "sha256": "42ef4a9318019040ba9f78588900fd47733d02d3037687cfe6af0b19cf18488d"
+    },
+    {
+      "path": "results/g3/sdk/fast_finite_ball_052/prepared_exposures.jsonl",
+      "sha256": "e2f40b73eec4dee13fc941750ac7e636ce0bc9f09bf5c96e455eb7b5767721e9"
+    },
+    {
+      "path": "results/g3/sdk/fast_finite_ball_052/source_frames.jsonl",
+      "sha256": "ffbad73e1a3ae4dfadca98c698f8416fc468b1829614eaea2c7c80c197b0357e"
+    },
+    {
+      "path": "results/g3/sdk/receiver_041_fast_finite_ball/metadata.json",
+      "sha256": "b2714183bc6d15b5b5be281cf8bc579f5028499f58fbd4e4ff3a89fd91eb5e24"
+    },
+    {
+      "path": "results/g3/sdk/receiver_041_fast_finite_ball/frames.jsonl",
+      "sha256": "0e23dbc47ce2c1c5009fed7154bd206890129d9d673945da522920c866e877f3"
+    },
+    {
+      "path": "results/g3/sdk/receiver_041_fast_finite_ball/composite_verification.json",
+      "sha256": "d31f820e86794f52f145f8ed554d0839d602eb173e49bdc92c2f625ba4e503f0"
+    },
+    {
+      "path": "results/g3/sdk/receiver_041_fast_finite_ball/joined_frames.jsonl",
+      "sha256": "00a3a041eb9450648cd7c2acaa6b6af37450d9ca894d1f456b33a3d921fa3d5c"
+    },
+    {
+      "path": "results/g3/sdk/receiver_041_fast_finite_ball/settings/SN45626933.conf",
+      "sha256": "a4856611b40913db85d6968430c4d0a80e296c01607ce655950f313618cafb7e"
+    },
+    {
+      "path": "results/g3/sdk/fast_finite_camera_053/metadata.json",
+      "sha256": "ff724907c4c6c40ce1e825fb68febd07727c68d34e7296b0ef82d398d015998f"
+    },
+    {
+      "path": "results/g3/sdk/fast_finite_camera_053/prepared_exposures.jsonl",
+      "sha256": "b9387778f4558b578a99ba465ed73fd15331ca20055666b21d6aec98b2371b41"
+    },
+    {
+      "path": "results/g3/sdk/fast_finite_camera_053/source_frames.jsonl",
+      "sha256": "93fbe83295612f92214258730a4ae69e279856638d65b079ad0da27537beea05"
+    },
+    {
+      "path": "results/g3/sdk/receiver_042_fast_finite_camera/metadata.json",
+      "sha256": "b2714183bc6d15b5b5be281cf8bc579f5028499f58fbd4e4ff3a89fd91eb5e24"
+    },
+    {
+      "path": "results/g3/sdk/receiver_042_fast_finite_camera/frames.jsonl",
+      "sha256": "7702db693b3c60566008b5945e2b3d9c83ae79adb35c64664c67aee78d0d5222"
+    },
+    {
+      "path": "results/g3/sdk/receiver_042_fast_finite_camera/composite_verification.json",
+      "sha256": "dc713e77c94618b573b4b0701cbd0ce9a6ce8ba548ed21531e8dd2c890e5d6a3"
+    },
+    {
+      "path": "results/g3/sdk/receiver_042_fast_finite_camera/joined_frames.jsonl",
+      "sha256": "dc554e31d1f95d591122a642dc05dd21a25bdc7f45b61988fde08eea5a962549"
+    },
+    {
+      "path": "results/g3/sdk/receiver_042_fast_finite_camera/settings/SN45626933.conf",
+      "sha256": "a4856611b40913db85d6968430c4d0a80e296c01607ce655950f313618cafb7e"
+    },
+    {
+      "path": "results/g3/final_payload_sha256.json",
+      "sha256": "5add6c00a5377993ad241216f360c50c68249d032b4623a975dd7b5e24918992"
+    },
+    {
+      "path": "results/g3/sdk/receiver_027_sdk51_full_static/composite_verification.json",
+      "sha256": "2d3673e1dffe373aca72546c672d854a8b15cfc2cd9ac7885aeec8216d40a0cc"
+    },
+    {
+      "path": "results/g3/sdk/logs/uniform_static100_058.exitcode",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "results/g3/sdk/logs/receiver_047_uniform_static100.exitcode",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "results/g3/sdk/uniform_static100_058/launch_manifest.json",
+      "sha256": "409113ed22ecee04fba88edd9d791ff1025555ff88972660b855c97ad583278e"
+    },
+    {
+      "path": "results/g3/sdk/logs/uniform_ball100_056.exitcode",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "results/g3/sdk/logs/receiver_045_uniform_ball100.exitcode",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "results/g3/sdk/uniform_ball100_056/launch_manifest.json",
+      "sha256": "f58d30d0cbb13cd3bd47dc2d699518d7368c99f4b87b97dbd5c2ae497159e66f"
+    },
+    {
+      "path": "results/g3/sdk/logs/uniform_camera100_057.exitcode",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "results/g3/sdk/logs/receiver_046_uniform_camera100.exitcode",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "results/g3/sdk/uniform_camera100_057/launch_manifest.json",
+      "sha256": "ab6ec4a1f5b12a341112af0c9b5c6f6f4248704118ea1c6fa37accb0546958b5"
+    },
+    {
+      "path": "results/g3/sdk/logs/fast_finite_static_054.exitcode",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "results/g3/sdk/logs/receiver_043_fast_finite_static.exitcode",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "results/g3/sdk/fast_finite_static_054/launch_manifest.json",
+      "sha256": "1c8d3035119567be33305df33fa5c531b22cf208883ed45e851dd813013e3016"
+    },
+    {
+      "path": "results/g3/sdk/logs/fast_finite_ball_052.exitcode",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "results/g3/sdk/logs/receiver_041_fast_finite_ball.exitcode",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "results/g3/sdk/fast_finite_ball_052/launch_manifest.json",
+      "sha256": "b943a49b4690b39342a5808db845af86886dd9c3b722b2832363376fc024484a"
+    },
+    {
+      "path": "results/g3/sdk/logs/fast_finite_camera_053.exitcode",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "results/g3/sdk/logs/receiver_042_fast_finite_camera.exitcode",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "results/g3/sdk/fast_finite_camera_053/launch_manifest.json",
+      "sha256": "444cab976ad88b04b5d7b91ae8cf16300e3a98e133f36468f03e1cd7bfea58fb"
+    },
+    {
+      "path": "results/g3/sdk/final_provenance/final_artifact_sha256.txt",
+      "sha256": "7a1d1a212ba6cbee2452351ee9905c90c25a9f1a5d510189e9971b074ecaf771"
+    },
+    {
+      "path": "results/g3/sdk/final_provenance/final_owned_process_cleanup.json",
+      "sha256": "475408253095f6661543140d269cd140481b06a5d27fbad57936fabfe0442f6a"
+    },
+    {
+      "path": "results/g3/sdk/final_sdk_matrix_independent_summary.json",
+      "sha256": "c8d379384f36d042a936ed6e011e514ed84f76df86558c3a052c7c9c9ba94fe5"
+    },
+    {
+      "path": "results/g3/final_all_tests_junit.xml",
+      "sha256": "965aad8757ed3afbf1796731b188c9657c44163a609887da87c9769aa03c89e5"
+    }
+  ],
+  "tested_artifact_sha256": {
+    "receiver_binary": "d0af50fe2ec31208c88c4bfdebe8f7e833e8160cfd257dd162b9ea9eade52abd",
+    "receiver_cpp": "471f3ee1fb9cee1e7e2ccdb636bf52a0e9ef2ac65035f6dcba34110f0d28babe",
+    "cmake": "c6c1ae5d31790d5b8b971d1b3325bdd220dc0a1cb38e9a3d6bd10a9d600c1ab7",
+    "trial_wrapper": "247f7d384be6442b8f47f1bf0c610b903265ffd84aa166ba577da1866fedaf8d",
+    "userspace_wrapper": "8320b913d5ea29a0e6352bf131a3f18831da29e1916176f7d03c9ce48d162c1b",
+    "receiver_sdk_library": "04f6bfb9fec9377e51cd295c5d6ee4049b632304f1dcbbdd42c2f2635da2becf",
+    "receiver_sdk_header": "c81e1323d1f4a8d4c9b7612b8c2140b7c842ce0ddc0ecd1a55ff546976cf077a",
+    "installer": "88c2d1a8a597e14c1748f552e64414e2c22773aea8a0a3c8d88c25df03797b95"
+  },
+  "cleanup_verified": true
 }

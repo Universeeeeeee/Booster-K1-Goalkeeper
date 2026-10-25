@@ -2,6 +2,8 @@
 #include <sl/Camera.hpp>
 #include <atomic>
 #include <condition_variable>
+#include <cctype>
+#include <cstdlib>
 #include <filesystem>
 #include <limits>
 #include <stdexcept>
@@ -34,6 +36,8 @@ struct Options {
     std::string ip = "127.0.0.1";
     int port = 30000, frames = 100, gpu = 0, timeout_seconds = 120;
     fs::path output;
+    fs::path calibration_file;
+    std::string calibration_sha256;
 };
 
 Options parse(int argc, char** argv) {
@@ -41,13 +45,15 @@ Options parse(int argc, char** argv) {
     for (int i = 1; i < argc; ++i) {
         std::string key = argv[i];
         if (key == "--help") {
-            std::cout << "--ip 127.0.0.1 --port 30000 --frames 100 --output NEW_DIRECTORY --gpu 0 [--timeout-seconds 120]\n";
+            std::cout << "--ip 127.0.0.1 --port 30000 --frames 100 --output NEW_DIRECTORY --gpu 0 [--timeout-seconds 120] [--calibration-file SNxxx.conf --calibration-sha256 SHA256]\n";
             std::exit(0);
         }
         if (++i == argc) throw std::runtime_error("missing value for " + key);
         std::string value = argv[i];
         if (key == "--ip") o.ip = value;
         else if (key == "--output") o.output = value;
+        else if (key == "--calibration-file") o.calibration_file = value;
+        else if (key == "--calibration-sha256") o.calibration_sha256 = value;
         else {
             size_t used = 0;
             int number = std::stoi(value, &used);
@@ -62,6 +68,12 @@ Options parse(int argc, char** argv) {
     if (o.output.empty() || o.ip.empty() || o.port < 1 || o.port > 65535 ||
         o.frames < 1 || o.gpu < 0 || o.timeout_seconds < 1)
         throw std::runtime_error("invalid output, IP, port, frames, GPU or timeout");
+    if (!o.calibration_file.empty() || !o.calibration_sha256.empty()) {
+        if (!fs::is_regular_file(o.calibration_file) || o.calibration_sha256.size() != 64 ||
+            !std::all_of(o.calibration_sha256.begin(), o.calibration_sha256.end(),
+                         [](unsigned char ch) { return std::isxdigit(ch); }))
+            throw std::runtime_error("calibration requires an existing file and a declared 64-character SHA256");
+    }
     return o;
 }
 
@@ -138,8 +150,10 @@ int capture(const Options& o, Counts& counts, std::ostream& log) {
     init.sdk_verbose = 1;
     const auto sdk_log = (o.output / "sdk.log").string();
     init.sdk_verbose_log_file = sdk_log.c_str();
-    const auto settings = (o.output / "settings").string();
+    const auto settings = (o.output / "settings").string() + (o.calibration_file.empty() ? "" : "/");
     fs::create_directory(settings);
+    if (!o.calibration_file.empty())
+        fs::copy_file(o.calibration_file, fs::path(settings) / o.calibration_file.filename());
     init.optional_settings_path = settings.c_str();
     init.async_image_retrieval = false;
     init.async_grab_camera_recovery = true;
@@ -171,10 +185,18 @@ int capture(const Options& o, Counts& counts, std::ostream& log) {
              << "\"depth_units\":\"m\",\"confidence_semantics\":\"SDK 0..100; lower is better\","
              << "\"png_source\":\"SDK rectified U8_C4 BGRA Mat.write\","
              << "\"frame_association_method\":\"single_grab_no_async_retrieval_timestamp_guard\","
-             << "\"per_mat_timestamp_available\":false,\"timestamp_domain\":\"SDK IMAGE stream nanoseconds; epoch and sim/host mapping unverified\","
+             << "\"per_eye_sensor_capture_timestamp_available\":false,"
+             << "\"mat_timestamp_semantics\":\"last data-manipulation time; not independent eye sensor capture\","
+             << "\"timestamp_domain\":\"SDK IMAGE stream nanoseconds; epoch and sim/host mapping unverified\","
+             << "\"calibration_input_file\":" << quote(o.calibration_file.string())
+             << ",\"calibration_declared_sha256\":" << quote(o.calibration_sha256)
+             << ",\"calibration_seed_relative_path\":"
+             << quote(o.calibration_file.empty() ? "" : (fs::path("settings") / o.calibration_file.filename()).string())
+             << ",\"calibration_hardware_verified\":false,"
              << "\"host_clock\":\"steady_clock nanoseconds; not subtractable from SDK clock\","
              << "\"requested_frames\":" << o.frames << ",\"stream_ip\":" << quote(o.ip)
              << ",\"stream_port\":" << o.port << ",\"requested_gpu_ordinal\":" << o.gpu
+             << ",\"cuda_visible_devices\":" << quote(std::getenv("CUDA_VISIBLE_DEVICES") ? std::getenv("CUDA_VISIBLE_DEVICES") : "")
              << ",\"opened_gpu_ordinal\":" << actual.sdk_gpu_id << ",\"depth_mode\":" << quote(label(actual.depth_mode))
              << ",\"coordinate_system\":" << quote(label(actual.coordinate_system))
              << ",\"serial_number\":" << info.serial_number << ",\"camera_model\":" << quote(label(info.camera_model))
