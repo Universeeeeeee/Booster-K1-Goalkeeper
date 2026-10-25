@@ -14,7 +14,8 @@ import mujoco
 import numpy as np
 from PIL import Image
 
-from .camera import CAMERA_NAMES, intrinsics, load_camera_config, optical_pose
+from acquisition.timing import exposure_window
+from .camera import CAMERA_NAMES, calibration_record, intrinsics, load_camera_config, optical_pose
 from .scene import ROOT, build_stereo_scene
 from .stereo import StereoCamera
 
@@ -53,16 +54,16 @@ def encode_video(ffmpeg, frames, output, fps, count):
 
 
 def record_shot(shot, output, camera_config=None, fps=60, ffmpeg=None):
+    config = load_camera_config() if camera_config is None else camera_config
+    exposure = config["exposure_time_ms"] / 1000
+    exposure_window(0, config["exposure_time_ms"], fps)
+    exposure_window(0, config["exposure_time_ms"], config["reference_fps"])
     # Reuse the existing settle/launch/physics/control/contact recorder as a whole.
     from k1_goalkeeper.impact_validation import ImpactCase, run_impact
     from k1_goalkeeper.scene import K1_XML
     from k1_goalkeeper.walk_controller import DEPLOY_ROOT
     import torch
 
-    config = load_camera_config() if camera_config is None else camera_config
-    exposure = config["exposure_time_ms"] / 1000
-    if not math.isfinite(fps) or fps <= 0 or exposure > 1 / fps + 1e-12:
-        raise ValueError("fps must be positive and its frame period must accommodate the exposure")
     ffmpeg = find_ffmpeg(ffmpeg)
     output = Path(output).resolve()
     if not output.is_relative_to(ROOT / "results"):
@@ -87,6 +88,7 @@ def record_shot(shot, output, camera_config=None, fps=60, ffmpeg=None):
     targets, indices = capture_schedule(trace["time"], start, shot.duration, fps)
     data = mujoco.MjData(model)
     rows, poses, visible, diagnostics = [], [], [], []
+    subframe_poses = {"0ms": [], "exposed": []}
     with ExitStack() as stack:
         cameras = {
             "0ms": stack.enter_context(StereoCamera(model, {**config, "exposure_time_ms": 0})),
@@ -101,8 +103,12 @@ def record_shot(shot, output, camera_config=None, fps=60, ffmpeg=None):
             data.qvel[:] = trace["qvel"][index]
             mujoco.mj_forward(model, data)
             paths = {}
+            exposures = {}
             for variant, camera in cameras.items():
                 frame = camera.capture(data)
+                subframe_poses[variant].append(frame["sample_T_world_from_optical"])
+                exposures[variant] = {key: value for key, value in frame.items()
+                                      if key not in ("left", "right", "sample_T_world_from_optical")}
                 paths[variant] = {}
                 for side in ("left", "right"):
                     path = Path(variant) / side / f"{frame_id:06d}.png"
@@ -140,6 +146,7 @@ def record_shot(shot, output, camera_config=None, fps=60, ffmpeg=None):
                          "left_timestamp_s": float(data.time), "right_timestamp_s": float(data.time),
                          "sampling_error_s": float(data.time - target), "ground_truth_index": frame_id,
                          "exposure_end_s": {"0ms": float(data.time), "exposed": float(end)},
+                         "exposures": exposures,
                          "images": paths})
             if (frame_id + 1) % 15 == 0 or frame_id + 1 == len(indices):
                 print(f"Rendered {frame_id + 1}/{len(indices)} stereo exposure pairs", flush=True)
@@ -150,6 +157,10 @@ def record_shot(shot, output, camera_config=None, fps=60, ffmpeg=None):
                         ball_velocity_world_mps=trace["ball_velocity"][indices],
                         T_world_from_optical=np.asarray(poses),
                         physics_time_s=trace["time"][physics_start:],
+                        physics_qpos=trace["qpos"][physics_start:],
+                        physics_qvel=trace["qvel"][physics_start:],
+                        exposure_0ms_T_world_from_optical=np.asarray(subframe_poses["0ms"]),
+                        exposure_exposed_T_world_from_optical=np.asarray(subframe_poses["exposed"]),
                         physics_ball_position_world_m=trace["ball_position"][physics_start:],
                         physics_ball_velocity_world_mps=trace["ball_velocity"][physics_start:],
                         contacts=trace["contacts"])
@@ -165,10 +176,16 @@ def record_shot(shot, output, camera_config=None, fps=60, ffmpeg=None):
     }
     (output / "diagnostics.json").write_text(json.dumps({"summary": diagnostics_summary, "frames": diagnostics}, indent=2) + "\n")
     metadata = {
-        "schema_version": 1, "shot": asdict(shot), "launch_time_s": start,
+        "schema_version": 2, "shot": asdict(shot), "launch_time_s": start,
         "fps": fps, "frame_count": len(indices), "video_duration_s": len(indices) / fps,
         "physics_dt_s": float(model.opt.timestep), "camera_config": config,
         "K": intrinsics(config).tolist(), "timestamp_reference": "exposure_start",
+        "calibration": calibration_record(config),
+        "pose_source": "sim_oracle", "source_kind": "mujoco_rgb_only", "depth_source": "missing",
+        "acquisition_source_sha256": {
+            str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
+            for path in (Path(__file__), ROOT / "robot_perception_sim/stereo.py",
+                         ROOT / "robot_perception_sim/camera.py", ROOT / "acquisition/timing.py")},
         "exposures_ms": {"0ms": 0, "exposed": config["exposure_time_ms"]},
         "control": "existing run_impact / SceneSimulation / k1_walk; zero commanded velocity",
         "mujoco_version": mujoco.__version__, "numpy_version": np.__version__,

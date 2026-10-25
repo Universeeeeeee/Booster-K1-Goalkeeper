@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "g2_prior_gate": "passed ba4b57b fixed-version100frame PoC; not realtime/exposure gate",
+  "g3_full_gate_passed": false,
+  "status": "local finite-exposure and replay validated; SDK current-run validation pending",
+  "exposure_matrix": {
+    "frames": 63,
+    "png_count": 378,
+    "fps_exposure_ms": {
+      "60": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "120": [
+        1,
+        3,
+        5
+      ]
+    },
+    "motions": [
+      "static",
+      "ball",
+      "camera"
+    ],
+    "model": "constant_qvel_encoded_rgb_average",
+    "max_midpoint_centroid_error_px": 0.25430506298334876,
+    "max_trail_prediction_error_px": 1.2033206113553572,
+    "acceptance_thresholds_px": {
+      "centroid_midpoint": 1,
+      "trail_extension": 2
+    },
+    "replay": {
+      "samples": 1260,
+      "maximum_pose_matrix_error": 2.220446049250313e-16,
+      "method": "independent XML/NPZ readback; mj_integratePos plus mj_forward; no render or physics step"
+    }
+  },
+  "k1_recording": {
+    "independent_readback": {
+      "frames": 6,
+      "replayed_eye_poses": 132,
+      "maximum_pose_matrix_error": 0.0,
+      "source_hashes_verified": true,
+      "both_eye_windows_equal": true,
+      "calibration_hash_verified": true,
+      "physics_tail_covers_exposures": true,
+      "physics_qpos_shape": [
+        111,
+        36
+      ],
+      "subframe_pose_shape": [
+        6,
+        10,
+        2,
+        4,
+        4
+      ]
+    },
+    "diagnostics": {
+      "frames_visible_in_both_eyes": 6,
+      "frames_not_visible_in_either_eye": 0,
+      "frames_with_ball_contact_during_exposure": 5,
+      "max_constant_velocity_endpoint_error_m": 0.0005395499999999859,
+      "max_sampling_error_s": 0.0006666666666630405
+    }
+  },
+  "inputs": [
+    {
+      "path": "results/g3/exposure_matrix_20261025_cgl/metadata.json",
+      "sha256": "61caae3da0bc668d64be996bd5de9854b0001c1a4f5be3b1181bc6fcee8dc305"
+    },
+    {
+      "path": "results/g3/exposure_matrix_20261025_cgl/frames.jsonl",
+      "sha256": "a76b032f7e4e4d5a9236a12aa6f52b3bb4ff67515323b7fea8410a0aaa6d675b"
+    },
+    {
+      "path": "results/g3/exposure_matrix_20261025_cgl/states.npz",
+      "sha256": "e7f76608b6684d317f9db6c17dfbfcdb2dd746a95c0ce25d66a843930a31e593"
+    },
+    {
+      "path": "results/g3/exposure_matrix_20261025_cgl/independent_verification.json",
+      "sha256": "6d03ae7820c3c195563d6cf104ddc4e24eca744e1c12700f60f8ecb0b1bdf757"
+    },
+    {
+      "path": "results/g3/k1_recording_final/metadata.json",
+      "sha256": "24d4378d715ed6aa15dcbccc52dda8f5d787a1d7f37f2c6ea896906de5c4b9d4"
+    },
+    {
+      "path": "results/g3/k1_recording_final/frames.jsonl",
+      "sha256": "570f0375f89221142af7eefacfba945ceedba553d06e8735b1aa50dfcc381bd4"
+    },
+    {
+      "path": "results/g3/k1_recording_final/ground_truth.npz",
+      "sha256": "c4faaae4c72ff25777c2e9c4a62ecfb2592fc8b65489343ec836db9b1d95bfcd"
+    },
+    {
+      "path": "results/g3/k1_recording_final/parent_readback.json",
+      "sha256": "594f67450838b60280f3c3aa27f11543d08364f9b2ffef6432cbfdb1ca213a5c"
+    }
+  ],
+  "limitations": [
+    "MuJoCo uses constant qvel and encoded RGB averaging, not contact-aware radiance integration.",
+    "60/120/200Hz scheduling tests do not prove actual SDK throughput or IMU acquisition.",
+    "SDK finite exposure requires delivered-pixel validation; no metadata-only completion claim."
+  ],
+  "tests": {
+    "focused_with_existing_render_regression_passed": 133,
+    "includes_sdk_verifier_unit_tests": true,
+    "actual_sdk_capture_proven_by_unit_tests": false
+  }
+}

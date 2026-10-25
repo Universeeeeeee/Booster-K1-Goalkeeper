@@ -1,11 +1,14 @@
 """Nominal rectified stereo geometry and MuJoCo/optical frame conversion."""
 
 import json
+import hashlib
 import math
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
 import numpy as np
+
+from acquisition.timing import exposure_window
 
 DEFAULT_CONFIG = Path(__file__).resolve().parents[1] / "config/cameras/zedx_wide.json"
 CAMERA_NAMES = ("zedx_left_camera", "zedx_right_camera")
@@ -28,8 +31,7 @@ def load_camera_config(path=None):
     if type(samples) is not int or samples < 1:
         raise ValueError("exposure_samples must be a positive integer")
     fps = config["reference_fps"]
-    if not math.isfinite(fps) or fps <= 0 or exposure > 1000 / fps:
-        raise ValueError("Exposure must fit the positive reference_fps frame period")
+    exposure_window(0, exposure, fps)
     position = np.asarray(config["mount"]["position_parent_m"], dtype=float)
     quaternion = np.asarray(config["mount"]["quaternion_parent_from_mount_wxyz"], dtype=float)
     if position.shape != (3,) or not np.isfinite(position).all():
@@ -48,6 +50,17 @@ def intrinsics(config):
     focal = width / (2 * math.tan(math.radians(config["horizontal_fov_deg"]) / 2))
     return np.array([[focal, 0, (width - 1) / 2],
                      [0, focal, (height - 1) / 2], [0, 0, 1]], dtype=float)
+
+
+def calibration_record(config):
+    """Fingerprint actual nominal geometry, independent of exposure settings."""
+    payload = {"K": intrinsics(config).tolist(), "baseline_m": config["baseline_m"],
+               "image_width_px": config["image_width_px"], "image_height_px": config["image_height_px"],
+               "mount": config["mount"],
+               "model": {key: value for key, value in config["model"].items() if key != "sampling"}}
+    encoded = json.dumps(payload, sort_keys=True, separators=(",", ":"), allow_nan=False)
+    return {"sha256": hashlib.sha256(encoded.encode()).hexdigest(),
+            "source": "nominal_model", "mount_source": "simulation_assumption", "payload": payload}
 
 
 def vertical_fov_deg(config):
