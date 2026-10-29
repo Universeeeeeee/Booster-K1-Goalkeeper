@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "source": "physx_physical_shot",
+  "robot_mode": "absent",
+  "seed": 0,
+  "repeats": 2,
+  "timestep_s": 0.001,
+  "ball_radius_m": 0.11,
+  "cases": [
+    {
+      "name": "inside_post_glance",
+      "position": [
+        9,
+        1.4,
+        0.7
+      ],
+      "velocity": [
+        8,
+        0,
+        1.5
+      ],
+      "angular_velocity": [
+        0,
+        0,
+        0
+      ],
+      "duration": 2,
+      "seed": 0
+    }
+  ]
+}

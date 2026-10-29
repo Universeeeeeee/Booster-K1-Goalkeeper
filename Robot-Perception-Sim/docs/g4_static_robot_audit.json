@@ -1,0 +1,53 @@
+{
+  "initial_robot_overlap_checks": [
+    {
+      "case": "body_center",
+      "minimum_robot_aabb_distance_m": 1.332718038427054,
+      "nearest_collider": "/World/Bodies/b3_aahead_pitch_link/g37_k1_geom_7",
+      "ball_radius_m": 0.11
+    },
+    {
+      "case": "body_edge",
+      "minimum_robot_aabb_distance_m": 1.3340969218610275,
+      "nearest_collider": "/World/Bodies/b3_aahead_pitch_link/g37_k1_geom_7",
+      "ball_radius_m": 0.11
+    },
+    {
+      "case": "body_glance_y630",
+      "minimum_robot_aabb_distance_m": 1.3648604601267023,
+      "nearest_collider": "/World/Bodies/b13_right_elbow_yaw_link/g51_k1_geom_21",
+      "ball_radius_m": 0.11
+    }
+  ],
+  "robot_collider_count": 20,
+  "robot_mode": "static_collision_fixture",
+  "disabled_rigid_body_paths": [
+    "/World/Bodies/b1_trunk",
+    "/World/Bodies/b2_aahead_yaw_link",
+    "/World/Bodies/b3_aahead_pitch_link",
+    "/World/Bodies/b6_aaleft_shoulder_pitch_link",
+    "/World/Bodies/b7_left_shoulder_roll_link",
+    "/World/Bodies/b8_left_elbow_pitch_link",
+    "/World/Bodies/b9_left_elbow_yaw_link",
+    "/World/Bodies/b10_aaright_shoulder_pitch_link",
+    "/World/Bodies/b11_right_shoulder_roll_link",
+    "/World/Bodies/b12_right_elbow_pitch_link",
+    "/World/Bodies/b13_right_elbow_yaw_link",
+    "/World/Bodies/b14_left_hip_pitch_link",
+    "/World/Bodies/b15_left_hip_roll_link",
+    "/World/Bodies/b16_left_hip_yaw_link",
+    "/World/Bodies/b17_left_knee_pitch_link",
+    "/World/Bodies/b18_left_ankle_pitch_link",
+    "/World/Bodies/b19_left_ankle_roll_link",
+    "/World/Bodies/b20_right_hip_pitch_link",
+    "/World/Bodies/b21_right_hip_roll_link",
+    "/World/Bodies/b22_right_hip_yaw_link",
+    "/World/Bodies/b23_right_knee_pitch_link",
+    "/World/Bodies/b24_right_ankle_pitch_link",
+    "/World/Bodies/b25_right_ankle_roll_link"
+  ],
+  "removed_joint_count": 22,
+  "source_sha256": "3f55a4f25e2ab9411640a4ee8370da6eff0f26f9ec9e1a7dc46faa596279b378",
+  "scene_sha256": "7f9df15e57a537514c8cd4c5d34ff6bcdca41ae23ab67a77ba0146caab34ec8d",
+  "limitations": "No dynamics/control/stability claim; full-scene G1 materials retained"
+}

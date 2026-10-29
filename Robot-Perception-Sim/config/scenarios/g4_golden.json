@@ -1,0 +1,531 @@
+{
+  "schema_version": 1,
+  "source": "physx_physical_shot",
+  "robot_mode": "absent",
+  "seed": 0,
+  "repeats": 2,
+  "timestep_s": 0.001,
+  "ball_radius_m": 0.11,
+  "cases": [
+    {
+      "name": "direct_low_left",
+      "position": [
+        9,
+        -0.8,
+        0.4
+      ],
+      "velocity": [
+        8,
+        0,
+        1.5
+      ],
+      "angular_velocity": [
+        0,
+        0,
+        0
+      ],
+      "duration": 2,
+      "seed": 0
+    },
+    {
+      "name": "direct_low_center",
+      "position": [
+        9,
+        0,
+        0.4
+      ],
+      "velocity": [
+        8,
+        0,
+        1.5
+      ],
+      "angular_velocity": [
+        0,
+        0,
+        0
+      ],
+      "duration": 2,
+      "seed": 0
+    },
+    {
+      "name": "direct_low_right",
+      "position": [
+        9,
+        0.8,
+        0.4
+      ],
+      "velocity": [
+        8,
+        0,
+        1.5
+      ],
+      "angular_velocity": [
+        0,
+        0,
+        0
+      ],
+      "duration": 2,
+      "seed": 0
+    },
+    {
+      "name": "direct_middle_left",
+      "position": [
+        9,
+        -0.8,
+        0.9
+      ],
+      "velocity": [
+        8,
+        0,
+        1.5
+      ],
+      "angular_velocity": [
+        0,
+        0,
+        0
+      ],
+      "duration": 2,
+      "seed": 0
+    },
+    {
+      "name": "direct_middle_center",
+      "position": [
+        9,
+        0,
+        0.9
+      ],
+      "velocity": [
+        8,
+        0,
+        1.5
+      ],
+      "angular_velocity": [
+        0,
+        0,
+        0
+      ],
+      "duration": 2,
+      "seed": 0
+    },
+    {
+      "name": "direct_middle_right",
+      "position": [
+        9,
+        0.8,
+        0.9
+      ],
+      "velocity": [
+        8,
+        0,
+        1.5
+      ],
+      "angular_velocity": [
+        0,
+        0,
+        0
+      ],
+      "duration": 2,
+      "seed": 0
+    },
+    {
+      "name": "direct_high_left",
+      "position": [
+        9,
+        -0.8,
+        1.5
+      ],
+      "velocity": [
+        8,
+        0,
+        1.5
+      ],
+      "angular_velocity": [
+        0,
+        0,
+        0
+      ],
+      "duration": 2,
+      "seed": 0
+    },
+    {
+      "name": "direct_high_center",
+      "position": [
+        9,
+        0,
+        1.5
+      ],
+      "velocity": [
+        8,
+        0,
+        1.5
+      ],
+      "angular_velocity": [
+        0,
+        0,
+        0
+      ],
+      "duration": 2,
+      "seed": 0
+    },
+    {
+      "name": "direct_high_right",
+      "position": [
+        9,
+        0.8,
+        1.5
+      ],
+      "velocity": [
+        8,
+        0,
+        1.5
+      ],
+      "angular_velocity": [
+        0,
+        0,
+        0
+      ],
+      "duration": 2,
+      "seed": 0
+    },
+    {
+      "name": "bounce_one",
+      "position": [
+        9,
+        0,
+        0.45
+      ],
+      "velocity": [
+        10,
+        0,
+        -2
+      ],
+      "angular_velocity": [
+        0,
+        0,
+        0
+      ],
+      "duration": 2,
+      "seed": 0
+    },
+    {
+      "name": "bounce_repeated",
+      "position": [
+        9,
+        0,
+        0.35
+      ],
+      "velocity": [
+        8,
+        0,
+        -3
+      ],
+      "angular_velocity": [
+        0,
+        0,
+        0
+      ],
+      "duration": 3,
+      "seed": 0
+    },
+    {
+      "name": "bounce_oblique",
+      "position": [
+        7,
+        -1,
+        0.7
+      ],
+      "velocity": [
+        6,
+        1.2,
+        -3
+      ],
+      "angular_velocity": [
+        0,
+        0,
+        0
+      ],
+      "duration": 3,
+      "seed": 0
+    },
+    {
+      "name": "post_left",
+      "position": [
+        9,
+        -1.54,
+        0.5
+      ],
+      "velocity": [
+        8,
+        0,
+        0
+      ],
+      "angular_velocity": [
+        0,
+        0,
+        0
+      ],
+      "duration": 3,
+      "seed": 0
+    },
+    {
+      "name": "post_right",
+      "position": [
+        9,
+        1.54,
+        0.5
+      ],
+      "velocity": [
+        8,
+        0,
+        0
+      ],
+      "angular_velocity": [
+        0,
+        0,
+        0
+      ],
+      "duration": 3,
+      "seed": 0
+    },
+    {
+      "name": "crossbar",
+      "position": [
+        9,
+        0,
+        2.04
+      ],
+      "velocity": [
+        8,
+        0,
+        1.22625
+      ],
+      "angular_velocity": [
+        0,
+        0,
+        0
+      ],
+      "duration": 3,
+      "seed": 0
+    },
+    {
+      "name": "wide_left",
+      "position": [
+        9,
+        -2,
+        0.8
+      ],
+      "velocity": [
+        8,
+        0,
+        1
+      ],
+      "angular_velocity": [
+        0,
+        0,
+        0
+      ],
+      "duration": 2,
+      "seed": 0
+    },
+    {
+      "name": "wide_right",
+      "position": [
+        9,
+        2,
+        0.8
+      ],
+      "velocity": [
+        8,
+        0,
+        1
+      ],
+      "angular_velocity": [
+        0,
+        0,
+        0
+      ],
+      "duration": 2,
+      "seed": 0
+    },
+    {
+      "name": "above_crossbar",
+      "position": [
+        9,
+        0,
+        2.8
+      ],
+      "velocity": [
+        8,
+        0,
+        1
+      ],
+      "angular_velocity": [
+        0,
+        0,
+        0
+      ],
+      "duration": 2,
+      "seed": 0
+    },
+    {
+      "name": "underpowered",
+      "position": [
+        0,
+        0,
+        0.111
+      ],
+      "velocity": [
+        0.2,
+        0,
+        0
+      ],
+      "angular_velocity": [
+        0,
+        0,
+        0
+      ],
+      "duration": 1,
+      "seed": 0
+    },
+    {
+      "name": "touchline",
+      "position": [
+        0,
+        5,
+        0.5
+      ],
+      "velocity": [
+        0,
+        8,
+        1
+      ],
+      "angular_velocity": [
+        0,
+        0,
+        0
+      ],
+      "duration": 2,
+      "seed": 0
+    },
+    {
+      "name": "topspin",
+      "position": [
+        7,
+        0.3,
+        0.8
+      ],
+      "velocity": [
+        9,
+        -0.4,
+        2
+      ],
+      "angular_velocity": [
+        0,
+        100,
+        0
+      ],
+      "duration": 3,
+      "seed": 0
+    },
+    {
+      "name": "backspin",
+      "position": [
+        7,
+        0.3,
+        0.8
+      ],
+      "velocity": [
+        9,
+        -0.4,
+        2
+      ],
+      "angular_velocity": [
+        0,
+        -100,
+        0
+      ],
+      "duration": 3,
+      "seed": 0
+    },
+    {
+      "name": "sidespin",
+      "position": [
+        7,
+        0.3,
+        0.8
+      ],
+      "velocity": [
+        9,
+        -0.4,
+        2
+      ],
+      "angular_velocity": [
+        0,
+        0,
+        100
+      ],
+      "duration": 3,
+      "seed": 0
+    },
+    {
+      "name": "mixed_spin",
+      "position": [
+        7,
+        0.3,
+        0.8
+      ],
+      "velocity": [
+        9,
+        -0.4,
+        2
+      ],
+      "angular_velocity": [
+        60,
+        30,
+        40
+      ],
+      "duration": 3,
+      "seed": 0
+    },
+    {
+      "name": "opposite_goal_oblique",
+      "position": [
+        -9,
+        -0.5,
+        0.9
+      ],
+      "velocity": [
+        -8,
+        0.5,
+        1.5
+      ],
+      "angular_velocity": [
+        0,
+        0,
+        0
+      ],
+      "duration": 2,
+      "seed": 0
+    },
+    {
+      "name": "opposite_goal_center",
+      "position": [
+        -9,
+        0.5,
+        0.9
+      ],
+      "velocity": [
+        -8,
+        -0.5,
+        1.5
+      ],
+      "angular_velocity": [
+        0,
+        0,
+        0
+      ],
+      "duration": 2,
+      "seed": 0
+    }
+  ]
+}

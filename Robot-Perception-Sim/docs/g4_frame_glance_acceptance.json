@@ -1,0 +1,150 @@
+{
+  "cases": [
+    {
+      "case": "inside_post_glance",
+      "source": "physx_physical_shot",
+      "outcome": "Goal",
+      "termination_reason": "whole_ball_goal",
+      "robot_contact": false,
+      "robot_contact_is_save": null,
+      "ground_contact_count": 0,
+      "ground_bounce_count": 0,
+      "frame_contact": true,
+      "classification": "frame_then_goal",
+      "visibility": "unobserved_no_camera_evidence",
+      "events": [
+        {
+          "type": "contact_end",
+          "time_s": 0.0010000000474974513,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            8.0,
+            0.0,
+            1.5
+          ],
+          "ball_velocity_after_m_s": [
+            8.0,
+            0.0,
+            1.490190029144287
+          ]
+        },
+        {
+          "type": "contact_begin",
+          "category": "frame_contact",
+          "time_s": 0.24300001154188067,
+          "object": "goal_right_right_post_collision",
+          "contact_position_world_m": [
+            10.985026359558105,
+            1.5025038719177246,
+            0.7736732959747314
+          ],
+          "ball_velocity_before_m_s": [
+            8.0,
+            0.0,
+            -0.8838260173797607
+          ],
+          "ball_velocity_after_m_s": [
+            4.3494086265563965,
+            -2.795947313308716,
+            -0.6105979084968567
+          ],
+          "onset_observation": "CONTACT_FOUND",
+          "time_semantics": "pre-step lower bound; raw reports retain both bounds"
+        },
+        {
+          "type": "contact_end",
+          "time_s": 0.24700001173187047,
+          "object": "/World/Bodies/b27_goal_right/g91_goal_right_right_post_collision",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            4.3494086265563965,
+            -2.795947313308716,
+            -0.6302179098129272
+          ],
+          "ball_velocity_after_m_s": [
+            4.3494086265563965,
+            -2.795947313308716,
+            -0.6400278806686401
+          ]
+        },
+        {
+          "type": "whole_ball_exit",
+          "time_s": 0.28082798088958827,
+          "outcome": "Goal",
+          "reason": "whole_ball_goal",
+          "position": [
+            11.11,
+            1.2952861605953478,
+            0.7436348186744669
+          ],
+          "goal": "right"
+        }
+      ],
+      "label_basis": "original GoalDetector + native contact identities + measured floor velocity reversal",
+      "record_directory": "results/g4/frame_glance_20261029",
+      "repeat_identical": true,
+      "first_10ms_max_ballistic_vz_error_m_s": 2.664921339157189e-07,
+      "repeat_file_sha256": [
+        "18c07f21c2b1b12c205d54cdd30ca295ee89e71fbff4345c6f23335278c63e14",
+        "18c07f21c2b1b12c205d54cdd30ca295ee89e71fbff4345c6f23335278c63e14"
+      ],
+      "unreported_frame_crossings": [],
+      "robot_mode": "absent",
+      "initial_position_world_m": [
+        9.0,
+        1.399999976158142,
+        0.699999988079071
+      ],
+      "initial_angular_velocity_world_rad_s": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "case_count": 1,
+  "outcome_counts": {
+    "Goal": 1
+  },
+  "classification_counts": {
+    "frame_then_goal": 1
+  },
+  "repeat_identical": true,
+  "unreported_frame_crossing_count": 0,
+  "native_manifest": {
+    "engine": "PhysX / Isaac Sim 4.5.0",
+    "cases": [
+      {
+        "case": "inside_post_glance",
+        "repeat_full_record_sha256": [
+          "674af55894ca2413eda5c42b720532f295effb299554813081d20a42273d02fd",
+          "674af55894ca2413eda5c42b720532f295effb299554813081d20a42273d02fd"
+        ],
+        "repeat_identical": true
+      }
+    ],
+    "runner_sha256": "02162110bc9b19d77baa7f5e0affb523b58b8ff7b140c46ccb66c606e2bdbff5",
+    "scene_sha256": "1bcd93703cd06345d1f46fa080f2f9a54d3c27ce805a142c3634043ca21d3238",
+    "source_detector_sha256": "b3556b8e6d654007da9e610e61988010f73911adf0b1c121166ea08b5f054830",
+    "source_protocol_sha256": "e5faafe304949742491a410ac0df0ccd7e8f3d17251e2a312644482c5b9567b3",
+    "stepping": "public PhysX simulate(.001,t), fetch_results; validated physics-step event dt and independent free-fall acceleration",
+    "cuda_cuInit_result": 0,
+    "active_gpu": 0,
+    "physics_gpu": 0,
+    "multi_gpu": false,
+    "renderer_used": false,
+    "physx_tensor_device": "cpu"
+  },
+  "supplemental_native_manifests": {},
+  "limitations": [
+    "Camera visibility/occlusion is unobserved by physical runs; use separate G5 image evidence",
+    "Procedural and CSV replay do not model collision response",
+    "No measured real-ball CSV supplied; ingestion verified with synthetic fixture only",
+    "No aerodynamic Magnus model; spin affects contacts only",
+    "Frame audit is frontal swept geometry, not full USD narrow phase"
+  ],
+  "exporter_sha256": "d3c2945e086654cbc5fe8232edbb279c08ada003ca8254d4010cab24ef217069",
+  "catalog_sha256": "e5faafe304949742491a410ac0df0ccd7e8f3d17251e2a312644482c5b9567b3",
+  "detector_sha256": "b3556b8e6d654007da9e610e61988010f73911adf0b1c121166ea08b5f054830"
+}

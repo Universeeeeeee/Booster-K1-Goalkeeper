@@ -1,0 +1,2834 @@
+{
+  "cases": [
+    {
+      "case": "direct_low_left",
+      "source": "physx_physical_shot",
+      "outcome": "Goal",
+      "termination_reason": "whole_ball_goal",
+      "robot_contact": false,
+      "robot_contact_is_save": null,
+      "ground_contact_count": 0,
+      "ground_bounce_count": 0,
+      "frame_contact": false,
+      "classification": "direct_goal",
+      "visibility": "unobserved_no_camera_evidence",
+      "events": [
+        {
+          "type": "contact_end",
+          "time_s": 0.0010000000474974513,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            8.0,
+            0.0,
+            1.5
+          ],
+          "ball_velocity_after_m_s": [
+            8.0,
+            0.0,
+            1.490190029144287
+          ]
+        },
+        {
+          "type": "whole_ball_exit",
+          "time_s": 0.2637376880543438,
+          "outcome": "Goal",
+          "reason": "whole_ball_goal",
+          "position": [
+            11.11,
+            -0.800000011920929,
+            0.4531327767263566
+          ],
+          "goal": "right"
+        }
+      ],
+      "label_basis": "original GoalDetector + native contact identities + measured floor velocity reversal",
+      "record_directory": "results/g4/physical_v2_20261029",
+      "repeat_identical": true,
+      "first_10ms_max_ballistic_vz_error_m_s": 2.664921339157189e-07,
+      "repeat_file_sha256": [
+        "cdf53f64222530c08d390df68c290dccfd5c59bbe6b2d02667d4c77c33754580",
+        "cdf53f64222530c08d390df68c290dccfd5c59bbe6b2d02667d4c77c33754580"
+      ],
+      "unreported_frame_crossings": [],
+      "robot_mode": "absent",
+      "initial_position_world_m": [
+        9.0,
+        -0.800000011920929,
+        0.4000000059604645
+      ],
+      "initial_angular_velocity_world_rad_s": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "direct_low_center",
+      "source": "physx_physical_shot",
+      "outcome": "Goal",
+      "termination_reason": "whole_ball_goal",
+      "robot_contact": false,
+      "robot_contact_is_save": null,
+      "ground_contact_count": 0,
+      "ground_bounce_count": 0,
+      "frame_contact": false,
+      "classification": "direct_goal",
+      "visibility": "unobserved_no_camera_evidence",
+      "events": [
+        {
+          "type": "contact_end",
+          "time_s": 0.0010000000474974513,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            8.0,
+            0.0,
+            1.5
+          ],
+          "ball_velocity_after_m_s": [
+            8.0,
+            0.0,
+            1.490190029144287
+          ]
+        },
+        {
+          "type": "whole_ball_exit",
+          "time_s": 0.2637376880543438,
+          "outcome": "Goal",
+          "reason": "whole_ball_goal",
+          "position": [
+            11.11,
+            0.0,
+            0.4531327767263566
+          ],
+          "goal": "right"
+        }
+      ],
+      "label_basis": "original GoalDetector + native contact identities + measured floor velocity reversal",
+      "record_directory": "results/g4/physical_v2_20261029",
+      "repeat_identical": true,
+      "first_10ms_max_ballistic_vz_error_m_s": 2.664921339157189e-07,
+      "repeat_file_sha256": [
+        "fe093301ad6c4bbf485e70dce3b20b8cd794c14dfa3de2508cff663642a308da",
+        "fe093301ad6c4bbf485e70dce3b20b8cd794c14dfa3de2508cff663642a308da"
+      ],
+      "unreported_frame_crossings": [],
+      "robot_mode": "absent",
+      "initial_position_world_m": [
+        9.0,
+        0.0,
+        0.4000000059604645
+      ],
+      "initial_angular_velocity_world_rad_s": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "direct_low_right",
+      "source": "physx_physical_shot",
+      "outcome": "Goal",
+      "termination_reason": "whole_ball_goal",
+      "robot_contact": false,
+      "robot_contact_is_save": null,
+      "ground_contact_count": 0,
+      "ground_bounce_count": 0,
+      "frame_contact": false,
+      "classification": "direct_goal",
+      "visibility": "unobserved_no_camera_evidence",
+      "events": [
+        {
+          "type": "contact_end",
+          "time_s": 0.0010000000474974513,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            8.0,
+            0.0,
+            1.5
+          ],
+          "ball_velocity_after_m_s": [
+            8.0,
+            0.0,
+            1.490190029144287
+          ]
+        },
+        {
+          "type": "whole_ball_exit",
+          "time_s": 0.2637376880543438,
+          "outcome": "Goal",
+          "reason": "whole_ball_goal",
+          "position": [
+            11.11,
+            0.800000011920929,
+            0.4531327767263566
+          ],
+          "goal": "right"
+        }
+      ],
+      "label_basis": "original GoalDetector + native contact identities + measured floor velocity reversal",
+      "record_directory": "results/g4/physical_v2_20261029",
+      "repeat_identical": true,
+      "first_10ms_max_ballistic_vz_error_m_s": 2.664921339157189e-07,
+      "repeat_file_sha256": [
+        "c69766fd7423e5b09c9d210d4dd2512441030639a4035a16ad5e871a08f8e749",
+        "c69766fd7423e5b09c9d210d4dd2512441030639a4035a16ad5e871a08f8e749"
+      ],
+      "unreported_frame_crossings": [],
+      "robot_mode": "absent",
+      "initial_position_world_m": [
+        9.0,
+        0.800000011920929,
+        0.4000000059604645
+      ],
+      "initial_angular_velocity_world_rad_s": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "direct_middle_left",
+      "source": "physx_physical_shot",
+      "outcome": "Goal",
+      "termination_reason": "whole_ball_goal",
+      "robot_contact": false,
+      "robot_contact_is_save": null,
+      "ground_contact_count": 0,
+      "ground_bounce_count": 0,
+      "frame_contact": false,
+      "classification": "direct_goal",
+      "visibility": "unobserved_no_camera_evidence",
+      "events": [
+        {
+          "type": "contact_end",
+          "time_s": 0.0010000000474974513,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            8.0,
+            0.0,
+            1.5
+          ],
+          "ball_velocity_after_m_s": [
+            8.0,
+            0.0,
+            1.490190029144287
+          ]
+        },
+        {
+          "type": "whole_ball_exit",
+          "time_s": 0.2637376880543438,
+          "outcome": "Goal",
+          "reason": "whole_ball_goal",
+          "position": [
+            11.11,
+            -0.800000011920929,
+            0.9531327689084781
+          ],
+          "goal": "right"
+        }
+      ],
+      "label_basis": "original GoalDetector + native contact identities + measured floor velocity reversal",
+      "record_directory": "results/g4/physical_v2_20261029",
+      "repeat_identical": true,
+      "first_10ms_max_ballistic_vz_error_m_s": 2.664921339157189e-07,
+      "repeat_file_sha256": [
+        "0b2c919632e33dd5b5394f8a7431c15782f8b68e4d13fc85108b93372dc55a8c",
+        "0b2c919632e33dd5b5394f8a7431c15782f8b68e4d13fc85108b93372dc55a8c"
+      ],
+      "unreported_frame_crossings": [],
+      "robot_mode": "absent",
+      "initial_position_world_m": [
+        9.0,
+        -0.800000011920929,
+        0.8999999761581421
+      ],
+      "initial_angular_velocity_world_rad_s": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "direct_middle_center",
+      "source": "physx_physical_shot",
+      "outcome": "Goal",
+      "termination_reason": "whole_ball_goal",
+      "robot_contact": false,
+      "robot_contact_is_save": null,
+      "ground_contact_count": 0,
+      "ground_bounce_count": 0,
+      "frame_contact": false,
+      "classification": "direct_goal",
+      "visibility": "unobserved_no_camera_evidence",
+      "events": [
+        {
+          "type": "contact_end",
+          "time_s": 0.0010000000474974513,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            8.0,
+            0.0,
+            1.5
+          ],
+          "ball_velocity_after_m_s": [
+            8.0,
+            0.0,
+            1.490190029144287
+          ]
+        },
+        {
+          "type": "whole_ball_exit",
+          "time_s": 0.2637376880543438,
+          "outcome": "Goal",
+          "reason": "whole_ball_goal",
+          "position": [
+            11.11,
+            0.0,
+            0.9531327689084781
+          ],
+          "goal": "right"
+        }
+      ],
+      "label_basis": "original GoalDetector + native contact identities + measured floor velocity reversal",
+      "record_directory": "results/g4/physical_v2_20261029",
+      "repeat_identical": true,
+      "first_10ms_max_ballistic_vz_error_m_s": 2.664921339157189e-07,
+      "repeat_file_sha256": [
+        "ec9a0d8eb5e603cfa32c0d41b485d013f4f7fc99f154a6019f3caa031b08d1d3",
+        "ec9a0d8eb5e603cfa32c0d41b485d013f4f7fc99f154a6019f3caa031b08d1d3"
+      ],
+      "unreported_frame_crossings": [],
+      "robot_mode": "absent",
+      "initial_position_world_m": [
+        9.0,
+        0.0,
+        0.8999999761581421
+      ],
+      "initial_angular_velocity_world_rad_s": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "direct_middle_right",
+      "source": "physx_physical_shot",
+      "outcome": "Goal",
+      "termination_reason": "whole_ball_goal",
+      "robot_contact": false,
+      "robot_contact_is_save": null,
+      "ground_contact_count": 0,
+      "ground_bounce_count": 0,
+      "frame_contact": false,
+      "classification": "direct_goal",
+      "visibility": "unobserved_no_camera_evidence",
+      "events": [
+        {
+          "type": "contact_end",
+          "time_s": 0.0010000000474974513,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            8.0,
+            0.0,
+            1.5
+          ],
+          "ball_velocity_after_m_s": [
+            8.0,
+            0.0,
+            1.490190029144287
+          ]
+        },
+        {
+          "type": "whole_ball_exit",
+          "time_s": 0.2637376880543438,
+          "outcome": "Goal",
+          "reason": "whole_ball_goal",
+          "position": [
+            11.11,
+            0.800000011920929,
+            0.9531327689084781
+          ],
+          "goal": "right"
+        }
+      ],
+      "label_basis": "original GoalDetector + native contact identities + measured floor velocity reversal",
+      "record_directory": "results/g4/physical_v2_20261029",
+      "repeat_identical": true,
+      "first_10ms_max_ballistic_vz_error_m_s": 2.664921339157189e-07,
+      "repeat_file_sha256": [
+        "dd6eadf6b9a63444c448251e06155eafa37895f6d00a1e710d031e33fe51ec30",
+        "dd6eadf6b9a63444c448251e06155eafa37895f6d00a1e710d031e33fe51ec30"
+      ],
+      "unreported_frame_crossings": [],
+      "robot_mode": "absent",
+      "initial_position_world_m": [
+        9.0,
+        0.800000011920929,
+        0.8999999761581421
+      ],
+      "initial_angular_velocity_world_rad_s": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "direct_high_left",
+      "source": "physx_physical_shot",
+      "outcome": "Goal",
+      "termination_reason": "whole_ball_goal",
+      "robot_contact": false,
+      "robot_contact_is_save": null,
+      "ground_contact_count": 0,
+      "ground_bounce_count": 0,
+      "frame_contact": false,
+      "classification": "direct_goal",
+      "visibility": "unobserved_no_camera_evidence",
+      "events": [
+        {
+          "type": "contact_end",
+          "time_s": 0.0010000000474974513,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            8.0,
+            0.0,
+            1.5
+          ],
+          "ball_velocity_after_m_s": [
+            8.0,
+            0.0,
+            1.490190029144287
+          ]
+        },
+        {
+          "type": "whole_ball_exit",
+          "time_s": 0.2637376880543438,
+          "outcome": "Goal",
+          "reason": "whole_ball_goal",
+          "position": [
+            11.11,
+            -0.800000011920929,
+            1.553132792750336
+          ],
+          "goal": "right"
+        }
+      ],
+      "label_basis": "original GoalDetector + native contact identities + measured floor velocity reversal",
+      "record_directory": "results/g4/physical_v2_20261029",
+      "repeat_identical": true,
+      "first_10ms_max_ballistic_vz_error_m_s": 2.664921339157189e-07,
+      "repeat_file_sha256": [
+        "5a2d54e8f7b2f48f36ffd32ab3c52994f54fe17000f5b4af888184c8c7254a8d",
+        "5a2d54e8f7b2f48f36ffd32ab3c52994f54fe17000f5b4af888184c8c7254a8d"
+      ],
+      "unreported_frame_crossings": [],
+      "robot_mode": "absent",
+      "initial_position_world_m": [
+        9.0,
+        -0.800000011920929,
+        1.5
+      ],
+      "initial_angular_velocity_world_rad_s": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "direct_high_center",
+      "source": "physx_physical_shot",
+      "outcome": "Goal",
+      "termination_reason": "whole_ball_goal",
+      "robot_contact": false,
+      "robot_contact_is_save": null,
+      "ground_contact_count": 0,
+      "ground_bounce_count": 0,
+      "frame_contact": false,
+      "classification": "direct_goal",
+      "visibility": "unobserved_no_camera_evidence",
+      "events": [
+        {
+          "type": "contact_end",
+          "time_s": 0.0010000000474974513,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            8.0,
+            0.0,
+            1.5
+          ],
+          "ball_velocity_after_m_s": [
+            8.0,
+            0.0,
+            1.490190029144287
+          ]
+        },
+        {
+          "type": "whole_ball_exit",
+          "time_s": 0.2637376880543438,
+          "outcome": "Goal",
+          "reason": "whole_ball_goal",
+          "position": [
+            11.11,
+            0.0,
+            1.553132792750336
+          ],
+          "goal": "right"
+        }
+      ],
+      "label_basis": "original GoalDetector + native contact identities + measured floor velocity reversal",
+      "record_directory": "results/g4/physical_v2_20261029",
+      "repeat_identical": true,
+      "first_10ms_max_ballistic_vz_error_m_s": 2.664921339157189e-07,
+      "repeat_file_sha256": [
+        "c8a7c5bd09a4c19470c2ba9f823544b9c2c52eb163fea12d0cedafdfe4265665",
+        "c8a7c5bd09a4c19470c2ba9f823544b9c2c52eb163fea12d0cedafdfe4265665"
+      ],
+      "unreported_frame_crossings": [],
+      "robot_mode": "absent",
+      "initial_position_world_m": [
+        9.0,
+        0.0,
+        1.5
+      ],
+      "initial_angular_velocity_world_rad_s": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "direct_high_right",
+      "source": "physx_physical_shot",
+      "outcome": "Goal",
+      "termination_reason": "whole_ball_goal",
+      "robot_contact": false,
+      "robot_contact_is_save": null,
+      "ground_contact_count": 0,
+      "ground_bounce_count": 0,
+      "frame_contact": false,
+      "classification": "direct_goal",
+      "visibility": "unobserved_no_camera_evidence",
+      "events": [
+        {
+          "type": "contact_end",
+          "time_s": 0.0010000000474974513,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            8.0,
+            0.0,
+            1.5
+          ],
+          "ball_velocity_after_m_s": [
+            8.0,
+            0.0,
+            1.490190029144287
+          ]
+        },
+        {
+          "type": "whole_ball_exit",
+          "time_s": 0.2637376880543438,
+          "outcome": "Goal",
+          "reason": "whole_ball_goal",
+          "position": [
+            11.11,
+            0.800000011920929,
+            1.553132792750336
+          ],
+          "goal": "right"
+        }
+      ],
+      "label_basis": "original GoalDetector + native contact identities + measured floor velocity reversal",
+      "record_directory": "results/g4/physical_v2_20261029",
+      "repeat_identical": true,
+      "first_10ms_max_ballistic_vz_error_m_s": 2.664921339157189e-07,
+      "repeat_file_sha256": [
+        "f3e86a55dcff9470ab2668fadc37dc7092b4dc550f0897794078ca5016abc8c5",
+        "f3e86a55dcff9470ab2668fadc37dc7092b4dc550f0897794078ca5016abc8c5"
+      ],
+      "unreported_frame_crossings": [],
+      "robot_mode": "absent",
+      "initial_position_world_m": [
+        9.0,
+        0.800000011920929,
+        1.5
+      ],
+      "initial_angular_velocity_world_rad_s": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "bounce_one",
+      "source": "physx_physical_shot",
+      "outcome": "Goal",
+      "termination_reason": "whole_ball_goal",
+      "robot_contact": false,
+      "robot_contact_is_save": null,
+      "ground_contact_count": 1,
+      "ground_bounce_count": 1,
+      "frame_contact": false,
+      "classification": "ground_then_goal",
+      "visibility": "unobserved_no_camera_evidence",
+      "events": [
+        {
+          "type": "contact_end",
+          "time_s": 0.0010000000474974513,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            10.0,
+            0.0,
+            -2.0
+          ],
+          "ball_velocity_after_m_s": [
+            10.0,
+            0.0,
+            -2.009809970855713
+          ]
+        },
+        {
+          "type": "contact_begin",
+          "category": "ground_contact",
+          "time_s": 0.12900000612717122,
+          "object": "ground",
+          "contact_position_world_m": [
+            10.290029525756836,
+            0.0,
+            -0.0002566128969192505
+          ],
+          "ball_velocity_before_m_s": [
+            10.0,
+            0.0,
+            -3.265486240386963
+          ],
+          "ball_velocity_after_m_s": [
+            7.38352632522583,
+            0.0,
+            1.0854932069778442
+          ],
+          "onset_observation": "CONTACT_FOUND",
+          "time_semantics": "pre-step lower bound; raw reports retain both bounds"
+        },
+        {
+          "type": "ground_bounce",
+          "time_s": 0.13000000617466867,
+          "object": "ground",
+          "ball_position_world_m": [
+            10.297961235046387,
+            0.0,
+            0.10991387814283371
+          ],
+          "ball_velocity_before_m_s": [
+            10.0,
+            0.0,
+            -3.265486240386963
+          ],
+          "ball_velocity_after_m_s": [
+            7.38352632522583,
+            0.0,
+            1.0854932069778442
+          ]
+        },
+        {
+          "type": "contact_end",
+          "time_s": 0.13300000631716102,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            7.38352632522583,
+            0.0,
+            1.0658732652664185
+          ],
+          "ball_velocity_after_m_s": [
+            7.38352632522583,
+            0.0,
+            1.0560632944107056
+          ]
+        },
+        {
+          "type": "whole_ball_exit",
+          "time_s": 0.2399819747155039,
+          "outcome": "Goal",
+          "reason": "whole_ball_goal",
+          "position": [
+            11.11,
+            0.0,
+            0.16942799482141407
+          ],
+          "goal": "right"
+        }
+      ],
+      "label_basis": "original GoalDetector + native contact identities + measured floor velocity reversal",
+      "record_directory": "results/g4/physical_v2_20261029",
+      "repeat_identical": true,
+      "first_10ms_max_ballistic_vz_error_m_s": 2.664921341377635e-07,
+      "repeat_file_sha256": [
+        "46780ba801b3240a8a196e714faaf2bdc79c71ea85b787ab187e3db6bfc1ac84",
+        "46780ba801b3240a8a196e714faaf2bdc79c71ea85b787ab187e3db6bfc1ac84"
+      ],
+      "unreported_frame_crossings": [],
+      "robot_mode": "absent",
+      "initial_position_world_m": [
+        9.0,
+        0.0,
+        0.44999998807907104
+      ],
+      "initial_angular_velocity_world_rad_s": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "bounce_repeated",
+      "source": "physx_physical_shot",
+      "outcome": "Goal",
+      "termination_reason": "whole_ball_goal",
+      "robot_contact": false,
+      "robot_contact_is_save": null,
+      "ground_contact_count": 2,
+      "ground_bounce_count": 2,
+      "frame_contact": false,
+      "classification": "ground_then_goal",
+      "visibility": "unobserved_no_camera_evidence",
+      "events": [
+        {
+          "type": "contact_end",
+          "time_s": 0.0010000000474974513,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            8.0,
+            0.0,
+            -3.0
+          ],
+          "ball_velocity_after_m_s": [
+            8.0,
+            0.0,
+            -3.009809970855713
+          ]
+        },
+        {
+          "type": "contact_begin",
+          "category": "ground_contact",
+          "time_s": 0.07100000337231904,
+          "object": "ground",
+          "contact_position_world_m": [
+            9.568026542663574,
+            0.0,
+            0.001925736665725708
+          ],
+          "ball_velocity_before_m_s": [
+            8.0,
+            0.0,
+            -3.6965079307556152
+          ],
+          "ball_velocity_after_m_s": [
+            5.039082050323486,
+            0.0,
+            1.2285467386245728
+          ],
+          "onset_observation": "CONTACT_FOUND",
+          "time_semantics": "pre-step lower bound; raw reports retain both bounds"
+        },
+        {
+          "type": "ground_bounce",
+          "time_s": 0.0720000034198165,
+          "object": "ground",
+          "ball_position_world_m": [
+            9.57457160949707,
+            0.0,
+            0.11063747853040695
+          ],
+          "ball_velocity_before_m_s": [
+            8.0,
+            0.0,
+            -3.6965079307556152
+          ],
+          "ball_velocity_after_m_s": [
+            5.039082050323486,
+            0.0,
+            1.2285467386245728
+          ]
+        },
+        {
+          "type": "contact_end",
+          "time_s": 0.07500000356230885,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            5.039082050323486,
+            0.0,
+            1.208926796913147
+          ],
+          "ball_velocity_after_m_s": [
+            5.039082050323486,
+            0.0,
+            1.199116826057434
+          ]
+        },
+        {
+          "type": "contact_begin",
+          "category": "ground_contact",
+          "time_s": 0.32100001524668187,
+          "object": "ground",
+          "contact_position_world_m": [
+            10.829328536987305,
+            0.0,
+            0.0012099742889404297
+          ],
+          "ball_velocity_before_m_s": [
+            5.039082050323486,
+            0.0,
+            -1.2141391038894653
+          ],
+          "ball_velocity_after_m_s": [
+            4.48548698425293,
+            0.0,
+            0.40570515394210815
+          ],
+          "onset_observation": "CONTACT_FOUND",
+          "time_semantics": "pre-step lower bound; raw reports retain both bounds"
+        },
+        {
+          "type": "ground_bounce",
+          "time_s": 0.3220000152941793,
+          "object": "ground",
+          "ball_position_world_m": [
+            10.834136962890625,
+            0.0,
+            0.11040052771568298
+          ],
+          "ball_velocity_before_m_s": [
+            5.039082050323486,
+            0.0,
+            -1.2141391038894653
+          ],
+          "ball_velocity_after_m_s": [
+            4.48548698425293,
+            0.0,
+            0.40570515394210815
+          ]
+        },
+        {
+          "type": "contact_end",
+          "time_s": 0.32800001557916403,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            4.48548698425293,
+            0.0,
+            0.35665515065193176
+          ],
+          "ball_velocity_after_m_s": [
+            4.48548698425293,
+            0.0,
+            0.3468451499938965
+          ]
+        },
+        {
+          "type": "whole_ball_exit",
+          "time_s": 0.3835050915729448,
+          "outcome": "Goal",
+          "reason": "whole_ball_goal",
+          "position": [
+            11.11,
+            0.0,
+            0.11649553180539354
+          ],
+          "goal": "right"
+        }
+      ],
+      "label_basis": "original GoalDetector + native contact identities + measured floor velocity reversal",
+      "record_directory": "results/g4/bounce_two_20261029",
+      "repeat_identical": true,
+      "first_10ms_max_ballistic_vz_error_m_s": 2.664921341377635e-07,
+      "repeat_file_sha256": [
+        "5e755ab0b3e0b400be4d0510d3eb4549c36302133e22145f8d8fd8b8918cb2c1",
+        "5e755ab0b3e0b400be4d0510d3eb4549c36302133e22145f8d8fd8b8918cb2c1"
+      ],
+      "unreported_frame_crossings": [],
+      "robot_mode": "absent",
+      "initial_position_world_m": [
+        9.0,
+        0.0,
+        0.3499999940395355
+      ],
+      "initial_angular_velocity_world_rad_s": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "bounce_oblique",
+      "source": "physx_physical_shot",
+      "outcome": "Goal",
+      "termination_reason": "whole_ball_goal",
+      "robot_contact": false,
+      "robot_contact_is_save": null,
+      "ground_contact_count": 3,
+      "ground_bounce_count": 3,
+      "frame_contact": false,
+      "classification": "ground_then_goal",
+      "visibility": "unobserved_no_camera_evidence",
+      "events": [
+        {
+          "type": "contact_end",
+          "time_s": 0.0010000000474974513,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            6.0,
+            1.2000000476837158,
+            -3.0
+          ],
+          "ball_velocity_after_m_s": [
+            6.0,
+            1.2000000476837158,
+            -3.009809970855713
+          ]
+        },
+        {
+          "type": "contact_begin",
+          "category": "ground_contact",
+          "time_s": 0.1560000074096024,
+          "object": "ground",
+          "contact_position_world_m": [
+            7.936006546020508,
+            -0.8127968311309814,
+            0.0018670111894607544
+          ],
+          "ball_velocity_before_m_s": [
+            6.0,
+            1.2000000476837158,
+            -4.530355453491211
+          ],
+          "ball_velocity_after_m_s": [
+            2.4433696269989014,
+            0.4886740744113922,
+            1.5049456357955933
+          ],
+          "onset_observation": "CONTACT_FOUND",
+          "time_semantics": "pre-step lower bound; raw reports retain both bounds"
+        },
+        {
+          "type": "ground_bounce",
+          "time_s": 0.15700000745709985,
+          "object": "ground",
+          "ball_position_world_m": [
+            7.940067768096924,
+            -0.8119844198226929,
+            0.1106182411313057
+          ],
+          "ball_velocity_before_m_s": [
+            6.0,
+            1.2000000476837158,
+            -4.530355453491211
+          ],
+          "ball_velocity_after_m_s": [
+            2.4433696269989014,
+            0.4886740744113922,
+            1.5049456357955933
+          ]
+        },
+        {
+          "type": "contact_end",
+          "time_s": 0.15900000755209476,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            2.4433696269989014,
+            0.4886740744113922,
+            1.4951356649398804
+          ],
+          "ball_velocity_after_m_s": [
+            2.4433696269989014,
+            0.4886740744113922,
+            1.4853256940841675
+          ]
+        },
+        {
+          "type": "contact_begin",
+          "category": "ground_contact",
+          "time_s": 0.4620000219438225,
+          "object": "ground",
+          "contact_position_world_m": [
+            8.685276985168457,
+            -0.6629317998886108,
+            0.0018438249826431274
+          ],
+          "ball_velocity_before_m_s": [
+            2.4433696269989014,
+            0.4886740744113922,
+            -1.4870985746383667
+          ],
+          "ball_velocity_after_m_s": [
+            2.4433696269989014,
+            0.4886740744113922,
+            -1.4969085454940796
+          ],
+          "onset_observation": "CONTACT_FOUND",
+          "time_semantics": "pre-step lower bound; raw reports retain both bounds"
+        },
+        {
+          "type": "ground_bounce",
+          "time_s": 0.4640000220388174,
+          "object": "ground",
+          "ball_position_world_m": [
+            8.690905570983887,
+            -0.6618050932884216,
+            0.11011385172605515
+          ],
+          "ball_velocity_before_m_s": [
+            2.4433696269989014,
+            0.4886740744113922,
+            -1.4969085454940796
+          ],
+          "ball_velocity_after_m_s": [
+            3.6236884593963623,
+            0.7247397303581238,
+            0.4994378089904785
+          ]
+        },
+        {
+          "type": "contact_end",
+          "time_s": 0.46900002227630466,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            3.6236884593963623,
+            0.7247397303581238,
+            0.4601978063583374
+          ],
+          "ball_velocity_after_m_s": [
+            3.6236884593963623,
+            0.7247397303581238,
+            0.4503878057003021
+          ]
+        },
+        {
+          "type": "contact_begin",
+          "category": "ground_contact",
+          "time_s": 0.5610000266460702,
+          "object": "ground",
+          "contact_position_world_m": [
+            9.042399406433105,
+            -0.591505765914917,
+            0.0019323304295539856
+          ],
+          "ball_velocity_before_m_s": [
+            3.6236884593963623,
+            0.7247397303581238,
+            -0.4521322548389435
+          ],
+          "ball_velocity_after_m_s": [
+            3.6236884593963623,
+            0.7247397303581238,
+            -0.46194225549697876
+          ],
+          "onset_observation": "CONTACT_FOUND",
+          "time_semantics": "pre-step lower bound; raw reports retain both bounds"
+        },
+        {
+          "type": "ground_bounce",
+          "time_s": 0.5660000268835574,
+          "object": "ground",
+          "ball_position_world_m": [
+            9.060464859008789,
+            -0.587886393070221,
+            0.11000744253396988
+          ],
+          "ball_velocity_before_m_s": [
+            3.5895447731018066,
+            0.7179116606712341,
+            -0.4333396553993225
+          ],
+          "ball_velocity_after_m_s": [
+            3.600264072418213,
+            0.7200552225112915,
+            0.1468922644853592
+          ]
+        },
+        {
+          "type": "whole_ball_exit",
+          "time_s": 1.135145541204653,
+          "outcome": "Goal",
+          "reason": "whole_ball_goal",
+          "position": [
+            11.11,
+            -0.1780879207586839,
+            0.10999791907272854
+          ],
+          "goal": "right"
+        }
+      ],
+      "label_basis": "original GoalDetector + native contact identities + measured floor velocity reversal",
+      "record_directory": "results/g4/physical_v2_20261029",
+      "repeat_identical": true,
+      "first_10ms_max_ballistic_vz_error_m_s": 2.664921341377635e-07,
+      "repeat_file_sha256": [
+        "c75bf1cb6efadc260c29faceb991123a9f2b0a194743ee6e31cf42e8e6b10bb5",
+        "c75bf1cb6efadc260c29faceb991123a9f2b0a194743ee6e31cf42e8e6b10bb5"
+      ],
+      "unreported_frame_crossings": [],
+      "robot_mode": "absent",
+      "initial_position_world_m": [
+        7.0,
+        -1.0,
+        0.699999988079071
+      ],
+      "initial_angular_velocity_world_rad_s": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "post_left",
+      "source": "physx_physical_shot",
+      "outcome": "Timeout",
+      "termination_reason": "duration_reached",
+      "robot_contact": false,
+      "robot_contact_is_save": null,
+      "ground_contact_count": 3,
+      "ground_bounce_count": 3,
+      "frame_contact": true,
+      "classification": "frame_then_non_goal",
+      "visibility": "unobserved_no_camera_evidence",
+      "events": [
+        {
+          "type": "contact_end",
+          "time_s": 0.0010000000474974513,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            8.0,
+            0.0,
+            0.0
+          ],
+          "ball_velocity_after_m_s": [
+            8.0,
+            0.0,
+            -0.009810000658035278
+          ]
+        },
+        {
+          "type": "contact_begin",
+          "category": "frame_contact",
+          "time_s": 0.23100001097191125,
+          "object": "goal_right_left_post_collision",
+          "contact_position_world_m": [
+            10.959043502807617,
+            -1.5399999618530273,
+            0.23713162541389465
+          ],
+          "ball_velocity_before_m_s": [
+            8.0,
+            0.0,
+            -2.2661049365997314
+          ],
+          "ball_velocity_after_m_s": [
+            -2.651782751083374,
+            0.0,
+            -1.4449796676635742
+          ],
+          "onset_observation": "CONTACT_FOUND",
+          "time_semantics": "pre-step lower bound; raw reports retain both bounds"
+        },
+        {
+          "type": "contact_end",
+          "time_s": 0.2340000111144036,
+          "object": "/World/Bodies/b27_goal_right/g89_goal_right_left_post_collision",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            -2.651782751083374,
+            0.0,
+            -1.454789638519287
+          ],
+          "ball_velocity_after_m_s": [
+            -2.651782751083374,
+            0.0,
+            -1.464599609375
+          ]
+        },
+        {
+          "type": "contact_begin",
+          "category": "ground_contact",
+          "time_s": 0.3020000143442303,
+          "object": "ground",
+          "contact_position_world_m": [
+            10.663707733154297,
+            -1.5399999618530273,
+            0.00023294240236282349
+          ],
+          "ball_velocity_before_m_s": [
+            -2.651782751083374,
+            0.0,
+            -2.1316776275634766
+          ],
+          "ball_velocity_after_m_s": [
+            -2.1122679710388184,
+            0.0,
+            0.7098469138145447
+          ],
+          "onset_observation": "CONTACT_FOUND",
+          "time_semantics": "pre-step lower bound; raw reports retain both bounds"
+        },
+        {
+          "type": "ground_bounce",
+          "time_s": 0.30300001439172775,
+          "object": "ground",
+          "ball_position_world_m": [
+            10.661611557006836,
+            -1.5399999618530273,
+            0.11007638275623322
+          ],
+          "ball_velocity_before_m_s": [
+            -2.651782751083374,
+            0.0,
+            -2.1316776275634766
+          ],
+          "ball_velocity_after_m_s": [
+            -2.1122679710388184,
+            0.0,
+            0.7098469138145447
+          ]
+        },
+        {
+          "type": "contact_end",
+          "time_s": 0.30700001458171755,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            -2.1122679710388184,
+            0.0,
+            0.6804169416427612
+          ],
+          "ball_velocity_after_m_s": [
+            -2.1122679710388184,
+            0.0,
+            0.6706069707870483
+          ]
+        },
+        {
+          "type": "contact_begin",
+          "category": "ground_contact",
+          "time_s": 0.4440000210888684,
+          "object": "ground",
+          "contact_position_world_m": [
+            10.363784790039062,
+            -1.5399999618530273,
+            0.0019569844007492065
+          ],
+          "ball_velocity_before_m_s": [
+            -2.1122679710388184,
+            0.0,
+            -0.673362135887146
+          ],
+          "ball_velocity_after_m_s": [
+            -2.1122679710388184,
+            0.0,
+            -0.6831721067428589
+          ],
+          "onset_observation": "CONTACT_FOUND",
+          "time_semantics": "pre-step lower bound; raw reports retain both bounds"
+        },
+        {
+          "type": "ground_bounce",
+          "time_s": 0.44700002123136073,
+          "object": "ground",
+          "ball_position_world_m": [
+            10.357483863830566,
+            -1.5399999618530273,
+            0.11019155383110046
+          ],
+          "ball_velocity_before_m_s": [
+            -2.1122679710388184,
+            0.0,
+            -0.6929820775985718
+          ],
+          "ball_velocity_after_m_s": [
+            -2.0958473682403564,
+            0.0,
+            0.2329561710357666
+          ]
+        },
+        {
+          "type": "contact_end",
+          "time_s": 0.45900002180133015,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            -2.0958473682403564,
+            0.0,
+            0.12504616379737854
+          ],
+          "ball_velocity_after_m_s": [
+            -2.0958473682403564,
+            0.0,
+            0.11523616313934326
+          ]
+        },
+        {
+          "type": "contact_begin",
+          "category": "ground_contact",
+          "time_s": 0.48400002298876643,
+          "object": "ground",
+          "contact_position_world_m": [
+            10.279988288879395,
+            -1.5399999618530273,
+            0.0019145384430885315
+          ],
+          "ball_velocity_before_m_s": [
+            -2.0958473682403564,
+            0.0,
+            -0.1300138533115387
+          ],
+          "ball_velocity_after_m_s": [
+            -2.0958473682403564,
+            0.0,
+            -0.13982385396957397
+          ],
+          "onset_observation": "CONTACT_FOUND",
+          "time_semantics": "pre-step lower bound; raw reports retain both bounds"
+        },
+        {
+          "type": "ground_bounce",
+          "time_s": 0.4950000235112384,
+          "object": "ground",
+          "ball_position_world_m": [
+            10.256993293762207,
+            -1.5399999618530273,
+            0.11002404242753983
+          ],
+          "ball_velocity_before_m_s": [
+            -2.0958473682403564,
+            0.0,
+            -0.22811385989189148
+          ],
+          "ball_velocity_after_m_s": [
+            -2.094245672225952,
+            0.0,
+            0.07886552810668945
+          ]
+        },
+        {
+          "type": "timeout",
+          "time_s": 3.000000142492354,
+          "reason": "duration_reached"
+        }
+      ],
+      "label_basis": "original GoalDetector + native contact identities + measured floor velocity reversal",
+      "record_directory": "results/g4/physical_v2_20261029",
+      "repeat_identical": true,
+      "first_10ms_max_ballistic_vz_error_m_s": 1.7287675180277517e-09,
+      "repeat_file_sha256": [
+        "ccfd34061007593aac13c8fbbda95a70e9f934b2d05ccdf0d1daba019cc50060",
+        "ccfd34061007593aac13c8fbbda95a70e9f934b2d05ccdf0d1daba019cc50060"
+      ],
+      "unreported_frame_crossings": [],
+      "robot_mode": "absent",
+      "initial_position_world_m": [
+        9.0,
+        -1.5399999618530273,
+        0.5
+      ],
+      "initial_angular_velocity_world_rad_s": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "post_right",
+      "source": "physx_physical_shot",
+      "outcome": "Timeout",
+      "termination_reason": "duration_reached",
+      "robot_contact": false,
+      "robot_contact_is_save": null,
+      "ground_contact_count": 3,
+      "ground_bounce_count": 3,
+      "frame_contact": true,
+      "classification": "frame_then_non_goal",
+      "visibility": "unobserved_no_camera_evidence",
+      "events": [
+        {
+          "type": "contact_end",
+          "time_s": 0.0010000000474974513,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            8.0,
+            0.0,
+            0.0
+          ],
+          "ball_velocity_after_m_s": [
+            8.0,
+            0.0,
+            -0.009810000658035278
+          ]
+        },
+        {
+          "type": "contact_begin",
+          "category": "frame_contact",
+          "time_s": 0.23100001097191125,
+          "object": "goal_right_right_post_collision",
+          "contact_position_world_m": [
+            10.959043502807617,
+            1.5399999618530273,
+            0.23713162541389465
+          ],
+          "ball_velocity_before_m_s": [
+            8.0,
+            0.0,
+            -2.2661049365997314
+          ],
+          "ball_velocity_after_m_s": [
+            -2.651782751083374,
+            0.0,
+            -1.4449796676635742
+          ],
+          "onset_observation": "CONTACT_FOUND",
+          "time_semantics": "pre-step lower bound; raw reports retain both bounds"
+        },
+        {
+          "type": "contact_end",
+          "time_s": 0.2340000111144036,
+          "object": "/World/Bodies/b27_goal_right/g91_goal_right_right_post_collision",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            -2.651782751083374,
+            0.0,
+            -1.454789638519287
+          ],
+          "ball_velocity_after_m_s": [
+            -2.651782751083374,
+            0.0,
+            -1.464599609375
+          ]
+        },
+        {
+          "type": "contact_begin",
+          "category": "ground_contact",
+          "time_s": 0.3020000143442303,
+          "object": "ground",
+          "contact_position_world_m": [
+            10.663707733154297,
+            1.5399999618530273,
+            0.00023294240236282349
+          ],
+          "ball_velocity_before_m_s": [
+            -2.651782751083374,
+            0.0,
+            -2.1316776275634766
+          ],
+          "ball_velocity_after_m_s": [
+            -2.1122679710388184,
+            0.0,
+            0.7098469138145447
+          ],
+          "onset_observation": "CONTACT_FOUND",
+          "time_semantics": "pre-step lower bound; raw reports retain both bounds"
+        },
+        {
+          "type": "ground_bounce",
+          "time_s": 0.30300001439172775,
+          "object": "ground",
+          "ball_position_world_m": [
+            10.661611557006836,
+            1.5399999618530273,
+            0.11007638275623322
+          ],
+          "ball_velocity_before_m_s": [
+            -2.651782751083374,
+            0.0,
+            -2.1316776275634766
+          ],
+          "ball_velocity_after_m_s": [
+            -2.1122679710388184,
+            0.0,
+            0.7098469138145447
+          ]
+        },
+        {
+          "type": "contact_end",
+          "time_s": 0.30700001458171755,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            -2.1122679710388184,
+            0.0,
+            0.6804169416427612
+          ],
+          "ball_velocity_after_m_s": [
+            -2.1122679710388184,
+            0.0,
+            0.6706069707870483
+          ]
+        },
+        {
+          "type": "contact_begin",
+          "category": "ground_contact",
+          "time_s": 0.4440000210888684,
+          "object": "ground",
+          "contact_position_world_m": [
+            10.363784790039062,
+            1.5399999618530273,
+            0.0019569844007492065
+          ],
+          "ball_velocity_before_m_s": [
+            -2.1122679710388184,
+            0.0,
+            -0.673362135887146
+          ],
+          "ball_velocity_after_m_s": [
+            -2.1122679710388184,
+            0.0,
+            -0.6831721067428589
+          ],
+          "onset_observation": "CONTACT_FOUND",
+          "time_semantics": "pre-step lower bound; raw reports retain both bounds"
+        },
+        {
+          "type": "ground_bounce",
+          "time_s": 0.44700002123136073,
+          "object": "ground",
+          "ball_position_world_m": [
+            10.357483863830566,
+            1.5399999618530273,
+            0.11019155383110046
+          ],
+          "ball_velocity_before_m_s": [
+            -2.1122679710388184,
+            0.0,
+            -0.6929820775985718
+          ],
+          "ball_velocity_after_m_s": [
+            -2.0958473682403564,
+            0.0,
+            0.2329561710357666
+          ]
+        },
+        {
+          "type": "contact_end",
+          "time_s": 0.45900002180133015,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            -2.0958473682403564,
+            0.0,
+            0.12504616379737854
+          ],
+          "ball_velocity_after_m_s": [
+            -2.0958473682403564,
+            0.0,
+            0.11523616313934326
+          ]
+        },
+        {
+          "type": "contact_begin",
+          "category": "ground_contact",
+          "time_s": 0.48400002298876643,
+          "object": "ground",
+          "contact_position_world_m": [
+            10.279988288879395,
+            1.5399999618530273,
+            0.0019145384430885315
+          ],
+          "ball_velocity_before_m_s": [
+            -2.0958473682403564,
+            0.0,
+            -0.1300138533115387
+          ],
+          "ball_velocity_after_m_s": [
+            -2.0958473682403564,
+            0.0,
+            -0.13982385396957397
+          ],
+          "onset_observation": "CONTACT_FOUND",
+          "time_semantics": "pre-step lower bound; raw reports retain both bounds"
+        },
+        {
+          "type": "ground_bounce",
+          "time_s": 0.4950000235112384,
+          "object": "ground",
+          "ball_position_world_m": [
+            10.256993293762207,
+            1.5399999618530273,
+            0.11002404242753983
+          ],
+          "ball_velocity_before_m_s": [
+            -2.0958473682403564,
+            0.0,
+            -0.22811385989189148
+          ],
+          "ball_velocity_after_m_s": [
+            -2.094245672225952,
+            0.0,
+            0.07886552810668945
+          ]
+        },
+        {
+          "type": "timeout",
+          "time_s": 3.000000142492354,
+          "reason": "duration_reached"
+        }
+      ],
+      "label_basis": "original GoalDetector + native contact identities + measured floor velocity reversal",
+      "record_directory": "results/g4/physical_v2_20261029",
+      "repeat_identical": true,
+      "first_10ms_max_ballistic_vz_error_m_s": 1.7287675180277517e-09,
+      "repeat_file_sha256": [
+        "d49e3233d85e10a1cfb17151f407aeb8b7e9089375d0bb8a193a3c95174d991d",
+        "d49e3233d85e10a1cfb17151f407aeb8b7e9089375d0bb8a193a3c95174d991d"
+      ],
+      "unreported_frame_crossings": [],
+      "robot_mode": "absent",
+      "initial_position_world_m": [
+        9.0,
+        1.5399999618530273,
+        0.5
+      ],
+      "initial_angular_velocity_world_rad_s": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "crossbar",
+      "source": "physx_physical_shot",
+      "outcome": "Timeout",
+      "termination_reason": "duration_reached",
+      "robot_contact": false,
+      "robot_contact_is_save": null,
+      "ground_contact_count": 3,
+      "ground_bounce_count": 3,
+      "frame_contact": true,
+      "classification": "frame_then_non_goal",
+      "visibility": "unobserved_no_camera_evidence",
+      "events": [
+        {
+          "type": "contact_end",
+          "time_s": 0.0010000000474974513,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            8.0,
+            0.0,
+            1.2262500524520874
+          ],
+          "ball_velocity_after_m_s": [
+            8.0,
+            0.0,
+            1.2164400815963745
+          ]
+        },
+        {
+          "type": "contact_begin",
+          "category": "frame_contact",
+          "time_s": 0.2320000110194087,
+          "object": "goal_right_crossbar_collision",
+          "contact_position_world_m": [
+            10.96273136138916,
+            -1.324768028609924e-08,
+            2.0450098514556885
+          ],
+          "ball_velocity_before_m_s": [
+            8.0,
+            0.0,
+            -1.0496662855148315
+          ],
+          "ball_velocity_after_m_s": [
+            -2.6498448848724365,
+            9.198494694828696e-07,
+            0.3656556308269501
+          ],
+          "onset_observation": "CONTACT_FOUND",
+          "time_semantics": "pre-step lower bound; raw reports retain both bounds"
+        },
+        {
+          "type": "contact_end",
+          "time_s": 0.2360000112093985,
+          "object": "/World/Bodies/b27_goal_right/g93_goal_right_crossbar_collision",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            -2.6498451232910156,
+            9.19849298952613e-07,
+            0.3460356593132019
+          ],
+          "ball_velocity_after_m_s": [
+            -2.6498451232910156,
+            9.19849298952613e-07,
+            0.3362256586551666
+          ]
+        },
+        {
+          "type": "contact_begin",
+          "category": "ground_contact",
+          "time_s": 0.9020000428427011,
+          "object": "ground",
+          "contact_position_world_m": [
+            9.07973861694336,
+            6.167684318825195e-07,
+            -0.004136428236961365
+          ],
+          "ball_velocity_before_m_s": [
+            -2.6498451232910156,
+            9.19849298952613e-07,
+            -6.1972174644470215
+          ],
+          "ball_velocity_after_m_s": [
+            -1.583905577659607,
+            5.822719799652987e-07,
+            2.057466745376587
+          ],
+          "onset_observation": "CONTACT_FOUND",
+          "time_semantics": "pre-step lower bound; raw reports retain both bounds"
+        },
+        {
+          "type": "ground_bounce",
+          "time_s": 0.9030000428901985,
+          "object": "ground",
+          "ball_position_world_m": [
+            9.07815170288086,
+            6.17351417986356e-07,
+            0.10862823575735092
+          ],
+          "ball_velocity_before_m_s": [
+            -2.6498451232910156,
+            9.19849298952613e-07,
+            -6.1972174644470215
+          ],
+          "ball_velocity_after_m_s": [
+            -1.583905577659607,
+            5.822719799652987e-07,
+            2.057466745376587
+          ]
+        },
+        {
+          "type": "contact_end",
+          "time_s": 0.9060000430326909,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            -1.583905577659607,
+            5.822719231218798e-07,
+            2.037846565246582
+          ],
+          "ball_velocity_after_m_s": [
+            -1.583905577659607,
+            5.822719231218798e-07,
+            2.028036594390869
+          ]
+        },
+        {
+          "type": "contact_begin",
+          "category": "ground_contact",
+          "time_s": 1.3200000626966357,
+          "object": "ground",
+          "contact_position_world_m": [
+            8.417595863342285,
+            8.601493846072117e-07,
+            0.0019797086715698242
+          ],
+          "ball_velocity_before_m_s": [
+            -1.583905577659607,
+            5.822719231218798e-07,
+            -2.033294439315796
+          ],
+          "ball_velocity_after_m_s": [
+            -1.5870853662490845,
+            5.831114435750351e-07,
+            0.6772356033325195
+          ],
+          "onset_observation": "CONTACT_FOUND",
+          "time_semantics": "pre-step lower bound; raw reports retain both bounds"
+        },
+        {
+          "type": "ground_bounce",
+          "time_s": 1.3210000627441332,
+          "object": "ground",
+          "ball_position_world_m": [
+            8.416008949279785,
+            8.607321433373727e-07,
+            0.11065573245286942
+          ],
+          "ball_velocity_before_m_s": [
+            -1.583905577659607,
+            5.822719231218798e-07,
+            -2.033294439315796
+          ],
+          "ball_velocity_after_m_s": [
+            -1.5870853662490845,
+            5.831114435750351e-07,
+            0.6772356033325195
+          ]
+        },
+        {
+          "type": "contact_end",
+          "time_s": 1.325000062934123,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            -1.5870853662490845,
+            5.831114435750351e-07,
+            0.6478056907653809
+          ],
+          "ball_velocity_after_m_s": [
+            -1.5870853662490845,
+            5.831114435750351e-07,
+            0.637995719909668
+          ]
+        },
+        {
+          "type": "contact_begin",
+          "category": "ground_contact",
+          "time_s": 1.4570000692037866,
+          "object": "ground",
+          "contact_position_world_m": [
+            8.200188636779785,
+            9.400333738085465e-07,
+            0.0013698115944862366
+          ],
+          "ball_velocity_before_m_s": [
+            -1.5870853662490845,
+            5.831114435750351e-07,
+            -0.6569235324859619
+          ],
+          "ball_velocity_after_m_s": [
+            -1.5870853662490845,
+            5.831114435750351e-07,
+            -0.6667335033416748
+          ],
+          "onset_observation": "CONTACT_FOUND",
+          "time_semantics": "pre-step lower bound; raw reports retain both bounds"
+        },
+        {
+          "type": "ground_bounce",
+          "time_s": 1.460000069346279,
+          "object": "ground",
+          "ball_position_world_m": [
+            8.195427894592285,
+            9.41783866892365e-07,
+            0.1100083515048027
+          ],
+          "ball_velocity_before_m_s": [
+            -1.5834496021270752,
+            5.822231514684972e-07,
+            -0.4460643231868744
+          ],
+          "ball_velocity_after_m_s": [
+            -1.58625328540802,
+            5.840161065862048e-07,
+            0.15111038088798523
+          ]
+        },
+        {
+          "type": "timeout",
+          "time_s": 3.000000142492354,
+          "reason": "duration_reached"
+        }
+      ],
+      "label_basis": "original GoalDetector + native contact identities + measured floor velocity reversal",
+      "record_directory": "results/g4/physical_v2_20261029",
+      "repeat_identical": true,
+      "first_10ms_max_ballistic_vz_error_m_s": 3.1894422125589017e-07,
+      "repeat_file_sha256": [
+        "259bf62cc525d5b71b8bb738bb5ea03212311c053d3818c236a8cf462ef1d9b3",
+        "259bf62cc525d5b71b8bb738bb5ea03212311c053d3818c236a8cf462ef1d9b3"
+      ],
+      "unreported_frame_crossings": [],
+      "robot_mode": "absent",
+      "initial_position_world_m": [
+        9.0,
+        0.0,
+        2.0399999618530273
+      ],
+      "initial_angular_velocity_world_rad_s": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "wide_left",
+      "source": "physx_physical_shot",
+      "outcome": "Miss",
+      "termination_reason": "outside_goal_aperture",
+      "robot_contact": false,
+      "robot_contact_is_save": null,
+      "ground_contact_count": 0,
+      "ground_bounce_count": 0,
+      "frame_contact": false,
+      "classification": "miss",
+      "visibility": "unobserved_no_camera_evidence",
+      "events": [
+        {
+          "type": "contact_end",
+          "time_s": 0.0010000000474974513,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            8.0,
+            0.0,
+            1.0
+          ],
+          "ball_velocity_after_m_s": [
+            8.0,
+            0.0,
+            0.9901900291442871
+          ]
+        },
+        {
+          "type": "whole_ball_exit",
+          "time_s": 0.2637376880543438,
+          "outcome": "Miss",
+          "reason": "outside_goal_aperture",
+          "position": [
+            11.11,
+            -2.0,
+            0.7212638247403873
+          ],
+          "goal": "right"
+        }
+      ],
+      "label_basis": "original GoalDetector + native contact identities + measured floor velocity reversal",
+      "record_directory": "results/g4/physical_v2_20261029",
+      "repeat_identical": true,
+      "first_10ms_max_ballistic_vz_error_m_s": 2.664921339157189e-07,
+      "repeat_file_sha256": [
+        "c1ae3d787d4d1da1013953b824c24327fa9dec8cd43e158b55f2a0c931050ac8",
+        "c1ae3d787d4d1da1013953b824c24327fa9dec8cd43e158b55f2a0c931050ac8"
+      ],
+      "unreported_frame_crossings": [],
+      "robot_mode": "absent",
+      "initial_position_world_m": [
+        9.0,
+        -2.0,
+        0.800000011920929
+      ],
+      "initial_angular_velocity_world_rad_s": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "wide_right",
+      "source": "physx_physical_shot",
+      "outcome": "Miss",
+      "termination_reason": "outside_goal_aperture",
+      "robot_contact": false,
+      "robot_contact_is_save": null,
+      "ground_contact_count": 0,
+      "ground_bounce_count": 0,
+      "frame_contact": false,
+      "classification": "miss",
+      "visibility": "unobserved_no_camera_evidence",
+      "events": [
+        {
+          "type": "contact_end",
+          "time_s": 0.0010000000474974513,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            8.0,
+            0.0,
+            1.0
+          ],
+          "ball_velocity_after_m_s": [
+            8.0,
+            0.0,
+            0.9901900291442871
+          ]
+        },
+        {
+          "type": "whole_ball_exit",
+          "time_s": 0.2637376880543438,
+          "outcome": "Miss",
+          "reason": "outside_goal_aperture",
+          "position": [
+            11.11,
+            2.0,
+            0.7212638247403873
+          ],
+          "goal": "right"
+        }
+      ],
+      "label_basis": "original GoalDetector + native contact identities + measured floor velocity reversal",
+      "record_directory": "results/g4/physical_v2_20261029",
+      "repeat_identical": true,
+      "first_10ms_max_ballistic_vz_error_m_s": 2.664921339157189e-07,
+      "repeat_file_sha256": [
+        "5a0c03ca1c35a63ba11c869537bd5bf73665a011c201e5c9f31ea24cf896623a",
+        "5a0c03ca1c35a63ba11c869537bd5bf73665a011c201e5c9f31ea24cf896623a"
+      ],
+      "unreported_frame_crossings": [],
+      "robot_mode": "absent",
+      "initial_position_world_m": [
+        9.0,
+        2.0,
+        0.800000011920929
+      ],
+      "initial_angular_velocity_world_rad_s": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "above_crossbar",
+      "source": "physx_physical_shot",
+      "outcome": "Miss",
+      "termination_reason": "outside_goal_aperture",
+      "robot_contact": false,
+      "robot_contact_is_save": null,
+      "ground_contact_count": 0,
+      "ground_bounce_count": 0,
+      "frame_contact": false,
+      "classification": "miss",
+      "visibility": "unobserved_no_camera_evidence",
+      "events": [
+        {
+          "type": "contact_end",
+          "time_s": 0.0010000000474974513,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            8.0,
+            0.0,
+            1.0
+          ],
+          "ball_velocity_after_m_s": [
+            8.0,
+            0.0,
+            0.9901900291442871
+          ]
+        },
+        {
+          "type": "whole_ball_exit",
+          "time_s": 0.2637376880543438,
+          "outcome": "Miss",
+          "reason": "outside_goal_aperture",
+          "position": [
+            11.11,
+            0.0,
+            2.721263689895341
+          ],
+          "goal": "right"
+        }
+      ],
+      "label_basis": "original GoalDetector + native contact identities + measured floor velocity reversal",
+      "record_directory": "results/g4/physical_v2_20261029",
+      "repeat_identical": true,
+      "first_10ms_max_ballistic_vz_error_m_s": 2.664921339157189e-07,
+      "repeat_file_sha256": [
+        "c0af0c788301fa33427ed1c1a49ab405e42a7e4219d3d52f05418088c3b3cb27",
+        "c0af0c788301fa33427ed1c1a49ab405e42a7e4219d3d52f05418088c3b3cb27"
+      ],
+      "unreported_frame_crossings": [],
+      "robot_mode": "absent",
+      "initial_position_world_m": [
+        9.0,
+        0.0,
+        2.799999952316284
+      ],
+      "initial_angular_velocity_world_rad_s": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "underpowered",
+      "source": "physx_physical_shot",
+      "outcome": "Timeout",
+      "termination_reason": "duration_reached",
+      "robot_contact": false,
+      "robot_contact_is_save": null,
+      "ground_contact_count": 1,
+      "ground_bounce_count": 0,
+      "frame_contact": false,
+      "classification": "timeout",
+      "visibility": "unobserved_no_camera_evidence",
+      "events": [
+        {
+          "type": "contact_begin",
+          "category": "ground_contact",
+          "time_s": 0.0,
+          "object": "ground",
+          "contact_position_world_m": [
+            -1.3113021779531664e-08,
+            0.0,
+            0.0009999871253967285
+          ],
+          "ball_velocity_before_m_s": [
+            0.20000000298023224,
+            0.0,
+            0.0
+          ],
+          "ball_velocity_after_m_s": [
+            0.20000000298023224,
+            0.0,
+            -0.009810000658035278
+          ],
+          "onset_observation": "CONTACT_PERSISTS",
+          "time_semantics": "pre-step lower bound; raw reports retain both bounds"
+        },
+        {
+          "type": "timeout",
+          "time_s": 1.0000000474974513,
+          "reason": "duration_reached"
+        }
+      ],
+      "label_basis": "original GoalDetector + native contact identities + measured floor velocity reversal",
+      "record_directory": "results/g4/physical_v2_20261029",
+      "repeat_identical": true,
+      "first_10ms_max_ballistic_vz_error_m_s": 0.0,
+      "repeat_file_sha256": [
+        "3956ae63cf179c692837cff94761c48bc4522f00be988165197dfd8a63c7d2f9",
+        "3956ae63cf179c692837cff94761c48bc4522f00be988165197dfd8a63c7d2f9"
+      ],
+      "unreported_frame_crossings": [],
+      "robot_mode": "absent",
+      "initial_position_world_m": [
+        0.0,
+        0.0,
+        0.11100000143051147
+      ],
+      "initial_angular_velocity_world_rad_s": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "touchline",
+      "source": "physx_physical_shot",
+      "outcome": "Miss",
+      "termination_reason": "touchline_exit",
+      "robot_contact": false,
+      "robot_contact_is_save": null,
+      "ground_contact_count": 0,
+      "ground_bounce_count": 0,
+      "frame_contact": false,
+      "classification": "miss",
+      "visibility": "unobserved_no_camera_evidence",
+      "events": [
+        {
+          "type": "contact_end",
+          "time_s": 0.0010000000474974513,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            0.0,
+            8.0,
+            1.0
+          ],
+          "ball_velocity_after_m_s": [
+            0.0,
+            8.0,
+            0.9901900291442871
+          ]
+        },
+        {
+          "type": "whole_ball_exit",
+          "time_s": 0.2637534082479455,
+          "outcome": "Miss",
+          "reason": "touchline_exit",
+          "position": [
+            0.0,
+            7.11,
+            0.42123879050920005
+          ],
+          "goal": null
+        }
+      ],
+      "label_basis": "original GoalDetector + native contact identities + measured floor velocity reversal",
+      "record_directory": "results/g4/physical_v2_20261029",
+      "repeat_identical": true,
+      "first_10ms_max_ballistic_vz_error_m_s": 2.664921339157189e-07,
+      "repeat_file_sha256": [
+        "861c7f5cd392a5bbd0f3c53c9d100824b31929d9d5bac2aca7627773adbc0273",
+        "861c7f5cd392a5bbd0f3c53c9d100824b31929d9d5bac2aca7627773adbc0273"
+      ],
+      "unreported_frame_crossings": [],
+      "robot_mode": "absent",
+      "initial_position_world_m": [
+        0.0,
+        5.0,
+        0.5
+      ],
+      "initial_angular_velocity_world_rad_s": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "topspin",
+      "source": "physx_physical_shot",
+      "outcome": "Goal",
+      "termination_reason": "whole_ball_goal",
+      "robot_contact": false,
+      "robot_contact_is_save": null,
+      "ground_contact_count": 0,
+      "ground_bounce_count": 0,
+      "frame_contact": false,
+      "classification": "direct_goal",
+      "visibility": "unobserved_no_camera_evidence",
+      "events": [
+        {
+          "type": "contact_end",
+          "time_s": 0.0010000000474974513,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            9.0,
+            -0.4000000059604645,
+            2.0
+          ],
+          "ball_velocity_after_m_s": [
+            9.0,
+            -0.4000000059604645,
+            1.990190029144287
+          ]
+        },
+        {
+          "type": "whole_ball_exit",
+          "time_s": 0.45667559231718396,
+          "outcome": "Goal",
+          "reason": "whole_ball_goal",
+          "position": [
+            11.11,
+            0.11732683807453567,
+            0.6881618530833395
+          ],
+          "goal": "right"
+        }
+      ],
+      "label_basis": "original GoalDetector + native contact identities + measured floor velocity reversal",
+      "record_directory": "results/g4/physical_v2_20261029",
+      "repeat_identical": true,
+      "first_10ms_max_ballistic_vz_error_m_s": 2.664921339157189e-07,
+      "repeat_file_sha256": [
+        "4fa7ab43e0f4e88e9cd251ef46db180a5df4be0bab1b4043d37e6ff54fa99309",
+        "4fa7ab43e0f4e88e9cd251ef46db180a5df4be0bab1b4043d37e6ff54fa99309"
+      ],
+      "unreported_frame_crossings": [],
+      "robot_mode": "absent",
+      "initial_position_world_m": [
+        7.0,
+        0.30000001192092896,
+        0.800000011920929
+      ],
+      "initial_angular_velocity_world_rad_s": [
+        0,
+        100,
+        0
+      ]
+    },
+    {
+      "case": "backspin",
+      "source": "physx_physical_shot",
+      "outcome": "Goal",
+      "termination_reason": "whole_ball_goal",
+      "robot_contact": false,
+      "robot_contact_is_save": null,
+      "ground_contact_count": 0,
+      "ground_bounce_count": 0,
+      "frame_contact": false,
+      "classification": "direct_goal",
+      "visibility": "unobserved_no_camera_evidence",
+      "events": [
+        {
+          "type": "contact_end",
+          "time_s": 0.0010000000474974513,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            9.0,
+            -0.4000000059604645,
+            2.0
+          ],
+          "ball_velocity_after_m_s": [
+            9.0,
+            -0.4000000059604645,
+            1.990190029144287
+          ]
+        },
+        {
+          "type": "whole_ball_exit",
+          "time_s": 0.45667559231718396,
+          "outcome": "Goal",
+          "reason": "whole_ball_goal",
+          "position": [
+            11.11,
+            0.11732683807453567,
+            0.6881618530833395
+          ],
+          "goal": "right"
+        }
+      ],
+      "label_basis": "original GoalDetector + native contact identities + measured floor velocity reversal",
+      "record_directory": "results/g4/physical_v2_20261029",
+      "repeat_identical": true,
+      "first_10ms_max_ballistic_vz_error_m_s": 2.664921339157189e-07,
+      "repeat_file_sha256": [
+        "81b1cb28aa58a3c7fe717cb1a19941544cdf5fa68bdfe3f98499cfcc41193955",
+        "81b1cb28aa58a3c7fe717cb1a19941544cdf5fa68bdfe3f98499cfcc41193955"
+      ],
+      "unreported_frame_crossings": [],
+      "robot_mode": "absent",
+      "initial_position_world_m": [
+        7.0,
+        0.30000001192092896,
+        0.800000011920929
+      ],
+      "initial_angular_velocity_world_rad_s": [
+        0,
+        -100,
+        0
+      ]
+    },
+    {
+      "case": "sidespin",
+      "source": "physx_physical_shot",
+      "outcome": "Goal",
+      "termination_reason": "whole_ball_goal",
+      "robot_contact": false,
+      "robot_contact_is_save": null,
+      "ground_contact_count": 0,
+      "ground_bounce_count": 0,
+      "frame_contact": false,
+      "classification": "direct_goal",
+      "visibility": "unobserved_no_camera_evidence",
+      "events": [
+        {
+          "type": "contact_end",
+          "time_s": 0.0010000000474974513,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            9.0,
+            -0.4000000059604645,
+            2.0
+          ],
+          "ball_velocity_after_m_s": [
+            9.0,
+            -0.4000000059604645,
+            1.990190029144287
+          ]
+        },
+        {
+          "type": "whole_ball_exit",
+          "time_s": 0.45667559231718396,
+          "outcome": "Goal",
+          "reason": "whole_ball_goal",
+          "position": [
+            11.11,
+            0.11732683807453567,
+            0.6881618530833395
+          ],
+          "goal": "right"
+        }
+      ],
+      "label_basis": "original GoalDetector + native contact identities + measured floor velocity reversal",
+      "record_directory": "results/g4/physical_v2_20261029",
+      "repeat_identical": true,
+      "first_10ms_max_ballistic_vz_error_m_s": 2.664921339157189e-07,
+      "repeat_file_sha256": [
+        "6921bcdac66c79fa824e07858c9f0e5e3d3355b5c221794bf8ef55846999f642",
+        "6921bcdac66c79fa824e07858c9f0e5e3d3355b5c221794bf8ef55846999f642"
+      ],
+      "unreported_frame_crossings": [],
+      "robot_mode": "absent",
+      "initial_position_world_m": [
+        7.0,
+        0.30000001192092896,
+        0.800000011920929
+      ],
+      "initial_angular_velocity_world_rad_s": [
+        0,
+        0,
+        100
+      ]
+    },
+    {
+      "case": "mixed_spin",
+      "source": "physx_physical_shot",
+      "outcome": "Goal",
+      "termination_reason": "whole_ball_goal",
+      "robot_contact": false,
+      "robot_contact_is_save": null,
+      "ground_contact_count": 0,
+      "ground_bounce_count": 0,
+      "frame_contact": false,
+      "classification": "direct_goal",
+      "visibility": "unobserved_no_camera_evidence",
+      "events": [
+        {
+          "type": "contact_end",
+          "time_s": 0.0010000000474974513,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            9.0,
+            -0.4000000059604645,
+            2.0
+          ],
+          "ball_velocity_after_m_s": [
+            9.0,
+            -0.4000000059604645,
+            1.990190029144287
+          ]
+        },
+        {
+          "type": "whole_ball_exit",
+          "time_s": 0.45667559231718396,
+          "outcome": "Goal",
+          "reason": "whole_ball_goal",
+          "position": [
+            11.11,
+            0.11732683807453567,
+            0.6881618530833395
+          ],
+          "goal": "right"
+        }
+      ],
+      "label_basis": "original GoalDetector + native contact identities + measured floor velocity reversal",
+      "record_directory": "results/g4/physical_v2_20261029",
+      "repeat_identical": true,
+      "first_10ms_max_ballistic_vz_error_m_s": 2.664921339157189e-07,
+      "repeat_file_sha256": [
+        "6a9b6a281fead6ae95198ae5609462bb683b7a3c38b1fc50ffec4ef7b75e6308",
+        "6a9b6a281fead6ae95198ae5609462bb683b7a3c38b1fc50ffec4ef7b75e6308"
+      ],
+      "unreported_frame_crossings": [],
+      "robot_mode": "absent",
+      "initial_position_world_m": [
+        7.0,
+        0.30000001192092896,
+        0.800000011920929
+      ],
+      "initial_angular_velocity_world_rad_s": [
+        60,
+        30,
+        40
+      ]
+    },
+    {
+      "case": "opposite_goal_oblique",
+      "source": "physx_physical_shot",
+      "outcome": "Goal",
+      "termination_reason": "whole_ball_goal",
+      "robot_contact": false,
+      "robot_contact_is_save": null,
+      "ground_contact_count": 0,
+      "ground_bounce_count": 0,
+      "frame_contact": false,
+      "classification": "direct_goal",
+      "visibility": "unobserved_no_camera_evidence",
+      "events": [
+        {
+          "type": "contact_end",
+          "time_s": 0.0010000000474974513,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            -8.0,
+            0.5,
+            1.5
+          ],
+          "ball_velocity_after_m_s": [
+            -8.0,
+            0.5,
+            1.490190029144287
+          ]
+        },
+        {
+          "type": "whole_ball_exit",
+          "time_s": 0.2637376880543438,
+          "outcome": "Goal",
+          "reason": "whole_ball_goal",
+          "position": [
+            -11.11,
+            -0.3681328599952319,
+            0.9531327689084781
+          ],
+          "goal": "left"
+        }
+      ],
+      "label_basis": "original GoalDetector + native contact identities + measured floor velocity reversal",
+      "record_directory": "results/g4/physical_v2_20261029",
+      "repeat_identical": true,
+      "first_10ms_max_ballistic_vz_error_m_s": 2.664921339157189e-07,
+      "repeat_file_sha256": [
+        "32143945d5340a0cd581273a046ff96794b85fd9e0a6b7200f7a4223f099c3d1",
+        "32143945d5340a0cd581273a046ff96794b85fd9e0a6b7200f7a4223f099c3d1"
+      ],
+      "unreported_frame_crossings": [],
+      "robot_mode": "absent",
+      "initial_position_world_m": [
+        -9.0,
+        -0.5,
+        0.8999999761581421
+      ],
+      "initial_angular_velocity_world_rad_s": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "opposite_goal_center",
+      "source": "physx_physical_shot",
+      "outcome": "Goal",
+      "termination_reason": "whole_ball_goal",
+      "robot_contact": false,
+      "robot_contact_is_save": null,
+      "ground_contact_count": 0,
+      "ground_bounce_count": 0,
+      "frame_contact": false,
+      "classification": "direct_goal",
+      "visibility": "unobserved_no_camera_evidence",
+      "events": [
+        {
+          "type": "contact_end",
+          "time_s": 0.0010000000474974513,
+          "object": "/World/Bodies/b0_world/g0_ground",
+          "contact_position_world_m": null,
+          "ball_velocity_before_m_s": [
+            -8.0,
+            -0.5,
+            1.5
+          ],
+          "ball_velocity_after_m_s": [
+            -8.0,
+            -0.5,
+            1.490190029144287
+          ]
+        },
+        {
+          "type": "whole_ball_exit",
+          "time_s": 0.2637376880543438,
+          "outcome": "Goal",
+          "reason": "whole_ball_goal",
+          "position": [
+            -11.11,
+            0.3681328599952319,
+            0.9531327689084781
+          ],
+          "goal": "left"
+        }
+      ],
+      "label_basis": "original GoalDetector + native contact identities + measured floor velocity reversal",
+      "record_directory": "results/g4/physical_v2_20261029",
+      "repeat_identical": true,
+      "first_10ms_max_ballistic_vz_error_m_s": 2.664921339157189e-07,
+      "repeat_file_sha256": [
+        "2875e50114fbd845f7485ff6cd0ce724853a6e9f8ee45b92e0faf7b377d0fa0b",
+        "2875e50114fbd845f7485ff6cd0ce724853a6e9f8ee45b92e0faf7b377d0fa0b"
+      ],
+      "unreported_frame_crossings": [],
+      "robot_mode": "absent",
+      "initial_position_world_m": [
+        -9.0,
+        0.5,
+        0.8999999761581421
+      ],
+      "initial_angular_velocity_world_rad_s": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "case_count": 26,
+  "outcome_counts": {
+    "Goal": 18,
+    "Timeout": 4,
+    "Miss": 4
+  },
+  "classification_counts": {
+    "direct_goal": 15,
+    "ground_then_goal": 3,
+    "frame_then_non_goal": 3,
+    "miss": 4,
+    "timeout": 1
+  },
+  "repeat_identical": true,
+  "unreported_frame_crossing_count": 0,
+  "native_manifest": {
+    "engine": "PhysX / Isaac Sim 4.5.0",
+    "cases": [
+      {
+        "case": "direct_low_left",
+        "repeat_full_record_sha256": [
+          "d9174b796a0c6b604c0384f9410ebe598d3b264b7b4e086057d9af98dd8e56da",
+          "d9174b796a0c6b604c0384f9410ebe598d3b264b7b4e086057d9af98dd8e56da"
+        ],
+        "repeat_identical": true
+      },
+      {
+        "case": "direct_low_center",
+        "repeat_full_record_sha256": [
+          "30b2931910679fd615f44b784bcba1aa8e8c5a286e1acac63d71118d876f43dc",
+          "30b2931910679fd615f44b784bcba1aa8e8c5a286e1acac63d71118d876f43dc"
+        ],
+        "repeat_identical": true
+      },
+      {
+        "case": "direct_low_right",
+        "repeat_full_record_sha256": [
+          "ebfef0ba0439a242cd8573051b8fab973cc905fe2d88488ce0ed1c949064fba9",
+          "ebfef0ba0439a242cd8573051b8fab973cc905fe2d88488ce0ed1c949064fba9"
+        ],
+        "repeat_identical": true
+      },
+      {
+        "case": "direct_middle_left",
+        "repeat_full_record_sha256": [
+          "f34800dfb4123a2dfd92889fd47582ffc73a7bdc5f7b319656234c76fb4f0e91",
+          "f34800dfb4123a2dfd92889fd47582ffc73a7bdc5f7b319656234c76fb4f0e91"
+        ],
+        "repeat_identical": true
+      },
+      {
+        "case": "direct_middle_center",
+        "repeat_full_record_sha256": [
+          "6485f583633287784ce8cfde0794389735246be1c4a4092d3e13d04dca1d14c3",
+          "6485f583633287784ce8cfde0794389735246be1c4a4092d3e13d04dca1d14c3"
+        ],
+        "repeat_identical": true
+      },
+      {
+        "case": "direct_middle_right",
+        "repeat_full_record_sha256": [
+          "ea4b7e078c45c7e9bea3ecefee50a0353712b31a07e2758ba2b979073367f31a",
+          "ea4b7e078c45c7e9bea3ecefee50a0353712b31a07e2758ba2b979073367f31a"
+        ],
+        "repeat_identical": true
+      },
+      {
+        "case": "direct_high_left",
+        "repeat_full_record_sha256": [
+          "1b0c228beef77cbdc32873448a7749772eb099e07b5b7e65527b696d052706f8",
+          "1b0c228beef77cbdc32873448a7749772eb099e07b5b7e65527b696d052706f8"
+        ],
+        "repeat_identical": true
+      },
+      {
+        "case": "direct_high_center",
+        "repeat_full_record_sha256": [
+          "e9368a9dc9d452ba0551d18f5ad002a87283e232dd8be36c955ec86ea7b8e9c5",
+          "e9368a9dc9d452ba0551d18f5ad002a87283e232dd8be36c955ec86ea7b8e9c5"
+        ],
+        "repeat_identical": true
+      },
+      {
+        "case": "direct_high_right",
+        "repeat_full_record_sha256": [
+          "3c9361d4fd3f52e18c907c119b24490a4338949668cb06f7766d0309db7f3e00",
+          "3c9361d4fd3f52e18c907c119b24490a4338949668cb06f7766d0309db7f3e00"
+        ],
+        "repeat_identical": true
+      },
+      {
+        "case": "bounce_one",
+        "repeat_full_record_sha256": [
+          "2a0ac5813f31ec4fd5bda9ffbd6002c84058a7f8ee1c675bbdc37d0e9638dae7",
+          "2a0ac5813f31ec4fd5bda9ffbd6002c84058a7f8ee1c675bbdc37d0e9638dae7"
+        ],
+        "repeat_identical": true
+      },
+      {
+        "case": "bounce_repeated",
+        "repeat_full_record_sha256": [
+          "eafb161e268cb34ecc459f08deadaec794d73cc2348e0509bf23aa21112cb52d",
+          "eafb161e268cb34ecc459f08deadaec794d73cc2348e0509bf23aa21112cb52d"
+        ],
+        "repeat_identical": true
+      },
+      {
+        "case": "bounce_oblique",
+        "repeat_full_record_sha256": [
+          "f2030c61e52ec77a8936cc01c0b9b52bdadc8fbb72956c4f7adfdae67ede1c04",
+          "f2030c61e52ec77a8936cc01c0b9b52bdadc8fbb72956c4f7adfdae67ede1c04"
+        ],
+        "repeat_identical": true
+      },
+      {
+        "case": "post_left",
+        "repeat_full_record_sha256": [
+          "ed7a5eda0e5e87f9613fe2d841acec8cda78a4e55b67736039dae86da2a13bf0",
+          "ed7a5eda0e5e87f9613fe2d841acec8cda78a4e55b67736039dae86da2a13bf0"
+        ],
+        "repeat_identical": true
+      },
+      {
+        "case": "post_right",
+        "repeat_full_record_sha256": [
+          "44f234e3be7602f3377dc4aa4ba552e5f5ba0809bcc48b0d7f849d41e7d20653",
+          "44f234e3be7602f3377dc4aa4ba552e5f5ba0809bcc48b0d7f849d41e7d20653"
+        ],
+        "repeat_identical": true
+      },
+      {
+        "case": "crossbar",
+        "repeat_full_record_sha256": [
+          "d8236c9c1496f76b35714c12d7cfbe41a26e669ba015e88fcbc025c99729ca19",
+          "d8236c9c1496f76b35714c12d7cfbe41a26e669ba015e88fcbc025c99729ca19"
+        ],
+        "repeat_identical": true
+      },
+      {
+        "case": "wide_left",
+        "repeat_full_record_sha256": [
+          "e79e5e766c874f6bb4abdb9c7bda1d36b03413cfb0025b5ffb14b920372ea63a",
+          "e79e5e766c874f6bb4abdb9c7bda1d36b03413cfb0025b5ffb14b920372ea63a"
+        ],
+        "repeat_identical": true
+      },
+      {
+        "case": "wide_right",
+        "repeat_full_record_sha256": [
+          "837484b6d7bbc9c8ace94228267d43a666794df4752cddf91b5be252699e531b",
+          "837484b6d7bbc9c8ace94228267d43a666794df4752cddf91b5be252699e531b"
+        ],
+        "repeat_identical": true
+      },
+      {
+        "case": "above_crossbar",
+        "repeat_full_record_sha256": [
+          "a0e7453c38b2cff38adac47c96d68d30a4aa67aa44e71ca0a674be57690b39fd",
+          "a0e7453c38b2cff38adac47c96d68d30a4aa67aa44e71ca0a674be57690b39fd"
+        ],
+        "repeat_identical": true
+      },
+      {
+        "case": "underpowered",
+        "repeat_full_record_sha256": [
+          "1e78a50eccc6f8d5ac2f0e836551c367db7637e2f5f6daecc8e9653c2a92d740",
+          "1e78a50eccc6f8d5ac2f0e836551c367db7637e2f5f6daecc8e9653c2a92d740"
+        ],
+        "repeat_identical": true
+      },
+      {
+        "case": "touchline",
+        "repeat_full_record_sha256": [
+          "68d7bd431a27d7183597089534244593cc474440ac95a2049643c061f108d6b5",
+          "68d7bd431a27d7183597089534244593cc474440ac95a2049643c061f108d6b5"
+        ],
+        "repeat_identical": true
+      },
+      {
+        "case": "topspin",
+        "repeat_full_record_sha256": [
+          "95b12ece746b32e3ab8372711b03a02b0ad2938dc0d93dfefed0e88f28b95429",
+          "95b12ece746b32e3ab8372711b03a02b0ad2938dc0d93dfefed0e88f28b95429"
+        ],
+        "repeat_identical": true
+      },
+      {
+        "case": "backspin",
+        "repeat_full_record_sha256": [
+          "b2edabd34b0094b940b8e52b10e95266918a98bc4a68a08576012e2a7d0a2ec8",
+          "b2edabd34b0094b940b8e52b10e95266918a98bc4a68a08576012e2a7d0a2ec8"
+        ],
+        "repeat_identical": true
+      },
+      {
+        "case": "sidespin",
+        "repeat_full_record_sha256": [
+          "a096e91f44234948a05e15e5f1598bb270a21a582cee984d22ec44d7ad932224",
+          "a096e91f44234948a05e15e5f1598bb270a21a582cee984d22ec44d7ad932224"
+        ],
+        "repeat_identical": true
+      },
+      {
+        "case": "mixed_spin",
+        "repeat_full_record_sha256": [
+          "8426c1ddf0200be7ee288759292c7e4ad24bddddc23d1e9c8365d2c32e65686c",
+          "8426c1ddf0200be7ee288759292c7e4ad24bddddc23d1e9c8365d2c32e65686c"
+        ],
+        "repeat_identical": true
+      },
+      {
+        "case": "opposite_goal_oblique",
+        "repeat_full_record_sha256": [
+          "5c054788ac0fd4c3a5297142a8aba72d8b0ab35b54e4e0477382855804318bca",
+          "5c054788ac0fd4c3a5297142a8aba72d8b0ab35b54e4e0477382855804318bca"
+        ],
+        "repeat_identical": true
+      },
+      {
+        "case": "opposite_goal_center",
+        "repeat_full_record_sha256": [
+          "f6ff57b6f570a1bca03b26a97f6e898269c796b3b51976c612a483ba019b8f55",
+          "f6ff57b6f570a1bca03b26a97f6e898269c796b3b51976c612a483ba019b8f55"
+        ],
+        "repeat_identical": true
+      }
+    ],
+    "runner_sha256": "02162110bc9b19d77baa7f5e0affb523b58b8ff7b140c46ccb66c606e2bdbff5",
+    "scene_sha256": "1bcd93703cd06345d1f46fa080f2f9a54d3c27ce805a142c3634043ca21d3238",
+    "source_detector_sha256": "b3556b8e6d654007da9e610e61988010f73911adf0b1c121166ea08b5f054830",
+    "source_protocol_sha256": "454785549daae98e5722989547d53641d9b11e4145fec6d2574ebbe9e72eb95a",
+    "stepping": "public PhysX simulate(.001,t), fetch_results; validated physics-step event dt and independent free-fall acceleration",
+    "cuda_cuInit_result": 0,
+    "active_gpu": 0,
+    "physics_gpu": 0,
+    "multi_gpu": false,
+    "renderer_used": false,
+    "physx_tensor_device": "cpu"
+  },
+  "supplemental_native_manifests": {
+    "results/g4/bounce_two_20261029": {
+      "engine": "PhysX / Isaac Sim 4.5.0",
+      "cases": [
+        {
+          "case": "bounce_repeated",
+          "repeat_full_record_sha256": [
+            "31089a7936a29a852ff57dadda77e38206f17ff1fe247601d67d57dda26ec344",
+            "31089a7936a29a852ff57dadda77e38206f17ff1fe247601d67d57dda26ec344"
+          ],
+          "repeat_identical": true
+        }
+      ],
+      "runner_sha256": "02162110bc9b19d77baa7f5e0affb523b58b8ff7b140c46ccb66c606e2bdbff5",
+      "scene_sha256": "1bcd93703cd06345d1f46fa080f2f9a54d3c27ce805a142c3634043ca21d3238",
+      "source_detector_sha256": "b3556b8e6d654007da9e610e61988010f73911adf0b1c121166ea08b5f054830",
+      "source_protocol_sha256": "b066508fe27e0b20ecf70c3001bab2de6246511703f32e1c7eb303035f592a57",
+      "stepping": "public PhysX simulate(.001,t), fetch_results; validated physics-step event dt and independent free-fall acceleration",
+      "cuda_cuInit_result": 0,
+      "active_gpu": 0,
+      "physics_gpu": 0,
+      "multi_gpu": false,
+      "renderer_used": false,
+      "physx_tensor_device": "cpu"
+    }
+  },
+  "limitations": [
+    "Camera visibility/occlusion is unobserved by physical runs; use separate G5 image evidence",
+    "Procedural and CSV replay do not model collision response",
+    "No measured real-ball CSV supplied; ingestion verified with synthetic fixture only",
+    "No aerodynamic Magnus model; spin affects contacts only",
+    "Frame audit is frontal swept geometry, not full USD narrow phase"
+  ],
+  "exporter_sha256": "d3c2945e086654cbc5fe8232edbb279c08ada003ca8254d4010cab24ef217069",
+  "catalog_sha256": "4b99e86f6b28872eae1306f831d966bd1805cd13eaa2bfac272b00c07ac5fb7f",
+  "detector_sha256": "b3556b8e6d654007da9e610e61988010f73911adf0b1c121166ea08b5f054830"
+}
