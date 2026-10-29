@@ -28,12 +28,14 @@ def main():
     parser.add_argument("--port", type=int, default=30000)
     parser.add_argument("--duration", type=float, default=180)
     parser.add_argument("--network", action="store_true")
-    parser.add_argument("--acquisition-scenario", choices=("static", "ball_motion", "camera_motion"),
+    parser.add_argument("--acquisition-scenario", choices=("static", "ball_motion", "camera_motion", "g5_static"),
                         help="Optional G3 immutable CUDA acquisition")
     parser.add_argument("--exposure-ms", type=float, default=0)
     parser.add_argument("--exposure-samples", type=int, default=3,
                         help="Odd midpoint quadrature count for finite acquisition")
     parser.add_argument("--acquisition-frames", type=int, default=512)
+    parser.add_argument("--g5-texture", choices=("fine_orange", "coarse_contrast"), default="fine_orange",
+                        help="G5 diagnostic sphere texture; does not change the default scene")
     parser.add_argument("--right-shift-m", type=float, default=0.0,
                         help="Intentional right-eye extrinsic perturbation for depth-source checks")
     args, _ = parser.parse_known_args()
@@ -134,13 +136,15 @@ def run_scene(app, args, should_stop):
         rng = np.random.default_rng(20261024)
         for row in range(40):
             for col in range(64):
-                x, y, size = (col - 32) * 0.065, (row - 20) * 0.065, 0.065
+                size = 0.195 if args.acquisition_scenario == "g5_static" else 0.065
+                x, y = (col - 32) * size, (row - 20) * size
                 offset = len(points)
-                points.extend(Gf.Vec3f(camera_pose.Transform(Gf.Vec3d(a, b, -2.0)))
+                points.extend(Gf.Vec3f(camera_pose.Transform(Gf.Vec3d(a, b, -6.0 if args.acquisition_scenario == "g5_static" else -2.0)))
                               for a, b in ((x, y), (x + size, y),
                                            (x + size, y + size), (x, y + size)))
                 indices.extend(range(offset, offset + 4))
-                colour = rng.uniform(0.08, 0.9, size=3)
+                colour = (np.repeat(rng.uniform(0.08, 0.5), 3) if args.acquisition_scenario == "g5_static"
+                          else rng.uniform(0.08, 0.9, size=3))
                 colours.extend([Gf.Vec3f(*colour)] * 4)
         plane.CreatePointsAttr(Vt.Vec3fArray(points))
         plane.CreateFaceVertexCountsAttr([4] * (40 * 64))
@@ -167,6 +171,8 @@ def run_scene(app, args, should_stop):
         acquisition = None
         if args.acquisition_scenario:
             from acquisition.sdk_state import AcquisitionState
+            if args.acquisition_scenario == "g5_static":
+                from acquisition.g5_static import StaticBallState as AcquisitionState
             acquisition = AcquisitionState(stage, camera_root, marker, camera_pose,
                                            left_path, right_path, args)
         light = UsdLux.DomeLight.Define(stage, "/World/Light")
@@ -243,7 +249,7 @@ def run_scene(app, args, should_stop):
                     "gpu_requested": args.gpu, "render_gpu_requested": args.gpu if args.render_gpu_index is None else args.render_gpu_index,
                     "cuda_visible_devices": os.getenv("CUDA_VISIBLE_DEVICES"),
                     "pid": os.getpid(), "resolution": [960, 600], "configured_fps": args.fps,
-                    "physics_dt_s": 1 / 120, "plane_optical_z_m": 2.0,
+                    "physics_dt_s": 1 / 120, "plane_optical_z_m": 6.0 if args.acquisition_scenario == "g5_static" else 2.0,
                     "right_shift_m": args.right_shift_m, "cameras": calibration,
                     "sdk_depth_ingested": False, "renderer_depth_source": "renderer_gt_direct",
                     "exposure_model": "instantaneous_render_baseline", "sim2real": False}
@@ -409,7 +415,7 @@ def run_scene(app, args, should_stop):
                     np.save(args.output / f"renderer_gt_depth_{index:06d}.npy",
                             np.array(gt_depth.get_data()).copy())
                 index += 1
-                period = 0.1 if prepared else 1 / args.fps
+                period = (0.2 if args.acquisition_scenario == "g5_static" else 0.1) if prepared else 1 / args.fps
                 time.sleep(max(0, period - (time.monotonic() - before)))
         (args.output / "summary.json").write_text(json.dumps(
             {"rendered_frames": index, "wall_duration_s": time.monotonic() - start,

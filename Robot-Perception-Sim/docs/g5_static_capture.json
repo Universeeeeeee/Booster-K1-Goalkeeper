@@ -1,0 +1,291 @@
+{
+  "schema_version": 2,
+  "recommended_capture": "static_sender_13 / static_receiver_13",
+  "SDK_mode": "NEURAL",
+  "capture_complete": true,
+  "sdk_frames": 185,
+  "positive_frames": 173,
+  "negative_frames": 12,
+  "sender_exitcode": 0,
+  "receiver_exitcode": 0,
+  "source_prepared_windows": 204,
+  "source_published_frames": 194,
+  "identity": {
+    "verified_frames": 185,
+    "case_counts": {
+      "(1.0, 'center')": 11,
+      "(1.0, 'left')": 6,
+      "(1.0, 'right')": 12,
+      "(1.5, 'center')": 12,
+      "(1.5, 'left')": 12,
+      "(1.5, 'right')": 12,
+      "(2.0, 'center')": 12,
+      "(2.0, 'left')": 12,
+      "(2.0, 'occluded')": 6,
+      "(2.0, 'out_of_fov')": 6,
+      "(2.0, 'right')": 12,
+      "(3.0, 'center')": 12,
+      "(3.0, 'left')": 12,
+      "(3.0, 'right')": 12,
+      "(4.0, 'center')": 12,
+      "(4.0, 'left')": 12,
+      "(4.0, 'right')": 12
+    }
+  },
+  "source_files": {
+    "sender": {
+      "path": "sources/sender.py",
+      "sha256": "d38cf183d334280a526e1e8f7e6ac8e6beee466704dd0ce739d3f626a9d54ec5"
+    },
+    "sdk_state": {
+      "path": "sources/sdk_state.py",
+      "sha256": "e2e0794d865a3f6974dff44d9eb88332f00c2bd1575b3c749c406a74f479033c"
+    },
+    "sdk_exposure": {
+      "path": "sources/sdk_exposure.py",
+      "sha256": "9dba0ff880018f10d6008a5bfc6ef7d1d8c51c8c21f40f66ed80f3ab10662557"
+    },
+    "timing": {
+      "path": "sources/timing.py",
+      "sha256": "dc10f05d20d9478b3cabea9b1d4661570328397eb5a57716576591fdeffb4be0"
+    },
+    "g5_static": {
+      "path": "sources/g5_static.py",
+      "sha256": "c29349be233ede98c6d273c917a3703a137cc9f1b47a7db2dac98d5d61461f8b"
+    }
+  },
+  "sender_GPU_physical": 0,
+  "receiver_GPU_physical": 1,
+  "SDK_version": "5.1.0",
+  "runtime_versions": {
+    "cuda_driver_api_return": 0,
+    "cuda_driver_api_version": 12090,
+    "TensorRT_getInferLibVersion": 100900,
+    "compile_cuda_headers": 12040,
+    "NVIDIA_driver": "575.57.08",
+    "SDK": "5.1.0"
+  },
+  "calibration": {
+    "sender_cameras": {
+      "left": {
+        "focal_length_usd": 1.1124000549316406,
+        "horizontal_aperture_usd": 2.880000114440918,
+        "vertical_aperture_usd": 1.7999999523162842,
+        "horizontal_aperture_offset_usd": 0.0,
+        "vertical_aperture_offset_usd": 0.0,
+        "fx_px": 370.8000035762785,
+        "fy_px": 370.8000281333931,
+        "cx_px": 480,
+        "cy_px": 300,
+        "world_from_usd_camera_row_matrix": [
+          [
+            -1.9668133925884973e-16,
+            -1.0000000000000004,
+            1.4782794558091703e-16,
+            0.0
+          ],
+          [
+            2.2204460492503136e-16,
+            1.4782794558091698e-16,
+            1.0000000000000002,
+            0.0
+          ],
+          [
+            -1.0000000000000002,
+            1.9668133925884968e-16,
+            -2.220446049250313e-16,
+            0.0
+          ],
+          [
+            0.015000000000000013,
+            0.06,
+            0.015,
+            1.0
+          ]
+        ]
+      },
+      "right": {
+        "focal_length_usd": 1.1124000549316406,
+        "horizontal_aperture_usd": 2.880000114440918,
+        "vertical_aperture_usd": 1.7999999523162842,
+        "horizontal_aperture_offset_usd": 0.0,
+        "vertical_aperture_offset_usd": 0.0,
+        "fx_px": 370.8000035762785,
+        "fy_px": 370.8000281333931,
+        "cx_px": 480,
+        "cy_px": 300,
+        "world_from_usd_camera_row_matrix": [
+          [
+            -1.9668133925884973e-16,
+            -1.0000000000000004,
+            1.4782794558091703e-16,
+            0.0
+          ],
+          [
+            2.2204460492503136e-16,
+            1.4782794558091698e-16,
+            1.0000000000000002,
+            0.0
+          ],
+          [
+            -1.0000000000000002,
+            1.9668133925884968e-16,
+            -2.220446049250313e-16,
+            0.0
+          ],
+          [
+            0.014999999999999986,
+            -0.06,
+            0.015,
+            1.0
+          ]
+        ]
+      }
+    },
+    "SDK_calibration": {
+      "left": {
+        "fx": 370.799987793,
+        "fy": 370.799987793,
+        "cx": 480,
+        "cy": 300
+      },
+      "right": {
+        "fx": 370.799987793,
+        "fy": 370.799987793,
+        "cx": 480,
+        "cy": 300
+      }
+    },
+    "SDK_baseline_m": 0.120000004768,
+    "calibration_seed_sha256": "a4856611b40913db85d6968430c4d0a80e296c01607ce655950f313618cafb7e",
+    "camera_usd_sha256": "aedba222a0b7db8d909f51977f35353aac15fa13e5e4153e79225c9f2e06d79b",
+    "hardware_verified": false
+  },
+  "neural_assets": [
+    {
+      "path": "sdk-neural/resources/.l100900_timing_cache",
+      "sha256": "c1bb6f692618cc83a64733a4b96447348ebe3c2769c11dd2dc5d32764561ee42"
+    },
+    {
+      "path": "sdk-neural/resources/neural_depth_light_5.2.model",
+      "sha256": "d1194189d0db31632406e7d34474852335c7102ba4ff46854597dfc9c923163f"
+    },
+    {
+      "path": "sdk-neural/resources/.neural_depth_5.3.model_optimized-fbcbl-1-89--1-100900-25-384-73728-48-100-512-128-0-0e53-512",
+      "sha256": "5d9999a969a7cac3eb90c5aa474e6143edf1bf71296fa6a466e72fbee81773d9"
+    },
+    {
+      "path": "sdk-neural/resources/neural_depth_5.3.model",
+      "sha256": "07ce8ad25435f23c600b127d67dffb454bd9a7f23414ebf34c99952401b65073"
+    }
+  ],
+  "model_preparation": "checkAIModelStatus downloaded=1 optimized=0; isolated optimizeAIModel NEURAL_DEPTH succeeds; after downloaded=1 optimized=1. No model download. G5-only copied resources and read-only lib/dependency links.",
+  "SDK_receiver_default": "PERFORMANCE unchanged; optional mode read back and validated against requested mode",
+  "cli_validation": {
+    "accepted_mode_parse_then_help_exit_codes": {
+      "PERFORMANCE": 0,
+      "QUALITY": 0,
+      "ULTRA": 0,
+      "NEURAL_LIGHT": 0,
+      "NEURAL": 0,
+      "NEURAL_PLUS": 0
+    },
+    "invalid_mode_exit_code": 1,
+    "invalid_mode_stderr": "depth mode must be PERFORMANCE, QUALITY, ULTRA, NEURAL_LIGHT, NEURAL or NEURAL_PLUS",
+    "invalid_mode_created_output": false,
+    "SDK_5.0.7_receiver_and_prepare_utility_build": "passed",
+    "SDK_5.1_receiver_and_prepare_utility_build": "passed",
+    "invalid_disparity": [
+      {
+        "value": "2",
+        "exit_code": 1,
+        "stderr": "record-disparity must be 0 or 1",
+        "output_created": false,
+        "SDK_open_logged": false
+      },
+      {
+        "value": "bad",
+        "exit_code": 1,
+        "stderr": "record-disparity must be 0 or 1",
+        "output_created": false,
+        "SDK_open_logged": false
+      }
+    ]
+  },
+  "GT_isolation": "Authored sphere truth only in separate evaluator JSONL joined after delivered left/right IDs and timestamps; SDK receiver has no renderer/custom-depth input.",
+  "SDK_sphere_final": {
+    "accepted": 164,
+    "positive_frames": 173,
+    "valid_fraction": 0.9479768786127167,
+    "center_MAE_m": 0.027205,
+    "center_P95_m": 0.080996,
+    "center_max_m": 0.118492,
+    "remaining_invalid": 9,
+    "remaining_cell": "4m-right",
+    "failure_reason": "sphere_fit_inconsistent",
+    "note": "Conditional valid-estimate error; SDK validity is 94.80%, with all nine invalid predictions retained. Full evaluator output remains authoritative."
+  },
+  "controls": [
+    {
+      "run": "07",
+      "mode": "PERFORMANCE",
+      "texture": "fine_orange",
+      "frames": 185,
+      "SDK_sphere_valid": 1,
+      "outcome": "Failed foreground disparity despite good RGB triangulation."
+    },
+    {
+      "run": "09",
+      "mode": "PERFORMANCE",
+      "scene": "original G3 static, 2m plane",
+      "frames": 40,
+      "plane_median_m": 2.015974998474121,
+      "outcome": "Scale control passed .1m tolerance."
+    },
+    {
+      "run": "10",
+      "mode": "ULTRA",
+      "texture": "fine_orange",
+      "frames": 185,
+      "SDK_sphere_valid": 26,
+      "outcome": "Only1m improved; full grid failed."
+    },
+    {
+      "run": "11",
+      "mode": "ULTRA",
+      "texture": "coarse_contrast black/orange",
+      "frames": 185,
+      "HSV_detected": 10,
+      "outcome": "Failed fixed HSV silhouette; retained diagnostic, not recommended."
+    },
+    {
+      "run": "12",
+      "mode": "PERFORMANCE",
+      "texture": "fine_orange",
+      "frames": 15,
+      "outcome": "Raw SDK disparity proves conversion consistent within~4e-6m*px; matcher disparity wrong."
+    },
+    {
+      "run": "13",
+      "mode": "NEURAL",
+      "texture": "fine_orange",
+      "frames": 185,
+      "outcome": "Original image design and predictor unchanged;164/173 valid SDK sphere predictions."
+    }
+  ],
+  "artifact_root_remote": "/home/lizhengran/isaacsim-workspace/g5_static/runs",
+  "artifact_root_local": "/Users/vae/Projects/booster/Robot-Perception-Sim/results/g5",
+  "receiver_hash_limit": "Captures10/11 mode-only receiver source reconstructed in runtime/receiver_sources; binary hashes were not recorded at their runtime. Captures09/07 share read-only G3 binary,12 and13 have recorded binary hashes.",
+  "files_sha256": {
+    "Robot-Perception-Sim/results/g5/static_sender_13/metadata.json": "76d3852e22fb438873a93bbc783db38b37c15446626e547a229a9af2f99dcb37",
+    "Robot-Perception-Sim/results/g5/static_sender_13/source_frames.jsonl": "3fecb6c3830efa862dbd144ab18e74b6c7c5bb13d1212a503654fc95ddacf111",
+    "Robot-Perception-Sim/results/g5/static_receiver_13/metadata.json": "ca646ef4015ddb0ce02dfa833c33d1daf731ffd28414f1e73053c30e5b5614de",
+    "Robot-Perception-Sim/results/g5/static_receiver_13/frames.jsonl": "5389678102b0392568e2b0119577b6670b31fafe661d8325a9486377f14da41b",
+    "Robot-Perception-Sim/results/g5/evaluation13.jsonl": "9bd6bc5fa8bb166e0c3119f00d7537a9c966624cfbdda323a60e7f3656629bb9",
+    "Robot-Perception-Sim/results/g5/runtime/receiver13_binary": "f73b578034d56a354f8c2692ae6f50374c5c289a3f9182f7d3f63e7592851912",
+    "Robot-Perception-Sim/isaac/zed_sdk_receiver.cpp": "0b762a6e97049d861651e0abfde6ebc722de4330b8848f4ce43c7b40b0e7e3ca",
+    "Robot-Perception-Sim/isaac/prepare_g5_neural.cpp": "357b9414419f1c7cb2f4b2fbff9745475065e33f9b2c247949b7576dd53f1261",
+    "Robot-Perception-Sim/isaac/CMakeLists.txt": "38df978116ab8a3fc03c4126b90e8441881b805476b397dd94c86c1b3fd60bcd"
+  },
+  "owned_GPU_processes_after_capture": "None; observed GPU0 148MiB/GPU1 16MiB."
+}

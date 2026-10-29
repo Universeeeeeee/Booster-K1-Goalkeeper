@@ -38,6 +38,8 @@ struct Options {
     fs::path output;
     fs::path calibration_file;
     std::string calibration_sha256;
+    sl::DEPTH_MODE depth_mode = sl::DEPTH_MODE::PERFORMANCE;
+    bool record_disparity = false;
 };
 
 Options parse(int argc, char** argv) {
@@ -45,7 +47,7 @@ Options parse(int argc, char** argv) {
     for (int i = 1; i < argc; ++i) {
         std::string key = argv[i];
         if (key == "--help") {
-            std::cout << "--ip 127.0.0.1 --port 30000 --frames 100 --output NEW_DIRECTORY --gpu 0 [--timeout-seconds 120] [--calibration-file SNxxx.conf --calibration-sha256 SHA256]\n";
+            std::cout << "--ip 127.0.0.1 --port 30000 --frames 100 --output NEW_DIRECTORY --gpu 0 [--timeout-seconds 120] [--depth-mode PERFORMANCE|QUALITY|ULTRA|NEURAL_LIGHT|NEURAL|NEURAL_PLUS] [--record-disparity 0|1] [--calibration-file SNxxx.conf --calibration-sha256 SHA256]\n";
             std::exit(0);
         }
         if (++i == argc) throw std::runtime_error("missing value for " + key);
@@ -54,6 +56,19 @@ Options parse(int argc, char** argv) {
         else if (key == "--output") o.output = value;
         else if (key == "--calibration-file") o.calibration_file = value;
         else if (key == "--calibration-sha256") o.calibration_sha256 = value;
+        else if (key == "--depth-mode") {
+            if (value == "PERFORMANCE") o.depth_mode = sl::DEPTH_MODE::PERFORMANCE;
+            else if (value == "QUALITY") o.depth_mode = sl::DEPTH_MODE::QUALITY;
+            else if (value == "ULTRA") o.depth_mode = sl::DEPTH_MODE::ULTRA;
+            else if (value == "NEURAL_LIGHT") o.depth_mode = sl::DEPTH_MODE::NEURAL_LIGHT;
+            else if (value == "NEURAL") o.depth_mode = sl::DEPTH_MODE::NEURAL;
+            else if (value == "NEURAL_PLUS") o.depth_mode = sl::DEPTH_MODE::NEURAL_PLUS;
+            else throw std::runtime_error("depth mode must be PERFORMANCE, QUALITY, ULTRA, NEURAL_LIGHT, NEURAL or NEURAL_PLUS");
+        }
+        else if (key == "--record-disparity") {
+            if (value != "0" && value != "1") throw std::runtime_error("record-disparity must be 0 or 1");
+            o.record_disparity = value == "1";
+        }
         else {
             size_t used = 0;
             int number = std::stoi(value, &used);
@@ -144,7 +159,7 @@ int capture(const Options& o, Counts& counts, std::ostream& log) {
     init.input.setFromStream(o.ip.c_str(), static_cast<unsigned short>(o.port));
     init.coordinate_units = sl::UNIT::METER;
     init.coordinate_system = sl::COORDINATE_SYSTEM::IMAGE;
-    init.depth_mode = sl::DEPTH_MODE::PERFORMANCE;
+    init.depth_mode = o.depth_mode;
     init.depth_stabilization = 0;
     init.sdk_gpu_id = o.gpu;
     init.sdk_verbose = 1;
@@ -163,7 +178,7 @@ int capture(const Options& o, Counts& counts, std::ostream& log) {
     const auto info = camera.getCameraInformation();
     const auto& cfg = info.camera_configuration;
     const auto& calibration = cfg.calibration_parameters;
-    if (actual.depth_mode != sl::DEPTH_MODE::PERFORMANCE || actual.coordinate_units != sl::UNIT::METER ||
+    if (actual.depth_mode != o.depth_mode || actual.coordinate_units != sl::UNIT::METER ||
         actual.coordinate_system != sl::COORDINATE_SYSTEM::IMAGE || actual.async_image_retrieval ||
         actual.sdk_gpu_id != o.gpu || info.input_type != sl::INPUT_TYPE::STREAM)
         throw std::runtime_error("opened configuration differs from required stereo stream configuration");
@@ -180,7 +195,8 @@ int capture(const Options& o, Counts& counts, std::ostream& log) {
         auto meta = file(o.output / "metadata.json");
         meta << std::setprecision(12) << "{\"schema_version\":1,\"sdk_version\":"
              << quote(label(sl::Camera::getSDKVersion())) << ",\"depth_source\":\"zed_stereo_sdk\","
-             << "\"depth_source_evidence\":\"SDK PERFORMANCE with enable_depth; consumer has no renderer/custom-depth input\","
+             << "\"depth_source_evidence\":" << quote("SDK " + label(actual.depth_mode) +
+                    " with enable_depth; consumer has no renderer/custom-depth input") << ','
              << "\"sender_depth_source_verified\":false,\"raw_format\":\"float32_le_row_major\","
              << "\"depth_units\":\"m\",\"confidence_semantics\":\"SDK 0..100; lower is better\","
              << "\"png_source\":\"SDK rectified U8_C4 BGRA Mat.write\","
@@ -209,12 +225,14 @@ int capture(const Options& o, Counts& counts, std::ostream& log) {
         meta << "},\"depth_stabilization\":" << actual.depth_stabilization
              << ",\"confidence_threshold\":" << runtime.confidence_threshold
              << ",\"texture_confidence_threshold\":" << runtime.texture_confidence_threshold
-             << ",\"fill_mode\":false,\"timeout_seconds\":" << o.timeout_seconds << "}\n";
+             << ",\"fill_mode\":false,\"disparity_recorded\":" << (o.record_disparity ? "true" : "false")
+             << ",\"timeout_seconds\":" << o.timeout_seconds << "}\n";
         meta.close();
     }
     auto frames = file(o.output / "frames.jsonl");
     frames << std::setprecision(12);
-    sl::Mat left, right, depth, confidence;
+    sl::Mat left, right, depth, confidence, disparity;
+    if (o.record_disparity) fs::create_directory(o.output / "disparity");
     uint64_t previous = 0;
     for (int index = 0; index < o.frames;) {
         auto error = camera.grab(runtime);
@@ -235,6 +253,11 @@ int capture(const Options& o, Counts& counts, std::ostream& log) {
         check(camera.retrieveImage(right, sl::VIEW::RIGHT, sl::MEM::CPU), "retrieve right");
         check(camera.retrieveMeasure(depth, sl::MEASURE::DEPTH, sl::MEM::CPU), "retrieve depth");
         check(camera.retrieveMeasure(confidence, sl::MEASURE::CONFIDENCE, sl::MEM::CPU), "retrieve confidence");
+        if (o.record_disparity) {
+            check(camera.retrieveMeasure(disparity, sl::MEASURE::DISPARITY, sl::MEM::CPU), "retrieve disparity");
+            if (disparity.getWidth() != depth.getWidth() || disparity.getHeight() != depth.getHeight())
+                throw std::runtime_error("disparity dimensions differ from depth");
+        }
         const uint64_t after = camera.getTimestamp(sl::TIME_REFERENCE::IMAGE).getNanoseconds();
         if (after != stamp) throw std::runtime_error("camera IMAGE timestamp changed during retrieval");
         const auto width = depth.getWidth(), height = depth.getHeight();
@@ -267,6 +290,8 @@ int capture(const Options& o, Counts& counts, std::ostream& log) {
         check(right.write((o.output / rp).string().c_str()), "write right PNG");
         write_float_rows(o.output / dp, depth);
         write_float_rows(o.output / cp, confidence);
+        const std::string disparity_path = "disparity/" + name.str() + ".f32";
+        if (o.record_disparity) write_float_rows(o.output / disparity_path, disparity);
         frames << "{\"frame_index\":" << index << ",\"sdk_timestamp_ns\":" << stamp
                << ",\"host_monotonic_ns\":" << host_time << ",\"host_saved_monotonic_ns\":" << monotonic_ns()
                << ",\"camera_timestamp_after_retrieval_ns\":" << after << ",\"width\":" << width
@@ -275,7 +300,9 @@ int capture(const Options& o, Counts& counts, std::ostream& log) {
                << ",\"median_depth_m\":" << median << ",\"depth_stride_bytes\":" << depth.getStepBytes()
                << ",\"confidence_stride_bytes\":" << confidence.getStepBytes()
                << ",\"left_path\":" << quote(lp) << ",\"right_path\":" << quote(rp)
-               << ",\"depth_path\":" << quote(dp) << ",\"confidence_path\":" << quote(cp) << "}\n" << std::flush;
+               << ",\"depth_path\":" << quote(dp) << ",\"confidence_path\":" << quote(cp);
+        if (o.record_disparity) frames << ",\"disparity_path\":" << quote(disparity_path);
+        frames << "}\n" << std::flush;
         previous = stamp;
         counts.written = ++index;
     }

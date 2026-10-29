@@ -1,0 +1,3496 @@
+{
+  "date": "2026-10-29",
+  "scope": "G5 static simple-scene image perception and independent depth methods; no moving robot integration",
+  "recommended_run": "13",
+  "sdk_version": "5.1.0",
+  "recommended_depth_mode": "NEURAL",
+  "gate": "static matrix evaluated, explicit invalid outputs retained; reference YOLO comparison deferred by user",
+  "independent_parent_verification": {
+    "g5_visual_ids_and_timestamps_frames": 185,
+    "source_snapshot_hashes": true,
+    "all_png_and_f32_sizes": true,
+    "aggregate_errors_recomputed_from_predictions_and_separate_labels": true
+  },
+  "tests": {
+    "passed": 268,
+    "junit_sha256": "20f119a6631f4ffbae37f11266a5dda97d6802a488c881499ac7719337cc7721"
+  },
+  "experiments": [
+    {
+      "run": "07",
+      "sdk_mode": "PERFORMANCE",
+      "frames": 185,
+      "visible_frames": 173,
+      "negative_frames": 12,
+      "detected_visible": 173,
+      "false_detections_negative": 0,
+      "methods": {
+        "triangulation": {
+          "valid_visible": 173,
+          "invalid_visible": 0,
+          "invalid_reasons": {},
+          "center_mae_m": 0.024360557753939378,
+          "center_p95_m": 0.10068015422881185,
+          "center_max_m": 0.1152215548075649,
+          "false_positive_negative": 0
+        },
+        "sdk_sphere": {
+          "valid_visible": 1,
+          "invalid_visible": 172,
+          "invalid_reasons": {
+            "sphere_fit_inconsistent": 172
+          },
+          "center_mae_m": 0.7983996672882692,
+          "center_p95_m": 0.7983996672882692,
+          "center_max_m": 0.7983996672882692,
+          "false_positive_negative": 0
+        }
+      },
+      "grid_complete": true,
+      "per_cell": [
+        {
+          "depth_label_m": 1.0,
+          "angle_label": "center",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.011341620558766132,
+              "depth_rmse_m": 0.011403099403182768,
+              "center_samples": 12,
+              "center_mae_m": 0.01144763866478665,
+              "center_rmse_m": 0.011505482177163403
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.009059317129629629,
+          "minimum_mask_fraction": 0.008961805555555556,
+          "mean_depth_valid_fraction": 0.870007541105635,
+          "minimum_depth_valid_fraction": 0.6882904936760506,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.5728088415032387,
+          "centroid_rmse_px": 0.5742914054089124,
+          "sdk_surface_samples": 54206,
+          "sdk_surface_mae_m": 7.511461836074559,
+          "sdk_surface_rmse_m": 7.939413064604694
+        },
+        {
+          "depth_label_m": 1.0,
+          "angle_label": "right",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.009054591278052046,
+              "depth_rmse_m": 0.009086029059888218,
+              "center_samples": 12,
+              "center_mae_m": 0.009213255740317306,
+              "center_rmse_m": 0.009242042531942019
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.009814236111111112,
+          "minimum_mask_fraction": 0.009597222222222222,
+          "mean_depth_valid_fraction": 0.9685866902215473,
+          "minimum_depth_valid_fraction": 0.9052710560870381,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.5699150359603128,
+          "centroid_rmse_px": 0.5743704546917439,
+          "sdk_surface_samples": 64751,
+          "sdk_surface_mae_m": 6.6116229048692,
+          "sdk_surface_rmse_m": 7.136073857369792
+        },
+        {
+          "depth_label_m": 1.5,
+          "angle_label": "left",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.00349989820269736,
+              "depth_rmse_m": 0.004072295590869352,
+              "center_samples": 12,
+              "center_mae_m": 0.005138969138960034,
+              "center_rmse_m": 0.0052661736354699205
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.004306278935185185,
+          "minimum_mask_fraction": 0.004190972222222222,
+          "mean_depth_valid_fraction": 0.999118845441385,
+          "minimum_depth_valid_fraction": 0.9951541850220265,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.534387863917031,
+          "centroid_rmse_px": 0.5347095409872364,
+          "sdk_surface_samples": 29425,
+          "sdk_surface_mae_m": 6.4469288830434754,
+          "sdk_surface_rmse_m": 6.57619904619402
+        },
+        {
+          "depth_label_m": 1.5,
+          "angle_label": "center",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.0073104665824406485,
+              "depth_rmse_m": 0.007611252031718938,
+              "center_samples": 12,
+              "center_mae_m": 0.00764149586443898,
+              "center_rmse_m": 0.00790452485580234
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0040186631944444445,
+          "minimum_mask_fraction": 0.003953125,
+          "mean_depth_valid_fraction": 0.9976300502681079,
+          "minimum_depth_valid_fraction": 0.9886255924170616,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.5289702453673123,
+          "centroid_rmse_px": 0.529911152289415,
+          "sdk_surface_samples": 27353,
+          "sdk_surface_mae_m": 5.396536702339182,
+          "sdk_surface_rmse_m": 5.4844129463832205
+        },
+        {
+          "depth_label_m": 1.5,
+          "angle_label": "right",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.0017688181923013468,
+              "depth_rmse_m": 0.0024485982919980474,
+              "center_samples": 12,
+              "center_mae_m": 0.004269877804142543,
+              "center_rmse_m": 0.004346637635975385
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.004311053240740741,
+          "minimum_mask_fraction": 0.004197916666666667,
+          "mean_depth_valid_fraction": 0.9908204544797407,
+          "minimum_depth_valid_fraction": 0.9531178880291307,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.5089867825153129,
+          "centroid_rmse_px": 0.5106020253603909,
+          "sdk_surface_samples": 29186,
+          "sdk_surface_mae_m": 4.225891422408343,
+          "sdk_surface_rmse_m": 4.271420540991299
+        },
+        {
+          "depth_label_m": 2.0,
+          "angle_label": "left",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.010667174846881252,
+              "depth_rmse_m": 0.011261086235683934,
+              "center_samples": 12,
+              "center_mae_m": 0.011369961716730333,
+              "center_rmse_m": 0.011783988563163914
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0024094328703703704,
+          "minimum_mask_fraction": 0.0023628472222222223,
+          "mean_depth_valid_fraction": 0.9968707482993198,
+          "minimum_depth_valid_fraction": 0.9624489795918367,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.5176931137233644,
+          "centroid_rmse_px": 0.518657142674973,
+          "sdk_surface_samples": 16328,
+          "sdk_surface_mae_m": 5.77064203513935,
+          "sdk_surface_rmse_m": 5.8390613177008515
+        },
+        {
+          "depth_label_m": 2.0,
+          "angle_label": "center",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.002323629221238003,
+              "depth_rmse_m": 0.003209064198751306,
+              "center_samples": 12,
+              "center_mae_m": 0.004014549465317442,
+              "center_rmse_m": 0.004357769999388542
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0022340856481481482,
+          "minimum_mask_fraction": 0.0021961805555555554,
+          "mean_depth_valid_fraction": 0.975718896713615,
+          "minimum_depth_valid_fraction": 0.8485915492957746,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.5457972937132972,
+          "centroid_rmse_px": 0.5464437560809814,
+          "sdk_surface_samples": 14831,
+          "sdk_surface_mae_m": 3.2583656121036713,
+          "sdk_surface_rmse_m": 3.318414778420523
+        },
+        {
+          "depth_label_m": 2.0,
+          "angle_label": "right",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.01149543110040833,
+              "depth_rmse_m": 0.011752002910953099,
+              "center_samples": 12,
+              "center_mae_m": 0.012154002030911435,
+              "center_rmse_m": 0.01234994100106696
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.002421585648148148,
+          "minimum_mask_fraction": 0.00234375,
+          "mean_depth_valid_fraction": 1.0,
+          "minimum_depth_valid_fraction": 1.0,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.525768993678852,
+          "centroid_rmse_px": 0.528890578363417,
+          "sdk_surface_samples": 16449,
+          "sdk_surface_mae_m": 3.3318833296853154,
+          "sdk_surface_rmse_m": 3.373207942759757
+        },
+        {
+          "depth_label_m": 3.0,
+          "angle_label": "left",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.028371097513897214,
+              "depth_rmse_m": 0.029204219081229905,
+              "center_samples": 12,
+              "center_mae_m": 0.030308228372212892,
+              "center_rmse_m": 0.03121567429234645
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0010635127314814815,
+          "minimum_mask_fraction": 0.0010243055555555556,
+          "mean_depth_valid_fraction": 0.9950628737593011,
+          "minimum_depth_valid_fraction": 0.9666666666666667,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.45421036570521767,
+          "centroid_rmse_px": 0.4559316844779739,
+          "sdk_surface_samples": 7140,
+          "sdk_surface_mae_m": 2.7550030212952015,
+          "sdk_surface_rmse_m": 2.8239421461587892
+        },
+        {
+          "depth_label_m": 3.0,
+          "angle_label": "center",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.053716332574441084,
+              "depth_rmse_m": 0.054963521284897565,
+              "center_samples": 12,
+              "center_mae_m": 0.05382902759069775,
+              "center_rmse_m": 0.055065618189740755
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0009965277777777778,
+          "minimum_mask_fraction": 0.0009548611111111111,
+          "mean_depth_valid_fraction": 0.9935386588145896,
+          "minimum_depth_valid_fraction": 0.9425531914893617,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.41999352484917507,
+          "centroid_rmse_px": 0.42185184992605,
+          "sdk_surface_samples": 6731,
+          "sdk_surface_mae_m": 2.2934603943489287,
+          "sdk_surface_rmse_m": 2.3292387671545787
+        },
+        {
+          "depth_label_m": 3.0,
+          "angle_label": "right",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.021645732760911567,
+              "depth_rmse_m": 0.02184415125416161,
+              "center_samples": 12,
+              "center_mae_m": 0.023330599439265135,
+              "center_rmse_m": 0.02350344392523277
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0010778356481481483,
+          "minimum_mask_fraction": 0.001048611111111111,
+          "mean_depth_valid_fraction": 0.992972653365479,
+          "minimum_depth_valid_fraction": 0.937625754527163,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.5175963337774364,
+          "centroid_rmse_px": 0.5190262438559796,
+          "sdk_surface_samples": 7203,
+          "sdk_surface_mae_m": 1.9997324946552932,
+          "sdk_surface_rmse_m": 2.0300279479241174
+        },
+        {
+          "depth_label_m": 4.0,
+          "angle_label": "left",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.03831950146753538,
+              "depth_rmse_m": 0.04330408300409741,
+              "center_samples": 12,
+              "center_mae_m": 0.04131388958272777,
+              "center_rmse_m": 0.04654674382465967
+            },
+            "sdk_sphere": {
+              "valid": 1,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 11
+              },
+              "depth_samples": 1,
+              "depth_mae_m": 0.7516521791187039,
+              "depth_rmse_m": 0.7516521791187039,
+              "center_samples": 1,
+              "center_mae_m": 0.7983996672882692,
+              "center_rmse_m": 0.7983996672882692
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.000595486111111111,
+          "minimum_mask_fraction": 0.0005798611111111111,
+          "mean_depth_valid_fraction": 0.9996770025839794,
+          "minimum_depth_valid_fraction": 0.9961240310077519,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.4955431656307378,
+          "centroid_rmse_px": 0.496019697004958,
+          "sdk_surface_samples": 3983,
+          "sdk_surface_mae_m": 0.9516274356541806,
+          "sdk_surface_rmse_m": 0.9799908178192596
+        },
+        {
+          "depth_label_m": 4.0,
+          "angle_label": "center",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.10240880158392396,
+              "depth_rmse_m": 0.10256059524086177,
+              "center_samples": 12,
+              "center_mae_m": 0.10259831835752199,
+              "center_rmse_m": 0.10274967901547787
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0005732060185185186,
+          "minimum_mask_fraction": 0.0005625,
+          "mean_depth_valid_fraction": 1.0,
+          "minimum_depth_valid_fraction": 1.0,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.5627223812511516,
+          "centroid_rmse_px": 0.5631347978229094,
+          "sdk_surface_samples": 3801,
+          "sdk_surface_mae_m": 1.0665243379043718,
+          "sdk_surface_rmse_m": 1.085411240820995
+        },
+        {
+          "depth_label_m": 4.0,
+          "angle_label": "right",
+          "expected_visible": true,
+          "frames": 11,
+          "detected": 11,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 11,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 11,
+              "depth_mae_m": 0.029367825363859665,
+              "depth_rmse_m": 0.035302746914912725,
+              "center_samples": 11,
+              "center_mae_m": 0.03180384511713267,
+              "center_rmse_m": 0.03793581920649992
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 11
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0006062184343434343,
+          "minimum_mask_fraction": 0.0005833333333333334,
+          "mean_depth_valid_fraction": 1.0,
+          "minimum_depth_valid_fraction": 1.0,
+          "centroid_samples": 11,
+          "centroid_mae_px": 0.5184648604540707,
+          "centroid_rmse_px": 0.5197515199882978,
+          "sdk_surface_samples": 3721,
+          "sdk_surface_mae_m": 0.5864376020558494,
+          "sdk_surface_rmse_m": 0.6197514781609026
+        },
+        {
+          "depth_label_m": 2.0,
+          "angle_label": "out_of_fov",
+          "expected_visible": false,
+          "frames": 6,
+          "detected": 0,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 6
+          },
+          "methods": {
+            "triangulation": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_stereo_detection": 6
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_left_detection": 6
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 0.0,
+          "false_positive_rate": 0.0,
+          "mean_mask_fraction": 0.0,
+          "minimum_mask_fraction": 0.0,
+          "mean_depth_valid_fraction": 0.0,
+          "minimum_depth_valid_fraction": 0.0,
+          "centroid_samples": 0,
+          "centroid_mae_px": null,
+          "centroid_rmse_px": null,
+          "sdk_surface_samples": 0,
+          "sdk_surface_mae_m": null,
+          "sdk_surface_rmse_m": null
+        },
+        {
+          "depth_label_m": 2.0,
+          "angle_label": "occluded",
+          "expected_visible": false,
+          "frames": 6,
+          "detected": 0,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 6
+          },
+          "methods": {
+            "triangulation": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_stereo_detection": 6
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_left_detection": 6
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 0.0,
+          "false_positive_rate": 0.0,
+          "mean_mask_fraction": 0.0,
+          "minimum_mask_fraction": 0.0,
+          "mean_depth_valid_fraction": 0.0,
+          "minimum_depth_valid_fraction": 0.0,
+          "centroid_samples": 0,
+          "centroid_mae_px": null,
+          "centroid_rmse_px": null,
+          "sdk_surface_samples": 0,
+          "sdk_surface_mae_m": null,
+          "sdk_surface_rmse_m": null
+        },
+        {
+          "depth_label_m": 1.0,
+          "angle_label": "left",
+          "expected_visible": true,
+          "frames": 6,
+          "detected": 6,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 6,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 6,
+              "depth_mae_m": 0.010547860928517986,
+              "depth_rmse_m": 0.010854426296670541,
+              "center_samples": 6,
+              "center_mae_m": 0.010829404987781515,
+              "center_rmse_m": 0.011128892314546212
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 6
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.009805266203703703,
+          "minimum_mask_fraction": 0.009578125,
+          "mean_depth_valid_fraction": 0.9970099539535724,
+          "minimum_depth_valid_fraction": 0.9917401914773794,
+          "centroid_samples": 6,
+          "centroid_mae_px": 0.5925535688239526,
+          "centroid_rmse_px": 0.5938016184081156,
+          "sdk_surface_samples": 33500,
+          "sdk_surface_mae_m": 5.8667900799231205,
+          "sdk_surface_rmse_m": 5.9880996223003295
+        }
+      ],
+      "predictions_sha256": "66cc36b04e281227920357fd1682105eb615df223f50f3e3a46595b8cc58945b"
+    },
+    {
+      "run": "10",
+      "sdk_mode": "ULTRA",
+      "frames": 185,
+      "visible_frames": 173,
+      "negative_frames": 12,
+      "detected_visible": 173,
+      "false_detections_negative": 0,
+      "methods": {
+        "triangulation": {
+          "valid_visible": 173,
+          "invalid_visible": 0,
+          "invalid_reasons": {},
+          "center_mae_m": 0.024362660092611604,
+          "center_p95_m": 0.10068015422881185,
+          "center_max_m": 0.1152215548075649,
+          "false_positive_negative": 0
+        },
+        "sdk_sphere": {
+          "valid_visible": 26,
+          "invalid_visible": 147,
+          "invalid_reasons": {
+            "sphere_fit_inconsistent": 147
+          },
+          "center_mae_m": 0.0029436031473229554,
+          "center_p95_m": 0.004847105882052577,
+          "center_max_m": 0.0049696017791904055,
+          "false_positive_negative": 0
+        }
+      },
+      "grid_complete": true,
+      "per_cell": [
+        {
+          "depth_label_m": 1.0,
+          "angle_label": "center",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.01134333422302313,
+              "depth_rmse_m": 0.01140367477962763,
+              "center_samples": 12,
+              "center_mae_m": 0.011447549942973074,
+              "center_rmse_m": 0.011504852221153637
+            },
+            "sdk_sphere": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.0013885552629452347,
+              "depth_rmse_m": 0.0014760334456722886,
+              "center_samples": 12,
+              "center_mae_m": 0.0035760423691690705,
+              "center_rmse_m": 0.003721682768221042
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.009059317129629629,
+          "minimum_mask_fraction": 0.008961805555555556,
+          "mean_depth_valid_fraction": 0.7341378233228103,
+          "minimum_depth_valid_fraction": 0.689423272875484,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.5698875490004711,
+          "centroid_rmse_px": 0.57092245826678,
+          "sdk_surface_samples": 43521,
+          "sdk_surface_mae_m": 0.17294956007147055,
+          "sdk_surface_rmse_m": 0.9315867818529858
+        },
+        {
+          "depth_label_m": 1.0,
+          "angle_label": "right",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.009084106716185128,
+              "depth_rmse_m": 0.009116667174229631,
+              "center_samples": 12,
+              "center_mae_m": 0.009242494771670409,
+              "center_rmse_m": 0.009272263493023538
+            },
+            "sdk_sphere": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.0009548882086809948,
+              "depth_rmse_m": 0.0011931448385242883,
+              "center_samples": 12,
+              "center_mae_m": 0.002186161413011627,
+              "center_rmse_m": 0.0022892534969758396
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.009814380787037039,
+          "minimum_mask_fraction": 0.009602430555555555,
+          "mean_depth_valid_fraction": 0.6311608961335478,
+          "minimum_depth_valid_fraction": 0.5994754589733983,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.5691806006373995,
+          "centroid_rmse_px": 0.573480772731393,
+          "sdk_surface_samples": 40794,
+          "sdk_surface_mae_m": 0.610009382500523,
+          "sdk_surface_rmse_m": 1.711378773588249
+        },
+        {
+          "depth_label_m": 1.5,
+          "angle_label": "left",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.003444724605018823,
+              "depth_rmse_m": 0.00403716467137511,
+              "center_samples": 12,
+              "center_mae_m": 0.005135636021689867,
+              "center_rmse_m": 0.005258034981877743
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.004306134259259259,
+          "minimum_mask_fraction": 0.0041875,
+          "mean_depth_valid_fraction": 0.7814121113780751,
+          "minimum_depth_valid_fraction": 0.741166077738516,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.5353191303452358,
+          "centroid_rmse_px": 0.5356492465603871,
+          "sdk_surface_samples": 21495,
+          "sdk_surface_mae_m": 5.002668380800738,
+          "sdk_surface_rmse_m": 5.148931339164567
+        },
+        {
+          "depth_label_m": 1.5,
+          "angle_label": "center",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.007412993380247183,
+              "depth_rmse_m": 0.007764617503136159,
+              "center_samples": 12,
+              "center_mae_m": 0.00774144300651192,
+              "center_rmse_m": 0.008051813249093195
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0040186631944444445,
+          "minimum_mask_fraction": 0.003953125,
+          "mean_depth_valid_fraction": 0.7990349936676214,
+          "minimum_depth_valid_fraction": 0.6957759848125297,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.5285569119179159,
+          "centroid_rmse_px": 0.5294824429083418,
+          "sdk_surface_samples": 20489,
+          "sdk_surface_mae_m": 5.610454063989905,
+          "sdk_surface_rmse_m": 5.668537974020464
+        },
+        {
+          "depth_label_m": 1.5,
+          "angle_label": "right",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.0017364319342176304,
+              "depth_rmse_m": 0.002467203200637324,
+              "center_samples": 12,
+              "center_mae_m": 0.004260860417368139,
+              "center_rmse_m": 0.004337412232526815
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.004311053240740741,
+          "minimum_mask_fraction": 0.004197916666666667,
+          "mean_depth_valid_fraction": 0.7274907353603949,
+          "minimum_depth_valid_fraction": 0.6262093227792436,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.5070093821128785,
+          "centroid_rmse_px": 0.5083016517835675,
+          "sdk_surface_samples": 20203,
+          "sdk_surface_mae_m": 4.07821160216531,
+          "sdk_surface_rmse_m": 4.139812062410693
+        },
+        {
+          "depth_label_m": 2.0,
+          "angle_label": "left",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.01049080286894862,
+              "depth_rmse_m": 0.01122601144875213,
+              "center_samples": 12,
+              "center_mae_m": 0.011248099050317538,
+              "center_rmse_m": 0.011732241521772699
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0024094328703703704,
+          "minimum_mask_fraction": 0.0023628472222222223,
+          "mean_depth_valid_fraction": 0.7786066608031272,
+          "minimum_depth_valid_fraction": 0.7175188600167645,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.5178615889089175,
+          "centroid_rmse_px": 0.5188436871662959,
+          "sdk_surface_samples": 11610,
+          "sdk_surface_mae_m": 5.081178894249206,
+          "sdk_surface_rmse_m": 5.1671566063954355
+        },
+        {
+          "depth_label_m": 2.0,
+          "angle_label": "center",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.002323629221238003,
+              "depth_rmse_m": 0.003209064198751306,
+              "center_samples": 12,
+              "center_mae_m": 0.004014549465317442,
+              "center_rmse_m": 0.004357769999388542
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0022340856481481482,
+          "minimum_mask_fraction": 0.0021961805555555554,
+          "mean_depth_valid_fraction": 0.7208565072161224,
+          "minimum_depth_valid_fraction": 0.6028243601059136,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.5457972937132972,
+          "centroid_rmse_px": 0.5464437560809814,
+          "sdk_surface_samples": 9935,
+          "sdk_surface_mae_m": 5.361678396801332,
+          "sdk_surface_rmse_m": 5.661657588766157
+        },
+        {
+          "depth_label_m": 2.0,
+          "angle_label": "right",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.011373675596929736,
+              "depth_rmse_m": 0.011630768324080956,
+              "center_samples": 12,
+              "center_mae_m": 0.012028626516273547,
+              "center_rmse_m": 0.012226192519809803
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.002421585648148148,
+          "minimum_mask_fraction": 0.00234375,
+          "mean_depth_valid_fraction": 0.7353231645138685,
+          "minimum_depth_valid_fraction": 0.635483870967742,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.525768993678852,
+          "centroid_rmse_px": 0.528890578363417,
+          "sdk_surface_samples": 11272,
+          "sdk_surface_mae_m": 3.8411662746749555,
+          "sdk_surface_rmse_m": 3.9273866473994015
+        },
+        {
+          "depth_label_m": 3.0,
+          "angle_label": "left",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.028532813997984203,
+              "depth_rmse_m": 0.029327437738537087,
+              "center_samples": 12,
+              "center_mae_m": 0.030482723742480785,
+              "center_rmse_m": 0.0313481039647336
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0010633680555555555,
+          "minimum_mask_fraction": 0.0010243055555555556,
+          "mean_depth_valid_fraction": 0.4313321751091725,
+          "minimum_depth_valid_fraction": 0.23333333333333334,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.4547747292697566,
+          "centroid_rmse_px": 0.4564865751290966,
+          "sdk_surface_samples": 2750,
+          "sdk_surface_mae_m": 3.0259873279698435,
+          "sdk_surface_rmse_m": 3.0621504011635907
+        },
+        {
+          "depth_label_m": 3.0,
+          "angle_label": "center",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.053716332574441084,
+              "depth_rmse_m": 0.054963521284897565,
+              "center_samples": 12,
+              "center_mae_m": 0.05382902759069775,
+              "center_rmse_m": 0.055065618189740755
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0009965277777777778,
+          "minimum_mask_fraction": 0.0009548611111111111,
+          "mean_depth_valid_fraction": 0.49595262182864985,
+          "minimum_depth_valid_fraction": 0.28450106157112526,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.41999352484917507,
+          "centroid_rmse_px": 0.42185184992605,
+          "sdk_surface_samples": 2971,
+          "sdk_surface_mae_m": 3.004718172698557,
+          "sdk_surface_rmse_m": 3.045075106905593
+        },
+        {
+          "depth_label_m": 3.0,
+          "angle_label": "right",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.021645732760911567,
+              "depth_rmse_m": 0.02184415125416161,
+              "center_samples": 12,
+              "center_mae_m": 0.023330599439265135,
+              "center_rmse_m": 0.02350344392523277
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0010778356481481483,
+          "minimum_mask_fraction": 0.001048611111111111,
+          "mean_depth_valid_fraction": 0.2721103471364805,
+          "minimum_depth_valid_fraction": 0.1953125,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.5175963337774364,
+          "centroid_rmse_px": 0.5190262438559796,
+          "sdk_surface_samples": 1939,
+          "sdk_surface_mae_m": 2.2325135090277413,
+          "sdk_surface_rmse_m": 2.3662188397209003
+        },
+        {
+          "depth_label_m": 4.0,
+          "angle_label": "left",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.03831950146753538,
+              "depth_rmse_m": 0.04330408300409741,
+              "center_samples": 12,
+              "center_mae_m": 0.04131388958272777,
+              "center_rmse_m": 0.04654674382465967
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.000595486111111111,
+          "minimum_mask_fraction": 0.0005798611111111111,
+          "mean_depth_valid_fraction": 0.7208921226596217,
+          "minimum_depth_valid_fraction": 0.5805243445692884,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.4955431656307378,
+          "centroid_rmse_px": 0.496019697004958,
+          "sdk_surface_samples": 2533,
+          "sdk_surface_mae_m": 0.5156011035515261,
+          "sdk_surface_rmse_m": 0.5993483464229128
+        },
+        {
+          "depth_label_m": 4.0,
+          "angle_label": "center",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.10240880158392396,
+              "depth_rmse_m": 0.10256059524086177,
+              "center_samples": 12,
+              "center_mae_m": 0.10259831835752199,
+              "center_rmse_m": 0.10274967901547787
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0005732060185185186,
+          "minimum_mask_fraction": 0.0005625,
+          "mean_depth_valid_fraction": 0.7248979434646201,
+          "minimum_depth_valid_fraction": 0.5905511811023622,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.5627223812511516,
+          "centroid_rmse_px": 0.5631347978229094,
+          "sdk_surface_samples": 2431,
+          "sdk_surface_mae_m": 0.7214314549678109,
+          "sdk_surface_rmse_m": 0.7758200963026982
+        },
+        {
+          "depth_label_m": 4.0,
+          "angle_label": "right",
+          "expected_visible": true,
+          "frames": 11,
+          "detected": 11,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 11,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 11,
+              "depth_mae_m": 0.029367825363859665,
+              "depth_rmse_m": 0.035302746914912725,
+              "center_samples": 11,
+              "center_mae_m": 0.03180384511713267,
+              "center_rmse_m": 0.03793581920649992
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 11
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0006062184343434343,
+          "minimum_mask_fraction": 0.0005833333333333334,
+          "mean_depth_valid_fraction": 0.801340783594124,
+          "minimum_depth_valid_fraction": 0.7463235294117647,
+          "centroid_samples": 11,
+          "centroid_mae_px": 0.5184648604540707,
+          "centroid_rmse_px": 0.5197515199882978,
+          "sdk_surface_samples": 2695,
+          "sdk_surface_mae_m": 0.62587343738929,
+          "sdk_surface_rmse_m": 0.7184101974311345
+        },
+        {
+          "depth_label_m": 2.0,
+          "angle_label": "out_of_fov",
+          "expected_visible": false,
+          "frames": 6,
+          "detected": 0,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 6
+          },
+          "methods": {
+            "triangulation": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_stereo_detection": 6
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_left_detection": 6
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 0.0,
+          "false_positive_rate": 0.0,
+          "mean_mask_fraction": 0.0,
+          "minimum_mask_fraction": 0.0,
+          "mean_depth_valid_fraction": 0.0,
+          "minimum_depth_valid_fraction": 0.0,
+          "centroid_samples": 0,
+          "centroid_mae_px": null,
+          "centroid_rmse_px": null,
+          "sdk_surface_samples": 0,
+          "sdk_surface_mae_m": null,
+          "sdk_surface_rmse_m": null
+        },
+        {
+          "depth_label_m": 2.0,
+          "angle_label": "occluded",
+          "expected_visible": false,
+          "frames": 6,
+          "detected": 0,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 6
+          },
+          "methods": {
+            "triangulation": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_stereo_detection": 6
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_left_detection": 6
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 0.0,
+          "false_positive_rate": 0.0,
+          "mean_mask_fraction": 0.0,
+          "minimum_mask_fraction": 0.0,
+          "mean_depth_valid_fraction": 0.0,
+          "minimum_depth_valid_fraction": 0.0,
+          "centroid_samples": 0,
+          "centroid_mae_px": null,
+          "centroid_rmse_px": null,
+          "sdk_surface_samples": 0,
+          "sdk_surface_mae_m": null,
+          "sdk_surface_rmse_m": null
+        },
+        {
+          "depth_label_m": 1.0,
+          "angle_label": "left",
+          "expected_visible": true,
+          "frames": 6,
+          "detected": 6,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 6,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 6,
+              "depth_mae_m": 0.010508078228076626,
+              "depth_rmse_m": 0.010843292946256118,
+              "center_samples": 6,
+              "center_mae_m": 0.010802014145927416,
+              "center_rmse_m": 0.011128433282942683
+            },
+            "sdk_sphere": {
+              "valid": 2,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 4
+              },
+              "depth_samples": 2,
+              "depth_mae_m": 0.0002713067633250965,
+              "depth_rmse_m": 0.0002720788054145561,
+              "center_samples": 2,
+              "center_mae_m": 0.0036936182221142416,
+              "center_rmse_m": 0.003740968362356133
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.009804108796296297,
+          "minimum_mask_fraction": 0.009572916666666667,
+          "mean_depth_valid_fraction": 0.6049981738309764,
+          "minimum_depth_valid_fraction": 0.542096381023814,
+          "centroid_samples": 6,
+          "centroid_mae_px": 0.5962418337565049,
+          "centroid_rmse_px": 0.5978595643589206,
+          "sdk_surface_samples": 19700,
+          "sdk_surface_mae_m": 2.2276595458913486,
+          "sdk_surface_rmse_m": 3.212604239153379
+        }
+      ],
+      "predictions_sha256": "f007533c934391e5121c07d749e40c254a8d1c6d95be2a679a51a37e86c4d2ae"
+    },
+    {
+      "run": "11",
+      "sdk_mode": "ULTRA",
+      "frames": 185,
+      "visible_frames": 173,
+      "negative_frames": 12,
+      "detected_visible": 10,
+      "false_detections_negative": 0,
+      "methods": {
+        "triangulation": {
+          "valid_visible": 0,
+          "invalid_visible": 173,
+          "invalid_reasons": {
+            "missing_valid_stereo_detection": 173
+          },
+          "center_mae_m": null,
+          "center_p95_m": null,
+          "center_max_m": null,
+          "false_positive_negative": 0
+        },
+        "sdk_sphere": {
+          "valid_visible": 9,
+          "invalid_visible": 164,
+          "invalid_reasons": {
+            "missing_valid_left_detection": 163,
+            "sphere_fit_inconsistent": 1
+          },
+          "center_mae_m": 0.02974522010486013,
+          "center_p95_m": 0.042104015228502524,
+          "center_max_m": 0.04718467964619644,
+          "false_positive_negative": 0
+        }
+      },
+      "grid_complete": true,
+      "per_cell": [
+        {
+          "depth_label_m": 1.0,
+          "angle_label": "center",
+          "expected_visible": true,
+          "frames": 11,
+          "detected": 0,
+          "false_positives": 0,
+          "missed_detections": 11,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 11
+          },
+          "methods": {
+            "triangulation": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_stereo_detection": 11
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_left_detection": 11
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 0.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0,
+          "minimum_mask_fraction": 0.0,
+          "mean_depth_valid_fraction": 0.0,
+          "minimum_depth_valid_fraction": 0.0,
+          "centroid_samples": 0,
+          "centroid_mae_px": null,
+          "centroid_rmse_px": null,
+          "sdk_surface_samples": 0,
+          "sdk_surface_mae_m": null,
+          "sdk_surface_rmse_m": null
+        },
+        {
+          "depth_label_m": 1.0,
+          "angle_label": "right",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 0,
+          "false_positives": 0,
+          "missed_detections": 12,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 12
+          },
+          "methods": {
+            "triangulation": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_stereo_detection": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_left_detection": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 0.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0,
+          "minimum_mask_fraction": 0.0,
+          "mean_depth_valid_fraction": 0.0,
+          "minimum_depth_valid_fraction": 0.0,
+          "centroid_samples": 0,
+          "centroid_mae_px": null,
+          "centroid_rmse_px": null,
+          "sdk_surface_samples": 0,
+          "sdk_surface_mae_m": null,
+          "sdk_surface_rmse_m": null
+        },
+        {
+          "depth_label_m": 1.5,
+          "angle_label": "left",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 0,
+          "false_positives": 0,
+          "missed_detections": 12,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 12
+          },
+          "methods": {
+            "triangulation": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_stereo_detection": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_left_detection": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 0.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0,
+          "minimum_mask_fraction": 0.0,
+          "mean_depth_valid_fraction": 0.0,
+          "minimum_depth_valid_fraction": 0.0,
+          "centroid_samples": 0,
+          "centroid_mae_px": null,
+          "centroid_rmse_px": null,
+          "sdk_surface_samples": 0,
+          "sdk_surface_mae_m": null,
+          "sdk_surface_rmse_m": null
+        },
+        {
+          "depth_label_m": 1.5,
+          "angle_label": "center",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 10,
+          "false_positives": 0,
+          "missed_detections": 2,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 2
+          },
+          "methods": {
+            "triangulation": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_stereo_detection": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            },
+            "sdk_sphere": {
+              "valid": 9,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_left_detection": 2,
+                "sphere_fit_inconsistent": 1
+              },
+              "depth_samples": 9,
+              "depth_mae_m": 0.01237661244821527,
+              "depth_rmse_m": 0.014091953698632035,
+              "center_samples": 9,
+              "center_mae_m": 0.02974522010486013,
+              "center_rmse_m": 0.031149254721478344
+            }
+          },
+          "detection_rate": 0.8333333333333334,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0030908564814814813,
+          "minimum_mask_fraction": 0.0,
+          "mean_depth_valid_fraction": 0.44504008419368096,
+          "minimum_depth_valid_fraction": 0.0,
+          "centroid_samples": 10,
+          "centroid_mae_px": 1.0918504510329832,
+          "centroid_rmse_px": 1.09203838199908,
+          "sdk_surface_samples": 10394,
+          "sdk_surface_mae_m": 0.0482759023224805,
+          "sdk_surface_rmse_m": 0.33846252994256076
+        },
+        {
+          "depth_label_m": 1.5,
+          "angle_label": "right",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 0,
+          "false_positives": 0,
+          "missed_detections": 12,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 12
+          },
+          "methods": {
+            "triangulation": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_stereo_detection": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_left_detection": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 0.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0,
+          "minimum_mask_fraction": 0.0,
+          "mean_depth_valid_fraction": 0.0,
+          "minimum_depth_valid_fraction": 0.0,
+          "centroid_samples": 0,
+          "centroid_mae_px": null,
+          "centroid_rmse_px": null,
+          "sdk_surface_samples": 0,
+          "sdk_surface_mae_m": null,
+          "sdk_surface_rmse_m": null
+        },
+        {
+          "depth_label_m": 2.0,
+          "angle_label": "left",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 0,
+          "false_positives": 0,
+          "missed_detections": 12,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 12
+          },
+          "methods": {
+            "triangulation": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_stereo_detection": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_left_detection": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 0.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0,
+          "minimum_mask_fraction": 0.0,
+          "mean_depth_valid_fraction": 0.0,
+          "minimum_depth_valid_fraction": 0.0,
+          "centroid_samples": 0,
+          "centroid_mae_px": null,
+          "centroid_rmse_px": null,
+          "sdk_surface_samples": 0,
+          "sdk_surface_mae_m": null,
+          "sdk_surface_rmse_m": null
+        },
+        {
+          "depth_label_m": 2.0,
+          "angle_label": "center",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 0,
+          "false_positives": 0,
+          "missed_detections": 12,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 12
+          },
+          "methods": {
+            "triangulation": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_stereo_detection": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_left_detection": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 0.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0,
+          "minimum_mask_fraction": 0.0,
+          "mean_depth_valid_fraction": 0.0,
+          "minimum_depth_valid_fraction": 0.0,
+          "centroid_samples": 0,
+          "centroid_mae_px": null,
+          "centroid_rmse_px": null,
+          "sdk_surface_samples": 0,
+          "sdk_surface_mae_m": null,
+          "sdk_surface_rmse_m": null
+        },
+        {
+          "depth_label_m": 2.0,
+          "angle_label": "right",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 0,
+          "false_positives": 0,
+          "missed_detections": 12,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 12
+          },
+          "methods": {
+            "triangulation": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_stereo_detection": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_left_detection": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 0.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0,
+          "minimum_mask_fraction": 0.0,
+          "mean_depth_valid_fraction": 0.0,
+          "minimum_depth_valid_fraction": 0.0,
+          "centroid_samples": 0,
+          "centroid_mae_px": null,
+          "centroid_rmse_px": null,
+          "sdk_surface_samples": 0,
+          "sdk_surface_mae_m": null,
+          "sdk_surface_rmse_m": null
+        },
+        {
+          "depth_label_m": 3.0,
+          "angle_label": "left",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 0,
+          "false_positives": 0,
+          "missed_detections": 12,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 12
+          },
+          "methods": {
+            "triangulation": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_stereo_detection": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_left_detection": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 0.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0,
+          "minimum_mask_fraction": 0.0,
+          "mean_depth_valid_fraction": 0.0,
+          "minimum_depth_valid_fraction": 0.0,
+          "centroid_samples": 0,
+          "centroid_mae_px": null,
+          "centroid_rmse_px": null,
+          "sdk_surface_samples": 0,
+          "sdk_surface_mae_m": null,
+          "sdk_surface_rmse_m": null
+        },
+        {
+          "depth_label_m": 3.0,
+          "angle_label": "center",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 0,
+          "false_positives": 0,
+          "missed_detections": 12,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 12
+          },
+          "methods": {
+            "triangulation": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_stereo_detection": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_left_detection": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 0.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0,
+          "minimum_mask_fraction": 0.0,
+          "mean_depth_valid_fraction": 0.0,
+          "minimum_depth_valid_fraction": 0.0,
+          "centroid_samples": 0,
+          "centroid_mae_px": null,
+          "centroid_rmse_px": null,
+          "sdk_surface_samples": 0,
+          "sdk_surface_mae_m": null,
+          "sdk_surface_rmse_m": null
+        },
+        {
+          "depth_label_m": 3.0,
+          "angle_label": "right",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 0,
+          "false_positives": 0,
+          "missed_detections": 12,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 12
+          },
+          "methods": {
+            "triangulation": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_stereo_detection": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_left_detection": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 0.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0,
+          "minimum_mask_fraction": 0.0,
+          "mean_depth_valid_fraction": 0.0,
+          "minimum_depth_valid_fraction": 0.0,
+          "centroid_samples": 0,
+          "centroid_mae_px": null,
+          "centroid_rmse_px": null,
+          "sdk_surface_samples": 0,
+          "sdk_surface_mae_m": null,
+          "sdk_surface_rmse_m": null
+        },
+        {
+          "depth_label_m": 4.0,
+          "angle_label": "left",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 0,
+          "false_positives": 0,
+          "missed_detections": 12,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 12
+          },
+          "methods": {
+            "triangulation": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_stereo_detection": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_left_detection": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 0.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0,
+          "minimum_mask_fraction": 0.0,
+          "mean_depth_valid_fraction": 0.0,
+          "minimum_depth_valid_fraction": 0.0,
+          "centroid_samples": 0,
+          "centroid_mae_px": null,
+          "centroid_rmse_px": null,
+          "sdk_surface_samples": 0,
+          "sdk_surface_mae_m": null,
+          "sdk_surface_rmse_m": null
+        },
+        {
+          "depth_label_m": 4.0,
+          "angle_label": "center",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 0,
+          "false_positives": 0,
+          "missed_detections": 12,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 12
+          },
+          "methods": {
+            "triangulation": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_stereo_detection": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_left_detection": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 0.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0,
+          "minimum_mask_fraction": 0.0,
+          "mean_depth_valid_fraction": 0.0,
+          "minimum_depth_valid_fraction": 0.0,
+          "centroid_samples": 0,
+          "centroid_mae_px": null,
+          "centroid_rmse_px": null,
+          "sdk_surface_samples": 0,
+          "sdk_surface_mae_m": null,
+          "sdk_surface_rmse_m": null
+        },
+        {
+          "depth_label_m": 4.0,
+          "angle_label": "right",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 0,
+          "false_positives": 0,
+          "missed_detections": 12,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 12
+          },
+          "methods": {
+            "triangulation": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_stereo_detection": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_left_detection": 12
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 0.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0,
+          "minimum_mask_fraction": 0.0,
+          "mean_depth_valid_fraction": 0.0,
+          "minimum_depth_valid_fraction": 0.0,
+          "centroid_samples": 0,
+          "centroid_mae_px": null,
+          "centroid_rmse_px": null,
+          "sdk_surface_samples": 0,
+          "sdk_surface_mae_m": null,
+          "sdk_surface_rmse_m": null
+        },
+        {
+          "depth_label_m": 2.0,
+          "angle_label": "out_of_fov",
+          "expected_visible": false,
+          "frames": 6,
+          "detected": 0,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 6
+          },
+          "methods": {
+            "triangulation": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_stereo_detection": 6
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_left_detection": 6
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 0.0,
+          "false_positive_rate": 0.0,
+          "mean_mask_fraction": 0.0,
+          "minimum_mask_fraction": 0.0,
+          "mean_depth_valid_fraction": 0.0,
+          "minimum_depth_valid_fraction": 0.0,
+          "centroid_samples": 0,
+          "centroid_mae_px": null,
+          "centroid_rmse_px": null,
+          "sdk_surface_samples": 0,
+          "sdk_surface_mae_m": null,
+          "sdk_surface_rmse_m": null
+        },
+        {
+          "depth_label_m": 2.0,
+          "angle_label": "occluded",
+          "expected_visible": false,
+          "frames": 6,
+          "detected": 0,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 6
+          },
+          "methods": {
+            "triangulation": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_stereo_detection": 6
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_left_detection": 6
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 0.0,
+          "false_positive_rate": 0.0,
+          "mean_mask_fraction": 0.0,
+          "minimum_mask_fraction": 0.0,
+          "mean_depth_valid_fraction": 0.0,
+          "minimum_depth_valid_fraction": 0.0,
+          "centroid_samples": 0,
+          "centroid_mae_px": null,
+          "centroid_rmse_px": null,
+          "sdk_surface_samples": 0,
+          "sdk_surface_mae_m": null,
+          "sdk_surface_rmse_m": null
+        },
+        {
+          "depth_label_m": 1.0,
+          "angle_label": "left",
+          "expected_visible": true,
+          "frames": 6,
+          "detected": 0,
+          "false_positives": 0,
+          "missed_detections": 6,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 6
+          },
+          "methods": {
+            "triangulation": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_stereo_detection": 6
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_left_detection": 6
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 0.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0,
+          "minimum_mask_fraction": 0.0,
+          "mean_depth_valid_fraction": 0.0,
+          "minimum_depth_valid_fraction": 0.0,
+          "centroid_samples": 0,
+          "centroid_mae_px": null,
+          "centroid_rmse_px": null,
+          "sdk_surface_samples": 0,
+          "sdk_surface_mae_m": null,
+          "sdk_surface_rmse_m": null
+        }
+      ],
+      "predictions_sha256": "4c7f04df9360553d337a7b01936ad4c2895aa8d3f06097e4ecdff4a0999a1a0a"
+    },
+    {
+      "run": "13",
+      "sdk_mode": "NEURAL",
+      "frames": 185,
+      "visible_frames": 173,
+      "negative_frames": 12,
+      "detected_visible": 173,
+      "false_detections_negative": 0,
+      "methods": {
+        "triangulation": {
+          "valid_visible": 173,
+          "invalid_visible": 0,
+          "invalid_reasons": {},
+          "center_mae_m": 0.024471967821005122,
+          "center_p95_m": 0.10068015422881185,
+          "center_max_m": 0.1152215548075649,
+          "false_positive_negative": 0
+        },
+        "sdk_sphere": {
+          "valid_visible": 164,
+          "invalid_visible": 9,
+          "invalid_reasons": {
+            "sphere_fit_inconsistent": 9
+          },
+          "center_mae_m": 0.02720519515962728,
+          "center_p95_m": 0.080996486480026,
+          "center_max_m": 0.1184923853223281,
+          "false_positive_negative": 0
+        }
+      },
+      "grid_complete": true,
+      "per_cell": [
+        {
+          "depth_label_m": 1.0,
+          "angle_label": "center",
+          "expected_visible": true,
+          "frames": 11,
+          "detected": 11,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 11,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 11,
+              "depth_mae_m": 0.011562204105497546,
+              "depth_rmse_m": 0.011588898406907156,
+              "center_samples": 11,
+              "center_mae_m": 0.011660388021627378,
+              "center_rmse_m": 0.011685891248109082
+            },
+            "sdk_sphere": {
+              "valid": 11,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 11,
+              "depth_mae_m": 0.00033122243568371105,
+              "depth_rmse_m": 0.0004442443373252929,
+              "center_samples": 11,
+              "center_mae_m": 0.0058757201598506805,
+              "center_rmse_m": 0.005880819284642708
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.009068181818181817,
+          "minimum_mask_fraction": 0.008982638888888889,
+          "mean_depth_valid_fraction": 0.9809533399000823,
+          "minimum_depth_valid_fraction": 0.9785845400775036,
+          "centroid_samples": 11,
+          "centroid_mae_px": 0.5629321243563576,
+          "centroid_rmse_px": 0.5636048895766167,
+          "sdk_surface_samples": 53940,
+          "sdk_surface_mae_m": 0.00781418072531865,
+          "sdk_surface_rmse_m": 0.02327959922233651
+        },
+        {
+          "depth_label_m": 1.0,
+          "angle_label": "right",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.009123184379545957,
+              "depth_rmse_m": 0.009152219811438708,
+              "center_samples": 12,
+              "center_mae_m": 0.009280273463660386,
+              "center_rmse_m": 0.009306600715617041
+            },
+            "sdk_sphere": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.001063577597319269,
+              "depth_rmse_m": 0.0010778508582481132,
+              "center_samples": 12,
+              "center_mae_m": 0.0019479687897815047,
+              "center_rmse_m": 0.001968270444088238
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.009814814814814816,
+          "minimum_mask_fraction": 0.009602430555555555,
+          "mean_depth_valid_fraction": 0.9782642164425782,
+          "minimum_depth_valid_fraction": 0.9771407157579164,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.5694017728377091,
+          "centroid_rmse_px": 0.5737915896070079,
+          "sdk_surface_samples": 63773,
+          "sdk_surface_mae_m": 0.005501516364411509,
+          "sdk_surface_rmse_m": 0.02837589443047579
+        },
+        {
+          "depth_label_m": 1.5,
+          "angle_label": "left",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.0035669098424840153,
+              "depth_rmse_m": 0.004127480227331239,
+              "center_samples": 12,
+              "center_mae_m": 0.005185686618305809,
+              "center_rmse_m": 0.005303272875329904
+            },
+            "sdk_sphere": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.0010428936612085586,
+              "depth_rmse_m": 0.0011263806203284836,
+              "center_samples": 12,
+              "center_mae_m": 0.005660455959043264,
+              "center_rmse_m": 0.005689605397713728
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0043058449074074075,
+          "minimum_mask_fraction": 0.0041875,
+          "mean_depth_valid_fraction": 0.9718396630676777,
+          "minimum_depth_valid_fraction": 0.9691629955947136,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.5366150339790184,
+          "centroid_rmse_px": 0.5368745357698906,
+          "sdk_surface_samples": 27156,
+          "sdk_surface_mae_m": 0.014486271126756501,
+          "sdk_surface_rmse_m": 0.09684936472326378
+        },
+        {
+          "depth_label_m": 1.5,
+          "angle_label": "center",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.007294314309660266,
+              "depth_rmse_m": 0.007574485946021884,
+              "center_samples": 12,
+              "center_mae_m": 0.00761965955692404,
+              "center_rmse_m": 0.007867593642569295
+            },
+            "sdk_sphere": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.005215176481476291,
+              "depth_rmse_m": 0.005336764351845881,
+              "center_samples": 12,
+              "center_mae_m": 0.01149813850725165,
+              "center_rmse_m": 0.011532081289534207
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0040186631944444445,
+          "minimum_mask_fraction": 0.003949652777777778,
+          "mean_depth_valid_fraction": 0.9703055477105753,
+          "minimum_depth_valid_fraction": 0.9689320388349515,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.5275811848990379,
+          "centroid_rmse_px": 0.5284932862613552,
+          "sdk_surface_samples": 25288,
+          "sdk_surface_mae_m": 0.01729381678671273,
+          "sdk_surface_rmse_m": 0.054500768895714105
+        },
+        {
+          "depth_label_m": 1.5,
+          "angle_label": "right",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.0017224385162612859,
+              "depth_rmse_m": 0.0023474842094253936,
+              "center_samples": 12,
+              "center_mae_m": 0.004223184255113559,
+              "center_rmse_m": 0.004285784210083181
+            },
+            "sdk_sphere": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.0008308954515872472,
+              "depth_rmse_m": 0.0009749068807335468,
+              "center_samples": 12,
+              "center_mae_m": 0.007831416390026885,
+              "center_rmse_m": 0.008035346139014445
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.004310763888888889,
+          "minimum_mask_fraction": 0.004196180555555555,
+          "mean_depth_valid_fraction": 0.9733211884925117,
+          "minimum_depth_valid_fraction": 0.9692712906057945,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.5079761850981881,
+          "centroid_rmse_px": 0.5094206449719817,
+          "sdk_surface_samples": 27360,
+          "sdk_surface_mae_m": 0.019477884538063928,
+          "sdk_surface_rmse_m": 0.10814289183195001
+        },
+        {
+          "depth_label_m": 2.0,
+          "angle_label": "left",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.01066208508989334,
+              "depth_rmse_m": 0.011260001427534293,
+              "center_samples": 12,
+              "center_mae_m": 0.011366211261469463,
+              "center_rmse_m": 0.011782456617795645
+            },
+            "sdk_sphere": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.021943978658326573,
+              "depth_rmse_m": 0.02204417615347468,
+              "center_samples": 12,
+              "center_mae_m": 0.024008626749887223,
+              "center_rmse_m": 0.024165087015814775
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0024094328703703704,
+          "minimum_mask_fraction": 0.0023628472222222223,
+          "mean_depth_valid_fraction": 0.9759610919599404,
+          "minimum_depth_valid_fraction": 0.9724310776942355,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.5176931137233644,
+          "centroid_rmse_px": 0.518657142674973,
+          "sdk_surface_samples": 15082,
+          "sdk_surface_mae_m": 0.05640775183679571,
+          "sdk_surface_rmse_m": 0.19321412428152623
+        },
+        {
+          "depth_label_m": 2.0,
+          "angle_label": "center",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.002323629221238003,
+              "depth_rmse_m": 0.003209064198751306,
+              "center_samples": 12,
+              "center_mae_m": 0.004014549465317442,
+              "center_rmse_m": 0.004357769999388542
+            },
+            "sdk_sphere": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.013079637218593473,
+              "depth_rmse_m": 0.013451114876126945,
+              "center_samples": 12,
+              "center_mae_m": 0.022916045359951395,
+              "center_rmse_m": 0.023029263987499948
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0022340856481481482,
+          "minimum_mask_fraction": 0.0021961805555555554,
+          "mean_depth_valid_fraction": 0.9863193711130194,
+          "minimum_depth_valid_fraction": 0.972072072072072,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.5457972937132972,
+          "centroid_rmse_px": 0.5464437560809814,
+          "sdk_surface_samples": 14130,
+          "sdk_surface_mae_m": 0.04519873678972254,
+          "sdk_surface_rmse_m": 0.15795607810061812
+        },
+        {
+          "depth_label_m": 2.0,
+          "angle_label": "right",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.011198056649715663,
+              "depth_rmse_m": 0.011519502967598494,
+              "center_samples": 12,
+              "center_mae_m": 0.011851414997134836,
+              "center_rmse_m": 0.012100793505321773
+            },
+            "sdk_sphere": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.0028423642558804327,
+              "depth_rmse_m": 0.003317054414234982,
+              "center_samples": 12,
+              "center_mae_m": 0.026641848824491245,
+              "center_rmse_m": 0.026670938276140053
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0024217303240740735,
+          "minimum_mask_fraction": 0.00234375,
+          "mean_depth_valid_fraction": 0.9754369794463384,
+          "minimum_depth_valid_fraction": 0.9741727199354318,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.5251095738567572,
+          "centroid_rmse_px": 0.5280583559558724,
+          "sdk_surface_samples": 15373,
+          "sdk_surface_mae_m": 0.04483330756081029,
+          "sdk_surface_rmse_m": 0.18856307812428705
+        },
+        {
+          "depth_label_m": 3.0,
+          "angle_label": "left",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.028371097513897214,
+              "depth_rmse_m": 0.029204219081229905,
+              "center_samples": 12,
+              "center_mae_m": 0.030308228372212892,
+              "center_rmse_m": 0.03121567429234645
+            },
+            "sdk_sphere": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.02085012154413875,
+              "depth_rmse_m": 0.02250746820157041,
+              "center_samples": 12,
+              "center_mae_m": 0.03199376312980533,
+              "center_rmse_m": 0.032290761609296496
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0010635127314814815,
+          "minimum_mask_fraction": 0.0010243055555555556,
+          "mean_depth_valid_fraction": 0.9980199103652218,
+          "minimum_depth_valid_fraction": 0.9979423868312757,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.45421036570521767,
+          "centroid_rmse_px": 0.4559316844779739,
+          "sdk_surface_samples": 6990,
+          "sdk_surface_mae_m": 0.10683039918285119,
+          "sdk_surface_rmse_m": 0.3024932476022855
+        },
+        {
+          "depth_label_m": 3.0,
+          "angle_label": "center",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.05451935122721344,
+              "depth_rmse_m": 0.05580228711580815,
+              "center_samples": 12,
+              "center_mae_m": 0.05463089412040254,
+              "center_rmse_m": 0.05590280729234254
+            },
+            "sdk_sphere": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.01230647823025599,
+              "depth_rmse_m": 0.014446134123429433,
+              "center_samples": 12,
+              "center_mae_m": 0.039925019213698905,
+              "center_rmse_m": 0.040059892393338944
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0009965277777777778,
+          "minimum_mask_fraction": 0.0009548611111111111,
+          "mean_depth_valid_fraction": 0.9990674380738843,
+          "minimum_depth_valid_fraction": 0.9932735426008968,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.41999352484917507,
+          "centroid_rmse_px": 0.42185184992605,
+          "sdk_surface_samples": 6471,
+          "sdk_surface_mae_m": 0.1206446728694802,
+          "sdk_surface_rmse_m": 0.2921627208896476
+        },
+        {
+          "depth_label_m": 3.0,
+          "angle_label": "right",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.021645732760911567,
+              "depth_rmse_m": 0.02184415125416161,
+              "center_samples": 12,
+              "center_mae_m": 0.023330599439265135,
+              "center_rmse_m": 0.02350344392523277
+            },
+            "sdk_sphere": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.03057168888958221,
+              "depth_rmse_m": 0.031614627859870674,
+              "center_samples": 12,
+              "center_mae_m": 0.03212734546305813,
+              "center_rmse_m": 0.03315580794687508
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0010778356481481483,
+          "minimum_mask_fraction": 0.001048611111111111,
+          "mean_depth_valid_fraction": 0.9981886313408651,
+          "minimum_depth_valid_fraction": 0.9959595959595959,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.5175963337774364,
+          "centroid_rmse_px": 0.5190262438559796,
+          "sdk_surface_samples": 7121,
+          "sdk_surface_mae_m": 0.08543577005328608,
+          "sdk_surface_rmse_m": 0.206181640627809
+        },
+        {
+          "depth_label_m": 4.0,
+          "angle_label": "left",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.03831950146753538,
+              "depth_rmse_m": 0.04330408300409741,
+              "center_samples": 12,
+              "center_mae_m": 0.04131388958272777,
+              "center_rmse_m": 0.04654674382465967
+            },
+            "sdk_sphere": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.07294820186471351,
+              "depth_rmse_m": 0.076164492094995,
+              "center_samples": 12,
+              "center_mae_m": 0.07553462314610655,
+              "center_rmse_m": 0.07901055332498122
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.000595486111111111,
+          "minimum_mask_fraction": 0.0005798611111111111,
+          "mean_depth_valid_fraction": 1.0,
+          "minimum_depth_valid_fraction": 1.0,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.4955431656307378,
+          "centroid_rmse_px": 0.496019697004958,
+          "sdk_surface_samples": 3959,
+          "sdk_surface_mae_m": 0.12778291560374208,
+          "sdk_surface_rmse_m": 0.26583959441000204
+        },
+        {
+          "depth_label_m": 4.0,
+          "angle_label": "center",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.10240880158392396,
+              "depth_rmse_m": 0.10256059524086177,
+              "center_samples": 12,
+              "center_mae_m": 0.10259831835752199,
+              "center_rmse_m": 0.10274967901547787
+            },
+            "sdk_sphere": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.06825021093898724,
+              "depth_rmse_m": 0.07107140683444259,
+              "center_samples": 12,
+              "center_mae_m": 0.07128031451650405,
+              "center_rmse_m": 0.07361337236732629
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0005732060185185186,
+          "minimum_mask_fraction": 0.0005625,
+          "mean_depth_valid_fraction": 1.0,
+          "minimum_depth_valid_fraction": 1.0,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.5627223812511516,
+          "centroid_rmse_px": 0.5631347978229094,
+          "sdk_surface_samples": 3789,
+          "sdk_surface_mae_m": 0.1859501239381507,
+          "sdk_surface_rmse_m": 0.3328273462042668
+        },
+        {
+          "depth_label_m": 4.0,
+          "angle_label": "right",
+          "expected_visible": true,
+          "frames": 12,
+          "detected": 12,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 12,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 12,
+              "depth_mae_m": 0.028601065756361788,
+              "depth_rmse_m": 0.034297496911006885,
+              "center_samples": 12,
+              "center_mae_m": 0.030994641091789666,
+              "center_rmse_m": 0.03687649245599892
+            },
+            "sdk_sphere": {
+              "valid": 3,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "sphere_fit_inconsistent": 9
+              },
+              "depth_samples": 3,
+              "depth_mae_m": 0.013092469407644339,
+              "depth_rmse_m": 0.013809848231249734,
+              "center_samples": 3,
+              "center_mae_m": 0.04695140270455072,
+              "center_rmse_m": 0.04791756289895104
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.0006066261574074074,
+          "minimum_mask_fraction": 0.0005833333333333334,
+          "mean_depth_valid_fraction": 1.0,
+          "minimum_depth_valid_fraction": 1.0,
+          "centroid_samples": 12,
+          "centroid_mae_px": 0.5170372667573889,
+          "centroid_rmse_px": 0.5182417054150074,
+          "sdk_surface_samples": 4061,
+          "sdk_surface_mae_m": 0.11751870520582708,
+          "sdk_surface_rmse_m": 0.25241019561445077
+        },
+        {
+          "depth_label_m": 2.0,
+          "angle_label": "out_of_fov",
+          "expected_visible": false,
+          "frames": 6,
+          "detected": 0,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 6
+          },
+          "methods": {
+            "triangulation": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_stereo_detection": 6
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_left_detection": 6
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 0.0,
+          "false_positive_rate": 0.0,
+          "mean_mask_fraction": 0.0,
+          "minimum_mask_fraction": 0.0,
+          "mean_depth_valid_fraction": 0.0,
+          "minimum_depth_valid_fraction": 0.0,
+          "centroid_samples": 0,
+          "centroid_mae_px": null,
+          "centroid_rmse_px": null,
+          "sdk_surface_samples": 0,
+          "sdk_surface_mae_m": null,
+          "sdk_surface_rmse_m": null
+        },
+        {
+          "depth_label_m": 2.0,
+          "angle_label": "occluded",
+          "expected_visible": false,
+          "frames": 6,
+          "detected": 0,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 6
+          },
+          "methods": {
+            "triangulation": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_stereo_detection": 6
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            },
+            "sdk_sphere": {
+              "valid": 0,
+              "false_positives": 0,
+              "invalid_reasons": {
+                "missing_valid_left_detection": 6
+              },
+              "depth_samples": 0,
+              "depth_mae_m": null,
+              "depth_rmse_m": null,
+              "center_samples": 0,
+              "center_mae_m": null,
+              "center_rmse_m": null
+            }
+          },
+          "detection_rate": 0.0,
+          "false_positive_rate": 0.0,
+          "mean_mask_fraction": 0.0,
+          "minimum_mask_fraction": 0.0,
+          "mean_depth_valid_fraction": 0.0,
+          "minimum_depth_valid_fraction": 0.0,
+          "centroid_samples": 0,
+          "centroid_mae_px": null,
+          "centroid_rmse_px": null,
+          "sdk_surface_samples": 0,
+          "sdk_surface_mae_m": null,
+          "sdk_surface_rmse_m": null
+        },
+        {
+          "depth_label_m": 1.0,
+          "angle_label": "left",
+          "expected_visible": true,
+          "frames": 6,
+          "detected": 6,
+          "false_positives": 0,
+          "missed_detections": 0,
+          "detection_invalid_reasons": {},
+          "methods": {
+            "triangulation": {
+              "valid": 6,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 6,
+              "depth_mae_m": 0.010535987845183484,
+              "depth_rmse_m": 0.010773433497226799,
+              "center_samples": 6,
+              "center_mae_m": 0.01079592630230646,
+              "center_rmse_m": 0.011026327630659903
+            },
+            "sdk_sphere": {
+              "valid": 6,
+              "false_positives": 0,
+              "invalid_reasons": {},
+              "depth_samples": 6,
+              "depth_mae_m": 0.00021307200428425746,
+              "depth_rmse_m": 0.00025900719929723535,
+              "center_samples": 6,
+              "center_mae_m": 0.006629680618598542,
+              "center_rmse_m": 0.006631395153893493
+            }
+          },
+          "detection_rate": 1.0,
+          "false_positive_rate": null,
+          "mean_mask_fraction": 0.009804108796296297,
+          "minimum_mask_fraction": 0.009578125,
+          "mean_depth_valid_fraction": 0.9815022634696028,
+          "minimum_depth_valid_fraction": 0.9791861991374461,
+          "centroid_samples": 6,
+          "centroid_mae_px": 0.5863787530836969,
+          "centroid_rmse_px": 0.5876314839774148,
+          "sdk_surface_samples": 31856,
+          "sdk_surface_mae_m": 0.007323998178969859,
+          "sdk_surface_rmse_m": 0.054584302300797284
+        }
+      ],
+      "predictions_sha256": "1085664bc7c87795e829fa25ad652083dcd8da04cdcda382da6547502301716e"
+    }
+  ],
+  "limits": [
+    "Nine NEURAL sphere fits invalid at 4m right; no GT or triangulation fallback into SDK result",
+    "Only 15 fixed positive geometries and two fully invisible cases; repeats are not independent shots",
+    "Oracle world pose is evaluation-only, not estimated localization",
+    "YOLO source audited; inference deferred by user because reference host is offline",
+    "Static camera scene remains separate from full football/walk/SDK/WebRTC integration",
+    "G1 full physics equivalence remains unverified"
+  ]
+}
