@@ -1,0 +1,1583 @@
+{
+  "stage": "G6-A fixed-robot continuous head-stereo camera experiment",
+  "formal_condition_count": 8,
+  "formal_collection_complete": true,
+  "raw_sdk_frames": 368,
+  "intended_target_frames": 128,
+  "target_render_subframes": 384,
+  "pose_source": "oracle",
+  "gt_used_by_predictor": false,
+  "visibility_policy": "0ms midpoint; finite exposure ANY subframe support, retaining source midpoint flag",
+  "association_policy": "IoU>=0.50; finite visible-subframe sphere bbox union; midpoint and union IoU retained",
+  "center_error_reference": "quantized frozen physical midpoint GT; all algorithm-valid visible predictions retained",
+  "source_sha256": {
+    "sender": "bcca40b15bd47d06004180a452f31f47aa91d2b5044658950879a8e02520277b",
+    "sdk_state": "e2e0794d865a3f6974dff44d9eb88332f00c2bd1575b3c749c406a74f479033c",
+    "sdk_exposure": "9dba0ff880018f10d6008a5bfc6ef7d1d8c51c8c21f40f66ed80f3ab10662557",
+    "timing": "dc10f05d20d9478b3cabea9b1d4661570328397eb5a57716576591fdeffb4be0",
+    "g6_replay": "b0201f690d4f029d80f107ee9495444c4ce6800a973196aa403eb71a27d73578",
+    "g6_scene": "1aa27f52eb0493bf41a7abb5f50403c8b26d4545fdf3b8f1f0c675a3beb7be12",
+    "mount_config": "db05bc359ed48875cddc77057a362323d353ff771e92cfe3b782e4b28127c269"
+  },
+  "diagnostic_regions_excluded": {
+    "xyxy": [
+      [
+        20,
+        20,
+        296,
+        32
+      ],
+      [
+        20,
+        45,
+        296,
+        57
+      ]
+    ],
+    "margin_px": 2
+  },
+  "detectors": {
+    "white_hsv": {
+      "name": "g6_white_circle_mvp",
+      "thresholds": {
+        "hsv_saturation_max": 60,
+        "hsv_value_min": 180,
+        "area_min_px2": 6,
+        "circularity_min": 0.7,
+        "bbox_aspect_min": 0.65,
+        "bbox_aspect_max": 1.5,
+        "contour_bbox_extent_min": 0.45,
+        "contour_bbox_extent_max": 0.9,
+        "ambiguity_second_area_fraction": 0.5,
+        "frozen_before_actual_white_capture_inspection": true,
+        "diagnostic_exclusions_xyxy": [
+          [
+            20,
+            20,
+            296,
+            32
+          ],
+          [
+            20,
+            45,
+            296,
+            57
+          ]
+        ],
+        "diagnostic_exclusion_margin_px": 2,
+        "diagnostic_exclusion_basis": "fixed source instrumentation coordinates; never GT"
+      },
+      "source_sha256": {
+        "robot_perception_sim/white_ball_perception.py": "5f0cc1fd4a95c1c0e1c2d3141090933496d74508c075f47eb260a105dca70539",
+        "robot_perception_sim/edge_ball_perception.py": "d23150c2877faf747ea52029a2f79fe40bd893159a5c5c251bec9d9fbfbe198c",
+        "robot_perception_sim/ball_perception.py": "86a71a1646c540c9cb527049240c82b056fdd2d8f1ee99e5672d23cd521f321f",
+        "robot_perception_sim/continuous_perception.py": "5b3bcada478aeab1fbb70ff9ceaafaadfab5013f225a57e1c5de88378ebbd6e9",
+        "scripts/run_continuous_perception.py": "a7ea67adbed5fdb385c227860b72f48589ddaea6cfbd279178f8050154d7cb86"
+      },
+      "runtime_versions": {
+        "numpy": "2.3.3",
+        "opencv": "5.0.0",
+        "Pillow": "11.3.0"
+      },
+      "summary_path": "results/g6a/final_white_hsv01/summary.json",
+      "totals": {
+        "target_observations": 128,
+        "visible_observations": 56,
+        "raw_white_or_edge_candidates": 2,
+        "matched_ball_detections": 2,
+        "missing_deliveries": 0,
+        "timing_invalid": 0,
+        "wrong_object_false_positives": 0,
+        "visibility_diagnostics": {
+          "visible": 54,
+          "near_clip_or_camera_sphere_intersection": 3,
+          "out_of_fov": 69,
+          "partial_exposure_near_clip": 1,
+          "partial_exposure_fov": 1
+        },
+        "visible_detection_failure_reasons": {
+          "no_ball_contour": 54
+        },
+        "methods": {
+          "triangulation": {
+            "algorithm_valid": 2,
+            "ball_matched_valid": 2,
+            "visible_denominator": 56,
+            "world_center_error_m": {
+              "samples": 2,
+              "mae": 0.014000395158790199,
+              "p95": 0.014548876950105809,
+              "max": 0.0146098193713631
+            },
+            "visible_invalid_reasons": {
+              "missing_valid_stereo_detection": 54
+            }
+          },
+          "sdk_sphere": {
+            "algorithm_valid": 2,
+            "ball_matched_valid": 2,
+            "visible_denominator": 56,
+            "world_center_error_m": {
+              "samples": 2,
+              "mae": 0.05113833014883627,
+              "p95": 0.0549371925750373,
+              "max": 0.05535928840017074
+            },
+            "visible_invalid_reasons": {
+              "missing_valid_left_detection": 54
+            }
+          }
+        }
+      },
+      "by_exposure": [
+        {
+          "exposure_ms": 0,
+          "visible_observations": 27,
+          "matched_ball_detections": 2,
+          "methods": {
+            "triangulation": {
+              "algorithm_valid": 2,
+              "ball_matched_valid": 2,
+              "visible_denominator": 27,
+              "world_center_error_m": {
+                "samples": 2,
+                "mae": 0.014000395158790199,
+                "p95": 0.014548876950105809,
+                "max": 0.0146098193713631
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_stereo_detection": 25
+              }
+            },
+            "sdk_sphere": {
+              "algorithm_valid": 2,
+              "ball_matched_valid": 2,
+              "visible_denominator": 27,
+              "world_center_error_m": {
+                "samples": 2,
+                "mae": 0.05113833014883627,
+                "p95": 0.0549371925750373,
+                "max": 0.05535928840017074
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_left_detection": 25
+              }
+            }
+          }
+        },
+        {
+          "exposure_ms": 10,
+          "visible_observations": 29,
+          "matched_ball_detections": 0,
+          "methods": {
+            "triangulation": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 29,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_stereo_detection": 29
+              }
+            },
+            "sdk_sphere": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 29,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_left_detection": 29
+              }
+            }
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "trajectory_name": "direct_goal",
+          "head_pose": "neutral",
+          "exposure_ms": 0.0,
+          "intended_frames": 17,
+          "delivered_frames": 17,
+          "missing_delivery_frames": 0,
+          "visible_frames": 9,
+          "fully_visible_frames": 8,
+          "partly_visible_frames": 1,
+          "raw_candidate_valid_visible_frames": 0,
+          "detection_valid_visible_frames": 0,
+          "visible_detection_rate": 0.0,
+          "wrong_object_false_positives": 0,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 17
+          },
+          "visibility_diagnostic_counts": {
+            "visible": 9,
+            "near_clip_or_camera_sphere_intersection": 1,
+            "out_of_fov": 7
+          },
+          "methods": {
+            "triangulation": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 9,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_stereo_detection": 9
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.1500000071246177,
+                "total_duration_s": 0.1500000071246177,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 1
+              }
+            },
+            "sdk_sphere": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 9,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_left_detection": 9
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.1500000071246177,
+                "total_duration_s": 0.1500000071246177,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 1
+              }
+            }
+          }
+        },
+        {
+          "trajectory_name": "direct_goal",
+          "head_pose": "neutral",
+          "exposure_ms": 10.0,
+          "intended_frames": 17,
+          "delivered_frames": 17,
+          "missing_delivery_frames": 0,
+          "visible_frames": 10,
+          "fully_visible_frames": 7,
+          "partly_visible_frames": 3,
+          "raw_candidate_valid_visible_frames": 0,
+          "detection_valid_visible_frames": 0,
+          "visible_detection_rate": 0.0,
+          "wrong_object_false_positives": 0,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 17
+          },
+          "visibility_diagnostic_counts": {
+            "visible": 9,
+            "partial_exposure_near_clip": 1,
+            "out_of_fov": 7
+          },
+          "methods": {
+            "triangulation": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 10,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_stereo_detection": 10
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.16700000793207437,
+                "total_duration_s": 0.16700000793207437,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 1
+              }
+            },
+            "sdk_sphere": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 10,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_left_detection": 10
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.16700000793207437,
+                "total_duration_s": 0.16700000793207437,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 1
+              }
+            }
+          }
+        },
+        {
+          "trajectory_name": "one_bounce",
+          "head_pose": "neutral",
+          "exposure_ms": 0.0,
+          "intended_frames": 15,
+          "delivered_frames": 15,
+          "missing_delivery_frames": 0,
+          "visible_frames": 4,
+          "fully_visible_frames": 3,
+          "partly_visible_frames": 1,
+          "raw_candidate_valid_visible_frames": 1,
+          "detection_valid_visible_frames": 1,
+          "visible_detection_rate": 0.25,
+          "wrong_object_false_positives": 0,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 14
+          },
+          "visibility_diagnostic_counts": {
+            "visible": 4,
+            "out_of_fov": 11
+          },
+          "methods": {
+            "triangulation": {
+              "algorithm_valid": 1,
+              "ball_matched_valid": 1,
+              "visible_denominator": 4,
+              "world_center_error_m": {
+                "samples": 1,
+                "mae": 0.0146098193713631,
+                "p95": 0.0146098193713631,
+                "max": 0.0146098193713631
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_stereo_detection": 3
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.034000001614913344,
+                "total_duration_s": 0.05100000242237002,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 2
+              }
+            },
+            "sdk_sphere": {
+              "algorithm_valid": 1,
+              "ball_matched_valid": 1,
+              "visible_denominator": 4,
+              "world_center_error_m": {
+                "samples": 1,
+                "mae": 0.04691737189750181,
+                "p95": 0.04691737189750181,
+                "max": 0.04691737189750181
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_left_detection": 3
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.034000001614913344,
+                "total_duration_s": 0.05100000242237002,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 2
+              }
+            }
+          }
+        },
+        {
+          "trajectory_name": "one_bounce",
+          "head_pose": "neutral",
+          "exposure_ms": 10.0,
+          "intended_frames": 15,
+          "delivered_frames": 15,
+          "missing_delivery_frames": 0,
+          "visible_frames": 5,
+          "fully_visible_frames": 3,
+          "partly_visible_frames": 2,
+          "raw_candidate_valid_visible_frames": 0,
+          "detection_valid_visible_frames": 0,
+          "visible_detection_rate": 0.0,
+          "wrong_object_false_positives": 0,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 15
+          },
+          "visibility_diagnostic_counts": {
+            "visible": 4,
+            "partial_exposure_fov": 1,
+            "out_of_fov": 10
+          },
+          "methods": {
+            "triangulation": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 5,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_stereo_detection": 5
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.08300000394228846,
+                "total_duration_s": 0.08300000394228846,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 1
+              }
+            },
+            "sdk_sphere": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 5,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_left_detection": 5
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.08300000394228846,
+                "total_duration_s": 0.08300000394228846,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 1
+              }
+            }
+          }
+        },
+        {
+          "trajectory_name": "direct_goal",
+          "head_pose": "yaw_pitch",
+          "exposure_ms": 0.0,
+          "intended_frames": 17,
+          "delivered_frames": 17,
+          "missing_delivery_frames": 0,
+          "visible_frames": 9,
+          "fully_visible_frames": 7,
+          "partly_visible_frames": 2,
+          "raw_candidate_valid_visible_frames": 0,
+          "detection_valid_visible_frames": 0,
+          "visible_detection_rate": 0.0,
+          "wrong_object_false_positives": 0,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 17
+          },
+          "visibility_diagnostic_counts": {
+            "visible": 9,
+            "near_clip_or_camera_sphere_intersection": 1,
+            "out_of_fov": 7
+          },
+          "methods": {
+            "triangulation": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 9,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_stereo_detection": 9
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.1500000071246177,
+                "total_duration_s": 0.1500000071246177,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 1
+              }
+            },
+            "sdk_sphere": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 9,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_left_detection": 9
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.1500000071246177,
+                "total_duration_s": 0.1500000071246177,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 1
+              }
+            }
+          }
+        },
+        {
+          "trajectory_name": "direct_goal",
+          "head_pose": "yaw_pitch",
+          "exposure_ms": 10.0,
+          "intended_frames": 17,
+          "delivered_frames": 17,
+          "missing_delivery_frames": 0,
+          "visible_frames": 9,
+          "fully_visible_frames": 7,
+          "partly_visible_frames": 2,
+          "raw_candidate_valid_visible_frames": 0,
+          "detection_valid_visible_frames": 0,
+          "visible_detection_rate": 0.0,
+          "wrong_object_false_positives": 0,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 17
+          },
+          "visibility_diagnostic_counts": {
+            "visible": 9,
+            "near_clip_or_camera_sphere_intersection": 1,
+            "out_of_fov": 7
+          },
+          "methods": {
+            "triangulation": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 9,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_stereo_detection": 9
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.1500000071246177,
+                "total_duration_s": 0.1500000071246177,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 1
+              }
+            },
+            "sdk_sphere": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 9,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_left_detection": 9
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.1500000071246177,
+                "total_duration_s": 0.1500000071246177,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 1
+              }
+            }
+          }
+        },
+        {
+          "trajectory_name": "one_bounce",
+          "head_pose": "yaw_pitch",
+          "exposure_ms": 0.0,
+          "intended_frames": 15,
+          "delivered_frames": 15,
+          "missing_delivery_frames": 0,
+          "visible_frames": 5,
+          "fully_visible_frames": 3,
+          "partly_visible_frames": 2,
+          "raw_candidate_valid_visible_frames": 1,
+          "detection_valid_visible_frames": 1,
+          "visible_detection_rate": 0.2,
+          "wrong_object_false_positives": 0,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 14
+          },
+          "visibility_diagnostic_counts": {
+            "visible": 5,
+            "out_of_fov": 10
+          },
+          "methods": {
+            "triangulation": {
+              "algorithm_valid": 1,
+              "ball_matched_valid": 1,
+              "visible_denominator": 5,
+              "world_center_error_m": {
+                "samples": 1,
+                "mae": 0.013390970946217296,
+                "p95": 0.013390970946217296,
+                "max": 0.013390970946217296
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_stereo_detection": 4
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.050000002374872565,
+                "total_duration_s": 0.06700000318232924,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 2
+              }
+            },
+            "sdk_sphere": {
+              "algorithm_valid": 1,
+              "ball_matched_valid": 1,
+              "visible_denominator": 5,
+              "world_center_error_m": {
+                "samples": 1,
+                "mae": 0.05535928840017074,
+                "p95": 0.05535928840017074,
+                "max": 0.05535928840017074
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_left_detection": 4
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.050000002374872565,
+                "total_duration_s": 0.06700000318232924,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 2
+              }
+            }
+          }
+        },
+        {
+          "trajectory_name": "one_bounce",
+          "head_pose": "yaw_pitch",
+          "exposure_ms": 10.0,
+          "intended_frames": 15,
+          "delivered_frames": 15,
+          "missing_delivery_frames": 0,
+          "visible_frames": 5,
+          "fully_visible_frames": 3,
+          "partly_visible_frames": 2,
+          "raw_candidate_valid_visible_frames": 0,
+          "detection_valid_visible_frames": 0,
+          "visible_detection_rate": 0.0,
+          "wrong_object_false_positives": 0,
+          "detection_invalid_reasons": {
+            "no_ball_contour": 15
+          },
+          "visibility_diagnostic_counts": {
+            "visible": 5,
+            "out_of_fov": 10
+          },
+          "methods": {
+            "triangulation": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 5,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_stereo_detection": 5
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.08300000394228846,
+                "total_duration_s": 0.08300000394228846,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 1
+              }
+            },
+            "sdk_sphere": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 5,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_left_detection": 5
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.08300000394228846,
+                "total_duration_s": 0.08300000394228846,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 1
+              }
+            }
+          }
+        }
+      ],
+      "exposure_midpoint_pairing": [
+        {
+          "trajectory_name": "direct_goal",
+          "head_pose": "neutral",
+          "paired_midpoints": 17,
+          "physical_midpoints_match": true,
+          "jointly_visible_timing_eligible_pairs": 9
+        },
+        {
+          "trajectory_name": "direct_goal",
+          "head_pose": "yaw_pitch",
+          "paired_midpoints": 17,
+          "physical_midpoints_match": true,
+          "jointly_visible_timing_eligible_pairs": 9
+        },
+        {
+          "trajectory_name": "one_bounce",
+          "head_pose": "neutral",
+          "paired_midpoints": 15,
+          "physical_midpoints_match": true,
+          "jointly_visible_timing_eligible_pairs": 4
+        },
+        {
+          "trajectory_name": "one_bounce",
+          "head_pose": "yaw_pitch",
+          "paired_midpoints": 15,
+          "physical_midpoints_match": true,
+          "jointly_visible_timing_eligible_pairs": 5
+        }
+      ]
+    },
+    "edge_circle": {
+      "name": "g6_edge_circle_mvp",
+      "thresholds": {
+        "gaussian_kernel": [
+          5,
+          5
+        ],
+        "gaussian_sigma": 1.5,
+        "hough_dp": 1,
+        "hough_min_dist_px": 30,
+        "hough_canny_high": 100,
+        "hough_accumulator": 30,
+        "radius_min_px": 6,
+        "radius_max": "image_height/2",
+        "edge_canny_low": 50,
+        "edge_canny_high": 100,
+        "edge_coverage_angles": 72,
+        "edge_radial_band_px": 2,
+        "edge_coverage_min": 0.5,
+        "ambiguity_second_score_fraction": 0.9,
+        "diagnostic_exclusions_xyxy": [
+          [
+            20,
+            20,
+            296,
+            32
+          ],
+          [
+            20,
+            45,
+            296,
+            57
+          ]
+        ],
+        "diagnostic_exclusion_margin_px": 2,
+        "frozen_before_actual_edge_evaluation": true
+      },
+      "source_sha256": {
+        "robot_perception_sim/white_ball_perception.py": "5f0cc1fd4a95c1c0e1c2d3141090933496d74508c075f47eb260a105dca70539",
+        "robot_perception_sim/edge_ball_perception.py": "d23150c2877faf747ea52029a2f79fe40bd893159a5c5c251bec9d9fbfbe198c",
+        "robot_perception_sim/ball_perception.py": "86a71a1646c540c9cb527049240c82b056fdd2d8f1ee99e5672d23cd521f321f",
+        "robot_perception_sim/continuous_perception.py": "5b3bcada478aeab1fbb70ff9ceaafaadfab5013f225a57e1c5de88378ebbd6e9",
+        "scripts/run_continuous_perception.py": "a7ea67adbed5fdb385c227860b72f48589ddaea6cfbd279178f8050154d7cb86"
+      },
+      "runtime_versions": {
+        "numpy": "2.3.3",
+        "opencv": "5.0.0",
+        "Pillow": "11.3.0"
+      },
+      "summary_path": "results/g6a/final_edge_circle01/summary.json",
+      "totals": {
+        "target_observations": 128,
+        "visible_observations": 56,
+        "raw_white_or_edge_candidates": 4,
+        "matched_ball_detections": 4,
+        "missing_deliveries": 0,
+        "timing_invalid": 0,
+        "wrong_object_false_positives": 0,
+        "visibility_diagnostics": {
+          "visible": 54,
+          "near_clip_or_camera_sphere_intersection": 3,
+          "out_of_fov": 69,
+          "partial_exposure_near_clip": 1,
+          "partial_exposure_fov": 1
+        },
+        "visible_detection_failure_reasons": {
+          "no_circle_support": 52
+        },
+        "methods": {
+          "triangulation": {
+            "algorithm_valid": 3,
+            "ball_matched_valid": 3,
+            "visible_denominator": 56,
+            "world_center_error_m": {
+              "samples": 3,
+              "mae": 0.06967853518922691,
+              "p95": 0.10003253471737637,
+              "max": 0.10380388259712234
+            },
+            "visible_invalid_reasons": {
+              "missing_valid_stereo_detection": 53
+            }
+          },
+          "sdk_sphere": {
+            "algorithm_valid": 4,
+            "ball_matched_valid": 4,
+            "visible_denominator": 56,
+            "world_center_error_m": {
+              "samples": 4,
+              "mae": 0.04967477859302956,
+              "p95": 0.05536095993123146,
+              "max": 0.05545011735268044
+            },
+            "visible_invalid_reasons": {
+              "missing_valid_left_detection": 52
+            }
+          }
+        }
+      },
+      "by_exposure": [
+        {
+          "exposure_ms": 0,
+          "visible_observations": 27,
+          "matched_ball_detections": 4,
+          "methods": {
+            "triangulation": {
+              "algorithm_valid": 3,
+              "ball_matched_valid": 3,
+              "visible_denominator": 27,
+              "world_center_error_m": {
+                "samples": 3,
+                "mae": 0.06967853518922691,
+                "p95": 0.10003253471737637,
+                "max": 0.10380388259712234
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_stereo_detection": 24
+              }
+            },
+            "sdk_sphere": {
+              "algorithm_valid": 4,
+              "ball_matched_valid": 4,
+              "visible_denominator": 27,
+              "world_center_error_m": {
+                "samples": 4,
+                "mae": 0.04967477859302956,
+                "p95": 0.05536095993123146,
+                "max": 0.05545011735268044
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_left_detection": 23
+              }
+            }
+          }
+        },
+        {
+          "exposure_ms": 10,
+          "visible_observations": 29,
+          "matched_ball_detections": 0,
+          "methods": {
+            "triangulation": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 29,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_stereo_detection": 29
+              }
+            },
+            "sdk_sphere": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 29,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_left_detection": 29
+              }
+            }
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "trajectory_name": "direct_goal",
+          "head_pose": "neutral",
+          "exposure_ms": 0.0,
+          "intended_frames": 17,
+          "delivered_frames": 17,
+          "missing_delivery_frames": 0,
+          "visible_frames": 9,
+          "fully_visible_frames": 8,
+          "partly_visible_frames": 1,
+          "raw_candidate_valid_visible_frames": 0,
+          "detection_valid_visible_frames": 0,
+          "visible_detection_rate": 0.0,
+          "wrong_object_false_positives": 0,
+          "detection_invalid_reasons": {
+            "no_circle_support": 17
+          },
+          "visibility_diagnostic_counts": {
+            "visible": 9,
+            "near_clip_or_camera_sphere_intersection": 1,
+            "out_of_fov": 7
+          },
+          "methods": {
+            "triangulation": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 9,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_stereo_detection": 9
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.1500000071246177,
+                "total_duration_s": 0.1500000071246177,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 1
+              }
+            },
+            "sdk_sphere": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 9,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_left_detection": 9
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.1500000071246177,
+                "total_duration_s": 0.1500000071246177,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 1
+              }
+            }
+          }
+        },
+        {
+          "trajectory_name": "direct_goal",
+          "head_pose": "neutral",
+          "exposure_ms": 10.0,
+          "intended_frames": 17,
+          "delivered_frames": 17,
+          "missing_delivery_frames": 0,
+          "visible_frames": 10,
+          "fully_visible_frames": 7,
+          "partly_visible_frames": 3,
+          "raw_candidate_valid_visible_frames": 0,
+          "detection_valid_visible_frames": 0,
+          "visible_detection_rate": 0.0,
+          "wrong_object_false_positives": 0,
+          "detection_invalid_reasons": {
+            "no_circle_support": 17
+          },
+          "visibility_diagnostic_counts": {
+            "visible": 9,
+            "partial_exposure_near_clip": 1,
+            "out_of_fov": 7
+          },
+          "methods": {
+            "triangulation": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 10,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_stereo_detection": 10
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.16700000793207437,
+                "total_duration_s": 0.16700000793207437,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 1
+              }
+            },
+            "sdk_sphere": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 10,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_left_detection": 10
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.16700000793207437,
+                "total_duration_s": 0.16700000793207437,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 1
+              }
+            }
+          }
+        },
+        {
+          "trajectory_name": "one_bounce",
+          "head_pose": "neutral",
+          "exposure_ms": 0.0,
+          "intended_frames": 15,
+          "delivered_frames": 15,
+          "missing_delivery_frames": 0,
+          "visible_frames": 4,
+          "fully_visible_frames": 3,
+          "partly_visible_frames": 1,
+          "raw_candidate_valid_visible_frames": 2,
+          "detection_valid_visible_frames": 2,
+          "visible_detection_rate": 0.5,
+          "wrong_object_false_positives": 0,
+          "detection_invalid_reasons": {
+            "no_circle_support": 13
+          },
+          "visibility_diagnostic_counts": {
+            "visible": 4,
+            "out_of_fov": 11
+          },
+          "methods": {
+            "triangulation": {
+              "algorithm_valid": 1,
+              "ball_matched_valid": 1,
+              "visible_denominator": 4,
+              "world_center_error_m": {
+                "samples": 1,
+                "mae": 0.039141319170895736,
+                "p95": 0.039141319170895736,
+                "max": 0.039141319170895736
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_stereo_detection": 3
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.034000001614913344,
+                "total_duration_s": 0.05100000242237002,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 2
+              }
+            },
+            "sdk_sphere": {
+              "algorithm_valid": 2,
+              "ball_matched_valid": 2,
+              "visible_denominator": 4,
+              "world_center_error_m": {
+                "samples": 2,
+                "mae": 0.051244389053350964,
+                "p95": 0.054494599994053636,
+                "max": 0.0548557345430206
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_left_detection": 2
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.034000001614913344,
+                "total_duration_s": 0.034000001614913344,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 1
+              }
+            }
+          }
+        },
+        {
+          "trajectory_name": "one_bounce",
+          "head_pose": "neutral",
+          "exposure_ms": 10.0,
+          "intended_frames": 15,
+          "delivered_frames": 15,
+          "missing_delivery_frames": 0,
+          "visible_frames": 5,
+          "fully_visible_frames": 3,
+          "partly_visible_frames": 2,
+          "raw_candidate_valid_visible_frames": 0,
+          "detection_valid_visible_frames": 0,
+          "visible_detection_rate": 0.0,
+          "wrong_object_false_positives": 0,
+          "detection_invalid_reasons": {
+            "no_circle_support": 15
+          },
+          "visibility_diagnostic_counts": {
+            "visible": 4,
+            "partial_exposure_fov": 1,
+            "out_of_fov": 10
+          },
+          "methods": {
+            "triangulation": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 5,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_stereo_detection": 5
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.08300000394228846,
+                "total_duration_s": 0.08300000394228846,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 1
+              }
+            },
+            "sdk_sphere": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 5,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_left_detection": 5
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.08300000394228846,
+                "total_duration_s": 0.08300000394228846,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 1
+              }
+            }
+          }
+        },
+        {
+          "trajectory_name": "direct_goal",
+          "head_pose": "yaw_pitch",
+          "exposure_ms": 0.0,
+          "intended_frames": 17,
+          "delivered_frames": 17,
+          "missing_delivery_frames": 0,
+          "visible_frames": 9,
+          "fully_visible_frames": 7,
+          "partly_visible_frames": 2,
+          "raw_candidate_valid_visible_frames": 0,
+          "detection_valid_visible_frames": 0,
+          "visible_detection_rate": 0.0,
+          "wrong_object_false_positives": 0,
+          "detection_invalid_reasons": {
+            "no_circle_support": 17
+          },
+          "visibility_diagnostic_counts": {
+            "visible": 9,
+            "near_clip_or_camera_sphere_intersection": 1,
+            "out_of_fov": 7
+          },
+          "methods": {
+            "triangulation": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 9,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_stereo_detection": 9
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.1500000071246177,
+                "total_duration_s": 0.1500000071246177,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 1
+              }
+            },
+            "sdk_sphere": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 9,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_left_detection": 9
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.1500000071246177,
+                "total_duration_s": 0.1500000071246177,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 1
+              }
+            }
+          }
+        },
+        {
+          "trajectory_name": "direct_goal",
+          "head_pose": "yaw_pitch",
+          "exposure_ms": 10.0,
+          "intended_frames": 17,
+          "delivered_frames": 17,
+          "missing_delivery_frames": 0,
+          "visible_frames": 9,
+          "fully_visible_frames": 7,
+          "partly_visible_frames": 2,
+          "raw_candidate_valid_visible_frames": 0,
+          "detection_valid_visible_frames": 0,
+          "visible_detection_rate": 0.0,
+          "wrong_object_false_positives": 0,
+          "detection_invalid_reasons": {
+            "no_circle_support": 17
+          },
+          "visibility_diagnostic_counts": {
+            "visible": 9,
+            "near_clip_or_camera_sphere_intersection": 1,
+            "out_of_fov": 7
+          },
+          "methods": {
+            "triangulation": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 9,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_stereo_detection": 9
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.1500000071246177,
+                "total_duration_s": 0.1500000071246177,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 1
+              }
+            },
+            "sdk_sphere": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 9,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_left_detection": 9
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.1500000071246177,
+                "total_duration_s": 0.1500000071246177,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 1
+              }
+            }
+          }
+        },
+        {
+          "trajectory_name": "one_bounce",
+          "head_pose": "yaw_pitch",
+          "exposure_ms": 0.0,
+          "intended_frames": 15,
+          "delivered_frames": 15,
+          "missing_delivery_frames": 0,
+          "visible_frames": 5,
+          "fully_visible_frames": 3,
+          "partly_visible_frames": 2,
+          "raw_candidate_valid_visible_frames": 2,
+          "detection_valid_visible_frames": 2,
+          "visible_detection_rate": 0.4,
+          "wrong_object_false_positives": 0,
+          "detection_invalid_reasons": {
+            "no_circle_support": 13
+          },
+          "visibility_diagnostic_counts": {
+            "visible": 5,
+            "out_of_fov": 10
+          },
+          "methods": {
+            "triangulation": {
+              "algorithm_valid": 2,
+              "ball_matched_valid": 2,
+              "visible_denominator": 5,
+              "world_center_error_m": {
+                "samples": 2,
+                "mae": 0.0849471431983925,
+                "p95": 0.10191820865724935,
+                "max": 0.10380388259712234
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_stereo_detection": 3
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.050000002374872565,
+                "total_duration_s": 0.050000002374872565,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 1
+              }
+            },
+            "sdk_sphere": {
+              "algorithm_valid": 2,
+              "ball_matched_valid": 2,
+              "visible_denominator": 5,
+              "world_center_error_m": {
+                "samples": 2,
+                "mae": 0.04810516813270816,
+                "p95": 0.05471562243068321,
+                "max": 0.05545011735268044
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_left_detection": 3
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.050000002374872565,
+                "total_duration_s": 0.050000002374872565,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 1
+              }
+            }
+          }
+        },
+        {
+          "trajectory_name": "one_bounce",
+          "head_pose": "yaw_pitch",
+          "exposure_ms": 10.0,
+          "intended_frames": 15,
+          "delivered_frames": 15,
+          "missing_delivery_frames": 0,
+          "visible_frames": 5,
+          "fully_visible_frames": 3,
+          "partly_visible_frames": 2,
+          "raw_candidate_valid_visible_frames": 0,
+          "detection_valid_visible_frames": 0,
+          "visible_detection_rate": 0.0,
+          "wrong_object_false_positives": 0,
+          "detection_invalid_reasons": {
+            "no_circle_support": 15
+          },
+          "visibility_diagnostic_counts": {
+            "visible": 5,
+            "out_of_fov": 10
+          },
+          "methods": {
+            "triangulation": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 5,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_stereo_detection": 5
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.08300000394228846,
+                "total_duration_s": 0.08300000394228846,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 1
+              }
+            },
+            "sdk_sphere": {
+              "algorithm_valid": 0,
+              "ball_matched_valid": 0,
+              "visible_denominator": 5,
+              "world_center_error_m": {
+                "samples": 0,
+                "mae": null,
+                "p95": null,
+                "max": null
+              },
+              "visible_invalid_reasons": {
+                "missing_valid_left_detection": 5
+              },
+              "visible_ball_loss": {
+                "maximum_duration_s": 0.08300000394228846,
+                "total_duration_s": 0.08300000394228846,
+                "unobserved_gap_duration_s": 0,
+                "interval_count": 1
+              }
+            }
+          }
+        }
+      ],
+      "exposure_midpoint_pairing": [
+        {
+          "trajectory_name": "direct_goal",
+          "head_pose": "neutral",
+          "paired_midpoints": 17,
+          "physical_midpoints_match": true,
+          "jointly_visible_timing_eligible_pairs": 9
+        },
+        {
+          "trajectory_name": "direct_goal",
+          "head_pose": "yaw_pitch",
+          "paired_midpoints": 17,
+          "physical_midpoints_match": true,
+          "jointly_visible_timing_eligible_pairs": 9
+        },
+        {
+          "trajectory_name": "one_bounce",
+          "head_pose": "neutral",
+          "paired_midpoints": 15,
+          "physical_midpoints_match": true,
+          "jointly_visible_timing_eligible_pairs": 4
+        },
+        {
+          "trajectory_name": "one_bounce",
+          "head_pose": "yaw_pitch",
+          "paired_midpoints": 15,
+          "physical_midpoints_match": true,
+          "jointly_visible_timing_eligible_pairs": 5
+        }
+      ]
+    }
+  },
+  "photometric_pairs": [
+    {
+      "trajectory_name": "direct_goal",
+      "head_pose": "neutral",
+      "paired_midpoints": 17,
+      "physical_midpoints_match": true,
+      "units": "8-bit RGB MAE",
+      "GT_assisted_offline_ROI": true,
+      "eyes": {
+        "left": {
+          "global_rgb_mae": 0.3818337676492719,
+          "gt_ball_roi_rgb_mae": 2.6479140976865376,
+          "outside_roi_rgb_mae": 0.05808260600285127,
+          "gt_ball_roi_supported_pairs": 9
+        },
+        "right": {
+          "global_rgb_mae": 0.3562471990771478,
+          "gt_ball_roi_rgb_mae": 2.283020452163173,
+          "outside_roi_rgb_mae": 0.056994023275904554,
+          "gt_ball_roi_supported_pairs": 9
+        }
+      },
+      "unbounded_left_projection_pairs": 2,
+      "visible_without_finite_left_ROI": 1
+    },
+    {
+      "trajectory_name": "direct_goal",
+      "head_pose": "yaw_pitch",
+      "paired_midpoints": 17,
+      "physical_midpoints_match": true,
+      "units": "8-bit RGB MAE",
+      "GT_assisted_offline_ROI": true,
+      "eyes": {
+        "left": {
+          "global_rgb_mae": 0.3004344888350374,
+          "gt_ball_roi_rgb_mae": 2.2725179481774567,
+          "outside_roi_rgb_mae": 0.06842284110832453,
+          "gt_ball_roi_supported_pairs": 9
+        },
+        "right": {
+          "global_rgb_mae": 0.37064183320054883,
+          "gt_ball_roi_rgb_mae": 1.5389879260228094,
+          "outside_roi_rgb_mae": 0.06815798769867291,
+          "gt_ball_roi_supported_pairs": 9
+        }
+      },
+      "unbounded_left_projection_pairs": 2,
+      "visible_without_finite_left_ROI": 0
+    },
+    {
+      "trajectory_name": "one_bounce",
+      "head_pose": "neutral",
+      "paired_midpoints": 15,
+      "physical_midpoints_match": true,
+      "units": "8-bit RGB MAE",
+      "GT_assisted_offline_ROI": true,
+      "eyes": {
+        "left": {
+          "global_rgb_mae": 0.09857391992726361,
+          "gt_ball_roi_rgb_mae": 6.525376110204822,
+          "outside_roi_rgb_mae": 0.065608548029376,
+          "gt_ball_roi_supported_pairs": 5
+        },
+        "right": {
+          "global_rgb_mae": 0.09390452564584902,
+          "gt_ball_roi_rgb_mae": 6.12645212318948,
+          "outside_roi_rgb_mae": 0.06267659446885049,
+          "gt_ball_roi_supported_pairs": 5
+        }
+      },
+      "unbounded_left_projection_pairs": 2,
+      "visible_without_finite_left_ROI": 0
+    },
+    {
+      "trajectory_name": "one_bounce",
+      "head_pose": "yaw_pitch",
+      "paired_midpoints": 15,
+      "physical_midpoints_match": true,
+      "units": "8-bit RGB MAE",
+      "GT_assisted_offline_ROI": true,
+      "eyes": {
+        "left": {
+          "global_rgb_mae": 0.13133743259342864,
+          "gt_ball_roi_rgb_mae": 7.773947088338148,
+          "outside_roi_rgb_mae": 0.07851456526178055,
+          "gt_ball_roi_supported_pairs": 5
+        },
+        "right": {
+          "global_rgb_mae": 0.1279553078755957,
+          "gt_ball_roi_rgb_mae": 7.601334903808402,
+          "outside_roi_rgb_mae": 0.07703895537254044,
+          "gt_ball_roi_supported_pairs": 5
+        }
+      },
+      "unbounded_left_projection_pairs": 3,
+      "visible_without_finite_left_ROI": 0
+    }
+  ],
+  "limitations": [
+    "Small numbers of successful detections; unavailable errors are null, never zero.",
+    "World pose is oracle; field of view and nine-ray occlusion are independent geometric diagnostics, not sensor estimates.",
+    "Frozen trajectories are replayed, with no new robot/ball collision simulation.",
+    "Camera/dataset integrity and exposure image changes succeed; reliable continuous ball localization does not.",
+    "Exposure RGB differences include rendering noise; GT ROI is offline bounding-box assistance only."
+  ],
+  "photometric_full_report": "results/g6a/final_photometric03.json",
+  "photometric_evaluator_sha256": "c5994d6c343ca26d601ebd8f2f977d56e982b4b5d97cfd41e643c1da6d46c292"
+}

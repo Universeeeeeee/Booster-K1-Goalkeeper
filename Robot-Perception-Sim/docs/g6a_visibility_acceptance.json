@@ -1,0 +1,138 @@
+{
+  "neutral": {
+    "direct_goal": {
+      "duration_s": 0.26400001253932714,
+      "intervals": [
+        {
+          "reason": "visible",
+          "start_time_s": 0.0,
+          "end_time_s": 0.1460000069346279,
+          "count": 147
+        },
+        {
+          "reason": "partially_near_clipped",
+          "start_time_s": 0.14700000698212534,
+          "end_time_s": 0.1520000072196126,
+          "count": 6
+        },
+        {
+          "reason": "near_clip",
+          "start_time_s": 0.15300000726711005,
+          "end_time_s": 0.16500000783707947,
+          "count": 13
+        },
+        {
+          "reason": "out_of_fov",
+          "start_time_s": 0.16600000788457692,
+          "end_time_s": 0.26400001253932714,
+          "count": 99
+        }
+      ],
+      "bounce_events": [],
+      "source_sha256": "ec9a0d8eb5e603cfa32c0d41b485d013f4f7fc99f154a6019f3caa031b08d1d3"
+    },
+    "one_bounce": {
+      "duration_s": 0.2400000113993883,
+      "intervals": [
+        {
+          "reason": "visible",
+          "start_time_s": 0.0,
+          "end_time_s": 0.07100000337231904,
+          "count": 72
+        },
+        {
+          "reason": "out_of_fov",
+          "start_time_s": 0.0720000034198165,
+          "end_time_s": 0.2400000113993883,
+          "count": 169
+        }
+      ],
+      "bounce_events": [
+        {
+          "time_s": 0.13000000617466867,
+          "ball_world_position_m": [
+            10.297961235046387,
+            0.0,
+            0.10991387814283371
+          ],
+          "ball_center_camera_m": [
+            0.0600000434321535,
+            0.7844501344279979,
+            -0.0036995116577003273
+          ],
+          "visibility_reason": "out_of_fov",
+          "expected_visible": false
+        }
+      ],
+      "source_sha256": "46780ba801b3240a8a196e714faaf2bdc79c71ea85b787ab187e3db6bfc1ac84"
+    }
+  },
+  "yaw_pitch": {
+    "direct_goal": {
+      "duration_s": 0.26400001253932714,
+      "intervals": [
+        {
+          "reason": "visible",
+          "start_time_s": 0.0,
+          "end_time_s": 0.14300000679213554,
+          "count": 144
+        },
+        {
+          "reason": "partially_near_clipped",
+          "start_time_s": 0.144000006839633,
+          "end_time_s": 0.1480000070296228,
+          "count": 5
+        },
+        {
+          "reason": "near_clip",
+          "start_time_s": 0.14900000707712024,
+          "end_time_s": 0.1600000075995922,
+          "count": 12
+        },
+        {
+          "reason": "out_of_fov",
+          "start_time_s": 0.16100000764708966,
+          "end_time_s": 0.26400001253932714,
+          "count": 104
+        }
+      ],
+      "bounce_events": [],
+      "source_sha256": "ec9a0d8eb5e603cfa32c0d41b485d013f4f7fc99f154a6019f3caa031b08d1d3"
+    },
+    "one_bounce": {
+      "duration_s": 0.2400000113993883,
+      "intervals": [
+        {
+          "reason": "visible",
+          "start_time_s": 0.0,
+          "end_time_s": 0.07900000375229865,
+          "count": 80
+        },
+        {
+          "reason": "out_of_fov",
+          "start_time_s": 0.0800000037997961,
+          "end_time_s": 0.2400000113993883,
+          "count": 161
+        }
+      ],
+      "bounce_events": [
+        {
+          "time_s": 0.13000000617466867,
+          "ball_world_position_m": [
+            10.297961235046387,
+            0.0,
+            0.10991387814283371
+          ],
+          "ball_center_camera_m": [
+            0.07915948354342905,
+            0.7715587604797218,
+            0.06295833432661091
+          ],
+          "visibility_reason": "out_of_fov",
+          "expected_visible": false
+        }
+      ],
+      "source_sha256": "46780ba801b3240a8a196e714faaf2bdc79c71ea85b787ab187e3db6bfc1ac84"
+    }
+  }
+}

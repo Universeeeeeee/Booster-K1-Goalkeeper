@@ -1,0 +1,700 @@
+{
+  "stage": "G6-A",
+  "date": "2026-10-30",
+  "base_commit": "5a2db15773f8b0585fba309860bfac27788ca420",
+  "status": {
+    "implementation_and_evaluation": "complete",
+    "camera_acquisition_gate": "passed",
+    "continuous_ball_perception_gate": "failed",
+    "G6_B_G7_started": false
+  },
+  "mode": "full fixed K1, official head ZED X, frozen G4 nearest1ms visual replay; no newly executed collisions or walk policy",
+  "scope": {
+    "trajectories": [
+      "direct_goal",
+      "one_bounce"
+    ],
+    "head_joint_yaw_pitch_rad": [
+      [
+        0,
+        0
+      ],
+      [
+        0.2,
+        0.1
+      ]
+    ],
+    "exposure_ms": [
+      0,
+      10
+    ],
+    "physical_GPU_indices": [
+      0,
+      1
+    ],
+    "orange_diagnostic": false,
+    "pose_source": "oracle",
+    "GT_used_by_predictor": false,
+    "invalid_filled": false
+  },
+  "camera_integrity": {
+    "conditions": 8,
+    "SDK_frames": 368,
+    "intended_target_frames": 128,
+    "verified_target_subframes": 384,
+    "missing_target_frames": 0,
+    "maximum_SDK_vs_visual_publication_residual_ns": 0,
+    "maximum_RGB_transport_MAE_8bit": 0.6482326388888889,
+    "maximum_replay_time_quantization_error_s": 0.00033334406775731296,
+    "baseline_m": 0.12,
+    "independent_USD_midpoint_and_subsample_readback_checks": 512
+  },
+  "conditions": [
+    {
+      "name": "formal_direct_goal_neutral_e0",
+      "trajectory": "direct_goal",
+      "head_pose": "neutral",
+      "exposure_ms": 0,
+      "sdk_frames": 47,
+      "target_frames": 17,
+      "target_subframes": 17,
+      "maximum_rgb_transport_mae_8bit": 0.6130109953703704,
+      "maximum_nearest_state_time_error_s": 0.0003333438777675113,
+      "source_trajectory_sha256": "ec9a0d8eb5e603cfa32c0d41b485d013f4f7fc99f154a6019f3caa031b08d1d3",
+      "parent_integrity_sha256": "8fe0f7d8d201543ff9fb9e1eb1ea4affc78f61cf759e1ab8c81d7aea2bd510c8",
+      "sender_metadata_sha256": "0a3addcb49717307ba5f0c4ec61dfd6d6d7083b289eb4b890e2beab6f9d693fc",
+      "sdk_metadata_sha256": "61f47b774bef017fca94a2113cde3916b2174c2cf25b4397261e37deb2951bc4",
+      "detectors": {
+        "white_hsv": {
+          "visible_frames": 9,
+          "ball_matched_detections": 0,
+          "visible_detection_rate": 0.0,
+          "SDK_valid_visible_frames": 0,
+          "SDK_valid_rate": 0.0,
+          "SDK_center_world_error_m": {
+            "samples": 0,
+            "mae": null,
+            "p95": null,
+            "max": null
+          },
+          "SDK_maximum_visible_loss_s": 0.1500000071246177,
+          "unobserved_gap_duration_s": 0,
+          "visibility_categories": {
+            "visible_or_other": 9,
+            "near_clip": 1,
+            "FOV": 7
+          },
+          "detection_failures": {
+            "no_ball_contour": 17
+          },
+          "triangulation_failures": {
+            "missing_valid_stereo_detection": 17
+          },
+          "SDK_failures": {
+            "missing_valid_left_detection": 17
+          }
+        },
+        "edge_circle": {
+          "visible_frames": 9,
+          "ball_matched_detections": 0,
+          "visible_detection_rate": 0.0,
+          "SDK_valid_visible_frames": 0,
+          "SDK_valid_rate": 0.0,
+          "SDK_center_world_error_m": {
+            "samples": 0,
+            "mae": null,
+            "p95": null,
+            "max": null
+          },
+          "SDK_maximum_visible_loss_s": 0.1500000071246177,
+          "unobserved_gap_duration_s": 0,
+          "visibility_categories": {
+            "visible_or_other": 9,
+            "near_clip": 1,
+            "FOV": 7
+          },
+          "detection_failures": {
+            "no_circle_support": 17
+          },
+          "triangulation_failures": {
+            "missing_valid_stereo_detection": 17
+          },
+          "SDK_failures": {
+            "missing_valid_left_detection": 17
+          }
+        }
+      }
+    },
+    {
+      "name": "formal_direct_goal_neutral_e10",
+      "trajectory": "direct_goal",
+      "head_pose": "neutral",
+      "exposure_ms": 10,
+      "sdk_frames": 47,
+      "target_frames": 17,
+      "target_subframes": 85,
+      "maximum_rgb_transport_mae_8bit": 0.6401458333333333,
+      "maximum_nearest_state_time_error_s": 0.00033334406775731296,
+      "source_trajectory_sha256": "ec9a0d8eb5e603cfa32c0d41b485d013f4f7fc99f154a6019f3caa031b08d1d3",
+      "parent_integrity_sha256": "75860c426548ce1a4a049bc2558bd89f8f3df7b64ab93614b14de314286e03fe",
+      "sender_metadata_sha256": "ec4e01a626da1b5a5f60a5caa9c21b580242b660363d8ee940c494952e352e18",
+      "sdk_metadata_sha256": "61f47b774bef017fca94a2113cde3916b2174c2cf25b4397261e37deb2951bc4",
+      "detectors": {
+        "white_hsv": {
+          "visible_frames": 10,
+          "ball_matched_detections": 0,
+          "visible_detection_rate": 0.0,
+          "SDK_valid_visible_frames": 0,
+          "SDK_valid_rate": 0.0,
+          "SDK_center_world_error_m": {
+            "samples": 0,
+            "mae": null,
+            "p95": null,
+            "max": null
+          },
+          "SDK_maximum_visible_loss_s": 0.16700000793207437,
+          "unobserved_gap_duration_s": 0,
+          "visibility_categories": {
+            "visible_or_other": 9,
+            "near_clip": 1,
+            "FOV": 7
+          },
+          "detection_failures": {
+            "no_ball_contour": 17
+          },
+          "triangulation_failures": {
+            "missing_valid_stereo_detection": 17
+          },
+          "SDK_failures": {
+            "missing_valid_left_detection": 17
+          }
+        },
+        "edge_circle": {
+          "visible_frames": 10,
+          "ball_matched_detections": 0,
+          "visible_detection_rate": 0.0,
+          "SDK_valid_visible_frames": 0,
+          "SDK_valid_rate": 0.0,
+          "SDK_center_world_error_m": {
+            "samples": 0,
+            "mae": null,
+            "p95": null,
+            "max": null
+          },
+          "SDK_maximum_visible_loss_s": 0.16700000793207437,
+          "unobserved_gap_duration_s": 0,
+          "visibility_categories": {
+            "visible_or_other": 9,
+            "near_clip": 1,
+            "FOV": 7
+          },
+          "detection_failures": {
+            "no_circle_support": 17
+          },
+          "triangulation_failures": {
+            "missing_valid_stereo_detection": 17
+          },
+          "SDK_failures": {
+            "missing_valid_left_detection": 17
+          }
+        }
+      }
+    },
+    {
+      "name": "formal_one_bounce_neutral_e0",
+      "trajectory": "one_bounce",
+      "head_pose": "neutral",
+      "exposure_ms": 0,
+      "sdk_frames": 45,
+      "target_frames": 15,
+      "target_subframes": 15,
+      "maximum_rgb_transport_mae_8bit": 0.4222372685185185,
+      "maximum_nearest_state_time_error_s": 0.0003333438777675113,
+      "source_trajectory_sha256": "46780ba801b3240a8a196e714faaf2bdc79c71ea85b787ab187e3db6bfc1ac84",
+      "parent_integrity_sha256": "c3fca2857795e8ba76705e27d20065c2a7b7ffaa006d3536f84cc34dcbaff4df",
+      "sender_metadata_sha256": "13dfd16be1659f7612e0335cdb3a67a111ade59356293fed445c566845e909fc",
+      "sdk_metadata_sha256": "710d2da03b328d7d2c6d0fea3a4bc36caf0358876a9227cfe5de411f65a9941a",
+      "detectors": {
+        "white_hsv": {
+          "visible_frames": 4,
+          "ball_matched_detections": 1,
+          "visible_detection_rate": 0.25,
+          "SDK_valid_visible_frames": 1,
+          "SDK_valid_rate": 0.25,
+          "SDK_center_world_error_m": {
+            "samples": 1,
+            "mae": 0.04691737189750181,
+            "p95": 0.04691737189750181,
+            "max": 0.04691737189750181
+          },
+          "SDK_maximum_visible_loss_s": 0.034000001614913344,
+          "unobserved_gap_duration_s": 0,
+          "visibility_categories": {
+            "visible_or_other": 4,
+            "FOV": 11
+          },
+          "detection_failures": {
+            "no_ball_contour": 14
+          },
+          "triangulation_failures": {
+            "missing_valid_stereo_detection": 14
+          },
+          "SDK_failures": {
+            "missing_valid_left_detection": 14
+          }
+        },
+        "edge_circle": {
+          "visible_frames": 4,
+          "ball_matched_detections": 2,
+          "visible_detection_rate": 0.5,
+          "SDK_valid_visible_frames": 2,
+          "SDK_valid_rate": 0.5,
+          "SDK_center_world_error_m": {
+            "samples": 2,
+            "mae": 0.051244389053350964,
+            "p95": 0.054494599994053636,
+            "max": 0.0548557345430206
+          },
+          "SDK_maximum_visible_loss_s": 0.034000001614913344,
+          "unobserved_gap_duration_s": 0,
+          "visibility_categories": {
+            "visible_or_other": 4,
+            "FOV": 11
+          },
+          "detection_failures": {
+            "no_circle_support": 13
+          },
+          "triangulation_failures": {
+            "missing_valid_stereo_detection": 14
+          },
+          "SDK_failures": {
+            "missing_valid_left_detection": 13
+          }
+        }
+      }
+    },
+    {
+      "name": "formal_one_bounce_neutral_e10",
+      "trajectory": "one_bounce",
+      "head_pose": "neutral",
+      "exposure_ms": 10,
+      "sdk_frames": 45,
+      "target_frames": 15,
+      "target_subframes": 75,
+      "maximum_rgb_transport_mae_8bit": 0.4226846064814815,
+      "maximum_nearest_state_time_error_s": 0.00033334406775731296,
+      "source_trajectory_sha256": "46780ba801b3240a8a196e714faaf2bdc79c71ea85b787ab187e3db6bfc1ac84",
+      "parent_integrity_sha256": "b92e524ed28a637fa0a8d8c526cf9b9a448505aef7a48728738edbdd3474756e",
+      "sender_metadata_sha256": "ddf0fc0a7a50a7a69e426c430d2bee606a343d09f74dba92b14508780d0ed127",
+      "sdk_metadata_sha256": "919d98423fe870f38b3f023ba36ca1edaf958799381e14a290e179a774a83877",
+      "detectors": {
+        "white_hsv": {
+          "visible_frames": 5,
+          "ball_matched_detections": 0,
+          "visible_detection_rate": 0.0,
+          "SDK_valid_visible_frames": 0,
+          "SDK_valid_rate": 0.0,
+          "SDK_center_world_error_m": {
+            "samples": 0,
+            "mae": null,
+            "p95": null,
+            "max": null
+          },
+          "SDK_maximum_visible_loss_s": 0.08300000394228846,
+          "unobserved_gap_duration_s": 0,
+          "visibility_categories": {
+            "visible_or_other": 4,
+            "FOV": 11
+          },
+          "detection_failures": {
+            "no_ball_contour": 15
+          },
+          "triangulation_failures": {
+            "missing_valid_stereo_detection": 15
+          },
+          "SDK_failures": {
+            "missing_valid_left_detection": 15
+          }
+        },
+        "edge_circle": {
+          "visible_frames": 5,
+          "ball_matched_detections": 0,
+          "visible_detection_rate": 0.0,
+          "SDK_valid_visible_frames": 0,
+          "SDK_valid_rate": 0.0,
+          "SDK_center_world_error_m": {
+            "samples": 0,
+            "mae": null,
+            "p95": null,
+            "max": null
+          },
+          "SDK_maximum_visible_loss_s": 0.08300000394228846,
+          "unobserved_gap_duration_s": 0,
+          "visibility_categories": {
+            "visible_or_other": 4,
+            "FOV": 11
+          },
+          "detection_failures": {
+            "no_circle_support": 15
+          },
+          "triangulation_failures": {
+            "missing_valid_stereo_detection": 15
+          },
+          "SDK_failures": {
+            "missing_valid_left_detection": 15
+          }
+        }
+      }
+    },
+    {
+      "name": "formal_direct_goal_yaw_pitch_e0",
+      "trajectory": "direct_goal",
+      "head_pose": "yaw_pitch",
+      "exposure_ms": 0,
+      "sdk_frames": 47,
+      "target_frames": 17,
+      "target_subframes": 17,
+      "maximum_rgb_transport_mae_8bit": 0.6398541666666666,
+      "maximum_nearest_state_time_error_s": 0.0003333438777675113,
+      "source_trajectory_sha256": "ec9a0d8eb5e603cfa32c0d41b485d013f4f7fc99f154a6019f3caa031b08d1d3",
+      "parent_integrity_sha256": "2f5c9494caa15ac7ca78734e492ac3b8a11359cad11773185ca97194df44ce45",
+      "sender_metadata_sha256": "5130ff4e40f60c24b79ec9838ebfcde0bf07d5c1d813f5cb448955c0cad2d2d1",
+      "sdk_metadata_sha256": "eea4f2617b204a29672eaa62da65b589ea7ba3a486a8a41e82a4b06047636273",
+      "detectors": {
+        "white_hsv": {
+          "visible_frames": 9,
+          "ball_matched_detections": 0,
+          "visible_detection_rate": 0.0,
+          "SDK_valid_visible_frames": 0,
+          "SDK_valid_rate": 0.0,
+          "SDK_center_world_error_m": {
+            "samples": 0,
+            "mae": null,
+            "p95": null,
+            "max": null
+          },
+          "SDK_maximum_visible_loss_s": 0.1500000071246177,
+          "unobserved_gap_duration_s": 0,
+          "visibility_categories": {
+            "visible_or_other": 9,
+            "near_clip": 1,
+            "FOV": 7
+          },
+          "detection_failures": {
+            "no_ball_contour": 17
+          },
+          "triangulation_failures": {
+            "missing_valid_stereo_detection": 17
+          },
+          "SDK_failures": {
+            "missing_valid_left_detection": 17
+          }
+        },
+        "edge_circle": {
+          "visible_frames": 9,
+          "ball_matched_detections": 0,
+          "visible_detection_rate": 0.0,
+          "SDK_valid_visible_frames": 0,
+          "SDK_valid_rate": 0.0,
+          "SDK_center_world_error_m": {
+            "samples": 0,
+            "mae": null,
+            "p95": null,
+            "max": null
+          },
+          "SDK_maximum_visible_loss_s": 0.1500000071246177,
+          "unobserved_gap_duration_s": 0,
+          "visibility_categories": {
+            "visible_or_other": 9,
+            "near_clip": 1,
+            "FOV": 7
+          },
+          "detection_failures": {
+            "no_circle_support": 17
+          },
+          "triangulation_failures": {
+            "missing_valid_stereo_detection": 17
+          },
+          "SDK_failures": {
+            "missing_valid_left_detection": 17
+          }
+        }
+      }
+    },
+    {
+      "name": "formal_direct_goal_yaw_pitch_e10",
+      "trajectory": "direct_goal",
+      "head_pose": "yaw_pitch",
+      "exposure_ms": 10,
+      "sdk_frames": 47,
+      "target_frames": 17,
+      "target_subframes": 85,
+      "maximum_rgb_transport_mae_8bit": 0.6482326388888889,
+      "maximum_nearest_state_time_error_s": 0.00033334406775731296,
+      "source_trajectory_sha256": "ec9a0d8eb5e603cfa32c0d41b485d013f4f7fc99f154a6019f3caa031b08d1d3",
+      "parent_integrity_sha256": "9925bd602e143b0127da7ef8aab720bace9a47ba97617be29f1b7124dfd0dc88",
+      "sender_metadata_sha256": "af7f15e7524dd57635f41afb2fc46c630b27eef8e7afc996d49929fc7bed9875",
+      "sdk_metadata_sha256": "f39bd5822dab0ef1fdde130ae63d235b7e7ebfd2e07f5ffbe64e61537cb4e2b8",
+      "detectors": {
+        "white_hsv": {
+          "visible_frames": 9,
+          "ball_matched_detections": 0,
+          "visible_detection_rate": 0.0,
+          "SDK_valid_visible_frames": 0,
+          "SDK_valid_rate": 0.0,
+          "SDK_center_world_error_m": {
+            "samples": 0,
+            "mae": null,
+            "p95": null,
+            "max": null
+          },
+          "SDK_maximum_visible_loss_s": 0.1500000071246177,
+          "unobserved_gap_duration_s": 0,
+          "visibility_categories": {
+            "visible_or_other": 9,
+            "near_clip": 1,
+            "FOV": 7
+          },
+          "detection_failures": {
+            "no_ball_contour": 17
+          },
+          "triangulation_failures": {
+            "missing_valid_stereo_detection": 17
+          },
+          "SDK_failures": {
+            "missing_valid_left_detection": 17
+          }
+        },
+        "edge_circle": {
+          "visible_frames": 9,
+          "ball_matched_detections": 0,
+          "visible_detection_rate": 0.0,
+          "SDK_valid_visible_frames": 0,
+          "SDK_valid_rate": 0.0,
+          "SDK_center_world_error_m": {
+            "samples": 0,
+            "mae": null,
+            "p95": null,
+            "max": null
+          },
+          "SDK_maximum_visible_loss_s": 0.1500000071246177,
+          "unobserved_gap_duration_s": 0,
+          "visibility_categories": {
+            "visible_or_other": 9,
+            "near_clip": 1,
+            "FOV": 7
+          },
+          "detection_failures": {
+            "no_circle_support": 17
+          },
+          "triangulation_failures": {
+            "missing_valid_stereo_detection": 17
+          },
+          "SDK_failures": {
+            "missing_valid_left_detection": 17
+          }
+        }
+      }
+    },
+    {
+      "name": "formal_one_bounce_yaw_pitch_e0",
+      "trajectory": "one_bounce",
+      "head_pose": "yaw_pitch",
+      "exposure_ms": 0,
+      "sdk_frames": 45,
+      "target_frames": 15,
+      "target_subframes": 15,
+      "maximum_rgb_transport_mae_8bit": 0.5001788194444444,
+      "maximum_nearest_state_time_error_s": 0.0003333438777675113,
+      "source_trajectory_sha256": "46780ba801b3240a8a196e714faaf2bdc79c71ea85b787ab187e3db6bfc1ac84",
+      "parent_integrity_sha256": "adbd16ca6dd236c04e6e9f90dc6c8e638b4d1dbb4a41d5b85f4afb7e8b32f4d2",
+      "sender_metadata_sha256": "f9777fb9407f86fa9fb3bff357384d7156c5c7681691d99d91ed9f554f49d86a",
+      "sdk_metadata_sha256": "e608c564cfaaa30cd5e33ba290df24d7af5a1beb76d2485696bd8738b09bce5c",
+      "detectors": {
+        "white_hsv": {
+          "visible_frames": 5,
+          "ball_matched_detections": 1,
+          "visible_detection_rate": 0.2,
+          "SDK_valid_visible_frames": 1,
+          "SDK_valid_rate": 0.2,
+          "SDK_center_world_error_m": {
+            "samples": 1,
+            "mae": 0.05535928840017074,
+            "p95": 0.05535928840017074,
+            "max": 0.05535928840017074
+          },
+          "SDK_maximum_visible_loss_s": 0.050000002374872565,
+          "unobserved_gap_duration_s": 0,
+          "visibility_categories": {
+            "visible_or_other": 5,
+            "FOV": 10
+          },
+          "detection_failures": {
+            "no_ball_contour": 14
+          },
+          "triangulation_failures": {
+            "missing_valid_stereo_detection": 14
+          },
+          "SDK_failures": {
+            "missing_valid_left_detection": 14
+          }
+        },
+        "edge_circle": {
+          "visible_frames": 5,
+          "ball_matched_detections": 2,
+          "visible_detection_rate": 0.4,
+          "SDK_valid_visible_frames": 2,
+          "SDK_valid_rate": 0.4,
+          "SDK_center_world_error_m": {
+            "samples": 2,
+            "mae": 0.04810516813270816,
+            "p95": 0.05471562243068321,
+            "max": 0.05545011735268044
+          },
+          "SDK_maximum_visible_loss_s": 0.050000002374872565,
+          "unobserved_gap_duration_s": 0,
+          "visibility_categories": {
+            "visible_or_other": 5,
+            "FOV": 10
+          },
+          "detection_failures": {
+            "no_circle_support": 13
+          },
+          "triangulation_failures": {
+            "missing_valid_stereo_detection": 13
+          },
+          "SDK_failures": {
+            "missing_valid_left_detection": 13
+          }
+        }
+      }
+    },
+    {
+      "name": "formal_one_bounce_yaw_pitch_e10",
+      "trajectory": "one_bounce",
+      "head_pose": "yaw_pitch",
+      "exposure_ms": 10,
+      "sdk_frames": 45,
+      "target_frames": 15,
+      "target_subframes": 75,
+      "maximum_rgb_transport_mae_8bit": 0.49860069444444444,
+      "maximum_nearest_state_time_error_s": 0.00033334406775731296,
+      "source_trajectory_sha256": "46780ba801b3240a8a196e714faaf2bdc79c71ea85b787ab187e3db6bfc1ac84",
+      "parent_integrity_sha256": "18495c2b6cdd6bcce65441276eb0dc232f6b35cefb978893b9edd936d1f5fc35",
+      "sender_metadata_sha256": "ff2884e74d518337bef5d4d51ad1d04c44aa3e3a560667db44b15611e0b2091f",
+      "sdk_metadata_sha256": "fe950853101291bfb255d714f97a95c911c4263dc649e787e7f55d61ed86db32",
+      "detectors": {
+        "white_hsv": {
+          "visible_frames": 5,
+          "ball_matched_detections": 0,
+          "visible_detection_rate": 0.0,
+          "SDK_valid_visible_frames": 0,
+          "SDK_valid_rate": 0.0,
+          "SDK_center_world_error_m": {
+            "samples": 0,
+            "mae": null,
+            "p95": null,
+            "max": null
+          },
+          "SDK_maximum_visible_loss_s": 0.08300000394228846,
+          "unobserved_gap_duration_s": 0,
+          "visibility_categories": {
+            "visible_or_other": 5,
+            "FOV": 10
+          },
+          "detection_failures": {
+            "no_ball_contour": 15
+          },
+          "triangulation_failures": {
+            "missing_valid_stereo_detection": 15
+          },
+          "SDK_failures": {
+            "missing_valid_left_detection": 15
+          }
+        },
+        "edge_circle": {
+          "visible_frames": 5,
+          "ball_matched_detections": 0,
+          "visible_detection_rate": 0.0,
+          "SDK_valid_visible_frames": 0,
+          "SDK_valid_rate": 0.0,
+          "SDK_center_world_error_m": {
+            "samples": 0,
+            "mae": null,
+            "p95": null,
+            "max": null
+          },
+          "SDK_maximum_visible_loss_s": 0.08300000394228846,
+          "unobserved_gap_duration_s": 0,
+          "visibility_categories": {
+            "visible_or_other": 5,
+            "FOV": 10
+          },
+          "detection_failures": {
+            "no_circle_support": 15
+          },
+          "triangulation_failures": {
+            "missing_valid_stereo_detection": 15
+          },
+          "SDK_failures": {
+            "missing_valid_left_detection": 15
+          }
+        }
+      }
+    }
+  ],
+  "parent_recomputed_perception": {
+    "white_hsv": {
+      "visible_frames": 56,
+      "matched_detections": 2,
+      "SDK_valid_samples": 2,
+      "SDK_world_MAE_m": 0.05113833014883552,
+      "SDK_world_P95_m": 0.054937192575035834,
+      "SDK_world_max_m": 0.0553592884001692,
+      "maximum_visible_loss_s": 0.16700000793207437,
+      "errors_recomputed_from_raw_predictions_and_separate_labels": true
+    },
+    "edge_circle": {
+      "visible_frames": 56,
+      "matched_detections": 4,
+      "SDK_valid_samples": 4,
+      "SDK_world_MAE_m": 0.04967477859302993,
+      "SDK_world_P95_m": 0.05536095993123146,
+      "SDK_world_max_m": 0.05545011735268044,
+      "maximum_visible_loss_s": 0.16700000793207437,
+      "errors_recomputed_from_raw_predictions_and_separate_labels": true
+    }
+  },
+  "tests": {
+    "passed": 331,
+    "failures_or_errors": 0,
+    "scope": "tracked G1-G5 subproject tests plus owned G6 tests; unrelated custom-camera tests excluded",
+    "scope_sha256": "2abc45efd50ceaa8058f4d98ee5c95ab35252715b927d4f243bc938af2882fcb",
+    "junit_sha256": "0e3e8b14426ac81f4d46183d01f7ec6aa038d1aeaa8272e17f1aa8a5d458141b"
+  },
+  "evidence_sha256": {
+    "g6a_acquisition.json": "15b9575371000feca28e8a74cdc45e7706ca7bb49da51889824e4979383b5405",
+    "g6a_perception_results.json": "4a5d42f64013dfab9a41d4f1679f3fed54061c99c3085bdca954f301c8350019",
+    "g6a_mount_acceptance.json": "68314477f0e7c1ac3941122ccf766ec3d8d6d308782985c7014a3a223436939f",
+    "g6a_replay_readback_acceptance.json": "7a8b9d62ff9210276343fc868c82f2d145c7d4c9477e88d441998259e5f61ea2",
+    "g6a_visibility_acceptance.json": "770a8f98e593cd3d910fcea77e404f294d8f1a317f108a0eb4cb7d3e0a01b44c",
+    "g6a_visual_fidelity_acceptance.json": "65d7b45f51ad8eb743ba9bd8c0500edffda80db9f0fc0262d9695ec4f65bbf05",
+    "g6a_sdk_pose_inspection.json": "05452c780a41f59f4862ee0f013a4d45f9df1a2c5b9e648f56e828990ad5a9bb"
+  },
+  "data_locations": {
+    "local": "Robot-Perception-Sim/results/g6a",
+    "remote": "lizhengran-server:/home/lizhengran/isaacsim-workspace/g6a_head_replay"
+  },
+  "limits": [
+    "Actual bounce occurs after leaving both head-pose FOVs; frozen one-bounce replay is not visual bounce observation",
+    "Both detectors fail all direct-goal and10ms conditions; unavailable center errors are null",
+    "Only4 edge and2 HSV valid SDK centers; their errors are conditional small-sample results",
+    "Visibility uses optical frustum and9 mesh rays, not perfect renderer segmentation; finite exposure uses any-subframe visibility and swept-bbox association",
+    "10ms is recorded5-subframe encoded-RGBA average, not radiometric ISP equivalence",
+    "Fixed K1 is not a validated walk policy; G1 full collision equivalence remains unresolved"
+  ],
+  "next_steps": {
+    "G6_B": "First improve white-ball observation and view coverage; then replay existing MuJoCo lateral/head-motion records through this camera pipeline without claiming PhysX walk stability",
+    "G7": "After enough valid observations, evaluate causal pose/time alignment, motion compensation and short-horizon estimates; keep Oracle ablations separate"
+  }
+}

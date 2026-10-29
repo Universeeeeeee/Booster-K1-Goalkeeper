@@ -1,0 +1,198 @@
+{
+  "runtime_helper_path": "/g4/g6a_runtime/acquisition/g6_scene.py",
+  "runtime_helper_sha256": "1aa27f52eb0493bf41a7abb5f50403c8b26d4545fdf3b8f1f0c675a3beb7be12",
+  "diagnostic_runner_sha256": "117aa1e5204bbd09aa3fda0f040f1435f286b39731a388c2c164f4937eb56292",
+  "scene_provenance": {
+    "g1_scene_sha256": "3f55a4f25e2ab9411640a4ee8370da6eff0f26f9ec9e1a7dc46faa596279b378",
+    "official_camera_usd_sha256": "aedba222a0b7db8d909f51977f35353aac15fa13e5e4153e79225c9f2e06d79b",
+    "mount_config_sha256": "db05bc359ed48875cddc77057a362323d353ff771e92cfe3b782e4b28127c269",
+    "mount_category": "existing_virtual_simulation_assumption",
+    "head_optical_prim": "/World/G1/Bodies/b3_aahead_pitch_link/b5_head_booster_stereo_rgb_link",
+    "camera_root_path": "/World/G1/Bodies/b3_aahead_pitch_link/b5_head_booster_stereo_rgb_link/ZEDMount/ZED",
+    "T_head_optical_from_zed_root": [
+      [
+        -1.9668135254713042e-16,
+        -0.9999999999999996,
+        1.4782791337186459e-16,
+        0.035099999999999916
+      ],
+      [
+        2.2204455199806156e-16,
+        -1.4782799057262826e-16,
+        -0.9999999999999998,
+        0.014999999999998794
+      ],
+      [
+        0.9999999999999996,
+        -1.9668135034522676e-16,
+        -2.2204461766707276e-16,
+        0.02500000000000001
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "robot_mode": "kinematic_frozen_no_walk",
+    "source_collision_enabled": false,
+    "zero_opacity_visibility_overrides": [
+      {
+        "path": "/World/G1/Bodies/b0_world/g0_ground",
+        "source_display_opacity": [
+          0.0
+        ],
+        "g6_visibility": "invisible"
+      },
+      {
+        "path": "/World/G1/Bodies/b1_trunk/g31_k1_geom_1",
+        "source_display_opacity": [
+          0.0
+        ],
+        "g6_visibility": "invisible"
+      },
+      {
+        "path": "/World/G1/Bodies/b19_left_ankle_roll_link/g62_k1_geom_32",
+        "source_display_opacity": [
+          0.0
+        ],
+        "g6_visibility": "invisible"
+      },
+      {
+        "path": "/World/G1/Bodies/b25_right_ankle_roll_link/g73_k1_geom_43",
+        "source_display_opacity": [
+          0.0
+        ],
+        "g6_visibility": "invisible"
+      },
+      {
+        "path": "/World/G1/Bodies/b26_goal_left/g75_goal_left_left_post_collision",
+        "source_display_opacity": [
+          0.0
+        ],
+        "g6_visibility": "invisible"
+      },
+      {
+        "path": "/World/G1/Bodies/b26_goal_left/g77_goal_left_right_post_collision",
+        "source_display_opacity": [
+          0.0
+        ],
+        "g6_visibility": "invisible"
+      },
+      {
+        "path": "/World/G1/Bodies/b26_goal_left/g79_goal_left_crossbar_collision",
+        "source_display_opacity": [
+          0.0
+        ],
+        "g6_visibility": "invisible"
+      },
+      {
+        "path": "/World/G1/Bodies/b27_goal_right/g89_goal_right_left_post_collision",
+        "source_display_opacity": [
+          0.0
+        ],
+        "g6_visibility": "invisible"
+      },
+      {
+        "path": "/World/G1/Bodies/b27_goal_right/g91_goal_right_right_post_collision",
+        "source_display_opacity": [
+          0.0
+        ],
+        "g6_visibility": "invisible"
+      },
+      {
+        "path": "/World/G1/Bodies/b27_goal_right/g93_goal_right_crossbar_collision",
+        "source_display_opacity": [
+          0.0
+        ],
+        "g6_visibility": "invisible"
+      }
+    ],
+    "zero_opacity_override_reason": "honor authored source alpha0 in G6 visual layer; renderer A/B proved invisible ground otherwise occludes turf",
+    "ball_appearance": "frozen_g1_plain_white_no_checker_texture",
+    "head_poses": {
+      "neutral": [
+        0.0,
+        0.0
+      ],
+      "yaw_pitch": [
+        0.2,
+        0.1
+      ]
+    }
+  },
+  "ground_display_opacity": [
+    0.0
+  ],
+  "ground_display_color": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "turf_display_color": [
+    [
+      0.11999999731779099,
+      0.36000001430511475,
+      0.18000000715255737
+    ]
+  ],
+  "zero_opacity_gprim_paths": [
+    "/World/G1/Bodies/b0_world/g0_ground",
+    "/World/G1/Bodies/b1_trunk/g31_k1_geom_1",
+    "/World/G1/Bodies/b19_left_ankle_roll_link/g62_k1_geom_32",
+    "/World/G1/Bodies/b25_right_ankle_roll_link/g73_k1_geom_43",
+    "/World/G1/Bodies/b26_goal_left/g75_goal_left_left_post_collision",
+    "/World/G1/Bodies/b26_goal_left/g77_goal_left_right_post_collision",
+    "/World/G1/Bodies/b26_goal_left/g79_goal_left_crossbar_collision",
+    "/World/G1/Bodies/b27_goal_right/g89_goal_right_left_post_collision",
+    "/World/G1/Bodies/b27_goal_right/g91_goal_right_right_post_collision",
+    "/World/G1/Bodies/b27_goal_right/g93_goal_right_crossbar_collision"
+  ],
+  "variants": {
+    "A_original": {
+      "roi_bounds_xyxy": [
+        100,
+        360,
+        850,
+        500
+      ],
+      "roi_median_rgb": [
+        97.0,
+        97.0,
+        97.0
+      ],
+      "roi_green_fraction": 0.0
+    },
+    "B_ground_invisible": {
+      "roi_bounds_xyxy": [
+        100,
+        360,
+        850,
+        500
+      ],
+      "roi_median_rgb": [
+        144.0,
+        190.0,
+        160.0
+      ],
+      "roi_green_fraction": 0.718447619047619
+    },
+    "D_all_source_alpha_zero_invisible": {
+      "roi_bounds_xyxy": [
+        100,
+        360,
+        850,
+        500
+      ],
+      "roi_median_rgb": [
+        144.0,
+        190.0,
+        160.0
+      ],
+      "roi_green_fraction": 0.720447619047619
+    }
+  }
+}

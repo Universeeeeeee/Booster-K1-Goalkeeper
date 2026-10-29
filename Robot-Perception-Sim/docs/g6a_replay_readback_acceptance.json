@@ -1,0 +1,336 @@
+{
+  "checks_passed": true,
+  "runtime_domain": "USD-only schema/world-transform and serialized-stage reload",
+  "renderer_used": false,
+  "physics_stepped": false,
+  "source_helper_path": "/home/lizhengran/isaacsim-workspace/g4_20261029/g6a_runtime/acquisition/g6_scene.py",
+  "source_helper_sha256": "1aa27f52eb0493bf41a7abb5f50403c8b26d4545fdf3b8f1f0c675a3beb7be12",
+  "validator_sha256": "fdbc91d50826660ea1e614ace59af74cb7e988e57a5d33148031877104583296",
+  "scene_provenance": {
+    "g1_scene_sha256": "3f55a4f25e2ab9411640a4ee8370da6eff0f26f9ec9e1a7dc46faa596279b378",
+    "official_camera_usd_sha256": "aedba222a0b7db8d909f51977f35353aac15fa13e5e4153e79225c9f2e06d79b",
+    "mount_config_sha256": "db05bc359ed48875cddc77057a362323d353ff771e92cfe3b782e4b28127c269",
+    "mount_category": "existing_virtual_simulation_assumption",
+    "head_optical_prim": "/World/G1/Bodies/b3_aahead_pitch_link/b5_head_booster_stereo_rgb_link",
+    "camera_root_path": "/World/G1/Bodies/b3_aahead_pitch_link/b5_head_booster_stereo_rgb_link/ZEDMount/ZED",
+    "T_head_optical_from_zed_root": [
+      [
+        -1.9668135254713042e-16,
+        -0.9999999999999996,
+        1.4782791337186459e-16,
+        0.035099999999999916
+      ],
+      [
+        2.2204455199806156e-16,
+        -1.4782799057262826e-16,
+        -0.9999999999999998,
+        0.014999999999998794
+      ],
+      [
+        0.9999999999999996,
+        -1.9668135034522676e-16,
+        -2.2204461766707276e-16,
+        0.02500000000000001
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "robot_mode": "kinematic_frozen_no_walk",
+    "source_collision_enabled": false,
+    "zero_opacity_visibility_overrides": [
+      {
+        "path": "/World/G1/Bodies/b0_world/g0_ground",
+        "source_display_opacity": [
+          0.0
+        ],
+        "g6_visibility": "invisible"
+      },
+      {
+        "path": "/World/G1/Bodies/b1_trunk/g31_k1_geom_1",
+        "source_display_opacity": [
+          0.0
+        ],
+        "g6_visibility": "invisible"
+      },
+      {
+        "path": "/World/G1/Bodies/b19_left_ankle_roll_link/g62_k1_geom_32",
+        "source_display_opacity": [
+          0.0
+        ],
+        "g6_visibility": "invisible"
+      },
+      {
+        "path": "/World/G1/Bodies/b25_right_ankle_roll_link/g73_k1_geom_43",
+        "source_display_opacity": [
+          0.0
+        ],
+        "g6_visibility": "invisible"
+      },
+      {
+        "path": "/World/G1/Bodies/b26_goal_left/g75_goal_left_left_post_collision",
+        "source_display_opacity": [
+          0.0
+        ],
+        "g6_visibility": "invisible"
+      },
+      {
+        "path": "/World/G1/Bodies/b26_goal_left/g77_goal_left_right_post_collision",
+        "source_display_opacity": [
+          0.0
+        ],
+        "g6_visibility": "invisible"
+      },
+      {
+        "path": "/World/G1/Bodies/b26_goal_left/g79_goal_left_crossbar_collision",
+        "source_display_opacity": [
+          0.0
+        ],
+        "g6_visibility": "invisible"
+      },
+      {
+        "path": "/World/G1/Bodies/b27_goal_right/g89_goal_right_left_post_collision",
+        "source_display_opacity": [
+          0.0
+        ],
+        "g6_visibility": "invisible"
+      },
+      {
+        "path": "/World/G1/Bodies/b27_goal_right/g91_goal_right_right_post_collision",
+        "source_display_opacity": [
+          0.0
+        ],
+        "g6_visibility": "invisible"
+      },
+      {
+        "path": "/World/G1/Bodies/b27_goal_right/g93_goal_right_crossbar_collision",
+        "source_display_opacity": [
+          0.0
+        ],
+        "g6_visibility": "invisible"
+      }
+    ],
+    "zero_opacity_override_reason": "honor authored source alpha0 in G6 visual layer; renderer A/B proved invisible ground otherwise occludes turf",
+    "ball_appearance": "frozen_g1_plain_white_no_checker_texture",
+    "head_poses": {
+      "neutral": [
+        0.0,
+        0.0
+      ],
+      "yaw_pitch": [
+        0.2,
+        0.1
+      ]
+    }
+  },
+  "static_robot_body_paths": [
+    "/World/G1/Bodies/b1_trunk",
+    "/World/G1/Bodies/b6_aaleft_shoulder_pitch_link",
+    "/World/G1/Bodies/b7_left_shoulder_roll_link",
+    "/World/G1/Bodies/b8_left_elbow_pitch_link",
+    "/World/G1/Bodies/b9_left_elbow_yaw_link",
+    "/World/G1/Bodies/b10_aaright_shoulder_pitch_link",
+    "/World/G1/Bodies/b11_right_shoulder_roll_link",
+    "/World/G1/Bodies/b12_right_elbow_pitch_link",
+    "/World/G1/Bodies/b13_right_elbow_yaw_link",
+    "/World/G1/Bodies/b14_left_hip_pitch_link",
+    "/World/G1/Bodies/b15_left_hip_roll_link",
+    "/World/G1/Bodies/b16_left_hip_yaw_link",
+    "/World/G1/Bodies/b17_left_knee_pitch_link",
+    "/World/G1/Bodies/b18_left_ankle_pitch_link",
+    "/World/G1/Bodies/b19_left_ankle_roll_link",
+    "/World/G1/Bodies/b20_right_hip_pitch_link",
+    "/World/G1/Bodies/b21_right_hip_roll_link",
+    "/World/G1/Bodies/b22_right_hip_yaw_link",
+    "/World/G1/Bodies/b23_right_knee_pitch_link",
+    "/World/G1/Bodies/b24_right_ankle_pitch_link",
+    "/World/G1/Bodies/b25_right_ankle_roll_link"
+  ],
+  "conditions": [
+    {
+      "trajectory": "direct_goal",
+      "head_pose": "neutral",
+      "exposure_ms": 0,
+      "midpoints": 17,
+      "subsamples": 17,
+      "checked_requests": 34,
+      "maximum_quantization_error_s": 0.0003333438777675113,
+      "max_errors": {
+        "translation_error_m": 0.0,
+        "quaternion_sign_invariant_l2_error": 0.0,
+        "rotation_matrix_error": 0.0,
+        "other_body_matrix_change": 0.0,
+        "camera_state_matrix_error": 0.0,
+        "stereo_matrix_error": 2.220446049250313e-16,
+        "serialization_matrix_error": 0.0
+      },
+      "serialized_stage": "direct_goal_neutral_e0.usda",
+      "serialized_stage_sha256": "4e6ab506a6eff36ff9b16a11d8d41362a0af03a4380da953b7facf8d9942f0d2",
+      "source_trajectory_sha256": "ec9a0d8eb5e603cfa32c0d41b485d013f4f7fc99f154a6019f3caa031b08d1d3"
+    },
+    {
+      "trajectory": "direct_goal",
+      "head_pose": "neutral",
+      "exposure_ms": 10,
+      "midpoints": 17,
+      "subsamples": 85,
+      "checked_requests": 102,
+      "maximum_quantization_error_s": 0.00033334406775731296,
+      "max_errors": {
+        "translation_error_m": 0.0,
+        "quaternion_sign_invariant_l2_error": 0.0,
+        "rotation_matrix_error": 0.0,
+        "other_body_matrix_change": 0.0,
+        "camera_state_matrix_error": 0.0,
+        "stereo_matrix_error": 2.220446049250313e-16,
+        "serialization_matrix_error": 0.0
+      },
+      "serialized_stage": "direct_goal_neutral_e10.usda",
+      "serialized_stage_sha256": "dfa5436dbeb7c83a458201a3b500974c9bbe7cc28ec90fcf11f1008613eda510",
+      "source_trajectory_sha256": "ec9a0d8eb5e603cfa32c0d41b485d013f4f7fc99f154a6019f3caa031b08d1d3"
+    },
+    {
+      "trajectory": "one_bounce",
+      "head_pose": "neutral",
+      "exposure_ms": 0,
+      "midpoints": 15,
+      "subsamples": 15,
+      "checked_requests": 30,
+      "maximum_quantization_error_s": 0.0003333438777675113,
+      "max_errors": {
+        "translation_error_m": 0.0,
+        "quaternion_sign_invariant_l2_error": 1.1510677143667746e-07,
+        "rotation_matrix_error": 1.8318296923780508e-07,
+        "other_body_matrix_change": 0.0,
+        "camera_state_matrix_error": 0.0,
+        "stereo_matrix_error": 2.220446049250313e-16,
+        "serialization_matrix_error": 0.0
+      },
+      "serialized_stage": "one_bounce_neutral_e0.usda",
+      "serialized_stage_sha256": "5b34ad05b668bc8e53d6c6c93bff2228caf1f6f19a6be87d18ddb2c208ff528e",
+      "source_trajectory_sha256": "46780ba801b3240a8a196e714faaf2bdc79c71ea85b787ab187e3db6bfc1ac84"
+    },
+    {
+      "trajectory": "one_bounce",
+      "head_pose": "neutral",
+      "exposure_ms": 10,
+      "midpoints": 15,
+      "subsamples": 75,
+      "checked_requests": 90,
+      "maximum_quantization_error_s": 0.00033334406775731296,
+      "max_errors": {
+        "translation_error_m": 0.0,
+        "quaternion_sign_invariant_l2_error": 5.170012874905684e-07,
+        "rotation_matrix_error": 1.0189377333824634e-06,
+        "other_body_matrix_change": 0.0,
+        "camera_state_matrix_error": 0.0,
+        "stereo_matrix_error": 2.220446049250313e-16,
+        "serialization_matrix_error": 0.0
+      },
+      "serialized_stage": "one_bounce_neutral_e10.usda",
+      "serialized_stage_sha256": "efd25958c6851d377c4fe3afd0a77c6ed43e56694cdb8d6379186e4f0ef784bd",
+      "source_trajectory_sha256": "46780ba801b3240a8a196e714faaf2bdc79c71ea85b787ab187e3db6bfc1ac84"
+    },
+    {
+      "trajectory": "direct_goal",
+      "head_pose": "yaw_pitch",
+      "exposure_ms": 0,
+      "midpoints": 17,
+      "subsamples": 17,
+      "checked_requests": 34,
+      "maximum_quantization_error_s": 0.0003333438777675113,
+      "max_errors": {
+        "translation_error_m": 0.0,
+        "quaternion_sign_invariant_l2_error": 0.0,
+        "rotation_matrix_error": 0.0,
+        "other_body_matrix_change": 0.0,
+        "camera_state_matrix_error": 0.0,
+        "stereo_matrix_error": 3.3306690738754696e-16,
+        "serialization_matrix_error": 0.0
+      },
+      "serialized_stage": "direct_goal_yaw_pitch_e0.usda",
+      "serialized_stage_sha256": "f3d429102794c0a18bd605145909c3ec54e6021b28d7d3e7e592b556a357a5f4",
+      "source_trajectory_sha256": "ec9a0d8eb5e603cfa32c0d41b485d013f4f7fc99f154a6019f3caa031b08d1d3"
+    },
+    {
+      "trajectory": "direct_goal",
+      "head_pose": "yaw_pitch",
+      "exposure_ms": 10,
+      "midpoints": 17,
+      "subsamples": 85,
+      "checked_requests": 102,
+      "maximum_quantization_error_s": 0.00033334406775731296,
+      "max_errors": {
+        "translation_error_m": 0.0,
+        "quaternion_sign_invariant_l2_error": 0.0,
+        "rotation_matrix_error": 0.0,
+        "other_body_matrix_change": 0.0,
+        "camera_state_matrix_error": 0.0,
+        "stereo_matrix_error": 3.3306690738754696e-16,
+        "serialization_matrix_error": 0.0
+      },
+      "serialized_stage": "direct_goal_yaw_pitch_e10.usda",
+      "serialized_stage_sha256": "c7eec041702be280247e8aa522062e6993afbe6438621adc36d13e1c2413d42d",
+      "source_trajectory_sha256": "ec9a0d8eb5e603cfa32c0d41b485d013f4f7fc99f154a6019f3caa031b08d1d3"
+    },
+    {
+      "trajectory": "one_bounce",
+      "head_pose": "yaw_pitch",
+      "exposure_ms": 0,
+      "midpoints": 15,
+      "subsamples": 15,
+      "checked_requests": 30,
+      "maximum_quantization_error_s": 0.0003333438777675113,
+      "max_errors": {
+        "translation_error_m": 0.0,
+        "quaternion_sign_invariant_l2_error": 1.1510677143667746e-07,
+        "rotation_matrix_error": 1.8318296923780508e-07,
+        "other_body_matrix_change": 0.0,
+        "camera_state_matrix_error": 0.0,
+        "stereo_matrix_error": 3.3306690738754696e-16,
+        "serialization_matrix_error": 0.0
+      },
+      "serialized_stage": "one_bounce_yaw_pitch_e0.usda",
+      "serialized_stage_sha256": "4b75775565603c44ad300dcfb2f8aabba3065c1423f8a634057fa9e27b6073d7",
+      "source_trajectory_sha256": "46780ba801b3240a8a196e714faaf2bdc79c71ea85b787ab187e3db6bfc1ac84"
+    },
+    {
+      "trajectory": "one_bounce",
+      "head_pose": "yaw_pitch",
+      "exposure_ms": 10,
+      "midpoints": 15,
+      "subsamples": 75,
+      "checked_requests": 90,
+      "maximum_quantization_error_s": 0.00033334406775731296,
+      "max_errors": {
+        "translation_error_m": 0.0,
+        "quaternion_sign_invariant_l2_error": 5.170012874905684e-07,
+        "rotation_matrix_error": 1.0189377333824634e-06,
+        "other_body_matrix_change": 0.0,
+        "camera_state_matrix_error": 0.0,
+        "stereo_matrix_error": 3.3306690738754696e-16,
+        "serialization_matrix_error": 0.0
+      },
+      "serialized_stage": "one_bounce_yaw_pitch_e10.usda",
+      "serialized_stage_sha256": "74379ec901f524b4d7858f82fbdb3d3ebc30918e9b66f9a36cf6aef9e248287b",
+      "source_trajectory_sha256": "46780ba801b3240a8a196e714faaf2bdc79c71ea85b787ab187e3db6bfc1ac84"
+    }
+  ],
+  "max_errors": {
+    "translation_error_m": 0.0,
+    "quaternion_sign_invariant_l2_error": 5.170012874905684e-07,
+    "rotation_matrix_error": 1.0189377333824634e-06,
+    "other_body_matrix_change": 0.0,
+    "camera_state_matrix_error": 0.0,
+    "stereo_matrix_error": 3.3306690738754696e-16,
+    "serialization_matrix_error": 0.0
+  },
+  "checked_requests": 512,
+  "condition_count": 8,
+  "trace_sha256": "2561acdd8a4c2f1d98fcd8eac84edd6320a7f93261fbadcb66cbd13e94f6f6dd",
+  "source_schedule": "60Hz centers .005+j/60 plus duration-.005 endpoint;0ms midpoint,10ms5 midpoint-quadrature subsamples",
+  "limitations": "USD acceptance proof; independent rendered/SDK image evidence is separate"
+}

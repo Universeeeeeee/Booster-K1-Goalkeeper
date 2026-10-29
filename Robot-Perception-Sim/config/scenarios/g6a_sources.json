@@ -1,0 +1,74 @@
+{
+  "source": "frozen_g4_kinematic_replay",
+  "collision_response": "disabled_no_new_physics",
+  "trajectories": {
+    "direct_goal": {
+      "path": "results/g4/physical_v2_20261029/direct_middle_center_repeat_0.json",
+      "sha256": "ec9a0d8eb5e603cfa32c0d41b485d013f4f7fc99f154a6019f3caa031b08d1d3",
+      "duration_s": 0.26400001253932714,
+      "samples": 265,
+      "source_timestep_s": 0.001,
+      "source_outcome": "Goal",
+      "source_shot": {
+        "name": "direct_middle_center",
+        "position": [
+          9,
+          0,
+          0.9
+        ],
+        "velocity": [
+          8,
+          0,
+          1.5
+        ],
+        "angular_velocity": [
+          0,
+          0,
+          0
+        ],
+        "duration": 2,
+        "seed": 0
+      }
+    },
+    "one_bounce": {
+      "path": "results/g4/physical_v2_20261029/bounce_one_repeat_0.json",
+      "sha256": "46780ba801b3240a8a196e714faaf2bdc79c71ea85b787ab187e3db6bfc1ac84",
+      "duration_s": 0.2400000113993883,
+      "samples": 241,
+      "source_timestep_s": 0.001,
+      "source_outcome": "Goal",
+      "source_shot": {
+        "name": "bounce_one",
+        "position": [
+          9,
+          0,
+          0.45
+        ],
+        "velocity": [
+          10,
+          0,
+          -2
+        ],
+        "angular_velocity": [
+          0,
+          0,
+          0
+        ],
+        "duration": 2,
+        "seed": 0
+      }
+    }
+  },
+  "head_poses_rad": {
+    "neutral": [
+      0,
+      0
+    ],
+    "yaw_pitch": [
+      0.2,
+      0.1
+    ]
+  },
+  "mount_config": "config/cameras/zedx_wide.json",
+  "ball_appearance": "frozen_g1_plain_white_no_checker_texture"
+}

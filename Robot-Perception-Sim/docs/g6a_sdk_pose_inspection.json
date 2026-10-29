@@ -1,0 +1,250 @@
+{
+  "inspection_scope": "Actual corrected SDK RGB at first target of both head poses; GT-assisted offline projection sanity check, not detector output or subpixel image-error measurement",
+  "helper_sha256": "1aa27f52eb0493bf41a7abb5f50403c8b26d4545fdf3b8f1f0c675a3beb7be12",
+  "observations": [
+    {
+      "head_pose": "neutral",
+      "receiver": "results/g6a/formal_direct_goal_neutral_e0_receiver01",
+      "sender": "results/g6a/formal_direct_goal_neutral_e0_sender01",
+      "sdk_frame_index": 24,
+      "source_visual_id": 30,
+      "source_time_s": 0.0050000002374872565,
+      "sdk_timestamp_ns": 1500000000,
+      "pair_identity_verified": true,
+      "timing_valid": true,
+      "sdk_baseline_m": 0.120000004768,
+      "sdk_calibration": {
+        "left": {
+          "fx": 370.799987793,
+          "fy": 370.799987793,
+          "cx": 480,
+          "cy": 300
+        },
+        "right": {
+          "fx": 370.799987793,
+          "fy": 370.799987793,
+          "cx": 480,
+          "cy": 300
+        }
+      },
+      "eyes": {
+        "left": {
+          "sdk_image": "results/g6a/formal_direct_goal_neutral_e0_receiver01/left/000024.png",
+          "sdk_image_sha256": "f97e0938701c7c9809d18b0a8755459e2d88d6768695f8784aaf3315364eddc8",
+          "T_world_optical": [
+            [
+              -3.3775967765958114e-07,
+              -3.3775966434834714e-07,
+              -0.9999999999998856,
+              10.294262008609897
+            ],
+            [
+              0.9999999999999422,
+              -3.973651008237759e-08,
+              -3.3775966422588243e-07,
+              -0.06000001351038517
+            ],
+            [
+              -3.973639595145077e-08,
+              -0.9999999999999422,
+              3.377596777820457e-07,
+              0.8943640162045174
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "ball_center_optical_m": [
+            0.060000436632754416,
+            -0.012988367678823387,
+            1.2542601235295994
+          ],
+          "projected_3d_center_px": [
+            497.73807582145855,
+            296.1602170981839
+          ],
+          "projected_sphere_silhouette_center_px": [
+            497.8755654468569,
+            296.1304545513273
+          ]
+        },
+        "right": {
+          "sdk_image": "results/g6a/formal_direct_goal_neutral_e0_receiver01/right/000024.png",
+          "sdk_image_sha256": "da9678fa1bc4f4fb465ca5cbc27df1110a812e96d7507491ded1bfd1f7610b1b",
+          "T_world_optical": [
+            [
+              -3.3775967765958114e-07,
+              -3.3775966434834714e-07,
+              -0.9999999999998856,
+              10.294261968078734
+            ],
+            [
+              0.9999999999999422,
+              -3.973651008237759e-08,
+              -3.3775966422588243e-07,
+              0.05999998648960783
+            ],
+            [
+              -3.973639595145077e-08,
+              -0.9999999999999422,
+              3.377596777820457e-07,
+              0.89436401143615
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "ball_center_optical_m": [
+            -0.05999956336724554,
+            -0.012988367678823387,
+            1.2542601235295976
+          ],
+          "projected_3d_center_px": [
+            462.2621823441595,
+            296.1602170981839
+          ],
+          "projected_sphere_silhouette_center_px": [
+            462.12469471982905,
+            296.1304545513273
+          ]
+        }
+      },
+      "manual_findings": [
+        "source turf is visibly green, original sphere white, field and goal visible",
+        "sphere is to the right in left image relative to right image, consistent with positive optical-X baseline",
+        "both-eye sphere neighborhoods visually agree with recorded-pose projected neighborhoods",
+        "no camera-housing blockage visible"
+      ],
+      "quantitative_image_error_px": null,
+      "inspection_limit": "visual sanity inspection; no GT-assisted detection or filled prediction"
+    },
+    {
+      "head_pose": "yaw_pitch",
+      "receiver": "results/g6a/formal_direct_goal_yaw_pitch_e0_receiver02",
+      "sender": "results/g6a/formal_direct_goal_yaw_pitch_e0_sender02",
+      "sdk_frame_index": 26,
+      "source_visual_id": 30,
+      "source_time_s": 0.0050000002374872565,
+      "sdk_timestamp_ns": 1500000000,
+      "pair_identity_verified": true,
+      "timing_valid": true,
+      "sdk_baseline_m": 0.120000004768,
+      "sdk_calibration": {
+        "left": {
+          "fx": 370.799987793,
+          "fy": 370.799987793,
+          "cx": 480,
+          "cy": 300
+        },
+        "right": {
+          "fx": 370.799987793,
+          "fy": 370.799987793,
+          "cx": 480,
+          "cy": 300
+        }
+      },
+      "eyes": {
+        "left": {
+          "sdk_image": "results/g6a/formal_direct_goal_yaw_pitch_e0_receiver02/left/000026.png",
+          "sdk_image_sha256": "5cbcd7a67240111204439fea235dd618f5be223af98925c47140567bae6a985d",
+          "T_world_optical": [
+            [
+              -0.19866965644791268,
+              0.09784307217070672,
+              -0.9751702932488592,
+              10.299591240308738
+            ],
+            [
+              0.9800665118280821,
+              0.01983374247975571,
+              -0.19767714853361876,
+              -0.08043903267176476
+            ],
+            [
+              -6.304026858818162e-08,
+              -0.9950041989295546,
+              -0.09983308125341726,
+              0.8839034140376829
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "ball_center_optical_m": [
+            0.3290777883104712,
+            -0.14497892929014525,
+            1.2100721528192526
+          ],
+          "projected_3d_center_px": [
+            580.838648012997,
+            255.5743968772597
+          ],
+          "projected_sphere_silhouette_center_px": [
+            581.6788690362334,
+            255.20422803377352
+          ]
+        },
+        "right": {
+          "sdk_image": "results/g6a/formal_direct_goal_yaw_pitch_e0_receiver02/right/000026.png",
+          "sdk_image_sha256": "af83ecb5c9ba68165e0842cbed3cdb7957ca075e3aedf74e5aaf42716317fa9f",
+          "T_world_optical": [
+            [
+              -0.19866965644791268,
+              0.09784307217070672,
+              -0.9751702932488592,
+              10.275750881534988
+            ],
+            [
+              0.9800665118280821,
+              0.01983374247975571,
+              -0.19767714853361876,
+              0.03716894874760504
+            ],
+            [
+              -6.304026858818162e-08,
+              -0.9950041989295546,
+              -0.09983308125341726,
+              0.8839034064728507
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "ball_center_optical_m": [
+            0.20907778831047108,
+            -0.14497892929014525,
+            1.2100721528192526
+          ],
+          "projected_3d_center_px": [
+            544.067288196566,
+            255.5743968772597
+          ],
+          "projected_sphere_silhouette_center_px": [
+            544.6011180674064,
+            255.20422803377352
+          ]
+        }
+      },
+      "manual_findings": [
+        "source turf is visibly green, original sphere white, field and goal visible",
+        "sphere is to the right in left image relative to right image, consistent with positive optical-X baseline",
+        "both-eye sphere neighborhoods visually agree with recorded-pose projected neighborhoods",
+        "no camera-housing blockage visible"
+      ],
+      "quantitative_image_error_px": null,
+      "inspection_limit": "visual sanity inspection; no GT-assisted detection or filled prediction"
+    }
+  ]
+}

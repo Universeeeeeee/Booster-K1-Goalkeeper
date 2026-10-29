@@ -28,7 +28,7 @@ def main():
     parser.add_argument("--port", type=int, default=30000)
     parser.add_argument("--duration", type=float, default=180)
     parser.add_argument("--network", action="store_true")
-    parser.add_argument("--acquisition-scenario", choices=("static", "ball_motion", "camera_motion", "g5_static"),
+    parser.add_argument("--acquisition-scenario", choices=("static", "ball_motion", "camera_motion", "g5_static", "g6_replay"),
                         help="Optional G3 immutable CUDA acquisition")
     parser.add_argument("--exposure-ms", type=float, default=0)
     parser.add_argument("--exposure-samples", type=int, default=3,
@@ -36,6 +36,12 @@ def main():
     parser.add_argument("--acquisition-frames", type=int, default=512)
     parser.add_argument("--g5-texture", choices=("fine_orange", "coarse_contrast"), default="fine_orange",
                         help="G5 diagnostic sphere texture; does not change the default scene")
+    parser.add_argument("--g6-scene-usd", type=Path)
+    parser.add_argument("--g6-trajectory", type=Path)
+    parser.add_argument("--g6-trajectory-name", default="replay")
+    parser.add_argument("--g6-mount-config", type=Path)
+    parser.add_argument("--g6-head-pose", choices=("neutral", "yaw_pitch"), default="neutral")
+    parser.add_argument("--g6-receiver-ready", type=Path)
     parser.add_argument("--right-shift-m", type=float, default=0.0,
                         help="Intentional right-eye extrinsic perturbation for depth-source checks")
     args, _ = parser.parse_known_args()
@@ -49,6 +55,10 @@ def main():
             or args.acquisition_frames < 1 or (args.exposure_ms and
                 (not args.acquisition_scenario or args.exposure_samples % 2 == 0))):
         parser.error("Acquisition requires a positive sample/frame count and exposure shorter than the period")
+    if args.acquisition_scenario == "g6_replay":
+        if not all(path is not None and path.is_file() for path in
+                   (args.g6_scene_usd, args.g6_trajectory, args.g6_mount_config)) or args.g6_receiver_ready is None:
+            parser.error("G6 requires frozen scene, trajectory, mount config and receiver metadata path")
     args.output.mkdir(parents=True, exist_ok=False)
 
     driver = ctypes.CDLL("libcuda.so.1", mode=ctypes.RTLD_GLOBAL)
@@ -114,8 +124,16 @@ def run_scene(app, args, should_stop):
         stage.SetDefaultPrim(root.GetPrim())
         world = World(physics_dt=1 / 120, rendering_dt=1 / args.fps,
                       stage_units_in_meters=1)
-        camera_root = stage.DefinePrim("/World/ZED", "Xform")
-        camera_root.GetReferences().AddReference(str(args.camera_usd.resolve()))
+        g6_scene = None
+        if args.acquisition_scenario == "g6_replay":
+            from acquisition.g6_scene import G6Scene
+            g6_scene = G6Scene(stage, args.g6_scene_usd, args.camera_usd,
+                               {args.g6_trajectory_name: args.g6_trajectory}, args.g6_mount_config,
+                               head_pose=args.g6_head_pose)
+            camera_root = stage.GetPrimAtPath(g6_scene.camera_root_path)
+        else:
+            camera_root = stage.DefinePrim("/World/ZED", "Xform")
+            camera_root.GetReferences().AddReference(str(args.camera_usd.resolve()))
         for _ in range(10):
             app.update()
         for prim in Usd.PrimRange(camera_root):
@@ -123,35 +141,36 @@ def run_scene(app, args, should_stop):
                 # Keep the rigid body and IMU active, with no free-fall.
                 UsdPhysics.RigidBodyAPI(prim).CreateKinematicEnabledAttr(True)
 
-        left_path = "/World/ZED/base_link/ZED_X/CameraLeft"
-        right_path = "/World/ZED/base_link/ZED_X/CameraRight"
+        left_path = g6_scene.left_camera_path if g6_scene else "/World/ZED/base_link/ZED_X/CameraLeft"
+        right_path = g6_scene.right_camera_path if g6_scene else "/World/ZED/base_link/ZED_X/CameraRight"
         for path in (left_path, right_path):
             if not stage.GetPrimAtPath(path).IsA(UsdGeom.Camera):
                 raise RuntimeError(f"Official ZED X camera prim missing: {path}")
         camera_pose = UsdGeom.XformCache().GetLocalToWorldTransform(stage.GetPrimAtPath(left_path))
 
-        # Unique face colours provide stereo texture, with a known 2 m optical depth.
-        plane = UsdGeom.Mesh.Define(stage, "/World/TexturePlane")
-        points, colours, indices = [], [], []
-        rng = np.random.default_rng(20261024)
-        for row in range(40):
-            for col in range(64):
-                size = 0.195 if args.acquisition_scenario == "g5_static" else 0.065
-                x, y = (col - 32) * size, (row - 20) * size
-                offset = len(points)
-                points.extend(Gf.Vec3f(camera_pose.Transform(Gf.Vec3d(a, b, -6.0 if args.acquisition_scenario == "g5_static" else -2.0)))
-                              for a, b in ((x, y), (x + size, y),
-                                           (x + size, y + size), (x, y + size)))
-                indices.extend(range(offset, offset + 4))
-                colour = (np.repeat(rng.uniform(0.08, 0.5), 3) if args.acquisition_scenario == "g5_static"
-                          else rng.uniform(0.08, 0.9, size=3))
-                colours.extend([Gf.Vec3f(*colour)] * 4)
-        plane.CreatePointsAttr(Vt.Vec3fArray(points))
-        plane.CreateFaceVertexCountsAttr([4] * (40 * 64))
-        plane.CreateFaceVertexIndicesAttr(indices)
-        plane.CreateDoubleSidedAttr(True)
-        plane.CreateSubdivisionSchemeAttr("none")
-        plane.CreateDisplayColorPrimvar(UsdGeom.Tokens.faceVarying).Set(colours)
+        if g6_scene is None:
+            # Unique face colours provide stereo texture, with a known 2 m optical depth.
+            plane = UsdGeom.Mesh.Define(stage, "/World/TexturePlane")
+            points, colours, indices = [], [], []
+            rng = np.random.default_rng(20261024)
+            for row in range(40):
+                for col in range(64):
+                    size = 0.195 if args.acquisition_scenario == "g5_static" else 0.065
+                    x, y = (col - 32) * size, (row - 20) * size
+                    offset = len(points)
+                    points.extend(Gf.Vec3f(camera_pose.Transform(Gf.Vec3d(a, b, -6.0 if args.acquisition_scenario == "g5_static" else -2.0)))
+                                  for a, b in ((x, y), (x + size, y),
+                                               (x + size, y + size), (x, y + size)))
+                    indices.extend(range(offset, offset + 4))
+                    colour = (np.repeat(rng.uniform(0.08, 0.5), 3) if args.acquisition_scenario == "g5_static"
+                              else rng.uniform(0.08, 0.9, size=3))
+                    colours.extend([Gf.Vec3f(*colour)] * 4)
+            plane.CreatePointsAttr(Vt.Vec3fArray(points))
+            plane.CreateFaceVertexCountsAttr([4] * (40 * 64))
+            plane.CreateFaceVertexIndicesAttr(indices)
+            plane.CreateDoubleSidedAttr(True)
+            plane.CreateSubdivisionSchemeAttr("none")
+            plane.CreateDisplayColorPrimvar(UsdGeom.Tokens.faceVarying).Set(colours)
         # Diagnostic source identity: four sentinel bits, uint16 MSB-first,
         # even parity, then two trailing sentinels, visible to both eyes.
         marker = UsdGeom.Mesh.Define(stage, "/World/FrameId")
@@ -173,8 +192,13 @@ def run_scene(app, args, should_stop):
             from acquisition.sdk_state import AcquisitionState
             if args.acquisition_scenario == "g5_static":
                 from acquisition.g5_static import StaticBallState as AcquisitionState
-            acquisition = AcquisitionState(stage, camera_root, marker, camera_pose,
-                                           left_path, right_path, args)
+            if g6_scene is not None:
+                from acquisition.g6_replay import G6ReplayState
+                acquisition = G6ReplayState(stage, camera_root, marker, camera_pose,
+                                           left_path, right_path, args, g6_scene)
+            else:
+                acquisition = AcquisitionState(stage, camera_root, marker, camera_pose,
+                                               left_path, right_path, args)
         light = UsdLux.DomeLight.Define(stage, "/World/Light")
         light.CreateIntensityAttr(1000)
 
@@ -183,7 +207,7 @@ def run_scene(app, args, should_stop):
             right.AddTranslateOp(opSuffix="source_check").Set(Gf.Vec3d(args.right_shift_m, 0, 0))
 
         world.reset()
-        annotator = ZEDAnnotator([Sdf.Path("/World/ZED")], "ZED_X", args.port,
+        annotator = ZEDAnnotator([camera_root.GetPath()], "ZED_X", args.port,
                                  "SVGA", args.fps, not args.network)
         # Stamp the paired render buffers with their own synchronization time,
         # rather than a physics-clock read that can advance before GPU delivery.
@@ -249,7 +273,7 @@ def run_scene(app, args, should_stop):
                     "gpu_requested": args.gpu, "render_gpu_requested": args.gpu if args.render_gpu_index is None else args.render_gpu_index,
                     "cuda_visible_devices": os.getenv("CUDA_VISIBLE_DEVICES"),
                     "pid": os.getpid(), "resolution": [960, 600], "configured_fps": args.fps,
-                    "physics_dt_s": 1 / 120, "plane_optical_z_m": 6.0 if args.acquisition_scenario == "g5_static" else 2.0,
+                    "physics_dt_s": 1 / 120, "plane_optical_z_m": None if g6_scene else 6.0 if args.acquisition_scenario == "g5_static" else 2.0,
                     "right_shift_m": args.right_shift_m, "cameras": calibration,
                     "sdk_depth_ingested": False, "renderer_depth_source": "renderer_gt_direct",
                     "exposure_model": "instantaneous_render_baseline", "sim2real": False}
@@ -273,6 +297,10 @@ def run_scene(app, args, should_stop):
                 centres.append([480 + calibration[side]["fx_px"] * local[0] / -local[2],
                                 300 - calibration[side]["fy_px"] * local[1] / -local[2]])
             metadata["frame_id_marker"]["pixel_centres"][side] = centres
+        if g6_scene is not None:
+            metadata["frame_id_marker"]["pixel_centres"] = acquisition.frame_marker_centres(calibration)
+            metadata["frame_id_marker"]["optical_depth_m"] = acquisition.marker_depths_m
+            metadata["frame_id_marker"]["geometry"] = "independent per-eye rendered near-clip strips"
         metadata["source_observation_method"] = "replicator_writer_same_packet_reference_and_rgb"
         metadata["render_observations_file"] = "render_observations.jsonl"
         if acquisition is not None:
@@ -282,6 +310,9 @@ def run_scene(app, args, should_stop):
             metadata["sdk_timestamp_clock_domain"] = metadata["acquisition"]["sdk_timestamp_clock_domain"]
             metadata["render_motion_blur_enabled"] = settings.get("/rtx/post/motionblur/enabled")
             metadata["renderer_depth_source"] = "not_recorded_in_g3"
+            if g6_scene is not None:
+                metadata["g6_scene"] = g6_scene.provenance()
+                metadata["target_visual_ids"] = metadata["acquisition"]["target_visual_ids"]
 
         class FrameObservationWriter(rep.Writer):
             data_structure = "renderProduct"
@@ -334,6 +365,13 @@ def run_scene(app, args, should_stop):
                                 "left": arrays["left"].copy(), "right": arrays["right"].copy()}
                 except ValueError as error:
                     observation["observation_error"] = str(error)
+                    if g6_scene is not None and self.expected_subframe is not None:
+                        folder = args.output / "diagnostic_failures"
+                        folder.mkdir(exist_ok=True)
+                        for side,path in (("left",left_path), ("right",right_path)):
+                            failed = folder / f"{side}_subframe_{self.expected_subframe:06d}.png"
+                            if not failed.exists():
+                                Image.fromarray(np.asarray(products[path]["rgb"]["data"])).save(failed)
                 except Exception as error:
                     observation["observation_error"] = str(error)
                     self.failure = str(error)
@@ -415,7 +453,7 @@ def run_scene(app, args, should_stop):
                     np.save(args.output / f"renderer_gt_depth_{index:06d}.npy",
                             np.array(gt_depth.get_data()).copy())
                 index += 1
-                period = (0.2 if args.acquisition_scenario == "g5_static" else 0.1) if prepared else 1 / args.fps
+                period = (0.2 if args.acquisition_scenario in ("g5_static", "g6_replay") else 0.1) if prepared else 1 / args.fps
                 time.sleep(max(0, period - (time.monotonic() - before)))
         (args.output / "summary.json").write_text(json.dumps(
             {"rendered_frames": index, "wall_duration_s": time.monotonic() - start,
