@@ -100,8 +100,8 @@ def capture(app, a):
     physics_dt = 1.0 / a.physics_hz
     if a.physical_steps_per_sample < 1 or abs(a.physics_hz * physics_dt - 1.0) > 1e-12:
         raise ValueError('invalid physical timing configuration')
-    if abs(a.physics_hz * a.physical_steps_per_sample - 100.0) > 1e-9:
-        raise ValueError('physical_hz * physical_steps_per_sample must equal 100 Hz sample rate')
+    if abs(a.physics_hz / a.physical_steps_per_sample - 100.0) > 1e-9:
+        raise ValueError('physics_hz / physical_steps_per_sample must equal 100 Hz sample rate')
     world = World(physics_dt=physics_dt, rendering_dt=physics_dt); world.reset(); world.play()
     for _ in range(100): world.step(render=True)
     base_simulation_s = float(world.current_time)
