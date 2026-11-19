@@ -58,7 +58,7 @@ def run(a):
     with (a.output/'timing.jsonl').open('w') as log:
         for i in range(a.frames):
             for m in markers.values():m.set(i)
-            visibility={name:str(markers[name].tiles[4].Get()) for name in markers}
+            visibility={name:str(markers[name].tiles[0][4].Get()) for name in markers}
             for attempt in range(8):
                 before_sim=float(world.current_time)-base_sim;before_t=float(timeline.get_current_time())-base_timeline;t0=time.perf_counter()
                 if a.method=='A':world.step(render=True,step_sim=False)
