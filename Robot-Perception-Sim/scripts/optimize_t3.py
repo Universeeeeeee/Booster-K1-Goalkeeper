@@ -178,7 +178,10 @@ def capture(app, a):
         for substep in range(a.physical_steps_per_sample):
             sub_time = source_time_s + substep * physics_dt
             body_op.Set(Gf.Matrix4d().SetTranslate(Gf.Vec3d(-48 + 1.5 * sub_time, -8.375, 0)))
-            b=time.perf_counter();world.step(render=(substep == a.physical_steps_per_sample - 1));tick_times.append((time.perf_counter()-b)*1000)
+            # Advance every physical substep through the Isaac render loop so
+            # Timeline advances by the full sample interval; only the final
+            # substep's published buffer is consumed below.
+            b=time.perf_counter();world.step(render=True);tick_times.append((time.perf_counter()-b)*1000)
         # The final physical substep produced the sensor sample; C1 refreshes below
         # do not advance either clock.
         nodes=hydra.get_gpu_profiler_result()
