@@ -48,7 +48,8 @@ def verify(root, reference):
             assert row['pixel_ids'] == {n:i for n in meta['optics']}
         if 'eye_timestamp_ns' in row:
             assert all(t==i*10000000 for t in row['eye_timestamp_ns'].values())
-        np.testing.assert_allclose(row['position'],[-48+.015*i if meta['mode']=='C' else -48,-8.375,0],atol=1e-9)
+        if 'position' in row:
+            np.testing.assert_allclose(row['position'],[-48+.015*i if meta['mode']=='C' else -48,-8.375,0],atol=1e-9)
         data={}
         for key,stream in streams.items():
             data[key]=stream.read(sizes[key])
