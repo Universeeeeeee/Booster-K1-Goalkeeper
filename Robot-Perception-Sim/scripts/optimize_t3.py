@@ -112,6 +112,7 @@ def capture(app, a):
     viewport_inventory = [{'name':str(v.name),'updates':v.viewport_api.updates_enabled} for v in windows.get_viewport_window_instances()]
     # Keep the prior B viewport workload; inventory it rather than changing it silently.
     streams = {}
+    timing_log = (a.output / 'timing.jsonl').open('w')
     if a.stage=='save':
         for n in annotations:
             streams[n]=(a.output/(n+'.rgb')).open('wb')
@@ -210,6 +211,7 @@ def capture(app, a):
         save_ms=(time.perf_counter()-b)*1000
         simulation_after_s = float(world.current_time) - base_simulation_s
         timeline_after_s = float(timeline.get_current_time()) - base_timeline_s
+        timing_log.write(json.dumps({'index':i,'source_time_s':source_time_s,'simulation_before_s':simulation_before_s,'simulation_after_s':simulation_after_s,'timeline_before_s':timeline_before_s,'timeline_after_s':timeline_after_s,'pixel_ids':ids})+'\n'); timing_log.flush()
         samples.append({'cast_ms':cast_ms,'id_ms':id_ms,'srgb_ms':srgb_ms,'pack_ms':pack_ms,'gpu_process_ms':gpu_process_ms,'index':i,'simulation_ns':i*10000000,'source_time_s':source_time_s,'simulation_before_s':simulation_before_s,'simulation_after_s':simulation_after_s,'timeline_before_s':timeline_before_s,'timeline_after_s':timeline_after_s,'render_ms':sum(tick_times),'ticks_ms':tick_times,
             'get_ms':(after_get-after_render)*1000,'sync_ms':sync_ms,'copy_ms':copy_ms,'color_ms':color_ms,
             'gray_ms':gray_ms,'sd_ms':sd_ms,'save_ms':save_ms,'total_ms':(time.perf_counter()-begin)*1000,
@@ -219,6 +221,7 @@ def capture(app, a):
     for future in pending:future.result()
     writer.shutdown()
     for stream in streams.values():stream.flush();os.fsync(stream.fileno());stream.close()
+    timing_log.close()
     fsync_ms=(time.perf_counter()-b)*1000
     meta.update(stage=a.stage,eyes=a.eyes,start_epoch=start,end_epoch=loop_end,fsync_ms=fsync_ms,
         elapsed_s=time.perf_counter()-begin_all,rows=samples,gpu_frametime_samples=gpu_samples,gpu_profiler_example=example,
