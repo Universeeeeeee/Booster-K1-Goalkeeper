@@ -22,7 +22,7 @@ def main():
     p.add_argument('--ticks', type=int, default=3)
     p.add_argument('--no-viewport', action='store_true')
     p.add_argument('--async-save', action='store_true')
-    p.add_argument('--clock-mode', choices=['legacy','C1'], default='legacy')
+    p.add_argument('--clock-mode', choices=['legacy','C1'], default='C1')
     a, _ = p.parse_known_args()
     a.output.mkdir(parents=True, exist_ok=False)
     import ctypes
@@ -136,6 +136,28 @@ def capture(app, a):
             wp.launch(gpu_images,(h,w),inputs=[buf,*allocated[n][:2]],device=buf.device)
             wp.launch(differences,(h,w),inputs=[allocated[n][1],allocated[n][2]],device=buf.device)
         wp.synchronize()
+    def refresh_c1(expected_id):
+        refresh_count=0; refresh_sim_deltas=[]; refresh_timeline_deltas=[]; refresh_times=[]
+        timeline.pause()
+        try:
+            for _ in range(8):
+                before_refresh_sim=float(world.current_time)-base_simulation_s
+                before_refresh_t=float(timeline.get_current_time())-base_timeline_s
+                b=time.perf_counter(); RenderingManager.render(); refresh_times.append((time.perf_counter()-b)*1000)
+                refresh_count += 1
+                refresh_sim_deltas.append(float(world.current_time)-base_simulation_s-before_refresh_sim)
+                refresh_timeline_deltas.append(float(timeline.get_current_time())-base_timeline_s-before_refresh_t)
+                probe={n:ann.get_data() for n,ann in annotations.items()}; probe_ids={}
+                for n,buf in probe.items():
+                    if a.gpu_process:
+                        rgb_gpu=allocated[n][0]; wp.launch(gpu_images,(buf.shape[0],buf.shape[1]),inputs=[buf,rgb_gpu,allocated[n][1]],device=buf.device); wp.synchronize_device(buf.device); img=rgb_gpu.numpy()
+                    else: img=buf.numpy().astype(np.float32)
+                    cells=np.array([img[y-2:y+3,x-2:x+3,:3].mean() for x,y in centres[n]]);bits=cells>(cells[0]+cells[1])/2; probe_ids[n]=int(np.dot(bits[4:20],2**np.arange(15,-1,-1)))
+                if all(v == expected_id for v in probe_ids.values()): break
+            else: raise RuntimeError(f'C1 camera frame mismatch for requested ID {expected_id}: {probe_ids}')
+        finally:
+            timeline.play()
+        return refresh_count, refresh_sim_deltas, refresh_timeline_deltas, refresh_times
     samples=[]; gpu_samples=[]; example=None
     start=time.time(); begin_all=time.perf_counter()
     for i in range(a.frames):
@@ -152,28 +174,8 @@ def capture(app, a):
         if nodes and example is None:example=nodes
         refresh_count=0; refresh_sim_deltas=[]; refresh_timeline_deltas=[]
         if a.clock_mode == 'C1' and a.stage != 'render':
-            # RenderingManager refreshes the products while the Timeline is paused.
-            # Physics has already advanced exactly once for this sensor sample.
-            for _ in range(8):
-                before_refresh_sim=float(world.current_time)-base_simulation_s
-                before_refresh_t=float(timeline.get_current_time())-base_timeline_s
-                timeline.pause(); b=time.perf_counter(); RenderingManager.render(); tick_times.append((time.perf_counter()-b)*1000); timeline.play()
-                refresh_count += 1
-                refresh_sim_deltas.append(float(world.current_time)-base_simulation_s-before_refresh_sim)
-                refresh_timeline_deltas.append(float(timeline.get_current_time())-base_timeline_s-before_refresh_t)
-                # The final image-ID check below is performed after GPU conversion.
-                # Continue flushing until the annotator has a non-stale buffer.
-                probe={n:ann.get_data() for n,ann in annotations.items()}
-                if a.gpu_process:
-                    probe_ids={}
-                    for n,buf in probe.items():
-                        rgb_gpu=allocated[n][0]; wp.launch(gpu_images,(buf.shape[0],buf.shape[1]),inputs=[buf,rgb_gpu,allocated[n][1]],device=buf.device); wp.synchronize_device(buf.device)
-                        rgb_probe=rgb_gpu.numpy(); cells=np.array([rgb_probe[y-2:y+3,x-2:x+3].mean() for x,y in centres[n]]);bits=cells>(cells[0]+cells[1])/2; probe_ids[n]=int(np.dot(bits[4:20],2**np.arange(15,-1,-1)))
-                else:
-                    probe_ids={}
-                    for n,buf in probe.items():
-                        img=buf.numpy().astype(np.float32);cells=np.array([img[y-2:y+3,x-2:x+3,:3].mean() for x,y in centres[n]]);bits=cells>(cells[0]+cells[1])/2;probe_ids[n]=int(np.dot(bits[4:20],2**np.arange(15,-1,-1)))
-                if all(v == i for v in probe_ids.values()): break
+            refresh_count, refresh_sim_deltas, refresh_timeline_deltas, refresh_times = refresh_c1(i)
+            tick_times.extend(refresh_times)
         else:
             for _ in range(a.ticks - 1):
                 b=time.perf_counter();world.step(render=True, step_sim=False);tick_times.append((time.perf_counter()-b)*1000)
@@ -185,7 +187,7 @@ def capture(app, a):
         if a.stage!='render':
             buffers={n:ann.get_data() for n,ann in annotations.items()}
             assert all(b.device.is_cuda for b in buffers.values())
-            if i == 0:
+            if i == 0 and a.clock_mode != 'C1':
                 # The first Render Product buffer can still contain the diagnostic
                 # initialization ID. Flush only the renderer; never advance physics.
                 for _ in range(20):
