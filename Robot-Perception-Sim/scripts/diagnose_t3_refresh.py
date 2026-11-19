@@ -7,7 +7,7 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument('--scene', required=True); p.add_argument('--config', required=True)
     p.add_argument('--center-config', required=True); p.add_argument('--output', type=Path, required=True)
-    p.add_argument('--method', choices=['A', 'B'], required=True); p.add_argument('--frames', type=int, default=3)
+    p.add_argument('--method', choices=['A', 'B', 'C1', 'C2'], required=True); p.add_argument('--frames', type=int, default=3)
     a, _ = p.parse_known_args(); a.output.mkdir(parents=True, exist_ok=False)
     import ctypes
     cuda=ctypes.CDLL('libcuda.so.1', mode=ctypes.RTLD_GLOBAL)
@@ -57,12 +57,18 @@ def run(a):
     rows=[]
     with (a.output/'timing.jsonl').open('w') as log:
         for i in range(a.frames):
+            if a.method in ('C1', 'C2'):
+                world.step(render=True)
             for m in markers.values():m.set(i)
             visibility={name:str(markers[name].tiles[0][4].Get()) for name in markers}
             for attempt in range(8):
                 before_sim=float(world.current_time)-base_sim;before_t=float(timeline.get_current_time())-base_timeline;t0=time.perf_counter()
-                if a.method=='A':world.step(render=True,step_sim=False)
-                else:RenderingManager.render()
+                if a.method=='A':
+                    world.step(render=True,step_sim=False)
+                elif a.method=='B' or a.method=='C2':
+                    RenderingManager.render()
+                else:
+                    timeline.pause(); RenderingManager.render(); timeline.play()
                 render_ms=(time.perf_counter()-t0)*1000;gpu=hydra.get_gpu_profiler_result()
                 decoded={};checksums={}
                 for name,ann in anns.items():
