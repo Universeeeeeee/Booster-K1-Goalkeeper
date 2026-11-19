@@ -48,7 +48,6 @@ def capture(app, a):
     import omni.replicator.core as rep
     from omni.replicator.core.scripts.utils import viewport_manager
     from isaacsim.core.api import World
-    from isaacsim.core.rendering_manager import RenderingManager
     import omni.timeline
     from pxr import Gf, Sdf, UsdGeom
     sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'acquisition'))
@@ -150,7 +149,7 @@ def capture(app, a):
         gpu_samples.append([sum(n.get('duration',0) for n in dev if n.get('indent',0)==0) for dev in nodes])
         if nodes and example is None:example=nodes
         for _ in range(a.ticks - 1):
-            b=time.perf_counter();RenderingManager.render();tick_times.append((time.perf_counter()-b)*1000)
+            b=time.perf_counter();world.step(render=True, step_sim=False);tick_times.append((time.perf_counter()-b)*1000)
             nodes=hydra.get_gpu_profiler_result()
             gpu_samples.append([sum(n.get('duration',0) for n in dev if n.get('indent',0)==0) for dev in nodes])
             if nodes and example is None:example=nodes
