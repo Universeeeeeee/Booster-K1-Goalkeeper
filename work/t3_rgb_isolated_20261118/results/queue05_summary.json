@@ -1,0 +1,56 @@
+{
+  "none": {
+    "producer_fps": 54.69711825474662,
+    "completed_jobs_fps": 54.838799317628315,
+    "fps_with_fsync": 54.65509690003792,
+    "pending_peak": 1,
+    "pending_p95": 1.0,
+    "pending_final": 0,
+    "future_wait_s": 0.0,
+    "note": "future wait includes waiting on already-complete futures; not evidence queue actually filled",
+    "phases_s": {
+      "initialization": 13.069707225076854,
+      "scene_setup": 11.35289443610236,
+      "render_warmup": 1.328888339921832,
+      "production": 21.938998585101217,
+      "drain": 0.01677221292629838,
+      "fsync": 8.865725249052048e-05
+    }
+  },
+  "sync": {
+    "producer_fps": 51.37866421414507,
+    "completed_jobs_fps": 51.500679899530034,
+    "fps_with_fsync": 47.94050126790999,
+    "pending_peak": 1,
+    "pending_p95": 1.0,
+    "pending_final": 0,
+    "future_wait_s": 0.0,
+    "note": "future wait includes waiting on already-complete futures; not evidence queue actually filled",
+    "phases_s": {
+      "initialization": 12.744036810938269,
+      "scene_setup": 11.357150000985712,
+      "render_warmup": 1.2680922970175743,
+      "production": 23.355998415965587,
+      "drain": 0.015974995214492083,
+      "fsync": 1.6590518550947309
+    }
+  },
+  "async": {
+    "producer_fps": 57.86213381890306,
+    "completed_jobs_fps": 58.012600264745195,
+    "fps_with_fsync": 54.414247058696965,
+    "pending_peak": 2,
+    "pending_p95": 1.0,
+    "pending_final": 0,
+    "future_wait_s": 0.016585580073297024,
+    "note": "future wait includes waiting on already-complete futures; not evidence queue actually filled",
+    "phases_s": {
+      "initialization": 12.715382413007319,
+      "scene_setup": 11.288942613173276,
+      "render_warmup": 1.3631770457141101,
+      "production": 20.73895172541961,
+      "drain": 0.022571361623704433,
+      "fsync": 1.29152250289917
+    }
+  }
+}

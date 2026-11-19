@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "sensor": "t3_center_rgb",
+  "width": 800,
+  "height": 600,
+  "fps": 100,
+  "hfov_deg": 75.26089475706351,
+  "vfov_deg": 60.07411310339026,
+  "fx": 518.84,
+  "fy": 518.84,
+  "cx": 400,
+  "cy": 300,
+  "calibration_status": "user_confirmed_candidate_intrinsics_not_measured",
+  "resolution_mode": "centered_ROI_crop",
+  "distortion": "unmodeled",
+  "exposure_ms": 0,
+  "pixel_format": "rgb8",
+  "hardware_mode_verified": false,
+  "native_resolution": [
+    1600,
+    1200
+  ],
+  "native_K": [
+    [
+      518.84,
+      0,
+      800
+    ],
+    [
+      0,
+      518.84,
+      600
+    ],
+    [
+      0,
+      0,
+      1
+    ]
+  ],
+  "roi_xywh": [
+    400,
+    300,
+    800,
+    600
+  ],
+  "focal_length_mm": 1.79
+}

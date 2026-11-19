@@ -1,0 +1,18 @@
+{
+  "bytes": 8640000000,
+  "block_bytes": 1440000,
+  "seconds_with_fsync": 19.803819933906198,
+  "MBps": 436.2794667309322,
+  "first600_MBps": 1850.601038511822,
+  "write_p95_ms": 0.981493853032589,
+  "fsync_s": 14.99249392002821,
+  "readback_s": 9.938634479884058,
+  "all_blocks_verified": true,
+  "one_second_MB": [
+    1900.8,
+    2037.6,
+    1830.24,
+    1622.88
+  ],
+  "scope": "8.64GB sequential buffered writes; includes fsync, not per-write durability or indefinite guarantee"
+}

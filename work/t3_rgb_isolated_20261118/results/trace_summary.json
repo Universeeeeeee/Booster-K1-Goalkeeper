@@ -1,0 +1,51 @@
+{
+  "window_ns": [
+    28567366828,
+    60201739586
+  ],
+  "gpu": {
+    "RTX Rendering": {
+      "count": 1419,
+      "mean_ms": 4.573882587033122,
+      "p95_ms": 4.709906
+    },
+    "DLSS RenderOp": {
+      "count": 1419,
+      "mean_ms": 0.9707364778012685,
+      "p95_ms": 1.021572
+    },
+    "Path Tracing": {
+      "count": 1419,
+      "mean_ms": 0.627221652572234,
+      "p95_ms": 0.649697
+    },
+    "RTX Render Tile": {
+      "count": 1419,
+      "mean_ms": 2.7511893354474983,
+      "p95_ms": 2.849545
+    }
+  },
+  "cpu": {
+    "waitForLastSubmission": {
+      "count": 5676,
+      "mean_ms": 0.08739908350951374,
+      "p95_ms": 0.197982
+    },
+    "waitUntilDone": {
+      "count": 2838,
+      "mean_ms": 0.0018261268498942918,
+      "p95_ms": 0.002694
+    },
+    "PostRenderGraphDef::doUpdateRenderProduct": {
+      "count": 1419,
+      "mean_ms": 0.15256958844256518,
+      "p95_ms": 0.174441
+    },
+    "App Main loop": {
+      "count": 1419,
+      "mean_ms": 18.171386770260746,
+      "p95_ms": 21.360714
+    }
+  },
+  "scope": "first200 RTX frames excluded; CPU/GPU timestamp alignment assumes Tracy clock correlation; nested durations not additive"
+}
