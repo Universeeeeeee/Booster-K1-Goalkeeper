@@ -103,6 +103,13 @@ def capture(app, a):
     if abs(a.physics_hz / a.physical_steps_per_sample - 100.0) > 1e-9:
         raise ValueError('physics_hz / physical_steps_per_sample must equal 100 Hz sample rate')
     world = World(physics_dt=physics_dt, rendering_dt=physics_dt); world.reset(); world.play()
+    # Keep the timeline horizon beyond the requested sensor capture.  At 800 Hz
+    # the timeline advances on every physical substep, so the old scene end time
+    # can be reached before a 10 s, 100 Hz sensor run completes.
+    stage.SetStartTimeCode(0)
+    stage.SetEndTimeCode((a.frames / 100.0 + 1.0) * a.physics_hz)
+    timeline.set_end_time(a.frames / 100.0 + 1.0)
+    timeline.set_looping(False)
     for _ in range(100): world.step(render=True)
     base_simulation_s = float(world.current_time)
     base_timeline_s = float(timeline.get_current_time())
