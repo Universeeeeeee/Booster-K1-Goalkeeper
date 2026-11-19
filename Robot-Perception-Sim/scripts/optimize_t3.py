@@ -158,6 +158,12 @@ def capture(app, a):
         if a.stage!='render':
             buffers={n:ann.get_data() for n,ann in annotations.items()}
             assert all(b.device.is_cuda for b in buffers.values())
+            if i == 0:
+                # The first Render Product buffer can still contain the diagnostic
+                # initialization ID. Flush only the renderer; never advance physics.
+                for _ in range(3):
+                    world.step(render=True, step_sim=False)
+                buffers={n:ann.get_data() for n,ann in annotations.items()}
         after_get=time.perf_counter()
         if a.stage in ['cpu','sync_copy','sd','save'] and not a.gpu_process:
             if a.stage=='sync_copy':
