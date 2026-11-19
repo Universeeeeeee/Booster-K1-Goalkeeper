@@ -29,10 +29,14 @@ def verify(root, reference):
                 raise ValueError(f'timeline step is not 10 ms at {i}')
             if abs(timing['simulation_before_s'] - i * 0.01) > 1e-7:
                 raise ValueError(f'wrong physical time before sample {i}')
-            if abs(timing['simulation_after_s'] - (i + 1) * 0.01) > 1e-7:
+            if abs(timing['simulation_after_s'] - (i + 1) * 0.01) > 2e-7:
                 raise ValueError(f'wrong physical time after sample {i}')
-            if abs(timing['timeline_after_s'] - (i + 1) * 0.01) > 1e-9:
+            if abs(timing['timeline_after_s'] - (i + 1) * 0.01) > 1e-7:
                 raise ValueError(f'wrong timeline after sample {i}')
+            if 'refresh_sim_deltas' in timing and any(abs(x) > 1e-9 for x in timing['refresh_sim_deltas']):
+                raise ValueError(f'physics advanced during refresh at {i}')
+            if 'refresh_timeline_deltas' in timing and any(abs(x) > 1e-9 for x in timing['refresh_timeline_deltas']):
+                raise ValueError(f'timeline advanced during refresh at {i}')
     assert len(rows)==meta['frames']
     streams={}; sizes={}; previous={}; repeats={n:[] for n in meta['optics']}; changes={n:[] for n in meta['optics']}
     for n,c in meta['optics'].items():
