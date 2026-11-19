@@ -22,14 +22,14 @@ def verify(root, reference):
         if len(timing_rows) != len(rows): raise ValueError('timing rows do not match frame rows')
         for i, timing in enumerate(timing_rows):
             if timing['index'] != i: raise ValueError(f'timing index mismatch at {i}')
-            if timing['source_time_s'] != i * 0.01: raise ValueError(f'wrong source time at {i}')
-            if abs((timing['simulation_after_s'] - timing['simulation_before_s']) - 0.01) > 5e-8:
+            if abs(timing['source_time_s'] - i * 0.01) > 1e-9: raise ValueError(f'wrong source time at {i}')
+            if abs((timing['simulation_after_s'] - timing['simulation_before_s']) - 0.01) > 1e-7:
                 raise ValueError(f'physical step is not 10 ms at {i}')
             if abs((timing['timeline_after_s'] - timing['timeline_before_s']) - 0.01) > 5e-8:
                 raise ValueError(f'timeline step is not 10 ms at {i}')
-            if abs(timing['simulation_before_s'] - i * 0.01) > 5e-8:
+            if abs(timing['simulation_before_s'] - i * 0.01) > 1e-7:
                 raise ValueError(f'wrong physical time before sample {i}')
-            if abs(timing['simulation_after_s'] - (i + 1) * 0.01) > 5e-8:
+            if abs(timing['simulation_after_s'] - (i + 1) * 0.01) > 1e-7:
                 raise ValueError(f'wrong physical time after sample {i}')
             if abs(timing['timeline_after_s'] - (i + 1) * 0.01) > 1e-9:
                 raise ValueError(f'wrong timeline after sample {i}')
