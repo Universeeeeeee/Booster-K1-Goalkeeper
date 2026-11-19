@@ -10,8 +10,12 @@ import numpy as np
 def verify(root, reference):
     spec=importlib.util.spec_from_file_location('supplied_reference',reference)
     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
-    meta=json.loads((root/'metadata.json').read_text())
-    rows=[json.loads(x) for x in (root/'frames.jsonl').read_text().splitlines()]
+    profile_path = root / 'profile.json'
+    meta=json.loads(profile_path.read_text()) if profile_path.exists() else json.loads((root/'metadata.json').read_text())
+    rows=meta.get('rows')
+    if rows is None:
+        rows=[json.loads(x) for x in (root/'frames.jsonl').read_text().splitlines()]
+    if len(rows) != meta['frames']: raise ValueError('profile frame count mismatch')
     timing_path = root / 'timing.jsonl'
     timing_rows = [json.loads(x) for x in timing_path.read_text().splitlines()] if timing_path.exists() else []
     if timing_path.exists():
@@ -40,11 +44,16 @@ def verify(root, reference):
                 assert (root/(n+'.'+suffix)).stat().st_size==size*len(rows)
     for i,row in enumerate(rows):
         assert row['index']==i and row['simulation_ns']==i*10000000
+        if 'pixel_ids' in row:
+            assert row['pixel_ids'] == {n:i for n in meta['optics']}
         assert all(t==i*10000000 for t in row['eye_timestamp_ns'].values())
         np.testing.assert_allclose(row['position'],[-48+.015*i if meta['mode']=='C' else -48,-8.375,0],atol=1e-9)
         data={}
         for key,stream in streams.items():
-            data[key]=stream.read(sizes[key]);assert hashlib.sha256(data[key]).hexdigest()==row['hashes'][key]
+            data[key]=stream.read(sizes[key])
+            expected_hash = row.get('hashes', {}).get(key)
+            if expected_hash is None: raise ValueError(f'missing saved hash for {key} frame {i}')
+            assert hashlib.sha256(data[key]).hexdigest()==expected_hash
         for n,c in meta['optics'].items():
             w,h=c['resolution'];img=np.frombuffer(data[n],np.uint8).reshape(h,w,3)
             cells=np.array([img[y-2:y+3,x-2:x+3].mean() for x,y in meta['centres'][n]])
@@ -73,6 +82,7 @@ def verify(root, reference):
         'scene_frame_mae_percentiles':{n:np.percentile(v,[0,50,95,99,100]).tolist() for n,v in changes.items()},
         'timings_ms':timings,'throughput_pairs_s':len(rows)/meta['elapsed_s'],'rtf':len(rows)/100/meta['elapsed_s'],
         'timing_rows_verified': bool(timing_path.exists()),
+        'profile_verified': profile_path.exists(),
         'scope':'pixel identity, saved data, SD arithmetic, authored motion and single-clock timing when timing.jsonl exists; ghosting/flicker require separate image review'}
     if meta['mode']=='C':assert not any(repeats.values()),repeats
     (root/'verification.json').write_text(json.dumps(result,indent=2));return result
