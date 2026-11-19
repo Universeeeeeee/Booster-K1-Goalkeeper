@@ -1,0 +1,208 @@
+{
+  "A": {
+    "mode": "A",
+    "verified_frames": 1000,
+    "sampling_hz": 100,
+    "interval_ms": 10,
+    "capture_duration_s": 10.0,
+    "first_last_timestamp_span_s": 9.99,
+    "eye_timestamp_difference_ns": 0,
+    "missing_pixel_ids": 0,
+    "sd_matches_supplied_numpy": false,
+    "scene_exact_repeat_indices": {
+      "CenterRGB": [],
+      "Left": [],
+      "Right": []
+    },
+    "scene_frame_mae_percentiles": {
+      "CenterRGB": [
+        0.34374444444444446,
+        0.4021314814814815,
+        0.44928962962962965,
+        0.467334074074074,
+        0.4901
+      ],
+      "Left": [
+        0.24962582236842104,
+        0.2974657346491228,
+        0.3413554002192982,
+        0.3611687591374269,
+        0.37602704678362575
+      ],
+      "Right": [
+        0.25959110014619885,
+        0.3096294773391813,
+        0.34948437499999996,
+        0.36924171235380115,
+        0.37896838450292397
+      ]
+    },
+    "timings_ms": {
+      "render_read_ms": {
+        "mean": 135.603422222659,
+        "max": 168.212512973696
+      },
+      "gray_ms": {
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "sd_ms": {
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "process_ms": {
+        "mean": 53.809862406458706,
+        "max": 65.0769486092031
+      },
+      "total_ms": {
+        "mean": 200.18726735375822,
+        "max": 237.1020531281829
+      }
+    },
+    "throughput_pairs_s": 4.99115424770168,
+    "rtf": 0.049911542477016804,
+    "scope": "pixel identity, saved data, SD arithmetic, authored motion; ghosting/flicker require separate image review"
+  },
+  "B": {
+    "mode": "B",
+    "verified_frames": 1000,
+    "sampling_hz": 100,
+    "interval_ms": 10,
+    "capture_duration_s": 10.0,
+    "first_last_timestamp_span_s": 9.99,
+    "eye_timestamp_difference_ns": 0,
+    "missing_pixel_ids": 0,
+    "sd_matches_supplied_numpy": true,
+    "scene_exact_repeat_indices": {
+      "CenterRGB": [],
+      "Left": [],
+      "Right": []
+    },
+    "scene_frame_mae_percentiles": {
+      "CenterRGB": [
+        0.34514814814814815,
+        0.40189814814814817,
+        0.4499431481481482,
+        0.467623037037037,
+        0.49928518518518517
+      ],
+      "Left": [
+        0.25329906798245616,
+        0.3013235562865497,
+        0.3455136147660818,
+        0.36385175438596484,
+        0.3951078216374269
+      ],
+      "Right": [
+        0.2633333333333333,
+        0.31050073099415204,
+        0.3500218384502924,
+        0.3673877649853801,
+        0.3756377923976608
+      ]
+    },
+    "timings_ms": {
+      "render_read_ms": {
+        "mean": 144.75672008423135,
+        "max": 246.73373997211456
+      },
+      "gray_ms": {
+        "mean": 7.722813795786351,
+        "max": 12.42503197863698
+      },
+      "sd_ms": {
+        "mean": 1.565010934136808,
+        "max": 3.8944552652537823
+      },
+      "process_ms": {
+        "mean": 71.99397548427805,
+        "max": 111.8076741695404
+      },
+      "total_ms": {
+        "mean": 243.32444189861417,
+        "max": 368.7224630266428
+      }
+    },
+    "throughput_pairs_s": 4.053291080962095,
+    "rtf": 0.04053291080962095,
+    "scope": "pixel identity, saved data, SD arithmetic, authored motion; ghosting/flicker require separate image review"
+  },
+  "C": {
+    "mode": "C",
+    "verified_frames": 1000,
+    "sampling_hz": 100,
+    "interval_ms": 10,
+    "capture_duration_s": 10.0,
+    "first_last_timestamp_span_s": 9.99,
+    "eye_timestamp_difference_ns": 0,
+    "missing_pixel_ids": 0,
+    "sd_matches_supplied_numpy": true,
+    "scene_exact_repeat_indices": {
+      "CenterRGB": [],
+      "Left": [],
+      "Right": []
+    },
+    "scene_frame_mae_percentiles": {
+      "CenterRGB": [
+        0.6639712962962963,
+        1.0457898148148148,
+        1.1617003703703703,
+        1.2121108148148148,
+        1.2777712962962964
+      ],
+      "Left": [
+        1.2666675804093568,
+        1.4489798062865498,
+        1.6181760325292396,
+        1.6926107821637426,
+        1.7675831505847954
+      ],
+      "Right": [
+        1.2827882858187134,
+        1.4500904605263158,
+        1.621470760233918,
+        1.7002780610380117,
+        1.7678837719298246
+      ]
+    },
+    "timings_ms": {
+      "render_read_ms": {
+        "mean": 136.74241210147738,
+        "max": 161.60430014133453
+      },
+      "gray_ms": {
+        "mean": 6.286942744627595,
+        "max": 9.442798793315887
+      },
+      "sd_ms": {
+        "mean": 1.457731253001839,
+        "max": 3.036823123693466
+      },
+      "process_ms": {
+        "mean": 63.71553039224818,
+        "max": 82.3229979723692
+      },
+      "total_ms": {
+        "mean": 225.4937767055817,
+        "max": 278.7621868774295
+      }
+    },
+    "throughput_pairs_s": 4.363440677461268,
+    "rtf": 0.04363440677461268,
+    "scope": "pixel identity, saved data, SD arithmetic, authored motion; ghosting/flicker require separate image review"
+  },
+  "limitations": [
+    "100 Hz is explicit sensor/source sampling, not renderer or wall-clock throughput; same-state flush ticks are separately recorded.",
+    "1000 samples cover [0,10) seconds; first-last timestamp difference is 9.99 seconds.",
+    "Scene-linear HDR with fixed gain and clipped linear uint8 grayscale; not hardware multi-exposure HDR.",
+    "DLSS temporal reconstruction enabled. Four inspected dynamic frames show no obvious large ghosting; full absence of local ghosting/flicker is not established.",
+    "Candidate distortion, not measured hardware calibration."
+  ],
+  "remote_raw_root": "/var/tmp/lizhengran-t3-abc-20261118",
+  "visual_review_frames": [
+    100,
+    101,
+    500,
+    501
+  ]
+}

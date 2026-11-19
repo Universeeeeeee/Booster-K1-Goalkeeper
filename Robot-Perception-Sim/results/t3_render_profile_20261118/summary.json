@@ -1,0 +1,993 @@
+{
+  "profile2_2_cpu": {
+    "samples": 300,
+    "ms": {
+      "render_ms": {
+        "mean": 48.58831432337562,
+        "p95": 53.833233402110636,
+        "max": 71.88642164692283
+      },
+      "get_ms": {
+        "mean": 1.0920409206300974,
+        "p95": 1.1804710607975724,
+        "max": 2.0847879350185394
+      },
+      "sync_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "copy_ms": {
+        "mean": 1.5857245695466797,
+        "p95": 1.6108032548800113,
+        "max": 5.454204045236111
+      },
+      "color_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "gray_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "sd_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "save_ms": {
+        "mean": 0.0007290889819463094,
+        "p95": 0.0010173534974455833,
+        "max": 0.0024028122425079346
+      },
+      "total_ms": {
+        "mean": 52.76646224626651,
+        "p95": 57.964695477858186,
+        "max": 76.6650759615004
+      }
+    },
+    "tick_ms": {
+      "mean": 16.19610477445854,
+      "p95": 18.87493347749114,
+      "max": 32.300153747200966
+    },
+    "gpu_rtx_tick_ms": {
+      "mean": 7.645464711111111,
+      "p95": 7.832740799999999,
+      "max": 10.77408
+    },
+    "gpu_util_pct": {
+      "mean": 36.50632911392405,
+      "p95": 40.099999999999994,
+      "max": 41.0
+    },
+    "util_samples": 79,
+    "fsync_ms": 0.0023068860173225403,
+    "products": [
+      "/Render/OmniverseKit/HydraTextures/ABCLeft",
+      "/Render/OmniverseKit/HydraTextures/ABCRight",
+      "/Render/OmniverseKit/HydraTextures/omni_kit_widget_viewport_ViewportTexture_0"
+    ],
+    "buffer_devices": {
+      "Left": "cuda:0",
+      "Right": "cuda:0"
+    }
+  },
+  "profile2_2_gpu": {
+    "samples": 300,
+    "ms": {
+      "render_ms": {
+        "mean": 46.66104396494726,
+        "p95": 51.342010451480746,
+        "max": 53.93267888575792
+      },
+      "get_ms": {
+        "mean": 1.0621382342651486,
+        "p95": 1.148084201849997,
+        "max": 2.334082033485174
+      },
+      "sync_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "copy_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "color_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "gray_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "sd_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "save_ms": {
+        "mean": 0.0005543821801741918,
+        "p95": 0.0008027534931898119,
+        "max": 0.0009699724614620209
+      },
+      "total_ms": {
+        "mean": 49.17303930347165,
+        "p95": 54.2953192954883,
+        "max": 56.74612428992987
+      }
+    },
+    "tick_ms": {
+      "mean": 15.553681321649087,
+      "p95": 17.392261186614633,
+      "max": 22.33197307214141
+    },
+    "gpu_rtx_tick_ms": {
+      "mean": 7.426953884444445,
+      "p95": 7.563235199999999,
+      "max": 10.430463999999999
+    },
+    "gpu_util_pct": {
+      "mean": 40.75675675675676,
+      "p95": 44.0,
+      "max": 44.0
+    },
+    "util_samples": 74,
+    "fsync_ms": 0.004167202860116959,
+    "products": [
+      "/Render/OmniverseKit/HydraTextures/ABCLeft",
+      "/Render/OmniverseKit/HydraTextures/ABCRight",
+      "/Render/OmniverseKit/HydraTextures/omni_kit_widget_viewport_ViewportTexture_0"
+    ],
+    "buffer_devices": {
+      "Left": "cuda:0",
+      "Right": "cuda:0"
+    }
+  },
+  "profile2_2_render": {
+    "samples": 300,
+    "ms": {
+      "render_ms": {
+        "mean": 45.87197018476824,
+        "p95": 55.18545901868493,
+        "max": 76.16768311709166
+      },
+      "get_ms": {
+        "mean": 0.0020272936671972275,
+        "p95": 0.0027494039386510858,
+        "max": 0.009544659405946732
+      },
+      "sync_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "copy_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "color_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "gray_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "sd_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "save_ms": {
+        "mean": 0.0006629961232344309,
+        "p95": 0.0009848037734627726,
+        "max": 0.003293156623840332
+      },
+      "total_ms": {
+        "mean": 47.4511255742982,
+        "p95": 56.55312843155117,
+        "max": 78.12620513141155
+      }
+    },
+    "tick_ms": {
+      "mean": 15.29065672825608,
+      "p95": 19.22528347931802,
+      "max": 30.807805247604847
+    },
+    "gpu_rtx_tick_ms": {
+      "mean": 7.414647004444444,
+      "p95": 7.743224,
+      "max": 9.996416
+    },
+    "gpu_util_pct": {
+      "mean": 35.436619718309856,
+      "p95": 43.0,
+      "max": 43.0
+    },
+    "util_samples": 71,
+    "fsync_ms": 0.007363967597484589,
+    "products": [
+      "/Render/OmniverseKit/HydraTextures/ABCLeft",
+      "/Render/OmniverseKit/HydraTextures/ABCRight",
+      "/Render/OmniverseKit/HydraTextures/omni_kit_widget_viewport_ViewportTexture_0"
+    ],
+    "buffer_devices": {}
+  },
+  "profile2_2_save": {
+    "samples": 300,
+    "ms": {
+      "render_ms": {
+        "mean": 55.13807796873152,
+        "p95": 63.243418443016715,
+        "max": 77.71705044433475
+      },
+      "get_ms": {
+        "mean": 1.0955495185529192,
+        "p95": 1.2060277396813037,
+        "max": 2.2140881046652794
+      },
+      "sync_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "copy_ms": {
+        "mean": 1.6025235410779715,
+        "p95": 1.8748278729617596,
+        "max": 4.567037336528301
+      },
+      "color_ms": {
+        "mean": 58.003798335169755,
+        "p95": 60.45809802599251,
+        "max": 73.41112894937396
+      },
+      "gray_ms": {
+        "mean": 6.3593737843136,
+        "p95": 6.750993267633022,
+        "max": 9.895964991301298
+      },
+      "sd_ms": {
+        "mean": 1.4662151675050457,
+        "p95": 1.6740859020501375,
+        "max": 2.2979332134127617
+      },
+      "save_ms": {
+        "mean": 22.228393329617877,
+        "p95": 23.203616263344884,
+        "max": 59.25122927874327
+      },
+      "total_ms": {
+        "mean": 149.53909289867929,
+        "p95": 162.23560466896743,
+        "max": 191.88877986744046
+      }
+    },
+    "tick_ms": {
+      "mean": 18.379359322910506,
+      "p95": 22.782424138858914,
+      "max": 31.468073837459087
+    },
+    "gpu_rtx_tick_ms": {
+      "mean": 7.8458952177777785,
+      "p95": 8.140313599999999,
+      "max": 11.014816
+    },
+    "gpu_util_pct": {
+      "mean": 14.075892857142858,
+      "p95": 20.0,
+      "max": 41.0
+    },
+    "util_samples": 224,
+    "fsync_ms": 2328.786680009216,
+    "products": [
+      "/Render/OmniverseKit/HydraTextures/ABCLeft",
+      "/Render/OmniverseKit/HydraTextures/ABCRight",
+      "/Render/OmniverseKit/HydraTextures/omni_kit_widget_viewport_ViewportTexture_0"
+    ],
+    "buffer_devices": {
+      "Left": "cuda:0",
+      "Right": "cuda:0"
+    }
+  },
+  "profile2_2_sd": {
+    "samples": 300,
+    "ms": {
+      "render_ms": {
+        "mean": 53.26453347535183,
+        "p95": 59.000773821026094,
+        "max": 76.39148971065879
+      },
+      "get_ms": {
+        "mean": 1.0824342087532084,
+        "p95": 1.1943566845729947,
+        "max": 1.4193370006978512
+      },
+      "sync_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "copy_ms": {
+        "mean": 1.6006165696308017,
+        "p95": 1.696749567054212,
+        "max": 4.534716252237558
+      },
+      "color_ms": {
+        "mean": 57.6510439425086,
+        "p95": 59.76902588736266,
+        "max": 81.24119322746992
+      },
+      "gray_ms": {
+        "mean": 6.318770870566368,
+        "p95": 6.544959801249206,
+        "max": 9.658935014158487
+      },
+      "sd_ms": {
+        "mean": 1.4793485791111987,
+        "p95": 1.7682038014754653,
+        "max": 2.3966487497091293
+      },
+      "save_ms": {
+        "mean": 0.0016239207858840625,
+        "p95": 0.0021214131265878677,
+        "max": 0.008458271622657776
+      },
+      "total_ms": {
+        "mean": 124.93320250107597,
+        "p95": 136.0620616935194,
+        "max": 159.5925698056817
+      }
+    },
+    "tick_ms": {
+      "mean": 17.754844491783942,
+      "p95": 21.28668532241135,
+      "max": 35.11225990951061
+    },
+    "gpu_rtx_tick_ms": {
+      "mean": 7.860295075555555,
+      "p95": 8.1192112,
+      "max": 11.211295999999999
+    },
+    "gpu_util_pct": {
+      "mean": 17.197860962566846,
+      "p95": 20.0,
+      "max": 43.0
+    },
+    "util_samples": 187,
+    "fsync_ms": 0.007980037480592728,
+    "products": [
+      "/Render/OmniverseKit/HydraTextures/ABCLeft",
+      "/Render/OmniverseKit/HydraTextures/ABCRight",
+      "/Render/OmniverseKit/HydraTextures/omni_kit_widget_viewport_ViewportTexture_0"
+    ],
+    "buffer_devices": {
+      "Left": "cuda:0",
+      "Right": "cuda:0"
+    }
+  },
+  "profile2_2_sync_copy": {
+    "samples": 300,
+    "ms": {
+      "render_ms": {
+        "mean": 51.281040869653225,
+        "p95": 58.99445170070977,
+        "max": 76.6998534090817
+      },
+      "get_ms": {
+        "mean": 1.1251796316355467,
+        "p95": 1.3124056858941913,
+        "max": 1.64456432685256
+      },
+      "sync_ms": {
+        "mean": 4.16227084894975,
+        "p95": 4.481941717676818,
+        "max": 4.545252770185471
+      },
+      "copy_ms": {
+        "mean": 1.5733427414670587,
+        "p95": 1.7677424708381304,
+        "max": 4.497660789638758
+      },
+      "color_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "gray_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "sd_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "save_ms": {
+        "mean": 0.0007203919813036919,
+        "p95": 0.0010977266356348991,
+        "max": 0.0021299347281455994
+      },
+      "total_ms": {
+        "mean": 59.715686263516545,
+        "p95": 67.79778976924717,
+        "max": 82.51535799354315
+      }
+    },
+    "tick_ms": {
+      "mean": 17.093680289884407,
+      "p95": 21.648700628429644,
+      "max": 26.842404156923294
+    },
+    "gpu_rtx_tick_ms": {
+      "mean": 7.779065706666667,
+      "p95": 8.1983952,
+      "max": 10.695776
+    },
+    "gpu_util_pct": {
+      "mean": 35.02247191011236,
+      "p95": 40.0,
+      "max": 40.0
+    },
+    "util_samples": 89,
+    "fsync_ms": 0.0035320408642292023,
+    "products": [
+      "/Render/OmniverseKit/HydraTextures/ABCLeft",
+      "/Render/OmniverseKit/HydraTextures/ABCRight",
+      "/Render/OmniverseKit/HydraTextures/omni_kit_widget_viewport_ViewportTexture_0"
+    ],
+    "buffer_devices": {
+      "Left": "cuda:0",
+      "Right": "cuda:0"
+    }
+  },
+  "profile2_3_cpu": {
+    "samples": 300,
+    "ms": {
+      "render_ms": {
+        "mean": 57.03684387728572,
+        "p95": 61.63685219362379,
+        "max": 68.12274875119328
+      },
+      "get_ms": {
+        "mean": 1.5144741395488381,
+        "p95": 1.5606055734679103,
+        "max": 3.08558763936162
+      },
+      "sync_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "copy_ms": {
+        "mean": 1.9812181638553739,
+        "p95": 2.0283705787733197,
+        "max": 5.3421203047037125
+      },
+      "color_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "gray_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "sd_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "save_ms": {
+        "mean": 0.0007192837074398994,
+        "p95": 0.000981288030743599,
+        "max": 0.001271720975637436
+      },
+      "total_ms": {
+        "mean": 62.5418150316303,
+        "p95": 67.88868850562723,
+        "max": 73.2254977338016
+      }
+    },
+    "tick_ms": {
+      "mean": 19.012281292428572,
+      "p95": 20.953618874773383,
+      "max": 28.196264058351517
+    },
+    "gpu_rtx_tick_ms": {
+      "mean": 10.095873173333334,
+      "p95": 10.2628416,
+      "max": 13.599072
+    },
+    "gpu_util_pct": {
+      "mean": 42.10752688172043,
+      "p95": 45.0,
+      "max": 49.0
+    },
+    "util_samples": 93,
+    "fsync_ms": 0.00351807102560997,
+    "products": [
+      "/Render/OmniverseKit/HydraTextures/ABCCenterRGB",
+      "/Render/OmniverseKit/HydraTextures/ABCLeft",
+      "/Render/OmniverseKit/HydraTextures/ABCRight",
+      "/Render/OmniverseKit/HydraTextures/omni_kit_widget_viewport_ViewportTexture_0"
+    ],
+    "buffer_devices": {
+      "CenterRGB": "cuda:0",
+      "Left": "cuda:0",
+      "Right": "cuda:0"
+    }
+  },
+  "profile2_3_gpu": {
+    "samples": 300,
+    "ms": {
+      "render_ms": {
+        "mean": 58.00862610961,
+        "p95": 75.50474698655309,
+        "max": 93.46683649346232
+      },
+      "get_ms": {
+        "mean": 1.487037017941475,
+        "p95": 1.7262009903788569,
+        "max": 4.241570830345154
+      },
+      "sync_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "copy_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "color_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "gray_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "sd_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "save_ms": {
+        "mean": 0.0006240963314970335,
+        "p95": 0.0007935101166367536,
+        "max": 0.018524006009101868
+      },
+      "total_ms": {
+        "mean": 61.543905938354634,
+        "p95": 79.47217924520373,
+        "max": 98.4526202082634
+      }
+    },
+    "tick_ms": {
+      "mean": 19.336208703203333,
+      "p95": 25.633291248232123,
+      "max": 37.06262120977044
+    },
+    "gpu_rtx_tick_ms": {
+      "mean": 10.180215751111112,
+      "p95": 10.764145599999999,
+      "max": 14.298335999999999
+    },
+    "gpu_util_pct": {
+      "mean": 42.59782608695652,
+      "p95": 47.0,
+      "max": 47.0
+    },
+    "util_samples": 92,
+    "fsync_ms": 0.0035692937672138214,
+    "products": [
+      "/Render/OmniverseKit/HydraTextures/ABCCenterRGB",
+      "/Render/OmniverseKit/HydraTextures/ABCLeft",
+      "/Render/OmniverseKit/HydraTextures/ABCRight",
+      "/Render/OmniverseKit/HydraTextures/omni_kit_widget_viewport_ViewportTexture_0"
+    ],
+    "buffer_devices": {
+      "CenterRGB": "cuda:0",
+      "Left": "cuda:0",
+      "Right": "cuda:0"
+    }
+  },
+  "profile2_3_render": {
+    "samples": 300,
+    "ms": {
+      "render_ms": {
+        "mean": 95.00957681642224,
+        "p95": 106.74598657060415,
+        "max": 158.37971633300185
+      },
+      "get_ms": {
+        "mean": 0.002116671142478784,
+        "p95": 0.0025544548407197007,
+        "max": 0.018395017832517624
+      },
+      "sync_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "copy_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "color_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "gray_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "sd_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "save_ms": {
+        "mean": 0.0005329415823022524,
+        "p95": 0.0007875729352235798,
+        "max": 0.00161072239279747
+      },
+      "total_ms": {
+        "mean": 97.034702161327,
+        "p95": 108.52715082000941,
+        "max": 161.85279889032245
+      }
+    },
+    "tick_ms": {
+      "mean": 31.669858938807415,
+      "p95": 35.63521578907966,
+      "max": 80.44671500101686
+    },
+    "gpu_rtx_tick_ms": {
+      "mean": 12.993264106666665,
+      "p95": 15.5675856,
+      "max": 17.921696
+    },
+    "gpu_util_pct": {
+      "mean": 33.034246575342465,
+      "p95": 42.0,
+      "max": 45.0
+    },
+    "util_samples": 146,
+    "fsync_ms": 0.002285931259393692,
+    "products": [
+      "/Render/OmniverseKit/HydraTextures/ABCCenterRGB",
+      "/Render/OmniverseKit/HydraTextures/ABCLeft",
+      "/Render/OmniverseKit/HydraTextures/ABCRight",
+      "/Render/OmniverseKit/HydraTextures/omni_kit_widget_viewport_ViewportTexture_0"
+    ],
+    "buffer_devices": {}
+  },
+  "profile2_3_render_repeat": {
+    "samples": 300,
+    "ms": {
+      "render_ms": {
+        "mean": 50.51303680675725,
+        "p95": 54.28341054357588,
+        "max": 59.51921874657273
+      },
+      "get_ms": {
+        "mean": 0.001700124703347683,
+        "p95": 0.002209632657468319,
+        "max": 0.00460771843791008
+      },
+      "sync_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "copy_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "color_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "gray_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "sd_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "save_ms": {
+        "mean": 0.0006467135002215704,
+        "p95": 0.0008850591257214546,
+        "max": 0.0077928416430950165
+      },
+      "total_ms": {
+        "mean": 52.49780303953836,
+        "p95": 56.90929291304201,
+        "max": 62.04331899061799
+      }
+    },
+    "tick_ms": {
+      "mean": 16.83767893558575,
+      "p95": 18.43765126541257,
+      "max": 26.10398968681693
+    },
+    "gpu_rtx_tick_ms": {
+      "mean": 9.865055857777776,
+      "p95": 10.076148799999999,
+      "max": 13.342367999999999
+    },
+    "gpu_util_pct": {
+      "mean": 46.743589743589745,
+      "p95": 48.449999999999974,
+      "max": 51.0
+    },
+    "util_samples": 78,
+    "fsync_ms": 0.0021080486476421356,
+    "products": [
+      "/Render/OmniverseKit/HydraTextures/ABCCenterRGB",
+      "/Render/OmniverseKit/HydraTextures/ABCLeft",
+      "/Render/OmniverseKit/HydraTextures/ABCRight",
+      "/Render/OmniverseKit/HydraTextures/omni_kit_widget_viewport_ViewportTexture_0"
+    ],
+    "buffer_devices": {}
+  },
+  "profile2_3_save": {
+    "samples": 300,
+    "ms": {
+      "render_ms": {
+        "mean": 64.45359562989324,
+        "p95": 74.05598144978286,
+        "max": 88.0249603651464
+      },
+      "get_ms": {
+        "mean": 1.585963958253463,
+        "p95": 1.7027149209752683,
+        "max": 3.0959132127463818
+      },
+      "sync_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "copy_ms": {
+        "mean": 1.8218083260580897,
+        "p95": 1.9463241333141925,
+        "max": 5.325487814843655
+      },
+      "color_ms": {
+        "mean": 73.51313967412959,
+        "p95": 79.14988342672589,
+        "max": 93.68721768260002
+      },
+      "gray_ms": {
+        "mean": 6.673621085161964,
+        "p95": 7.168928300961852,
+        "max": 12.083671987056732
+      },
+      "sd_ms": {
+        "mean": 1.5014055681725342,
+        "p95": 1.7249622847884896,
+        "max": 3.6096367985010147
+      },
+      "save_ms": {
+        "mean": 24.808965348638594,
+        "p95": 25.731790717691183,
+        "max": 75.81787602975965
+      },
+      "total_ms": {
+        "mean": 178.64467015179494,
+        "p95": 198.33067907020452,
+        "max": 226.48743633180857
+      }
+    },
+    "tick_ms": {
+      "mean": 21.48453187663108,
+      "p95": 26.55748303513974,
+      "max": 38.295329082757235
+    },
+    "gpu_rtx_tick_ms": {
+      "mean": 10.672034097777777,
+      "p95": 11.107588799999998,
+      "max": 14.764543999999999
+    },
+    "gpu_util_pct": {
+      "mean": 14.51865671641791,
+      "p95": 26.0,
+      "max": 47.0
+    },
+    "util_samples": 268,
+    "fsync_ms": 2313.833379652351,
+    "products": [
+      "/Render/OmniverseKit/HydraTextures/ABCCenterRGB",
+      "/Render/OmniverseKit/HydraTextures/ABCLeft",
+      "/Render/OmniverseKit/HydraTextures/ABCRight",
+      "/Render/OmniverseKit/HydraTextures/omni_kit_widget_viewport_ViewportTexture_0"
+    ],
+    "buffer_devices": {
+      "CenterRGB": "cuda:0",
+      "Left": "cuda:0",
+      "Right": "cuda:0"
+    }
+  },
+  "profile2_3_sd": {
+    "samples": 300,
+    "ms": {
+      "render_ms": {
+        "mean": 61.81341254307578,
+        "p95": 67.96258613467216,
+        "max": 83.61490489915013
+      },
+      "get_ms": {
+        "mean": 1.5094367321580648,
+        "p95": 1.6175573226064444,
+        "max": 1.957847736775875
+      },
+      "sync_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "copy_ms": {
+        "mean": 1.9907757251833875,
+        "p95": 2.0658634835854173,
+        "max": 5.556727759540081
+      },
+      "color_ms": {
+        "mean": 72.39840100519359,
+        "p95": 75.89324489235878,
+        "max": 91.99435450136662
+      },
+      "gray_ms": {
+        "mean": 6.4108453039079905,
+        "p95": 6.6531578078866005,
+        "max": 10.687689762562513
+      },
+      "sd_ms": {
+        "mean": 1.4609728241339326,
+        "p95": 1.6743710497394204,
+        "max": 2.2899010218679905
+      },
+      "save_ms": {
+        "mean": 0.0016540785630544026,
+        "p95": 0.002066581510007382,
+        "max": 0.011639203876256943
+      },
+      "total_ms": {
+        "mean": 149.70049074540535,
+        "p95": 159.50603033415973,
+        "max": 186.1260337755084
+      }
+    },
+    "tick_ms": {
+      "mean": 20.60447084769193,
+      "p95": 24.242145172320306,
+      "max": 39.286610670387745
+    },
+    "gpu_rtx_tick_ms": {
+      "mean": 10.56577472,
+      "p95": 10.8339376,
+      "max": 14.634559999999999
+    },
+    "gpu_util_pct": {
+      "mean": 17.533333333333335,
+      "p95": 26.0,
+      "max": 50.0
+    },
+    "util_samples": 225,
+    "fsync_ms": 0.007967930287122726,
+    "products": [
+      "/Render/OmniverseKit/HydraTextures/ABCCenterRGB",
+      "/Render/OmniverseKit/HydraTextures/ABCLeft",
+      "/Render/OmniverseKit/HydraTextures/ABCRight",
+      "/Render/OmniverseKit/HydraTextures/omni_kit_widget_viewport_ViewportTexture_0"
+    ],
+    "buffer_devices": {
+      "CenterRGB": "cuda:0",
+      "Left": "cuda:0",
+      "Right": "cuda:0"
+    }
+  },
+  "profile2_3_sync_copy": {
+    "samples": 300,
+    "ms": {
+      "render_ms": {
+        "mean": 57.619191681345306,
+        "p95": 69.31182646658273,
+        "max": 78.76808382570744
+      },
+      "get_ms": {
+        "mean": 1.5138485593100388,
+        "p95": 1.6255405731499197,
+        "max": 1.9354564137756824
+      },
+      "sync_ms": {
+        "mean": 5.665760325888793,
+        "p95": 5.906339432112873,
+        "max": 5.972752813249826
+      },
+      "copy_ms": {
+        "mean": 2.019509933888912,
+        "p95": 2.38271898124367,
+        "max": 5.887442268431187
+      },
+      "color_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "gray_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "sd_ms": {
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "save_ms": {
+        "mean": 0.0007066596299409866,
+        "p95": 0.0009776558727025988,
+        "max": 0.004144851118326187
+      },
+      "total_ms": {
+        "mean": 68.88850933872163,
+        "p95": 80.274383793585,
+        "max": 89.61200388148427
+      }
+    },
+    "tick_ms": {
+      "mean": 19.2063972271151,
+      "p95": 23.342882003635168,
+      "max": 30.6011401116848
+    },
+    "gpu_rtx_tick_ms": {
+      "mean": 10.319680035555555,
+      "p95": 10.630512,
+      "max": 14.657504
+    },
+    "gpu_util_pct": {
+      "mean": 38.15533980582524,
+      "p95": 43.0,
+      "max": 48.0
+    },
+    "util_samples": 103,
+    "fsync_ms": 0.0072908587753772736,
+    "products": [
+      "/Render/OmniverseKit/HydraTextures/ABCCenterRGB",
+      "/Render/OmniverseKit/HydraTextures/ABCLeft",
+      "/Render/OmniverseKit/HydraTextures/ABCRight",
+      "/Render/OmniverseKit/HydraTextures/omni_kit_widget_viewport_ViewportTexture_0"
+    ],
+    "buffer_devices": {
+      "CenterRGB": "cuda:0",
+      "Left": "cuda:0",
+      "Right": "cuda:0"
+    }
+  }
+}

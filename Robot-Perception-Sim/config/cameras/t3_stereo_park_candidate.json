@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "status": "candidate_not_hardware_calibrated",
+  "scene": "/home/lizhengran/isaacsim-workspace/urban_street_20261112/moving_cleaner_media_20261113/SCENE_RUNTIME.usda",
+  "scene_scope": "park_only_no_ball",
+  "stereo": {
+    "width": 1280,
+    "height": 720,
+    "fps": 100,
+    "focal_length_mm": 1.79,
+    "K": [
+      [
+        518.84057971,
+        0,
+        640
+      ],
+      [
+        0,
+        518.84057971,
+        360
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "D": [
+      -0.2,
+      0.04,
+      0,
+      0,
+      0
+    ],
+    "distortion_order": [
+      "k1",
+      "k2",
+      "p1",
+      "p2",
+      "k3"
+    ],
+    "baseline_m": 0.07,
+    "relative_rotation": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "synchronization_error_s": 0,
+    "extrinsic_status": "70 mm from product PDF; parallel axes candidate assumption",
+    "distortion_status": "candidate k2=0.04: global radial derivative minimum 0.55; not measured"
+  },
+  "exposure": {
+    "shutter": "global",
+    "mode": "shared_ae",
+    "initial_s": 0.002,
+    "min_s": 0.0001,
+    "max_s": 0.008,
+    "target": 0.45,
+    "metering": "equal_eye_mean_linear_luminance_after_exposure_before_clipping",
+    "gain": 1.0,
+    "reference_exposure_s": 0.002,
+    "subsamples": 4,
+    "timestamp": "exposure_midpoint",
+    "ae_update": "next_frame",
+    "max_step_ratio": 2.0
+  },
+  "hdr": {
+    "input": "scene_linear",
+    "sensor_dynamic_range_verified": false
+  },
+  "imu": {
+    "offset_trials_s": [
+      0,
+      0.0025,
+      -0.0025
+    ],
+    "offset_definition": "imu_reported_timestamp_minus_physical_sample_time",
+    "sample_rate_hz": null
+  },
+  "unresolved": [
+    "imu_sampling_and_noise",
+    "TD_SD_transfer_definition"
+  ]
+}

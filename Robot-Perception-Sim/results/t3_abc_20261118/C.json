@@ -1,0 +1,64 @@
+{
+  "mode": "C",
+  "verified_frames": 1000,
+  "sampling_hz": 100,
+  "interval_ms": 10,
+  "capture_duration_s": 10.0,
+  "first_last_timestamp_span_s": 9.99,
+  "eye_timestamp_difference_ns": 0,
+  "missing_pixel_ids": 0,
+  "sd_matches_supplied_numpy": true,
+  "scene_exact_repeat_indices": {
+    "CenterRGB": [],
+    "Left": [],
+    "Right": []
+  },
+  "scene_frame_mae_percentiles": {
+    "CenterRGB": [
+      0.6639712962962963,
+      1.0457898148148148,
+      1.1617003703703703,
+      1.2121108148148148,
+      1.2777712962962964
+    ],
+    "Left": [
+      1.2666675804093568,
+      1.4489798062865498,
+      1.6181760325292396,
+      1.6926107821637426,
+      1.7675831505847954
+    ],
+    "Right": [
+      1.2827882858187134,
+      1.4500904605263158,
+      1.621470760233918,
+      1.7002780610380117,
+      1.7678837719298246
+    ]
+  },
+  "timings_ms": {
+    "render_read_ms": {
+      "mean": 136.74241210147738,
+      "max": 161.60430014133453
+    },
+    "gray_ms": {
+      "mean": 6.286942744627595,
+      "max": 9.442798793315887
+    },
+    "sd_ms": {
+      "mean": 1.457731253001839,
+      "max": 3.036823123693466
+    },
+    "process_ms": {
+      "mean": 63.71553039224818,
+      "max": 82.3229979723692
+    },
+    "total_ms": {
+      "mean": 225.4937767055817,
+      "max": 278.7621868774295
+    }
+  },
+  "throughput_pairs_s": 4.363440677461268,
+  "rtf": 0.04363440677461268,
+  "scope": "pixel identity, saved data, SD arithmetic, authored motion; ghosting/flicker require separate image review"
+}
