@@ -12,6 +12,23 @@ def verify(root, reference):
     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
     meta=json.loads((root/'metadata.json').read_text())
     rows=[json.loads(x) for x in (root/'frames.jsonl').read_text().splitlines()]
+    timing_path = root / 'timing.jsonl'
+    timing_rows = [json.loads(x) for x in timing_path.read_text().splitlines()] if timing_path.exists() else []
+    if timing_path.exists():
+        if len(timing_rows) != len(rows): raise ValueError('timing rows do not match frame rows')
+        for i, timing in enumerate(timing_rows):
+            if timing['index'] != i: raise ValueError(f'timing index mismatch at {i}')
+            if timing['source_time_s'] != i * 0.01: raise ValueError(f'wrong source time at {i}')
+            if abs((timing['simulation_after_s'] - timing['simulation_before_s']) - 0.01) > 1e-9:
+                raise ValueError(f'physical step is not 10 ms at {i}')
+            if abs((timing['timeline_after_s'] - timing['timeline_before_s']) - 0.01) > 1e-9:
+                raise ValueError(f'timeline step is not 10 ms at {i}')
+            if abs(timing['simulation_before_s'] - i * 0.01) > 1e-9:
+                raise ValueError(f'wrong physical time before sample {i}')
+            if abs(timing['simulation_after_s'] - (i + 1) * 0.01) > 1e-9:
+                raise ValueError(f'wrong physical time after sample {i}')
+            if abs(timing['timeline_after_s'] - (i + 1) * 0.01) > 1e-9:
+                raise ValueError(f'wrong timeline after sample {i}')
     assert len(rows)==meta['frames']
     streams={}; sizes={}; previous={}; repeats={n:[] for n in meta['optics']}; changes={n:[] for n in meta['optics']}
     for n,c in meta['optics'].items():
@@ -55,7 +72,8 @@ def verify(root, reference):
         'sd_matches_supplied_numpy':meta['mode']!='A','scene_exact_repeat_indices':repeats,
         'scene_frame_mae_percentiles':{n:np.percentile(v,[0,50,95,99,100]).tolist() for n,v in changes.items()},
         'timings_ms':timings,'throughput_pairs_s':len(rows)/meta['elapsed_s'],'rtf':len(rows)/100/meta['elapsed_s'],
-        'scope':'pixel identity, saved data, SD arithmetic, authored motion; ghosting/flicker require separate image review'}
+        'timing_rows_verified': bool(timing_path.exists()),
+        'scope':'pixel identity, saved data, SD arithmetic, authored motion and single-clock timing when timing.jsonl exists; ghosting/flicker require separate image review'}
     if meta['mode']=='C':assert not any(repeats.values()),repeats
     (root/'verification.json').write_text(json.dumps(result,indent=2));return result
 
