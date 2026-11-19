@@ -77,7 +77,12 @@ def verify(root, reference):
     matrices={n:np.array(c['local_matrix']) for n,c in meta['optics'].items()}
     delta=np.linalg.inv(matrices['Left'])@matrices['Right'];np.testing.assert_allclose(delta[:3,:3],np.eye(3),atol=1e-9)
     np.testing.assert_allclose(delta[:3,3],[.07,0,0],atol=1e-9)
-    timings={k:{'mean':float(np.mean([r[k] for r in rows])),'max':float(max(r[k] for r in rows))} for k in ['render_read_ms','gray_ms','sd_ms','process_ms','total_ms']}
+    def metric(key, fallback=0.0):
+        values=[r.get(key, fallback) for r in rows]
+        return {'mean':float(np.mean(values)),'max':float(max(values))}
+    timings={k:metric(k) for k in ['render_read_ms','gray_ms','sd_ms','process_ms','total_ms']}
+    if 'render_ms' in rows[0]: timings['render_ms']=metric('render_ms')
+    if 'gpu_process_ms' in rows[0]: timings['gpu_process_ms']=metric('gpu_process_ms')
     result={'mode':meta['mode'],'verified_frames':len(rows),'sampling_hz':100,'interval_ms':10,'capture_duration_s':len(rows)/100,
         'first_last_timestamp_span_s':(len(rows)-1)/100,'eye_timestamp_difference_ns':0,'missing_pixel_ids':0,
         'sd_matches_supplied_numpy':meta['mode']!='A','scene_exact_repeat_indices':repeats,
