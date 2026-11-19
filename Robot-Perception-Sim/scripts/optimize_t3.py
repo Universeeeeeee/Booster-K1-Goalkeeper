@@ -23,6 +23,8 @@ def main():
     p.add_argument('--no-viewport', action='store_true')
     p.add_argument('--async-save', action='store_true')
     p.add_argument('--clock-mode', choices=['legacy','C1'], default='C1')
+    p.add_argument('--physics-hz', type=float, default=100.0)
+    p.add_argument('--physical-steps-per-sample', type=int, default=1)
     a, _ = p.parse_known_args()
     a.output.mkdir(parents=True, exist_ok=False)
     import ctypes
@@ -95,7 +97,12 @@ def capture(app, a):
         centres[name] = np.rint(xy*radial[:,None]*[k[0][0],k[1][1]]+[k[0][2],k[1][2]]).astype(int).tolist()
         optics[name] = {'resolution':[w,h], 'K':k, 'D':d, 'focal_attribute':cam.GetFocalLengthAttr().Get(),
             'local_matrix':np.array(xf.GetLocalTransformation()).T.tolist()}
-    world = World(physics_dt=.01, rendering_dt=.01); world.reset(); world.play()
+    physics_dt = 1.0 / a.physics_hz
+    if a.physical_steps_per_sample < 1 or abs(a.physics_hz * physics_dt - 1.0) > 1e-12:
+        raise ValueError('invalid physical timing configuration')
+    if abs(a.physics_hz * a.physical_steps_per_sample - 100.0) > 1e-9:
+        raise ValueError('physical_hz * physical_steps_per_sample must equal 100 Hz sample rate')
+    world = World(physics_dt=physics_dt, rendering_dt=physics_dt); world.reset(); world.play()
     for _ in range(100): world.step(render=True)
     base_simulation_s = float(world.current_time)
     base_timeline_s = float(timeline.get_current_time())
@@ -168,7 +175,12 @@ def capture(app, a):
         timeline_before_s = float(timeline.get_current_time()) - base_timeline_s
         for m in markers.values():m.set(i)
         tick_times=[]
-        b=time.perf_counter();world.step(render=True);tick_times.append((time.perf_counter()-b)*1000)
+        for substep in range(a.physical_steps_per_sample):
+            sub_time = source_time_s + substep * physics_dt
+            body_op.Set(Gf.Matrix4d().SetTranslate(Gf.Vec3d(-48 + 1.5 * sub_time, -8.375, 0)))
+            b=time.perf_counter();world.step(render=(substep == a.physical_steps_per_sample - 1));tick_times.append((time.perf_counter()-b)*1000)
+        # The final physical substep produced the sensor sample; C1 refreshes below
+        # do not advance either clock.
         nodes=hydra.get_gpu_profiler_result()
         gpu_samples.append([sum(n.get('duration',0) for n in dev if n.get('indent',0)==0) for dev in nodes])
         if nodes and example is None:example=nodes
