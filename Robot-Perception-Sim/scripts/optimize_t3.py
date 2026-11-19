@@ -22,6 +22,7 @@ def main():
     p.add_argument('--ticks', type=int, default=3)
     p.add_argument('--no-viewport', action='store_true')
     p.add_argument('--async-save', action='store_true')
+    p.add_argument('--clock-mode', choices=['legacy','C1'], default='legacy')
     a, _ = p.parse_known_args()
     a.output.mkdir(parents=True, exist_ok=False)
     import ctypes
@@ -49,6 +50,7 @@ def capture(app, a):
     from omni.replicator.core.scripts.utils import viewport_manager
     from isaacsim.core.api import World
     import omni.timeline
+    from isaacsim.core.rendering_manager import RenderingManager
     from pxr import Gf, Sdf, UsdGeom
     sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'acquisition'))
     from t3_park import load_scene, FrameMarkers
@@ -148,8 +150,33 @@ def capture(app, a):
         nodes=hydra.get_gpu_profiler_result()
         gpu_samples.append([sum(n.get('duration',0) for n in dev if n.get('indent',0)==0) for dev in nodes])
         if nodes and example is None:example=nodes
-        for _ in range(a.ticks - 1):
-            b=time.perf_counter();world.step(render=True, step_sim=False);tick_times.append((time.perf_counter()-b)*1000)
+        refresh_count=0; refresh_sim_deltas=[]; refresh_timeline_deltas=[]
+        if a.clock_mode == 'C1' and a.stage != 'render':
+            # RenderingManager refreshes the products while the Timeline is paused.
+            # Physics has already advanced exactly once for this sensor sample.
+            for _ in range(8):
+                before_refresh_sim=float(world.current_time)-base_simulation_s
+                before_refresh_t=float(timeline.get_current_time())-base_timeline_s
+                timeline.pause(); b=time.perf_counter(); RenderingManager.render(); tick_times.append((time.perf_counter()-b)*1000); timeline.play()
+                refresh_count += 1
+                refresh_sim_deltas.append(float(world.current_time)-base_simulation_s-before_refresh_sim)
+                refresh_timeline_deltas.append(float(timeline.get_current_time())-base_timeline_s-before_refresh_t)
+                # The final image-ID check below is performed after GPU conversion.
+                # Continue flushing until the annotator has a non-stale buffer.
+                probe={n:ann.get_data() for n,ann in annotations.items()}
+                if a.gpu_process:
+                    probe_ids={}
+                    for n,buf in probe.items():
+                        rgb_gpu=allocated[n][0]; wp.launch(gpu_images,(buf.shape[0],buf.shape[1]),inputs=[buf,rgb_gpu,allocated[n][1]],device=buf.device); wp.synchronize_device(buf.device)
+                        rgb_probe=rgb_gpu.numpy(); cells=np.array([rgb_probe[y-2:y+3,x-2:x+3].mean() for x,y in centres[n]]);bits=cells>(cells[0]+cells[1])/2; probe_ids[n]=int(np.dot(bits[4:20],2**np.arange(15,-1,-1)))
+                else:
+                    probe_ids={}
+                    for n,buf in probe.items():
+                        img=buf.numpy().astype(np.float32);cells=np.array([img[y-2:y+3,x-2:x+3,:3].mean() for x,y in centres[n]]);bits=cells>(cells[0]+cells[1])/2;probe_ids[n]=int(np.dot(bits[4:20],2**np.arange(15,-1,-1)))
+                if all(v == i for v in probe_ids.values()): break
+        else:
+            for _ in range(a.ticks - 1):
+                b=time.perf_counter();world.step(render=True, step_sim=False);tick_times.append((time.perf_counter()-b)*1000)
             nodes=hydra.get_gpu_profiler_result()
             gpu_samples.append([sum(n.get('duration',0) for n in dev if n.get('indent',0)==0) for dev in nodes])
             if nodes and example is None:example=nodes
@@ -161,7 +188,7 @@ def capture(app, a):
             if i == 0:
                 # The first Render Product buffer can still contain the diagnostic
                 # initialization ID. Flush only the renderer; never advance physics.
-                for _ in range(3):
+                for _ in range(20):
                     world.step(render=True, step_sim=False)
                 buffers={n:ann.get_data() for n,ann in annotations.items()}
         after_get=time.perf_counter()
@@ -217,7 +244,7 @@ def capture(app, a):
         simulation_after_s = float(world.current_time) - base_simulation_s
         timeline_after_s = float(timeline.get_current_time()) - base_timeline_s
         timing_log.write(json.dumps({'index':i,'source_time_s':source_time_s,'simulation_before_s':simulation_before_s,'simulation_after_s':simulation_after_s,'timeline_before_s':timeline_before_s,'timeline_after_s':timeline_after_s,'pixel_ids':ids})+'\n'); timing_log.flush()
-        samples.append({'cast_ms':cast_ms,'id_ms':id_ms,'srgb_ms':srgb_ms,'pack_ms':pack_ms,'gpu_process_ms':gpu_process_ms,'index':i,'simulation_ns':i*10000000,'source_time_s':source_time_s,'simulation_before_s':simulation_before_s,'simulation_after_s':simulation_after_s,'timeline_before_s':timeline_before_s,'timeline_after_s':timeline_after_s,'render_ms':sum(tick_times),'ticks_ms':tick_times,
+        samples.append({'cast_ms':cast_ms,'id_ms':id_ms,'srgb_ms':srgb_ms,'pack_ms':pack_ms,'gpu_process_ms':gpu_process_ms,'index':i,'simulation_ns':i*10000000,'source_time_s':source_time_s,'simulation_before_s':simulation_before_s,'simulation_after_s':simulation_after_s,'timeline_before_s':timeline_before_s,'timeline_after_s':timeline_after_s,'refresh_count':refresh_count,'refresh_sim_deltas':refresh_sim_deltas,'refresh_timeline_deltas':refresh_timeline_deltas,'render_ms':sum(tick_times),'ticks_ms':tick_times,
             'get_ms':(after_get-after_render)*1000,'sync_ms':sync_ms,'copy_ms':copy_ms,'color_ms':color_ms,
             'gray_ms':gray_ms,'sd_ms':sd_ms,'save_ms':save_ms,'total_ms':(time.perf_counter()-begin)*1000,
             'pixel_ids':ids,'hashes':hashes})
