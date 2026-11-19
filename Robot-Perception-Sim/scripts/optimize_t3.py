@@ -48,6 +48,8 @@ def capture(app, a):
     import omni.replicator.core as rep
     from omni.replicator.core.scripts.utils import viewport_manager
     from isaacsim.core.api import World
+    from isaacsim.core.rendering_manager import RenderingManager
+    import omni.timeline
     from pxr import Gf, Sdf, UsdGeom
     sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'acquisition'))
     from t3_park import load_scene, FrameMarkers
@@ -56,6 +58,7 @@ def capture(app, a):
     stage, center_path, _, provenance = load_scene(a.scene, 100)
     body = UsdGeom.Xformable(stage.GetPrimAtPath('/World/Cleaner'))
     body_op = body.GetOrderedXformOps()[0]
+    timeline = omni.timeline.get_timeline_interface()
     settings = carb.settings.get_settings()
     settings.set('/rtx/post/motionblur/enabled', False)
     settings.set('/rtx/post/aa/op', 3)
@@ -93,6 +96,8 @@ def capture(app, a):
             'local_matrix':np.array(xf.GetLocalTransformation()).T.tolist()}
     world = World(physics_dt=.01, rendering_dt=.01); world.reset(); world.play()
     for _ in range(100): world.step(render=True)
+    base_simulation_s = float(world.current_time)
+    base_timeline_s = float(timeline.get_current_time())
     stage.GetRootLayer().Export(str(a.output/'scene.usda'))
     meta = {'mode':a.mode, 'frames':a.frames, 'optics':optics, 'centres':centres, 'provenance':provenance,
         'sample_period_ns':10000000, 'gray':'linear HDR luminance quantized as round(clip(Y,0,1)*255); fixed gain=1',
@@ -133,10 +138,18 @@ def capture(app, a):
     start=time.time(); begin_all=time.perf_counter()
     for i in range(a.frames):
         begin=time.perf_counter()
+        source_time_s = i * 0.01
+        body_op.Set(Gf.Matrix4d().SetTranslate(Gf.Vec3d(-48 + 1.5 * source_time_s, -8.375, 0)))
+        simulation_before_s = float(world.current_time) - base_simulation_s
+        timeline_before_s = float(timeline.get_current_time()) - base_timeline_s
         for m in markers.values():m.set(i)
         tick_times=[]
-        for _ in range(a.ticks):
-            b=time.perf_counter();world.step(render=True);tick_times.append((time.perf_counter()-b)*1000)
+        b=time.perf_counter();world.step(render=True);tick_times.append((time.perf_counter()-b)*1000)
+        nodes=hydra.get_gpu_profiler_result()
+        gpu_samples.append([sum(n.get('duration',0) for n in dev if n.get('indent',0)==0) for dev in nodes])
+        if nodes and example is None:example=nodes
+        for _ in range(a.ticks - 1):
+            b=time.perf_counter();RenderingManager.render();tick_times.append((time.perf_counter()-b)*1000)
             nodes=hydra.get_gpu_profiler_result()
             gpu_samples.append([sum(n.get('duration',0) for n in dev if n.get('indent',0)==0) for dev in nodes])
             if nodes and example is None:example=nodes
@@ -195,7 +208,9 @@ def capture(app, a):
                 pending.append(writer.submit(save,payloads,hashes))
             else:save(payloads,hashes)
         save_ms=(time.perf_counter()-b)*1000
-        samples.append({'cast_ms':cast_ms,'id_ms':id_ms,'srgb_ms':srgb_ms,'pack_ms':pack_ms,'gpu_process_ms':gpu_process_ms,'index':i,'simulation_ns':i*10000000,'render_ms':sum(tick_times),'ticks_ms':tick_times,
+        simulation_after_s = float(world.current_time) - base_simulation_s
+        timeline_after_s = float(timeline.get_current_time()) - base_timeline_s
+        samples.append({'cast_ms':cast_ms,'id_ms':id_ms,'srgb_ms':srgb_ms,'pack_ms':pack_ms,'gpu_process_ms':gpu_process_ms,'index':i,'simulation_ns':i*10000000,'source_time_s':source_time_s,'simulation_before_s':simulation_before_s,'simulation_after_s':simulation_after_s,'timeline_before_s':timeline_before_s,'timeline_after_s':timeline_after_s,'render_ms':sum(tick_times),'ticks_ms':tick_times,
             'get_ms':(after_get-after_render)*1000,'sync_ms':sync_ms,'copy_ms':copy_ms,'color_ms':color_ms,
             'gray_ms':gray_ms,'sd_ms':sd_ms,'save_ms':save_ms,'total_ms':(time.perf_counter()-begin)*1000,
             'pixel_ids':ids,'hashes':hashes})
