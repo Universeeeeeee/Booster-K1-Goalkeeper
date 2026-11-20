@@ -7,20 +7,36 @@ from pathlib import Path
 import numpy as np
 
 
+def decode_frame_id(image, strips):
+    ids = set()
+    for centres in strips:
+        cells = np.array([image[y-2:y+3, x-2:x+3, :3].mean() for x, y in centres])
+        bits = cells > (cells[0] + cells[1]) / 2
+        if list(bits[[0, 1, 2, 3, 21, 22]]) != [True, False, True, False, False, True]:
+            continue
+        if bits[20] == bool(bits[4:20].sum() % 2):
+            ids.add(int(np.dot(bits[4:20], 2 ** np.arange(15, -1, -1))))
+    return next(iter(ids)) if len(ids) == 1 else None
+
+
 def verify(root, reference):
     spec=importlib.util.spec_from_file_location('supplied_reference',reference)
     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
     profile_path = root / 'profile.json'
     meta=json.loads(profile_path.read_text()) if profile_path.exists() else json.loads((root/'metadata.json').read_text())
     sd_encoding = meta.get('sd_encoding', 'full_difference')
-    if sd_encoding not in ('full_difference', 'half_trunc'):
+    if sd_encoding not in ('full_difference', 'half_trunc', 'half_trunc_plus_128'):
         raise ValueError(f'unknown SD encoding: {sd_encoding}')
+    biased_sd = sd_encoding == 'half_trunc_plus_128'
     rows=meta.get('rows')
     if rows is None:
         rows=[json.loads(x) for x in (root/'frames.jsonl').read_text().splitlines()]
     if len(rows) != meta['frames']: raise ValueError('profile frame count mismatch')
     timing_path = root / 'timing.jsonl'
     timing_rows = [json.loads(x) for x in timing_path.read_text().splitlines()] if timing_path.exists() else []
+    c1_capture = biased_sd and meta.get('options', {}).get('clock_mode') == 'C1'
+    if c1_capture and not timing_path.exists():
+        raise ValueError('missing C1 timing log')
     if timing_path.exists():
         if len(timing_rows) != len(rows): raise ValueError('timing rows do not match frame rows')
         for i, timing in enumerate(timing_rows):
@@ -30,9 +46,14 @@ def verify(root, reference):
                 raise ValueError(f'physical step is not 10 ms at {i}')
             if abs((timing['timeline_after_s'] - timing['timeline_before_s']) - 0.01) > 5e-8:
                 raise ValueError(f'timeline step is not 10 ms at {i}')
-            if abs(timing['simulation_before_s'] - i * 0.01) > 5e-7:
+            # PhysX accumulates a float32 step. Account for its known
+            # representation error separately from the per-sample check.
+            hz = meta.get('options', {}).get('physics_hz', 100)
+            substeps = meta.get('options', {}).get('physical_steps_per_sample', 1)
+            rounding_per_sample = abs(float(np.float32(1 / hz)) * substeps - 0.01)
+            if abs(timing['simulation_before_s'] - i * 0.01) > 5e-7 + i * rounding_per_sample:
                 raise ValueError(f'wrong physical time before sample {i}')
-            if abs(timing['simulation_after_s'] - (i + 1) * 0.01) > 5e-7:
+            if abs(timing['simulation_after_s'] - (i + 1) * 0.01) > 5e-7 + (i + 1) * rounding_per_sample:
                 raise ValueError(f'wrong physical time after sample {i}')
             if abs(timing['timeline_after_s'] - (i + 1) * 0.01) > 1e-7:
                 raise ValueError(f'wrong timeline after sample {i}')
@@ -40,6 +61,14 @@ def verify(root, reference):
                 raise ValueError(f'physics advanced during refresh at {i}')
             if 'refresh_timeline_deltas' in timing and any(abs(x) > 1e-9 for x in timing['refresh_timeline_deltas']):
                 raise ValueError(f'timeline advanced during refresh at {i}')
+            if c1_capture:
+                row = rows[i]
+                if any(row[key] != value for key, value in timing.items()):
+                    raise ValueError(f'profile/timing mismatch at {i}')
+                for key in ('refresh_sim_deltas', 'refresh_timeline_deltas'):
+                    values = row[key]
+                    if not 1 <= len(values) == row['refresh_count'] <= 16 or any(not abs(x) <= 1e-9 for x in values):
+                        raise ValueError(f'invalid {key} at {i}')
     assert len(rows)==meta['frames']
     streams={}; sizes={}; previous={}; repeats={n:[] for n in meta['optics']}; changes={n:[] for n in meta['optics']}
     for n,c in meta['optics'].items():
@@ -61,17 +90,14 @@ def verify(root, reference):
         for key,stream in streams.items():
             data[key]=stream.read(sizes[key])
             expected_hash = row.get('hashes', {}).get(key)
-            if sd_encoding == 'half_trunc' and not expected_hash:
+            if sd_encoding != 'full_difference' and not expected_hash:
                 raise ValueError(f'missing SHA-256 for {key} frame {i}')
             if expected_hash and hashlib.sha256(data[key]).hexdigest() != expected_hash:
                 raise ValueError(f'SHA-256 mismatch for {key} frame {i}')
         for n,c in meta['optics'].items():
             w,h=c['resolution'];img=np.frombuffer(data[n],np.uint8).reshape(h,w,3)
-            cells=np.array([img[y-2:y+3,x-2:x+3].mean() for x,y in meta['centres'][n]])
-            bits=cells>(cells[0]+cells[1])/2
-            assert list(bits[[0,1,2,3,21,22]])==[True,False,True,False,False,True]
-            assert bits[20]==bool(bits[4:20].sum()%2)
-            assert int(np.dot(bits[4:20],2**np.arange(15,-1,-1)))==i
+            strips = meta.get('marker_strips', {}).get(n, [meta['centres'][n]])
+            assert decode_frame_id(img, strips) == i, (n, i)
             roi=img[150:].astype(np.int16)
             if n in previous:
                 delta=np.abs(roi-previous[n]);changes[n].append(float(delta.mean()))
@@ -80,7 +106,8 @@ def verify(root, reference):
             if n+'_gray' in data:
                 gray=np.frombuffer(data[n+'_gray'],np.uint8).reshape(h,w)
                 actual=np.frombuffer(data[n+'_sd'],np.int16).reshape(2,h,w)
-                up,right,_=module.compute_tdsd_numpy(gray, legacy_sd=sd_encoding == 'full_difference')
+                up,right,_=module.compute_tdsd_numpy(
+                    gray, legacy_sd=sd_encoding == 'full_difference', sd_offset=128 if biased_sd else 0)
                 np.testing.assert_array_equal(actual,np.stack([up,right]))
     for stream in streams.values():stream.close()
     matrices={n:np.array(c['local_matrix']) for n,c in meta['optics'].items()}

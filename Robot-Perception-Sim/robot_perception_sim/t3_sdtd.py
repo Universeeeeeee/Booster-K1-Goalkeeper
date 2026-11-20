@@ -13,7 +13,7 @@ def gray_from_hdr(hdr):
 
 
 def sd(gray):
-    """Return signed, half-scale SD with truncation toward zero."""
+    """Return half-scale SD truncated toward zero and biased by 128."""
     image = np.asarray(gray, dtype=np.float32)
     if image.ndim != 2:
         raise ValueError("gray image must be two-dimensional")
@@ -21,7 +21,7 @@ def sd(gray):
     right = np.zeros_like(image)
     up[1:] = image[1:] - image[:-1]
     right[:, :-1] = image[:, :-1] - image[:, 1:]
-    return np.trunc(up * 0.5).astype(np.int16), np.trunc(right * 0.5).astype(np.int16)
+    return (np.trunc(up * 0.5) + 128).astype(np.int16), (np.trunc(right * 0.5) + 128).astype(np.int16)
 
 
 def td(current, previous):

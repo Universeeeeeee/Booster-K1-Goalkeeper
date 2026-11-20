@@ -128,8 +128,8 @@ class SensorPreview:
                                 panels = [('CenterRGB', 'Center RGB  800 x 600  GPU AE')]
                             else:
                                 panels = [(eye, f'{eye} grayscale  1280 x 720'),
-                                          (eye + '_up', 'SD up  signed  -127 ... +127'),
-                                          (eye + '_right', 'SD right  signed  -127 ... +127')]
+                                          (eye + '_up', 'SD up  1 ... 255'),
+                                          (eye + '_right', 'SD right  1 ... 255')]
                             for key, label in panels:
                                 ui.Label(label, height=20)
                                 provider = ui.ByteImageProvider()
@@ -201,7 +201,7 @@ class SensorPreview:
             if key.endswith('_up') or key.endswith('_right'):
                 eye, channel = key.rsplit('_', 1)
                 plane = data[eye + '_sd'][0 if channel == 'up' else 1]
-                image = (plane + 128).astype(np.uint8)
+                image = plane.astype(np.uint8)
             else:
                 image = data[key]
             size = (400, 300) if key == 'CenterRGB' else (400, 225)
@@ -217,7 +217,7 @@ class SensorPreview:
         audit = {'optics': self.optics, 'sampling_hz': self.fps, 'render_ticks_per_sample': 3,
                  'stereo_gray': 'round(clip(linear luminance, 0, 1) * 255), fixed gain 1',
                  'center_processing': 'GPU HDR exposure and sRGB, causal AE',
-                 'sd_encoding': 'half_trunc',
+                 'sd_encoding': 'half_trunc_plus_128',
                  'sd_channels': ['gray[y,x] - gray[y-1,x]', 'gray[y,x] - gray[y,x+1]'],
                  'exposure_s': exposure, 'checks': {}}
         for eye in ('Left', 'Right'):
@@ -229,7 +229,7 @@ class SensorPreview:
             if not np.array_equal(expected_sd, data[eye + '_sd']):
                 raise RuntimeError(f'{eye} GPU SD differs from NumPy reference')
             audit['checks'][eye] = {'gray_exact': True, 'sd_exact': True,
-                                   'nonzero_sd': int(np.count_nonzero(data[eye + '_sd']))}
+                                   'nonzero_sd': int(np.count_nonzero(data[eye + '_sd'] != 128))}
             Image.fromarray(data[eye]).save(self.output / (eye + '_gray.png'))
             np.save(self.output / (eye + '_sd.npy'), data[eye + '_sd'])
         source = sources['CenterRGB'].numpy().astype(np.float32)

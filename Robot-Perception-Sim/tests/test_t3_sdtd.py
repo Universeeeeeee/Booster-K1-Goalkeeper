@@ -19,8 +19,8 @@ def test_stereo_candidate_geometry_and_optics():
 def test_sd_td_match_reference_definition():
     gray = np.array([[1, 4, 9], [3, 8, 12]], dtype=np.float32)
     up, right = sd(gray)
-    np.testing.assert_array_equal(up, [[0, 0, 0], [1, 2, 1]])
-    np.testing.assert_array_equal(right, [[-1, -2, 0], [-2, -2, 0]])
+    np.testing.assert_array_equal(up, [[128, 128, 128], [129, 130, 129]])
+    np.testing.assert_array_equal(right, [[127, 126, 128], [126, 126, 128]])
     np.testing.assert_array_equal(td(gray + 2, gray), np.full_like(gray, 2))
 
 

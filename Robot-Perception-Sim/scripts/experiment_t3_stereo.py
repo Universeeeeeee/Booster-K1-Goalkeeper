@@ -84,8 +84,8 @@ def capture(app, a):
     stage.GetRootLayer().Export(str(a.output/'scene.usda'))
     meta = {'mode':a.mode, 'frames':a.frames, 'optics':optics, 'centres':centres, 'provenance':provenance,
         'sample_period_ns':10000000, 'gray':'linear HDR luminance quantized as round(clip(Y,0,1)*255); fixed gain=1',
-        'sd':'signed int16 up/right',
-        'sd_encoding':'half_trunc',
+        'sd':'int16 up/right, values 1..255, neutral 128',
+        'sd_encoding':'half_trunc_plus_128',
         'timing':'explicit sensor sample clock; renderer ticks include same-state flushing, not sensor samples',
         'render_settings':{k:settings.get(k) for k in ['/rtx/rendermode','/rtx/post/aa/op','/rtx/dlss/frameGeneration']}}
     (a.output/'metadata.json').write_text(json.dumps(meta,indent=2))
@@ -125,7 +125,7 @@ def capture(app, a):
                     b=time.perf_counter()
                     up=cv2.filter2D(gray,cv2.CV_16S,np.array([[0,-1,0],[0,1,0],[0,0,0]],np.float32));up[0]=0
                     right=cv2.filter2D(gray,cv2.CV_16S,np.array([[0,0,0],[0,1,-1],[0,0,0]],np.float32));right[:,-1]=0
-                    diff=np.trunc(np.stack([up, right]) * np.float32(0.5)).astype(np.int16)
+                    diff=(np.trunc(np.stack([up, right]) * np.float32(0.5)) + 128).astype(np.int16)
                     sd_ms+=(time.perf_counter()-b)*1000
                     payloads[n+'_gray']=gray.tobytes()
                     payloads[n+'_sd']=diff.tobytes()

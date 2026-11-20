@@ -31,7 +31,7 @@ def main():
     cuda = ctypes.CDLL("libcuda.so.1", mode=ctypes.RTLD_GLOBAL)
     if cuda.cuInit(0): raise RuntimeError("CUDA initialization failed")
     from isaacsim import SimulationApp
-    app = SimulationApp({'headless': True, 'active_gpu': 1, 'physics_gpu': 0,
+    app = SimulationApp({'headless': True, 'active_gpu': int(os.environ.get('URBAN_GPU', '1')), 'physics_gpu': 0,
         'multi_gpu': False, 'limit_cpu_threads': 8,
         'extra_args': ['--/rtx/hydra/supportMultiTickRate=false', '--/app/audio/enabled=false']})
     try:
@@ -56,6 +56,7 @@ def capture(app, a):
     from pxr import Gf, Sdf, UsdGeom
     sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'acquisition'))
     from t3_park import load_scene, FrameMarkers
+    from verify_t3_abc import decode_frame_id
     c = json.loads(Path(a.config).read_text())['stereo']
     center = json.loads(Path(a.center_config).read_text())
     stage, center_path, _, provenance = load_scene(a.scene, 100)
@@ -68,6 +69,7 @@ def capture(app, a):
     settings.set('/rtx/dlss/frameGeneration', False)
     settings.set('/rtx-transient/post/aa/limitedOps', False)
     products, annotations, markers, centres, optics = {}, {}, {}, {}, {}
+    marker_strips = {}
     for name, offset in ([('CenterRGB', 0)] if a.eyes==3 else []) + [('Left', .035), ('Right', -.035)]:
         w, h = (center['width'], center['height']) if name == 'CenterRGB' else (c['width'], c['height'])
         k = [[center['fx'], 0, center['cx']], [0, center['fy'], center['cy']], [0, 0, 1]] if name == 'CenterRGB' else c['K']
@@ -91,10 +93,18 @@ def capture(app, a):
         if a.stage != 'render':
             annot = rep.AnnotatorRegistry.get_annotator('HdrColor', device='cuda'); annot.attach(product.hydra_texture.get_render_product_path())
         products[name], annotations[name] = product, annot
-        markers[name] = FrameMarkers(stage, [path], (w,h))
-        xy = (np.array(markers[name].centres)-[k[0][2],k[1][2]])/[k[0][0],k[1][1]]
-        rr = (xy*xy).sum(1); radial = 1+d[0]*rr+d[1]*rr**2+d[4]*rr**3
-        centres[name] = np.rint(xy*radial[:,None]*[k[0][0],k[1][1]]+[k[0][2],k[1][2]]).astype(int).tolist()
+        markers[name] = [FrameMarkers(stage, [path], (w, h), row=row) for row in (32, 96)]
+        marker_strips[name] = []
+        for marker in markers[name]:
+            xy = (np.array(marker.centres)-[k[0][2],k[1][2]])/[k[0][0],k[1][1]]
+            x, y = xy.T
+            rr = x*x + y*y
+            radial = 1+d[0]*rr+d[1]*rr**2+d[4]*rr**3
+            distorted = xy * radial[:, None]
+            distorted[:, 0] += 2*d[2]*x*y + d[3]*(rr + 2*x*x)
+            distorted[:, 1] += d[2]*(rr + 2*y*y) + 2*d[3]*x*y
+            marker_strips[name].append(np.rint(distorted * [k[0][0],k[1][1]] + [k[0][2],k[1][2]]).astype(int).tolist())
+        centres[name] = marker_strips[name][0]
         optics[name] = {'resolution':[w,h], 'K':k, 'D':d, 'focal_attribute':cam.GetFocalLengthAttr().Get(),
             'local_matrix':np.array(xf.GetLocalTransformation()).T.tolist()}
     physics_dt = 1.0 / a.physics_hz
@@ -116,8 +126,8 @@ def capture(app, a):
     stage.GetRootLayer().Export(str(a.output/'scene.usda'))
     meta = {'mode':a.mode, 'frames':a.frames, 'optics':optics, 'centres':centres, 'provenance':provenance,
         'sample_period_ns':10000000, 'gray':'linear HDR luminance quantized as round(clip(Y,0,1)*255); fixed gain=1',
-        'sd':'signed int16 up/right',
-        'sd_encoding':'half_trunc',
+        'sd':'int16 up/right, values 1..255, neutral 128',
+        'sd_encoding':'half_trunc_plus_128', 'marker_strips':marker_strips,
         'timing':'explicit sensor sample clock; renderer ticks include same-state flushing, not sensor samples',
         'render_settings':{k:settings.get(k) for k in ['/rtx/rendermode','/rtx/post/aa/op','/rtx/dlss/frameGeneration']}}
     (a.output/'metadata.json').write_text(json.dumps(meta,indent=2))
@@ -153,9 +163,10 @@ def capture(app, a):
         wp.synchronize()
     def refresh_c1(expected_id):
         refresh_count=0; refresh_sim_deltas=[]; refresh_timeline_deltas=[]; refresh_times=[]
+        attempts = []
         timeline.pause()
         try:
-            for _ in range(8):
+            for _ in range(16):
                 before_refresh_sim=float(world.current_time)-base_simulation_s
                 before_refresh_t=float(timeline.get_current_time())-base_timeline_s
                 b=time.perf_counter(); RenderingManager.render(); refresh_times.append((time.perf_counter()-b)*1000)
@@ -167,9 +178,18 @@ def capture(app, a):
                     if a.gpu_process:
                         rgb_gpu=allocated[n][0]; wp.launch(gpu_images,(buf.shape[0],buf.shape[1]),inputs=[buf,rgb_gpu,allocated[n][1]],device=buf.device); wp.synchronize_device(buf.device); img=rgb_gpu.numpy()
                     else: img=buf.numpy().astype(np.float32)
-                    cells=np.array([img[y-2:y+3,x-2:x+3,:3].mean() for x,y in centres[n]]);bits=cells>(cells[0]+cells[1])/2; probe_ids[n]=int(np.dot(bits[4:20],2**np.arange(15,-1,-1)))
+                    probe_ids[n] = decode_frame_id(img, marker_strips[n])
+                attempts.append(probe_ids)
                 if all(v == expected_id for v in probe_ids.values()): break
-            else: raise RuntimeError(f'C1 camera frame mismatch for requested ID {expected_id}: {probe_ids}')
+            else:
+                from PIL import Image
+                for name, buffer in probe.items():
+                    if a.gpu_process:
+                        image = allocated[name][0].numpy()
+                    else:
+                        image = np.rint(np.clip(buffer.numpy()[..., :3], 0, 1) * 255).astype(np.uint8)
+                    Image.fromarray(image).save(a.output / f'frame_mismatch_{name}.png')
+                raise RuntimeError(f'C1 camera frame mismatch for requested ID {expected_id}: {attempts}')
         finally:
             timeline.play()
         return refresh_count, refresh_sim_deltas, refresh_timeline_deltas, refresh_times
@@ -181,7 +201,9 @@ def capture(app, a):
         body_op.Set(Gf.Matrix4d().SetTranslate(Gf.Vec3d(-48 + 1.5 * source_time_s, -8.375, 0)))
         simulation_before_s = float(world.current_time) - base_simulation_s
         timeline_before_s = float(timeline.get_current_time()) - base_timeline_s
-        for m in markers.values():m.set(i)
+        for camera_markers in markers.values():
+            for marker in camera_markers:
+                marker.set(i)
         tick_times=[]
         for substep in range(a.physical_steps_per_sample):
             sub_time = source_time_s + substep * physics_dt
@@ -232,9 +254,9 @@ def capture(app, a):
             gpu_process_ms=(time.perf_counter()-b)*1000
             for n,(rgb_gpu,gray_gpu,sd_gpu) in allocated.items():
                 b=time.perf_counter();rgb=rgb_gpu.numpy();gray=gray_gpu.numpy() if n!='CenterRGB' else None;diff=sd_gpu.numpy() if n!='CenterRGB' else None;copy_ms+=(time.perf_counter()-b)*1000
-                b=time.perf_counter();cells=np.array([rgb[y-2:y+3,x-2:x+3].mean() for x,y in centres[n]]);bits=cells>(cells[0]+cells[1])/2
-                ids[n]=int(np.dot(bits[4:20],2**np.arange(15,-1,-1)))
-                if ids[n]!=i or bits[20]!=bool(bits[4:20].sum()%2):raise RuntimeError(f'pixel mismatch {i}: {ids}')
+                b=time.perf_counter()
+                ids[n] = decode_frame_id(rgb, marker_strips[n])
+                if ids[n]!=i:raise RuntimeError(f'pixel mismatch {i}: {ids}')
                 id_ms+=(time.perf_counter()-b)*1000
                 b=time.perf_counter();payloads[n]=rgb.tobytes()
                 if n!='CenterRGB':payloads[n+'_gray']=gray.tobytes();payloads[n+'_sd']=diff.tobytes()
@@ -245,9 +267,7 @@ def capture(app, a):
             for n,raw in arrays.items():
                 b=time.perf_counter();img=raw.astype(np.float32);cast_ms+=(time.perf_counter()-b)*1000
                 b=time.perf_counter()
-                cells=np.array([img[y-2:y+3,x-2:x+3,:3].mean() for x,y in centres[n]])
-                bits=cells>(cells[0]+cells[1])/2
-                ids[n]=int(np.dot(bits[4:20],2**np.arange(15,-1,-1)))
+                ids[n] = decode_frame_id(img, marker_strips[n])
                 if ids[n]!=i:raise RuntimeError(f'fixed 3 ticks stale frame {i}: {ids}')
                 id_ms+=(time.perf_counter()-b)*1000;b=time.perf_counter()
                 v=np.clip(img[...,:3],0,1);rgb=np.rint(np.where(v<=.0031308,12.92*v,1.055*v**(1/2.4)-.055)*255).astype(np.uint8)
@@ -257,7 +277,7 @@ def capture(app, a):
                     b=time.perf_counter()
                     up=cv2.filter2D(gray,cv2.CV_16S,np.array([[0,-1,0],[0,1,0],[0,0,0]],np.float32));up[0]=0
                     right=cv2.filter2D(gray,cv2.CV_16S,np.array([[0,0,0],[0,1,-1],[0,0,0]],np.float32));right[:,-1]=0
-                    diff=np.trunc(np.stack([up, right]) * np.float32(0.5)).astype(np.int16)
+                    diff=(np.trunc(np.stack([up, right]) * np.float32(0.5)) + 128).astype(np.int16)
                     sd_ms+=(time.perf_counter()-b)*1000
                     payloads[n+'_gray']=gray.tobytes()
                     payloads[n+'_sd']=diff.tobytes()

@@ -63,12 +63,12 @@ def load_scene(scene_path, fps, *, preserve_viewport=False, move_cleaner=True):
 
 class FrameMarkers:
     """Static emissive tiles; only geometric visibility changes each frame."""
-    def __init__(self, stage, camera_paths, resolution=(1280,720)):
+    def __init__(self, stage, camera_paths, resolution=(1280,720), *, row=32):
         from pxr import Gf, Sdf, UsdGeom, UsdShade
 
         width_px, height_px = resolution
         self.tiles = []
-        self.centres = [[32 + i * 24, 32] for i in range(23)]
+        self.centres = [[32 + i * 24, row] for i in range(23)]
         materials = []
         for name, value in (('Black', .001), ('White', 1.0)):
             root = '/World/FrameDiagnostics/' + name
@@ -93,8 +93,9 @@ class FrameMarkers:
                 depth = near * (1.1 if i == -1 else 1.02)
                 x, width = (20, 552) if i == -1 else (20+i*24, 24)
                 points = [Gf.Vec3f((u-width_px/2)*depth/fx, -(v-height_px/2)*depth/fy, -depth)
-                          for u,v in ((x,20),(x+width,20),(x+width,44),(x,44))]
-                mesh = UsdGeom.Mesh.Define(stage, f'{path}/FrameDiagnostics/Tile{i+1}')
+                          for u,v in ((x,row-12),(x+width,row-12),(x+width,row+12),(x,row+12))]
+                group = 'FrameDiagnostics' if row == 32 else f'FrameDiagnostics{row}'
+                mesh = UsdGeom.Mesh.Define(stage, f'{path}/{group}/Tile{i+1}')
                 mesh.CreatePointsAttr(points)
                 mesh.CreateFaceVertexCountsAttr([4])
                 mesh.CreateFaceVertexIndicesAttr([0,3,2,1])

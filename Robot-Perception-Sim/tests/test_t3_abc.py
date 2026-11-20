@@ -13,8 +13,8 @@ def test_opencv_sd_matches_supplied_numpy():
     up=cv2.filter2D(gray,cv2.CV_16S,np.array([[0,-1,0],[0,1,0],[0,0,0]],np.float32));up[0]=0
     right=cv2.filter2D(gray,cv2.CV_16S,np.array([[0,0,0],[0,1,-1],[0,0,0]],np.float32));right[:,-1]=0
     expected=ref.compute_tdsd_numpy(gray)
-    np.testing.assert_array_equal(np.trunc(up / 2), expected[0])
-    np.testing.assert_array_equal(np.trunc(right / 2), expected[1])
+    np.testing.assert_array_equal(np.trunc(up / 2) + 128, expected[0])
+    np.testing.assert_array_equal(np.trunc(right / 2) + 128, expected[1])
 
 
 def test_golden_sd_extremes_and_negative_odd_differences():
@@ -25,7 +25,7 @@ def test_golden_sd_extremes_and_negative_odd_differences():
     spec.loader.exec_module(ref)
     gray = np.array([[0, 255, 252, 253], [255, 0, 253, 252]], dtype=np.uint8)
     up, right, _ = ref.compute_tdsd_numpy(gray)
-    np.testing.assert_array_equal(up, [[0, 0, 0, 0], [127, -127, 0, 0]])
-    np.testing.assert_array_equal(right, [[-127, 1, 0, 0], [127, -126, 0, 0]])
+    np.testing.assert_array_equal(up, [[128, 128, 128, 128], [255, 1, 128, 128]])
+    np.testing.assert_array_equal(right, [[1, 129, 128, 128], [255, 2, 128, 128]])
     _, legacy_right, _ = ref.compute_tdsd_numpy(gray, legacy_sd=True)
     np.testing.assert_array_equal(legacy_right[0], [-255, 3, -1, 0])
