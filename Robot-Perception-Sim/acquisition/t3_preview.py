@@ -1,4 +1,4 @@
-"""T3 preview using the validated stereo SD and center HDR GPU kernels."""
+"""T3 preview with stereo SD/TD and center HDR processing on the GPU."""
 import json
 from pathlib import Path
 
@@ -53,6 +53,7 @@ class SensorPreview:
         from isaacsim.core.api import World
         from pxr import Sdf
         from t3_park import load_scene
+        from t3_gpu_sd import TemporalDifference
 
         self.app = app
         self.stereo = json.loads(Path(stereo_config).read_text())['stereo']
@@ -71,6 +72,7 @@ class SensorPreview:
         self.products = {}
         self.annotators = {}
         self.buffers = {}
+        self.temporal = {}
         for name, optics in self.optics.items():
             width, height = optics['resolution']
             product = viewport_manager.get_render_product(
@@ -96,12 +98,14 @@ class SensorPreview:
                 wp.empty((height, width, 3), dtype=wp.uint8, device=source.device),
                 wp.empty((height, width), dtype=wp.uint8, device=source.device),
                 wp.empty((2, height, width), dtype=wp.int16, device=source.device))
+            if name != 'CenterRGB':
+                self.temporal[name] = TemporalDifference(self.buffers[name][1])
         device = self.annotators['CenterRGB'].get_data().device
         self.meter = wp.zeros(1, dtype=float, device=device)
         self.exposure = self.center['exposure']['initial_s']
         self.window = self.create_window()
         self.speed_model = None
-        self.first_sample = True
+        self.verification_gray = {}
 
     def create_window(self):
         import omni.ui as ui
@@ -129,13 +133,14 @@ class SensorPreview:
                             else:
                                 panels = [(eye, f'{eye} grayscale  1280 x 720'),
                                           (eye + '_up', 'SD up  1 ... 255'),
-                                          (eye + '_right', 'SD right  1 ... 255')]
+                                          (eye + '_right', 'SD right  1 ... 255'),
+                                          (eye + '_td', 'TD  -127 ... +127')]
                             for key, label in panels:
                                 ui.Label(label, height=20)
                                 provider = ui.ByteImageProvider()
                                 self.providers[key] = provider
                                 ui.ImageWithProvider(
-                                    provider, height=300 if eye == 'CenterRGB' else 210,
+                                    provider, height=300 if eye == 'CenterRGB' else 156,
                                     fill_policy=ui.IwpFillPolicy.IWP_PRESERVE_ASPECT_FIT)
                             if eye == 'CenterRGB':
                                 ui.Label(f'70 mm stereo baseline\n1.79 mm focal length\nD = {self.stereo["D"]}\nSD neutral gray = 128',
@@ -174,6 +179,7 @@ class SensorPreview:
             else:
                 wp.launch(images, (height, width), inputs=[source, rgb, gray], device=source.device)
                 wp.launch(differences, (height, width), inputs=[gray, difference], device=source.device)
+                self.temporal[name].sample(gray, index)
         data = {}
         for name, (rgb, gray, difference) in self.buffers.items():
             if name == 'CenterRGB':
@@ -181,14 +187,15 @@ class SensorPreview:
             else:
                 data[name] = gray.numpy()
                 data[name + '_sd'] = difference.numpy()
+                data[name + '_td'] = self.temporal[name].output.numpy()
         brightness = float(self.meter.numpy()[0]) / ((self.center['height'] - 120) * self.center['width'])
         settings = self.center['exposure']
         ratio = np.clip(settings['target'] / max(brightness, 1e-12),
                         1 / settings['max_step_ratio'], settings['max_step_ratio'])
         self.exposure = float(np.clip(exposure * ratio, settings['min_s'], settings['max_s']))
-        if self.first_sample:
-            self.verify_sample(sources, data, exposure)
-            self.first_sample = False
+        if index in (0, 1):
+            self.verify_sample(sources, data, exposure, index)
+            self.verification_gray = {eye: data[eye] for eye in self.temporal} if index == 0 else {}
         self.update_images(data)
         self.ae_status.text = f'Exposure {exposure * 1000:.3f} ms\nLinear mean {brightness:.3f}'
         return data
@@ -202,6 +209,8 @@ class SensorPreview:
                 eye, channel = key.rsplit('_', 1)
                 plane = data[eye + '_sd'][0 if channel == 'up' else 1]
                 image = plane.astype(np.uint8)
+            elif key.endswith('_td'):
+                image = (data[key].astype(np.int16) + 128).astype(np.uint8)
             else:
                 image = data[key]
             size = (400, 300) if key == 'CenterRGB' else (400, 225)
@@ -209,15 +218,16 @@ class SensorPreview:
             rgba = cv2.cvtColor(image, cv2.COLOR_RGB2RGBA if image.ndim == 3 else cv2.COLOR_GRAY2RGBA)
             provider.set_bytes_data(rgba.ravel().tolist(), size)
 
-    def verify_sample(self, sources, data, exposure):
+    def verify_sample(self, sources, data, exposure, index):
         import numpy as np
         from PIL import Image
-        from robot_perception_sim.t3_sdtd import sd
+        from robot_perception_sim.t3_sdtd import TD_ENCODING, sd, td
 
         audit = {'optics': self.optics, 'sampling_hz': self.fps, 'render_ticks_per_sample': 3,
                  'stereo_gray': 'round(clip(linear luminance, 0, 1) * 255), fixed gain 1',
                  'center_processing': 'GPU HDR exposure and sRGB, causal AE',
                  'sd_encoding': 'half_trunc_plus_128',
+                 'td_encoding': TD_ENCODING, 'sample_index': index,
                  'sd_channels': ['gray[y,x] - gray[y-1,x]', 'gray[y,x] - gray[y,x+1]'],
                  'exposure_s': exposure, 'checks': {}}
         for eye in ('Left', 'Right'):
@@ -228,10 +238,15 @@ class SensorPreview:
             expected_sd = np.stack(sd(data[eye])).astype(np.int16)
             if not np.array_equal(expected_sd, data[eye + '_sd']):
                 raise RuntimeError(f'{eye} GPU SD differs from NumPy reference')
-            audit['checks'][eye] = {'gray_exact': True, 'sd_exact': True,
+            previous = self.verification_gray.get(eye) if index == 1 else None
+            actual_td = data[eye + '_td']
+            if actual_td.dtype != np.int8 or not np.array_equal(actual_td, td(data[eye], previous)):
+                raise RuntimeError(f'{eye} GPU TD differs from NumPy reference')
+            audit['checks'][eye] = {'gray_exact': True, 'sd_exact': True, 'td_exact': True,
                                    'nonzero_sd': int(np.count_nonzero(data[eye + '_sd'] != 128))}
             Image.fromarray(data[eye]).save(self.output / (eye + '_gray.png'))
             np.save(self.output / (eye + '_sd.npy'), data[eye + '_sd'])
+            np.save(self.output / (eye + '_td.npy'), actual_td)
         source = sources['CenterRGB'].numpy().astype(np.float32)
         linear = np.clip(source[..., :3] * (exposure / self.center['exposure']['reference_exposure_s']), 0, 1)
         expected = np.rint(np.where(linear <= .0031308, linear * 12.92,

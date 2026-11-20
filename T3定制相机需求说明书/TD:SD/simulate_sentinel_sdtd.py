@@ -22,7 +22,7 @@ def compute_tdsd(curr_tensor, last_tensor):
     使用 PyTorch 计算当前帧的空间差分和相邻帧的时间差分。
     grad_up    = curr[y, x] - curr[y - 1, x]
     grad_right = curr[y, x] - curr[y, x + 1]
-    grad_td    = curr - last
+    grad_td    = trunc((curr - last) / 2)，输出有符号 int8
     """
     if torch is None:
         raise RuntimeError("当前环境未安装 torch，请使用 compute_tdsd_numpy 或安装 torch。")
@@ -32,6 +32,7 @@ def compute_tdsd(curr_tensor, last_tensor):
     elif len(curr_tensor.shape) == 2:
         curr_tensor = curr_tensor.unsqueeze(0).unsqueeze(0)
 
+    curr_tensor = curr_tensor.to(dtype=torch.float32)
     if last_tensor is None:
         grad_td = None
     else:
@@ -39,7 +40,8 @@ def compute_tdsd(curr_tensor, last_tensor):
             last_tensor = last_tensor.unsqueeze(0)
         elif len(last_tensor.shape) == 2:
             last_tensor = last_tensor.unsqueeze(0).unsqueeze(0)
-        grad_td = curr_tensor - last_tensor
+        delta = curr_tensor - last_tensor.to(curr_tensor)
+        grad_td = torch.trunc(delta / 2).to(torch.int8)
 
     _, channels, _, _ = curr_tensor.shape
 
@@ -68,7 +70,7 @@ def compute_tdsd(curr_tensor, last_tensor):
 
 
 def compute_tdsd_numpy(curr_image, last_image=None, *, legacy_sd=False, sd_offset=128):
-    """SD 除以 2 后向零截断再加 128。可按历史录制指定旧编码。"""
+    """SD 除以 2 后向零截断再加偏移。TD 除以 2 后向零截断，保留 int8 符号。"""
     curr = curr_image.astype(np.int16)
 
     grad_up = np.zeros_like(curr, dtype=np.int16)
@@ -79,7 +81,8 @@ def compute_tdsd_numpy(curr_image, last_image=None, *, legacy_sd=False, sd_offse
 
     grad_td = None
     if last_image is not None:
-        grad_td = curr - last_image.astype(np.int16)
+        delta = curr - last_image.astype(np.int16)
+        grad_td = (np.sign(delta) * (np.abs(delta) // 2)).astype(np.int8)
 
     if not legacy_sd:
         grad_up = (np.trunc(grad_up / 2) + sd_offset).astype(np.int16)
@@ -92,16 +95,6 @@ def read_gray_image(path):
     if image is None:
         raise RuntimeError(f"读取灰度图失败: {path}")
     return image
-
-
-def diff_to_u8(diff):
-    return np.clip(np.abs(diff), 0, 255).astype(np.uint8)
-
-
-def apply_threshold(image, threshold):
-    thresholded = image.copy()
-    thresholded[thresholded <= threshold] = 0
-    return thresholded
 
 
 def write_image(path, image):
@@ -130,12 +123,13 @@ def generate_requested_outputs():
     write_image(sd_right_th_path, np.where(np.abs(grad_right - 128) <= THRESHOLD, 128, grad_right).astype(np.uint8))
 
     _, _, grad_td = compute_tdsd_numpy(photo_2, photo_1)
-    td_image = diff_to_u8(grad_td)
+    np.save(PY_GOLDEN_DIR / "photo_1_2_td.npy", grad_td)
+    td_image = (grad_td.astype(np.int16) + 128).astype(np.uint8)
     td_path = SCRIPT_DIR / "photo_1_2_td.png"
     write_image(td_path, td_image)
 
     td_th_path = PY_GOLDEN_DIR / f"photo_1_2_td_th{THRESHOLD}.png"
-    write_image(td_th_path, apply_threshold(td_image, THRESHOLD))
+    write_image(td_th_path, np.where(np.abs(grad_td) <= THRESHOLD, 128, td_image).astype(np.uint8))
 
     print(f"SD input : {photo_1_path.name}")
     print(f"SD_UP output   : {sd_up_path.name}")

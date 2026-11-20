@@ -3,6 +3,9 @@
 import numpy as np
 
 
+TD_ENCODING = "int8_half_trunc_current_minus_previous_first_zero"
+
+
 def gray_from_hdr(hdr):
     """Convert scene-linear RGB(A) HDR data to linear luminance."""
     image = np.asarray(hdr)
@@ -25,8 +28,13 @@ def sd(gray):
 
 
 def td(current, previous):
+    """Signed half-difference of two 8-bit grayscale samples from the same eye."""
     current = np.asarray(current, dtype=np.float32)
+    if current.ndim != 2:
+        raise ValueError("gray image must be two-dimensional")
+    if previous is None:
+        return np.zeros(current.shape, dtype=np.int8)
     previous = np.asarray(previous, dtype=np.float32)
-    if current.shape != previous.shape or current.ndim != 2:
+    if current.shape != previous.shape:
         raise ValueError("TD inputs must be same-shaped grayscale images")
-    return current - previous
+    return np.trunc((current - previous) * 0.5).astype(np.int8)

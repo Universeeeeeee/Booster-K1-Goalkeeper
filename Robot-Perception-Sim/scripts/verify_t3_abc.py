@@ -1,4 +1,4 @@
-"""Independently inspect every delivered three-camera pixel buffer and SD."""
+"""Independently inspect delivered camera pixels, spatial and temporal differences."""
 import argparse
 import hashlib
 import importlib.util
@@ -28,6 +28,15 @@ def verify(root, reference):
     if sd_encoding not in ('full_difference', 'half_trunc', 'half_trunc_plus_128'):
         raise ValueError(f'unknown SD encoding: {sd_encoding}')
     biased_sd = sd_encoding == 'half_trunc_plus_128'
+    td_encoding = meta.get('td_encoding')
+    if td_encoding not in (None, 'int8_half_trunc_current_minus_previous_first_zero'):
+        raise ValueError(f'unknown TD encoding: {td_encoding}')
+    if td_encoding and meta['mode'] not in ('B', 'C'):
+        raise ValueError('TD encoding requires stereo difference capture mode B or C')
+    td_eyes = {'Left', 'Right'} if td_encoding else set()
+    if {path.stem for path in root.glob('*.td')} != td_eyes:
+        raise ValueError('TD files do not match the declared encoding')
+    td_keys = {eye + '_td' for eye in td_eyes}
     rows=meta.get('rows')
     if rows is None:
         rows=[json.loads(x) for x in (root/'frames.jsonl').read_text().splitlines()]
@@ -71,14 +80,21 @@ def verify(root, reference):
                         raise ValueError(f'invalid {key} at {i}')
     assert len(rows)==meta['frames']
     streams={}; sizes={}; previous={}; repeats={n:[] for n in meta['optics']}; changes={n:[] for n in meta['optics']}
+    previous_gray = {}
     for n,c in meta['optics'].items():
         w,h=c['resolution']; sizes[n]=w*h*3;streams[n]=(root/(n+'.rgb')).open('rb')
         assert (root/(n+'.rgb')).stat().st_size==sizes[n]*len(rows)
         if meta['mode']!='A' and n!='CenterRGB':
-            for suffix,size in [('gray',w*h),('sd',w*h*4)]:
+            formats = [('gray', w*h), ('sd', w*h*4)]
+            if td_encoding:
+                formats.append(('td', w*h))
+            for suffix,size in formats:
                 key=n+'_'+suffix;sizes[key]=size;streams[key]=(root/(n+'.'+suffix)).open('rb')
                 assert (root/(n+'.'+suffix)).stat().st_size==size*len(rows)
     for i,row in enumerate(rows):
+        recorded_td = {key for key in row.get('hashes', {}) if key.endswith('_td')}
+        if recorded_td != td_keys:
+            raise ValueError(f'TD hashes do not match the declared encoding at frame {i}')
         assert row['index']==i and row['simulation_ns']==i*10000000
         if 'pixel_ids' in row:
             assert row['pixel_ids'] == {n:i for n in meta['optics']}
@@ -90,7 +106,7 @@ def verify(root, reference):
         for key,stream in streams.items():
             data[key]=stream.read(sizes[key])
             expected_hash = row.get('hashes', {}).get(key)
-            if sd_encoding != 'full_difference' and not expected_hash:
+            if (sd_encoding != 'full_difference' or key.endswith('_td')) and not expected_hash:
                 raise ValueError(f'missing SHA-256 for {key} frame {i}')
             if expected_hash and hashlib.sha256(data[key]).hexdigest() != expected_hash:
                 raise ValueError(f'SHA-256 mismatch for {key} frame {i}')
@@ -106,9 +122,18 @@ def verify(root, reference):
             if n+'_gray' in data:
                 gray=np.frombuffer(data[n+'_gray'],np.uint8).reshape(h,w)
                 actual=np.frombuffer(data[n+'_sd'],np.int16).reshape(2,h,w)
-                up,right,_=module.compute_tdsd_numpy(
-                    gray, legacy_sd=sd_encoding == 'full_difference', sd_offset=128 if biased_sd else 0)
+                up,right,expected_td=module.compute_tdsd_numpy(
+                    gray, previous_gray.get(n), legacy_sd=sd_encoding == 'full_difference', sd_offset=128 if biased_sd else 0)
                 np.testing.assert_array_equal(actual,np.stack([up,right]))
+                if td_encoding:
+                    gray_id = decode_frame_id(gray[..., None], strips)
+                    if gray_id != i:
+                        raise ValueError(f'{n} TD source gray ID {gray_id}, expected {i}')
+                    actual_td = np.frombuffer(data[n + '_td'], np.int8).reshape(h, w)
+                    if i == 0:
+                        expected_td = np.zeros_like(gray, dtype=np.int8)
+                    np.testing.assert_array_equal(actual_td, expected_td, err_msg=f'{n} TD frame {i}')
+                    previous_gray[n] = gray
     for stream in streams.values():stream.close()
     matrices={n:np.array(c['local_matrix']) for n,c in meta['optics'].items()}
     delta=np.linalg.inv(matrices['Left'])@matrices['Right'];np.testing.assert_allclose(delta[:3,:3],np.eye(3),atol=1e-9)
@@ -122,11 +147,12 @@ def verify(root, reference):
     result={'mode':meta['mode'],'verified_frames':len(rows),'sampling_hz':100,'interval_ms':10,'capture_duration_s':len(rows)/100,
         'first_last_timestamp_span_s':(len(rows)-1)/100,'eye_timestamp_difference_ns':0,'missing_pixel_ids':0,
         'sd_matches_supplied_numpy':meta['mode']!='A','sd_encoding':sd_encoding,'scene_exact_repeat_indices':repeats,
-        'scene_frame_mae_percentiles':{n:np.percentile(v,[0,50,95,99,100]).tolist() for n,v in changes.items()},
+        'scene_frame_mae_percentiles':{n:np.percentile(v,[0,50,95,99,100]).tolist() if v else [] for n,v in changes.items()},
         'timings_ms':timings,'throughput_pairs_s':len(rows)/meta['elapsed_s'],'rtf':len(rows)/100/meta['elapsed_s'],
         'timing_rows_verified': bool(timing_path.exists()),
         'profile_verified': profile_path.exists(),
-        'scope':'pixel identity, saved data, SD arithmetic, authored motion and single-clock timing when timing.jsonl exists; ghosting/flicker require separate image review'}
+        'td_encoding':td_encoding, 'td_frames_verified_per_eye':len(rows) if td_encoding else 0,
+        'scope':'pixel identity, saved data, SD arithmetic, signed TD when present, authored motion and timing when timing.jsonl exists'}
     if meta['mode']=='C':assert not any(repeats.values()),repeats
     (root/'verification.json').write_text(json.dumps(result,indent=2));return result
 

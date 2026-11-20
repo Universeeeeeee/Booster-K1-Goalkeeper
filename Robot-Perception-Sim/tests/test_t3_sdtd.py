@@ -21,7 +21,20 @@ def test_sd_td_match_reference_definition():
     up, right = sd(gray)
     np.testing.assert_array_equal(up, [[128, 128, 128], [129, 130, 129]])
     np.testing.assert_array_equal(right, [[127, 126, 128], [126, 126, 128]])
-    np.testing.assert_array_equal(td(gray + 2, gray), np.full_like(gray, 2))
+    np.testing.assert_array_equal(td(gray + 2, gray), np.ones_like(gray))
+
+
+def test_signed_td_for_all_uint8_pairs_and_first_sample():
+    levels = np.arange(256, dtype=np.uint8)
+    current, previous = np.meshgrid(levels, levels)
+    delta = current.astype(np.int16) - previous.astype(np.int16)
+    expected = (np.sign(delta) * (np.abs(delta) // 2)).astype(np.int8)
+    actual = td(current, previous)
+    assert actual.dtype == np.int8
+    np.testing.assert_array_equal(actual, expected)
+    first = td(current, None)
+    assert first.dtype == np.int8
+    np.testing.assert_array_equal(first, np.zeros_like(expected))
 
 
 def test_hdr_grayscale_uses_linear_luminance():

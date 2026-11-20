@@ -41,7 +41,9 @@ def capture(app, a):
     from omni.replicator.core.scripts.utils import viewport_manager
     from isaacsim.core.api import World
     from pxr import Gf, Sdf, UsdGeom
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
     sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'acquisition'))
+    from robot_perception_sim.t3_sdtd import TD_ENCODING, td
     from t3_park import load_scene, FrameMarkers
     c = json.loads(Path(a.config).read_text())['stereo']
     center = json.loads(Path(a.center_config).read_text())
@@ -92,7 +94,11 @@ def capture(app, a):
         'sd_encoding':'half_trunc_plus_128',
         'timing':'explicit sensor sample clock; renderer ticks include same-state flushing, not sensor samples',
         'render_settings':{k:settings.get(k) for k in ['/rtx/rendermode','/rtx/post/aa/op','/rtx/dlss/frameGeneration']}}
+    save_td = a.stage == 'save' and a.mode != 'A'
+    if save_td:
+        meta['td_encoding'] = TD_ENCODING
     (a.output/'metadata.json').write_text(json.dumps(meta,indent=2))
+    previous_gray = {}
     import warp as wp
     from omni.hydra.engine.stats import HydraEngineStats
     hydra = HydraEngineStats()
@@ -106,6 +112,8 @@ def capture(app, a):
             if n!='CenterRGB':
                 streams[n+'_gray']=(a.output/(n+'.gray')).open('wb')
                 streams[n+'_sd']=(a.output/(n+'.sd')).open('wb')
+                if save_td:
+                    streams[n + '_td'] = (a.output / (n + '.td')).open('wb')
     samples=[]; gpu_samples=[]; example=None
     start=time.time(); begin_all=time.perf_counter()
     for i in range(a.frames):
@@ -146,6 +154,9 @@ def capture(app, a):
                     sd_ms+=(time.perf_counter()-b)*1000
                     payloads[n+'_gray']=gray.tobytes()
                     payloads[n+'_sd']=diff.tobytes()
+                    if save_td:
+                        payloads[n + '_td'] = td(gray, previous_gray.get(n)).tobytes()
+                        previous_gray[n] = gray
         b=time.perf_counter();hashes={}
         if a.stage=='save':
             for n,payload in payloads.items():streams[n].write(payload);hashes[n]=hashlib.sha256(payload).hexdigest()

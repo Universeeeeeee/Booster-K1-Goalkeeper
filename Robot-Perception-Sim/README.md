@@ -38,6 +38,14 @@ with StereoCamera(model, camera_config) as camera:
 
 验证结果与坐标定义见 [docs/mac_validation.md](docs/mac_validation.md)，来源见 [docs/sources.md](docs/sources.md)，后续路线见 [docs/plan.md](docs/plan.md)。
 
+## T3 园区三目 TD
+
+`scripts/preview_t3_park.py` 打开 `T3 Sensors` 窗口。左右目各显示 1280×720 灰度、上/右 SD 和 TD，两眼基线为 70 mm。中间显示 800×600 ROI 的 RGB，使用 GPU 曝光、sRGB 转换和下一帧 AE，曝光范围 0.1–8 ms。当前三目配置的焦距为 1.79 mm，候选畸变 D=[-0.3,0,0.01,0,0]。
+
+TD 与 SD 共用固定增益的线性 HDR 量化灰度。每眼按 `trunc((当前灰度 − 上一采样灰度) / 2)` 计算 TD，输出范围为 −127 至 +127，变亮为正、变暗为负。每次开始采集和重建预览时，首帧 TD 全零。左右目分别保存为 `Left.td`、`Right.td`，每帧为逐行排列的 720×1280 个有符号 `int8`。预览时加 128 使零值显示为中灰。SD 继续使用带 128 偏移的 `int16`。
+
+每组源时间间隔 10 ms，预览采样前刷新 3 个渲染 tick，TD 历史只在采样时更新。窗口和终端同时显示 100 Hz 源采样时钟及实际每秒处理组数，WebRTC 目标 30 fps。预览启动时核验首帧和第一对连续采样。批量录制使用 `scripts/optimize_t3.py --mode C --stage save --eyes 3 --gpu-process --async-save`，校验入口 `scripts/verify_t3_abc.py` 从落盘灰度逐帧复算左右目 TD。
+
 ## 运动足球双目视频
 
 2026-10-21 增加 P2 物理射门的最小采集闭环。激活已有 `robot` 环境后，在仓库根目录执行：

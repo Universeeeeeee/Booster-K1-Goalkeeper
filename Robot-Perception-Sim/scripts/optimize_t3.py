@@ -35,14 +35,17 @@ def main():
     app = SimulationApp({'headless': True, 'active_gpu': int(os.environ.get('URBAN_GPU', '1')), 'physics_gpu': 0,
         'multi_gpu': False, 'limit_cpu_threads': 8,
         'extra_args': ['--/rtx/hydra/supportMultiTickRate=false', '--/app/audio/enabled=false']})
+    code = 0
     try:
         capture(app, a)
     except BaseException:
+        code = 1
         import traceback
         (a.output/"failure.txt").write_text(traceback.format_exc())
         raise
     finally:
-        app.close()
+        app.app.post_quit(code)
+        app.close(exit_code=code)
 
 
 def capture(app, a):
@@ -55,7 +58,9 @@ def capture(app, a):
     import omni.timeline
     from isaacsim.core.rendering_manager import RenderingManager
     from pxr import Gf, Sdf, UsdGeom
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
     sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'acquisition'))
+    from robot_perception_sim.t3_sdtd import TD_ENCODING, td
     from t3_park import load_scene, FrameMarkers
     from verify_t3_abc import decode_frame_id
     c = json.loads(Path(a.config).read_text())['stereo']
@@ -144,6 +149,9 @@ def capture(app, a):
         'sd_encoding':'half_trunc_plus_128', 'marker_strips':marker_strips,
         'timing':'explicit sensor sample clock; renderer ticks include same-state flushing, not sensor samples',
         'render_settings':{k:settings.get(k) for k in ['/rtx/rendermode','/rtx/post/aa/op','/rtx/dlss/frameGeneration']}}
+    save_td = a.stage == 'save' and a.mode != 'A'
+    if save_td:
+        meta['td_encoding'] = TD_ENCODING
     (a.output/'metadata.json').write_text(json.dumps(meta,indent=2))
     import warp as wp
     from omni.hydra.engine.stats import HydraEngineStats
@@ -159,6 +167,8 @@ def capture(app, a):
             if n!='CenterRGB':
                 streams[n+'_gray']=(a.output/(n+'.gray')).open('wb')
                 streams[n+'_sd']=(a.output/(n+'.sd')).open('wb')
+                if save_td:
+                    streams[n + '_td'] = (a.output / (n + '.td')).open('wb')
     if a.no_viewport:
         for v in windows.get_viewport_window_instances():v.viewport_api.updates_enabled=False
     from concurrent.futures import ThreadPoolExecutor
@@ -166,12 +176,16 @@ def capture(app, a):
     writer=ThreadPoolExecutor(max_workers=1);pending=deque()
     def save(payloads,hashes):
         for n,payload in payloads.items():streams[n].write(payload);hashes[n]=hashlib.sha256(payload).hexdigest()
-    from t3_gpu_sd import images as gpu_images, differences
+    from t3_gpu_sd import images as gpu_images, differences, TemporalDifference
     allocated={}
+    gpu_td = {}
+    previous_gray = {}
     if a.gpu_process:
         for n,ann in annotations.items():
             buf=ann.get_data();h,w=buf.shape[:2]
             allocated[n]=(wp.empty((h,w,3),dtype=wp.uint8,device=buf.device),wp.empty((h,w),dtype=wp.uint8,device=buf.device),wp.empty((2,h,w),dtype=wp.int16,device=buf.device))
+            if save_td and n != 'CenterRGB':
+                gpu_td[n] = TemporalDifference(allocated[n][1])
             wp.launch(gpu_images,(h,w),inputs=[buf,*allocated[n][:2]],device=buf.device)
             wp.launch(differences,(h,w),inputs=[allocated[n][1],allocated[n][2]],device=buf.device)
         wp.synchronize()
@@ -267,6 +281,8 @@ def capture(app, a):
                 rgb_gpu,gray_gpu,sd_gpu=allocated[n];h,w=buf.shape[:2]
                 wp.launch(gpu_images,(h,w),inputs=[buf,rgb_gpu,gray_gpu],device=buf.device)
                 if n!='CenterRGB':wp.launch(differences,(h,w),inputs=[gray_gpu,sd_gpu],device=buf.device)
+                if n in gpu_td:
+                    gpu_td[n].sample(gray_gpu, i)
             wp.synchronize_device(next(iter(buffers.values())).device)
             gpu_process_ms=(time.perf_counter()-b)*1000
             for n,(rgb_gpu,gray_gpu,sd_gpu) in allocated.items():
@@ -277,6 +293,8 @@ def capture(app, a):
                 id_ms+=(time.perf_counter()-b)*1000
                 b=time.perf_counter();payloads[n]=rgb.tobytes()
                 if n!='CenterRGB':payloads[n+'_gray']=gray.tobytes();payloads[n+'_sd']=diff.tobytes()
+                if n in gpu_td:
+                    payloads[n + '_td'] = gpu_td[n].output.numpy().tobytes()
                 pack_ms+=(time.perf_counter()-b)*1000
                 if i in [0,100]:
                     np.savez(a.output/f'probe_{n}_{i}.npz',hdr=buffers[n].numpy(),rgb=rgb,gray=gray if gray is not None else np.zeros(0))
@@ -298,6 +316,9 @@ def capture(app, a):
                     sd_ms+=(time.perf_counter()-b)*1000
                     payloads[n+'_gray']=gray.tobytes()
                     payloads[n+'_sd']=diff.tobytes()
+                    if save_td:
+                        payloads[n + '_td'] = td(gray, previous_gray.get(n)).tobytes()
+                        previous_gray[n] = gray
         b=time.perf_counter();hashes={}
         if a.stage=='save':
             if a.async_save:

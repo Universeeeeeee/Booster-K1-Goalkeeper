@@ -1,0 +1,145 @@
+{
+  "optics": {
+    "Left": {
+      "path": "/World/Cleaner/T3/Left",
+      "resolution": [
+        1280,
+        720
+      ],
+      "K": [
+        [
+          518.84057971,
+          0,
+          640
+        ],
+        [
+          0,
+          518.84057971,
+          360
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "D": [
+        -0.3,
+        0,
+        0.01,
+        0,
+        0
+      ],
+      "focal_length_mm": 1.79,
+      "mount_m": [
+        0.6,
+        0.035,
+        0.78
+      ]
+    },
+    "CenterRGB": {
+      "path": "/World/Cleaner/T3/CenterRGB",
+      "resolution": [
+        800,
+        600
+      ],
+      "K": [
+        [
+          518.84,
+          0,
+          400
+        ],
+        [
+          0,
+          518.84,
+          300
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "D": [
+        -0.3,
+        0,
+        0.01,
+        0,
+        0
+      ],
+      "focal_length_mm": 1.79,
+      "mount_m": [
+        0.6,
+        0,
+        0.78
+      ]
+    },
+    "Right": {
+      "path": "/World/Cleaner/T3/Right",
+      "resolution": [
+        1280,
+        720
+      ],
+      "K": [
+        [
+          518.84057971,
+          0,
+          640
+        ],
+        [
+          0,
+          518.84057971,
+          360
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "D": [
+        -0.3,
+        0,
+        0.01,
+        0,
+        0
+      ],
+      "focal_length_mm": 1.79,
+      "mount_m": [
+        0.6,
+        -0.035,
+        0.78
+      ]
+    }
+  },
+  "sampling_hz": 100,
+  "render_ticks_per_sample": 3,
+  "stereo_gray": "round(clip(linear luminance, 0, 1) * 255), fixed gain 1",
+  "center_processing": "GPU HDR exposure and sRGB, causal AE",
+  "sd_encoding": "half_trunc_plus_128",
+  "td_encoding": "int8_half_trunc_current_minus_previous_first_zero",
+  "sample_index": 1,
+  "sd_channels": [
+    "gray[y,x] - gray[y-1,x]",
+    "gray[y,x] - gray[y,x+1]"
+  ],
+  "exposure_s": 0.00212534443255925,
+  "checks": {
+    "Left": {
+      "gray_exact": true,
+      "sd_exact": true,
+      "td_exact": true,
+      "nonzero_sd": 391787
+    },
+    "Right": {
+      "gray_exact": true,
+      "sd_exact": true,
+      "td_exact": true,
+      "nonzero_sd": 392398
+    },
+    "CenterRGB": {
+      "max_error_dn": 0,
+      "std": 58.85779340531268
+    }
+  }
+}

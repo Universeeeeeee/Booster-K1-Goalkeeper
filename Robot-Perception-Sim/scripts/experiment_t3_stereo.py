@@ -39,7 +39,9 @@ def capture(app, a):
     from omni.replicator.core.scripts.utils import viewport_manager
     from isaacsim.core.api import World
     from pxr import Gf, Sdf, UsdGeom
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
     sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'acquisition'))
+    from robot_perception_sim.t3_sdtd import TD_ENCODING, td
     from t3_park import load_scene, FrameMarkers
     c = json.loads(Path(a.config).read_text())['stereo']
     center = json.loads(Path(a.center_config).read_text())
@@ -88,12 +90,16 @@ def capture(app, a):
         'sd_encoding':'half_trunc_plus_128',
         'timing':'explicit sensor sample clock; renderer ticks include same-state flushing, not sensor samples',
         'render_settings':{k:settings.get(k) for k in ['/rtx/rendermode','/rtx/post/aa/op','/rtx/dlss/frameGeneration']}}
+    if a.mode != 'A':
+        meta['td_encoding'] = TD_ENCODING
     (a.output/'metadata.json').write_text(json.dumps(meta,indent=2))
+    previous_gray = {}
     streams = {n:(a.output/(n+'.rgb')).open('wb') for n in annotations}
     if a.mode != 'A':
         for n in ['Left','Right']:
             streams[n+'_gray']=(a.output/(n+'.gray')).open('wb')
             streams[n+'_sd']=(a.output/(n+'.sd')).open('wb')
+            streams[n + '_td'] = (a.output / (n + '.td')).open('wb')
     start=time.perf_counter()
     with (a.output/'frames.jsonl').open('w') as log:
         for i in range(a.frames):
@@ -129,6 +135,8 @@ def capture(app, a):
                     sd_ms+=(time.perf_counter()-b)*1000
                     payloads[n+'_gray']=gray.tobytes()
                     payloads[n+'_sd']=diff.tobytes()
+                    payloads[n + '_td'] = td(gray, previous_gray.get(n)).tobytes()
+                    previous_gray[n] = gray
             processed=time.perf_counter()
             for n,payload in payloads.items():streams[n].write(payload);row['hashes'][n]=hashlib.sha256(payload).hexdigest()
             row.update(gray_ms=gray_ms,sd_ms=sd_ms,process_ms=(processed-rendered)*1000,total_ms=(time.perf_counter()-begin)*1000)

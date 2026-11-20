@@ -1,4 +1,4 @@
-"""CUDA linear-HDR grayscale and signed SD, matching the integer reference."""
+"""CUDA linear-HDR grayscale, biased SD and signed TD for the T3 stereo eyes."""
 import warp as wp
 
 @wp.kernel
@@ -21,3 +21,31 @@ def differences(gray:wp.array2d(dtype=wp.uint8),out:wp.array3d(dtype=wp.int16)):
     if x<gray.shape[1]-1:r=int(gray[y,x])-int(gray[y,x+1])
     out[0, y, x] = wp.int16(wp.trunc(float(u) * 0.5) + 128.0)
     out[1, y, x] = wp.int16(wp.trunc(float(r) * 0.5) + 128.0)
+
+
+@wp.kernel
+def temporal_difference(gray: wp.array2d(dtype=wp.uint8), previous: wp.array2d(dtype=wp.uint8),
+                        out: wp.array2d(dtype=wp.int8), has_previous: bool):
+    y, x = wp.tid()
+    current = gray[y, x]
+    delta = int(0)
+    if has_previous:
+        delta = int(current) - int(previous[y, x])
+    out[y, x] = wp.int8(wp.trunc(float(delta) * 0.5))
+    previous[y, x] = current
+
+
+class TemporalDifference:
+    """History for one eye, advanced once per delivered sensor sample."""
+
+    def __init__(self, gray):
+        self.previous = wp.empty_like(gray)
+        self.output = wp.empty(gray.shape, dtype=wp.int8, device=gray.device)
+        self.last_index = None
+
+    def sample(self, gray, index):
+        consecutive = self.last_index is not None and index == self.last_index + 1
+        wp.launch(temporal_difference, gray.shape,
+                  inputs=[gray, self.previous, self.output, consecutive], device=gray.device)
+        self.last_index = index
+        return self.output
