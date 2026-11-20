@@ -19,4 +19,5 @@ def differences(gray:wp.array2d(dtype=wp.uint8),out:wp.array3d(dtype=wp.int16)):
     u=0;r=0
     if y>0:u=int(gray[y,x])-int(gray[y-1,x])
     if x<gray.shape[1]-1:r=int(gray[y,x])-int(gray[y,x+1])
-    out[0,y,x]=wp.int16(u);out[1,y,x]=wp.int16(r)
+    out[0, y, x] = wp.int16(wp.trunc(float(u) * 0.5))
+    out[1, y, x] = wp.int16(wp.trunc(float(r) * 0.5))

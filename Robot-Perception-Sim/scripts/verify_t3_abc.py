@@ -12,6 +12,9 @@ def verify(root, reference):
     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
     profile_path = root / 'profile.json'
     meta=json.loads(profile_path.read_text()) if profile_path.exists() else json.loads((root/'metadata.json').read_text())
+    sd_encoding = meta.get('sd_encoding', 'full_difference')
+    if sd_encoding not in ('full_difference', 'half_trunc'):
+        raise ValueError(f'unknown SD encoding: {sd_encoding}')
     rows=meta.get('rows')
     if rows is None:
         rows=[json.loads(x) for x in (root/'frames.jsonl').read_text().splitlines()]
@@ -58,8 +61,10 @@ def verify(root, reference):
         for key,stream in streams.items():
             data[key]=stream.read(sizes[key])
             expected_hash = row.get('hashes', {}).get(key)
-            if expected_hash is not None and expected_hash:
-                assert hashlib.sha256(data[key]).hexdigest()==expected_hash
+            if sd_encoding == 'half_trunc' and not expected_hash:
+                raise ValueError(f'missing SHA-256 for {key} frame {i}')
+            if expected_hash and hashlib.sha256(data[key]).hexdigest() != expected_hash:
+                raise ValueError(f'SHA-256 mismatch for {key} frame {i}')
         for n,c in meta['optics'].items():
             w,h=c['resolution'];img=np.frombuffer(data[n],np.uint8).reshape(h,w,3)
             cells=np.array([img[y-2:y+3,x-2:x+3].mean() for x,y in meta['centres'][n]])
@@ -75,7 +80,7 @@ def verify(root, reference):
             if n+'_gray' in data:
                 gray=np.frombuffer(data[n+'_gray'],np.uint8).reshape(h,w)
                 actual=np.frombuffer(data[n+'_sd'],np.int16).reshape(2,h,w)
-                up,right,_=module.compute_tdsd_numpy(gray)
+                up,right,_=module.compute_tdsd_numpy(gray, legacy_sd=sd_encoding == 'full_difference')
                 np.testing.assert_array_equal(actual,np.stack([up,right]))
     for stream in streams.values():stream.close()
     matrices={n:np.array(c['local_matrix']) for n,c in meta['optics'].items()}
@@ -89,7 +94,7 @@ def verify(root, reference):
     if 'gpu_process_ms' in rows[0]: timings['gpu_process_ms']=metric('gpu_process_ms')
     result={'mode':meta['mode'],'verified_frames':len(rows),'sampling_hz':100,'interval_ms':10,'capture_duration_s':len(rows)/100,
         'first_last_timestamp_span_s':(len(rows)-1)/100,'eye_timestamp_difference_ns':0,'missing_pixel_ids':0,
-        'sd_matches_supplied_numpy':meta['mode']!='A','scene_exact_repeat_indices':repeats,
+        'sd_matches_supplied_numpy':meta['mode']!='A','sd_encoding':sd_encoding,'scene_exact_repeat_indices':repeats,
         'scene_frame_mae_percentiles':{n:np.percentile(v,[0,50,95,99,100]).tolist() for n,v in changes.items()},
         'timings_ms':timings,'throughput_pairs_s':len(rows)/meta['elapsed_s'],'rtf':len(rows)/100/meta['elapsed_s'],
         'timing_rows_verified': bool(timing_path.exists()),
