@@ -26,9 +26,9 @@
       ]
     ],
     "D": [
-      -0.2,
-      0.04,
+      -0.3,
       0,
+      0.01,
       0,
       0
     ],
@@ -59,7 +59,7 @@
     ],
     "synchronization_error_s": 0,
     "extrinsic_status": "70 mm from product PDF; parallel axes candidate assumption",
-    "distortion_status": "candidate k2=0.04: global radial derivative minimum 0.55; not measured"
+    "distortion_status": "User screenshot appearance: k1=-0.3, p1=0.01, other coefficients zero; not calibrated; radial foldover possible at wide angles"
   },
   "exposure": {
     "shutter": "global",

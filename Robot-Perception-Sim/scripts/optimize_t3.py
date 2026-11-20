@@ -25,6 +25,7 @@ def main():
     p.add_argument('--clock-mode', choices=['legacy','C1'], default='C1')
     p.add_argument('--physics-hz', type=float, default=100.0)
     p.add_argument('--physical-steps-per-sample', type=int, default=1)
+    p.add_argument('--substep-render', choices=['every', 'last'])
     a, _ = p.parse_known_args()
     a.output.mkdir(parents=True, exist_ok=False)
     import ctypes
@@ -93,7 +94,11 @@ def capture(app, a):
         if a.stage != 'render':
             annot = rep.AnnotatorRegistry.get_annotator('HdrColor', device='cuda'); annot.attach(product.hydra_texture.get_render_product_path())
         products[name], annotations[name] = product, annot
-        markers[name] = [FrameMarkers(stage, [path], (w, h), row=row) for row in (32, 96)]
+        # Keep diagnostic tiles inside the central projection for the strong barrel preset.
+        strong_barrel = d[0] <= -0.3 and d[1] == 0
+        rows = (128, 192) if strong_barrel else (32, 96)
+        start_x = w // 2 - 276 if strong_barrel else 20
+        markers[name] = [FrameMarkers(stage, [path], (w, h), row=row, start_x=start_x) for row in rows]
         marker_strips[name] = []
         for marker in markers[name]:
             xy = (np.array(marker.centres)-[k[0][2],k[1][2]])/[k[0][0],k[1][1]]
@@ -112,15 +117,24 @@ def capture(app, a):
         raise ValueError('invalid physical timing configuration')
     if abs(a.physics_hz / a.physical_steps_per_sample - 100.0) > 1e-9:
         raise ValueError('physics_hz / physical_steps_per_sample must equal 100 Hz sample rate')
-    world = World(physics_dt=physics_dt, rendering_dt=physics_dt); world.reset(); world.play()
+    grouped = a.substep_render == 'last'
+    render_dt = physics_dt * a.physical_steps_per_sample if grouped else physics_dt
+    world = World(physics_dt=physics_dt, rendering_dt=render_dt); world.reset(); world.play()
     # Keep the timeline horizon beyond the requested sensor capture.  At 800 Hz
     # the timeline advances on every physical substep, so the old scene end time
     # can be reached before a 10 s, 100 Hz sensor run completes.
     stage.SetStartTimeCode(0)
-    stage.SetEndTimeCode((a.frames / 100.0 + 1.0) * a.physics_hz)
-    timeline.set_end_time(a.frames / 100.0 + 1.0)
+    warmup_updates = (100 + a.physical_steps_per_sample - 1) // a.physical_steps_per_sample * a.physical_steps_per_sample
+    if grouped:
+        warmup_updates //= a.physical_steps_per_sample
+    horizon_s = a.frames / 100.0 + warmup_updates * render_dt + 1.0
+    stage.SetEndTimeCode(horizon_s * stage.GetTimeCodesPerSecond())
+    timeline.set_end_time(horizon_s)
     timeline.set_looping(False)
-    for _ in range(100): world.step(render=True)
+    for _ in range(warmup_updates): world.step(render=True)
+    physics_steps = []
+    if a.substep_render:
+        world.add_physics_callback('t3_substep_audit', physics_steps.append)
     base_simulation_s = float(world.current_time)
     base_timeline_s = float(timeline.get_current_time())
     stage.GetRootLayer().Export(str(a.output/'scene.usda'))
@@ -205,7 +219,10 @@ def capture(app, a):
             for marker in camera_markers:
                 marker.set(i)
         tick_times=[]
-        for substep in range(a.physical_steps_per_sample):
+        physics_steps.clear()
+        for substep in range(1 if grouped else a.physical_steps_per_sample):
+            if grouped:
+                substep = a.physical_steps_per_sample - 1
             sub_time = source_time_s + substep * physics_dt
             body_op.Set(Gf.Matrix4d().SetTranslate(Gf.Vec3d(-48 + 1.5 * sub_time, -8.375, 0)))
             # Advance every physical substep through the Isaac render loop so
@@ -290,11 +307,16 @@ def capture(app, a):
         save_ms=(time.perf_counter()-b)*1000
         simulation_after_s = float(world.current_time) - base_simulation_s
         timeline_after_s = float(timeline.get_current_time()) - base_timeline_s
+        if a.substep_render and (len(physics_steps) != a.physical_steps_per_sample
+                                 or any(abs(dt - physics_dt) > 1e-9 for dt in physics_steps)):
+            raise RuntimeError(f'Unexpected PhysX substeps at {i}: {physics_steps}')
         timing_log.write(json.dumps({'index':i,'source_time_s':source_time_s,'simulation_before_s':simulation_before_s,'simulation_after_s':simulation_after_s,'timeline_before_s':timeline_before_s,'timeline_after_s':timeline_after_s,'pixel_ids':ids})+'\n'); timing_log.flush()
         samples.append({'cast_ms':cast_ms,'id_ms':id_ms,'srgb_ms':srgb_ms,'pack_ms':pack_ms,'gpu_process_ms':gpu_process_ms,'index':i,'simulation_ns':i*10000000,'source_time_s':source_time_s,'simulation_before_s':simulation_before_s,'simulation_after_s':simulation_after_s,'timeline_before_s':timeline_before_s,'timeline_after_s':timeline_after_s,'refresh_count':refresh_count,'refresh_sim_deltas':refresh_sim_deltas,'refresh_timeline_deltas':refresh_timeline_deltas,'render_ms':sum(tick_times),'ticks_ms':tick_times,
             'get_ms':(after_get-after_render)*1000,'sync_ms':sync_ms,'copy_ms':copy_ms,'color_ms':color_ms,
             'gray_ms':gray_ms,'sd_ms':sd_ms,'save_ms':save_ms,'total_ms':(time.perf_counter()-begin)*1000,
             'pixel_ids':ids,'hashes':hashes})
+        if a.substep_render:
+            samples[-1]['physics_steps_s'] = physics_steps.copy()
         if i%100==0:print(a.eyes,a.stage,i,flush=True)
     loop_end=time.time();b=time.perf_counter()
     for future in pending:future.result()

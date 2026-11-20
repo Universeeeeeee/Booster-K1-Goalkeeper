@@ -43,9 +43,9 @@
     600
   ],
   "D": [
-    -0.2,
-    0.04,
+    -0.3,
     0,
+    0.01,
     0,
     0
   ],
@@ -68,5 +68,6 @@
   },
   "scope": "center RGB only; brain cameras deferred",
   "reference_scope": "exposure-only candidate response; renderer HDR units not calibrated to physical radiance",
-  "focal_length_mm": 1.79
+  "focal_length_mm": 1.79,
+  "distortion_status": "User screenshot appearance: k1=-0.3, p1=0.01, other coefficients zero; not calibrated; radial foldover possible at wide angles"
 }

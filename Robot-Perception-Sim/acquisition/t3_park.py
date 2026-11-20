@@ -63,12 +63,12 @@ def load_scene(scene_path, fps, *, preserve_viewport=False, move_cleaner=True):
 
 class FrameMarkers:
     """Static emissive tiles; only geometric visibility changes each frame."""
-    def __init__(self, stage, camera_paths, resolution=(1280,720), *, row=32):
+    def __init__(self, stage, camera_paths, resolution=(1280,720), *, row=32, start_x=20):
         from pxr import Gf, Sdf, UsdGeom, UsdShade
 
         width_px, height_px = resolution
         self.tiles = []
-        self.centres = [[32 + i * 24, row] for i in range(23)]
+        self.centres = [[start_x + 12 + i * 24, row] for i in range(23)]
         materials = []
         for name, value in (('Black', .001), ('White', 1.0)):
             root = '/World/FrameDiagnostics/' + name
@@ -91,7 +91,7 @@ class FrameMarkers:
             eye_tiles = []
             for i in range(-1, 23):
                 depth = near * (1.1 if i == -1 else 1.02)
-                x, width = (20, 552) if i == -1 else (20+i*24, 24)
+                x, width = (start_x, 552) if i == -1 else (start_x+i*24, 24)
                 points = [Gf.Vec3f((u-width_px/2)*depth/fx, -(v-height_px/2)*depth/fy, -depth)
                           for u,v in ((x,row-12),(x+width,row-12),(x+width,row+12),(x,row+12))]
                 group = 'FrameDiagnostics' if row == 32 else f'FrameDiagnostics{row}'
